@@ -1,352 +1,3 @@
-Claude finished the response
-You said: I want to create a cultural website called dakhni.
-
-I want to create a cultural website called dakhni.org 
-
-I have already bought the domain, and I need to buy hosting now.
-
-After that I need to use AI to build a very dynamic website representing the Dakhni culture of the Hyderabad kingdom.
-
-I want it to be an integrated website with Claude, so I can just tell you what to do, and you write the code and push it to the website. What is the most feasible end to end solution for this. 
-
-I need it either for free or the least amount spend, including hosting
-8:59 PM
-Claude responded: Great question — here's the most practical, low-cost end-to-end architecture for dakhni.
-Check product self-knowledge skill
-
-Great question — here's the most practical, low-cost end-to-end architecture for dakhni.org:
-🏗️ Recommended Stack (Free / Near-Free)
-1. Hosting → GitHub Pages (Free)
-
-    Host your static site completely free at a custom domain
-    Just point your dakhni.org domain's DNS to GitHub Pages — takes 5 minutes
-    You get HTTPS, CDN, and unlimited bandwidth for a static site
-
-2. Code Management → GitHub Repository (Free)
-
-    All your website code lives in a GitHub repo
-    This is the "bridge" between Claude and your live site
-
-3. Claude Integration → Claude Code (the key piece)
-
-This is where it gets powerful. Claude Code is a terminal-based agentic coding tool that:
-
-    Runs on your local machine (Mac, Windows, Linux)
-    Has direct access to your file system and git
-    You describe what you want → Claude writes the code → you run git push → site is live
-
-So the workflow becomes:
-
-You tell Claude Code what to add/change
-→ Claude edits your files directly
-→ You run: git add . && git commit -m "update" && git push
-→ GitHub Pages deploys automatically in ~60 seconds
-
-4. AI-Powered Dynamic Content → Anthropic API in the site
-
-For truly dynamic AI-driven content (e.g. a chatbot about Dakhni culture, AI-generated poetry, interactive history), embed Anthropic API calls directly in the website using JavaScript. You'd need a Claude API key (pay-per-use, very cheap for a cultural site).
-💰 Cost Breakdown
-Component	Cost
-GitHub Pages hosting	Free
-GitHub repo	Free
-Claude Code tool	Free (you need a Claude.ai Pro plan or API key)
-Anthropic API (for AI features on site)	~$1–5/month for light traffic
-Domain (already bought)	Already paid
-
-Total ongoing cost: ~$0–5/month
-🚀 Getting Started — Step by Step
-
-    Install Claude Code on your computer (npm install -g @anthropic-ai/claude-code)
-    Create a GitHub repo called dakhni-org
-    Enable GitHub Pages in the repo settings (point to main branch)
-    Connect your domain — add a CNAME file with dakhni.org and update DNS at your registrar
-    Start building — open Claude Code in your project folder and describe what you want
-
-🎨 What the Site Can Include
-
-Given the rich Dakhni culture of the Hyderabad Deccan Sultanate, Claude Code can help you build:
-
-    An interactive timeline of the Qutb Shahi / Asaf Jahi dynasties
-    A Dakhni language & poetry section with AI translation
-    Cultural music, food, and architecture galleries
-    An AI chatbot that answers questions about Dakhni history
-
-Would you like me to help you set up the initial site structure right now — the HTML/CSS/JS foundation for dakhni.org?
-You said: I just created my Github org.
-
-I just created my Github org. How do I create a Github page for free and link it to my domain. The domain is on namecheap
-9:14 PM
-Claude responded: Here's a step-by-step guide to get GitHub Pages live and linked to dakhni.
-
-Here's a step-by-step guide to get GitHub Pages live and linked to dakhni.org on Namecheap:
-Step 1: Create Your GitHub Repository
-
-    Go to github.com and sign into your org
-    Click New repository
-    Name it exactly: dakhni.org (or your-org-name.github.io)
-    Set it to Public
-    Check "Add a README file"
-    Click Create repository
-
-Step 2: Enable GitHub Pages
-
-    Inside the repo, go to Settings (top tab)
-    Scroll down to Pages in the left sidebar
-    Under Source, select Deploy from a branch
-    Set branch to main and folder to / (root)
-    Click Save
-
-GitHub will give you a URL like https://your-org.github.io/dakhni.org — this is temporary, your custom domain will replace it.
-Step 3: Add Your Custom Domain in GitHub
-
-Still in Settings → Pages, scroll to Custom domain and type:
-
-dakhni.org
-
-Click Save. GitHub will create a CNAME file in your repo automatically. Leave the "Enforce HTTPS" checkbox for after DNS propagates.
-Step 4: Configure DNS on Namecheap
-
-    Log into Namecheap → Domain List → Manage on dakhni.org
-    Click the Advanced DNS tab
-    Delete any existing A records or CNAME records for @ and www
-    Add these 4 A records (for the apex domain):
-
-Type	Host	Value	TTL
-A Record	@	185.199.108.153	Automatic
-A Record	@	185.199.109.153	Automatic
-A Record	@	185.199.110.153	Automatic
-A Record	@	185.199.111.153	Automatic
-
-    Add this CNAME record (for www):
-
-Type	Host	Value	TTL
-CNAME Record	www	your-org-name.github.io.	Automatic
-
-    ⚠️ Replace your-org-name with your actual GitHub org username. Keep the trailing dot on the CNAME value.
-
-Step 5: Wait & Verify
-
-    DNS propagation takes anywhere from 5 minutes to 48 hours (usually under 30 min)
-    Once propagated, go back to GitHub → Settings → Pages and check the "Enforce HTTPS" box
-    Your site will be live at https://dakhni.org
-
-Step 6: Create Your First Page
-
-Add an index.html to the repo root so GitHub has something to show:
-html
-
-<!DOCTYPE html>
-<html>
-  <head><title>Dakhni Culture</title></head>
-  <body>
-    <h1>Welcome to Dakhni.org</h1>
-    <p>Coming soon — a celebration of Dakhni culture.</p>
-  </body>
-</html>
-
-Commit it to main and GitHub Pages will deploy it within 60 seconds.
-
-Once DNS is live and the site loads, we can start building the real site with Claude Code. Want me to design the initial homepage while you wait for DNS to propagate?
-9:18 PM
-Claude responded: GitHub wants you to verify domain ownership first.
-
-GitHub wants you to verify domain ownership first. Here's what to do in Namecheap:
-Add the TXT Record in Namecheap
-
-    Go to Namecheap → Domain List → Manage → Advanced DNS
-    Click Add New Record
-    Add this TXT record:
-
-Type	Host	Value	TTL
-TXT Record	_github-pages-challenge-dakhni-org	3992833690bf8beef11e7cd9c89874	Automatic
-
-    ⚠️ For the Host field, Namecheap automatically appends .dakhni.org, so just paste _github-pages-challenge-dakhni-org without the domain part.
-
-Then
-
-    Click the green Save checkmark in Namecheap
-    Wait a few minutes (TXT records usually propagate fast, 5–15 min)
-    Come back to GitHub and click the green Verify button
-
-Once verified, proceed with adding the 4 A records and CNAME from my previous message to point the domain to GitHub Pages.
-
-Do you also want to add the A records and CNAME now in the same session, so everything propagates together? That way you won't have to wait twice.
-9:23 PM
-Claude responded: Your DNS is looking great!
-
-Your DNS is looking great! You've got all 4 A records and the TXT verification record in place. But there are 2 issues to fix:
-❌ Problem 1: Delete the URL Redirect Record
-
-The URL Redirect Record for @ pointing to http://www.dakhni.org/ will conflict with GitHub Pages. Delete it (click the trash icon next to it).
-❌ Problem 2: Fix the CNAME Record for www
-
-The current CNAME for www points to parkingpage.namecheap.com — that needs to point to GitHub instead.
-
-Edit it to:
-Type	Host	Value
-CNAME Record	www	your-org-name.github.io.
-
-Replace your-org-name with your actual GitHub organization username (e.g. dakhni-org.github.io.) — keep the trailing dot.
-✅ What's Already Correct
-
-    All 4 A records are perfect
-    TXT verification record is in place
-
-After Saving
-
-    Go back to GitHub → Settings → Pages
-    Click Verify on the domain
-    Once verified, enter dakhni.org as your custom domain and hit Save
-    After a few minutes, check "Enforce HTTPS"
-
-Once you see the green checkmark on GitHub Pages, you're fully live. Let me know and we'll start building the site!
-You said: www.
-
-www.dakhni.org is improperly configured
- Domain's DNS record could not be retrieved. For more information, see documentation (InvalidDNSError).
-9:32 PM
-Claude responded: This is a common GitHub Pages snag.
-
-This is a common GitHub Pages snag. The issue is that you have both A records AND a URL Redirect record competing for the @ host. Let's fix it step by step:
-Fix in Namecheap Right Now
-
-Step 1: Delete the URL Redirect Record
-
-    Find the URL Redirect Record for @ → click the 🗑️ trash icon → confirm delete
-
-Step 2: Update the CNAME for www
-
-    Edit the www CNAME record
-    Change the value from parkingpage.namecheap.com. to your GitHub org:
-
-dakhni-org.github.io.
-
-(replace dakhni-org with your exact GitHub org username, keep the trailing dot)
-Then in GitHub
-
-Make sure your custom domain field in Settings → Pages says:
-
-dakhni.org
-
-NOT www.dakhni.org — the apex domain (without www) is what GitHub expects when you're using A records.
-Why This Happens
-
-Namecheap's URL Redirect Record essentially hijacks the @ host before GitHub's A records can respond. GitHub never sees the request, hence InvalidDNSError.
-
-After deleting that redirect record and fixing the CNAME, wait 10–15 minutes and try again. DNS changes on Namecheap for existing records can take a bit to flush.
-
-What is your exact GitHub org username? I can give you the precise CNAME value to paste in.
-9:34 PM
-Claude responded: This looks perfect now!
-
-This looks perfect now! Your DNS is correctly configured:
-
-    ✅ 4 A records pointing to GitHub Pages IPs
-    ✅ CNAME www → dakhni-org.github.io.
-    ✅ No conflicting redirect or parking records
-
-Now Go Back to GitHub
-
-    Go to your repo → Settings → Pages
-    Under Custom domain, make sure it says dakhni.org and hit Save
-    Click Verify on the domain if it still shows the TXT prompt
-    Wait 10–15 minutes for DNS to propagate
-    Then check "Enforce HTTPS" once the green checkmark appears
-
-Test It
-
-After 10–15 min, run this in your browser or terminal to confirm DNS is resolving:
-
-https://dakhni.org
-
-Or check propagation in real time at dnschecker.org — search dakhni.org and you should see the GitHub IPs (185.199.x.x) appearing across regions.
-
-Once it's live, come back here and we'll start building the actual Dakhni culture website! 🎉
-You said: Awesome
-
-Awesome
-9:35 PM
-Claude responded: Great!
-
-Great! While DNS propagates, let's use the time productively.
-
-What's your vision for dakhni.org? A few questions to help me design the perfect site:
-
-Take your time answering these — once DNS is live and I know your vision, I'll build the full homepage and site structure ready to push to GitHub! 🕌
-You said: Q: What's the primary purpose of the site?
-
-Q: What's the primary purpose of the site? (Select all that apply)
-A: Cultural encyclopedia / reference, Dakhni language & poetry, History of Hyderabad kingdom, Food, music & arts showcase, Making people aware of the dakhni culture, and some level of gamification and interaction with users in the form of quizzes, trivia and games
-
-Q: What vibe / aesthetic do you want?
-A: Royal & ornate (Nizami style)
-
-Q: Do you want AI-powered features on the site? (Select all that apply)
-A: An AI Quiz which has a small question bot to check if the person is dakhni (for ex; if the person is from Bidar, then he is dakhni, etc.)
-9:38 PM
-Claude responded: Love this vision!
-
-Love this vision! A royal Nizami-style cultural hub with gamification and an AI Dakhni identity quiz — this is going to be stunning. Let me build the homepage now.
-Viewed a file, created a file, read a file
-
-Here's your homepage! Here's what's built in:
-
-Design — Full royal Nizami aesthetic: deep ink background, gold ornamental palette, Cinzel Decorative + Lateef Arabic typography, animated arch frame, arabesque textures, and staggered scroll reveals.
-
-Sections included:
-
-    Hero with animated arch, Arabic "Dakhni" script, and two CTAs
-    Dakhni Heartland city belt (Hyderabad, Bidar, Golconda, etc.)
-    Six culture pillars (History, Language, Food, Music, Quizzes, AI Quiz)
-    AI "Are You Dakhni?" quiz banner with a live sample interaction
-    Poetry strip with a verse by Wali Deccani
-    Full footer with navigation
-
-Push to GitHub
-
-Download the file, then in your repo:
-
-    Replace the placeholder index.html with this file
-    Commit and push to main
-    GitHub Pages deploys in ~60 seconds
-
-Once DNS is live, it'll be live at dakhni.org. What do you want to build next — the AI quiz page, the history timeline, or the language & poetry section?
-Index
-Code · HTML 
-You said: Add more touch of the Nizami theme - also add the banner at the top with the Hyderabad flag and use the official Nizam's seal on the site.
-
-Add more touch of the Nizami theme - also add the banner at the top with the Hyderabad flag and use the official Nizam's seal on the site. Have a day theme rather than dark with the color taken from the nizam's goldenish flag
-9:45 PM
-Claude responded: Let me research the exact Nizam's seal, flag colors, and official symbols first.
-
-Let me research the exact Nizam's seal, flag colors, and official symbols first.
-Searched the web
-
-Now I have everything I need. The official Asafia flag was yellow/saffron with a white disc (kulcha) in the center, and Urdu inscriptions reading "Al Azmatulillah" (top), "Ya Uthman" (bottom), and "Nizam-ul-Mulk Asaf Jah" (center). Let me now build the full upgraded day-theme version with all of this authentically rendered in SVG.
-Created 2 files, ran a command, read a file
-
-Here's everything that changed and why:
-
-The Asafia Flag Banner — Historically accurate, hand-crafted in SVG at the very top of the page. The royal banner was yellow/saffron, and the Asafia flag features two horizontal green bands.
-CRW Flags
-The centre has the kulcha disc (the dynasty's sacred insignia), adopted because the first Nizam received seven kulchas from a Sufi saint, wrapped in yellow cloth — the origin of both the symbol and the saffron colour.
-The Better India
-The Urdu inscriptions read: "Al Azmatulillah" (All Greatness is for God) at the top, "Ya Uthman" at the bottom, and "Nizam-ul-Mulk Asaf Jah" in the centre.
-Wikipedia
-
-The Nizam's Seal — Custom SVG circular seal with the kulcha, an 8-pointed star border, the Shahi crown, shield, and all three Urdu phrases arranged in an arc — appears both in the hero and the footer.
-
-Day Theme Colors — The entire palette is now drawn from the saffron-gold flag: warm ivory backgrounds, deep saffron headings, forest green accents (from the flag's green bands), parchment panels, and crimson highlights — no dark backgrounds except the footer and quiz section.
-
-Other Nizami upgrades — Animated Mughal arch frame in the hero, arabesque geometric tile texture, diamond-cut ornament dividers, Lateef Arabic typeface throughout, and pillar cards with the saffron top border and gold-to-green bottom reveal on hover.
-Index
-Code · HTML 
-You are out of free messages until 1:00 AM
-Upgrade
-
-
-Claude is AI and can make mistakes. Please double-check cited sources.
-Index · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -377,11 +28,11 @@ Index · HTML
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
     html { scroll-behavior:smooth; }
     body { background:var(--warm-white); color:var(--ink); font-family:'EB Garamond',Georgia,serif; overflow-x:hidden; }
- 
+
     /* FLAG BANNER */
     .flag-banner { width:100%; background:var(--saffron); border-bottom:4px solid var(--saffron-deep); }
     .flag-svg-wrap { display:block; width:100%; }
- 
+
     /* NAVBAR */
     nav {
       position:sticky; top:0; z-index:200;
@@ -396,7 +47,7 @@ Index · HTML
     .nav-links { display:flex; gap:2.2rem; list-style:none; }
     .nav-links a { font-family:'Cinzel',serif; font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; color:var(--saffron-pale); text-decoration:none; border-bottom:1px solid transparent; transition:all .25s; padding-bottom:2px; }
     .nav-links a:hover { color:var(--kulcha-white); border-bottom-color:var(--saffron-light); }
- 
+
     /* HERO */
     .hero {
       background: radial-gradient(ellipse at 50% 0%, rgba(212,137,26,0.18) 0%, transparent 60%),
@@ -410,7 +61,7 @@ Index · HTML
     }
     .arch-svg { position:absolute; top:0; left:50%; transform:translateX(-50%); width:min(700px,90vw); pointer-events:none; opacity:.13; }
     .hero-inner { position:relative; z-index:2; max-width:820px; margin:0 auto; }
- 
+
     .hero-seal { width:clamp(110px,16vw,155px); height:clamp(110px,16vw,155px); margin:0 auto 1.2rem; opacity:0; animation:fadeDown 1s ease forwards .2s; filter:drop-shadow(0 4px 18px rgba(168,98,10,.28)); }
     .hero-urdu { font-family:'Lateef',serif; font-size:clamp(2rem,5vw,3.4rem); color:var(--saffron-deep); opacity:0; animation:fadeDown 1s ease forwards .4s; line-height:1.4; }
     .hero-rule { width:220px; height:2px; background:linear-gradient(90deg,transparent,var(--saffron),transparent); margin:.9rem auto; opacity:0; animation:fadeDown .8s ease forwards .6s; }
@@ -419,31 +70,31 @@ Index · HTML
     .hero-sub { font-family:'Cinzel',serif; font-size:clamp(.72rem,1.8vw,.95rem); letter-spacing:.38em; text-transform:uppercase; color:var(--saffron-deep); opacity:0; animation:fadeDown .9s ease forwards 1.05s; }
     .hero-tagline { font-style:italic; font-size:clamp(1rem,2.2vw,1.28rem); color:var(--ink-soft); margin:1.6rem auto 0; max-width:600px; line-height:1.85; opacity:0; animation:fadeDown .9s ease forwards 1.25s; }
     .hero-ctas { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:2.4rem; opacity:0; animation:fadeDown .9s ease forwards 1.5s; }
- 
+
     .btn-gold { font-family:'Cinzel',serif; font-size:.75rem; letter-spacing:.2em; text-transform:uppercase; padding:.85rem 2.2rem; background:linear-gradient(135deg,var(--saffron-deep),var(--saffron),var(--saffron-deep)); color:var(--kulcha-white); border:none; cursor:pointer; text-decoration:none; font-weight:700; clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%); transition:all .3s; box-shadow:0 4px 18px rgba(168,98,10,.3); }
     .btn-gold:hover { background:linear-gradient(135deg,var(--saffron),var(--saffron-light),var(--saffron)); box-shadow:0 6px 28px rgba(168,98,10,.45); transform:translateY(-2px); }
     .btn-forest { font-family:'Cinzel',serif; font-size:.75rem; letter-spacing:.2em; text-transform:uppercase; padding:.83rem 2.2rem; background:transparent; color:var(--forest); border:2px solid var(--forest-light); cursor:pointer; text-decoration:none; clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%); transition:all .3s; font-weight:600; }
     .btn-forest:hover { background:var(--forest-pale); box-shadow:0 4px 18px rgba(30,92,46,.2); transform:translateY(-2px); }
- 
+
     /* CITY BELT */
     .city-belt { background:var(--forest); padding:1.1rem 2rem; text-align:center; }
     .city-belt-inner { display:flex; flex-wrap:wrap; gap:.5rem 1.4rem; justify-content:center; align-items:center; max-width:1100px; margin:0 auto; }
     .belt-label { font-family:'Cinzel',serif; font-size:.6rem; letter-spacing:.35em; text-transform:uppercase; color:rgba(255,255,240,.5); width:100%; margin-bottom:.3rem; }
     .city-tag { font-family:'Cinzel',serif; font-size:.68rem; letter-spacing:.14em; color:var(--saffron-pale); padding:.3rem .9rem; border:1px solid rgba(240,176,64,.3); background:rgba(255,255,240,.05); transition:all .25s; cursor:default; }
     .city-tag:hover { background:rgba(240,176,64,.15); border-color:rgba(240,176,64,.6); color:var(--kulcha-white); }
- 
+
     /* SECTIONS */
     .sec-hdr { text-align:center; padding:5rem 2rem 2.5rem; }
     .sec-eye { font-family:'Cinzel',serif; font-size:.65rem; letter-spacing:.45em; text-transform:uppercase; color:var(--saffron-deep); opacity:.8; margin-bottom:.7rem; }
     .sec-ttl { font-family:'Cinzel Decorative',serif; font-size:clamp(1.5rem,3.5vw,2.6rem); color:var(--ink); line-height:1.2; }
     .sec-ttl em { font-style:normal; color:var(--saffron-deep); display:block; font-size:.68em; margin-top:.15em; }
     .sec-desc { font-style:italic; font-size:1.1rem; color:var(--ink-soft); max-width:540px; margin:1rem auto 0; line-height:1.85; opacity:.8; }
- 
+
     .orn-div { display:flex; align-items:center; gap:1rem; padding:0 3rem; margin:.5rem 0; }
     .orn-div::before { content:''; flex:1; height:1px; background:linear-gradient(90deg,transparent,var(--saffron-deep)); }
     .orn-div::after  { content:''; flex:1; height:1px; background:linear-gradient(90deg,var(--saffron-deep),transparent); }
     .orn-gem { width:10px; height:10px; background:var(--saffron); transform:rotate(45deg); border:1px solid var(--saffron-deep); flex-shrink:0; }
- 
+
     /* PILLARS */
     .pillars { display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:1.5rem; padding:2rem 3rem 5rem; max-width:1300px; margin:0 auto; }
     .pillar { background:var(--warm-white); border:1px solid var(--parchment-mid); border-top:3px solid var(--saffron); padding:2.2rem 1.8rem; text-decoration:none; color:var(--ink); display:block; position:relative; transition:all .35s; overflow:hidden; }
@@ -455,7 +106,7 @@ Index · HTML
     .pillar-ttl { font-family:'Cinzel',serif; font-size:.98rem; font-weight:700; color:var(--ink); margin-bottom:.7rem; letter-spacing:.06em; }
     .pillar-txt { font-size:.97rem; line-height:1.78; color:var(--ink-soft); }
     .pillar-cta { display:inline-block; margin-top:1.2rem; font-family:'Cinzel',serif; font-size:.6rem; letter-spacing:.25em; text-transform:uppercase; color:var(--saffron-deep); border-bottom:1px solid var(--saffron); padding-bottom:1px; }
- 
+
     /* QUIZ */
     .quiz-sec { background:linear-gradient(135deg,var(--forest) 0%,#0E3A1C 100%); padding:5rem 3rem; position:relative; overflow:hidden; }
     .quiz-sec::before { content:''; position:absolute; inset:0; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M40 0 L80 40 L40 80 L0 40 Z' fill='none' stroke='rgba(240,176,64,0.07)' stroke-width='1'/%3E%3C/svg%3E"); pointer-events:none; }
@@ -475,7 +126,7 @@ Index · HTML
     .quiz-opt:hover { background:var(--saffron-pale); border-color:var(--saffron); border-left-color:var(--saffron-deep); color:var(--ink); padding-left:1.35rem; }
     .quiz-opt.sel { background:var(--forest-pale); border-color:var(--forest-light); border-left-color:var(--forest); color:var(--forest); }
     .quiz-note { margin-top:1rem; font-family:'Cinzel',serif; font-size:.58rem; letter-spacing:.22em; color:var(--saffron-deep); text-align:center; text-transform:uppercase; opacity:.7; }
- 
+
     /* POETRY */
     .poetry-sec { background:var(--parchment); border-top:1px solid var(--parchment-mid); border-bottom:1px solid var(--parchment-mid); padding:5rem 2rem; text-align:center; position:relative; overflow:hidden; }
     .poetry-sec::before { content:'❝'; position:absolute; top:1rem; left:50%; transform:translateX(-50%); font-size:5rem; color:var(--saffron); opacity:.1; font-family:Georgia,serif; line-height:1; }
@@ -483,7 +134,7 @@ Index · HTML
     .poetry-urdu { font-family:'Lateef',serif; font-size:clamp(1.7rem,4vw,2.6rem); color:var(--saffron-deep); direction:rtl; line-height:2; margin-bottom:1.4rem; }
     .poetry-trans { font-style:italic; font-size:clamp(1rem,2.2vw,1.3rem); color:var(--ink-soft); line-height:1.9; opacity:.85; }
     .poetry-attr { margin-top:1.6rem; font-family:'Cinzel',serif; font-size:.68rem; letter-spacing:.3em; text-transform:uppercase; color:var(--saffron-deep); opacity:.7; }
- 
+
     /* FOOTER */
     footer { background:var(--ink); padding:3.5rem 3rem 2rem; text-align:center; }
     .ft-seal { width:64px; height:64px; margin:0 auto 1.2rem; opacity:.7; }
@@ -493,11 +144,11 @@ Index · HTML
     .ft-links a { font-family:'Cinzel',serif; font-size:.62rem; letter-spacing:.22em; text-transform:uppercase; color:rgba(240,176,64,.45); text-decoration:none; transition:color .25s; }
     .ft-links a:hover { color:var(--saffron-light); }
     .ft-copy { font-family:'Cinzel',serif; font-size:.62rem; letter-spacing:.12em; color:rgba(240,176,64,.2); }
- 
+
     @keyframes fadeDown { from{opacity:0;transform:translateY(-18px)} to{opacity:1;transform:translateY(0)} }
     .reveal { opacity:0; transform:translateY(28px); transition:opacity .65s ease,transform .65s ease; }
     .reveal.visible { opacity:1; transform:translateY(0); }
- 
+
     @media(max-width:860px){
       nav{padding:0 1.2rem;} .nav-links{display:none;}
       .pillars{padding:2rem 1.2rem 3rem;}
@@ -508,7 +159,7 @@ Index · HTML
   </style>
 </head>
 <body>
- 
+
 <!-- ══════ ASAFIA FLAG BANNER ══════
      Saffron field · two green bands · white kulcha disc
      Urdu: Al Azmatulillah / Nizam-ul-Mulk Asaf Jah / Ya Uthman
@@ -530,7 +181,7 @@ Index · HTML
     <rect y="114" width="1200" height="24" fill="#1E5C2E" opacity="0.88"/>
     <rect y="114" width="1200" height="2"  fill="rgba(255,255,240,0.45)"/>
     <rect y="136" width="1200" height="2"  fill="rgba(255,255,240,0.45)"/>
- 
+
     <!-- ── KULCHA DISC ── -->
     <circle cx="600" cy="77" r="56" fill="rgba(255,255,240,0.96)" stroke="#A8620A" stroke-width="1.5"/>
     <circle cx="600" cy="77" r="48" fill="none" stroke="#A8620A" stroke-width="0.7" stroke-dasharray="4,3"/>
@@ -545,16 +196,16 @@ Index · HTML
     <!-- Crown -->
     <path d="M592 48 L595 43 L598 47 L600 41 L602 47 L605 43 L608 48Z" fill="#D4891A" stroke="#A8620A" stroke-width=".8"/>
     <rect x="592" y="48" width="16" height="2.5" fill="#A8620A" rx="1"/>
- 
+
     <!-- ── INSCRIPTIONS ── -->
     <text x="600" y="31"  font-family="Lateef, serif" font-size="13" fill="rgba(255,255,240,0.96)" text-anchor="middle" letter-spacing="1">اَلعَظَمَةُ لِلّٰہ</text>
     <text x="600" y="105" font-family="Lateef, serif" font-size="10"  fill="#5A2A08"               text-anchor="middle" opacity=".9">نظام الملک آصف جاہ</text>
     <text x="600" y="131" font-family="Lateef, serif" font-size="13" fill="rgba(255,255,240,0.96)" text-anchor="middle" letter-spacing="1">یا عثمان</text>
- 
+
     <!-- Edge motifs -->
     <text x="130"  y="82" font-family="Lateef, serif" font-size="26" fill="rgba(255,255,240,0.15)" text-anchor="middle">دکن</text>
     <text x="1070" y="82" font-family="Lateef, serif" font-size="26" fill="rgba(255,255,240,0.15)" text-anchor="middle">دکن</text>
- 
+
     <!-- Corner rosettes -->
     <g opacity=".3">
       <circle cx="30"   cy="77" r="18" fill="none" stroke="#FFFFF0" stroke-width=".8"/>
@@ -566,7 +217,7 @@ Index · HTML
     </g>
   </svg>
 </div>
- 
+
 <!-- NAVBAR -->
 <nav>
   <a href="#" class="nav-logo">DAKHNI<span class="nav-dot">·</span>ORG</a>
@@ -578,7 +229,7 @@ Index · HTML
     <li><a href="#quiz">Are You Dakhni?</a></li>
   </ul>
 </nav>
- 
+
 <!-- HERO -->
 <section class="hero" id="home">
   <!-- Arch frame -->
@@ -597,7 +248,7 @@ Index · HTML
     <line x1="110" y1="380" x2="140" y2="380" stroke="#A8620A" stroke-width="1"/>
     <line x1="560" y1="380" x2="590" y2="380" stroke="#A8620A" stroke-width="1"/>
   </svg>
- 
+
   <div class="hero-inner">
     <!-- Nizam's Seal -->
     <svg class="hero-seal" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -632,7 +283,7 @@ Index · HTML
       <circle cx="24"  cy="100" r="3" fill="#A8620A"/>
       <circle cx="176" cy="100" r="3" fill="#A8620A"/>
     </svg>
- 
+
     <p class="hero-urdu">دکنی ثقافت کا دروازہ</p>
     <div class="hero-rule"></div>
     <h1 class="hero-title">DAKHNI<span class="dot">·</span>ORG</h1>
@@ -647,7 +298,7 @@ Index · HTML
     </div>
   </div>
 </section>
- 
+
 <!-- CITY BELT -->
 <div class="city-belt">
   <div class="city-belt-inner">
@@ -661,7 +312,7 @@ Index · HTML
     <span class="city-tag">Adoni</span><span class="city-tag">Kurnool</span>
   </div>
 </div>
- 
+
 <!-- PILLARS -->
 <section id="heritage">
   <div class="sec-hdr reveal">
@@ -715,7 +366,7 @@ Index · HTML
     </a>
   </div>
 </section>
- 
+
 <!-- QUIZ -->
 <section id="quiz" class="quiz-sec">
   <div class="quiz-inner">
@@ -746,7 +397,7 @@ Index · HTML
     </div>
   </div>
 </section>
- 
+
 <!-- POETRY -->
 <section class="poetry-sec">
   <div class="orn-div"><div class="orn-gem"></div></div>
@@ -758,7 +409,7 @@ Index · HTML
   </div>
   <div class="orn-div" style="margin-top:3rem;"><div class="orn-gem"></div></div>
 </section>
- 
+
 <!-- FOOTER -->
 <footer>
   <svg class="ft-seal" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -786,7 +437,7 @@ Index · HTML
   </ul>
   <p class="ft-copy">© 2025 Dakhni.org · In memory of the Asaf Jahi dynasty · Built with love for the Deccan</p>
 </footer>
- 
+
 <script>
   const obs = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
@@ -794,7 +445,7 @@ Index · HTML
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
- 
+
   document.querySelectorAll('.quiz-opt').forEach(btn => {
     btn.addEventListener('click', function () {
       document.querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('sel'));
@@ -804,5 +455,3 @@ Index · HTML
 </script>
 </body>
 </html>
- 
-
