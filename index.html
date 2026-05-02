@@ -4,6 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dakhni.org — Heritage of the Deccan | Dakhni Language, Poetry, Dynasties &amp; Hyderabadi Culture</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 2L22.9 13.1L32.7 7.3L26.9 17.1L38 20L26.9 22.9L32.7 32.7L22.9 26.9L20 38L17.1 26.9L7.3 32.7L13.1 22.9L2 20L13.1 17.1L7.3 7.3L17.1 13.1Z' fill='none' stroke='%236B4710' stroke-width='2.5' stroke-linejoin='round'/%3E%3Ccircle cx='20' cy='20' r='4.5' fill='%236B4710'/%3E%3C/svg%3E"/>
   <meta name="description" content="Dakhni.org is the digital home of Deccan heritage — six centuries of Bahmani, Qutb Shahi, Adil Shahi, Barid Shahi and Asaf Jahi history, Dakhni (a dialect of Urdu born in the Deccan), Hyderabadi cuisine, Sufi poetry and the living culture of the Deccan plateau."/>
   <meta name="keywords" content="Dakhni, Deccan, Hyderabad, Bidar, Gulbarga, Bijapur, Golconda, Qutb Shahi, Bahmani, Adil Shahi, Asaf Jahi, Nizam, Dakhni Urdu, Dakhni dialect, Dakhni poetry, Wali Deccani, Hyderabadi cuisine, biryani, haleem, Bidriware, Sufi, Deccan history, Deccan Sultanates, Urdu poetry"/>
   <meta name="author" content="Dakhni.org"/>
@@ -98,7 +99,9 @@
       display:flex; align-items:center; justify-content:space-between;
       padding:0 3rem; border-bottom:1px solid var(--rule);
     }
-    .nav-brand { font-family:'Cormorant Garamond',serif; font-size:1rem; font-weight:600; letter-spacing:.22em; color:var(--ink); text-decoration:none; }
+    .nav-brand { display:inline-flex; align-items:center; gap:.65rem; font-family:'Cormorant Garamond',serif; font-size:1rem; font-weight:600; letter-spacing:.22em; color:var(--ink); text-decoration:none; }
+    .nav-mark { width:22px; height:22px; color:var(--gold-deep); flex-shrink:0; transition:transform .4s ease; }
+    .nav-brand:hover .nav-mark { transform:rotate(22.5deg); color:var(--gold); }
     .nav-links { display:flex; gap:2.2rem; list-style:none; }
     .nav-links a { font-family:'Inter',sans-serif; font-size:.7rem; font-weight:400; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-soft); text-decoration:none; transition:color .2s; padding-bottom:2px; border-bottom:1px solid transparent; }
     .nav-links a:hover { color:var(--gold-deep); border-bottom-color:var(--gold); }
@@ -270,7 +273,13 @@
 <body>
 
 <nav>
-  <a href="/" class="nav-brand" aria-label="Dakhni.org home">DAKHNI.ORG</a>
+  <a href="/" class="nav-brand" aria-label="Dakhni.org home">
+    <svg class="nav-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M20 2L22.9 13.1L32.7 7.3L26.9 17.1L38 20L26.9 22.9L32.7 32.7L22.9 26.9L20 38L17.1 26.9L7.3 32.7L13.1 22.9L2 20L13.1 17.1L7.3 7.3L17.1 13.1Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      <circle cx="20" cy="20" r="4.5" fill="currentColor"/>
+    </svg>
+    <span>DAKHNI.ORG</span>
+  </a>
   <ul class="nav-links">
     <li><a href="/heritage">Heritage</a></li>
     <li><a href="/dynasties">Dynasties</a></li>
