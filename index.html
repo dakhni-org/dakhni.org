@@ -99,9 +99,9 @@
       display:flex; align-items:center; justify-content:space-between;
       padding:0 3rem; border-bottom:1px solid var(--rule);
     }
-    .nav-brand { display:inline-flex; align-items:center; gap:.7rem; font-family:'Cormorant Garamond',serif; font-size:1rem; font-weight:600; letter-spacing:.22em; color:var(--ink); text-decoration:none; }
-    .nav-mark { width:38px; height:38px; flex-shrink:0; transition:transform .5s ease; }
-    .nav-brand:hover .nav-mark { transform:rotate(22.5deg); }
+    .nav-brand { display:inline-flex; align-items:center; gap:.65rem; font-family:'Cormorant Garamond',serif; font-size:1rem; font-weight:600; letter-spacing:.22em; color:var(--ink); text-decoration:none; }
+    .nav-mark { width:22px; height:22px; color:var(--gold-deep); flex-shrink:0; transition:transform .4s ease; }
+    .nav-brand:hover .nav-mark { transform:rotate(22.5deg); color:var(--gold); }
     .nav-links { display:flex; gap:2.2rem; list-style:none; }
     .nav-links a { font-family:'Inter',sans-serif; font-size:.7rem; font-weight:400; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-soft); text-decoration:none; transition:color .2s; padding-bottom:2px; border-bottom:1px solid transparent; }
     .nav-links a:hover { color:var(--gold-deep); border-bottom-color:var(--gold); }
@@ -274,45 +274,9 @@
 
 <nav>
   <a href="/" class="nav-brand" aria-label="Dakhni.org home">
-    <svg class="nav-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <g fill="#A07020">
-        <circle cx="50" cy="3" r="0.9"/><circle cx="68" cy="6.6" r="0.9"/>
-        <circle cx="83.2" cy="16.8" r="0.9"/><circle cx="93.4" cy="32" r="0.9"/>
-        <circle cx="97" cy="50" r="0.9"/><circle cx="93.4" cy="68" r="0.9"/>
-        <circle cx="83.2" cy="83.2" r="0.9"/><circle cx="68" cy="93.4" r="0.9"/>
-        <circle cx="50" cy="97" r="0.9"/><circle cx="32" cy="93.4" r="0.9"/>
-        <circle cx="16.8" cy="83.2" r="0.9"/><circle cx="6.6" cy="68" r="0.9"/>
-        <circle cx="3" cy="50" r="0.9"/><circle cx="6.6" cy="32" r="0.9"/>
-        <circle cx="16.8" cy="16.8" r="0.9"/><circle cx="32" cy="6.6" r="0.9"/>
-      </g>
-      <path d="M50 8L58.4 29.7L79.7 20.3L70.3 41.6L92 50L70.3 58.4L79.7 79.7L58.4 70.3L50 92L41.6 70.3L20.3 79.7L29.7 58.4L8 50L29.7 41.6L20.3 20.3L41.6 29.7Z" fill="none" stroke="#6B4710" stroke-width="1.4" stroke-linejoin="round"/>
-      <circle cx="50" cy="48" r="17" fill="#C9A968"/>
-      <circle cx="50" cy="48" r="17" fill="none" stroke="#A07020" stroke-width="0.5"/>
-      <path d="M46 24A4 4 0 1 0 54 24A3 3 0 1 1 46 24Z" fill="#6B4710"/>
-      <g fill="#1A1814">
-        <rect x="33" y="76" width="34" height="3"/>
-        <rect x="35" y="42" width="3.5" height="34"/>
-        <rect x="34" y="51" width="5.5" height="0.8"/>
-        <rect x="34" y="60" width="5.5" height="0.8"/>
-        <rect x="34" y="69" width="5.5" height="0.8"/>
-        <path d="M35 42Q36.75 38 38.5 42Z"/>
-        <rect x="36.4" y="36" width="0.7" height="2.8"/>
-        <circle cx="36.75" cy="35.2" r="0.6"/>
-        <rect x="61.5" y="42" width="3.5" height="34"/>
-        <rect x="60.5" y="51" width="5.5" height="0.8"/>
-        <rect x="60.5" y="60" width="5.5" height="0.8"/>
-        <rect x="60.5" y="69" width="5.5" height="0.8"/>
-        <path d="M61.5 42Q63.25 38 65 42Z"/>
-        <rect x="62.9" y="36" width="0.7" height="2.8"/>
-        <circle cx="63.25" cy="35.2" r="0.6"/>
-        <path fill-rule="evenodd" d="M38.5 56L61.5 56L61.5 76L38.5 76ZM42.5 76L42.5 67Q42.5 60 50 60Q57.5 60 57.5 67L57.5 76Z"/>
-        <circle cx="50" cy="69" r="1"/>
-        <path d="M42 56Q50 46 58 56Z"/>
-        <rect x="49.7" y="44.6" width="0.6" height="2.4"/>
-        <circle cx="50" cy="43.4" r="0.7"/>
-        <ellipse cx="40" cy="56" rx="2.2" ry="1.2"/>
-        <ellipse cx="60" cy="56" rx="2.2" ry="1.2"/>
-      </g>
+    <svg class="nav-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M20 2L22.9 13.1L32.7 7.3L26.9 17.1L38 20L26.9 22.9L32.7 32.7L22.9 26.9L20 38L17.1 26.9L7.3 32.7L13.1 22.9L2 20L13.1 17.1L7.3 7.3L17.1 13.1Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      <circle cx="20" cy="20" r="4.5" fill="currentColor"/>
     </svg>
     <span>DAKHNI.ORG</span>
   </a>
