@@ -214,7 +214,17 @@
     .t-seal-wrap{display:flex;flex-direction:column;align-items:center;gap:.5rem;}
     .t-entry:nth-child(odd) .t-seal-wrap{ align-items:flex-start; }
     .t-entry:nth-child(even) .t-seal-wrap{ align-items:flex-end; }
-    .t-seal{border-radius:50%;border:1px solid var(--rule);}
+    .t-seal{ 
+      position:absolute;
+      right:-120px;
+      top:50%;
+      transform:translateY(-50%);
+      width:480px;
+      height:auto;
+      opacity:0.10;
+      pointer-events:none;
+      mix-blend-mode:multiply;
+    }
     .t-seal-label{font-family:'Inter',sans-serif;font-size:.58rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint);}
 
     /* KEY FACTS pills */
