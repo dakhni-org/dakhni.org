@@ -583,7 +583,7 @@
     <li><a href="heritage.html#music">Music</a></li><li><a href="index.html#quiz">Quizzes</a></li>
     <li><a href="https://github.com/dakhni-org/dakhni.org" rel="noopener">About</a></li><li><a href="https://github.com/dakhni-org/dakhni.org" rel="noopener">Contribute</a></li>
   </ul>
-  <p class="ft-copy">© 2025 Dakhni.org · In memory of the seven Qutb Shahis · Built with love for the Deccan</p>
+  <p class="ft-copy">© <span id="year">2025</span> Dakhni.org · In memory of the seven Qutb Shahis · Built with love for the Deccan</p>
 </footer>
 
 <script>
@@ -611,6 +611,10 @@
       });
     });
   })();
+</script>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
 </body>
