@@ -79,7 +79,7 @@
 
     /* Flag — relocated to footer as a refined accent */
     .flag-banner{display:flex;justify-content:center;margin:0 auto 1.8rem;line-height:0;}
-    .flag-banner img{width:auto;max-width:96px;height:auto;max-height:96px;object-fit:contain;object-position:center;display:block;opacity:.95;border:none;}
+    .flag-banner img{width:auto;max-width:96px;height:auto;max-height:96px;object-fit:contain;object-position:center;display:block;opacity:.95;border:none;background:white;border-radius:6px;padding:6px;}
 
     /* ── NAV ── */
     nav{position:sticky;top:0;z-index:200;background:rgba(250,247,239,0.92);backdrop-filter:saturate(140%) blur(8px);-webkit-backdrop-filter:saturate(140%) blur(8px);height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;border-bottom:1px solid var(--rule);}
@@ -92,17 +92,10 @@
     /* ── PAGE HERO ── */
     .page-hero{
       background:var(--cream);
-      background-size:420px 420px;
-      background-position:right -40px bottom -80px;
       padding:6rem 3rem 5rem;
       text-align:center;
       position:relative;
       border-bottom:1px solid var(--rule);
-    }
-    .page-hero::before{
-      content:'';position:absolute;top:0;right:0;bottom:0;left:0;
-      background:linear-gradient(to left, rgba(242,237,226,0), rgba(242,237,226,1) 60%);
-      pointer-events:none;
     }
     .page-hero::after{
       content:'';position:absolute;inset:0;
@@ -111,7 +104,7 @@
       opacity:0.06;pointer-events:none;z-index:0;
     }
     .page-hero-inner{position:relative;z-index:2;max-width:760px;margin:0 auto;}
-    .page-hero-seal{display:block;margin:0 auto 1.4rem;width:120px;height:120px;object-fit:contain;}
+    .page-hero-seal{display:block;margin:0 auto 1.4rem;width:120px;height:120px;object-fit:contain;position:relative;z-index:2;background:white;border-radius:6px;padding:6px;}
     .page-hero-eyebrow{font-family:'Inter',sans-serif;font-size:.66rem;font-weight:500;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-deep);display:block;margin-bottom:1rem;}
     .page-hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.4rem);color:var(--ink);line-height:1.15;font-weight:500;letter-spacing:.04em;}
     .page-hero-sub{font-family:'Inter',sans-serif;font-size:clamp(.66rem,1.3vw,.74rem);font-weight:400;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-faint);margin-top:1rem;}
@@ -288,7 +281,7 @@
     }
   
     /* MOBILE NAV */
-    .nav-mark{width:30px;height:30px;object-fit:contain;flex-shrink:0;display:block;transition:transform .4s ease;background:transparent;}
+    .nav-mark{width:30px;height:30px;object-fit:contain;flex-shrink:0;display:block;transition:transform .4s ease;background:white;border-radius:3px;}
     .nav-brand:hover .nav-mark{transform:rotate(8deg);}
     .nav-toggle{display:none;background:transparent;border:none;cursor:pointer;padding:.5rem;width:42px;height:42px;flex-direction:column;justify-content:center;align-items:center;gap:5px;margin-left:auto;}
     .nav-toggle span{display:block;width:22px;height:2px;background:var(--ink);border-radius:1px;transition:transform .25s ease, opacity .25s ease;}
@@ -327,8 +320,8 @@
 
 <!-- PAGE HERO -->
 <div class="page-hero">
-  <img class="page-hero-seal" src="dakhni-org-logo.png" alt="Dakhni.org"/>
   <div class="page-hero-inner">
+    <img class="page-hero-seal" src="dakhni-org-logo.png" alt="Dakhni.org"/>
     <span class="page-hero-eyebrow">Six Centuries · 1347 — 1948</span>
     <h1 class="page-hero-title">Dynasties of the Deccan</h1>
     <p class="page-hero-sub">From Gulbarga to Hyderabad · The Kingdoms That Shaped Dakhni Culture</p>
