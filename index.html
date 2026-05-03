@@ -121,6 +121,12 @@
       border-bottom:1px solid var(--rule);
       position:relative; overflow:hidden;
     }
+    .hero::after {
+      content:''; position:absolute; inset:0;
+      background:url('dakhni-pattern.png') repeat;
+      background-size:240px;
+      opacity:0.06; pointer-events:none; z-index:0;
+    }
     .hero-inner { position:relative; z-index:1; max-width:680px; margin:0 auto; }
     .seal-img { width:120px; height:120px; object-fit:contain; margin:0 auto 1.6rem; display:block; opacity:0; animation:rise .9s ease forwards .1s; }
     .hero-urdu { font-family:'Lateef',serif; font-size:clamp(1.6rem,3.8vw,2.4rem); color:var(--gold-deep); opacity:0; animation:rise .9s ease forwards .3s; line-height:1.5; font-weight:400; }
