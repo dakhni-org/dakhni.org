@@ -535,5 +535,113 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
+
+<!-- AI Disclosure Popup -->
+<div id="ai-disclosure" role="dialog" aria-modal="true" aria-labelledby="disclosure-title">
+  <div class="disclosure-backdrop"></div>
+  <div class="disclosure-card">
+    <div class="disclosure-ornament">✦</div>
+    <p class="disclosure-label">A Note on Our Content</p>
+    <h2 class="disclosure-title" id="disclosure-title">AI-Assisted Research</h2>
+    <div class="disclosure-rule"></div>
+    <p class="disclosure-body">The information on this website is compiled and synthesised with the assistance of artificial intelligence, drawing from publicly available historical records, academic publications, and cultural archives. While every effort is made to ensure accuracy, AI-generated content may occasionally reflect interpretations rather than universally established fact.</p>
+    <p class="disclosure-body disclosure-body--note">Dakhni.org is an independent cultural project, not affiliated with any institution or government body. We encourage readers to consult primary sources for scholarly research.</p>
+    <button class="disclosure-btn" id="disclosure-accept">I Understand</button>
+  </div>
+</div>
+<style>
+  #ai-disclosure {
+    display:none;
+    position:fixed; inset:0; z-index:9999;
+    align-items:center; justify-content:center;
+    padding:1.5rem;
+  }
+  #ai-disclosure.open { display:flex; }
+  .disclosure-backdrop {
+    position:absolute; inset:0;
+    background:rgba(26,24,20,0.72);
+    backdrop-filter:blur(4px);
+    -webkit-backdrop-filter:blur(4px);
+  }
+  .disclosure-card {
+    position:relative; z-index:1;
+    background:var(--ivory,#FAF7EF);
+    border:1px solid rgba(160,112,32,0.35);
+    max-width:520px; width:100%;
+    padding:2.8rem 2.6rem 2.4rem;
+    text-align:center;
+    box-shadow:0 8px 48px rgba(26,24,20,0.22);
+    animation:disclosure-rise .4s ease forwards;
+  }
+  @keyframes disclosure-rise {
+    from { opacity:0; transform:translateY(12px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  .disclosure-ornament {
+    font-size:.85rem; color:var(--gold,#A07020);
+    letter-spacing:.5em; margin-bottom:1.2rem;
+  }
+  .disclosure-label {
+    font-family:'Inter',sans-serif; font-size:.58rem; font-weight:500;
+    letter-spacing:.38em; text-transform:uppercase;
+    color:var(--gold-deep,#6B4710); margin-bottom:.9rem;
+  }
+  .disclosure-title {
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:1.85rem; font-weight:500;
+    color:var(--ink,#1A1814);
+    letter-spacing:.04em; margin-bottom:1.1rem;
+  }
+  .disclosure-rule {
+    width:48px; height:1px;
+    background:var(--gold,#A07020);
+    margin:0 auto 1.4rem;
+  }
+  .disclosure-body {
+    font-family:'EB Garamond',Georgia,serif;
+    font-size:1rem; line-height:1.85;
+    color:var(--ink-soft,#4A453C);
+  }
+  .disclosure-body--note {
+    margin-top:.9rem;
+    font-size:.9rem;
+    color:var(--ink-faint,#8B8472);
+    font-style:italic;
+  }
+  .disclosure-btn {
+    display:inline-block; margin-top:2rem;
+    font-family:'Inter',sans-serif;
+    font-size:.68rem; font-weight:500;
+    letter-spacing:.22em; text-transform:uppercase;
+    padding:.9rem 2.2rem;
+    background:var(--ink,#1A1814);
+    color:var(--ivory,#FAF7EF);
+    border:1px solid var(--ink,#1A1814);
+    cursor:pointer;
+    transition:all .25s;
+  }
+  .disclosure-btn:hover {
+    background:transparent;
+    color:var(--ink,#1A1814);
+  }
+</style>
+<script>
+(function(){
+  var el = document.getElementById('ai-disclosure');
+  if (!el) return;
+  if (!localStorage.getItem('dakhni_disclosure_seen')) {
+    el.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function dismiss() {
+    localStorage.setItem('dakhni_disclosure_seen', '1');
+    el.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('disclosure-accept').addEventListener('click', dismiss);
+  el.querySelector('.disclosure-backdrop').addEventListener('click', dismiss);
+})();
+</script>
+
 </body>
 </html>
