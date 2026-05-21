@@ -14,7 +14,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dakhni.org — Heritage of the Deccan | Dakhni Language, Poetry, Dynasties &amp; Hyderabadi Culture</title>
-  <link rel="icon" type="image/png" href="dakhni-org-logo.png"/>
+  <link rel="icon" type="image/png" href="/dakhni-org-logo.png"/>
   <meta name="description" content="Dakhni.org is the digital home of Deccan heritage — six centuries of Bahmani, Qutb Shahi, Adil Shahi, Barid Shahi and Asaf Jahi history, Dakhni (a dialect of Urdu born in the Deccan), Hyderabadi cuisine, Sufi poetry and the living culture of the Deccan plateau."/>
   <meta name="keywords" content="Dakhni, Deccan, Hyderabad, Bidar, Gulbarga, Bijapur, Golconda, Qutb Shahi, Bahmani, Adil Shahi, Asaf Jahi, Nizam, Dakhni Urdu, Dakhni dialect, Dakhni poetry, Wali Deccani, Hyderabadi cuisine, biryani, haleem, Bidriware, Sufi, Deccan history, Deccan Sultanates, Urdu poetry"/>
   <meta name="author" content="Dakhni.org"/>
@@ -123,7 +123,7 @@
     }
     .hero::after {
       content:''; position:absolute; inset:0;
-      background:url('dakhni-pattern.png') repeat;
+      background:url('/dakhni-pattern.png') repeat;
       background-size:120px;
       opacity:0.06; pointer-events:none; z-index:0;
     }
@@ -308,23 +308,75 @@
 
 <nav>
   <a href="/" class="nav-brand" aria-label="Dakhni.org home">
-    <img class="nav-mark" src="dakhni-org-logo.png" alt=""/>
+    <img class="nav-mark" src="/dakhni-org-logo.png" alt=""/>
     <span>DAKHNI.ORG</span>
   </a>
   <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
   <ul class="nav-links">
-    <li><a href="/heritage">Heritage</a></li>
-    <li><a href="/dynasties">Dynasties</a></li>
-    <li><a href="/language">Language</a></li>
-    <li><a href="/sufism">Sufism</a></li>
-    <li><a href="/heritage#cuisine">Culture</a></li>
-    <li><a href="#quiz">Are You Dakhni?</a></li>
+    <li class="has-dropdown">
+      <a href="/heritage/">Heritage</a>
+      <ul class="dropdown">
+        <li><a href="/heritage/language-poetry/">Language &amp; Poetry</a></li>
+        <li><a href="/heritage/cuisine/">Cuisine</a></li>
+        <li><a href="/heritage/music/">Music</a></li>
+        <li><a href="/heritage/architecture/">Architecture</a></li>
+        <li><a href="/heritage/crafts/">Crafts</a></li>
+        <li><a href="/heritage/sufi-tradition/">Sufi Tradition</a></li>
+        <li><a href="/heritage/festivals/">Festivals</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="/dynasties/">Dynasties</a>
+      <ul class="dropdown">
+        <li><a href="/dynasties/bahmani/">Bahmani Sultanate</a></li>
+        <li><a href="/dynasties/qutb-shahi/">Qutb Shahi</a></li>
+        <li><a href="/dynasties/bidar-barid/">Bidar Barid Shahi</a></li>
+        <li><a href="/dynasties/adil-shahi/">Adil Shahi</a></li>
+        <li><a href="/dynasties/asaf-jahi/">Asaf Jahi Nizams</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="/language/">Language</a>
+      <ul class="dropdown">
+        <li><a href="/language/dakhni/">Dakhni</a></li>
+        <li><a href="/language/urdu/">Urdu</a></li>
+        <li><a href="/language/faarsi/">Faarsi (Persian)</a></li>
+        <li><a href="/language/telugu/">Telugu</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="/sufism/">Sufism</a>
+      <ul class="dropdown">
+        <li><a href="/sufism/burhanuddin/">Burhanuddin Gharib</a></li>
+        <li><a href="/sufism/sharfuddin/">Baba Sharfuddin</a></li>
+        <li><a href="/sufism/bandanawaz/">Bandanawaz Gisudaraz</a></li>
+        <li><a href="/sufism/hussain-shah-wali/">Hussain Shah Wali</a></li>
+        <li><a href="/sufism/shah-raju/">Shah Raju Qattal</a></li>
+        <li><a href="/sufism/yousufain/">Yousufain Sharif</a></li>
+        <li><a href="/sufism/shah-khamosh/">Shah Khamosh</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="/cities/">Cities</a>
+      <ul class="dropdown">
+        <li><a href="/cities/hyderabad/">Hyderabad</a></li>
+        <li><a href="/cities/bidar/">Bidar</a></li>
+        <li><a href="/cities/gulbarga/">Gulbarga</a></li>
+        <li><a href="/cities/bijapur/">Bijapur</a></li>
+        <li><a href="/cities/aurangabad/">Aurangabad</a></li>
+        <li><a href="/cities/golconda/">Golconda</a></li>
+        <li><a href="/cities/warangal/">Warangal</a></li>
+        <li><a href="/cities/nanded/">Nanded</a></li>
+        <li><a href="/cities/raichur/">Raichur</a></li>
+      </ul>
+    </li>
+    <li><a href="/#quiz">Are You Dakhni?</a></li>
   </ul>
 </nav>
 
 <section class="hero" id="home">
   <div class="hero-inner">
-    <img class="seal-img" src="dakhni-org-logo.png" alt="Dakhni.org"/>
+    <img class="seal-img" src="/dakhni-org-logo.png" alt="Dakhni.org"/>
     <p class="hero-urdu">دکنی ثقافت کا دروازہ</p>
     <div class="hero-rule"></div>
     <h1 class="hero-title">DAKHNI.ORG</h1>
@@ -339,15 +391,15 @@
 
 <div class="city-strip" id="culture">
   <span class="city-strip-label">The Dakhni Heartland</span>
-  <a href="hyderabad.html" class="city">Hyderabad</a><span class="city-sep">◆</span>
-  <a href="bidar.html" class="city">Bidar</a><span class="city-sep">◆</span>
-  <a href="gulbarga.html" class="city">Gulbarga</a><span class="city-sep">◆</span>
-  <a href="bijapur.html" class="city">Bijapur</a><span class="city-sep">◆</span>
-  <a href="aurangabad.html" class="city">Aurangabad</a><span class="city-sep">◆</span>
-  <a href="golconda.html" class="city">Golconda</a><span class="city-sep">◆</span>
-  <a href="warangal.html" class="city">Warangal</a><span class="city-sep">◆</span>
-  <a href="nanded.html" class="city">Nanded</a><span class="city-sep">◆</span>
-  <a href="raichur.html" class="city">Raichur</a><span class="city-sep">◆</span>
+  <a href="/cities/hyderabad/" class="city">Hyderabad</a><span class="city-sep">◆</span>
+  <a href="/cities/bidar/" class="city">Bidar</a><span class="city-sep">◆</span>
+  <a href="/cities/gulbarga/" class="city">Gulbarga</a><span class="city-sep">◆</span>
+  <a href="/cities/bijapur/" class="city">Bijapur</a><span class="city-sep">◆</span>
+  <a href="/cities/aurangabad/" class="city">Aurangabad</a><span class="city-sep">◆</span>
+  <a href="/cities/golconda/" class="city">Golconda</a><span class="city-sep">◆</span>
+  <a href="/cities/warangal/" class="city">Warangal</a><span class="city-sep">◆</span>
+  <a href="/cities/nanded/" class="city">Nanded</a><span class="city-sep">◆</span>
+  <a href="/cities/raichur/" class="city">Raichur</a><span class="city-sep">◆</span>
   <span class="city">Nizamabad</span>
 </div>
 
@@ -363,10 +415,10 @@
     <div class="diamond-rule reveal"><div class="diamond"></div></div>
     <br/>
     <div class="pillars-grid">
-      <a href="/dynasties" class="pillar reveal"><span class="pillar-num">I · Tarikh</span><span class="pillar-icon">🕌</span><h3 class="pillar-name">History &amp; Dynasties</h3><p class="pillar-text">From the Bahmani Sultanate to the Qutb Shahis and Asaf Jahi Nizams — six centuries of royal lineage that forged the Deccan's golden age.</p><span class="pillar-link">Explore →</span></a>
-      <a href="#language" class="pillar reveal"><span class="pillar-num">II · Zubaan</span><span class="pillar-icon">📜</span><h3 class="pillar-name">Dakhni Dialect &amp; Poetry</h3><p class="pillar-text">The earliest form of Urdu, born in the Deccan. Ghazals of Wali Deccani, verses of Ibrahim Adil Shah II, and the living Dakhni dialect of Urdu spoken today.</p><span class="pillar-link">Read Poetry →</span></a>
-      <a href="#culture" class="pillar reveal"><span class="pillar-num">III · Khana</span><span class="pillar-icon">🍽️</span><h3 class="pillar-name">Food &amp; Cuisine</h3><p class="pillar-text">Hyderabadi dum biryani, haleem, marag, lukhmi, qubani ka meetha — born at the crossroads of Persian courts and Telugu kitchens.</p><span class="pillar-link">Taste the Deccan →</span></a>
-      <a href="#culture" class="pillar reveal"><span class="pillar-num">IV · Mauseeqi</span><span class="pillar-icon">🎵</span><h3 class="pillar-name">Music &amp; Arts</h3><p class="pillar-text">Hindustani classicals from Golconda's courts, Bidri metalwork, Paithan silk weaving and the distinctive Dakhni miniature painting tradition.</p><span class="pillar-link">See the Arts →</span></a>
+      <a href="/dynasties/" class="pillar reveal"><span class="pillar-num">I · Tarikh</span><span class="pillar-icon">🕌</span><h3 class="pillar-name">History &amp; Dynasties</h3><p class="pillar-text">From the Bahmani Sultanate to the Qutb Shahis and Asaf Jahi Nizams — six centuries of royal lineage that forged the Deccan's golden age.</p><span class="pillar-link">Explore →</span></a>
+      <a href="/language/dakhni/" class="pillar reveal"><span class="pillar-num">II · Zubaan</span><span class="pillar-icon">📜</span><h3 class="pillar-name">Dakhni Dialect &amp; Poetry</h3><p class="pillar-text">The earliest form of Urdu, born in the Deccan. Ghazals of Wali Deccani, verses of Ibrahim Adil Shah II, and the living Dakhni dialect of Urdu spoken today.</p><span class="pillar-link">Read Poetry →</span></a>
+      <a href="/heritage/cuisine/" class="pillar reveal"><span class="pillar-num">III · Khana</span><span class="pillar-icon">🍽️</span><h3 class="pillar-name">Food &amp; Cuisine</h3><p class="pillar-text">Hyderabadi dum biryani, haleem, marag, lukhmi, qubani ka meetha — born at the crossroads of Persian courts and Telugu kitchens.</p><span class="pillar-link">Taste the Deccan →</span></a>
+      <a href="/heritage/music/" class="pillar reveal"><span class="pillar-num">IV · Mauseeqi</span><span class="pillar-icon">🎵</span><h3 class="pillar-name">Music &amp; Arts</h3><p class="pillar-text">Hindustani classicals from Golconda's courts, Bidri metalwork, Paithan silk weaving and the distinctive Dakhni miniature painting tradition.</p><span class="pillar-link">See the Arts →</span></a>
       <a href="#quiz" class="pillar reveal"><span class="pillar-num">V · Khel</span><span class="pillar-icon">🧩</span><h3 class="pillar-name">Quizzes &amp; Trivia</h3><p class="pillar-text">Identify Qutb Shahi coins, name Hyderabadi dishes, decode Dakhni proverbs. Gamified learning that honours our roots.</p><span class="pillar-link">Play Now →</span></a>
       <a href="#quiz" class="pillar reveal"><span class="pillar-num">VI · Pehchaan</span><span class="pillar-icon">🤖</span><h3 class="pillar-name">AI: Are You Dakhni?</h3><p class="pillar-text">Our AI asks where you're from, what you eat, how you speak — and maps your roots to the Deccan heartland. If you're from Bidar, there's no question.</p><span class="pillar-link">Find Out →</span></a>
     </div>
@@ -379,7 +431,7 @@
 <section id="dynasties" class="dynasties-sec">
 
   <!-- Seal outline bleeding off the right edge -->
-  <img class="dynasties-seal-bg" src="image013.jpg" alt=""/>
+  <img class="dynasties-seal-bg" src="/image013.jpg" alt=""/>
 
   <div class="dynasties-inner reveal">
     <span class="sec-label">Six Centuries of Rule</span>
@@ -431,7 +483,7 @@
     </div>
 
     <br/><br/>
-    <a href="/dynasties" class="btn-primary">Full Dynasty Timeline →</a>
+    <a href="/dynasties/" class="btn-primary">Full Dynasty Timeline →</a>
   </div>
 </section>
 
@@ -538,15 +590,15 @@
 
 <footer>
   <div class="flag-banner">
-  <img src="dakhni-org-logo.png" alt="Dakhni.org"/>
+  <img src="/dakhni-org-logo.png" alt="Dakhni.org"/>
   </div>
   <div class="ft-divider"></div>
   <div class="ft-name">DAKHNI.ORG</div>
   <p class="ft-tagline">Preserving the soul of the Deccan, one story at a time.</p>
   <ul class="ft-links">
-    <li><a href="/heritage">Heritage</a></li><li><a href="/language">Language</a></li>
-    <li><a href="/sufism">Sufism</a></li><li><a href="/dynasties">History</a></li>
-    <li><a href="/heritage#cuisine">Food</a></li><li><a href="/heritage#music">Music</a></li>
+    <li><a href="/heritage/">Heritage</a></li><li><a href="/language/">Language</a></li>
+    <li><a href="/sufism/">Sufism</a></li><li><a href="/dynasties/">History</a></li>
+    <li><a href="/heritage/cuisine/">Food</a></li><li><a href="/heritage/music/">Music</a></li>
     <li><a href="#quiz">Quizzes</a></li>
   </ul>
   <p class="ft-copy">© <span id="year">2025</span> Dakhni.org · In memory of the Asaf Jahi dynasty · Built with love for the Deccan</p>

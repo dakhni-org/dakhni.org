@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N9RETSEPQ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N9RETSEPQ9');
+</script>
+
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dakhni — the Southern Dialect of Urdu — Dakhni.org</title>
+  <link rel="icon" type="image/png" href="/dakhni-org-logo.png"/>
+  <meta name="description" content="Dakhni — a literature older than its descendants. The southern register of Urdu that took shape in the Deccan between the fourteenth and sixteenth centuries, and still survives as everyday speech."/>
+  <meta name="author" content="Dakhni.org"/>
+  <meta name="robots" content="index, follow, max-image-preview:large"/>
+  <meta name="theme-color" content="#1A1814"/>
+  <link rel="canonical" href="https://dakhni.org/language/dakhni/"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&family=Lateef:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --gold:        #A07020;
+      --gold-deep:   #6B4710;
+      --gold-soft:   #C9A968;
+      --cream:       #F2EDE2;
+      --ivory:       #FAF7EF;
+      --ink:         #1A1814;
+      --ink-soft:    #4A453C;
+      --ink-faint:   #8B8472;
+      --rule:        rgba(26,24,20,0.10);
+      --rule-soft:   rgba(26,24,20,0.05);
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { background:var(--ivory); color:var(--ink); font-family:'EB Garamond',Georgia,serif; overflow-x:hidden; }
+
+    /* ─── NAV WITH DROPDOWNS ─── */
+    nav {
+      position:sticky; top:0; z-index:200;
+      background:rgba(250,247,239,0.92);
+      backdrop-filter:saturate(140%) blur(8px);
+      -webkit-backdrop-filter:saturate(140%) blur(8px);
+      height:58px;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0 3rem; border-bottom:1px solid var(--rule);
+    }
+    .nav-brand { display:inline-flex; align-items:center; gap:.65rem; font-family:'Cormorant Garamond',serif; font-size:1rem; font-weight:600; letter-spacing:.22em; color:var(--ink); text-decoration:none; }
+    .nav-mark { width:30px; height:30px; object-fit:contain; flex-shrink:0; display:block; transition:transform .4s ease; }
+    .nav-brand:hover .nav-mark { transform:rotate(8deg); }
+    .nav-links { display:flex; gap:2rem; list-style:none; align-items:center; }
+    .nav-links > li { position:relative; }
+    .nav-links > li > a { font-family:'Inter',sans-serif; font-size:.7rem; font-weight:400; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-soft); text-decoration:none; transition:color .2s; padding:1.05rem 0; display:inline-block; border-bottom:1px solid transparent; }
+    .nav-links > li > a:hover { color:var(--gold-deep); border-bottom-color:var(--gold); }
+
+    .has-dropdown > a::after {
+      content:'▾'; margin-left:.32em; font-size:.55em; color:var(--gold); position:relative; top:-1px;
+      transition:transform .2s ease;
+      display:inline-block;
+    }
+    .has-dropdown:hover > a::after { transform:translateY(2px); }
+
+    .dropdown {
+      position:absolute;
+      top:100%; left:50%;
+      transform:translateX(-50%) translateY(-4px);
+      min-width:210px;
+      background:rgba(250,247,239,0.98);
+      backdrop-filter:saturate(140%) blur(10px);
+      -webkit-backdrop-filter:saturate(140%) blur(10px);
+      border:1px solid var(--rule);
+      border-top:2px solid var(--gold);
+      list-style:none; padding:.4rem 0; margin:0;
+      opacity:0; pointer-events:none;
+      transition:opacity .22s ease, transform .22s ease;
+      z-index:250;
+      box-shadow:0 10px 30px rgba(26,24,20,0.10);
+    }
+    .has-dropdown:hover > .dropdown,
+    .has-dropdown:focus-within > .dropdown {
+      opacity:1; pointer-events:auto;
+      transform:translateX(-50%) translateY(0);
+    }
+    .dropdown li { width:100%; }
+    .dropdown a {
+      display:block;
+      padding:.7rem 1.4rem;
+      font-family:'Inter',sans-serif; font-size:.64rem; font-weight:400;
+      letter-spacing:.16em; text-transform:uppercase;
+      color:var(--ink-soft); text-decoration:none;
+      border-bottom:none; transition:background .15s, color .15s;
+      white-space:nowrap;
+    }
+    .dropdown a:hover { background:var(--cream); color:var(--gold-deep); }
+
+    .nav-toggle{display:none;background:transparent;border:none;cursor:pointer;padding:.5rem;width:42px;height:42px;flex-direction:column;justify-content:center;align-items:center;gap:5px;margin-left:auto;}
+    .nav-toggle span{display:block;width:22px;height:2px;background:var(--ink);border-radius:1px;transition:transform .25s ease, opacity .25s ease;}
+    .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;}
+    .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+    @media (max-width:880px){
+      nav{padding:0 1.2rem;flex-wrap:wrap;height:auto;min-height:58px;align-items:center;}
+      .nav-toggle{display:flex;}
+      .nav-links{order:3;display:none;flex-direction:column;align-items:flex-start;width:100%;gap:0;padding:.5rem 0 1rem;border-top:1px solid var(--rule);background:rgba(250,247,239,0.98);margin:.4rem -1.2rem 0;padding-left:1.4rem;}
+      .nav-links.open{display:flex;}
+      .nav-links > li{width:100%;border-bottom:1px solid var(--rule-soft);}
+      .nav-links > li:last-child{border-bottom:none;}
+      .nav-links > li > a{display:block;padding:1rem 0;font-size:.72rem;letter-spacing:.18em;width:100%;}
+      .has-dropdown > a::after { content:''; }
+      .dropdown{
+        position:static;opacity:1;pointer-events:auto;transform:none;
+        background:transparent;border:none;box-shadow:none;
+        padding:0 0 .5rem 1.2rem;transition:none;min-width:0;
+      }
+      .dropdown a { padding:.55rem 0; font-size:.64rem; letter-spacing:.14em; }
+    }
+
+    /* ─── SHARED TYPE ─── */
+    .sec-label { font-family:'Inter',sans-serif; font-size:.62rem; font-weight:500; letter-spacing:.38em; text-transform:uppercase; color:var(--gold-deep); display:block; margin-bottom:.9rem; }
+    .sec-title { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(1.6rem,3vw,2.3rem); color:var(--ink); line-height:1.25; letter-spacing:.02em; }
+    .sec-title span { display:block; color:var(--ink-soft); font-family:'EB Garamond',serif; font-style:italic; font-size:.7em; font-weight:400; margin-top:.5em; letter-spacing:0; }
+    .h-rule { border:none; border-top:1px solid var(--rule); margin:0; }
+    .diamond-rule { display:flex; align-items:center; gap:.8rem; padding:0 3rem; }
+    .diamond-rule::before, .diamond-rule::after { content:''; flex:1; height:1px; background:var(--rule); }
+    .diamond { width:6px; height:6px; background:var(--gold); transform:rotate(45deg); flex-shrink:0; }
+    .reveal { opacity:0; transform:translateY(22px); transition:opacity .65s ease,transform .65s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    .btn-primary { font-family:'Inter',sans-serif; font-size:.7rem; font-weight:500; letter-spacing:.2em; text-transform:uppercase; padding:.95rem 2.1rem; background:var(--ink); color:var(--ivory); border:1px solid var(--ink); cursor:pointer; text-decoration:none; transition:all .25s; display:inline-block; }
+    .btn-primary:hover { background:transparent; color:var(--ink); }
+    .btn-secondary { font-family:'Inter',sans-serif; font-size:.7rem; font-weight:500; letter-spacing:.2em; text-transform:uppercase; padding:.95rem 2.1rem; background:transparent; color:var(--ink); border:1px solid var(--rule); cursor:pointer; text-decoration:none; transition:all .25s; display:inline-block; }
+    .btn-secondary:hover { border-color:var(--gold); color:var(--gold-deep); }
+
+    /* ─── PAGE HERO (use for subpages) ─── */
+    .page-hero {
+      background:var(--ivory);
+      padding:6rem 2rem 4rem; text-align:center;
+      border-bottom:1px solid var(--rule);
+      position:relative; overflow:hidden;
+    }
+    .page-hero::after {
+      content:''; position:absolute; inset:0;
+      background:url('/dakhni-pattern.png') repeat;
+      background-size:120px;
+      opacity:0.05; pointer-events:none; z-index:0;
+    }
+    .page-hero-inner { position:relative; z-index:1; max-width:760px; margin:0 auto; }
+    .page-hero-eyebrow { font-family:'Inter',sans-serif; font-size:.62rem; font-weight:500; letter-spacing:.38em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:1rem; display:block; }
+    .page-hero-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,5vw,3.4rem); font-weight:500; color:var(--ink); letter-spacing:.1em; line-height:1.15; margin-bottom:1rem; }
+    .page-hero-rule { width:64px; height:1px; background:var(--gold); margin:1.4rem auto; }
+    .page-hero-sub { font-style:italic; font-size:clamp(1rem,1.8vw,1.12rem); color:var(--ink-soft); line-height:1.85; max-width:560px; margin:0 auto; }
+
+    /* Breadcrumb */
+    .crumb { font-family:'Inter',sans-serif; font-size:.58rem; font-weight:500; letter-spacing:.32em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:1.2rem; }
+    .crumb a { color:var(--ink-soft); text-decoration:none; }
+    .crumb a:hover { color:var(--gold-deep); }
+    .crumb-sep { color:var(--gold); margin:0 .6rem; }
+
+    /* Subpage navigator (prev/next/index) */
+    .subnav { max-width:760px; margin:0 auto; padding:3rem 1.4rem 5rem; display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--rule); border:1px solid var(--rule); }
+    .subnav a { background:var(--ivory); padding:1.4rem 1.6rem; text-decoration:none; color:var(--ink-soft); transition:background .2s; }
+    .subnav a:hover { background:var(--cream); color:var(--gold-deep); }
+    .subnav-eyebrow { display:block; font-family:'Inter',sans-serif; font-size:.55rem; font-weight:500; letter-spacing:.32em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:.4rem; }
+    .subnav-title { font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-weight:500; color:var(--ink); }
+    .subnav .next { text-align:right; }
+    @media(max-width:600px){ .subnav{grid-template-columns:1fr;} }
+
+    /* Index page cards */
+    .sub-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1px; background:var(--rule); border:1px solid var(--rule); max-width:1100px; margin:0 auto; }
+    .sub-card { background:var(--ivory); padding:2.2rem 1.8rem; text-decoration:none; color:inherit; transition:background .25s; display:flex; flex-direction:column; }
+    .sub-card:hover { background:var(--cream); }
+    .sub-card-eyebrow { font-family:'Inter',sans-serif; font-size:.58rem; font-weight:500; letter-spacing:.32em; text-transform:uppercase; color:var(--gold-deep); display:block; margin-bottom:.7rem; }
+    .sub-card-title { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:500; color:var(--ink); margin-bottom:.5rem; letter-spacing:.02em; }
+    .sub-card-dates { font-family:'EB Garamond',serif; font-style:italic; font-size:.92rem; color:var(--ink-faint); margin-bottom:.8rem; }
+    .sub-card-text { font-family:'EB Garamond',serif; font-size:.95rem; line-height:1.7; color:var(--ink-soft); flex:1; }
+    .sub-card-cta { display:inline-block; margin-top:1.2rem; font-family:'Inter',sans-serif; font-size:.58rem; font-weight:500; letter-spacing:.22em; text-transform:uppercase; color:var(--gold-deep); border-bottom:1px solid var(--gold); padding-bottom:2px; align-self:flex-start; }
+
+    /* Article body */
+    .article { max-width:760px; margin:0 auto; padding:4rem 1.4rem 2rem; }
+    .article p { font-family:'EB Garamond',Georgia,serif; font-size:1.07rem; line-height:1.85; color:var(--ink-soft); margin-bottom:1.3rem; }
+    .article h2 { font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:500; color:var(--ink); margin:2.4rem 0 1rem; letter-spacing:.02em; }
+    .article h2 em { font-style:italic; color:var(--gold-deep); font-weight:400; }
+    .article h3 { font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:500; color:var(--ink); margin:1.8rem 0 .7rem; }
+    .article blockquote { border-left:2px solid var(--gold); padding:.4rem 0 .4rem 1.4rem; margin:1.6rem 0; font-style:italic; color:var(--ink-soft); }
+    .article ul, .article ol { padding-left:1.4rem; margin-bottom:1.3rem; color:var(--ink-soft); }
+    .article ul li, .article ol li { margin-bottom:.5rem; line-height:1.75; }
+
+    /* Footer */
+    footer { background:var(--ink); padding:3.5rem 3rem 2.5rem; text-align:center; }
+    .flag-banner { display:flex; justify-content:center; margin:0 auto 1.8rem; line-height:0; }
+    .flag-banner img { width:auto; max-width:96px; height:auto; max-height:96px; object-fit:contain; opacity:.95; }
+    .ft-name { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:500; letter-spacing:.22em; color:var(--ivory); margin-bottom:.5rem; }
+    .ft-tagline { font-style:italic; font-size:.92rem; color:rgba(250,247,239,0.55); margin-bottom:2rem; }
+    .ft-links { display:flex; gap:1.8rem; justify-content:center; list-style:none; flex-wrap:wrap; margin-bottom:2rem; }
+    .ft-links a { font-family:'Inter',sans-serif; font-size:.62rem; font-weight:400; letter-spacing:.22em; text-transform:uppercase; color:rgba(250,247,239,0.5); text-decoration:none; transition:color .2s; }
+    .ft-links a:hover { color:var(--gold-soft); }
+    .ft-divider { width:48px; height:1px; background:rgba(201,169,104,0.3); margin:0 auto 1.6rem; }
+    .ft-copy { font-family:'Inter',sans-serif; font-size:.6rem; font-weight:300; letter-spacing:.1em; color:rgba(250,247,239,0.3); }
+
+    @keyframes rise { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+  </style>
+  <style>
+    /* Page-specific */
+    .page-hero-urdu { font-family:'Lateef',serif; font-size:clamp(2rem,4.4vw,3rem); color:var(--gold-deep); line-height:1.4; margin-bottom:.4rem; }
+    .article em { color:var(--gold-deep); font-style:italic; }
+    .h-pull { margin:4rem auto; max-width:760px; padding:3rem 2rem; text-align:center; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); background:var(--cream); }
+    .h-pull-urdu { font-family:'Lateef',serif; font-size:clamp(1.5rem,3vw,2.2rem); color:var(--gold-deep); line-height:1.6; }
+    .h-pull-trans { font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:1.1rem; line-height:1.85; color:var(--ink-soft); margin-top:1rem; }
+    .h-pull-attr { font-family:'Inter',sans-serif; font-size:.62rem; font-weight:500; letter-spacing:.32em; text-transform:uppercase; color:var(--ink-faint); margin-top:1.2rem; }
+    .timeline-wrap { max-width:760px; margin:0 auto; padding:2rem 1.4rem 1rem; }
+    .timeline-hdr { text-align:center; margin-bottom:3rem; }
+    .timeline-eyebrow { font-family:'Inter',sans-serif; font-size:.62rem; font-weight:500; letter-spacing:.38em; text-transform:uppercase; color:var(--gold-deep); display:block; margin-bottom:.9rem; }
+    .timeline-title { font-family:'Cormorant Garamond',serif; font-size:clamp(1.5rem,2.8vw,2rem); color:var(--ink); font-weight:500; letter-spacing:.02em; }
+    .tl-list { list-style:none; display:grid; gap:0; border-left:1px solid var(--rule); margin-left:1rem; }
+    .tl-item { position:relative; padding:.9rem 0 1.4rem 1.8rem; }
+    .tl-item::before { content:''; position:absolute; left:-5px; top:1.25rem; width:9px; height:9px; background:var(--gold); transform:rotate(45deg); }
+    .tl-year { font-family:'Cormorant Garamond',serif; font-weight:600; color:var(--gold-deep); font-size:1.05rem; letter-spacing:.04em; display:inline-block; margin-right:.7rem; }
+    .tl-text { font-family:'EB Garamond',Georgia,serif; color:var(--ink-soft); font-size:1rem; line-height:1.65; }
+    .tl-text em { color:var(--gold-deep); font-style:italic; }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════
+     SHARED NAV  — copy this block verbatim into every page
+     ════════════════════════════════════════════ -->
+<nav>
+  <a href="/" class="nav-brand" aria-label="Dakhni.org home">
+    <img class="nav-mark" src="/dakhni-org-logo.png" alt=""/>
+    <span>DAKHNI.ORG</span>
+  </a>
+  <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li class="has-dropdown">
+      <a href="/heritage/">Heritage</a>
+      <ul class="dropdown">
+        <li><a href="/heritage/language-poetry/">Language &amp; Poetry</a></li>
+        <li><a href="/heritage/cuisine/">Cuisine</a></li>
+        <li><a href="/heritage/music/">Music</a></li>
+        <li><a href="/heritage/architecture/">Architecture</a></li>
+        <li><a href="/heritage/crafts/">Crafts</a></li>
+        <li><a href="/heritage/sufi-tradition/">Sufi Tradition</a></li>
+        <li><a href="/heritage/festivals/">Festivals</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="/dynasties/">Dynasties</a>
+      <ul class="dropdown">
+        <li><a href="/dynasties/bahmani/">Bahmani Sultanate</a></li>
+        <li><a href="/dynasties/qutb-shahi/">Qutb Shahi</a></li>
+        <li><a href="/dynasties/bidar-barid/">Bidar Barid Shahi</a></li>
+        <li><a href="/dynasties/adil-shahi/">Adil Shahi</a></li>
+        <li><a href="/dynasties/asaf-jahi/">Asaf Jahi Nizams</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="/language/">Language</a>
+      <ul class="dropdown">
+        <li><a href="/language/dakhni/">Dakhni</a></li>
+        <li><a href="/language/urdu/">Urdu</a></li>
+        <li><a href="/language/faarsi/">Faarsi (Persian)</a></li>
+        <li><a href="/language/telugu/">Telugu</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="/sufism/">Sufism</a>
+      <ul class="dropdown">
+        <li><a href="/sufism/burhanuddin/">Burhanuddin Gharib</a></li>
+        <li><a href="/sufism/sharfuddin/">Baba Sharfuddin</a></li>
+        <li><a href="/sufism/bandanawaz/">Bandanawaz Gisudaraz</a></li>
+        <li><a href="/sufism/hussain-shah-wali/">Hussain Shah Wali</a></li>
+        <li><a href="/sufism/shah-raju/">Shah Raju Qattal</a></li>
+        <li><a href="/sufism/yousufain/">Yousufain Sharif</a></li>
+        <li><a href="/sufism/shah-khamosh/">Shah Khamosh</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="/cities/">Cities</a>
+      <ul class="dropdown">
+        <li><a href="/cities/hyderabad/">Hyderabad</a></li>
+        <li><a href="/cities/bidar/">Bidar</a></li>
+        <li><a href="/cities/gulbarga/">Gulbarga</a></li>
+        <li><a href="/cities/bijapur/">Bijapur</a></li>
+        <li><a href="/cities/aurangabad/">Aurangabad</a></li>
+        <li><a href="/cities/golconda/">Golconda</a></li>
+        <li><a href="/cities/warangal/">Warangal</a></li>
+        <li><a href="/cities/nanded/">Nanded</a></li>
+        <li><a href="/cities/raichur/">Raichur</a></li>
+      </ul>
+    </li>
+    <li><a href="/#quiz">Are You Dakhni?</a></li>
+  </ul>
+</nav>
+<!-- ════════════════════════════════════════════
+     END SHARED NAV
+     ════════════════════════════════════════════ -->
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-hero-eyebrow">Languages of the Deccan</span>
+    <p class="page-hero-urdu">دَکَّنی</p>
+    <h1 class="page-hero-title">Dakhni</h1>
+    <div class="page-hero-rule"></div>
+    <p class="page-hero-sub">A literature older than its descendants — the tongue born in the bazaar.</p>
+  </div>
+</header>
+
+<article class="article">
+  <p class="crumb"><a href="/">Home</a><span class="crumb-sep">›</span><a href="/language/">Language</a><span class="crumb-sep">›</span>Dakhni</p>
+
+  <p>The southern register that became literary two hundred years before the Urdu of Delhi, and that — uniquely in South Asia — still survives as everyday speech in the cities that first wrote it down.</p>
+
+  <h2>A grammar of its <em>own</em></h2>
+  <p><em>What Dakhni is — and is not</em></p>
+  <p>Dakhni — written variously as <em>Dakhini</em>, <em>Deccani</em> or <em>Dakkhani</em> — is the southern register of Urdu that took shape in the Deccan between the fourteenth and sixteenth centuries. Linguistically, it is not a separate language but a distinct dialect: it shares the Persian-Arabic script, the broad grammar and most of the vocabulary of standard Urdu, but it carries its own grammatical signatures, its own loan-word stratum from Telugu, Marathi and Kannada, and a vowel-music quite unlike the clipped speech of Delhi.</p>
+  <p>The most visible markers are everyday words. Dakhni uses <em>kaiku</em> for "why" (where standard Urdu uses <em>kyon</em>); <em>nakko</em> for "no, don't" (vs. <em>nahin</em>); <em>hau</em> for an emphatic "yes"; <em>potti</em> for a girl, <em>poyya</em> for a boy; <em>so gaye kya?</em> instead of <em>so gaye ho kya?</em> — the dropped auxiliary verb being a southern habit. The vocative <em>miyan</em>, lengthened to <em>miyaaaan</em>, is so characteristic of old-city Hyderabad that it has become a piece of national comedy.</p>
+  <p>Beneath these surface markers lies a deeper grammar. Dakhni preserves verb endings — <em>karta-un</em>, <em>jata-un</em> — that the standard Urdu of the north dropped in the eighteenth century. It uses the plural future <em>karinge</em> where standard Urdu writes <em>karenge</em>. It tolerates Dravidian compound verbs that no northern editor would pass. Read aloud, Muhammad Quli Qutb Shah's diwan of 1605 sounds, to a Hyderabadi ear, recognisably continuous with the speech of the Hussaini Alam bazaar today.</p>
+
+  <h2>A saint who wrote in the <em>language of his disciples</em></h2>
+  <p><em>Khwaja Bandanawaz and the deliberate use of the vernacular at Gulbarga · 1400–1500</em></p>
+  <p>The first writer of literary Dakhni was not a king but a Sufi. <em>Khwaja Sayyid Muhammad Husayni Gesudaraz Bandanawaz</em> (1321–1422), who arrived at Gulbarga from Delhi in 1399 at the invitation of the Bahmani sultan Firuz Shah, was the foremost Chishti master of his generation. He left dozens of works in Persian and Arabic for his learned disciples — but he also wrote, in the local vernacular, a number of devotional prose tracts and verse fragments addressed to the common people who came to his hospice for instruction.</p>
+  <p>The decision was theological as much as linguistic. The Chishti silsila held that the saint's first duty was to the poor and the local; the language of the bazaar was the language of teaching. Bandanawaz's <em>Mi'raj-ul-Ashiqin</em> — a tract on the path of the seeker — and his <em>Hidayat-nama</em> are the earliest surviving prose texts in any north-Indian-derived vernacular, beating Hindavi prose of the north by nearly a century. They are also the documentary beginning of Dakhni's life as a written language.</p>
+  <p>The example outlasted the saint. Through the fifteenth century the Chishti and Qadiri orders of the Deccan wrote tracts, hagiographies and sung quatrains in Dakhni for their disciples. The dargahs of Gulbarga, Bidar, Bijapur and later Hyderabad and Aurangabad became, in effect, the first literary salons of the new tongue — the unbroken thread that runs from the saint's hospice to the sovereign-poet's diwan.</p>
+
+  <h2>A king who wrote <em>fifty thousand verses</em> in his own tongue</h2>
+  <p><em>Muhammad Quli Qutb Shah · r. 1580–1611</em></p>
+  <p>The fifth Qutb Shahi sultan of Golconda, <em>Muhammad Quli Qutb Shah</em> (b. 1565, r. 1580–1611), founded the city of Hyderabad in 1591 and within a single reign elevated Dakhni from a regional dialect to a full literary medium. He left a personal divan of more than 50,000 verses in Dakhni — the first sustained sovereign-poet's diwan in any South Asian vernacular, anywhere on the subcontinent. It is preserved in the Salar Jung Museum and the Hyderabad State archives, in two near-complete manuscripts.</p>
+  <p>The diwan's range is what astonishes. There are ghazals to his Hindu beloved Bhagmati; verses on the rains of Hyderabad; on the festivals of Holi, Diwali, Basant and Eid; on the lamps of the durbar; on the night watch of the city; on the eating of mangoes; on the fragrance of <em>champa</em>. Persian convention is everywhere — the wine cup, the rose and the nightingale, the moon as the cheek of the beloved — but the local detail is unmistakable. The king writes about <em>his</em> city, in <em>his</em> tongue, with a frankness no Mughal sovereign ever attempted.</p>
+  <p>The most quoted couplet is among the simplest. <em>"Piya baaj pyaala piya jaye na / Piya baaj yek til jiya jaye na"</em> — without the beloved I cannot drink the cup, without the beloved I cannot live one moment. Five centuries on, the line is still sung at Hyderabadi weddings and at the dargah of Yousufain.</p>
+
+  <h2>A book of <em>nine flavours</em> at the Bijapur court</h2>
+  <p><em>Ibrahim Adil Shah II · r. 1580–1627</em></p>
+  <p>While Muhammad Quli was writing his Hyderabad diwan, the Adil Shahi sultan <em>Ibrahim II</em> at Bijapur (r. 1580–1627) was producing a Dakhni text of a quite different kind. The <em>Kitab-i-Nauras</em> — "the book of nine flavours", a reference to the nine <em>rasas</em> of Sanskrit aesthetic theory — is a sequence of fifty-nine songs and seventeen couplets on music, devotion and the inner life. Each song is keyed to a particular raga; the whole work is intended to be sung, not read.</p>
+  <p>What sets the Nauras apart is its religious tone. Ibrahim, a Sunni sovereign, addresses his songs not only to Allah and the Prophet but to <em>Saraswati</em>, the Hindu goddess of learning, to <em>Ganapati</em>, to the Sufi master <em>Gisu Daraz</em> at Gulbarga, and to his own veena. He calls himself <em>Jagat Guru</em>, world-teacher; he signs himself, in some manuscripts, <em>Ibrahim</em> with a Sanskrit honorific. The combination — Islamic sovereignty, Sanskrit aesthetic vocabulary, Sufi devotional impulse, all in Dakhni verse — is unique to his court and to that decade.</p>
+  <p>The Nauras is now preserved in several illustrated manuscripts at the British Library, the Salarjung Museum, and the Bharat Itihas Samshodhak Mandal at Pune. A handful of its songs are still performed by Dhrupad and Khayal singers in the Hyderabad tradition. They are the only sixteenth-century compositions in any South Asian vernacular that survive intact, words and ragas together.</p>
+
+  <h2>The first <em>novel</em> in a north-Indian tongue</h2>
+  <p><em>Mulla Wajhi · fl. c. 1605–1635</em></p>
+  <p><em>Mulla Asadullah Wajhi</em> was poet-laureate to Muhammad Quli's successor Sultan Muhammad Qutb Shah at Golconda. He left a Dakhni divan of his own; but his enduring achievement is the prose romance <em>Sab Ras</em> ("all flavours"), completed at Golconda around 1635. It is the first sustained prose work in any north-Indian-derived vernacular, anywhere on the subcontinent.</p>
+  <p>The plot is borrowed: Wajhi adapted it from the Persian Sufi allegory <em>Dastur-i-Ushshaq</em> of Fattahi Nishapuri. The names of the personified characters — <em>Husn</em> (Beauty), <em>Ishq</em> (Love), <em>Aql</em> (Reason), <em>Nazar</em> (the Glance), <em>Dil</em> (the Heart) — are kept. What is new is the prose itself. Wajhi writes Dakhni paragraphs of considerable length, mixing direct speech, narrative, and lyric inserts. He treats the vernacular as a fit medium for the long form. Nothing of the kind would be attempted in the north for another century and a half.</p>
+  <p><em>Sab Ras</em> was widely copied; manuscripts survive at Hyderabad, Patna, the British Library and the Bibliothèque Nationale. The first printed edition appeared at Lucknow in 1879. As prose model it shaped early Urdu novel-writing — the <em>Bagh-o-Bahar</em> tradition of Mir Amman in 1803 owes Wajhi an unacknowledged debt. He is the patron-saint of the long sentence in Urdu.</p>
+
+  <h2>The torch <em>passed</em>, and the southern flame steady</h2>
+  <p><em>Siraj Aurangabadi · the last classical voice · 1715–1763</em></p>
+  <p>By the turn of the eighteenth century, Dakhni's place at the centre of the South Asian literary imagination was being challenged from its own offspring. Wali Deccani — born at Aurangabad, the same city that had hosted Muhammad bin Tughluq's exiled court four centuries earlier — travelled to Delhi around 1700 and showed the Mughal poets that the vernacular could carry serious verse. Within twenty years the Delhi poets were writing in <em>their</em> Khari Boli-based Urdu, and the centre of literary gravity shifted decisively north.</p>
+  <p>But the southern line did not die at once. <em>Siraj-ud-Din Siraj Aurangabadi</em> (1715–1763) is the last of the classical Dakhni masters. His ghazals — <em>"Khabar-e-tahayyur-e-ishq sun, na junoon raha na pari rahi"</em> — are still sung in qawwali. His diwan was compiled posthumously and circulated widely; Ghalib, writing a century later in Delhi, cites Siraj more than once with respect. Siraj wrote in a Dakhni that already showed some northern influence — the standardising pull of the Lucknow and Delhi schools is visible in his diction — but his vocabulary, syntax, and music are still recognisably southern.</p>
+  <p>After Siraj, the canonical line of Dakhni poets ends. New poets at Hyderabad and Aurangabad still wrote southern verse, but the literary capital was no longer their concern. Dakhni had given Urdu its body and its first canon; it now stepped back into the everyday life of its own cities, where it had always belonged.</p>
+
+  <h2>A <em>spoken</em> civilisation, still on the bazaar tongue</h2>
+  <p><em>The living tongue · 1948–present</em></p>
+  <p>Dakhni today is the everyday speech of perhaps twelve million people across Telangana, the Marathwada districts of Maharashtra, the Hyderabad-Karnataka region of Karnataka, and pockets of Andhra and northern Tamil Nadu. It is no longer written as a separate literary language — printed Urdu in India has long since standardised on northern norms — but it is spoken, joked in, scolded in, sung in, and lived in. In old Hyderabad, in Aurangabad's Gulmandi, in Bidar's Old City and Gulbarga's Kotwal Bazaar, it is the first language of the street.</p>
+  <p>The post-independence decades made Dakhni a comic dialect on the Hindi cinema screen — a cheerful, slightly mocking caricature of the Hyderabadi who said <em>"miyaan, kaiku itna gussa?"</em> instead of <em>"yaar, kyon itna gussa?"</em>. The films of the 1990s and 2000s — <em>Angrez</em> (2005), <em>Hyderabad Nawabs</em> (2006), <em>The Angrez 2</em> (2015) — written and performed by a generation of Hyderabadi actors (Mast Ali, Aziz Naser, Adnan Sajid Khan) — turned the dialect into its own subgenre. The films are still cited as the best preserved sample of late-twentieth-century spoken Dakhni.</p>
+  <p>The literary continuation is quieter but real. Sulaiman Khateeb's <em>Dakhni Adab ki Tarikh</em> at Osmania University in the 1960s; the magazine <em>Sa'oot</em> at Hyderabad; the Dakhni qawwali still sung at the dargah of Yousufain Sharif; the bilingual poet Mujtaba Husain in his Urdu prose. Dakhni in the twenty-first century is what it has always been beneath its political vicissitudes: a tongue that the south uses to be itself. A language is, after all, only the sound a city makes when it is at home.</p>
+</article>
+
+<!-- PULL QUOTE -->
+<section class="h-pull">
+  <p class="h-pull-urdu">پیا باج پیالا پیا جاے نہ<br/>پیا باج اِک تِل جیا جاے نہ</p>
+  <p class="h-pull-trans">"Without the beloved, the cup cannot be drunk;<br/>without the beloved, not one moment can be lived."</p>
+  <p class="h-pull-attr">— Muhammad Quli Qutb Shah · Hyderabad · c. 1605</p>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-wrap">
+  <div class="timeline-hdr">
+    <span class="timeline-eyebrow">A Chronology of Dakhni · Six Centuries on its own Plateau</span>
+    <h2 class="timeline-title">From Bandanawaz's tracts to Mast Ali's films</h2>
+  </div>
+  <ol class="tl-list">
+    <li class="tl-item"><span class="tl-year">1327</span><span class="tl-text">Muhammad bin Tughluq's mass relocation from Delhi to Daulatabad seeds the Deccan with a Hindavi-speaking population.</span></li>
+    <li class="tl-item"><span class="tl-year">1347</span><span class="tl-text">Bahmani sultanate founded at Daulatabad; Hindavi begins its long southern life.</span></li>
+    <li class="tl-item"><span class="tl-year">1399</span><span class="tl-text">Khwaja Bandanawaz Gesudaraz settles at Gulbarga at the invitation of Firuz Shah Bahmani.</span></li>
+    <li class="tl-item"><span class="tl-year">c. 1410</span><span class="tl-text">Bandanawaz writes the <em>Mi'raj-ul-Ashiqin</em> and other tracts in the local vernacular — the earliest dated prose in any north-Indian-derived language.</span></li>
+    <li class="tl-item"><span class="tl-year">d. 1422</span><span class="tl-text">Death of Bandanawaz at Gulbarga; his dargah becomes the chief centre of Dakhni Sufi instruction.</span></li>
+    <li class="tl-item"><span class="tl-year">1424</span><span class="tl-text">Bahmani capital moves to Bidar; Dakhni literary activity intensifies under Mahmud Gawan's patronage.</span></li>
+    <li class="tl-item"><span class="tl-year">1490</span><span class="tl-text">Bahmani sultanate fragments into the five successor states; Dakhni now flourishes at Bijapur, Golconda and Ahmadnagar in parallel.</span></li>
+    <li class="tl-item"><span class="tl-year">c. 1500</span><span class="tl-text">The name <em>zaban-i-dakhni</em> is in regular use, distinguishing the southern tongue from the Hindavi of Delhi.</span></li>
+    <li class="tl-item"><span class="tl-year">1591</span><span class="tl-text">Muhammad Quli Qutb Shah founds the city of Hyderabad.</span></li>
+    <li class="tl-item"><span class="tl-year">c. 1605</span><span class="tl-text">Muhammad Quli completes his Dakhni divan of 50,000 verses; Ibrahim Adil Shah II writes the <em>Kitab-i-Nauras</em> at Bijapur in parallel.</span></li>
+    <li class="tl-item"><span class="tl-year">c. 1635</span><span class="tl-text">Mulla Wajhi at Golconda completes <em>Sab Ras</em>, the first prose romance in a north-Indian-derived vernacular.</span></li>
+    <li class="tl-item"><span class="tl-year">1687</span><span class="tl-text">Fall of Golconda to Aurangzeb; royal Dakhni patronage at Hyderabad ends.</span></li>
+    <li class="tl-item"><span class="tl-year">c. 1700</span><span class="tl-text">Wali Deccani of Aurangabad arrives in Delhi with his diwan; the northern poets begin writing in their own vernacular.</span></li>
+    <li class="tl-item"><span class="tl-year">1763</span><span class="tl-text">Death of Siraj Aurangabadi — the last classical Dakhni poet.</span></li>
+    <li class="tl-item"><span class="tl-year">c. 1800–1870</span><span class="tl-text">The Asaf Jahi state at Hyderabad supports Urdu in northern-standard form; Dakhni recedes into spoken use.</span></li>
+    <li class="tl-item"><span class="tl-year">1879</span><span class="tl-text">First printed edition of <em>Sab Ras</em> at Lucknow brings Wajhi's prose to a wide readership.</span></li>
+    <li class="tl-item"><span class="tl-year">1918</span><span class="tl-text">Osmania University founded; standard Urdu — not Dakhni — becomes the medium of instruction.</span></li>
+    <li class="tl-item"><span class="tl-year">1948</span><span class="tl-text">Operation Polo ends Asaf Jahi rule; Dakhni continues as the unofficial vernacular of old Hyderabad.</span></li>
+    <li class="tl-item"><span class="tl-year">1960s</span><span class="tl-text">Sulaiman Khateeb and others publish histories of Dakhni literature at Osmania University, recovering the medieval canon.</span></li>
+    <li class="tl-item"><span class="tl-year">2005</span><span class="tl-text">Mast Ali's film <em>Angrez</em> turns Hyderabadi Dakhni into a national subgenre of Indian cinema.</span></li>
+    <li class="tl-item"><span class="tl-year">2014</span><span class="tl-text">Telangana formed; Urdu becomes the second official language of the new state, with Dakhni its de-facto spoken register.</span></li>
+    <li class="tl-item"><span class="tl-year">today</span><span class="tl-text">Approximately twelve million speakers across Telangana, the Marathwada districts of Maharashtra, and the Hyderabad-Karnataka region — six centuries of an unbroken southern tongue.</span></li>
+  </ol>
+</section>
+
+<!-- SUBNAV -->
+<nav class="subnav" aria-label="Language navigation">
+  <a href="/language/" class="prev">
+    <span class="subnav-eyebrow">← Index</span>
+    <span class="subnav-title">Back to Language</span>
+  </a>
+  <a href="/language/urdu/" class="next">
+    <span class="subnav-eyebrow">Next →</span>
+    <span class="subnav-title">Urdu</span>
+  </a>
+</nav>
+
+<!-- ════════════════════════════════════════════
+     SHARED FOOTER  — copy verbatim
+     ════════════════════════════════════════════ -->
+<footer>
+  <div class="flag-banner"><img src="/dakhni-org-logo.png" alt="Dakhni.org"/></div>
+  <div class="ft-divider"></div>
+  <div class="ft-name">DAKHNI.ORG</div>
+  <p class="ft-tagline">Preserving the soul of the Deccan, one story at a time.</p>
+  <ul class="ft-links">
+    <li><a href="/heritage/">Heritage</a></li>
+    <li><a href="/dynasties/">Dynasties</a></li>
+    <li><a href="/language/">Language</a></li>
+    <li><a href="/sufism/">Sufism</a></li>
+    <li><a href="/cities/">Cities</a></li>
+    <li><a href="/#quiz">Quiz</a></li>
+  </ul>
+  <p class="ft-copy">© <span id="year">2025</span> Dakhni.org · In memory of the Asaf Jahi dynasty · Built with love for the Deccan</p>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80);
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  (function(){
+    var tog = document.querySelector('.nav-toggle');
+    var links = document.querySelector('.nav-links');
+    if(!tog || !links) return;
+    tog.addEventListener('click', function(){
+      var open = links.classList.toggle('open');
+      tog.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  })();
+</script>
+
+<!-- AI Disclosure Popup -->
+<div id="ai-disclosure" role="dialog" aria-modal="true" aria-labelledby="disclosure-title">
+  <div class="disclosure-backdrop"></div>
+  <div class="disclosure-card">
+    <div class="disclosure-ornament">✦</div>
+    <p class="disclosure-label">A Note on Our Content</p>
+    <h2 class="disclosure-title" id="disclosure-title">AI-Assisted Research</h2>
+    <div class="disclosure-rule"></div>
+    <p class="disclosure-body">The information on this website is compiled and synthesised with the assistance of artificial intelligence, drawing from publicly available historical records, academic publications, and cultural archives. While every effort is made to ensure accuracy, AI-generated content may occasionally reflect interpretations rather than universally established fact.</p>
+    <p class="disclosure-body disclosure-body--note">Dakhni.org is an independent cultural project, not affiliated with any institution or government body. We encourage readers to consult primary sources for scholarly research.</p>
+    <button class="disclosure-btn" id="disclosure-accept">I Understand</button>
+  </div>
+</div>
+<style>
+  #ai-disclosure { display:none; position:fixed; inset:0; z-index:9999; align-items:center; justify-content:center; padding:1.5rem; }
+  #ai-disclosure.open { display:flex; }
+  .disclosure-backdrop { position:absolute; inset:0; background:rgba(26,24,20,0.72); backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px); }
+  .disclosure-card { position:relative; z-index:1; background:var(--ivory,#FAF7EF); border:1px solid rgba(160,112,32,0.35); max-width:520px; width:100%; padding:2.8rem 2.6rem 2.4rem; text-align:center; box-shadow:0 8px 48px rgba(26,24,20,0.22); animation:disclosure-rise .4s ease forwards; }
+  @keyframes disclosure-rise { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+  .disclosure-ornament { font-size:.85rem; color:var(--gold,#A07020); letter-spacing:.5em; margin-bottom:1.2rem; }
+  .disclosure-label { font-family:'Inter',sans-serif; font-size:.58rem; font-weight:500; letter-spacing:.38em; text-transform:uppercase; color:var(--gold-deep,#6B4710); margin-bottom:.9rem; }
+  .disclosure-title { font-family:'Cormorant Garamond',Georgia,serif; font-size:1.85rem; font-weight:500; color:var(--ink,#1A1814); letter-spacing:.04em; margin-bottom:1.1rem; }
+  .disclosure-rule { width:48px; height:1px; background:var(--gold,#A07020); margin:0 auto 1.4rem; }
+  .disclosure-body { font-family:'EB Garamond',Georgia,serif; font-size:1rem; line-height:1.85; color:var(--ink-soft,#4A453C); }
+  .disclosure-body--note { margin-top:.9rem; font-size:.9rem; color:var(--ink-faint,#8B8472); font-style:italic; }
+  .disclosure-btn { display:inline-block; margin-top:2rem; font-family:'Inter',sans-serif; font-size:.68rem; font-weight:500; letter-spacing:.22em; text-transform:uppercase; padding:.9rem 2.2rem; background:var(--ink,#1A1814); color:var(--ivory,#FAF7EF); border:1px solid var(--ink,#1A1814); cursor:pointer; transition:all .25s; }
+  .disclosure-btn:hover { background:transparent; color:var(--ink,#1A1814); }
+</style>
+<script>
+(function(){
+  var el = document.getElementById('ai-disclosure');
+  if (!el) return;
+  if (!localStorage.getItem('dakhni_disclosure_seen')) {
+    el.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function dismiss() {
+    localStorage.setItem('dakhni_disclosure_seen', '1');
+    el.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('disclosure-accept').addEventListener('click', dismiss);
+  el.querySelector('.disclosure-backdrop').addEventListener('click', dismiss);
+})();
+</script>
+
+</body>
+</html>
