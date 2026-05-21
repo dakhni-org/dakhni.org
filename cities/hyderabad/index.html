@@ -213,7 +213,61 @@
       .nav-links li:last-child{border-bottom:none;}
       .nav-links a{display:block;padding:1rem 0;font-size:.72rem;letter-spacing:.18em;width:100%;}
     }
-  </style>
+  
+    /* ─── DROPDOWN NAV (canonical) ─── */
+    .nav-links { gap:2rem; align-items:center; }
+    .nav-links > li { position:relative; }
+    .nav-links > li > a { padding:1.05rem 0; display:inline-block; border-bottom:1px solid transparent; }
+    .nav-links > li > a:hover { color:var(--gold-deep); border-bottom-color:var(--gold); }
+    /* Items with a dropdown: suppress underline so it doesn't clash with the dropdown's top border */
+    .has-dropdown > a:hover { border-bottom-color:transparent; }
+    .has-dropdown > a::after {
+      content:'▾'; margin-left:.32em; font-size:.55em; color:var(--gold,#A07020);
+      position:relative; top:-1px; display:inline-block;
+      transition:transform .2s ease;
+    }
+    .has-dropdown:hover > a::after { transform:translateY(2px); }
+    .dropdown {
+      position:absolute; top:100%; left:0;
+      transform:translateY(-4px);
+      min-width:210px;
+      background:rgba(250,247,239,0.98);
+      backdrop-filter:saturate(140%) blur(10px);
+      -webkit-backdrop-filter:saturate(140%) blur(10px);
+      border:1px solid var(--rule,rgba(26,24,20,0.10));
+      border-top:2px solid var(--gold,#A07020);
+      list-style:none; padding:.4rem 0; margin:0;
+      opacity:0; pointer-events:none;
+      transition:opacity .22s ease, transform .22s ease;
+      z-index:250;
+      box-shadow:0 10px 30px rgba(26,24,20,0.10);
+    }
+    .has-dropdown:hover > .dropdown,
+    .has-dropdown:focus-within > .dropdown {
+      opacity:1; pointer-events:auto;
+      transform:translateY(0);
+    }
+    .dropdown li { width:100%; }
+    .dropdown a {
+      display:block; padding:.7rem 1.4rem;
+      font-family:'Inter',sans-serif; font-size:.64rem; font-weight:400;
+      letter-spacing:.16em; text-transform:uppercase;
+      color:var(--ink-soft,#4A453C); text-decoration:none;
+      border-bottom:none !important;
+      transition:background .15s, color .15s;
+      white-space:nowrap;
+    }
+    .dropdown a:hover { background:var(--cream,#F2EDE2); color:var(--gold-deep,#6B4710); }
+    @media (max-width:880px){
+      .has-dropdown > a::after { content:''; }
+      .dropdown{
+        position:static; opacity:1; pointer-events:auto; transform:none;
+        background:transparent; border:none; box-shadow:none;
+        padding:0 0 .5rem 1.2rem; transition:none; min-width:0;
+      }
+      .dropdown a { padding:.55rem 0; font-size:.64rem; letter-spacing:.14em; }
+    }
+</style>
 </head>
 <body>
 
