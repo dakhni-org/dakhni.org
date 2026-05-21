@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N9RETSEPQ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N9RETSEPQ9');
+</script>
+
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sufism in the Deccan — Dakhni.org</title>
+  <link rel="icon" type="image/png" href="/dakhni-org-logo.png"/>
+  <meta name="description" content="A formal record of Sufism (Tasawwuf) in the Deccan — the science of Ihsan within traditional Sunni Islam, the four classical silsilas, and the lives of the saints who shaped the spiritual life of the plateau from Khuldabad and Gulbarga to Hyderabad."/>
+  <meta name="author" content="Dakhni.org"/>
+  <meta name="robots" content="index, follow, max-image-preview:large"/>
+  <meta name="theme-color" content="#1A1814"/>
+  <link rel="canonical" href="https://dakhni.org/sufism/"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&family=Lateef:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --gold:        #A07020;
+      --gold-deep:   #6B4710;
+      --gold-soft:   #C9A968;
+      --cream:       #F2EDE2;
+      --ivory:       #FAF7EF;
+      --ink:         #1A1814;
+      --ink-soft:    #4A453C;
+      --ink-faint:   #8B8472;
+      --rule:        rgba(26,24,20,0.10);
+      --rule-soft:   rgba(26,24,20,0.05);
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { background:var(--ivory); color:var(--ink); font-family:'EB Garamond',Georgia,serif; overflow-x:hidden; }
+
+    /* ─── NAV WITH DROPDOWNS ─── */
+    nav {
+      position:sticky; top:0; z-index:200;
+      background:rgba(250,247,239,0.92);
+      backdrop-filter:saturate(140%) blur(8px);
+      -webkit-backdrop-filter:saturate(140%) blur(8px);
+      height:58px;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0 3rem; border-bottom:1px solid var(--rule);
+    }
+    .nav-brand { display:inline-flex; align-items:center; gap:.65rem; font-family:'Cormorant Garamond',serif; font-size:1rem; font-weight:600; letter-spacing:.22em; color:var(--ink); text-decoration:none; }
+    .nav-mark { width:30px; height:30px; object-fit:contain; flex-shrink:0; display:block; transition:transform .4s ease; }
+    .nav-brand:hover .nav-mark { transform:rotate(8deg); }
+    .nav-links { display:flex; gap:2rem; list-style:none; align-items:center; }
+    .nav-links > li { position:relative; }
+    .nav-links > li > a { font-family:'Inter',sans-serif; font-size:.7rem; font-weight:400; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-soft); text-decoration:none; transition:color .2s; padding:1.05rem 0; display:inline-block; border-bottom:1px solid transparent; }
+    .nav-links > li > a:hover { color:var(--gold-deep); border-bottom-color:var(--gold); }
+
+    .has-dropdown > a::after {
+      content:'▾'; margin-left:.32em; font-size:.55em; color:var(--gold); position:relative; top:-1px;
+      transition:transform .2s ease;
+      display:inline-block;
+    }
+    .has-dropdown:hover > a::after { transform:translateY(2px); }
+
+    .dropdown {
+      position:absolute;
+      top:100%; left:50%;
+      transform:translateX(-50%) translateY(-4px);
+      min-width:210px;
+      background:rgba(250,247,239,0.98);
+      backdrop-filter:saturate(140%) blur(10px);
+      -webkit-backdrop-filter:saturate(140%) blur(10px);
+      border:1px solid var(--rule);
+      border-top:2px solid var(--gold);
+      list-style:none; padding:.4rem 0; margin:0;
+      opacity:0; pointer-events:none;
+      transition:opacity .22s ease, transform .22s ease;
+      z-index:250;
+      box-shadow:0 10px 30px rgba(26,24,20,0.10);
+    }
+    .has-dropdown:hover > .dropdown,
+    .has-dropdown:focus-within > .dropdown {
+      opacity:1; pointer-events:auto;
+      transform:translateX(-50%) translateY(0);
+    }
+    .dropdown li { width:100%; }
+    .dropdown a {
+      display:block;
+      padding:.7rem 1.4rem;
+      font-family:'Inter',sans-serif; font-size:.64rem; font-weight:400;
+      letter-spacing:.16em; text-transform:uppercase;
+      color:var(--ink-soft); text-decoration:none;
+      border-bottom:none; transition:background .15s, color .15s;
+      white-space:nowrap;
+    }
+    .dropdown a:hover { background:var(--cream); color:var(--gold-deep); }
+
+    .nav-toggle{display:none;background:transparent;border:none;cursor:pointer;padding:.5rem;width:42px;height:42px;flex-direction:column;justify-content:center;align-items:center;gap:5px;margin-left:auto;}
+    .nav-toggle span{display:block;width:22px;height:2px;background:var(--ink);border-radius:1px;transition:transform .25s ease, opacity .25s ease;}
+    .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;}
+    .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+    @media (max-width:880px){
+      nav{padding:0 1.2rem;flex-wrap:wrap;height:auto;min-height:58px;align-items:center;}
+      .nav-toggle{display:flex;}
+      .nav-links{order:3;display:none;flex-direction:column;align-items:flex-start;width:100%;gap:0;padding:.5rem 0 1rem;border-top:1px solid var(--rule);background:rgba(250,247,239,0.98);margin:.4rem -1.2rem 0;padding-left:1.4rem;}
+      .nav-links.open{display:flex;}
+      .nav-links > li{width:100%;border-bottom:1px solid var(--rule-soft);}
+      .nav-links > li:last-child{border-bottom:none;}
+      .nav-links > li > a{display:block;padding:1rem 0;font-size:.72rem;letter-spacing:.18em;width:100%;}
+      .has-dropdown > a::after { content:''; }
+      .dropdown{
+        position:static;opacity:1;pointer-events:auto;transform:none;
+        background:transparent;border:none;box-shadow:none;
+        padding:0 0 .5rem 1.2rem;transition:none;min-width:0;
+      }
+      .dropdown a { padding:.55rem 0; font-size:.64rem; letter-spacing:.14em; }
+    }
+
+    /* ─── SHARED TYPE ─── */
+    .sec-label { font-family:'Inter',sans-serif; font-size:.62rem; font-weight:500; letter-spacing:.38em; text-transform:uppercase; color:var(--gold-deep); display:block; margin-bottom:.9rem; }
+    .sec-title { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(1.6rem,3vw,2.3rem); color:var(--ink); line-height:1.25; letter-spacing:.02em; }
+    .sec-title span { display:block; color:var(--ink-soft); font-family:'EB Garamond',serif; font-style:italic; font-size:.7em; font-weight:400; margin-top:.5em; letter-spacing:0; }
+    .h-rule { border:none; border-top:1px solid var(--rule); margin:0; }
+    .diamond-rule { display:flex; align-items:center; gap:.8rem; padding:0 3rem; }
+    .diamond-rule::before, .diamond-rule::after { content:''; flex:1; height:1px; background:var(--rule); }
+    .diamond { width:6px; height:6px; background:var(--gold); transform:rotate(45deg); flex-shrink:0; }
+    .reveal { opacity:0; transform:translateY(22px); transition:opacity .65s ease,transform .65s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    .btn-primary { font-family:'Inter',sans-serif; font-size:.7rem; font-weight:500; letter-spacing:.2em; text-transform:uppercase; padding:.95rem 2.1rem; background:var(--ink); color:var(--ivory); border:1px solid var(--ink); cursor:pointer; text-decoration:none; transition:all .25s; display:inline-block; }
+    .btn-primary:hover { background:transparent; color:var(--ink); }
+    .btn-secondary { font-family:'Inter',sans-serif; font-size:.7rem; font-weight:500; letter-spacing:.2em; text-transform:uppercase; padding:.95rem 2.1rem; background:transparent; color:var(--ink); border:1px solid var(--rule); cursor:pointer; text-decoration:none; transition:all .25s; display:inline-block; }
+    .btn-secondary:hover { border-color:var(--gold); color:var(--gold-deep); }
+
+    /* ─── PAGE HERO (use for subpages) ─── */
+    .page-hero {
+      background:var(--ivory);
+      padding:6rem 2rem 4rem; text-align:center;
+      border-bottom:1px solid var(--rule);
+      position:relative; overflow:hidden;
+    }
+    .page-hero::after {
+      content:''; position:absolute; inset:0;
+      background:url('/dakhni-pattern.png') repeat;
+      background-size:120px;
+      opacity:0.05; pointer-events:none; z-index:0;
+    }
+    .page-hero-inner { position:relative; z-index:1; max-width:760px; margin:0 auto; }
+    .page-hero-eyebrow { font-family:'Inter',sans-serif; font-size:.62rem; font-weight:500; letter-spacing:.38em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:1rem; display:block; }
+    .page-hero-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,5vw,3.4rem); font-weight:500; color:var(--ink); letter-spacing:.1em; line-height:1.15; margin-bottom:1rem; }
+    .page-hero-rule { width:64px; height:1px; background:var(--gold); margin:1.4rem auto; }
+    .page-hero-sub { font-style:italic; font-size:clamp(1rem,1.8vw,1.12rem); color:var(--ink-soft); line-height:1.85; max-width:560px; margin:0 auto; }
+
+    /* Breadcrumb */
+    .crumb { font-family:'Inter',sans-serif; font-size:.58rem; font-weight:500; letter-spacing:.32em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:1.2rem; }
+    .crumb a { color:var(--ink-soft); text-decoration:none; }
+    .crumb a:hover { color:var(--gold-deep); }
+    .crumb-sep { color:var(--gold); margin:0 .6rem; }
+
+    /* Subpage navigator (prev/next/index) */
+    .subnav { max-width:760px; margin:0 auto; padding:3rem 1.4rem 5rem; display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--rule); border:1px solid var(--rule); }
+    .subnav a { background:var(--ivory); padding:1.4rem 1.6rem; text-decoration:none; color:var(--ink-soft); transition:background .2s; }
+    .subnav a:hover { background:var(--cream); color:var(--gold-deep); }
+    .subnav-eyebrow { display:block; font-family:'Inter',sans-serif; font-size:.55rem; font-weight:500; letter-spacing:.32em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:.4rem; }
+    .subnav-title { font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-weight:500; color:var(--ink); }
+    .subnav .next { text-align:right; }
+    @media(max-width:600px){ .subnav{grid-template-columns:1fr;} }
+
+    /* Index page cards */
+    .sub-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1px; background:var(--rule); border:1px solid var(--rule); max-width:1100px; margin:0 auto; }
+    .sub-card { background:var(--ivory); padding:2.2rem 1.8rem; text-decoration:none; color:inherit; transition:background .25s; display:flex; flex-direction:column; }
+    .sub-card:hover { background:var(--cream); }
+    .sub-card-eyebrow { font-family:'Inter',sans-serif; font-size:.58rem; font-weight:500; letter-spacing:.32em; text-transform:uppercase; color:var(--gold-deep); display:block; margin-bottom:.7rem; }
+    .sub-card-title { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:500; color:var(--ink); margin-bottom:.5rem; letter-spacing:.02em; }
+    .sub-card-dates { font-family:'EB Garamond',serif; font-style:italic; font-size:.92rem; color:var(--ink-faint); margin-bottom:.8rem; }
+    .sub-card-text { font-family:'EB Garamond',serif; font-size:.95rem; line-height:1.7; color:var(--ink-soft); flex:1; }
+    .sub-card-cta { display:inline-block; margin-top:1.2rem; font-family:'Inter',sans-serif; font-size:.58rem; font-weight:500; letter-spacing:.22em; text-transform:uppercase; color:var(--gold-deep); border-bottom:1px solid var(--gold); padding-bottom:2px; align-self:flex-start; }
+
+    /* Article body */
+    .article { max-width:760px; margin:0 auto; padding:4rem 1.4rem 2rem; }
+    .article p { font-family:'EB Garamond',Georgia,serif; font-size:1.07rem; line-height:1.85; color:var(--ink-soft); margin-bottom:1.3rem; }
+    .article h2 { font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:500; color:var(--ink); margin:2.4rem 0 1rem; letter-spacing:.02em; }
+    .article h2 em { font-style:italic; color:var(--gold-deep); font-weight:400; }
+    .article h3 { font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:500; color:var(--ink); margin:1.8rem 0 .7rem; }
+    .article blockquote { border-left:2px solid var(--gold); padding:.4rem 0 .4rem 1.4rem; margin:1.6rem 0; font-style:italic; color:var(--ink-soft); }
+    .article ul, .article ol { padding-left:1.4rem; margin-bottom:1.3rem; color:var(--ink-soft); }
+    .article ul li, .article ol li { margin-bottom:.5rem; line-height:1.75; }
+
+    /* Footer */
+    footer { background:var(--ink); padding:3.5rem 3rem 2.5rem; text-align:center; }
+    .flag-banner { display:flex; justify-content:center; margin:0 auto 1.8rem; line-height:0; }
+    .flag-banner img { width:auto; max-width:96px; height:auto; max-height:96px; object-fit:contain; opacity:.95; }
+    .ft-name { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:500; letter-spacing:.22em; color:var(--ivory); margin-bottom:.5rem; }
+    .ft-tagline { font-style:italic; font-size:.92rem; color:rgba(250,247,239,0.55); margin-bottom:2rem; }
+    .ft-links { display:flex; gap:1.8rem; justify-content:center; list-style:none; flex-wrap:wrap; margin-bottom:2rem; }
+    .ft-links a { font-family:'Inter',sans-serif; font-size:.62rem; font-weight:400; letter-spacing:.22em; text-transform:uppercase; color:rgba(250,247,239,0.5); text-decoration:none; transition:color .2s; }
+    .ft-links a:hover { color:var(--gold-soft); }
+    .ft-divider { width:48px; height:1px; background:rgba(201,169,104,0.3); margin:0 auto 1.6rem; }
+    .ft-copy { font-family:'Inter',sans-serif; font-size:.6rem; font-weight:300; letter-spacing:.1em; color:rgba(250,247,239,0.3); }
+
+    @keyframes rise { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+  </style>
+  <style>
+    /* Page-specific extra styles (from original sufism.html) */
+    .section-wrap { max-width:1100px; margin:0 auto; padding:4rem 1.4rem; }
+    .section-wrap.narrow { max-width:780px; }
+    .section-wrap h2.sec-title { text-align:center; }
+    .section-wrap .sec-label { text-align:center; }
+    .section-intro { font-family:'EB Garamond',Georgia,serif; font-style:italic; color:var(--ink-faint); max-width:620px; margin:.8rem auto 2.4rem; line-height:1.85; font-size:.98rem; text-align:center; }
+    .prose p { font-family:'EB Garamond',Georgia,serif; font-size:1.05rem; line-height:1.85; color:var(--ink-soft); margin-bottom:1.2rem; }
+    .prose em { color:var(--gold-deep); font-style:italic; }
+
+    .silsila-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.4rem; margin-top:2rem; }
+    .silsila-card { background:var(--cream); border:1px solid var(--rule); padding:1.8rem 1.6rem; }
+    .silsila-name { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; color:var(--ink); letter-spacing:.04em; margin-bottom:.3rem; }
+    .silsila-urdu { font-family:'Lateef',serif; font-size:1.4rem; color:var(--gold-deep); margin-bottom:.6rem; }
+    .silsila-founder { font-family:'EB Garamond',Georgia,serif; font-style:italic; color:var(--ink-faint); font-size:.92rem; margin-bottom:.9rem; }
+    .silsila-text { font-family:'EB Garamond',Georgia,serif; font-size:.95rem; line-height:1.65; color:var(--ink-soft); }
+    .silsila-text em { color:var(--gold-deep); font-style:italic; }
+
+    /* Timeline */
+    .timeline-wrap { max-width:980px; margin:0 auto; padding:4rem 1.4rem; }
+    .timeline-hdr { text-align:center; margin-bottom:3rem; }
+    .timeline-title { font-family:'Cormorant Garamond',serif; font-size:clamp(1.6rem,3vw,2.3rem); color:var(--ink); font-weight:500; letter-spacing:.02em; }
+    .tl-list { list-style:none; display:grid; gap:0; border-left:1px solid var(--rule); margin-left:1rem; }
+    .tl-item { position:relative; padding:.9rem 0 1.4rem 1.8rem; }
+    .tl-item::before { content:''; position:absolute; left:-5px; top:1.25rem; width:9px; height:9px; background:var(--gold); transform:rotate(45deg); }
+    .tl-year { font-family:'Cormorant Garamond',serif; font-weight:600; color:var(--gold-deep); font-size:1.05rem; letter-spacing:.04em; display:inline-block; margin-right:.7rem; }
+    .tl-text { font-family:'EB Garamond',Georgia,serif; color:var(--ink-soft); font-size:1rem; line-height:1.65; }
+    .tl-text em { color:var(--gold-deep); font-style:italic; }
+
+    /* Pull quote */
+    .h-pull { margin:4rem auto; max-width:780px; padding:3rem 2rem; text-align:center; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); background:var(--cream); }
+    .h-pull-urdu { font-family:'Lateef',serif; font-size:clamp(1.5rem,3vw,2.2rem); color:var(--gold-deep); line-height:1.7; }
+    .h-pull-trans { font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:1.1rem; line-height:1.85; color:var(--ink-soft); margin-top:1rem; }
+    .h-pull-attr { font-family:'Inter',sans-serif; font-size:.62rem; font-weight:500; letter-spacing:.32em; text-transform:uppercase; color:var(--ink-faint); margin-top:1.2rem; }
+
+    .note-card { max-width:980px; margin:2rem auto 4rem; padding:2rem 2rem; background:var(--cream); border-left:3px solid var(--gold); }
+    .note-card-label { font-family:'Inter',sans-serif; font-size:.58rem; font-weight:500; letter-spacing:.34em; text-transform:uppercase; color:var(--gold-deep); display:block; margin-bottom:.7rem; }
+    .note-card-body { font-family:'EB Garamond',Georgia,serif; font-size:1rem; line-height:1.85; color:var(--ink-soft); }
+    .note-card-body em { color:var(--gold-deep); font-style:italic; }
+
+    .sub-card-meta { font-family:'Inter',sans-serif; font-size:.56rem; font-weight:500; letter-spacing:.28em; text-transform:uppercase; color:var(--gold-deep); display:block; margin-bottom:.5rem; }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════
+     SHARED NAV  — copy this block verbatim into every page
+     ════════════════════════════════════════════ -->
+<nav>
+  <a href="/" class="nav-brand" aria-label="Dakhni.org home">
+    <img class="nav-mark" src="/dakhni-org-logo.png" alt=""/>
+    <span>DAKHNI.ORG</span>
+  </a>
+  <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li class="has-dropdown">
+      <a href="/heritage/">Heritage</a>
+      <ul class="dropdown">
+        <li><a href="/heritage/language-poetry/">Language &amp; Poetry</a></li>
+        <li><a href="/heritage/cuisine/">Cuisine</a></li>
+        <li><a href="/heritage/music/">Music</a></li>
+        <li><a href="/heritage/architecture/">Architecture</a></li>
+        <li><a href="/heritage/crafts/">Crafts</a></li>
+        <li><a href="/heritage/sufi-tradition/">Sufi Tradition</a></li>
+        <li><a href="/heritage/festivals/">Festivals</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="/dynasties/">Dynasties</a>
+      <ul class="dropdown">
+        <li><a href="/dynasties/bahmani/">Bahmani Sultanate</a></li>
+        <li><a href="/dynasties/qutb-shahi/">Qutb Shahi</a></li>
+        <li><a href="/dynasties/bidar-barid/">Bidar Barid Shahi</a></li>
+        <li><a href="/dynasties/adil-shahi/">Adil Shahi</a></li>
+        <li><a href="/dynasties/asaf-jahi/">Asaf Jahi Nizams</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="/language/">Language</a>
+      <ul class="dropdown">
+        <li><a href="/language/dakhni/">Dakhni</a></li>
+        <li><a href="/language/urdu/">Urdu</a></li>
+        <li><a href="/language/faarsi/">Faarsi (Persian)</a></li>
+        <li><a href="/language/telugu/">Telugu</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="/sufism/">Sufism</a>
+      <ul class="dropdown">
+        <li><a href="/sufism/burhanuddin/">Burhanuddin Gharib</a></li>
+        <li><a href="/sufism/sharfuddin/">Baba Sharfuddin</a></li>
+        <li><a href="/sufism/bandanawaz/">Bandanawaz Gisudaraz</a></li>
+        <li><a href="/sufism/hussain-shah-wali/">Hussain Shah Wali</a></li>
+        <li><a href="/sufism/shah-raju/">Shah Raju Qattal</a></li>
+        <li><a href="/sufism/yousufain/">Yousufain Sharif</a></li>
+        <li><a href="/sufism/shah-khamosh/">Shah Khamosh</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="/cities/">Cities</a>
+      <ul class="dropdown">
+        <li><a href="/cities/hyderabad/">Hyderabad</a></li>
+        <li><a href="/cities/bidar/">Bidar</a></li>
+        <li><a href="/cities/gulbarga/">Gulbarga</a></li>
+        <li><a href="/cities/bijapur/">Bijapur</a></li>
+        <li><a href="/cities/aurangabad/">Aurangabad</a></li>
+        <li><a href="/cities/golconda/">Golconda</a></li>
+        <li><a href="/cities/warangal/">Warangal</a></li>
+        <li><a href="/cities/nanded/">Nanded</a></li>
+        <li><a href="/cities/raichur/">Raichur</a></li>
+      </ul>
+    </li>
+    <li><a href="/#quiz">Are You Dakhni?</a></li>
+  </ul>
+</nav>
+<!-- ════════════════════════════════════════════
+     END SHARED NAV
+     ════════════════════════════════════════════ -->
+
+<!-- HERO -->
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-hero-eyebrow">The Sufi Heritage of the Deccan</span>
+    <h1 class="page-hero-title">Sufism in the Deccan</h1>
+    <div class="page-hero-rule"></div>
+    <p class="page-hero-sub">Seven centuries of saints, silsilas and shrines.</p>
+  </div>
+</header>
+
+<!-- TASAWWUF -->
+<section class="section-wrap narrow" id="tasawwuf">
+  <span class="sec-label">I · Tasawwuf</span>
+  <h2 class="sec-title">The science of <em style="color:var(--gold-deep);font-style:italic;">Ihsan</em></h2>
+  <p class="section-intro">Why the saints of the Deccan are not a sect within Islam but a discipline within it.</p>
+  <div class="prose">
+    <p>The word <em>Sufism</em> — in Arabic <em>Tasawwuf</em>, in Persian and Urdu <em>tasawwuf</em> — names one of the three classical sciences of Islam, alongside <em>'Aqidah</em> (theology) and <em>Fiqh</em> (jurisprudence). The Prophet ﷺ in the well-known <em>Hadith of Jibreel</em> (recorded in Sahih Bukhari and Sahih Muslim) named the three dimensions of religion: <em>Islam</em> (the outward practice), <em>Iman</em> (the inward creed) and <em>Ihsan</em> ("to worship Allah as though you see Him; and if you see Him not, then know that He sees you"). The science that addresses this third dimension — the purification of the heart, the development of sincerity, the constant remembrance of God — is what later generations of Muslim scholars called Tasawwuf.</p>
+    <p>It is not a sect. The great expositors of Tasawwuf — Imam Junayd of Baghdad (d. 910), Imam al-Qushayri (d. 1072), Imam al-Ghazali (d. 1111) in his <em>Ihya 'Ulum al-Din</em>, Imam al-Suhrawardi (d. 1234), Shah Wali Allah of Delhi (d. 1762) — all wrote from within the four classical Sunni schools of law. The saints of the Deccan whose lives this page records were, almost without exception, Hanafi jurists, traditionists of Hadith, scholars of the Qur'an, mufassirun, and frequently muftis to their local sultanates. Their saintliness extended, did not replace, their adherence to the Sharia.</p>
+    <p>The Sufi method is conventionally summarised as <em>tasfiyat al-qalb</em> (the polishing of the heart) through <em>dhikr</em> (the remembrance of God), <em>fikr</em> (contemplation of His signs), <em>nafl</em> (supererogatory worship), and the company of a <em>shaykh</em> who has himself walked the path. The chain of teachers, called <em>silsila</em> ("chain"), is traced documentarily back to the Companions and through them to the Prophet ﷺ himself. The Deccan's four classical silsilas — Chishti, Qadiri, Suhrawardi, Naqshbandi — each preserve such a chain. To say of a Deccan saint that he was "of the Chishti silsila" is to make a precise scholarly claim about his line of teachers, comparable to a Hadith chain of transmission (<em>isnad</em>).</p>
+  </div>
+</section>
+
+<hr class="h-rule"/>
+
+<!-- AAMAD -->
+<section class="section-wrap narrow" id="aamad">
+  <span class="sec-label">II · Aamad</span>
+  <h2 class="sec-title">The saints arrived <em style="color:var(--gold-deep);font-style:italic;">with</em> the sultans</h2>
+  <p class="section-intro">From Khwaja Nizamuddin's hospice in Delhi to Daulatabad and Khuldabad — how Sufism came to the Deccan, 1310–1347.</p>
+  <div class="prose">
+    <p>Islam first reached the Deccan in 711 with the Arab traders of the Konkan coast, but the established institutional Islam — with its mosques, madrasas, qadis and Sufi <em>khanqahs</em> — came south only with the Khalji and Tughluq invasions in the fourteenth century. When Ulugh Khan defeated Prataparudra II of Warangal in 1323 and when Muhammad bin Tughluq transferred his capital from Delhi to Daulatabad in 1327, a substantial population of Delhi's scholars, jurists and Sufis moved south with the court.</p>
+    <p>Among them was the most consequential single Sufi migration in South Asian history. Khwaja <em>Nizamuddin Awliya</em> (d. 1325 at Delhi) — the great Chishti master of the Delhi Sultanate, disciple of Khwaja Baba Farid of Pakpattan — had trained dozens of <em>khalifas</em> (successors) in his hospice. When Muhammad bin Tughluq moved south, several of these khalifas accompanied him by imperial order. Among them was Khwaja <em>Burhanuddin Gharib</em>, who would establish the Chishti silsila at Khuldabad, near Daulatabad, in the years immediately after 1327. From that hospice, over the next century, the Chishti tradition spread across the entire Deccan plateau.</p>
+    <p>The pattern is one of transplantation through orthodox channels. The Sufis who came south were not popular preachers or itinerant healers; they were trained scholars, with formal <em>ijazas</em> (licenses of teaching), bringing with them complete madrasa libraries, established devotional protocols, and chains of teachers that they were determined to preserve. The Deccan, when they arrived, had a thousand-year-old Hindu and Buddhist religious culture but no settled Sunni Sufi establishment. Within three generations there was one — in Khuldabad, in Gulbarga, in Bidar, and after 1500, in every successor sultanate's capital.</p>
+  </div>
+</section>
+
+<hr class="h-rule"/>
+
+<!-- SILSILAS -->
+<section class="section-wrap" id="silsilas">
+  <span class="sec-label">III · The Four Classical Silsilas of the Deccan</span>
+  <h2 class="sec-title">Four chains of transmission</h2>
+  <p class="section-intro">Each silsila preserves a documented line of teachers stretching back through the Companions to the Prophet ﷺ. In the Deccan all four were active; two of them — Chishti and Qadiri — overwhelmingly dominant.</p>
+  <div class="silsila-grid">
+    <div class="silsila-card reveal">
+      <div class="silsila-urdu">چشتیہ</div>
+      <div class="silsila-name">Chishtiyya</div>
+      <p class="silsila-founder">Khwaja Moinuddin Chishti of Ajmer · d. 1236</p>
+      <p class="silsila-text">The dominant silsila in the Deccan. Brought south by Burhanuddin Gharib c. 1327 and consolidated at Khuldabad and Gulbarga. The Chishtis are known for poverty by choice, the open hospice, <em>sama'</em> (devotional listening), service to all visitors regardless of station, and a deep silent <em>dhikr</em>.</p>
+    </div>
+    <div class="silsila-card reveal">
+      <div class="silsila-urdu">قادریہ</div>
+      <div class="silsila-name">Qadiriyya</div>
+      <p class="silsila-founder">Shaykh 'Abd al-Qadir Jilani of Baghdad · d. 1166</p>
+      <p class="silsila-text">The principal silsila at Hyderabad. Established by Shah Raju Qattal Qadiri and his descendants from the late sixteenth century; the Yousufain Sharif and Mahbub Subhani lineages descend from him. Qadiri practice emphasises strict adherence to Sharia, vocal <em>dhikr</em>, and constant tawhid.</p>
+    </div>
+    <div class="silsila-card reveal">
+      <div class="silsila-urdu">سہروردیہ</div>
+      <div class="silsila-name">Suhrawardiyya</div>
+      <p class="silsila-founder">Shaykh Shihab al-Din 'Umar al-Suhrawardi · d. 1234</p>
+      <p class="silsila-text">Less widespread in the Deccan than the Chishtis or Qadiris but represented from the late Bahmani period onward, particularly at Bidar and in pockets of Aurangabad. The Suhrawardi tradition is comfortable with worldly engagement and statecraft, and several Suhrawardi shaykhs served in administrative roles.</p>
+    </div>
+    <div class="silsila-card reveal">
+      <div class="silsila-urdu">نقشبندیہ</div>
+      <div class="silsila-name">Naqshbandiyya</div>
+      <p class="silsila-founder">Khwaja Baha al-Din Naqshband of Bukhara · d. 1389</p>
+      <p class="silsila-text">A later arrival, brought south by Mughal-era scholars in the seventeenth and eighteenth centuries; established at Hyderabad through Khwaja Habibullah Naqshbandi and others. Distinguished by silent <em>dhikr</em>, the <em>khatm-i-khwajagan</em>, and a particular interest in scholarly law.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="h-rule"/>
+
+<!-- SAINTS GRID -->
+<section class="section-wrap" id="saints">
+  <span class="sec-label">IV · The Saints of the Deccan</span>
+  <h2 class="sec-title">Seven lives that shaped the plateau</h2>
+  <p class="section-intro">Each saint is given his own dedicated record; the chronological roll proceeds from Khuldabad in the fourteenth century to Hyderabad in the eighteenth.</p>
+  <div class="sub-grid">
+    <a class="sub-card" href="/sufism/burhanuddin/">
+      <span class="sub-card-meta">Chishti · Khuldabad</span>
+      <div class="sub-card-title">Burhanuddin Gharib</div>
+      <div class="sub-card-dates">d. 1337</div>
+      <p class="sub-card-text">The first Chishti shaykh to settle permanently in the Deccan. Founder of the Khuldabad hospice and the Deccan Chishti tradition.</p>
+      <span class="sub-card-cta">Read the record</span>
+    </a>
+    <a class="sub-card" href="/sufism/sharfuddin/">
+      <span class="sub-card-meta">Suhrawardi · Pahadi Sharif</span>
+      <div class="sub-card-title">Baba Sharfuddin</div>
+      <div class="sub-card-dates">Bahmani era · late 15th c.</div>
+      <p class="sub-card-text">The Suhrawardi saint of the hill south of Hyderabad; the city's most-beloved Sufi shrine.</p>
+      <span class="sub-card-cta">Read the record</span>
+    </a>
+    <a class="sub-card" href="/sufism/bandanawaz/">
+      <span class="sub-card-meta">Chishti · Gulbarga</span>
+      <div class="sub-card-title">Bandanawaz Gisudaraz</div>
+      <div class="sub-card-dates">1321–1422</div>
+      <p class="sub-card-text">The most learned and influential Sufi of the medieval Deccan; scholar of fiqh, hadith and tafsir.</p>
+      <span class="sub-card-cta">Read the record</span>
+    </a>
+    <a class="sub-card" href="/sufism/hussain-shah-wali/">
+      <span class="sub-card-meta">Qadiri-related · Hyderabad</span>
+      <div class="sub-card-title">Hussain Shah Wali</div>
+      <div class="sub-card-dates">d. 1599</div>
+      <p class="sub-card-text">The scholar-engineer who designed Hussain Sagar for Ibrahim Quli Qutb Shah — Hyderabad's lake.</p>
+      <span class="sub-card-cta">Read the record</span>
+    </a>
+    <a class="sub-card" href="/sufism/shah-raju/">
+      <span class="sub-card-meta">Qadiri · Hyderabad</span>
+      <div class="sub-card-title">Shah Raju Qattal</div>
+      <div class="sub-card-dates">d. c. 1632</div>
+      <p class="sub-card-text">Founder of the Qadiri silsila at Hyderabad; ancestor of the city's longest-lived Sufi families.</p>
+      <span class="sub-card-cta">Read the record</span>
+    </a>
+    <a class="sub-card" href="/sufism/yousufain/">
+      <span class="sub-card-meta">Qadiri · Nampally</span>
+      <div class="sub-card-title">Yousufain Sharif</div>
+      <div class="sub-card-dates">18th century</div>
+      <p class="sub-card-text">The two Husayni brothers whose joint shrine became the most-visited dargah of modern Hyderabad.</p>
+      <span class="sub-card-cta">Read the record</span>
+    </a>
+    <a class="sub-card" href="/sufism/shah-khamosh/">
+      <span class="sub-card-meta">Naqshbandi-Qadiri · Hyderabad</span>
+      <div class="sub-card-title">Shah Khamosh</div>
+      <div class="sub-card-dates">d. 1740</div>
+      <p class="sub-card-text">The silent saint of the early Asaf Jahi capital; counsellor to Asaf Jah I.</p>
+      <span class="sub-card-cta">Read the record</span>
+    </a>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<section class="h-pull">
+  <p class="h-pull-urdu">اَلْاِحْسَانُ اَنْ تَعْبُدَ اللّٰہَ کَاَنَّکَ تَرَاہُ<br/>فَاِنْ لَّمْ تَکُنْ تَرَاہُ فَاِنَّہُ یَرَاکَ</p>
+  <p class="h-pull-trans">"Ihsan is to worship Allah as though you see Him;<br/>and if you do not see Him, then [know that] He sees you."</p>
+  <p class="h-pull-attr">— Hadith of Jibreel · narrated by 'Umar ibn al-Khattab · Sahih al-Bukhari &amp; Sahih Muslim · the founding scriptural definition of Tasawwuf</p>
+</section>
+
+<!-- SUFISM TODAY -->
+<section class="section-wrap narrow" id="aaj">
+  <span class="sec-label">V · Aaj · Sufism in the Deccan Today</span>
+  <h2 class="sec-title">A living <em style="color:var(--gold-deep);font-style:italic;">tradition</em>, in its seventh century</h2>
+  <p class="section-intro">The dargahs, the 'urs calendar, and the continuing scholarly transmission.</p>
+  <div class="prose">
+    <p>The Sufism of the Deccan in the twenty-first century is what it has been since the fourteenth: a discipline of the heart, organised around the silsilas, transmitted through teacher-disciple chains, anchored in the dargahs of the saints whose lives this page records. Operation Polo in 1948 ended the Asaf Jahi state but not the religious institutions it had patronised; the dargahs at Gulbarga, Khuldabad, Hyderabad, Bijapur and Aurangabad continue under the same forms of administration (the <em>sajjada-nashin</em>, the hereditary custodian; the <em>'urs</em>, the annual gathering on the saint's death-anniversary; the daily congregational prayers, qawwali sessions and langar) that have governed them since the medieval period.</p>
+    <p>The 'urs calendar of the Deccan is a near-monthly cycle of pilgrimage: the 'urs of Khwaja Bandanawaz at Gulbarga in Dhu'l-Qa'da, drawing several hundred thousand pilgrims; the 'urs of Yousufain Sharif at Hyderabad on the 11th of Rabi al-Thani; the gatherings at Khuldabad through the cool months for Burhanuddin Gharib and Zayn al-Din Shirazi; the local 'urs of Shah Khamosh, Mahbub Subhani, and dozens of smaller saints at their hospices and tombs through Telangana, Karnataka and Marathwada. The qawwals — the singers of devotional verse — still sing the Persian and Dakhni couplets of Khusrau, Bandanawaz and Bedil at these gatherings, in continuity with their seventh-century repertoire.</p>
+    <p>The scholarly transmission has continued too. The Jami'a Nizamia at Hyderabad (founded 1876) is the principal seminary of the Deccan; its curriculum combines classical Hanafi fiqh and the dars-i-nizami with Qadiri and Naqshbandi Sufi training in the manner the Deccan saints themselves taught. The Sajjada-Nashins of the major dargahs hold positions of communal religious authority; their formal training is in hadith, fiqh and tafsir as well as in Sufi practice. The two sides of the Hadith of Jibreel — Islam and Ihsan — continue, in the Deccan as in every other classical Islamic landscape, to be taught together.</p>
+  </div>
+</section>
+
+<!-- ORTHODOXY NOTE -->
+<section class="note-card" aria-label="A note on theological framing">
+  <span class="note-card-label">A Note on Framing</span>
+  <p class="note-card-body">This record treats Sufism as <em>Tasawwuf</em> — the science of <em>Ihsan</em> within traditional Sunni Islam — and not as a separate sect, syncretic movement or heterodoxy. The saints whose lives appear above were Hanafi (in a few cases Shafi'i) jurists, scholars of hadith and the Qur'an, who held formal <em>ijazas</em> of teaching and traced their Sufi initiation through documented chains (<em>silsila</em>) to the Prophet ﷺ. Their saintliness extended, did not substitute for, their scrupulous observance of the Shari'a. Practices recorded here — <em>dhikr</em>, <em>nafl</em> worship, the recitation of qasidas, the veneration of saintly tombs, the seeking of intercession — fall within the recognised range of classical Sunni orthopraxy and are discussed at length in the standard works of <em>'aqida</em> and <em>fiqh</em>. Where individual saintly practices have been the subject of historical scholarly disagreement, this record follows the consensus of the four classical madhhabs.</p>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-wrap" id="timeline">
+  <div class="timeline-hdr reveal">
+    <span class="sec-label">A Chronology of Sufism in the Deccan</span>
+    <h2 class="timeline-title">Seven centuries from Khuldabad to today</h2>
+  </div>
+  <ol class="tl-list">
+    <li class="tl-item reveal"><span class="tl-year">632 CE</span><span class="tl-text">Death of the Prophet ﷺ; the chains (<em>silsilas</em>) of Sufi initiation begin with his Companions, primarily 'Ali ibn Abi Talib and Abu Bakr al-Siddiq.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">1166</span><span class="tl-text">Death of Shaykh 'Abd al-Qadir Jilani at Baghdad; the Qadiri silsila is established.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">1234</span><span class="tl-text">Death of Shaykh Shihab al-Din 'Umar al-Suhrawardi; the Suhrawardi silsila established.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">1236</span><span class="tl-text">Death of Khwaja Mu'in al-Din Chishti at Ajmer; the Chishti silsila now firmly rooted in India.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">1325</span><span class="tl-text">Death of Khwaja Nizam al-Din Awliya at Delhi; his many khalifas disperse, including several who will move south to the Deccan.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">1327</span><span class="tl-text">Muhammad bin Tughluq transfers the capital from Delhi to Daulatabad; the principal Sufi migration to the Deccan begins.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">c. 1330</span><span class="tl-text"><a href="/sufism/burhanuddin/" style="color:var(--gold-deep);">Burhanuddin Gharib</a> establishes the Chishti hospice at Khuldabad — the founding of organised Sufism in the Deccan.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">1337</span><span class="tl-text">Death of Burhanuddin Gharib at Khuldabad; succession passes to Zayn al-Din Shirazi.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">1369</span><span class="tl-text">Death of Zayn al-Din Shirazi at Khuldabad.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">1389</span><span class="tl-text">Death of Khwaja Baha al-Din Naqshband at Bukhara; the Naqshbandi silsila is established in Central Asia, reaching India two generations later.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">1399</span><span class="tl-text"><a href="/sufism/bandanawaz/" style="color:var(--gold-deep);">Khwaja Bandanawaz Gesudaraz</a> arrives at Gulbarga at the invitation of Firuz Shah Bahmani and Shaykh Siraj al-Din Junaydi.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">1422</span><span class="tl-text">Death of Khwaja Bandanawaz Gesudaraz at Gulbarga at the age of 101 (lunar); construction of his dargah begins under Ahmad Shah I Bahmani.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">14th–15th c.</span><span class="tl-text">Hazrat <a href="/sufism/sharfuddin/" style="color:var(--gold-deep);">Sayyid Shah Muhammad Sharfuddin Suhrawardi</a> arrives in the Bahmani Deccan and establishes his hilltop hospice at what becomes Pahadi Sharif, south of the future city of Hyderabad.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">c. 1480</span><span class="tl-text">Khwaja Mahmud Gawan, the great Bahmani wazir, builds his madrasa at Bidar, integrating the classical sciences with Sufi training in the Khwajagani manner.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">late 15th c.</span><span class="tl-text">Wisaal of Baba Sharfuddin at Pahadi Sharif; he is buried on the summit of his hill by his own instruction. The first formal mausoleum is constructed within a generation.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">1562</span><span class="tl-text">Hazrat <a href="/sufism/hussain-shah-wali/" style="color:var(--gold-deep);">Hussain Shah Wali</a> supervises the construction of Hussain Sagar at Hyderabad for Ibrahim Quli Qutb Shah.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">1591</span><span class="tl-text">Founding of Hyderabad; Mir Mu'min Astarabadi as Peshwa makes the city a hub of Qadiri-influenced Persianate Islam.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">1599</span><span class="tl-text">Death of Hussain Shah Wali at Hyderabad.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">c. 1632</span><span class="tl-text">Death of <a href="/sufism/shah-raju/" style="color:var(--gold-deep);">Shah Raju Qattal Qadiri</a> at Hyderabad; the Qadiri silsila firmly established in the city.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">1687</span><span class="tl-text">Fall of Golconda to Aurangzeb; the Mughal emperor's personal devotion brings additional patronage to the dargahs at Khuldabad.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">1707</span><span class="tl-text">Death of Aurangzeb at Ahmadnagar; he is buried at Khuldabad within sight of Burhanuddin Gharib's dargah, by his own request.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">1724</span><span class="tl-text">Asaf Jah I founds the Hyderabad State; Sufi institutions receive sustained Asaf Jahi patronage for the next two and a quarter centuries.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">1740</span><span class="tl-text">Death of Hazrat <a href="/sufism/shah-khamosh/" style="color:var(--gold-deep);">Shah Khamosh</a> at Hyderabad during the reign of Asaf Jah I.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">c. 1741</span><span class="tl-text">Death of <a href="/sufism/yousufain/" style="color:var(--gold-deep);">Sayyid Shah Yousuf-uddin Husayni</a> at Hyderabad; the joint shrine at Yousufain Sharif begins.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">1876</span><span class="tl-text">Jami'a Nizamia founded at Hyderabad; it becomes the principal seminary of the Deccan, teaching fiqh and Sufi training together.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">1948</span><span class="tl-text">Operation Polo ends Asaf Jahi rule; the dargahs continue under the same sajjada-nashin administration.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">1970s</span><span class="tl-text">Restoration and expansion of the Bandanawaz dargah complex at Gulbarga; the modern white-marble structure dates from this period.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">2014</span><span class="tl-text">Telangana State formed; Hyderabad's Sufi institutions continue as the city's principal religious anchors.</span></li>
+    <li class="tl-item reveal"><span class="tl-year">today</span><span class="tl-text">The 'urs calendar continues, the silsilas continue, the daily prayers and dhikr at the dargahs continue — seven centuries unbroken on the Deccan plateau.</span></li>
+  </ol>
+</section>
+
+<!-- ════════════════════════════════════════════
+     SHARED FOOTER  — copy verbatim
+     ════════════════════════════════════════════ -->
+<footer>
+  <div class="flag-banner"><img src="/dakhni-org-logo.png" alt="Dakhni.org"/></div>
+  <div class="ft-divider"></div>
+  <div class="ft-name">DAKHNI.ORG</div>
+  <p class="ft-tagline">Preserving the soul of the Deccan, one story at a time.</p>
+  <ul class="ft-links">
+    <li><a href="/heritage/">Heritage</a></li>
+    <li><a href="/dynasties/">Dynasties</a></li>
+    <li><a href="/language/">Language</a></li>
+    <li><a href="/sufism/">Sufism</a></li>
+    <li><a href="/cities/">Cities</a></li>
+    <li><a href="/#quiz">Quiz</a></li>
+  </ul>
+  <p class="ft-copy">© <span id="year">2025</span> Dakhni.org · In memory of the Asaf Jahi dynasty · Built with love for the Deccan</p>
+</footer>
+
+<!-- AI Disclosure Popup -->
+<div id="ai-disclosure" role="dialog" aria-modal="true" aria-labelledby="disclosure-title">
+  <div class="disclosure-backdrop"></div>
+  <div class="disclosure-card">
+    <div class="disclosure-ornament">✦</div>
+    <p class="disclosure-label">A Note on Our Content</p>
+    <h2 class="disclosure-title" id="disclosure-title">AI-Assisted Research</h2>
+    <div class="disclosure-rule"></div>
+    <p class="disclosure-body">The information on this website is compiled and synthesised with the assistance of artificial intelligence, drawing from publicly available historical records, academic publications, and cultural archives. While every effort is made to ensure accuracy, AI-generated content may occasionally reflect interpretations rather than universally established fact.</p>
+    <p class="disclosure-body disclosure-body--note">Dakhni.org is an independent cultural project, not affiliated with any institution or government body. We encourage readers to consult primary sources for scholarly research.</p>
+    <button class="disclosure-btn" id="disclosure-accept">I Understand</button>
+  </div>
+</div>
+<style>
+  #ai-disclosure { display:none; position:fixed; inset:0; z-index:9999; align-items:center; justify-content:center; padding:1.5rem; }
+  #ai-disclosure.open { display:flex; }
+  .disclosure-backdrop { position:absolute; inset:0; background:rgba(26,24,20,0.72); backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px); }
+  .disclosure-card { position:relative; z-index:1; background:var(--ivory,#FAF7EF); border:1px solid rgba(160,112,32,0.35); max-width:520px; width:100%; padding:2.8rem 2.6rem 2.4rem; text-align:center; box-shadow:0 8px 48px rgba(26,24,20,0.22); animation:disclosure-rise .4s ease forwards; }
+  @keyframes disclosure-rise { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+  .disclosure-ornament { font-size:.85rem; color:var(--gold,#A07020); letter-spacing:.5em; margin-bottom:1.2rem; }
+  .disclosure-label { font-family:'Inter',sans-serif; font-size:.58rem; font-weight:500; letter-spacing:.38em; text-transform:uppercase; color:var(--gold-deep,#6B4710); margin-bottom:.9rem; }
+  .disclosure-title { font-family:'Cormorant Garamond',Georgia,serif; font-size:1.85rem; font-weight:500; color:var(--ink,#1A1814); letter-spacing:.04em; margin-bottom:1.1rem; }
+  .disclosure-rule { width:48px; height:1px; background:var(--gold,#A07020); margin:0 auto 1.4rem; }
+  .disclosure-body { font-family:'EB Garamond',Georgia,serif; font-size:1rem; line-height:1.85; color:var(--ink-soft,#4A453C); }
+  .disclosure-body--note { margin-top:.9rem; font-size:.9rem; color:var(--ink-faint,#8B8472); font-style:italic; }
+  .disclosure-btn { display:inline-block; margin-top:2rem; font-family:'Inter',sans-serif; font-size:.68rem; font-weight:500; letter-spacing:.22em; text-transform:uppercase; padding:.9rem 2.2rem; background:var(--ink,#1A1814); color:var(--ivory,#FAF7EF); border:1px solid var(--ink,#1A1814); cursor:pointer; transition:all .25s; }
+  .disclosure-btn:hover { background:transparent; color:var(--ink,#1A1814); }
+</style>
+<script>
+(function(){
+  var el = document.getElementById('ai-disclosure');
+  if (!el) return;
+  if (!localStorage.getItem('dakhni_disclosure_seen')) {
+    el.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function dismiss() {
+    localStorage.setItem('dakhni_disclosure_seen', '1');
+    el.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('disclosure-accept').addEventListener('click', dismiss);
+  el.querySelector('.disclosure-backdrop').addEventListener('click', dismiss);
+})();
+</script>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80);
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  (function(){
+    var tog = document.querySelector('.nav-toggle');
+    var links = document.querySelector('.nav-links');
+    if(!tog || !links) return;
+    tog.addEventListener('click', function(){
+      var open = links.classList.toggle('open');
+      tog.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  })();
+</script>
+
+</body>
+</html>
