@@ -13,6 +13,7 @@
   <title>Language &amp; Poetry — Dakhni.org</title>
   <link rel="icon" type="image/png" href="/dakhni-org-logo.png"/>
   <meta name="description" content="Dakhni — the southern dialect of Urdu; a tongue forged in the bazaar and refined at the court."/>
+  <meta name="keywords" content="Dakhni, Dakkani, Dakhini, Dakkhin, Dakhan, Dakhin, Deccan, Deccani, Dakkan, Daccan, Dakini, Hyderabad, Haiderabad, Hyderabadi, Bidar, Gulbarga, Bijapur, Vijapur, Aurangabad, Aurangzeb, Bahmani, Bahamani, Qutb Shahi, Kutb Shahi, Adil Shahi, Asaf Jahi, Asafia, Nizam, Nizams, Dakhni Urdu, Dakkhini Urdu, Deccani Urdu, Hyderabadi Urdu, Deccan plateau, South Indian Sultanates, Deccan Sultanates, Hindustani classical, qawwali, dargah, Sufi shrines, biryani, dum biryani, haleem, lukhmi, mirchi ka salan, Charminar, Golconda, Gol Gumbaz, Hussain Sagar, Bidriware, Paithani, Deccan miniature painting"/>
   <meta name="author" content="Dakhni.org"/>
   <meta name="robots" content="index, follow, max-image-preview:large"/>
   <meta name="theme-color" content="#1A1814"/>
@@ -437,6 +438,120 @@
       .subnav { grid-template-columns:1fr; }
       .subnav .next { text-align:left; }
     }
+
+    /* ─── ACTIVE NAV INDICATOR ─── */
+    .nav-links > li > a[aria-current="page"] {
+      color:var(--gold-deep);
+      border-bottom-color:var(--gold);
+    }
+    .nav-links > li.has-dropdown > a[aria-current="page"] {
+      border-bottom-color:var(--gold);
+    }
+    .dropdown a[aria-current="page"] {
+      background:var(--cream);
+      color:var(--gold-deep);
+      font-weight:500;
+    }
+    @media (max-width:880px){
+      .nav-links > li > a[aria-current="page"] {
+        background:linear-gradient(90deg, var(--cream) 0%, transparent 100%);
+      }
+    }
+
+    /* ─── ALIGNMENT + MOBILE REFINEMENTS ─── */
+    /* Tighter, balanced two-column reading layout */
+    .h-entry {
+      max-width:1080px;
+      grid-template-columns:minmax(0, 1fr) minmax(0, 1.35fr);
+      gap:2.6rem;
+      padding:3.2rem 1.8rem;
+    }
+    .h-entry > .h-figure { width:100%; max-width:100%; margin:0; }
+    .h-entry > .h-figure img {
+      width:100%;
+      height:auto;
+      max-height:480px;
+      object-fit:cover;
+      display:block;
+      border:1px solid var(--rule);
+    }
+    .h-aside { max-width:100%; }
+
+    /* Multi-section pages: align all .h-entry rows on a shared grid */
+    .h-wrap {
+      max-width:1180px;
+      margin:0 auto;
+      padding:0 0 2rem;
+    }
+    .h-wrap > .h-entry { padding-left:1.4rem; padding-right:1.4rem; }
+
+    /* Constrain wide figures and asides so text never feels orphaned */
+    .h-figure figcaption {
+      max-width:520px;
+    }
+
+    /* Lang-divider sections: smaller padding so they don't dwarf the body */
+    .lang-divider { padding:4rem 1.4rem .6rem; }
+
+    /* Crumb sits centred under the hero on every page */
+    .crumb { text-align:center; }
+    .crumb a, .crumb span { display:inline-block; }
+
+    /* Page hero scaled down on phones */
+    @media (max-width:880px) {
+      .page-hero { padding:3.4rem 1.2rem 2.6rem; }
+      .page-hero-title { font-size:clamp(1.6rem, 7vw, 2.2rem); letter-spacing:.04em; }
+      .page-hero-sub { font-size:1rem; line-height:1.7; }
+      .page-hero-eyebrow { font-size:.56rem; letter-spacing:.28em; }
+    }
+
+    /* Article body: tighter on phones, slightly bigger drop-cap */
+    @media (max-width:880px) {
+      .article { padding:2.4rem 1.2rem 2rem; }
+      .article > p, .h-text .h-body p { font-size:1.04rem; line-height:1.78; }
+      .article h2 { font-size:1.45rem; margin-top:2.2rem; padding-top:1.4rem; }
+      .article h3 { font-size:1.12rem; }
+      .article blockquote { font-size:1rem; padding:1rem 1.2rem 1rem 1.4rem; }
+    }
+
+    /* Sub-grid cards (overview pages) — 1-col on phones */
+    @media (max-width:600px) {
+      .sub-grid, .cities-grid { grid-template-columns:1fr !important; }
+      .sub-card, .city-card { padding:1.8rem 1.4rem; }
+      .sub-card-title, .city-card-title { font-size:1.25rem; }
+    }
+
+    /* Subnav stack on phones with bigger tap targets */
+    @media (max-width:600px) {
+      .subnav { gap:.6rem; padding:0 1.2rem 4rem; margin-top:3rem; }
+      .subnav > a, .subnav > div { padding:1.2rem 1.4rem; min-height:60px; }
+      .subnav-title { font-size:1rem; }
+    }
+
+    /* Touch-friendly nav buttons on mobile */
+    @media (max-width:880px) {
+      .nav-links > li > a { padding:.95rem 0; min-height:44px; }
+      .dropdown a { padding:.7rem 0 .7rem .2rem; min-height:44px; }
+      nav { padding:0 1rem; }
+      .nav-brand { font-size:.9rem; letter-spacing:.18em; }
+      .nav-mark { width:28px; height:28px; }
+    }
+
+    /* Reduce gap between sections on tablet */
+    @media (max-width:1024px) and (min-width:881px) {
+      .h-entry { padding:2.6rem 1.6rem; gap:2rem; }
+      .page-hero { padding:4.4rem 1.6rem 3rem; }
+    }
+
+    /* Prevent horizontal overflow on phones */
+    @media (max-width:600px) {
+      .h-entry { padding:2.4rem 1.2rem; gap:1.6rem; }
+      .h-aside { padding:1.4rem 1.2rem; }
+      .h-list li { font-size:.9rem; padding:.6rem 0; }
+      .h-key { font-size:1rem; }
+      footer { padding:2.6rem 1.2rem 2rem; }
+      .ft-links { gap:1rem .9rem; font-size:.6rem; }
+    }
 </style>
 </head>
 <body>
@@ -529,6 +644,32 @@
       tog.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
   })();
+</script>
+<script>
+(function(){
+  var path = window.location.pathname.replace(/\/index\.html$/, '/');
+  if (path === '') path = '/';
+  // mark the top-level section
+  var sections = [
+    ['/heritage/',  'a[href="/heritage/"]'],
+    ['/dynasties/', 'a[href="/dynasties/"]'],
+    ['/language/',  'a[href="/language/"]'],
+    ['/sufism/',    'a[href="/sufism/"]'],
+    ['/cities/',    'a[href="/cities/"]'],
+    ['/',           'a[href="/"]']
+  ];
+  for (var i = 0; i < sections.length; i++) {
+    var prefix = sections[i][0];
+    if (path === prefix || (prefix !== '/' && path.indexOf(prefix) === 0)) {
+      var link = document.querySelector('.nav-links ' + sections[i][1]);
+      if (link) link.setAttribute('aria-current', 'page');
+      break;
+    }
+  }
+  // mark the deeper sub-item if any
+  var sub = document.querySelector('.dropdown a[href="' + path + '"]');
+  if (sub) sub.setAttribute('aria-current', 'page');
+})();
 </script>
 </body>
 </html>
