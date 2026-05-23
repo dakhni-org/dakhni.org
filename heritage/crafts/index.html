@@ -552,6 +552,14 @@
       footer { padding:2.6rem 1.2rem 2rem; }
       .ft-links { gap:1rem .9rem; font-size:.6rem; }
     }
+    /* ─── Readability: full-width sections, centered entries, single column on mobile ─── */
+    .h-section { display:block; }
+    @media (max-width:900px){
+      .h-entry { grid-template-columns:1fr !important; gap:1.8rem !important; }
+      .h-entry > .h-figure, .h-entry > .h-text, .h-entry > .h-aside { order:0 !important; }
+      .h-aside { position:static !important; }
+    }
+
 </style>
 </head>
 <body>
