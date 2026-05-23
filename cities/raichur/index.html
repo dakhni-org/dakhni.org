@@ -699,14 +699,19 @@
       </ul>
     </li>
     <li class="has-dropdown">
-      <a href="/institutions/">Landmarks</a>
+      <a href="/monuments/">Landmarks</a>
       <ul class="dropdown">
-        <li><a href="/institutions/">Institutions</a></li>
         <li><a href="/monuments/">Monuments</a></li>
+        <li><a href="/institutions/">Institutions</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="/masjids/">Sacred Sites</a>
+      <ul class="dropdown">
         <li><a href="/masjids/">Masjids</a></li>
         <li><a href="/dargahs/">Dargahs</a></li>
         <li><a href="/temples/">Temples</a></li>
-        <li><a href="/religious/">Other Religious</a></li>
+        <li><a href="/religious-structures/">Other Faiths</a></li>
       </ul>
     </li>
     <li><a href="/#quiz">Are You Dakhni?</a></li>
@@ -1148,6 +1153,13 @@
     ['/language/',  'a[href="/language/"]'],
     ['/sufism/',    'a[href="/sufism/"]'],
     ['/cities/',    'a[href="/cities/"]'],
+    ['/monuments/', 'a[href="/monuments/"]'],
+    ['/institutions/', 'a[href="/monuments/"]'],
+    ['/masjids/',   'a[href="/masjids/"]'],
+    ['/dargahs/',   'a[href="/masjids/"]'],
+    ['/temples/',   'a[href="/masjids/"]'],
+    ['/religious-structures/', 'a[href="/masjids/"]'],
+    ['/religious/', 'a[href="/masjids/"]'],
     ['/',           'a[href="/"]']
   ];
   for (var i = 0; i < sections.length; i++) {
