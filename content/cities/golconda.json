@@ -13,5 +13,6 @@
  "extra_scripts": [
   "(function(){\n    var tog = document.querySelector('.nav-toggle');\n    var links = document.querySelector('.nav-links');\n    if(!tog || !links) return;\n    tog.addEventListener('click', function(){\n      var open = links.classList.toggle('open');\n      tog.setAttribute('aria-expanded', open ? 'true' : 'false');\n      document.body.classList.toggle('menu-open', open);\n    });\n    links.querySelectorAll('a').forEach(function(a){\n      a.addEventListener('click', function(){\n        links.classList.remove('open');\n        tog.setAttribute('aria-expanded', 'false');\n        document.body.classList.remove('menu-open');\n      });\n    });\n  })();",
   "document.getElementById('year').textContent = new Date().getFullYear();"
- ]
+ ],
+ "crumb_html": "<a href=\"/\">Home</a><span class=\"crumb-sep\">›</span><a href=\"/cities/\">Cities</a><span class=\"crumb-sep\">›</span>Golconda"
 }
