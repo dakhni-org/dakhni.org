@@ -178,19 +178,6 @@
     <p class="ds-search-hint" id="ds-search-hint">Search heritage, dynasties, cities, language, Sufism and more.</p>
   </div>
 </div>
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
-  (function(){
-    var tog = document.querySelector('.nav-toggle');
-    var links = document.querySelector('.nav-links');
-    if(!tog || !links) return;
-    tog.addEventListener('click', function(){
-      var open = links.classList.toggle('open');
-      tog.setAttribute('aria-expanded', open ? 'true' : 'false');
-      document.body.classList.toggle('menu-open', open);
-    });
-  })();
-</script>
 <script defer src="/assets/site.js"></script>
 </body>
 </html>

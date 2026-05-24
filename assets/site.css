@@ -857,7 +857,8 @@ html:not(.js) .reveal, html:not(.js) .reveal-left, html:not(.js) .reveal-right {
 /* ── homepage heartland city grid (component) ── */
 .heartland { background:var(--cream); padding:2.2rem 2rem 2.6rem; border-bottom:1px solid var(--rule); text-align:center; }
 .heartland-label { font-family:'Inter',sans-serif; font-size:.58rem; font-weight:500; letter-spacing:.35em; text-transform:uppercase; color:var(--ink-faint); display:block; margin-bottom:1.1rem; }
-.heartland-grid { list-style:none; margin:0 auto; padding:0; max-width:1080px; display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1px; background:var(--rule); border:1px solid var(--rule); }
+.heartland-grid { list-style:none; margin:0 auto; padding:0; max-width:1080px; display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--rule); border:1px solid var(--rule); }
+@media(max-width:760px){ .heartland-grid { grid-template-columns:repeat(2,1fr); } }
 .heartland-city { display:block; background:var(--ivory); padding:1.1rem .8rem; text-decoration:none; color:inherit; transition:background .25s; }
 .heartland-city:hover { background:#fff; }
 .hc-name { display:block; font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:500; color:var(--ink); letter-spacing:.02em; }
