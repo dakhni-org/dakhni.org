@@ -11,7 +11,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dargahs of the Deccan — Dakhni.org</title>
-  <link rel="icon" type="image/png" href="/dakhni-org-logo.png"/>
+  <link rel="icon" type="image/png" href="/assets/dakhni-org-logo.png"/>
   <meta name="description" content="The great Sufi shrines of the Deccan — Khuldabad, Bandanawaz at Gulbarga, Yousufain Sharif and Maula Ali at Hyderabad, Pahadi Sharif, Shah Khamosh and the dargahs of the Bahmani, Qutb Shahi and Asaf Jahi periods."/>
   <meta name="author" content="Dakhni.org"/>
   <meta name="robots" content="index, follow, max-image-preview:large"/>
@@ -55,7 +55,7 @@
 }
 
     .page-hero { background:var(--ivory); padding:6rem 2rem 4rem; text-align:center; border-bottom:1px solid var(--rule); position:relative; overflow:hidden; }
-    .page-hero::after { content:''; position:absolute; inset:0; background:url('/dakhni-pattern.png') repeat; background-size:120px; opacity:0.05; pointer-events:none; z-index:0; }
+    .page-hero::after { content:''; position:absolute; inset:0; background:url('/assets/dakhni-pattern.png') repeat; background-size:120px; opacity:0.05; pointer-events:none; z-index:0; }
     .page-hero-inner { position:relative; z-index:1; max-width:760px; margin:0 auto; }
     .page-hero-eyebrow { font-family:'Inter',sans-serif; font-size:.62rem; font-weight:500; letter-spacing:.38em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:1rem; display:block; }
     .page-hero-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,5vw,3.4rem); font-weight:500; color:var(--ink); letter-spacing:.1em; line-height:1.15; margin-bottom:1rem; }
@@ -142,13 +142,18 @@
       }
       .dropdown a { padding:.55rem 0; font-size:.64rem; letter-spacing:.14em; }
     }
+    /* Non-clickable placeholder tiles — detail page not yet written */
+    .city-card--soon { cursor:default; }
+    .city-card--soon:hover { background:var(--ivory); }
+    .city-card-cta--soon { color:var(--ink-faint); border-bottom:1px dotted var(--ink-faint); }
+
 </style>
 </head>
 <body>
 
 <nav>
   <a href="/" class="nav-brand" aria-label="Dakhni.org home">
-    <img class="nav-mark" src="/dakhni-org-logo.png" alt=""/>
+    <img class="nav-mark" src="/assets/dakhni-org-logo.png" alt=""/>
     <span>DAKHNI.ORG</span>
   </a>
   <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -188,13 +193,13 @@
     <span class="city-card-cta">Visit →</span>
   </a>
 
-  <a href="#" class="city-card">
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">II · Chishti · Khuldabad</span>
     <h2 class="city-card-title">Khwaja Zayn al-Din Shirazi</h2>
     <p class="city-card-tag">d. 1369 · Khuldabad</p>
     <p class="city-card-text">The second great shrine of the Khuldabad complex, raised over the grave of Burhanuddin Gharib's principal successor. Of long historical interest because Aurangzeb, by his own written instruction, is buried at the saint's feet — an open-sky grave a few paces from the dargah's inner sanctum.</p>
-    <span class="city-card-cta">Visit →</span>
-  </a>
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
 
   <a href="/sufism/bandanawaz/" class="city-card">
     <span class="city-card-eyebrow">III · Chishti · Gulbarga</span>
@@ -212,13 +217,13 @@
     <span class="city-card-cta">Visit →</span>
   </a>
 
-  <a href="#" class="city-card">
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">V · Qutb Shahi · Hyderabad</span>
     <h2 class="city-card-title">Maula Ali Dargah</h2>
     <p class="city-card-tag">established 1578 · north-east of the city</p>
     <p class="city-card-text">A shrine raised on a granite hill north-east of Hyderabad by Yaqut Nawab, an Abyssinian eunuch in Qutb Shahi service, around a tablet bearing what tradition holds is the imprint of Hazrat Ali's hand. Reached by a long flight of rock-cut steps; the annual <em>'urs</em> on 17 Rajab is among the largest in the city.</p>
-    <span class="city-card-cta">Visit →</span>
-  </a>
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
 
   <a href="/sufism/hussain-shah-wali/" class="city-card">
     <span class="city-card-eyebrow">VI · Qadiri-related · Hyderabad</span>
@@ -228,13 +233,13 @@
     <span class="city-card-cta">Visit →</span>
   </a>
 
-  <a href="#" class="city-card">
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">VII · Mughal · Khuldabad</span>
     <h2 class="city-card-title">Dargah of Aurangzeb Alamgir</h2>
     <p class="city-card-tag">d. 1707 · Khuldabad</p>
     <p class="city-card-text">By the emperor's own written instruction, an open-sky grave a few paces from the rauza of Zayn al-Din Shirazi — no dome, no marble, only a low parapet and earth on which devotees plant tulsi. The simplest Mughal-imperial tomb in India, and the most eloquent.</p>
-    <span class="city-card-cta">Visit →</span>
-  </a>
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
 
   <a href="/sufism/shah-raju/" class="city-card">
     <span class="city-card-eyebrow">VIII · Qadiri · Hyderabad</span>
@@ -252,21 +257,21 @@
     <span class="city-card-cta">Visit →</span>
   </a>
 
-  <a href="#" class="city-card">
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">X · Naqshbandi · Hyderabad</span>
     <h2 class="city-card-title">Khwaja Habibullah Naqshbandi</h2>
     <p class="city-card-tag">18th c. · old city</p>
     <p class="city-card-text">The principal Naqshbandi-Mujaddidi shrine of the Asaf Jahi capital, established by the scholar who brought the Mujaddidi line south from Delhi. A small but architecturally pure Mughal-style rauza, still administered by a hereditary <em>sajjada-nashin</em> from the saint's family.</p>
-    <span class="city-card-cta">Visit →</span>
-  </a>
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
 
-  <a href="#" class="city-card">
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XI · Qadiri · Hyderabad</span>
     <h2 class="city-card-title">Mahbub-i-Subhani (Shah Mohammed Hyder)</h2>
     <p class="city-card-tag">18th c. · old city</p>
     <p class="city-card-text">A Qadiri shrine in the old city descended directly from Shah Raju Qattal; the saint's title <em>Mahbub-i-Subhani</em> ("the Beloved of the Most Glorious") echoes that of Shaykh 'Abd al-Qadir Jilani. The dargah remains a working centre of Qadiri practice with regular weekly assemblies.</p>
-    <span class="city-card-cta">Visit →</span>
-  </a>
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
 
   <a href="/sufism/yousufain/" class="city-card">
     <span class="city-card-eyebrow">XII · Husayni-Qadiri · Nampally</span>
@@ -276,58 +281,58 @@
     <span class="city-card-cta">Visit →</span>
   </a>
 
-  <a href="#" class="city-card">
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XIII · Qadiri · Hyderabad</span>
     <h2 class="city-card-title">Sayyid Shah Inayat Allah Quadri</h2>
     <p class="city-card-tag">old-city quarter, Hyderabad</p>
     <p class="city-card-text">A Qadiri shrine in the old-city quarter, one of the cluster of small dargahs that surround the Misri Ganj–Mehboob Chowk axis. Closely connected to the Shah Raju and Yousufain lines of transmission, and a regular stop on the Asaf-Jahi-era <em>ziyarat</em> circuit.</p>
-    <span class="city-card-cta">Visit →</span>
-  </a>
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
 
-  <a href="#" class="city-card">
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XIV · Husayni · Hyderabad</span>
     <h2 class="city-card-title">Sayyid Shah Yadullah Husayni</h2>
     <p class="city-card-tag">18th c. · Misri Ganj</p>
     <p class="city-card-text">A Husayni shrine in the Misri Ganj quarter, closely connected by blood to the Yousufain line at Nampally. A small but well-kept dargah, used as a teaching centre by descendants of the Hussaini sayyids and the locus of an annual <em>'urs</em> in the saint's name.</p>
-    <span class="city-card-cta">Visit →</span>
-  </a>
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
 
-  <a href="#" class="city-card">
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XV · Naqshbandi-Qadiri · Hyderabad</span>
     <h2 class="city-card-title">Mahbub Allah Hyderabadi</h2>
     <p class="city-card-tag">Mehboob Chowk · old city</p>
     <p class="city-card-text">A Naqshbandi-Qadiri shrine in the heart of the old city; the saint's name gave Mehboob Chowk its name. The dargah is small and architecturally modest, embedded in the bazaar lanes, but a continuously-visited node of the Hyderabad <em>ziyarat</em> circuit.</p>
-    <span class="city-card-cta">Visit →</span>
-  </a>
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
 
-  <a href="#" class="city-card">
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XVI · Chishti · Gulbarga</span>
     <h2 class="city-card-title">Sayyid Muhammad Gisudaraz Sani</h2>
     <p class="city-card-tag">within the Bandanawaz complex</p>
     <p class="city-card-text">The dargah of the grandson of Bandanawaz, raised within the larger Gulbarga complex and continuing the line of <em>sajjada-nashin</em> custodianship of the principal shrine. One of several auxiliary rauzas inside the same walled enclosure.</p>
-    <span class="city-card-cta">Visit →</span>
-  </a>
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
 
-  <a href="#" class="city-card">
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XVII · Chishti · Gulbarga</span>
     <h2 class="city-card-title">Bandanawaz Complex Auxiliary Tombs</h2>
     <p class="city-card-tag">Gulbarga · within the dargah enclosure</p>
     <p class="city-card-text">The smaller rauzas of Bandanawaz's sons, grandsons and principal disciples gathered around the central shrine — an entire cemetery of Chishti scholars under one set of walls. Together they form one of the densest Sufi necropoleis of the Deccan.</p>
-    <span class="city-card-cta">Visit →</span>
-  </a>
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
 
-  <a href="#" class="city-card">
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XVIII · Qadiri-Chishti · Nagpur</span>
     <h2 class="city-card-title">Hazrat Tajuddin Aulia</h2>
     <p class="city-card-tag">d. 1925 · Nagpur</p>
     <p class="city-card-text">The principal northern-Deccan / Vidarbha shrine, raised over the tomb of the saint of Sakkardara. Though Nagpur is outside the historical Deccan sultanates, Tajuddin Aulia is closely woven into the wider Deccan Sufi network, and the annual <em>'urs</em> draws pilgrims from Hyderabad, Aurangabad and Bidar alike.</p>
-    <span class="city-card-cta">Visit →</span>
-  </a>
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
 
 </div>
 
 <footer>
-  <div class="flag-banner"><img src="/dakhni-org-logo.png" alt="Dakhni.org"/></div>
+  <div class="flag-banner"><img src="/assets/dakhni-org-logo.png" alt="Dakhni.org"/></div>
   <div class="ft-divider"></div>
   <div class="ft-name">DAKHNI.ORG</div>
   <p class="ft-tagline">Preserving the soul of the Deccan, one story at a time.</p>

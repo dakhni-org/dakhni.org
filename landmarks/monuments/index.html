@@ -11,7 +11,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Monuments of the Deccan — Dakhni.org</title>
-  <link rel="icon" type="image/png" href="/dakhni-org-logo.png"/>
+  <link rel="icon" type="image/png" href="/assets/dakhni-org-logo.png"/>
   <meta name="description" content="Architectural marvels of the Deccan — Charminar, Golconda Fort, Gol Gumbaz, the Qutb Shahi tombs, Daulatabad, Bidar fort, Chowmahalla and Falaknuma palaces, and the great forts, palaces and tomb-gardens of the Bahmani, Qutb Shahi, Adil Shahi and Asaf Jahi dynasties."/>
   <meta name="author" content="Dakhni.org"/>
   <meta name="robots" content="index, follow, max-image-preview:large"/>
@@ -55,7 +55,7 @@
 }
 
     .page-hero { background:var(--ivory); padding:6rem 2rem 4rem; text-align:center; border-bottom:1px solid var(--rule); position:relative; overflow:hidden; }
-    .page-hero::after { content:''; position:absolute; inset:0; background:url('/dakhni-pattern.png') repeat; background-size:120px; opacity:0.05; pointer-events:none; z-index:0; }
+    .page-hero::after { content:''; position:absolute; inset:0; background:url('/assets/dakhni-pattern.png') repeat; background-size:120px; opacity:0.05; pointer-events:none; z-index:0; }
     .page-hero-inner { position:relative; z-index:1; max-width:760px; margin:0 auto; }
     .page-hero-eyebrow { font-family:'Inter',sans-serif; font-size:.62rem; font-weight:500; letter-spacing:.38em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:1rem; display:block; }
     .page-hero-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,5vw,3.4rem); font-weight:500; color:var(--ink); letter-spacing:.1em; line-height:1.15; margin-bottom:1rem; }
@@ -396,13 +396,18 @@
       .subnav { grid-template-columns:1fr; }
       .subnav .next { text-align:left; }
     }
+    /* Non-clickable placeholder tiles — detail page not yet written */
+    .city-card--soon { cursor:default; }
+    .city-card--soon:hover { background:var(--ivory); }
+    .city-card-cta--soon { color:var(--ink-faint); border-bottom:1px dotted var(--ink-faint); }
+
 </style>
 </head>
 <body>
 
 <nav>
   <a href="/" class="nav-brand" aria-label="Dakhni.org home">
-    <img class="nav-mark" src="/dakhni-org-logo.png" alt=""/>
+    <img class="nav-mark" src="/assets/dakhni-org-logo.png" alt=""/>
     <span>DAKHNI.ORG</span>
   </a>
   <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -433,234 +438,234 @@
 </div>
 
 <div class="cities-grid">
-  <a href="#" class="city-card">
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">I · Yadava → Tughluq → Bahmani</span>
     <h2 class="city-card-title">Daulatabad Fort</h2>
     <p class="city-card-tag">12th c. (Devagiri) · refortified 1327 · Aurangabad</p>
     <p class="city-card-text">A 200-metre conical hill-citadel, originally the Yadava capital of Devagiri, massively refortified under Muhammad bin Tughluq in 1327. Held later by the Bahmanis and Nizam Shahis, it is famed for its spiral pitch-dark tunnel approach designed to disorient any besieger.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">II · Bahmani capital</span>
     <h2 class="city-card-title">Gulbarga Fort &amp; Jama Masjid</h2>
     <p class="city-card-tag">1347 · Alauddin Bahman Shah · Gulbarga</p>
     <p class="city-card-text">The first capital of the Bahmani Sultanate, founded by Alauddin Bahman Shah after he broke with Delhi. The Jama Masjid of 1367 within the fort is unique in India for being roofed entirely with domes — there is no open courtyard, an Iranian-influenced experiment that has no successor on the subcontinent.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">III · Bahmani &amp; Barid Shahi</span>
     <h2 class="city-card-title">Bidar Fort</h2>
     <p class="city-card-tag">1429 · Ahmad Shah I Bahmani · Bidar</p>
     <p class="city-card-text">Raised up by Ahmad Shah I Bahmani when he shifted the capital from Gulbarga to the cooler Bidar plateau. The Rangin Mahal and Solah Khamba mosque still stand inside the citadel; the painted-tile walls of the palace complex are unmatched anywhere else in South India.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">IV · Bahmani vizierate</span>
     <h2 class="city-card-title">Mahmud Gawan Madrasa</h2>
     <p class="city-card-tag">1472 · Bidar</p>
     <p class="city-card-text">A three-storey Iranian-style madrasa with a great open courtyard and tall flanking minarets, finished in turquoise faience by the Persian vizier Mahmud Gawan. It is one of the very few surviving pieces of Timurid-influenced Persian architecture on the subcontinent.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">V · Kakatiya capital</span>
     <h2 class="city-card-title">Warangal Fort &amp; the Kakatiya Toranas</h2>
     <p class="city-card-tag">12th–14th c. · Kakatiyas · Warangal</p>
     <p class="city-card-text">The capital of the Kakatiyas before the Delhi sultans broke through in 1323. Four monumental free-standing stone gateways — the Kakatiya Kala Thoranam — still mark the inner citadel; the silhouette is the official emblem of Telangana.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">VI · Kakatiya · UNESCO</span>
     <h2 class="city-card-title">Ramappa Temple</h2>
     <p class="city-card-tag">1213 · Palampet, near Warangal</p>
     <p class="city-card-text">A Kakatiya temple of basalt and red sandstone on a star-shaped plan, inscribed UNESCO World Heritage in 2021. Its sandstone shikhara bricks are light enough to float on water — a craft trick that has kept the upper structure standing for eight centuries.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">VII · Kakatiya</span>
     <h2 class="city-card-title">Thousand Pillar Temple</h2>
     <p class="city-card-tag">1163 · Rudra Deva · Hanamkonda</p>
     <p class="city-card-text">A trikutalaya (triple-shrine) temple raised by Rudra Deva on a star-shaped plan, with intricate granite carving and a famed Nandi monolith in the central mandapa. Among the finest surviving Kakatiya works after Ramappa.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">VIII · Qutb Shahi citadel</span>
     <h2 class="city-card-title">Golconda Fort</h2>
     <p class="city-card-tag">From 1518 · Qutb Shahis · Hyderabad</p>
     <p class="city-card-text">A Qutb Shahi citadel built up on a granite outcrop west of the present city, with eight gateways and an 11-kilometre outer wall. Its most famous detail is the clap-acoustic at the Fateh Darwaza entrance, which still carries sound to the durbar hall half a kilometre above.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">IX · Qutb Shahi · Hyderabad</span>
     <h2 class="city-card-title">Charminar</h2>
     <p class="city-card-tag">1591 · Muhammad Quli Qutb Shah</p>
     <p class="city-card-text">The foundation monument of the new Qutb Shahi city, raised by Muhammad Quli at the centre of what would become Hyderabad. Four 56-metre minarets, an upper-floor mosque, and a four-arched ceremonial gateway that still anchors the old city.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">X · Qutb Shahi · Hyderabad</span>
     <h2 class="city-card-title">Char Kaman &amp; Gulzar Houz</h2>
     <p class="city-card-tag">1592 · Muhammad Quli Qutb Shah</p>
     <p class="city-card-text">The four ceremonial arches and the central fountain that defined the original Qutb Shahi city plan north of the Charminar. Each kaman opened to a quarter of the planned city — palace, bazaar, gardens and the road to Golconda.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XI · Qutb Shahi necropolis</span>
     <h2 class="city-card-title">Qutb Shahi Tombs</h2>
     <p class="city-card-tag">16th–17th c. · north of Golconda</p>
     <p class="city-card-text">The largest royal necropolis of any single dynasty in the world: twenty-one tombs of seven Qutb Shahi sultans and their families, set in a single garden enclosure between Golconda and Hyderabad. The domes and bulbous finials rehearse the entire Qutb Shahi style.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XII · Qutb Shahi · Hyderabad</span>
     <h2 class="city-card-title">Mecca Masjid</h2>
     <p class="city-card-tag">Begun 1614 · completed 1694</p>
     <p class="city-card-text">Begun by Muhammad Quli Qutb Shah and finished under Aurangzeb, it is among the largest mosques of the subcontinent. The bricks of its central arch are said to have been brought from the precincts of the Ka'ba at Mecca, from which the masjid takes its name.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XIII · Late Qutb Shahi</span>
     <h2 class="city-card-title">Toli Masjid</h2>
     <p class="city-card-tag">1671 · Musa Khan Mahaldar · Hyderabad</p>
     <p class="city-card-text">Built by Musa Khan Mahaldar, a courtier of Abdullah Qutb Shah, on the road from Hyderabad to Golconda. Small in scale but exquisitely proportioned, with a façade of inset arches and stucco medallions — a textbook example of late Qutb Shahi mosque craft.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XIV · Qutb Shahi · Shia</span>
     <h2 class="city-card-title">Bara Imambara</h2>
     <p class="city-card-tag">17th c. · Hyderabad</p>
     <p class="city-card-text">A Qutb Shahi-era Shia commemorative hall, older than its more famous Awadh namesake at Lucknow. It still anchors the Shia processions of Muharram in the old city and is among the earliest surviving imambaras of the Deccan.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XV · Adil Shahi</span>
     <h2 class="city-card-title">Ibrahim Rauza</h2>
     <p class="city-card-tag">1626 · Malik Sandal · Bijapur</p>
     <p class="city-card-text">The tomb-and-mosque complex of Ibrahim Adil Shah II, designed by the master Malik Sandal. Often called the "Taj of the Deccan", it is widely held to have influenced the planning of the Taj Mahal a generation later, and is the high point of Adil Shahi stone carving.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XVI · Adil Shahi</span>
     <h2 class="city-card-title">Gol Gumbaz</h2>
     <p class="city-card-tag">1656 · Muhammad Adil Shah · Bijapur</p>
     <p class="city-card-text">The mausoleum of Muhammad Adil Shah, holding the second-largest unsupported dome in the world at 44 metres in diameter. The whispering gallery beneath the dome returns a whisper seven times — a final flourish of Adil Shahi engineering.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XVII · Adil Shahi</span>
     <h2 class="city-card-title">Jama Masjid, Bijapur</h2>
     <p class="city-card-tag">1576 · Ali Adil Shah I</p>
     <p class="city-card-text">The largest mosque of the Adil Shahi capital, raised by Ali Adil Shah I in celebration of his victory at Talikota. A vast pillared prayer hall sits beneath a single sweeping dome, with floor squares painted in gold in the reign of Aurangzeb.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XVIII · Mughal Deccan</span>
     <h2 class="city-card-title">Bibi ka Maqbara</h2>
     <p class="city-card-tag">1660s · Azam Shah · Aurangabad</p>
     <p class="city-card-text">A mausoleum built by Aurangzeb's son Azam Shah for his mother Dilras Banu Begum, modelled openly on the Taj Mahal but executed in stone-and-plaster on the more modest budget of the Deccan court. It remains the largest Mughal-era tomb of southern India.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XIX · Sufi necropolis</span>
     <h2 class="city-card-title">Khuldabad &amp; Aurangzeb's Tomb</h2>
     <p class="city-card-tag">14th c. onward · near Daulatabad</p>
     <p class="city-card-text">A 14th-century Sufi necropolis on the plateau above Daulatabad, housing the dargahs of Burhanuddin Gharib and Zayn al-Din Shirazi. Aurangzeb is buried here by his own request — in a deliberately unmarked open grave, beside the saints he had revered all his life.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XX · Qutb Shahi extension</span>
     <h2 class="city-card-title">Naya Qila</h2>
     <p class="city-card-tag">17th c. · Hyderabad</p>
     <p class="city-card-text">The "new fort" extension of Golconda built after Aurangzeb's first siege, with its own line of walls and bastions north of the main citadel. Inside stands a famed baobab tree said to have been planted by a 16th-century Sufi who came from Africa with the trader-courtiers.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XXI · Asaf Jahi · Hyderabad</span>
     <h2 class="city-card-title">Chowmahalla Palace</h2>
     <p class="city-card-tag">From 1869 · Asaf Jah IV · Hyderabad</p>
     <p class="city-card-text">Four palaces grouped around a Persian-style char-bagh courtyard, built up from the late 1860s by Asaf Jah IV as the new seat of the Nizam's durbar. The Khilwat Mubarak hall, with its nineteen Belgian chandeliers, hosted every accession of the dynasty.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XXII · Asaf Jahi · Hyderabad</span>
     <h2 class="city-card-title">Falaknuma Palace</h2>
     <p class="city-card-tag">1894 · Vikar-ul-Umara · Hyderabad</p>
     <p class="city-card-text">An Italian-Renaissance-meets-Mughal palace on a hill south of the city, built by the Paigah noble Vikar-ul-Umara and acquired in 1897 by the sixth Nizam Mahbub Ali Khan. Today restored as a Taj heritage hotel; its dining hall once sat 101 guests.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XXIII · Asaf Jahi · Hyderabad</span>
     <h2 class="city-card-title">Purani Haveli</h2>
     <p class="city-card-tag">Late 18th c. · Hyderabad</p>
     <p class="city-card-text">The original residence of the second Nizam, later expanded by the sixth Nizam Mahbub Ali Khan into a sprawling palace. It is best known for its 73-metre wooden wardrobe corridor — said to be the longest in the world — built to hold the sixth Nizam's wardrobe.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XXIV · Asaf Jahi · Hyderabad</span>
     <h2 class="city-card-title">King Kothi Palace</h2>
     <p class="city-card-tag">Early 20th c. · Hyderabad</p>
     <p class="city-card-text">The personal residence of the seventh Nizam Mir Osman Ali Khan from 1911 until his death in 1967 — he refused to live in Chowmahalla. A modest palace by Nizam standards, but the working court from which the last decades of the Hyderabad State were governed.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XXV · Paigah · Hyderabad</span>
     <h2 class="city-card-title">Paigah Tombs</h2>
     <p class="city-card-tag">18th–19th c. · Santosh Nagar, Hyderabad</p>
     <p class="city-card-text">The tombs of the Paigah nobles — the family second only to the Nizams in the Hyderabad State — in delicate stucco lattice and pierced-marble inlay. One of the city's least-visited but most exquisite Asaf Jahi-era monuments, tucked behind the Santosh Nagar bazaars.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XXVI · Indo-Saracenic</span>
     <h2 class="city-card-title">High Court of Hyderabad</h2>
     <p class="city-card-tag">1919 · Vincent Esch · Musi south bank</p>
     <p class="city-card-text">An Indo-Saracenic masterpiece by the English architect Vincent Esch, completed under the seventh Nizam on the south bank of the Musi. Domes, jaalis and pink-granite arches frame what is still the working seat of the Telangana High Court.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XXVII · Asaf Jahi VII</span>
     <h2 class="city-card-title">Public Gardens &amp; Jubilee Hall</h2>
     <p class="city-card-tag">1919 · Hyderabad</p>
     <p class="city-card-text">The largest urban garden of early 20th-century Hyderabad State, laid out by the seventh Nizam as part of his post-flood reconstruction of the city. Jubilee Hall, raised within the gardens, hosted the silver jubilee of Asaf Jah VII in 1937.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XXVIII · Bahmani frontier</span>
     <h2 class="city-card-title">Raichur Fort</h2>
     <p class="city-card-tag">14th c. onward · Raichur Doab</p>
     <p class="city-card-text">A walled hill-citadel in the Doab between the Krishna and the Tungabhadra, contested for two centuries between the Deccan sultanates and the Vijayanagara empire. Its double-line of walls and the cyclopean Mecca Darwaza still mark the most fought-over fortress of the southern Deccan.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XXIX · Bahmani · Adil Shahi</span>
     <h2 class="city-card-title">Naldurg Fort</h2>
     <p class="city-card-tag">14th–16th c. · Osmanabad</p>
     <p class="city-card-text">A Bahmani-era fortress later expanded by the Adil Shahis, famed for the Pani Mahal — a water-pavilion built into the dam wall of the Bori river, whose chambers run beneath the spillway and emerge dry on the other side.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XXX · Reddi · Qutb Shahi</span>
     <h2 class="city-card-title">Kondapalli Fort</h2>
     <p class="city-card-tag">14th c. · near Vijayawada</p>
     <p class="city-card-text">A hill-fortress raised by the Reddi kings of Kondaveedu, taken in the 15th century by the Bahmanis and later held by the Qutb Shahis as their easternmost outpost. Its three darwazas and the Tanisha Mahal still crown the granite ridge above the Krishna.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XXXI · Asaf Jahi · Hyderabad</span>
     <h2 class="city-card-title">Asafia Library</h2>
     <p class="city-card-tag">1891 · Afzal Ganj, Hyderabad</p>
     <p class="city-card-text">The State Central Library of Hyderabad, founded under the sixth Nizam in 1891 in a red-and-yellow Indo-Saracenic building on the Musi. It holds one of the largest collections of Persian, Arabic and Urdu manuscripts on the subcontinent.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
-  <a href="#" class="city-card">
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
+  <div class="city-card city-card--soon">
     <span class="city-card-eyebrow">XXXII · Bādāmi Chalukya</span>
     <h2 class="city-card-title">Sangameswara Temple, Alampur</h2>
     <p class="city-card-tag">7th–8th c. · Jogulamba Gadwal</p>
     <p class="city-card-text">One of the Navabrahma temples at Alampur, raised by the Badami Chalukyas at the confluence of the Tungabhadra and the Krishna. A surviving piece of pre-sultanate Deccan stone-craft, relocated stone-by-stone in the 1970s to escape the Srisailam reservoir.</p>
-    <span class="city-card-cta">Explore →</span>
-  </a>
+    <span class="city-card-cta city-card-cta--soon">Coming soon</span>
+  </div>
 </div>
 
 <footer>
-  <div class="flag-banner"><img src="/dakhni-org-logo.png" alt="Dakhni.org"/></div>
+  <div class="flag-banner"><img src="/assets/dakhni-org-logo.png" alt="Dakhni.org"/></div>
   <div class="ft-divider"></div>
   <div class="ft-name">DAKHNI.ORG</div>
   <p class="ft-tagline">Preserving the soul of the Deccan, one story at a time.</p>
