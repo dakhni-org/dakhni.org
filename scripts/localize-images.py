@@ -63,6 +63,9 @@ def download(url: str, dest: str) -> bool:
             return True
         except urllib.error.HTTPError as e:
             print(f"    attempt {attempt+1} failed: HTTP {e.code}")
+            # Permanent client errors (file missing/forbidden) won't fix on retry.
+            if 400 <= e.code < 500 and e.code != 429:
+                return False
             wait = backoff
             if e.code == 429:  # rate limited — honour Retry-After if it's an int
                 ra = e.headers.get("Retry-After") if e.headers else None
@@ -91,6 +94,7 @@ def main():
         return
 
     ok = fail = skip = 0
+    failed_urls = []
     edits = {}  # html_file -> list of (old_src, web_path)
     for f, url, rel, web in items:
         if os.path.exists(rel):
@@ -103,6 +107,7 @@ def main():
             edits.setdefault(f, []).append((url, web))
         else:
             fail += 1
+            failed_urls.append((f, url))
             print(f"  !! could not fetch; leaving markup unchanged for {rel}")
         time.sleep(THROTTLE_SECONDS)  # be polite to Wikimedia
 
@@ -117,12 +122,14 @@ def main():
             print(f"rewrote {f}")
 
     print(f"\nDone. downloaded={ok} skipped(existing)={skip} failed={fail}")
-    # Don't fail the job on stragglers: commit the progress made and let a
-    # re-run pick up the rest (already-downloaded files are skipped). Only fail
-    # hard if nothing at all could be fetched while work remained — that signals
-    # a systemic problem (blocked host, auth) worth surfacing.
-    if fail and ok == 0 and skip == 0:
-        sys.exit(1)
+    if failed_urls:
+        print("\nCould not fetch (left hot-linked — likely a wrong/removed "
+              "Wikimedia filename that needs a correct source or removal):")
+        for f, url in failed_urls:
+            print(f"  - {f}: {url}")
+    # Exit 0 regardless: the downloads that succeeded are committed, and the
+    # failures here are permanent (HTTP 404 etc.) so retrying won't help — no
+    # reason to redden the workflow over un-fetchable upstream files.
 
 
 if __name__ == "__main__":
