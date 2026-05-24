@@ -20,7 +20,7 @@ import os, re, sys, time, glob, html, urllib.parse, urllib.request, urllib.error
 # Wikimedia asks bots to send a descriptive UA and to keep request rates low,
 # otherwise it returns HTTP 429. We throttle between requests and back off on 429.
 UA = "dakhni.org-image-localizer/1.0 (+https://github.com/dakhni-org/dakhni.org)"
-THROTTLE_SECONDS = 1.5  # polite delay between requests
+THROTTLE_SECONDS = 6  # gentle delay between requests to stay under Wikimedia's rate limit
 SRC_RE = re.compile(r'src="(https://commons\.wikimedia\.org/wiki/Special:FilePath/[^"]+)"')
 
 
@@ -51,8 +51,8 @@ def plan():
 def download(url: str, dest: str) -> bool:
     os.makedirs(os.path.dirname(dest), exist_ok=True)
     req = urllib.request.Request(url, headers={"User-Agent": UA})
-    backoff = 5
-    for attempt in range(6):
+    backoff = 15
+    for attempt in range(4):
         try:
             with urllib.request.urlopen(req, timeout=60) as r:
                 data = r.read()
