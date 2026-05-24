@@ -314,7 +314,9 @@
       footer { padding:2.6rem 1.2rem 2rem; }
       .ft-links { gap:1rem .9rem; font-size:.6rem; }
     }
-  </style>
+      /* entries whose image was removed (broken upstream source): full-width single column */
+    .h-entry:not(:has(.h-figure)){grid-template-columns:minmax(0,72ch);}
+</style>
 </head>
 <body>
 
@@ -406,20 +408,10 @@
         <span class="h-tag">Godavari trade route</span>
       </div>
     </div>
-    <figure class="h-figure reveal-right">
-      <img loading="lazy" alt="Nizamabad Fort — the Bahmani and Barid Shahi hill fort at Indur"
-           src="https://commons.wikimedia.org/wiki/Special:FilePath/Nizamabad_Fort.jpg?width=1000"/>
-      <figcaption>Nizamabad Fort · the Bahmani hill fort of Indur, still standing on the basalt outcrop</figcaption>
-    </figure>
   </section>
 
   <!-- 2. NIZAM KA SHAHR — ASAF JAHI PERIOD -->
   <section class="h-entry" id="asafjahi">
-    <figure class="h-figure reveal-left">
-      <img loading="lazy" alt="Nizamsagar Dam on the Manjira river — one of the earliest irrigation dams of Hyderabad State"
-           src="https://commons.wikimedia.org/wiki/Special:FilePath/Nizamsagar_dam.jpg?width=1000"/>
-      <figcaption>Nizamsagar Dam · built on the Manjira in 1923, the first major irrigation dam of Hyderabad State</figcaption>
-    </figure>
     <div class="h-text reveal-right">
       <span class="h-numeral">II · Nizam ka Shahr</span>
       <span class="h-eyebrow">Asaf Jahi Period · 1724–1948</span>
@@ -459,11 +451,6 @@
         <span class="h-tag">Kummari potters</span>
       </div>
     </div>
-    <figure class="h-figure reveal-right">
-      <img loading="lazy" alt="Nizamabad black lacquerware — the distinctive silver-and-black earthenware craft of the Godavari plain"
-           src="https://commons.wikimedia.org/wiki/Special:FilePath/Nizamabad_Black_Pottery.jpg?width=1000"/>
-      <figcaption>Nizamabad black lacquerware · silver motifs on fired black earthenware — a GI-tagged craft unique to the district</figcaption>
-    </figure>
   </section>
 
   <!-- 4. DECCAN MERGER — 1948 AND AFTER -->

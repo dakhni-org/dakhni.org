@@ -637,6 +637,8 @@
       .h-aside { position:static !important; }
     }
 
+    /* entries whose image was removed (broken upstream source): full-width single column */
+    .h-entry:not(:has(.h-figure)){grid-template-columns:minmax(0,72ch);}
 </style>
 </head>
 <body>
@@ -730,11 +732,6 @@
 
   <!-- 2. GULBARGA FORT -->
   <section class="h-entry" id="fort">
-    <figure class="h-figure reveal-left">
-      <img loading="lazy" alt="Bastion and ditch of Gulbarga Fort"
-           src="https://commons.wikimedia.org/wiki/Special:FilePath/Gulbarga%20fort%20wall.jpg?width=1000"/>
-      <figcaption>The outer bastion · cut from living basalt</figcaption>
-    </figure>
     <div class="h-text reveal-right">
       <span class="h-numeral">II · Qila-i-Ahsanabad</span>
       <span class="h-eyebrow">The Citadel</span>
@@ -867,11 +864,6 @@
 
   <!-- 7. THE MOVE TO BIDAR -->
   <section class="h-entry" id="move">
-    <figure class="h-figure reveal-left">
-      <img loading="lazy" alt="Tomb of Tajuddin Firoz Shah Bahmani — the closing monument of Gulbarga"
-           src="https://commons.wikimedia.org/wiki/Special:FilePath/Tomb%20of%20Tajuddin%20Firuz%20Shah%2C%20Gulbarga.jpg?width=1000"/>
-      <figcaption>Tomb of Firoz Shah · the last royal monument at Gulbarga</figcaption>
-    </figure>
     <div class="h-text reveal-right">
       <span class="h-numeral">VII · Hijrat</span>
       <span class="h-eyebrow">The Move to Bidar · 1424–1429</span>

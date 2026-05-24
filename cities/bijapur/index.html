@@ -637,6 +637,8 @@
       .h-aside { position:static !important; }
     }
 
+    /* entries whose image was removed (broken upstream source): full-width single column */
+    .h-entry:not(:has(.h-figure)){grid-template-columns:minmax(0,72ch);}
 </style>
 </head>
 <body>
@@ -721,11 +723,6 @@
         <span class="h-tag">Shi'a court</span>
       </div>
     </div>
-    <figure class="h-figure reveal-right">
-      <img loading="lazy" alt="Bijapur city walls — black-basalt ramparts of the Adil Shahi capital"
-           src="https://commons.wikimedia.org/wiki/Special:FilePath/Bijapur%20Fort.jpg?width=1000"/>
-      <figcaption>The city walls · 10 km circuit, 96 bastions</figcaption>
-    </figure>
   </section>
 
   <!-- 2. CITADEL -->

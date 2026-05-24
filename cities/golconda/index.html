@@ -648,6 +648,8 @@
       .h-aside { position:static !important; }
     }
 
+    /* entries whose image was removed (broken upstream source): full-width single column */
+    .h-entry:not(:has(.h-figure)){grid-template-columns:minmax(0,72ch);}
 </style>
 </head>
 <body>
@@ -742,11 +744,6 @@
 
   <!-- 2. QUTB SHAHI -->
   <section class="h-entry" id="qutbshahi">
-    <figure class="h-figure reveal-left">
-      <img loading="lazy" alt="Sultan Quli Qutb Mulk — founder of the Qutb Shahi dynasty in 1518"
-           src="https://commons.wikimedia.org/wiki/Special:FilePath/Sultan%20Quli%20Qutb-ul-Mulk.jpg?width=1000"/>
-      <figcaption>Sultan Quli Qutb Mulk · founder · r. 1518–1543</figcaption>
-    </figure>
     <div class="h-text reveal-right">
       <span class="h-numeral">II · Tarikh</span>
       <span class="h-eyebrow">The Qutb Shahi Capital · 1518</span>
@@ -794,11 +791,6 @@
 
   <!-- 4. THE DIAMOND TRADE -->
   <section class="h-entry" id="diamonds">
-    <figure class="h-figure reveal-left">
-      <img loading="lazy" alt="Jean-Baptiste Tavernier — French jeweller who described the Kollur diamond mines in 1665"
-           src="https://commons.wikimedia.org/wiki/Special:FilePath/Jean-Baptiste%20Tavernier%201.jpg?width=1000"/>
-      <figcaption>Jean-Baptiste Tavernier · 1605–1689 · the chronicler of the Kollur mines</figcaption>
-    </figure>
     <div class="h-text reveal-right">
       <span class="h-numeral">IV · Yaqut</span>
       <span class="h-eyebrow">The Diamond Mart of the World · 16–17th c.</span>
@@ -910,11 +902,6 @@
 
   <!-- 6. THE SIEGE -->
   <section class="h-entry" id="siege">
-    <figure class="h-figure reveal-left">
-      <img loading="lazy" alt="Aurangzeb at the siege of Golconda — Mughal painting, late 17th century"
-           src="https://commons.wikimedia.org/wiki/Special:FilePath/Siege%20of%20Golconda%2C%20Padshahnama.jpg?width=1000"/>
-      <figcaption>The Siege of Golconda · Mughal manuscript, c. 1690</figcaption>
-    </figure>
     <div class="h-text reveal-right">
       <span class="h-numeral">VI · Muhasara</span>
       <span class="h-eyebrow">The Eight-Month Siege · 1687</span>
