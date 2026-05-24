@@ -1,0 +1,204 @@
+#!/usr/bin/env python3
+"""Static-site generator for dakhni.org.
+
+Reads one JSON content file per page from content/ and renders a fully
+normalised HTML page: an identical shell (head meta, nav, footer, AI
+disclosure, search overlay) on every page, a single cover-style hero, the
+shared /assets/site.css and /assets/site.js, and the page's body content.
+
+This is the foundation for adding pages by filling fields rather than
+hand-writing HTML. Run from the repo root:  python3 scripts/build_site.py
+"""
+import glob
+import html as _html
+import json
+import os
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CONTENT = os.path.join(ROOT, "content")
+
+GA = "G-N9RETSEPQ9"
+KEYWORDS = ("Dakhni, Dakkani, Dakhini, Deccan, Deccani, Hyderabad, Hyderabadi, Bidar, "
+            "Gulbarga, Bijapur, Aurangabad, Bahmani, Qutb Shahi, Adil Shahi, Asaf Jahi, "
+            "Nizam, Dakhni Urdu, Deccani Urdu, Deccan Sultanates, qawwali, dargah, Sufi "
+            "shrines, biryani, haleem, Charminar, Golconda, Bidriware, Deccan heritage")
+FALLBACK_COVER = "/assets/dakhni-pattern.png"
+
+NAV = '''<nav>
+  <a href="/" class="nav-brand" aria-label="Dakhni.org home">
+    <img class="nav-mark" src="/assets/dakhni-org-logo.png" alt=""/>
+    <span>DAKHNI.ORG</span>
+  </a>
+  <button class="nav-search-btn" type="button" aria-label="Search" aria-expanded="false" aria-controls="ds-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
+  <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li class="has-dropdown"><a href="/heritage/">Heritage</a><ul class="dropdown"><li><a href="/heritage/language-poetry/">Language &amp; Poetry</a></li><li><a href="/heritage/cuisine/">Cuisine</a></li><li><a href="/heritage/music/">Music</a></li><li><a href="/heritage/architecture/">Architecture</a></li><li><a href="/heritage/crafts/">Crafts</a></li><li><a href="/heritage/sufi-tradition/">Sufi Tradition</a></li><li><a href="/heritage/festivals/">Festivals</a></li></ul></li>
+    <li class="has-dropdown"><a href="/dynasties/">Dynasties</a><ul class="dropdown"><li><a href="/dynasties/bahmani/">Bahmani Sultanate</a></li><li><a href="/dynasties/qutb-shahi/">Qutb Shahi</a></li><li><a href="/dynasties/bidar-barid/">Bidar Barid Shahi</a></li><li><a href="/dynasties/adil-shahi/">Adil Shahi</a></li><li><a href="/dynasties/asaf-jahi/">Asaf Jahi Nizams</a></li></ul></li>
+    <li class="has-dropdown"><a href="/language/">Language</a><ul class="dropdown"><li><a href="/language/dakhni/">Dakhni</a></li><li><a href="/language/urdu/">Urdu</a></li><li><a href="/language/faarsi/">Faarsi (Persian)</a></li><li><a href="/language/telugu/">Telugu</a></li></ul></li>
+    <li class="has-dropdown"><a href="/sufism/">Sufism</a><ul class="dropdown"><li><a href="/sufism/burhanuddin/">Burhanuddin Gharib</a></li><li><a href="/sufism/sharfuddin/">Baba Sharfuddin</a></li><li><a href="/sufism/bandanawaz/">Bandanawaz Gisudaraz</a></li><li><a href="/sufism/hussain-shah-wali/">Hussain Shah Wali</a></li><li><a href="/sufism/shah-raju/">Shah Raju Qattal</a></li><li><a href="/sufism/yousufain/">Yousufain Sharif</a></li><li><a href="/sufism/shah-khamosh/">Shah Khamosh</a></li></ul></li>
+    <li class="has-dropdown"><a href="/cities/">Cities</a><ul class="dropdown"><li><a href="/cities/hyderabad/">Hyderabad</a></li><li><a href="/cities/bidar/">Bidar</a></li><li><a href="/cities/gulbarga/">Gulbarga</a></li><li><a href="/cities/bijapur/">Bijapur</a></li><li><a href="/cities/aurangabad/">Aurangabad</a></li><li><a href="/cities/golconda/">Golconda</a></li><li><a href="/cities/warangal/">Warangal</a></li><li><a href="/cities/nanded/">Nanded</a></li><li><a href="/cities/raichur/">Raichur</a></li><li><a href="/cities/nizamabad/">Nizamabad</a></li></ul></li>
+    <li class="has-dropdown"><a href="/landmarks/">Landmarks</a><ul class="dropdown"><li><a href="/landmarks/monuments/">Monuments</a></li><li><a href="/landmarks/institutions/">Institutions</a></li></ul></li>
+    <li class="has-dropdown"><a href="/sacred-sites/">Sacred Sites</a><ul class="dropdown"><li><a href="/sacred-sites/masjids/">Masjids</a></li><li><a href="/sacred-sites/dargahs/">Dargahs</a></li><li><a href="/sacred-sites/temples/">Temples</a></li><li><a href="/sacred-sites/religious-structures/">Other Faiths</a></li></ul></li>
+    <li><a href="/#quiz">Are You Dakhni?</a></li>
+  </ul>
+</nav>'''
+
+DISCLOSURE = '''<div id="ai-disclosure" role="dialog" aria-modal="true" aria-labelledby="disclosure-title">
+  <div class="disclosure-backdrop"></div>
+  <div class="disclosure-card">
+    <div class="disclosure-ornament">✦</div>
+    <p class="disclosure-label">A Note on Our Content</p>
+    <h2 class="disclosure-title" id="disclosure-title">AI-Assisted Research</h2>
+    <div class="disclosure-rule"></div>
+    <p class="disclosure-body">The information on this website is compiled and synthesised with the assistance of artificial intelligence, drawing from publicly available historical records, academic publications, and cultural archives. While every effort is made to ensure accuracy, AI-generated content may occasionally reflect interpretations rather than universally established fact.</p>
+    <p class="disclosure-body disclosure-body--note">Dakhni.org is an independent cultural project, not affiliated with any institution or government body. We encourage readers to consult primary sources for scholarly research.</p>
+    <button class="disclosure-btn" id="disclosure-accept">I Understand</button>
+  </div>
+</div>'''
+
+SEARCH = '''<div class="ds-search" id="ds-search" hidden>
+  <div class="ds-search-backdrop" data-close></div>
+  <div class="ds-search-box" role="dialog" aria-modal="true" aria-label="Search Dakhni.org">
+    <div class="ds-search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input type="search" id="ds-search-input" class="ds-search-input" placeholder="Search Dakhni.org…" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="Search Dakhni.org"/>
+      <button type="button" class="ds-search-cancel" data-close>Esc</button>
+    </div>
+    <ul class="ds-search-results" id="ds-search-results" role="listbox" aria-label="Search results"></ul>
+    <p class="ds-search-hint" id="ds-search-hint">Search heritage, dynasties, cities, language, Sufism and more.</p>
+  </div>
+</div>'''
+
+
+def esc(s):
+    return _html.escape(s or "", quote=True)
+
+
+def footer(dedication):
+    ded = dedication or "Built with love for the Deccan"
+    return f'''<footer>
+  <div class="flag-banner"><img src="/assets/dakhni-org-logo.png" alt="Dakhni.org"/></div>
+  <div class="ft-divider"></div>
+  <div class="ft-name">DAKHNI.ORG</div>
+  <p class="ft-tagline">Preserving the soul of the Deccan, one story at a time.</p>
+  <ul class="ft-links">
+    <li><a href="/heritage/">Heritage</a></li>
+    <li><a href="/dynasties/">Dynasties</a></li>
+    <li><a href="/language/">Language</a></li>
+    <li><a href="/sufism/">Sufism</a></li>
+    <li><a href="/cities/">Cities</a></li>
+    <li><a href="/#quiz">Quiz</a></li>
+    <li><a href="/about/">About</a></li>
+  </ul>
+  <p class="ft-copy">© <span id="year">2025</span> Dakhni.org · {esc(ded)} · Built with love for the Deccan</p>
+</footer>'''
+
+
+def head(page):
+    url = page["url"]
+    canonical = "https://dakhni.org" + url
+    title = page["title"]
+    full_title = "Dakhni.org — Heritage of the Deccan" if url == "/" else f'{title} — Dakhni.org'
+    desc = page.get("description", "")
+    cover = page.get("cover") or ""
+    og_img = ("https://dakhni.org" + cover) if cover.startswith("/") else (cover or "https://dakhni.org/assets/dakhni-org-logo.png")
+    return f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={GA}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{dataLayer.push(arguments);}}
+  gtag('js', new Date());
+  gtag('config', '{GA}');
+</script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{esc(full_title)}</title>
+  <link rel="icon" type="image/png" href="/assets/dakhni-org-logo.png"/>
+  <meta name="description" content="{esc(desc)}"/>
+  <meta name="keywords" content="{KEYWORDS}"/>
+  <meta name="author" content="Dakhni.org"/>
+  <meta name="robots" content="index, follow, max-image-preview:large"/>
+  <meta name="theme-color" content="#1A1814"/>
+  <link rel="canonical" href="{canonical}"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="{esc(full_title)}"/>
+  <meta property="og:description" content="{esc(desc)}"/>
+  <meta property="og:url" content="{canonical}"/>
+  <meta property="og:image" content="{esc(og_img)}"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&family=Lateef:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/assets/site.css"/>
+</head>'''
+
+
+def hero(page):
+    cover = page.get("cover") or FALLBACK_COVER
+    no_photo = "" if page.get("cover") else " page-hero--pattern"
+    eyebrow = page.get("eyebrow", "")
+    urdu = page.get("urdu", "")
+    title_html = page.get("title_html") or esc(page["title"])
+    subtitle = page.get("subtitle", "")
+    parts = ['<header class="city-hero page-hero--cover%s" style="--cover:url(\'%s\')">' % (no_photo, esc(cover))]
+    parts.append('  <div class="city-hero-inner">')
+    if eyebrow:
+        parts.append(f'    <span class="city-hero-eyebrow">{esc(eyebrow)}</span>')
+    if urdu:
+        parts.append(f'    <p class="city-hero-urdu">{esc(urdu)}</p>')
+    parts.append(f'    <h1 class="city-hero-title">{title_html}</h1>')
+    parts.append('    <div class="city-hero-rule"></div>')
+    if subtitle:
+        parts.append(f'    <p class="city-hero-sub">{esc(subtitle)}</p>')
+    parts.append('  </div>')
+    parts.append('</header>')
+    return "\n".join(parts)
+
+
+def render(page):
+    out = [head(page), "<body>", NAV]
+    if page.get("level") == "home":
+        out.append(page.get("hero_html", ""))
+        out.append('<main class="page-main page-main--home">')
+        out.append(page.get("body_html", ""))
+        out.append('</main>')
+    else:
+        out.append(hero(page))
+        out.append('<main class="page-main">')
+        if page.get("crumb_html"):
+            out.append(f'  <p class="crumb">{page["crumb_html"]}</p>')
+        out.append(page.get("body_html", ""))
+        out.append('</main>')
+    if page.get("subnav_html"):
+        out.append(page["subnav_html"])
+    out.append(footer(page.get("dedication")))
+    out.append(DISCLOSURE)
+    out.append(SEARCH)
+    for sc in page.get("extra_scripts", []):
+        out.append("<script>\n" + sc + "\n</script>")
+    out.append('<script defer src="/assets/site.js"></script>')
+    out.append("</body>\n</html>")
+    return "\n".join(out) + "\n"
+
+
+def main():
+    pages = []
+    for jf in sorted(glob.glob(os.path.join(CONTENT, "**", "*.json"), recursive=True)):
+        with open(jf, encoding="utf-8") as fh:
+            pages.append(json.load(fh))
+    n = 0
+    for page in pages:
+        rel = page["url"].strip("/")
+        outdir = os.path.join(ROOT, rel) if rel else ROOT
+        os.makedirs(outdir, exist_ok=True)
+        with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as fh:
+            fh.write(render(page))
+        n += 1
+    print(f"Rendered {n} pages")
+
+
+if __name__ == "__main__":
+    main()
