@@ -25,6 +25,13 @@
       tog.setAttribute('aria-expanded', open ? 'true' : 'false');
       document.body.classList.toggle('menu-open', open);
     });
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        links.classList.remove('open');
+        tog.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+      });
+    });
   }
 })();
 
