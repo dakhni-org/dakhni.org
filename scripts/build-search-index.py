@@ -19,6 +19,31 @@ TITLE_RE = re.compile(r"<title>(.*?)</title>", re.I | re.S)
 DESC_RE = re.compile(
     r'<meta\s+name=["\']description["\']\s+content=["\'](.*?)["\']\s*/?>', re.I | re.S
 )
+# Blocks whose text is chrome/markup, not page content.
+STRIP_RE = [
+    re.compile(p, re.I | re.S)
+    for p in (
+        r"<head\b.*?</head>",
+        r"<script\b.*?</script>",
+        r"<style\b.*?</style>",
+        r"<nav\b.*?</nav>",
+        r"<footer\b.*?</footer>",
+        r"<svg\b.*?</svg>",
+    )
+]
+TAG_RE = re.compile(r"<[^>]+>")
+WS_RE = re.compile(r"\s+")
+
+
+def body_text(src):
+    # Drop the injected search overlay (and everything after it: trailing scripts).
+    marker = src.find('<div class="ds-search"')
+    if marker != -1:
+        src = src[:marker]
+    for rx in STRIP_RE:
+        src = rx.sub(" ", src)
+    src = TAG_RE.sub(" ", src)
+    return WS_RE.sub(" ", html.unescape(src)).strip()
 
 SECTION_NAMES = {
     "heritage": "Heritage",
@@ -70,7 +95,13 @@ def main():
         rel_norm = rel.replace(os.sep, "/")
         title = "Home" if rel_norm == "index.html" else title
         entries.append(
-            {"u": url_for(rel), "t": title, "s": section_for(rel), "d": desc}
+            {
+                "u": url_for(rel),
+                "t": title,
+                "s": section_for(rel),
+                "d": desc,
+                "b": body_text(src),
+            }
         )
 
     out = os.path.join(ROOT, "assets", "search-index.json")

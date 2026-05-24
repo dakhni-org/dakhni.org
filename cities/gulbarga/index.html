@@ -1191,7 +1191,7 @@
   function load(){
     if(data||loading) return;
     loading=true;
-    fetch('/assets/search-index.json').then(function(r){return r.json();}).then(function(d){data=d;if(!modal.hidden)render();}).catch(function(){hint.textContent='Search is unavailable right now.';});
+    fetch('/assets/search-index.json').then(function(r){return r.json();}).then(function(d){data=d;for(var i=0;i<d.length;i++){d[i]._h=(d[i].t+' '+d[i].s+' '+d[i].d+' '+(d[i].b||'')).toLowerCase();}if(!modal.hidden)render();}).catch(function(){hint.textContent='Search is unavailable right now.';});
   }
   function render(){
     var q=input.value.trim().toLowerCase();
@@ -1200,8 +1200,7 @@
     if(!data){list.innerHTML='<li class="ds-search-msg">Loading…</li>';return;}
     var terms=q.split(/\s+/);
     var hits=data.filter(function(p){
-      var hay=(p.t+' '+p.s+' '+p.d).toLowerCase();
-      return terms.every(function(t){return hay.indexOf(t)>-1;});
+      return terms.every(function(t){return p._h.indexOf(t)>-1;});
     }).slice(0,12);
     if(!hits.length){list.innerHTML='<li class="ds-search-msg">No results for “'+esc(q)+'”.</li>';return;}
     list.innerHTML=hits.map(function(p){

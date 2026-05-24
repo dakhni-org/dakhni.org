@@ -1,0 +1,50 @@
+name: Build search index
+
+# Regenerates assets/search-index.json from the page HTML whenever content
+# changes, so the in-nav search overlay always matches what's published.
+# Commits the rebuilt index back with [skip ci] so it can't loop.
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - claude/magical-hypatia-UDPXc
+    paths:
+      - '**.html'
+      - 'scripts/build-search-index.py'
+      - '.github/workflows/build-search-index.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-search-index-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Rebuild search index
+        run: python3 scripts/build-search-index.py
+
+      - name: Commit updated index
+        run: |
+          if [ -n "$(git status --porcelain assets/search-index.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add assets/search-index.json
+            git commit -m "Rebuild search index [skip ci]"
+            git push
+          else
+            echo "Search index already up to date."
+          fi
