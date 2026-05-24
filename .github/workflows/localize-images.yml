@@ -1,0 +1,45 @@
+name: Localize images
+
+# Downloads the images still hot-linked from commons.wikimedia.org into each
+# page's local assets/ folder and rewrites the markup, then commits the result.
+# GitHub-hosted runners have outbound access to Wikimedia, so this can run here
+# even though the dev sandbox cannot reach it.
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - claude/magical-hypatia-UDPXc
+    paths:
+      - '.github/workflows/localize-images.yml'
+      - 'scripts/localize-images.py'
+
+permissions:
+  contents: write
+
+jobs:
+  localize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Download images and rewrite markup
+        run: python3 scripts/localize-images.py
+
+      - name: Commit localized assets
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "Localize hot-linked Wikimedia images into local assets/ [skip ci]"
+            git push
+          else
+            echo "No changes — images are already localized."
+          fi
