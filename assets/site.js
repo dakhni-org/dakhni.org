@@ -1,23 +1,32 @@
 /* dakhni.org — shared scripts (generated) */
 
 /* ---- */
-document.getElementById('year').textContent = new Date().getFullYear();
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80);
-    });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-  (function(){
-    var tog = document.querySelector('.nav-toggle');
-    var links = document.querySelector('.nav-links');
-    if(!tog || !links) return;
+(function(){
+  var root = document.documentElement;
+  root.classList.add('js');               // content is visible by default; .js enables the reveal animation
+  try { var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear(); } catch (e) {}
+  var els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  try {
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e, i){
+        if (e.isIntersecting) { setTimeout(function(){ e.target.classList.add('visible'); }, i * 80); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
+    els.forEach(function(el){ obs.observe(el); });
+  } catch (e) {
+    // IntersectionObserver unavailable — just show everything
+    els.forEach(function(el){ el.classList.add('visible'); });
+  }
+  var tog = document.querySelector('.nav-toggle');
+  var links = document.querySelector('.nav-links');
+  if (tog && links) {
     tog.addEventListener('click', function(){
       var open = links.classList.toggle('open');
       tog.setAttribute('aria-expanded', open ? 'true' : 'false');
       document.body.classList.toggle('menu-open', open);
     });
-  })();
+  }
+})();
 
 /* ---- */
 (function(){
