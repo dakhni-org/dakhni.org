@@ -84,8 +84,10 @@ def extract(path):
     # HERO
     home = url == "/"
     hero_full, hero_inner = (None, None)
-    for rx in [r'<header class="city-hero[^"]*"[^>]*>', r'<header class="page-hero[^"]*"[^>]*>',
-               r'<div class="page-hero[^"]*"[^>]*>', r'<section class="hero"[^>]*>']:
+    for rx in [r'<header class="(?:city-hero|page-hero)(?:\s[^"]*)?"[^>]*>',
+               r'<section class="(?:city-hero|page-hero)(?:\s[^"]*)?"[^>]*>',
+               r'<div class="(?:city-hero|page-hero)(?:\s[^"]*)?"[^>]*>',
+               r'<section class="hero(?:\s[^"]*)?"[^>]*>']:
         hero_full, hero_inner = inner_block(after_nav, rx)
         if hero_full:
             break
