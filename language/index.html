@@ -593,6 +593,36 @@
     .index-intro p em { color:var(--gold-deep); font-style:italic; }
     .grid-wrap { padding:2rem 1.4rem 5rem; }
   </style>
+<style>
+  /* ── Site search ── */
+  .nav-search-btn{order:5;display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;margin-left:.4rem;padding:0;background:transparent;border:none;border-radius:50%;color:var(--ink-soft,#4A453C);cursor:pointer;transition:color .2s,background .2s;}
+  .nav-search-btn:hover{color:var(--gold-deep,#6B4710);background:rgba(160,112,32,0.08);}
+  .nav-search-btn svg{width:18px;height:18px;}
+  .nav-links{margin-left:auto;}
+  body.ds-search-open{overflow:hidden;}
+  .ds-search[hidden]{display:none;}
+  .ds-search{position:fixed;inset:0;z-index:400;display:flex;align-items:flex-start;justify-content:center;}
+  .ds-search-backdrop{position:absolute;inset:0;background:rgba(26,24,20,0.45);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);}
+  .ds-search-box{position:relative;display:flex;flex-direction:column;width:min(640px,92vw);max-height:76vh;margin-top:11vh;background:var(--ivory,#FAF7EF);border:1px solid var(--rule,rgba(26,24,20,0.10));border-radius:10px;box-shadow:0 24px 60px rgba(26,24,20,0.28);overflow:hidden;}
+  .ds-search-bar{display:flex;align-items:center;gap:.6rem;padding:.85rem 1rem;border-bottom:1px solid var(--rule,rgba(26,24,20,0.10));}
+  .ds-search-bar>svg{flex:none;width:18px;height:18px;color:var(--gold-deep,#6B4710);}
+  .ds-search-input{flex:1;min-width:0;border:none;background:transparent;font-family:'EB Garamond',Georgia,serif;font-size:1.1rem;color:var(--ink,#1A1814);outline:none;}
+  .ds-search-cancel{flex:none;border:1px solid var(--rule,rgba(26,24,20,0.18));background:transparent;color:var(--ink-soft,#4A453C);font-family:'Inter',sans-serif;font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;padding:.35rem .55rem;border-radius:5px;cursor:pointer;}
+  .ds-search-cancel:hover{color:var(--gold-deep,#6B4710);border-color:var(--gold,#A07020);}
+  .ds-search-results{list-style:none;margin:0;padding:.25rem 0;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;}
+  .ds-search-results a{display:block;padding:.7rem 1.1rem;text-decoration:none;border-bottom:1px solid var(--rule-soft,rgba(26,24,20,0.06));}
+  .ds-search-results li:last-child a{border-bottom:none;}
+  .ds-search-results a:hover,.ds-search-results a:focus{background:var(--cream,#F2EDE2);outline:none;}
+  .ds-r-title{display:block;font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--ink,#1A1814);}
+  .ds-r-sec{display:block;margin:.1rem 0;font-family:'Inter',sans-serif;font-size:.55rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep,#6B4710);}
+  .ds-r-desc{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-family:'EB Garamond',serif;font-size:.82rem;line-height:1.4;color:var(--ink-soft,#4A453C);}
+  .ds-search-hint,.ds-search-msg{margin:0;padding:1.1rem;text-align:center;font-family:'EB Garamond',serif;font-size:.92rem;color:var(--ink-soft,#4A453C);}
+  @media(max-width:880px){
+    .nav-search-btn{order:0;margin-left:auto;width:42px;height:42px;}
+    .nav-toggle{margin-left:.1rem;}
+    .ds-search-box{width:100vw;max-width:100vw;max-height:100vh;height:100dvh;margin-top:0;border:none;border-radius:0;}
+  }
+</style>
 </head>
 <body>
 
@@ -604,6 +634,7 @@
     <img class="nav-mark" src="/assets/dakhni-org-logo.png" alt=""/>
     <span>DAKHNI.ORG</span>
   </a>
+  <button class="nav-search-btn" type="button" aria-label="Search" aria-expanded="false" aria-controls="ds-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
   <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
   <ul class="nav-links">
     <li class="has-dropdown"><a href="/heritage/">Heritage</a><ul class="dropdown"><li><a href="/heritage/language-poetry/">Language &amp; Poetry</a></li><li><a href="/heritage/cuisine/">Cuisine</a></li><li><a href="/heritage/music/">Music</a></li><li><a href="/heritage/architecture/">Architecture</a></li><li><a href="/heritage/crafts/">Crafts</a></li><li><a href="/heritage/sufi-tradition/">Sufi Tradition</a></li><li><a href="/heritage/festivals/">Festivals</a></li></ul></li>
@@ -780,6 +811,67 @@
   // mark the deeper sub-item if any
   var sub = document.querySelector('.dropdown a[href="' + path + '"]');
   if (sub) sub.setAttribute('aria-current', 'page');
+})();
+</script>
+<div class="ds-search" id="ds-search" hidden>
+  <div class="ds-search-backdrop" data-close></div>
+  <div class="ds-search-box" role="dialog" aria-modal="true" aria-label="Search Dakhni.org">
+    <div class="ds-search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input type="search" id="ds-search-input" class="ds-search-input" placeholder="Search Dakhni.org…" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="Search Dakhni.org"/>
+      <button type="button" class="ds-search-cancel" data-close>Esc</button>
+    </div>
+    <ul class="ds-search-results" id="ds-search-results" role="listbox" aria-label="Search results"></ul>
+    <p class="ds-search-hint" id="ds-search-hint">Search heritage, dynasties, cities, language, Sufism and more.</p>
+  </div>
+</div>
+<script>
+(function(){
+  var btn=document.querySelector('.nav-search-btn');
+  var modal=document.getElementById('ds-search');
+  if(!btn||!modal) return;
+  var input=document.getElementById('ds-search-input');
+  var list=document.getElementById('ds-search-results');
+  var hint=document.getElementById('ds-search-hint');
+  var data=null,loading=false;
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c];});}
+  function load(){
+    if(data||loading) return;
+    loading=true;
+    fetch('/assets/search-index.json').then(function(r){return r.json();}).then(function(d){data=d;if(!modal.hidden)render();}).catch(function(){hint.textContent='Search is unavailable right now.';});
+  }
+  function render(){
+    var q=input.value.trim().toLowerCase();
+    if(!q){list.innerHTML='';hint.hidden=false;return;}
+    hint.hidden=true;
+    if(!data){list.innerHTML='<li class="ds-search-msg">Loading…</li>';return;}
+    var terms=q.split(/\s+/);
+    var hits=data.filter(function(p){
+      var hay=(p.t+' '+p.s+' '+p.d).toLowerCase();
+      return terms.every(function(t){return hay.indexOf(t)>-1;});
+    }).slice(0,12);
+    if(!hits.length){list.innerHTML='<li class="ds-search-msg">No results for “'+esc(q)+'”.</li>';return;}
+    list.innerHTML=hits.map(function(p){
+      return '<li role="option"><a href="'+esc(p.u)+'"><span class="ds-r-title">'+esc(p.t)+'</span><span class="ds-r-sec">'+esc(p.s)+'</span><span class="ds-r-desc">'+esc(p.d)+'</span></a></li>';
+    }).join('');
+  }
+  function openSearch(){
+    modal.hidden=false;
+    document.body.classList.add('ds-search-open');
+    btn.setAttribute('aria-expanded','true');
+    load();
+    setTimeout(function(){input.focus();},30);
+  }
+  function closeSearch(){
+    modal.hidden=true;
+    document.body.classList.remove('ds-search-open');
+    btn.setAttribute('aria-expanded','false');
+  }
+  btn.addEventListener('click',openSearch);
+  input.addEventListener('input',render);
+  modal.addEventListener('click',function(e){if(e.target.hasAttribute('data-close'))closeSearch();});
+  list.addEventListener('click',function(e){if(e.target.closest('a'))closeSearch();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)closeSearch();});
 })();
 </script>
 </body>
