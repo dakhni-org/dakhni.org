@@ -1,0 +1,3 @@
+# Python bytecode cache (from running scripts/ locally)
+__pycache__/
+*.pyc
