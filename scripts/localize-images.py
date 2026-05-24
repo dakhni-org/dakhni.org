@@ -63,16 +63,21 @@ def download(url: str, dest: str) -> bool:
             return True
         except urllib.error.HTTPError as e:
             print(f"    attempt {attempt+1} failed: HTTP {e.code}")
-            if e.code == 429:  # rate limited — honour Retry-After, then back off
-                wait = int(e.headers.get("Retry-After", backoff)) if e.headers else backoff
+            wait = backoff
+            if e.code == 429:  # rate limited — honour Retry-After if it's an int
+                ra = e.headers.get("Retry-After") if e.headers else None
+                try:
+                    if ra is not None:
+                        wait = int(ra)
+                except (ValueError, TypeError):
+                    wait = backoff
                 print(f"    rate limited; waiting {wait}s")
-                time.sleep(wait)
-                backoff = min(backoff * 2, 120)
-            else:
-                time.sleep(backoff)
+            time.sleep(min(wait, 180))
+            backoff = min(backoff * 2, 120)
         except Exception as e:  # noqa: BLE001
             print(f"    attempt {attempt+1} failed: {e}")
             time.sleep(backoff)
+            backoff = min(backoff * 2, 120)
     return False
 
 
