@@ -2,20 +2,25 @@
 
 > Preserving the soul of the Deccan, one story at a time.
 
-[**dakhni.org**](https://dakhni.org) is a digital archive and cultural gateway dedicated to the **Dakhni civilisation** — six centuries (1347 – 1948) of language, poetry, food, music and royal lineage that flourished across the Deccan plateau of southern India.
+[**dakhni.org**](https://dakhni.org) is a digital archive and cultural gateway dedicated to the **Dakhni civilisation** — six centuries (1347 – 1948) of language, poetry, food, music, architecture and royal lineage that flourished across the Deccan plateau of southern India.
 
-From the **Bahmani Sultanate** of Gulbarga to the **Asaf Jahi Nizams** of Hyderabad, the site celebrates the kingdoms, the saints, the poets and the everyday heritage of the region that gave the world its first form of Urdu.
+From the **Bahmani Sultanate** of Gulbarga to the **Asaf Jahi Nizams** of Hyderabad, the site celebrates the kingdoms, the saints, the poets, the cities and the everyday heritage of the region that gave the world its first form of Urdu.
 
-## What you'll find
+## Sections
 
-| Pillar | Theme |
+The site is organised into seven sections, each with an overview page and detail pages beneath it:
+
+| Section | What's inside |
 | --- | --- |
-| **Tarikh** | History and the six royal dynasties of the Deccan |
-| **Zubaan** | Dakhni language and poetry — Wali Deccani, Ibrahim Adil Shah II and beyond |
-| **Khana** | Hyderabadi cuisine: dum biryani, haleem, lukhmi, qubani ka meetha |
-| **Mauseeqi** | Music, Bidri metalwork, Paithan silk, Dakhni miniature painting |
-| **Khel** | Quizzes and trivia — coins, dishes, proverbs |
-| **Pehchaan** | An AI companion that maps your roots to the Deccan heartland |
+| **Heritage** | Language & poetry, cuisine, music, architecture, crafts, the Sufi tradition and festivals |
+| **Dynasties** | The royal houses of the Deccan — Bahmani, Qutb Shahi, Bidar Barid, Adil Shahi and the Asaf Jahi Nizams |
+| **Language** | Dakhni and the tongues of the plateau — Dakhni, Urdu, Faarsi (Persian) and Telugu |
+| **Sufism** | The saints of the Deccan — Burhanuddin Gharib, Bandanawaz Gisudaraz, Baba Sharfuddin and others |
+| **Cities** | The ten cities of the Dakhni heartland |
+| **Landmarks** | Monuments (forts, palaces, tombs) and Institutions (universities, colleges, hospitals, the Salar Jung Museum…) |
+| **Sacred Sites** | Masjids, dargahs, temples and the houses of other faiths |
+
+A homepage quiz, **"Are You Dakhni?"**, maps a visitor's roots back to the Deccan heartland.
 
 ## The Dakhni heartland
 
@@ -29,25 +34,51 @@ Hyderabad · Bidar · Gulbarga · Bijapur · Aurangabad · Golconda · Warangal 
 4. **Adil Shahi Dynasty** — 1490 – 1686 — Bijapur
 5. **Asaf Jahi Nizams** — 1724 – 1948 — Hyderabad
 
-A full visual timeline lives at [`/dynasties.html`](https://dakhni.org/dynasties.html).
+The full set lives under [`/dynasties/`](https://dakhni.org/dynasties/).
 
 ## Project structure
 
+A static, dependency-free site of ~60 hand-written HTML pages. Each section is a
+directory; each page is an `index.html` so the URLs are clean (`/cities/hyderabad/`).
+
 ```
 .
-├── index.html        # Landing page — heritage, pillars, quiz, poetry
-├── dynasties.html    # Full timeline of the six Deccan dynasties
-├── robots.txt        # Search-engine directives
-├── sitemap.xml       # Sitemap for crawlers
-├── CNAME             # Custom domain (dakhni.org)
+├── index.html              # Landing page — heritage, pillars, quiz, poetry
+├── heritage/               # 7 subpages + overview
+├── dynasties/              # 5 dynasties + overview
+├── language/               # Dakhni, Urdu, Faarsi, Telugu + overview
+├── sufism/                 # 7 saints + overview
+├── cities/                 # 10 cities + overview
+├── landmarks/              # overview
+│   ├── monuments/
+│   └── institutions/       # + 15 institution detail pages
+├── sacred-sites/           # overview
+│   ├── masjids/
+│   ├── dargahs/
+│   ├── temples/
+│   └── religious-structures/
+├── assets/                 # Shared images (logo, pattern, flag) — see assets/README.md
+│   └── README.md           # Asset conventions
+├── scripts/                # Maintenance tooling
+│   └── localize-images.py  # Download hot-linked Wikimedia images into local assets/
+├── robots.txt
+├── sitemap.xml             # Lists all 62 pages
+├── CNAME                   # Custom domain (dakhni.org)
 └── README.md
 ```
 
-The site is a static, dependency-free pair of HTML files designed to be hosted directly via **GitHub Pages** at [dakhni.org](https://dakhni.org).
+The shared navigation and the active-section highlighting are duplicated inline in
+each page (there is no build step or templating layer).
+
+### Assets
+
+Global images live in [`/assets/`](assets/README.md); page-specific images live in a
+colocated `assets/` folder inside each page directory. Conventions (naming, formats,
+referencing) are documented in [`assets/README.md`](assets/README.md).
 
 ## Local development
 
-No build step. Clone the repository and open the HTML files in a browser, or run a tiny static server:
+No build step. Clone the repository and run a tiny static server:
 
 ```bash
 git clone https://github.com/dakhni-org/dakhni.org.git
@@ -56,9 +87,14 @@ python3 -m http.server 8000
 # then open http://localhost:8000
 ```
 
+The site is hosted directly via **GitHub Pages** at [dakhni.org](https://dakhni.org).
+
 ## Contributing
 
-Contributions of historical accuracy fixes, additional poetry, recipes, photographs and translations are welcome. Open an issue or pull request — please cite sources for any historical claim.
+Contributions of historical accuracy fixes, additional poetry, recipes, photographs and
+translations are welcome. Open an issue or pull request — please cite sources for any
+historical claim. When adding images, follow the conventions in
+[`assets/README.md`](assets/README.md).
 
 ## Licence
 
