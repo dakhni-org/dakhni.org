@@ -10,12 +10,15 @@ on:
   push:
     branches:
       - claude/magical-hypatia-UDPXc
-    paths:
-      - '.github/workflows/localize-images.yml'
-      - 'scripts/localize-images.py'
 
 permissions:
   contents: write
+
+# Only one localize run at a time, so concurrent runs can't double the
+# request rate to Wikimedia or race to push the same branch.
+concurrency:
+  group: localize-images-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   localize:

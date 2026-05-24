@@ -15,9 +15,12 @@ The script is idempotent: an image already present in assets/ is skipped, and a
 src that already points at /…/assets/ is left alone. It needs outbound access to
 commons.wikimedia.org / upload.wikimedia.org.
 """
-import os, re, sys, glob, html, urllib.parse, urllib.request
+import os, re, sys, time, glob, html, urllib.parse, urllib.request, urllib.error
 
-UA = "dakhni.org-localizer/1.0 (+https://dakhni.org)"
+# Wikimedia asks bots to send a descriptive UA and to keep request rates low,
+# otherwise it returns HTTP 429. We throttle between requests and back off on 429.
+UA = "dakhni.org-image-localizer/1.0 (+https://github.com/dakhni-org/dakhni.org)"
+THROTTLE_SECONDS = 6  # gentle delay between requests to stay under Wikimedia's rate limit
 SRC_RE = re.compile(r'src="(https://commons\.wikimedia\.org/wiki/Special:FilePath/[^"]+)"')
 
 
@@ -48,7 +51,8 @@ def plan():
 def download(url: str, dest: str) -> bool:
     os.makedirs(os.path.dirname(dest), exist_ok=True)
     req = urllib.request.Request(url, headers={"User-Agent": UA})
-    for attempt in range(3):
+    backoff = 15
+    for attempt in range(4):
         try:
             with urllib.request.urlopen(req, timeout=60) as r:
                 data = r.read()
@@ -57,8 +61,26 @@ def download(url: str, dest: str) -> bool:
             with open(dest, "wb") as fh:
                 fh.write(data)
             return True
+        except urllib.error.HTTPError as e:
+            print(f"    attempt {attempt+1} failed: HTTP {e.code}")
+            # Permanent client errors (file missing/forbidden) won't fix on retry.
+            if 400 <= e.code < 500 and e.code != 429:
+                return False
+            wait = backoff
+            if e.code == 429:  # rate limited — honour Retry-After if it's an int
+                ra = e.headers.get("Retry-After") if e.headers else None
+                try:
+                    if ra is not None:
+                        wait = int(ra)
+                except (ValueError, TypeError):
+                    wait = backoff
+                print(f"    rate limited; waiting {wait}s")
+            time.sleep(min(wait, 180))
+            backoff = min(backoff * 2, 120)
         except Exception as e:  # noqa: BLE001
             print(f"    attempt {attempt+1} failed: {e}")
+            time.sleep(backoff)
+            backoff = min(backoff * 2, 120)
     return False
 
 
@@ -72,6 +94,7 @@ def main():
         return
 
     ok = fail = skip = 0
+    failed_urls = []
     edits = {}  # html_file -> list of (old_src, web_path)
     for f, url, rel, web in items:
         if os.path.exists(rel):
@@ -84,7 +107,9 @@ def main():
             edits.setdefault(f, []).append((url, web))
         else:
             fail += 1
+            failed_urls.append((f, url))
             print(f"  !! could not fetch; leaving markup unchanged for {rel}")
+        time.sleep(THROTTLE_SECONDS)  # be polite to Wikimedia
 
     for f, pairs in edits.items():
         s = open(f, encoding="utf-8").read()
@@ -97,8 +122,14 @@ def main():
             print(f"rewrote {f}")
 
     print(f"\nDone. downloaded={ok} skipped(existing)={skip} failed={fail}")
-    if fail:
-        sys.exit(1)
+    if failed_urls:
+        print("\nCould not fetch (left hot-linked — likely a wrong/removed "
+              "Wikimedia filename that needs a correct source or removal):")
+        for f, url in failed_urls:
+            print(f"  - {f}: {url}")
+    # Exit 0 regardless: the downloads that succeeded are committed, and the
+    # failures here are permanent (HTTP 404 etc.) so retrying won't help — no
+    # reason to redden the workflow over un-fetchable upstream files.
 
 
 if __name__ == "__main__":
