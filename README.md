@@ -38,8 +38,8 @@ The full set lives under [`/dynasties/`](https://dakhni.org/dynasties/).
 
 ## Project structure
 
-A static, dependency-free site of ~60 hand-written HTML pages. Each section is a
-directory; each page is an `index.html` so the URLs are clean (`/cities/hyderabad/`).
+A static site generated from JSON content files in `content/` using `scripts/build_site.py`.
+Generated pages are written as `index.html` files so URLs stay clean (`/cities/hyderabad/`).
 
 ```
 .
@@ -67,8 +67,9 @@ directory; each page is an `index.html` so the URLs are clean (`/cities/hyderaba
 └── README.md
 ```
 
-The shared navigation and the active-section highlighting are duplicated inline in
-each page (there is no build step or templating layer).
+The shared navigation, head/meta shell, hero/footer, disclosure modal and search overlay
+are generated from one template in `scripts/build_site.py`. Navigation data is maintained
+in `content/navigation.json`.
 
 ### Assets
 
@@ -78,14 +79,20 @@ referencing) are documented in [`assets/README.md`](assets/README.md).
 
 ## Local development
 
-No build step. Clone the repository and run a tiny static server:
+Build and serve locally:
 
 ```bash
 git clone https://github.com/dakhni-org/dakhni.org.git
 cd dakhni.org
+python3 scripts/build_site.py
 python3 -m http.server 8000
 # then open http://localhost:8000
 ```
+
+`build_site.py` now performs validation before rendering. It verifies required
+fields and basic shape checks for every `content/**/*.json` page file and validates
+`content/navigation.json` structure. Any validation error fails the build with a
+clear message so inconsistent content is caught early.
 
 The site is hosted directly via **GitHub Pages** at [dakhni.org](https://dakhni.org).
 
