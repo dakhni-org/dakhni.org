@@ -1,0 +1,8 @@
+# Generated pages: prefer keeping branch (ours) during merges, then regenerate via build script.
+# This avoids repetitive merge conflicts across dozens of generated HTML files.
+*.html merge=ours
+
+# Keep these canonical source files merged normally.
+README.md merge=text
+scripts/build_site.py merge=text
+schemas/page.schema.json merge=text
