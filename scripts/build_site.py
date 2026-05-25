@@ -31,6 +31,7 @@ BASE_REQUIRED_FIELDS = {
     "description": str,
     "url": str,
     "section": str,
+    "body_html": str,
     "dedication": str,
 }
 
