@@ -31,7 +31,6 @@ BASE_REQUIRED_FIELDS = {
     "description": str,
     "url": str,
     "section": str,
-    "body_html": str,
     "dedication": str,
 }
 
@@ -218,6 +217,77 @@ def esc(s):
     return _html.escape(s or "", quote=True)
 
 
+def parent_url(url: str) -> str:
+    parts = [p for p in url.strip("/").split("/") if p]
+    if len(parts) <= 1:
+        return "/"
+    return "/" + "/".join(parts[:-1]) + "/"
+
+def build_page_maps(pages):
+    """Return (url_to_page, hub_urls, subnav_map).
+
+    hub_urls: set of URLs that have at least one child page.
+    subnav_map: url -> {prev, next, index_href} for each leaf page.
+    """
+    url_to_page = {p["url"]: p for p in pages if p.get("url")}
+    hub_urls = {parent_url(p["url"]) for p in pages if p.get("url") and parent_url(p["url"]) != p["url"]}
+
+    from collections import defaultdict
+    groups = defaultdict(list)
+    for page in pages:
+        url = page.get("url", "")
+        if not url or page.get("level") == "home":
+            continue
+        if url in hub_urls:
+            continue  # hub pages don't get subnav
+        p = parent_url(url)
+        groups[p].append(page)
+
+    subnav_map = {}
+    for p_url, group in groups.items():
+        sorted_g = sorted(group, key=lambda pg: (pg.get("sort_order", 999), pg.get("title", "")))
+        for i, page in enumerate(sorted_g):
+            subnav_map[page["url"]] = {
+                "prev": sorted_g[i - 1] if i > 0 else None,
+                "next": sorted_g[i + 1] if i < len(sorted_g) - 1 else None,
+                "index_href": p_url,
+            }
+    return url_to_page, hub_urls, subnav_map
+
+def render_auto_crumb(page: Dict[str, Any], url_to_page: Dict[str, Any]) -> str:
+    url = page["url"]
+    parts = [p for p in url.strip("/").split("/") if p]
+    items = ['<a href="/">Home</a>']
+    for i in range(len(parts) - 1):
+        href = "/" + "/".join(parts[: i + 1]) + "/"
+        hub = url_to_page.get(href)
+        label = hub["title"] if hub else parts[i].replace("-", " ").title()
+        items.append(f'<a href="{esc(href)}">{esc(label)}</a>')
+    items.append(esc(page["title"]))
+    sep = '<span class="crumb-sep">›</span>'
+    return sep.join(items)
+
+def render_auto_subnav(page: Dict[str, Any], subnav_map: Dict, url_to_page: Dict) -> str:
+    data = subnav_map.get(page.get("url", ""))
+    if not data:
+        return ""
+    prev_pg = data.get("prev")
+    next_pg = data.get("next")
+    index_href = data["index_href"]
+    if not prev_pg and not next_pg and index_href == "/":
+        return ""  # lone child of home — no useful subnav
+    index_page = url_to_page.get(index_href)
+    index_title = "Back to " + (index_page["title"] if index_page else index_href.strip("/").split("/")[-1].replace("-", " ").title())
+    out = ['<nav class="subnav" aria-label="Page navigator">']
+    if prev_pg:
+        out.append(f'<a class="prev" href="{esc(prev_pg["url"])}"><span class="subnav-eyebrow">‹ Prev</span><span class="subnav-title">{esc(prev_pg["title"])}</span></a>')
+    out.append(f'<a class="index" href="{esc(index_href)}"><span class="subnav-eyebrow">Index</span><span class="subnav-title">{esc(index_title)}</span></a>')
+    if next_pg:
+        out.append(f'<a class="next" href="{esc(next_pg["url"])}"><span class="subnav-eyebrow">Next ›</span><span class="subnav-title">{esc(next_pg["title"])}</span></a>')
+    out.append("</nav>")
+    return "\n".join(out)
+
+
 def footer(dedication):
     ded = dedication or "Built with love for the Deccan"
     return f'''<footer>
@@ -302,8 +372,10 @@ def hero(page):
     return "\n".join(parts)
 
 
-def render(page, nav_html):
+def render(page, nav_html, url_to_page, subnav_map):
     body = render_blocks(page)
+    crumb = page.get("crumb_html") or render_auto_crumb(page, url_to_page)
+    subnav = page.get("subnav_html") or render_auto_subnav(page, subnav_map, url_to_page)
     out = [head(page), "<body>", nav_html]
     if page.get("level") == "home":
         out.append(page.get("hero_html", ""))
@@ -313,12 +385,12 @@ def render(page, nav_html):
     else:
         out.append(hero(page))
         out.append('<main class="page-main">')
-        if page.get("crumb_html"):
-            out.append(f'  <p class="crumb">{page["crumb_html"]}</p>')
+        if crumb:
+            out.append(f'  <p class="crumb">{crumb}</p>')
         out.append(body)
         out.append('</main>')
-    if page.get("subnav_html"):
-        out.append(page["subnav_html"])
+    if subnav:
+        out.append(subnav)
     out.append(footer(page.get("dedication")))
     out.append(DISCLOSURE)
     out.append(SEARCH)
@@ -354,13 +426,14 @@ def main():
         for err in errors:
             print(f"- {err}")
         raise SystemExit(1)
+    url_to_page, hub_urls, subnav_map = build_page_maps(pages)
     n = 0
     for page in pages:
         rel = page["url"].strip("/")
         outdir = os.path.join(ROOT, rel) if rel else ROOT
         os.makedirs(outdir, exist_ok=True)
         with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as fh:
-            fh.write(render(page, nav_html))
+            fh.write(render(page, nav_html, url_to_page, subnav_map))
         n += 1
     print(f"Rendered {n} pages")
 

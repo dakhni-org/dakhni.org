@@ -4,13 +4,13 @@
   "title": "Bidar",
   "description": "A formal record of Bidar — capital of the Bahmani Sultanate from 1429 and seat of the Barid Shahis. The Bidar Fort, Mahmud Gawan Madrasa, the Bahmani Tombs at Ashtur, the Barid Shahi necropolis, the Rangin Mahal and the lineage of Bidriware.",
   "dedication": "In memory of the Bahmani sultans of Ashtur",
+  "sort_order": 20,
   "eyebrow": "A City of the Deccan · Bahmani Capital from 1429",
   "urdu": "بیدر — دکن کا تاج",
   "title_html": "BIDAR",
   "subtitle": "Where Ahmad Shah Wali set his standard above the basaltic plateau, where Mahmud Gawan raised a college of Persian astronomers, and where the gunmetal of Bidri still takes silver inlay in the same lanes that taught the craft six centuries ago.",
   "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/02%20Bidar%20Mohamad%20Gawan%20Madrasa.JPG?width=1600",
   "extra_scripts": [],
-  "crumb_html": "<a href=\"/\">Home</a><span class=\"crumb-sep\">›</span><a href=\"/cities/\">Cities</a><span class=\"crumb-sep\">›</span>Bidar",
   "blocks": [
     {
       "type": "html",

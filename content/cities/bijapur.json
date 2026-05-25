@@ -4,13 +4,13 @@
   "title": "Bijapur",
   "description": "A formal record of Bijapur (Vijayapura) — capital of the Adil Shahi sultanate from 1490 to 1686. The Gol Gumbaz, Ibrahim Rauza, Jami Masjid, Malik-e-Maidan, the Adil Shahi sultans and the long siege of Aurangzeb.",
   "dedication": "In memory of Ibrahim II, the Jagat Guru of Bijapur",
+  "sort_order": 30,
   "eyebrow": "A City of the Deccan · Adil Shahi Capital · 1490–1686",
   "urdu": "بیجاپور — تختِ عادل شاہی",
   "title_html": "BIJAPUR",
   "subtitle": "Where Yusuf Adil Shah raised his standard above the black plain, where Ibrahim II called himself Jagat Guru, and where the dome of Muhammad Adil Shah still echoes a whispered word seven times across forty-four metres of empty air.",
   "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Gol%20Gumbaz%2C%20Bijapur%20%2C%20Karnataka%2C%20India.JPG?width=1600",
   "extra_scripts": [],
-  "crumb_html": "<a href=\"/\">Home</a><span class=\"crumb-sep\">›</span><a href=\"/cities/\">Cities</a><span class=\"crumb-sep\">›</span>Bijapur",
   "blocks": [
     {
       "type": "html",

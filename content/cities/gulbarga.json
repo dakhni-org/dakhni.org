@@ -4,13 +4,13 @@
   "title": "Gulbarga",
   "description": "A formal record of Gulbarga (Kalaburagi) — the original Bahmani capital from 1347. The Gulbarga Fort, the unique closed-court Jama Masjid of 1367, the Haft Gumbaz necropolis, and the great Sufi shrine of Khwaja Banda Nawaz Gesudaraz.",
   "dedication": "In memory of the saint of Gulbarga",
+  "sort_order": 50,
   "eyebrow": "A City of the Deccan · The First Bahmani Capital",
   "urdu": "گلبرگہ — احسن آباد، دکن کا اوّلین تخت",
   "title_html": "GULBARGA",
   "subtitle": "Where Hasan Gangu raised his standard in 1347, where the muezzin first called the azan over an independent Deccan, and where the saint Banda Nawaz wrote his last verse in the lamplight of the Chishti shrine.",
   "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/JAmia%20Masjid.jpg?width=1600",
   "extra_scripts": [],
-  "crumb_html": "<a href=\"/\">Home</a><span class=\"crumb-sep\">›</span><a href=\"/cities/\">Cities</a><span class=\"crumb-sep\">›</span>Gulbarga",
   "blocks": [
     {
       "type": "html",

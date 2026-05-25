@@ -4,13 +4,13 @@
   "title": "Warangal",
   "description": "A formal record of Warangal — the city of one stone, capital of the Kakatiya dynasty (1163–1323). Warangal Fort and its four toranas, the Thousand Pillar Temple at Hanamkonda, the Ramappa Temple (UNESCO 2021), Rudrama Devi and Prataparudra II, and Warangal under the Bahmanis, Qutb Shahis and Asaf Jahi Nizams.",
   "dedication": "In memory of the city of one stone",
+  "sort_order": 100,
   "eyebrow": "A City of the Deccan · Capital of the Kakatiyas, 1163–1323",
   "urdu": "ورنگل — ایک پتھر کا شہر",
   "title_html": "WARANGAL",
   "subtitle": "Once Orugallu — the city of one stone — seat of the Kakatiya emperors, of Rudrama Devi who ruled as a king, and of Prataparudra II whose fall in 1323 opened the Deccan to its long age of sultans.",
   "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Kakatiya%20Kala%20Thoranam.jpg?width=1600",
   "extra_scripts": [],
-  "crumb_html": "<a href=\"/\">Home</a><span class=\"crumb-sep\">›</span><a href=\"/cities/\">Cities</a><span class=\"crumb-sep\">›</span>Warangal",
   "blocks": [
     {
       "type": "html",

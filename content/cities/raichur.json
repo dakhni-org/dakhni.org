@@ -4,13 +4,13 @@
   "title": "Raichur",
   "description": "A formal record of Raichur — the Kakatiya fortress on the Tungabhadra–Krishna doab, the most contested ground between the Bahmanis, Vijayanagara and Bijapur, site of Krishnadevaraya's 1520 victory, and a Hyderabad State district under the Asaf Jahis until 1948.",
   "dedication": "In memory of the Doab",
+  "sort_order": 90,
   "eyebrow": "A City of the Deccan · The Doab Fortress · Six centuries between two rivers",
   "urdu": "رائچور — قلعۂ دوآبہ",
   "title_html": "RAICHUR",
   "subtitle": "The Kakatiya stronghold between the Krishna and the Tungabhadra — the most fought-over fortress of the Deccan, prize of Vijayanagara and the Bahmanis, decided in 1520 by Krishnadevaraya, and held for two centuries by the Nizams.",
   "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Raichur%20Fort.jpg?width=1600",
   "extra_scripts": [],
-  "crumb_html": "<a href=\"/\">Home</a><span class=\"crumb-sep\">›</span><a href=\"/cities/\">Cities</a><span class=\"crumb-sep\">›</span>Raichur",
   "blocks": [
     {
       "type": "html",

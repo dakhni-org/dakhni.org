@@ -4,13 +4,13 @@
   "title": "Nizamabad",
   "description": "A formal record of Nizamabad — the ancient city of Indur on the Godavari tributary, fortified by the Bahmanis and renamed under the Asaf Jahis; home of the celebrated black lacquerware tradition and the Nizamsagar Dam.",
   "dedication": "In memory of the Godavari plain",
+  "sort_order": 80,
   "eyebrow": "A City of the Deccan · The Hill Fort of Indur · From Bahmanis to the Nizam",
   "urdu": "نظام آباد — قلعۂ اِندور",
   "title_html": "NIZAMABAD",
   "subtitle": "The ancient city of Indur on the Godavari tributary — fortified by the Bahmanis, passed to the Barid Shahis of Bidar, and renamed Nizamabad under the Asaf Jahis; home of the GI-tagged black lacquerware tradition and the Nizamsagar Dam.",
   "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Nizamabad_Fort.jpg?width=1600",
   "extra_scripts": [],
-  "crumb_html": "<a href=\"/\">Home</a><span class=\"crumb-sep\">›</span><a href=\"/cities/\">Cities</a><span class=\"crumb-sep\">›</span>Nizamabad",
   "blocks": [
     {
       "type": "html",

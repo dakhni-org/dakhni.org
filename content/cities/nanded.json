@@ -4,13 +4,13 @@
   "title": "Nanded",
   "description": "A formal record of Nanded — the ancient Nandigrama on the Godavari, a Bahmani and Nizam Shahi outpost, the Mughal frontier town where Guru Gobind Singh spent his last days, and the seat of Takht Sachkhand Sri Hazur Abchalnagar Sahib — one of the five Takhts of Sikhism.",
   "dedication": "In memory of Abchalnagar",
+  "sort_order": 70,
   "eyebrow": "A City of the Deccan · Nandigrama on the Godavari · The Tenth Guru's last home",
   "urdu": "نان٘دیڑ — اَبچل نگر",
   "title_html": "NANDED",
   "subtitle": "The ancient Nandigrama on the Godavari — a Bahmani frontier, a Mughal town, and the city where Guru Gobind Singh laid down his arms in 1708 and named the Granth itself the eternal Guru of the Sikhs.",
   "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Takhat%20Sachkhand%20Shri%20Hazur%20Sahib%20ji.JPG?width=1600",
   "extra_scripts": [],
-  "crumb_html": "<a href=\"/\">Home</a><span class=\"crumb-sep\">›</span><a href=\"/cities/\">Cities</a><span class=\"crumb-sep\">›</span>Nanded",
   "blocks": [
     {
       "type": "html",

@@ -4,13 +4,13 @@
   "title": "Hyderabad",
   "description": "A formal record of Hyderabad — founded 1591 by Muhammad Quli Qutb Shah, capital of the Qutb Shahi Sultanate and the Asaf Jahi Nizams. Charminar, Golconda, Mecca Masjid, the Qutb Shahi Tombs, Falaknuma and Chowmahalla, the long durbar of the Nizams and the events of September 1948.",
   "dedication": "In memory of the Asaf Jahi dynasty",
+  "sort_order": 60,
   "eyebrow": "A City of the Deccan · Founded 1591",
   "urdu": "حیدرآباد — موتیوں کا شہر",
   "title_html": "HYDERABAD",
   "subtitle": "Where Muhammad Quli Qutb Shah laid out a city around the Charminar, where seven Nizams kept their durbar, and where the Dakhni tongue still answers in the same half-courteous lilt that Wali Deccani wrote in three centuries ago.",
   "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Charminar-Pride%20of%20Hyderabad.jpg?width=1600",
   "extra_scripts": [],
-  "crumb_html": "<a href=\"/\">Home</a><span class=\"crumb-sep\">›</span><a href=\"/cities/\">Cities</a><span class=\"crumb-sep\">›</span>Hyderabad",
   "blocks": [
     {
       "type": "html",
