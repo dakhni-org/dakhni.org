@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Dakhni.org page",
+  "type": "object",
+  "required": ["title", "description", "url", "section", "eyebrow", "title_html", "subtitle", "body_html", "dedication"],
+  "properties": {
+    "title": {"type": "string"},
+    "description": {"type": "string"},
+    "url": {"type": "string", "pattern": "^/(.*/)?$"},
+    "section": {"type": "string"},
+    "eyebrow": {"type": "string"},
+    "title_html": {"type": "string"},
+    "subtitle": {"type": "string"},
+    "body_html": {"type": "string"},
+    "dedication": {"type": "string"},
+    "crumb_html": {"type": "string"},
+    "subnav_html": {"type": "string"},
+    "urdu": {"type": "string"},
+    "cover": {"type": "string"},
+    "hero_html": {"type": "string"},
+    "level": {"type": "string"},
+    "extra_scripts": {"type": "array", "items": {"type": "string"}}
+  }
+}
