@@ -103,6 +103,19 @@ def validate_page(page: Dict[str, Any], source: str) -> List[str]:
                             errors.append(f"{source}: blocks[{i}].items[{j}].key must be string")
                         if not isinstance(item.get("value"), str):
                             errors.append(f"{source}: blocks[{i}].items[{j}].value must be string")
+            elif btype == "timeline":
+                items = block.get("items")
+                if not isinstance(items, list):
+                    errors.append(f"{source}: blocks[{i}].items must be array for type 'timeline'")
+                else:
+                    for j, item in enumerate(items):
+                        if not isinstance(item, dict):
+                            errors.append(f"{source}: blocks[{i}].items[{j}] must be object")
+                            continue
+                        if not isinstance(item.get("year"), str):
+                            errors.append(f"{source}: blocks[{i}].items[{j}].year must be string")
+                        if not isinstance(item.get("text"), str):
+                            errors.append(f"{source}: blocks[{i}].items[{j}].text must be string")
     for key in ("crumb_html", "subnav_html", "urdu", "cover", "hero_html", "level"):
         if key in page and not isinstance(page[key], str):
             errors.append(f"{source}: field '{key}' must be string when provided")
@@ -204,6 +217,23 @@ def render_blocks(page: Dict[str, Any]) -> str:
                 val = esc(item.get("value", ""))
                 out.append(f'<div class="fact"><span class="fact-key">{key}</span><span class="fact-val">{val}</span></div>')
             out.append('</section>')
+        elif btype == "timeline":
+            eyebrow = esc(block.get("eyebrow", ""))
+            title = esc(block.get("title", ""))
+            out.append(f'<section class="timeline-wrap" id="timeline">')
+            if eyebrow or title:
+                out.append('<header class="timeline-hdr">')
+                if eyebrow:
+                    out.append(f'<span class="timeline-eyebrow">{eyebrow}</span>')
+                if title:
+                    out.append(f'<h2 class="timeline-title">{title}</h2>')
+                out.append('</header>')
+            out.append('<ol class="tl-list">')
+            for item in block.get("items", []):
+                year = esc(item.get("year", ""))
+                text = item.get("text", "")  # allow HTML in text
+                out.append(f'<li class="tl-item reveal"><span class="tl-year">{year}</span><span class="tl-text">{text}</span></li>')
+            out.append('</ol></section>')
     return "\n".join(out)
 
 DISCLOSURE = '''<div id="ai-disclosure" role="dialog" aria-modal="true" aria-labelledby="disclosure-title">
