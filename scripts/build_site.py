@@ -137,6 +137,10 @@ def validate_page(page: Dict[str, Any], source: str) -> List[str]:
             errors.append(f"{source}: field 'page_type' must be string")
         elif page_type not in PAGE_TYPES:
             errors.append(f"{source}: unknown page_type '{page_type}'; allowed: {sorted(PAGE_TYPES)}")
+    tags = page.get("tags")
+    if tags is not None:
+        if not isinstance(tags, list) or any(not isinstance(t, str) for t in tags):
+            errors.append(f"{source}: field 'tags' must be an array of strings")
     return errors
 
 
@@ -374,6 +378,8 @@ def head(page):
     desc = page.get("description", "")
     cover = page.get("cover") or ""
     og_img = ("https://dakhni.org" + cover) if cover.startswith("/") else (cover or "https://dakhni.org/assets/dakhni-org-logo.png")
+    page_tags = page.get("tags", [])
+    all_keywords = KEYWORDS + (", " + ", ".join(page_tags) if page_tags else "")
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -390,7 +396,7 @@ def head(page):
   <title>{esc(full_title)}</title>
   <link rel="icon" type="image/png" href="/assets/dakhni-org-logo.png"/>
   <meta name="description" content="{esc(desc)}"/>
-  <meta name="keywords" content="{KEYWORDS}"/>
+  <meta name="keywords" content="{esc(all_keywords)}"/>
   <meta name="author" content="Dakhni.org"/>
   <meta name="robots" content="index, follow, max-image-preview:large"/>
   <meta name="theme-color" content="#1A1814"/>
