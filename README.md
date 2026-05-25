@@ -68,8 +68,7 @@ Generated pages are written as `index.html` files so URLs stay clean (`/cities/h
 ```
 
 The shared navigation, head/meta shell, hero/footer, disclosure modal and search overlay
-are generated from one template in `scripts/build_site.py`. Navigation data is maintained
-in `content/navigation.json`.
+are generated from one template in `scripts/build_site.py`.
 
 ### Assets
 
@@ -89,10 +88,9 @@ python3 -m http.server 8000
 # then open http://localhost:8000
 ```
 
-`build_site.py` now performs validation before rendering. It verifies required
-fields and basic shape checks for every `content/**/*.json` page file and validates
-`content/navigation.json` structure. Any validation error fails the build with a
-clear message so inconsistent content is caught early.
+`build_site.py` now performs content validation before rendering. It verifies required
+fields and basic shape checks for every `content/**/*.json` page file. Any validation
+error fails the build with a clear message so inconsistent content is caught early.
 
 The site is hosted directly via **GitHub Pages** at [dakhni.org](https://dakhni.org).
 

@@ -2,11 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Dakhni.org page",
   "type": "object",
-  "required": ["title", "description", "url", "section", "eyebrow", "title_html", "subtitle", "dedication"],
-  "anyOf": [
-    {"required": ["body_html"]},
-    {"required": ["blocks"]}
-  ],
+  "required": ["title", "description", "url", "section", "eyebrow", "title_html", "subtitle", "body_html", "dedication"],
   "properties": {
     "title": {"type": "string"},
     "description": {"type": "string"},
@@ -16,29 +12,6 @@
     "title_html": {"type": "string"},
     "subtitle": {"type": "string"},
     "body_html": {"type": "string"},
-    "blocks": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["type"],
-        "properties": {
-          "type": {"type": "string"},
-          "html": {"type": "string"},
-          "title": {"type": "string"},
-          "items": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": ["title", "html"],
-              "properties": {
-                "title": {"type": "string"},
-                "html": {"type": "string"}
-              }
-            }
-          }
-        }
-      }
-    },
     "dedication": {"type": "string"},
     "crumb_html": {"type": "string"},
     "subnav_html": {"type": "string"},
