@@ -90,6 +90,19 @@ def validate_page(page: Dict[str, Any], source: str) -> List[str]:
                             errors.append(f"{source}: blocks[{i}].items[{j}].title must be string")
                         if not isinstance(card.get("html"), str):
                             errors.append(f"{source}: blocks[{i}].items[{j}].html must be string")
+            elif btype == "facts":
+                items = block.get("items")
+                if not isinstance(items, list):
+                    errors.append(f"{source}: blocks[{i}].items must be array for type 'facts'")
+                else:
+                    for j, item in enumerate(items):
+                        if not isinstance(item, dict):
+                            errors.append(f"{source}: blocks[{i}].items[{j}] must be object")
+                            continue
+                        if not isinstance(item.get("key"), str):
+                            errors.append(f"{source}: blocks[{i}].items[{j}].key must be string")
+                        if not isinstance(item.get("value"), str):
+                            errors.append(f"{source}: blocks[{i}].items[{j}].value must be string")
     for key in ("crumb_html", "subnav_html", "urdu", "cover", "hero_html", "level"):
         if key in page and not isinstance(page[key], str):
             errors.append(f"{source}: field '{key}' must be string when provided")
@@ -184,6 +197,13 @@ def render_blocks(page: Dict[str, Any]) -> str:
             for card in block.get("items", []):
                 out.append(f'<article class="content-card"><h3>{esc(card.get("title", ""))}</h3>{card.get("html", "")}</article>')
             out.append('</div></section>')
+        elif btype == "facts":
+            out.append('<section class="facts-strip" aria-label="Key facts">')
+            for item in block.get("items", []):
+                key = esc(item.get("key", ""))
+                val = esc(item.get("value", ""))
+                out.append(f'<div class="fact"><span class="fact-key">{key}</span><span class="fact-val">{val}</span></div>')
+            out.append('</section>')
     return "\n".join(out)
 
 DISCLOSURE = '''<div id="ai-disclosure" role="dialog" aria-modal="true" aria-labelledby="disclosure-title">
