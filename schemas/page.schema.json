@@ -1,24 +1,40 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Dakhni.org page",
+  "description": "Content file schema for dakhni.org static site pages.",
   "type": "object",
-  "required": ["title", "description", "url", "section", "eyebrow", "title_html", "subtitle", "body_html", "dedication"],
+  "required": ["title", "description", "url", "section", "dedication"],
   "properties": {
+    "page_type": {"type": "string", "enum": ["home", "section_hub", "city_leaf", "saint_leaf", "institution_leaf", "heritage_leaf", "dynasty_leaf", "language_leaf", "sacred_site_leaf", "general_leaf"]},
     "title": {"type": "string"},
     "description": {"type": "string"},
     "url": {"type": "string", "pattern": "^/(.*/)?$"},
     "section": {"type": "string"},
+    "dedication": {"type": "string"},
+    "sort_order": {"type": "integer"},
     "eyebrow": {"type": "string"},
     "title_html": {"type": "string"},
     "subtitle": {"type": "string"},
-    "body_html": {"type": "string"},
-    "dedication": {"type": "string"},
-    "crumb_html": {"type": "string"},
-    "subnav_html": {"type": "string"},
     "urdu": {"type": "string"},
     "cover": {"type": "string"},
     "hero_html": {"type": "string"},
-    "level": {"type": "string"},
-    "extra_scripts": {"type": "array", "items": {"type": "string"}}
-  }
+    "level": {"type": "string", "const": "home"},
+    "extra_scripts": {"type": "array", "items": {"type": "string"}},
+    "tags": {"type": "array", "items": {"type": "string"}},
+    "blocks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type"],
+        "properties": {
+          "type": {"type": "string", "enum": ["html", "intro", "section", "cards", "facts", "timeline"]},
+          "html": {"type": "string"},
+          "title": {"type": "string"},
+          "eyebrow": {"type": "string"},
+          "items": {"type": "array"}
+        }
+      }
+    }
+  },
+  "additionalProperties": false
 }
