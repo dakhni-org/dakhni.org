@@ -6,6 +6,12 @@
   "description": "The historic mosques of the Deccan — Mecca Masjid, Toli Masjid, Jama Masjid Golconda, the Adil Shahi mosques of Bijapur, the Bahmani Jama at Gulbarga, the Solah Khamba and Jama Masjid of Bidar, and the great Asaf Jahi mosques of Hyderabad.",
   "dedication": "In memory of the Asaf Jahi dynasty",
   "sort_order": 10,
+  "tags": [
+    "Masjid",
+    "Mosque",
+    "Deccan",
+    "Islamic Architecture"
+  ],
   "eyebrow": "Six Centuries of Friday Prayer",
   "title_html": "Masjids of the Deccan",
   "subtitle": "From the all-domed Bahmani jami at Gulbarga to the Mecca Masjid at Charminar — the historic mosques of the Deccan plateau.",

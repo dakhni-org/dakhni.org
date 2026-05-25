@@ -6,6 +6,12 @@
   "description": "Dakhni — a literature older than its descendants. The southern register of Urdu that took shape in the Deccan between the fourteenth and sixteenth centuries, and still survives as everyday speech.",
   "dedication": "In memory of the Asaf Jahi dynasty",
   "sort_order": 10,
+  "tags": [
+    "Dakhni",
+    "Dakkani",
+    "Dakhni Urdu",
+    "Deccan Language"
+  ],
   "eyebrow": "Languages of the Deccan",
   "urdu": "دَکَّنی",
   "title_html": "Dakhni",

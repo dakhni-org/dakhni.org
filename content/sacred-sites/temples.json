@@ -6,6 +6,12 @@
   "description": "The historic temples of the Deccan plateau — Ramappa and Thousand Pillar of the Kakatiyas, Bhadrachalam, Yadagirigutta, Vemulawada, the Ellora caves and Grishneshwar, Birla Mandir Hyderabad and the great pilgrimage temples of Telangana, Andhra and the wider Deccan.",
   "dedication": "In memory of the Asaf Jahi dynasty",
   "sort_order": 30,
+  "tags": [
+    "Temple",
+    "Hindu",
+    "Deccan",
+    "Sacred Sites"
+  ],
   "eyebrow": "Pre-Sultanate to Asaf Jahi",
   "title_html": "Historic Temples of the Deccan",
   "subtitle": "From the basalt of Ramappa to the granite hill at Yadagirigutta — twelve centuries of Deccan temple-building.",

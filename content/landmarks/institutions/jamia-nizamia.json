@@ -6,6 +6,11 @@
   "description": "Founded in 1876 by Mawlana Anwarullah Farooqui (Fazilat-Jung), Jamia Nizamia is the principal Sunni Hanafi seminary of the Deccan.",
   "dedication": "In memory of the Asaf Jahi dynasty",
   "sort_order": 30,
+  "tags": [
+    "Jamia Nizamia",
+    "Hyderabad",
+    "Islamic Education"
+  ],
   "eyebrow": "Institutions of the Deccan",
   "title_html": "Jamia Nizamia",
   "subtitle": "Hyderabad · Founded 1876",

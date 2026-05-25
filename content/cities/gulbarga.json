@@ -6,6 +6,12 @@
   "description": "A formal record of Gulbarga (Kalaburagi) — the original Bahmani capital from 1347. The Gulbarga Fort, the unique closed-court Jama Masjid of 1367, the Haft Gumbaz necropolis, and the great Sufi shrine of Khwaja Banda Nawaz Gesudaraz.",
   "dedication": "In memory of the saint of Gulbarga",
   "sort_order": 50,
+  "tags": [
+    "Gulbarga",
+    "Bahmani",
+    "Dargah",
+    "Bandanawaz"
+  ],
   "eyebrow": "A City of the Deccan · The First Bahmani Capital",
   "urdu": "گلبرگہ — احسن آباد، دکن کا اوّلین تخت",
   "title_html": "GULBARGA",

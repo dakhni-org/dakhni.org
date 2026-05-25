@@ -6,6 +6,12 @@
   "description": "A formal record of Golconda — the granite-hill fortress that was the Qutb Shahi capital from 1518 to 1591, the source of the world's most legendary diamonds (Koh-i-Noor, Hope, Regent, Orlov), the eight-month siege of Aurangzeb in 1687, and the seven-tomb necropolis of its sultans.",
   "dedication": "In memory of the seven Qutb Shahis",
   "sort_order": 40,
+  "tags": [
+    "Golconda",
+    "Qutb Shahi",
+    "Fort",
+    "Diamonds"
+  ],
   "eyebrow": "A City of the Deccan · Qutb Shahi Capital · 1518–1591",
   "urdu": "گول کنڈہ — تختِ یاقوت",
   "title_html": "GOLCONDA",

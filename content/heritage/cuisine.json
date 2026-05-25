@@ -6,6 +6,12 @@
   "description": "Hyderabadi cuisine — a kitchen at the crossroads of empires. Biryani, haleem, marag, lukhmi and khubani ka meetha.",
   "dedication": "In memory of the Asaf Jahi dynasty",
   "sort_order": 20,
+  "tags": [
+    "Biryani",
+    "Haleem",
+    "Dakhni Cuisine",
+    "Hyderabadi Food"
+  ],
   "eyebrow": "Pillars of Dakhni Heritage",
   "title_html": "A kitchen at the <em>crossroads</em> of empires",
   "subtitle": "Persian saffron, Telugu chilli, Marathi grain, Mughal patience",

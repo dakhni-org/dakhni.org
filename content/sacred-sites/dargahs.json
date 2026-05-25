@@ -6,6 +6,12 @@
   "description": "The great Sufi shrines of the Deccan — Khuldabad, Bandanawaz at Gulbarga, Yousufain Sharif and Maula Ali at Hyderabad, Pahadi Sharif, Shah Khamosh and the dargahs of the Bahmani, Qutb Shahi and Asaf Jahi periods.",
   "dedication": "In memory of the Asaf Jahi dynasty",
   "sort_order": 20,
+  "tags": [
+    "Dargah",
+    "Sufi Shrine",
+    "Pilgrimage",
+    "Deccan"
+  ],
   "eyebrow": "Sufi Shrines of the Plateau",
   "title_html": "Dargahs of the Deccan",
   "subtitle": "Seven centuries of saints in stone — from Khuldabad in 1337 to the dargahs of modern Hyderabad.",

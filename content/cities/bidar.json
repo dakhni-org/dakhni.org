@@ -6,6 +6,12 @@
   "description": "A formal record of Bidar — capital of the Bahmani Sultanate from 1429 and seat of the Barid Shahis. The Bidar Fort, Mahmud Gawan Madrasa, the Bahmani Tombs at Ashtur, the Barid Shahi necropolis, the Rangin Mahal and the lineage of Bidriware.",
   "dedication": "In memory of the Bahmani sultans of Ashtur",
   "sort_order": 20,
+  "tags": [
+    "Bidar",
+    "Bahmani",
+    "Bidar Sultanate",
+    "Mahmud Gawan"
+  ],
   "eyebrow": "A City of the Deccan · Bahmani Capital from 1429",
   "urdu": "بیدر — دکن کا تاج",
   "title_html": "BIDAR",

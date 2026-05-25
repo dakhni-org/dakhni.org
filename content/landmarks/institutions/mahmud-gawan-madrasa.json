@@ -6,6 +6,12 @@
   "description": "The three-storey Persian-style madrasa raised in 1472 at Bidar by the Bahmani wazir Khwaja Mahmud Gawan — astronomers, jurists and a library of three thousand manuscripts.",
   "dedication": "In memory of the Asaf Jahi dynasty",
   "sort_order": 10,
+  "tags": [
+    "Mahmud Gawan",
+    "Bidar",
+    "Madrasa",
+    "Bahmani"
+  ],
   "eyebrow": "Institutions of the Deccan",
   "title_html": "Mahmud Gawan Madrasa",
   "subtitle": "Bidar · Founded 1472",
