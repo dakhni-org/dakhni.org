@@ -17,6 +17,7 @@ from typing import Any, Dict, List
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONTENT = os.path.join(ROOT, "content")
+NAV_FILE = os.path.join(CONTENT, "navigation.json")
 
 GA = "G-N9RETSEPQ9"
 KEYWORDS = ("Dakhni, Dakkani, Dakhini, Deccan, Deccani, Hyderabad, Hyderabadi, Bidar, "
@@ -202,8 +203,8 @@ def hero(page):
     return "\n".join(parts)
 
 
-def render(page):
-    out = [head(page), "<body>", NAV]
+def render(page, nav_html):
+    out = [head(page), "<body>", nav_html]
     if page.get("level") == "home":
         out.append(page.get("hero_html", ""))
         out.append('<main class="page-main page-main--home">')
@@ -229,9 +230,21 @@ def render(page):
 
 
 def main():
+    with open(NAV_FILE, encoding="utf-8") as fh:
+        nav_data = json.load(fh)
+    nav_errors = validate_nav(nav_data)
+    if nav_errors:
+        print("Navigation validation failed:")
+        for err in nav_errors:
+            print(f"- {err}")
+        raise SystemExit(1)
+    nav_html = render_nav(nav_data)
+
     pages = []
     errors: List[str] = []
     for jf in sorted(glob.glob(os.path.join(CONTENT, "**", "*.json"), recursive=True)):
+        if os.path.abspath(jf) == os.path.abspath(NAV_FILE):
+            continue
         with open(jf, encoding="utf-8") as fh:
             page = json.load(fh)
         pages.append(page)
@@ -247,7 +260,7 @@ def main():
         outdir = os.path.join(ROOT, rel) if rel else ROOT
         os.makedirs(outdir, exist_ok=True)
         with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as fh:
-            fh.write(render(page))
+            fh.write(render(page, nav_html))
         n += 1
     print(f"Rendered {n} pages")
 
