@@ -1,0 +1,212 @@
+{
+  "brand": {
+    "label": "DAKHNI.ORG",
+    "href": "/",
+    "logo": "/assets/dakhni-org-logo.png",
+    "aria_label": "Dakhni.org home"
+  },
+  "items": [
+    {
+      "label": "Heritage",
+      "href": "/heritage/",
+      "children": [
+        {
+          "label": "Language & Poetry",
+          "href": "/heritage/language-poetry/"
+        },
+        {
+          "label": "Cuisine",
+          "href": "/heritage/cuisine/"
+        },
+        {
+          "label": "Music",
+          "href": "/heritage/music/"
+        },
+        {
+          "label": "Architecture",
+          "href": "/heritage/architecture/"
+        },
+        {
+          "label": "Crafts",
+          "href": "/heritage/crafts/"
+        },
+        {
+          "label": "Sufi Tradition",
+          "href": "/heritage/sufi-tradition/"
+        },
+        {
+          "label": "Festivals",
+          "href": "/heritage/festivals/"
+        }
+      ]
+    },
+    {
+      "label": "Dynasties",
+      "href": "/dynasties/",
+      "children": [
+        {
+          "label": "Bahmani Sultanate",
+          "href": "/dynasties/bahmani/"
+        },
+        {
+          "label": "Qutb Shahi",
+          "href": "/dynasties/qutb-shahi/"
+        },
+        {
+          "label": "Bidar Barid Shahi",
+          "href": "/dynasties/bidar-barid/"
+        },
+        {
+          "label": "Adil Shahi",
+          "href": "/dynasties/adil-shahi/"
+        },
+        {
+          "label": "Asaf Jahi Nizams",
+          "href": "/dynasties/asaf-jahi/"
+        }
+      ]
+    },
+    {
+      "label": "Language",
+      "href": "/language/",
+      "children": [
+        {
+          "label": "Dakhni",
+          "href": "/language/dakhni/"
+        },
+        {
+          "label": "Urdu",
+          "href": "/language/urdu/"
+        },
+        {
+          "label": "Faarsi (Persian)",
+          "href": "/language/faarsi/"
+        },
+        {
+          "label": "Telugu",
+          "href": "/language/telugu/"
+        }
+      ]
+    },
+    {
+      "label": "Sufism",
+      "href": "/sufism/",
+      "children": [
+        {
+          "label": "Burhanuddin Gharib",
+          "href": "/sufism/burhanuddin/"
+        },
+        {
+          "label": "Baba Sharfuddin",
+          "href": "/sufism/sharfuddin/"
+        },
+        {
+          "label": "Bandanawaz Gisudaraz",
+          "href": "/sufism/bandanawaz/"
+        },
+        {
+          "label": "Hussain Shah Wali",
+          "href": "/sufism/hussain-shah-wali/"
+        },
+        {
+          "label": "Shah Raju Qattal",
+          "href": "/sufism/shah-raju/"
+        },
+        {
+          "label": "Yousufain Sharif",
+          "href": "/sufism/yousufain/"
+        },
+        {
+          "label": "Shah Khamosh",
+          "href": "/sufism/shah-khamosh/"
+        }
+      ]
+    },
+    {
+      "label": "Cities",
+      "href": "/cities/",
+      "children": [
+        {
+          "label": "Hyderabad",
+          "href": "/cities/hyderabad/"
+        },
+        {
+          "label": "Bidar",
+          "href": "/cities/bidar/"
+        },
+        {
+          "label": "Gulbarga",
+          "href": "/cities/gulbarga/"
+        },
+        {
+          "label": "Bijapur",
+          "href": "/cities/bijapur/"
+        },
+        {
+          "label": "Aurangabad",
+          "href": "/cities/aurangabad/"
+        },
+        {
+          "label": "Golconda",
+          "href": "/cities/golconda/"
+        },
+        {
+          "label": "Warangal",
+          "href": "/cities/warangal/"
+        },
+        {
+          "label": "Nanded",
+          "href": "/cities/nanded/"
+        },
+        {
+          "label": "Raichur",
+          "href": "/cities/raichur/"
+        },
+        {
+          "label": "Nizamabad",
+          "href": "/cities/nizamabad/"
+        }
+      ]
+    },
+    {
+      "label": "Landmarks",
+      "href": "/landmarks/",
+      "children": [
+        {
+          "label": "Monuments",
+          "href": "/landmarks/monuments/"
+        },
+        {
+          "label": "Institutions",
+          "href": "/landmarks/institutions/"
+        }
+      ]
+    },
+    {
+      "label": "Sacred Sites",
+      "href": "/sacred-sites/",
+      "children": [
+        {
+          "label": "Masjids",
+          "href": "/sacred-sites/masjids/"
+        },
+        {
+          "label": "Dargahs",
+          "href": "/sacred-sites/dargahs/"
+        },
+        {
+          "label": "Temples",
+          "href": "/sacred-sites/temples/"
+        },
+        {
+          "label": "Other Faiths",
+          "href": "/sacred-sites/religious-structures/"
+        }
+      ]
+    },
+    {
+      "label": "Are You Dakhni?",
+      "href": "/#quiz"
+    }
+  ]
+}
