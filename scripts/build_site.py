@@ -13,6 +13,7 @@ import glob
 import html as _html
 import json
 import os
+from typing import Any, Dict, List
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONTENT = os.path.join(ROOT, "content")
@@ -23,6 +24,49 @@ KEYWORDS = ("Dakhni, Dakkani, Dakhini, Deccan, Deccani, Hyderabad, Hyderabadi, B
             "Nizam, Dakhni Urdu, Deccani Urdu, Deccan Sultanates, qawwali, dargah, Sufi "
             "shrines, biryani, haleem, Charminar, Golconda, Bidriware, Deccan heritage")
 FALLBACK_COVER = "/assets/dakhni-pattern.png"
+
+BASE_REQUIRED_FIELDS = {
+    "title": str,
+    "description": str,
+    "url": str,
+    "section": str,
+    "body_html": str,
+    "dedication": str,
+}
+
+LEAF_REQUIRED_FIELDS = {
+    "eyebrow": str,
+    "title_html": str,
+    "subtitle": str,
+}
+
+def validate_page(page: Dict[str, Any], source: str) -> List[str]:
+    errors: List[str] = []
+    required = dict(BASE_REQUIRED_FIELDS)
+    if page.get("level") != "home":
+        required.update(LEAF_REQUIRED_FIELDS)
+
+    for key, expected in required.items():
+        if key not in page:
+            errors.append(f"{source}: missing required field '{key}'")
+            continue
+        if not isinstance(page[key], expected):
+            errors.append(f"{source}: field '{key}' must be {expected.__name__}")
+    for key in ("crumb_html", "subnav_html", "urdu", "cover", "hero_html", "level"):
+        if key in page and not isinstance(page[key], str):
+            errors.append(f"{source}: field '{key}' must be string when provided")
+    if "extra_scripts" in page:
+        val = page["extra_scripts"]
+        if not isinstance(val, list) or any(not isinstance(x, str) for x in val):
+            errors.append(f"{source}: field 'extra_scripts' must be an array of strings")
+    url = page.get("url")
+    if isinstance(url, str):
+        if not url.startswith("/"):
+            errors.append(f"{source}: url must start with '/'")
+        if not url.endswith("/") and url != "/":
+            errors.append(f"{source}: non-root url must end with '/'")
+    return errors
+
 
 NAV = '''<nav>
   <a href="/" class="nav-brand" aria-label="Dakhni.org home">
@@ -186,9 +230,17 @@ def render(page):
 
 def main():
     pages = []
+    errors: List[str] = []
     for jf in sorted(glob.glob(os.path.join(CONTENT, "**", "*.json"), recursive=True)):
         with open(jf, encoding="utf-8") as fh:
-            pages.append(json.load(fh))
+            page = json.load(fh)
+        pages.append(page)
+        errors.extend(validate_page(page, os.path.relpath(jf, ROOT)))
+    if errors:
+        print("Content validation failed:")
+        for err in errors:
+            print(f"- {err}")
+        raise SystemExit(1)
     n = 0
     for page in pages:
         rel = page["url"].strip("/")
