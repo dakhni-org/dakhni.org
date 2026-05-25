@@ -1,13 +1,47 @@
 {
- "url": "/sufism/shah-khamosh/",
- "section": "Sufism",
- "title": "Shah Khamosh",
- "description": "Hazrat Sayyid Shah Khamosh (d. 1740) — the silent saint of the early Asaf Jahi period at Hyderabad, master of the Naqshbandi-Qadiri silsila.",
- "dedication": "In memory of the Asaf Jahi dynasty",
- "eyebrow": "Sufi Saints of the Deccan",
- "title_html": "Shah Khamosh",
- "subtitle": "Naqshbandi-Qadiri · Hyderabad · d. 1740",
- "subnav_html": "<nav class=\"subnav\" aria-label=\"Page navigator\"><a class=\"prev\" href=\"/sufism/yousufain/\"><span class=\"subnav-eyebrow\">‹ Prev</span><span class=\"subnav-title\">Yousufain Sharif</span></a><a class=\"index\" href=\"/sufism/\"><span class=\"subnav-eyebrow\">Index</span><span class=\"subnav-title\">Back to Sufism</span></a><div></div></nav>",
- "crumb_html": "<a href=\"/\">Home</a><span class=\"crumb-sep\">›</span><a href=\"/sufism/\">Sufism</a><span class=\"crumb-sep\">›</span>Shah Khamosh",
- "body_html": "<section class=\"facts-strip\" aria-label=\"Saint record\">\n  <div class=\"fact\"><span class=\"fact-key\">Order</span><span class=\"fact-val\">Naqshbandi-Qadiri</span></div>\n  <div class=\"fact\"><span class=\"fact-key\">Lineage</span><span class=\"fact-val\">Sayyid</span></div>\n  <div class=\"fact\"><span class=\"fact-key\">Era</span><span class=\"fact-val\">Early Asaf Jahi</span></div>\n  <div class=\"fact\"><span class=\"fact-key\">Seat</span><span class=\"fact-val\">Old City, Hyderabad</span></div>\n  <div class=\"fact\"><span class=\"fact-key\">Died</span><span class=\"fact-val\">Hyderabad · 1740</span></div>\n  <div class=\"fact\"><span class=\"fact-key\">Discourses</span><span class=\"fact-val\">Malfuzat-i-Khamosh</span></div>\n</section>\n\n<div class=\"pillars-strip\">\n  <span class=\"pillars-strip-label\">The Silent Saint</span>\n  <a href=\"#s1\">The Silent One</a><span class=\"pillars-strip-sep\">◆</span><a href=\"#s2\">The Method</a><span class=\"pillars-strip-sep\">◆</span><a href=\"#s3\">The Dargah</a>\n</div>\n\n<div class=\"h-wrap\">\n  <section class=\"h-entry\" id=\"s1\">\n    <figure class=\"h-figure reveal-left\">\n      <img loading=\"lazy\" alt=\"Mecca Masjid, Hyderabad, near the dargah of Shah Khamosh\" src=\"/sufism/shah-khamosh/assets/mecca-masjid-hyderabad.jpg\"/>\n      <figcaption>Mecca Masjid · Hyderabad · the saint kept his hospice in the old city nearby</figcaption>\n    </figure>\n    <div class=\"h-text reveal-right\">\n      <span class=\"h-numeral\">I · The Silent One</span>\n      <span class=\"h-eyebrow\">Hyderabad · early 1700s</span>\n      <h2 class=\"h-title\">The <em>silent</em> saint of the Asaf Jahi capital</h2>\n      <p class=\"h-sub\">A Sayyid of the Qadiri-Naqshbandi line who shunned all unnecessary speech</p>\n      <div class=\"h-body\">\n        <p>Hazrat <em>Sayyid Shah Khamosh</em> — known by the epithet <em>Khamosh</em> (\"the silent one\") for his lifelong practice of avoiding all unnecessary speech — was a Sayyid scholar and Sufi who lived at Hyderabad during the founding decades of the Asaf Jahi state, and who died at the city in 1153 AH / 1740 CE during the reign of Asaf Jah I. His lineage placed him in the combined Qadiri-Naqshbandi silsila that was particularly characteristic of Hyderabad in this period.</p>\n      </div>\n    </div>\n  </section>\n  <section class=\"h-entry\" id=\"s2\">\n    <div class=\"h-text reveal-right\">\n      <span class=\"h-numeral\">II · The Method</span>\n      <span class=\"h-eyebrow\">An Austere Way</span>\n      <h2 class=\"h-title\">A discipline of <em>silence</em></h2>\n      <p class=\"h-sub\">Teaching in writing, a single evening meal, and the counsel of a Nizam</p>\n      <div class=\"h-body\">\n        <p>His method was unusually austere even by Sufi standards. He kept his hospice in the old city near the Mecca Masjid, taught a small circle of disciples in writing rather than speech, restricted his meals to a single late-evening serving, and was reputed never to have undertaken any worldly transaction. Asaf Jah I, the founder of Hyderabad State, is recorded in the early state chronicles as having visited him repeatedly for counsel; the Nizam's regard for the saint is said to have influenced the patronage extended to Hyderabad's Sufi institutions in the first generation of Asaf Jahi rule.</p>\n      </div>\n    </div>\n  </section>\n  <section class=\"h-entry\" id=\"s3\">\n    <div class=\"h-text reveal-left\">\n      <span class=\"h-numeral\">III · The Dargah</span>\n      <span class=\"h-eyebrow\">The Old City</span>\n      <h2 class=\"h-title\">A shrine kept in <em>silence</em></h2>\n      <p class=\"h-sub\">Where pilgrims still sit in the discipline the saint himself observed</p>\n      <div class=\"h-body\">\n        <p>His tomb in the old city is one of the smaller but most carefully tended of Hyderabad's dargahs. Pilgrims sit there in the discipline of silence the saint himself observed — a practice unusual in the otherwise vocal qawwali culture of the city. His name appears in the formal silsila records of the Hyderabad Naqshbandi-Qadiri line and his discourses, transcribed by disciples in his lifetime, were collected and published in Urdu in the late nineteenth century under the title <em>Malfuzat-i-Khamosh</em>.</p>\n      </div>\n    </div>\n  </section>\n</div>"
+  "page_type": "saint_leaf",
+  "url": "/sufism/shah-khamosh/",
+  "section": "Sufism",
+  "title": "Shah Khamosh",
+  "description": "Hazrat Sayyid Shah Khamosh (d. 1740) — the silent saint of the early Asaf Jahi period at Hyderabad, master of the Naqshbandi-Qadiri silsila.",
+  "dedication": "In memory of the Asaf Jahi dynasty",
+  "sort_order": 70,
+  "eyebrow": "Sufi Saints of the Deccan",
+  "title_html": "Shah Khamosh",
+  "subtitle": "Naqshbandi-Qadiri · Hyderabad · d. 1740",
+  "blocks": [
+    {
+      "type": "facts",
+      "items": [
+        {
+          "key": "Order",
+          "value": "Naqshbandi-Qadiri"
+        },
+        {
+          "key": "Lineage",
+          "value": "Sayyid"
+        },
+        {
+          "key": "Era",
+          "value": "Early Asaf Jahi"
+        },
+        {
+          "key": "Seat",
+          "value": "Old City, Hyderabad"
+        },
+        {
+          "key": "Died",
+          "value": "Hyderabad · 1740"
+        },
+        {
+          "key": "Discourses",
+          "value": "Malfuzat-i-Khamosh"
+        }
+      ]
+    },
+    {
+      "type": "html",
+      "html": "<div class=\"pillars-strip\">\n  <span class=\"pillars-strip-label\">The Silent Saint</span>\n  <a href=\"#s1\">The Silent One</a><span class=\"pillars-strip-sep\">◆</span><a href=\"#s2\">The Method</a><span class=\"pillars-strip-sep\">◆</span><a href=\"#s3\">The Dargah</a>\n</div>\n\n<div class=\"h-wrap\">\n  <section class=\"h-entry\" id=\"s1\">\n    <figure class=\"h-figure reveal-left\">\n      <img loading=\"lazy\" alt=\"Mecca Masjid, Hyderabad, near the dargah of Shah Khamosh\" src=\"/sufism/shah-khamosh/assets/mecca-masjid-hyderabad.jpg\"/>\n      <figcaption>Mecca Masjid · Hyderabad · the saint kept his hospice in the old city nearby</figcaption>\n    </figure>\n    <div class=\"h-text reveal-right\">\n      <span class=\"h-numeral\">I · The Silent One</span>\n      <span class=\"h-eyebrow\">Hyderabad · early 1700s</span>\n      <h2 class=\"h-title\">The <em>silent</em> saint of the Asaf Jahi capital</h2>\n      <p class=\"h-sub\">A Sayyid of the Qadiri-Naqshbandi line who shunned all unnecessary speech</p>\n      <div class=\"h-body\">\n        <p>Hazrat <em>Sayyid Shah Khamosh</em> — known by the epithet <em>Khamosh</em> (\"the silent one\") for his lifelong practice of avoiding all unnecessary speech — was a Sayyid scholar and Sufi who lived at Hyderabad during the founding decades of the Asaf Jahi state, and who died at the city in 1153 AH / 1740 CE during the reign of Asaf Jah I. His lineage placed him in the combined Qadiri-Naqshbandi silsila that was particularly characteristic of Hyderabad in this period.</p>\n      </div>\n    </div>\n  </section>\n  <section class=\"h-entry\" id=\"s2\">\n    <div class=\"h-text reveal-right\">\n      <span class=\"h-numeral\">II · The Method</span>\n      <span class=\"h-eyebrow\">An Austere Way</span>\n      <h2 class=\"h-title\">A discipline of <em>silence</em></h2>\n      <p class=\"h-sub\">Teaching in writing, a single evening meal, and the counsel of a Nizam</p>\n      <div class=\"h-body\">\n        <p>His method was unusually austere even by Sufi standards. He kept his hospice in the old city near the Mecca Masjid, taught a small circle of disciples in writing rather than speech, restricted his meals to a single late-evening serving, and was reputed never to have undertaken any worldly transaction. Asaf Jah I, the founder of Hyderabad State, is recorded in the early state chronicles as having visited him repeatedly for counsel; the Nizam's regard for the saint is said to have influenced the patronage extended to Hyderabad's Sufi institutions in the first generation of Asaf Jahi rule.</p>\n      </div>\n    </div>\n  </section>\n  <section class=\"h-entry\" id=\"s3\">\n    <div class=\"h-text reveal-left\">\n      <span class=\"h-numeral\">III · The Dargah</span>\n      <span class=\"h-eyebrow\">The Old City</span>\n      <h2 class=\"h-title\">A shrine kept in <em>silence</em></h2>\n      <p class=\"h-sub\">Where pilgrims still sit in the discipline the saint himself observed</p>\n      <div class=\"h-body\">\n        <p>His tomb in the old city is one of the smaller but most carefully tended of Hyderabad's dargahs. Pilgrims sit there in the discipline of silence the saint himself observed — a practice unusual in the otherwise vocal qawwali culture of the city. His name appears in the formal silsila records of the Hyderabad Naqshbandi-Qadiri line and his discourses, transcribed by disciples in his lifetime, were collected and published in Urdu in the late nineteenth century under the title <em>Malfuzat-i-Khamosh</em>.</p>\n      </div>\n    </div>\n  </section>\n</div>"
+    }
+  ]
 }
