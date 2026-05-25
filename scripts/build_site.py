@@ -26,6 +26,8 @@ KEYWORDS = ("Dakhni, Dakkani, Dakhini, Deccan, Deccani, Hyderabad, Hyderabadi, B
             "shrines, biryani, haleem, Charminar, Golconda, Bidriware, Deccan heritage")
 FALLBACK_COVER = "/assets/dakhni-pattern.png"
 
+PAGE_TYPES = {"home", "section_hub", "city_leaf", "saint_leaf", "institution_leaf", "heritage_leaf", "dynasty_leaf", "language_leaf", "sacred_site_leaf", "general_leaf"}
+
 BASE_REQUIRED_FIELDS = {
     "title": str,
     "description": str,
@@ -129,6 +131,12 @@ def validate_page(page: Dict[str, Any], source: str) -> List[str]:
             errors.append(f"{source}: url must start with '/'")
         if not url.endswith("/") and url != "/":
             errors.append(f"{source}: non-root url must end with '/'")
+    page_type = page.get("page_type")
+    if page_type is not None:
+        if not isinstance(page_type, str):
+            errors.append(f"{source}: field 'page_type' must be string")
+        elif page_type not in PAGE_TYPES:
+            errors.append(f"{source}: unknown page_type '{page_type}'; allowed: {sorted(PAGE_TYPES)}")
     return errors
 
 
