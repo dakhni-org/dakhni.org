@@ -208,14 +208,14 @@ def render(page, nav_html):
     if page.get("level") == "home":
         out.append(page.get("hero_html", ""))
         out.append('<main class="page-main page-main--home">')
-        out.append(page.get("body_html", ""))
+        out.append(body)
         out.append('</main>')
     else:
         out.append(hero(page))
         out.append('<main class="page-main">')
         if page.get("crumb_html"):
             out.append(f'  <p class="crumb">{page["crumb_html"]}</p>')
-        out.append(page.get("body_html", ""))
+        out.append(body)
         out.append('</main>')
     if page.get("subnav_html"):
         out.append(page["subnav_html"])
