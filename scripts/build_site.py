@@ -69,62 +69,24 @@ def validate_page(page: Dict[str, Any], source: str) -> List[str]:
     return errors
 
 
-def validate_nav(nav_data: Dict[str, Any]) -> List[str]:
-    errors: List[str] = []
-    brand = nav_data.get("brand")
-    if not isinstance(brand, dict):
-        return ["content/navigation.json: missing 'brand' object"]
-    for key in ("label", "href", "logo", "aria_label"):
-        if not isinstance(brand.get(key), str):
-            errors.append(f"content/navigation.json: brand.{key} must be string")
-    items = nav_data.get("items")
-    if not isinstance(items, list):
-        return errors + ["content/navigation.json: 'items' must be an array"]
-    for i, item in enumerate(items):
-        if not isinstance(item, dict):
-            errors.append(f"content/navigation.json: items[{i}] must be object")
-            continue
-        for key in ("label", "href"):
-            if not isinstance(item.get(key), str):
-                errors.append(f"content/navigation.json: items[{i}].{key} must be string")
-        children = item.get("children")
-        if children is not None:
-            if not isinstance(children, list):
-                errors.append(f"content/navigation.json: items[{i}].children must be array")
-            else:
-                for j, child in enumerate(children):
-                    if not isinstance(child, dict):
-                        errors.append(f"content/navigation.json: items[{i}].children[{j}] must be object")
-                        continue
-                    for key in ("label", "href"):
-                        if not isinstance(child.get(key), str):
-                            errors.append(f"content/navigation.json: items[{i}].children[{j}].{key} must be string")
-    return errors
-
-
-def render_nav(nav_data: Dict[str, Any]) -> str:
-    brand = nav_data["brand"]
-    items = nav_data["items"]
-    out = ['<nav>']
-    out.append(f'  <a href="{esc(brand["href"])}" class="nav-brand" aria-label="{esc(brand["aria_label"])}">')
-    out.append(f'    <img class="nav-mark" src="{esc(brand["logo"])}" alt=""/>')
-    out.append(f'    <span>{esc(brand["label"])}</span>')
-    out.append('  </a>')
-    out.append('  <button class="nav-search-btn" type="button" aria-label="Search" aria-expanded="false" aria-controls="ds-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>')
-    out.append('  <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>')
-    out.append('  <ul class="nav-links">')
-    for item in items:
-        children = item.get("children", [])
-        if children:
-            out.append(f'    <li class="has-dropdown"><a href="{esc(item["href"])}">{esc(item["label"])}</a><ul class="dropdown">')
-            for child in children:
-                out.append(f'      <li><a href="{esc(child["href"])}">{esc(child["label"])}</a></li>')
-            out.append('    </ul></li>')
-        else:
-            out.append(f'    <li><a href="{esc(item["href"])}">{esc(item["label"])}</a></li>')
-    out.append('  </ul>')
-    out.append('</nav>')
-    return "\n".join(out)
+NAV = '''<nav>
+  <a href="/" class="nav-brand" aria-label="Dakhni.org home">
+    <img class="nav-mark" src="/assets/dakhni-org-logo.png" alt=""/>
+    <span>DAKHNI.ORG</span>
+  </a>
+  <button class="nav-search-btn" type="button" aria-label="Search" aria-expanded="false" aria-controls="ds-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
+  <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li class="has-dropdown"><a href="/heritage/">Heritage</a><ul class="dropdown"><li><a href="/heritage/language-poetry/">Language &amp; Poetry</a></li><li><a href="/heritage/cuisine/">Cuisine</a></li><li><a href="/heritage/music/">Music</a></li><li><a href="/heritage/architecture/">Architecture</a></li><li><a href="/heritage/crafts/">Crafts</a></li><li><a href="/heritage/sufi-tradition/">Sufi Tradition</a></li><li><a href="/heritage/festivals/">Festivals</a></li></ul></li>
+    <li class="has-dropdown"><a href="/dynasties/">Dynasties</a><ul class="dropdown"><li><a href="/dynasties/bahmani/">Bahmani Sultanate</a></li><li><a href="/dynasties/qutb-shahi/">Qutb Shahi</a></li><li><a href="/dynasties/bidar-barid/">Bidar Barid Shahi</a></li><li><a href="/dynasties/adil-shahi/">Adil Shahi</a></li><li><a href="/dynasties/asaf-jahi/">Asaf Jahi Nizams</a></li></ul></li>
+    <li class="has-dropdown"><a href="/language/">Language</a><ul class="dropdown"><li><a href="/language/dakhni/">Dakhni</a></li><li><a href="/language/urdu/">Urdu</a></li><li><a href="/language/faarsi/">Faarsi (Persian)</a></li><li><a href="/language/telugu/">Telugu</a></li></ul></li>
+    <li class="has-dropdown"><a href="/sufism/">Sufism</a><ul class="dropdown"><li><a href="/sufism/burhanuddin/">Burhanuddin Gharib</a></li><li><a href="/sufism/sharfuddin/">Baba Sharfuddin</a></li><li><a href="/sufism/bandanawaz/">Bandanawaz Gisudaraz</a></li><li><a href="/sufism/hussain-shah-wali/">Hussain Shah Wali</a></li><li><a href="/sufism/shah-raju/">Shah Raju Qattal</a></li><li><a href="/sufism/yousufain/">Yousufain Sharif</a></li><li><a href="/sufism/shah-khamosh/">Shah Khamosh</a></li></ul></li>
+    <li class="has-dropdown"><a href="/cities/">Cities</a><ul class="dropdown"><li><a href="/cities/hyderabad/">Hyderabad</a></li><li><a href="/cities/bidar/">Bidar</a></li><li><a href="/cities/gulbarga/">Gulbarga</a></li><li><a href="/cities/bijapur/">Bijapur</a></li><li><a href="/cities/aurangabad/">Aurangabad</a></li><li><a href="/cities/golconda/">Golconda</a></li><li><a href="/cities/warangal/">Warangal</a></li><li><a href="/cities/nanded/">Nanded</a></li><li><a href="/cities/raichur/">Raichur</a></li><li><a href="/cities/nizamabad/">Nizamabad</a></li></ul></li>
+    <li class="has-dropdown"><a href="/landmarks/">Landmarks</a><ul class="dropdown"><li><a href="/landmarks/monuments/">Monuments</a></li><li><a href="/landmarks/institutions/">Institutions</a></li></ul></li>
+    <li class="has-dropdown"><a href="/sacred-sites/">Sacred Sites</a><ul class="dropdown"><li><a href="/sacred-sites/masjids/">Masjids</a></li><li><a href="/sacred-sites/dargahs/">Dargahs</a></li><li><a href="/sacred-sites/temples/">Temples</a></li><li><a href="/sacred-sites/religious-structures/">Other Faiths</a></li></ul></li>
+    <li><a href="/#quiz">Are You Dakhni?</a></li>
+  </ul>
+</nav>'''
 
 DISCLOSURE = '''<div id="ai-disclosure" role="dialog" aria-modal="true" aria-labelledby="disclosure-title">
   <div class="disclosure-backdrop"></div>
