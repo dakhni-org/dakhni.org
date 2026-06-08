@@ -14,8 +14,8 @@
     {
       "type": "facts",
       "items": [
-        { "key": "Muslim occasions", "value": "Ramazan · Eid · Muharram · Urs" },
-        { "key": "Hindu occasions", "value": "Bonalu (Mahankali) · Ugadi" },
+        { "key": "Muslim occasions", "value": "Ramazan · Eid · Eid Milad · Muharram · Urs" },
+        { "key": "Hindu occasions", "value": "Bonalu (Mahankali) · Bathukamma · Ugadi" },
         { "key": "Annual gathering", "value": "Deccan Festival (February)" },
         { "key": "New years", "value": "Gregorian · Hijri · Ugadi" },
         { "key": "Sufi centres", "value": "Gulbarga · Yousufain Sharif" },
@@ -31,8 +31,8 @@
       "eyebrow": "A Living Calendar",
       "title": "Dakhni festivals in dates",
       "items": [
-        { "year": "c. 14th c.", "text": "With the Bahmani Sultanate, Muharram observance and marsiya recitation take root in the Deccan; the Dakhni marsiya tradition begins its six-century history." },
-        { "year": "c. 15th–16th c.", "text": "The Bonalu festival of Mahankali, rooted in Telugu folk tradition, continues to be celebrated in the towns of the Deccan alongside Islamic occasions — the Ganga-Jamuni calendar begins to take shape." },
+        { "year": "c. 14th c.", "text": "With the Bahmani Sultanate, Muharram observance, marsiya recitation, and Eid Milad (the Prophet's birthday) take root in the Deccan; the Dakhni marsiya tradition begins its six-century history." },
+        { "year": "c. 15th–16th c.", "text": "Telugu folk festivals — Bonalu (Mahankali) and Bathukamma, the women's flower festival of Ashvin — continue alongside Islamic occasions in the towns of the Deccan; the plural Ganga-Jamuni calendar takes shape." },
         { "year": "1591", "text": "Muhammad Quli Qutb Shah founds Hyderabad and the Charminar bazaar; Ramazan night markets at the Charminar become a fixture of the new city's calendar from its earliest years." },
         { "year": "c. 1724 onwards", "text": "The Asaf Jahi court formulates the ethos of tehzeeb — a courtesy of speech, formal address, and the half-remembered couplet — that the Hyderabadis make distinctively their own." },
         { "year": "c. 18th–19th c.", "text": "The annual urs at the dargah of Bandanawaz in Gulbarga and at Yousufain Sharif in Hyderabad grow into city-wide occasions drawing pilgrims of every faith." },

@@ -57,8 +57,8 @@ Set `body_html` to `""` after migration. Do NOT discard existing prose.
 
 Same migration pattern as Phase 3.
 
-- [ ] Migrate `content/landmarks/monuments.json` — Charminar, Golconda, Bidar Fort, Gol Gumbaz
-- [ ] Migrate `content/landmarks/institutions.json` — Osmania University, Salar Jung, Chowmahalla
+- [x] Migrate `content/landmarks/monuments.json` — Charminar, Golconda, Bidar Fort, Gol Gumbaz
+- [x] Migrate `content/landmarks/institutions.json` — Osmania University, Salar Jung, Chowmahalla
 
 ---
 
