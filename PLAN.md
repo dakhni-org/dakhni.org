@@ -18,7 +18,7 @@ Write accurate dates and events consistent with what already appears in the file
 - [x] Add timeline block to `content/sufism/hussain-shah-wali.json` — Shah Hussain Wali, Nanded
 - [x] Add timeline block to `content/sufism/shah-khamosh.json` — Shah Khamosh, Aurangabad
 - [x] Add timeline block to `content/sufism/shah-raju.json` — Shah Raju Qattal, Gulbarga
-- [ ] Add timeline block to `content/sufism/yousufain.json` — Maula Ali & Yousuf, Hyderabad
+- [x] Add timeline block to `content/sufism/yousufain.json` — Maula Ali & Yousuf, Hyderabad
 
 ---
 
