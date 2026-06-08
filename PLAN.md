@@ -66,10 +66,10 @@ Same migration pattern as Phase 3.
 
 Same migration pattern as Phase 3.
 
-- [ ] Migrate `content/sacred-sites/dargahs.json` — dargahs of the Deccan
-- [ ] Migrate `content/sacred-sites/masjids.json` — Mecca Masjid, Jama Masjid Bijapur, etc.
-- [ ] Migrate `content/sacred-sites/temples.json` — Birla Mandir, Yadagirigutta, Thousand Pillar Temple
-- [ ] Migrate `content/sacred-sites/religious-structures.json` — ashurkhanas, khanqahs, takias
+- [x] Migrate `content/sacred-sites/dargahs.json` — dargahs of the Deccan
+- [x] Migrate `content/sacred-sites/masjids.json` — Mecca Masjid, Jama Masjid Bijapur, etc.
+- [x] Migrate `content/sacred-sites/temples.json` — Birla Mandir, Yadagirigutta, Thousand Pillar Temple
+- [x] Migrate `content/sacred-sites/religious-structures.json` — ashurkhanas, khanqahs, takias
 
 ---
 
