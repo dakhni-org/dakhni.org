@@ -32,7 +32,7 @@ key battles, cultural milestones, and end of dynasty.
 - [x] Add timeline block to `content/dynasties/qutb-shahi.json` — Qutb Shahi 1518–1687
 - [x] Add timeline block to `content/dynasties/adil-shahi.json` — Adil Shahi 1489–1686
 - [x] Add timeline block to `content/dynasties/bidar-barid.json` — Barid Shahi 1487–1619
-- [ ] Add timeline block to `content/dynasties/asaf-jahi.json` — Asaf Jahi / Nizams 1724–1948
+- [x] Add timeline block to `content/dynasties/asaf-jahi.json` — Asaf Jahi / Nizams 1724–1948
 
 ---
 
@@ -43,7 +43,7 @@ Each file in `content/heritage/*.json` stores content in the legacy `body_html` 
 (2) adding a `facts` block if one is missing, (3) adding a `timeline` block.
 Set `body_html` to `""` after migration. Do NOT discard existing prose.
 
-- [ ] Migrate `content/heritage/cuisine.json` — Hyderabadi biryani, Dum Pukht, Haleem, Irani chai
+- [x] Migrate `content/heritage/cuisine.json` — Hyderabadi biryani, Dum Pukht, Haleem, Irani chai
 - [ ] Migrate `content/heritage/music.json` — Qawwali, Dhrupad, Hindustani music in the Deccan
 - [ ] Migrate `content/heritage/architecture.json` — Qutb Shahi arch, Deccani stucco, pointed arch
 - [ ] Migrate `content/heritage/crafts.json` — Bidriware, Himroo, Paithani, Kalamkari
