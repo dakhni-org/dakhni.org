@@ -17,8 +17,8 @@ Write accurate dates and events consistent with what already appears in the file
 - [x] Add timeline block to `content/sufism/burhanuddin.json` — Hazrat Burhanuddin Gharib, Khuldabad
 - [x] Add timeline block to `content/sufism/hussain-shah-wali.json` — Shah Hussain Wali, Nanded
 - [x] Add timeline block to `content/sufism/shah-khamosh.json` — Shah Khamosh, Aurangabad
-- [ ] Add timeline block to `content/sufism/shah-raju.json` — Shah Raju Qattal, Gulbarga
-- [ ] Add timeline block to `content/sufism/yousufain.json` — Maula Ali & Yousuf, Hyderabad
+- [x] Add timeline block to `content/sufism/shah-raju.json` — Shah Raju Qattal, Gulbarga
+- [x] Add timeline block to `content/sufism/yousufain.json` — Maula Ali & Yousuf, Hyderabad
 
 ---
 
@@ -28,8 +28,8 @@ Each dynasty page has `facts` + `html` blocks but no `timeline`.
 **Add** a `timeline` block with 8–12 dated entries: dynasty founding, major rulers,
 key battles, cultural milestones, and end of dynasty.
 
-- [ ] Add timeline block to `content/dynasties/bahmani.json` — Bahmani Sultanate 1347–1527
-- [ ] Add timeline block to `content/dynasties/qutb-shahi.json` — Qutb Shahi 1518–1687
+- [x] Add timeline block to `content/dynasties/bahmani.json` — Bahmani Sultanate 1347–1527
+- [x] Add timeline block to `content/dynasties/qutb-shahi.json` — Qutb Shahi 1518–1687
 - [ ] Add timeline block to `content/dynasties/adil-shahi.json` — Adil Shahi 1489–1686
 - [ ] Add timeline block to `content/dynasties/bidar-barid.json` — Barid Shahi 1487–1619
 - [ ] Add timeline block to `content/dynasties/asaf-jahi.json` — Asaf Jahi / Nizams 1724–1948
