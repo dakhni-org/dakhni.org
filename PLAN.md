@@ -13,7 +13,7 @@ dated entries covering birth/arrival in Deccan, key works, death, legacy, and ur
 Write accurate dates and events consistent with what already appears in the file.
 
 - [x] Add timeline block to `content/sufism/bandanawaz.json` — Khwaja Gesudaraz (1321–1422), Gulbarga
-- [ ] Add timeline block to `content/sufism/sharfuddin.json` — Hazrat Sharfuddin Yayha Maneri, Bidar
+- [x] Add timeline block to `content/sufism/sharfuddin.json` — Hazrat Sharfuddin Yayha Maneri, Bidar
 - [ ] Add timeline block to `content/sufism/burhanuddin.json` — Hazrat Burhanuddin Gharib, Khuldabad
 - [ ] Add timeline block to `content/sufism/hussain-shah-wali.json` — Shah Hussain Wali, Nanded
 - [ ] Add timeline block to `content/sufism/shah-khamosh.json` — Shah Khamosh, Aurangabad
