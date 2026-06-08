@@ -30,7 +30,7 @@ key battles, cultural milestones, and end of dynasty.
 
 - [x] Add timeline block to `content/dynasties/bahmani.json` — Bahmani Sultanate 1347–1527
 - [x] Add timeline block to `content/dynasties/qutb-shahi.json` — Qutb Shahi 1518–1687
-- [ ] Add timeline block to `content/dynasties/adil-shahi.json` — Adil Shahi 1489–1686
+- [x] Add timeline block to `content/dynasties/adil-shahi.json` — Adil Shahi 1489–1686
 - [ ] Add timeline block to `content/dynasties/bidar-barid.json` — Barid Shahi 1487–1619
 - [ ] Add timeline block to `content/dynasties/asaf-jahi.json` — Asaf Jahi / Nizams 1724–1948
 
