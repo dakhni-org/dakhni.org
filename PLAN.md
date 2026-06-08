@@ -44,7 +44,7 @@ Each file in `content/heritage/*.json` stores content in the legacy `body_html` 
 Set `body_html` to `""` after migration. Do NOT discard existing prose.
 
 - [x] Migrate `content/heritage/cuisine.json` — Hyderabadi biryani, Dum Pukht, Haleem, Irani chai
-- [ ] Migrate `content/heritage/music.json` — Qawwali, Dhrupad, Hindustani music in the Deccan
+- [x] Migrate `content/heritage/music.json` — Qawwali, Dhrupad, Hindustani music in the Deccan
 - [ ] Migrate `content/heritage/architecture.json` — Qutb Shahi arch, Deccani stucco, pointed arch
 - [ ] Migrate `content/heritage/crafts.json` — Bidriware, Himroo, Paithani, Kalamkari
 - [ ] Migrate `content/heritage/language-poetry.json` — Dakhni dialect, Wali Deccani, Divan-e-Wali
