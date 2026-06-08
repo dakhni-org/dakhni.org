@@ -77,11 +77,11 @@ Same migration pattern as Phase 3.
 
 **Do not start Phase 6 until phases 1–5 are all checked.**
 
-- [ ] Add `cards` block to `content/sufism.json` hub — link all 7 saints with one-line descriptions
-- [ ] Add `cards` block to `content/dynasties.json` hub — link all 5 dynasties with one-line descriptions
-- [ ] Add `cards` block to `content/heritage.json` hub — link all 7 heritage topics
-- [ ] Add `cards` block to `content/landmarks.json` hub — link monuments and institutions sub-pages
-- [ ] Create `content/glossary.json` — a glossary page of Dakhni/Urdu/Persian terms used across the site; wire it into `content/navigation.json` under a new "Reference" section
+- [x] Add `cards` block to `content/sufism.json` hub — link all 7 saints with one-line descriptions
+- [x] Add `cards` block to `content/dynasties.json` hub — link all 5 dynasties with one-line descriptions
+- [x] Add `cards` block to `content/heritage.json` hub — link all 7 heritage topics
+- [x] Add `cards` block to `content/landmarks.json` hub — link monuments and institutions sub-pages
+- [x] Create `content/glossary.json` — a glossary page of Dakhni/Urdu/Persian terms used across the site; wire it into `content/navigation.json` under a new "Reference" section
 
 ---
 

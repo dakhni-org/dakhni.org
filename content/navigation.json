@@ -205,6 +205,16 @@
       ]
     },
     {
+      "label": "Reference",
+      "href": "/glossary/",
+      "children": [
+        {
+          "label": "Glossary",
+          "href": "/glossary/"
+        }
+      ]
+    },
+    {
       "label": "Are You Dakhni?",
       "href": "/#quiz"
     }
