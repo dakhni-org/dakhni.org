@@ -49,7 +49,7 @@ Set `body_html` to `""` after migration. Do NOT discard existing prose.
 - [x] Migrate `content/heritage/crafts.json` — Bidriware, Himroo, Paithani, Kalamkari
 - [x] Migrate `content/heritage/language-poetry.json` — Dakhni dialect, Wali Deccani, Divan-e-Wali
 - [x] Migrate `content/heritage/festivals.json` — Eid Milad, Muharram processions, Bonalu, Bathukamma
-- [ ] Migrate `content/heritage/sufi-tradition.json` — Silsilas, urs gatherings, Chishti lineage in Deccan
+- [x] Migrate `content/heritage/sufi-tradition.json` — Silsilas, urs gatherings, Chishti lineage in Deccan
 
 ---
 
