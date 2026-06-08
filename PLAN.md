@@ -12,9 +12,9 @@ Each saint page has `facts` + `html` blocks but no `timeline`.
 dated entries covering birth/arrival in Deccan, key works, death, legacy, and urs tradition.
 Write accurate dates and events consistent with what already appears in the file.
 
-- [ ] Add timeline block to `content/sufism/bandanawaz.json` — Khwaja Gesudaraz (1321–1422), Gulbarga
-- [ ] Add timeline block to `content/sufism/sharfuddin.json` — Hazrat Sharfuddin Yayha Maneri, Bidar
-- [ ] Add timeline block to `content/sufism/burhanuddin.json` — Hazrat Burhanuddin Gharib, Khuldabad
+- [x] Add timeline block to `content/sufism/bandanawaz.json` — Khwaja Gesudaraz (1321–1422), Gulbarga
+- [x] Add timeline block to `content/sufism/sharfuddin.json` — Hazrat Sharfuddin Yayha Maneri, Bidar
+- [x] Add timeline block to `content/sufism/burhanuddin.json` — Hazrat Burhanuddin Gharib, Khuldabad
 - [ ] Add timeline block to `content/sufism/hussain-shah-wali.json` — Shah Hussain Wali, Nanded
 - [ ] Add timeline block to `content/sufism/shah-khamosh.json` — Shah Khamosh, Aurangabad
 - [ ] Add timeline block to `content/sufism/shah-raju.json` — Shah Raju Qattal, Gulbarga
