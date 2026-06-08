@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 scripts/build_site.py*)",
+      "Bash(python3 scripts/build-search-index.py*)",
+      "Bash(python3 -c *)",
+      "Bash(git add content/*)",
+      "Bash(git add PLAN.md)",
+      "Bash(git add content/* PLAN.md)",
+      "Bash(git commit -m *)",
+      "Bash(git push*)",
+      "Bash(git status)",
+      "Bash(git log*)",
+      "Bash(git diff*)",
+      "Bash(grep -q*)"
+    ],
+    "deny": []
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 scripts/build_site.py 2>&1 | tail -2"
+          }
+        ]
+      }
+    ]
+  }
+}
