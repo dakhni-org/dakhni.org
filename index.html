@@ -240,35 +240,22 @@
 
 <section id="quiz" class="quiz-wrap">
 
-  <!-- INTRO STATE: 2-column layout -->
-  <div id="quiz-intro" class="quiz-inner">
-    <div class="reveal">
-      <span class="quiz-eyebrow">Deccan Heritage · Trivia</span>
-      <h2 class="quiz-title">How Well Do You Know <em>the Deccan?</em></h2>
-      <p class="quiz-body">Ten questions drawn from six centuries of Dakhni history — dynasties, saints, cities, cuisine, architecture and poetry. A different set every visit.</p>
-      <div class="quiz-tags">
-        <span class="quiz-tag">Dynasties</span>
-        <span class="quiz-tag">Sufi Saints</span>
-        <span class="quiz-tag">Cities</span>
-        <span class="quiz-tag">Cuisine</span>
-        <span class="quiz-tag">Architecture</span>
-        <span class="quiz-tag">Language &amp; Poetry</span>
-      </div>
-      <br/><br/>
-      <button class="btn-primary" id="quiz-start">Start the Quiz</button>
+  <!-- INTRO STATE: centred single-column -->
+  <div id="quiz-intro" class="quiz-intro-panel reveal">
+    <span class="quiz-eyebrow">Deccan Heritage · Trivia</span>
+    <h2 class="quiz-title">How Well Do You Know <em>the Deccan?</em></h2>
+    <p class="quiz-body">Ten questions drawn from six centuries of Dakhni history. A fresh set every time you visit.</p>
+    <div class="quiz-topic-grid">
+      <span class="quiz-topic">🏰 Dynasties</span>
+      <span class="quiz-topic">🕌 Sufi Saints</span>
+      <span class="quiz-topic">🏙️ Cities</span>
+      <span class="quiz-topic">🍛 Cuisine</span>
+      <span class="quiz-topic">🏛️ Architecture</span>
+      <span class="quiz-topic">📜 Language</span>
+      <span class="quiz-topic">🎵 Music</span>
+      <span class="quiz-topic">🧵 Crafts</span>
     </div>
-    <div class="reveal">
-      <div class="quiz-card">
-        <p class="quiz-q">A different set of 10 questions every visit — drawn from six centuries of Dakhni heritage.</p>
-        <div class="quiz-opts">
-          <div class="quiz-opt quiz-opt--static">🏰 Dynasties &amp; Rulers</div>
-          <div class="quiz-opt quiz-opt--static">🕌 Sufi Saints &amp; Dargahs</div>
-          <div class="quiz-opt quiz-opt--static">📜 Language &amp; Poetry</div>
-          <div class="quiz-opt quiz-opt--static">🍛 Cuisine &amp; Culture</div>
-        </div>
-        <p class="quiz-note">10 questions · randomised each visit</p>
-      </div>
-    </div>
+    <button class="btn-primary quiz-start-btn" id="quiz-start">Start the Quiz →</button>
   </div>
 
   <!-- QUESTION STATE (hidden initially) -->
