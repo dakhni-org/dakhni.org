@@ -92,6 +92,9 @@
       <li><a href="/sacred-sites/temples/">Temples</a></li>
       <li><a href="/sacred-sites/religious-structures/">Other Faiths</a></li>
     </ul></li>
+    <li class="has-dropdown"><a href="/glossary/">Reference</a><ul class="dropdown">
+      <li><a href="/glossary/">Glossary</a></li>
+    </ul></li>
     <li><a href="/#quiz">Are You Dakhni?</a></li>
   </ul>
 </nav>
@@ -236,33 +239,64 @@
 <hr class="h-rule"/>
 
 <section id="quiz" class="quiz-wrap">
-  <div class="quiz-inner">
+
+  <!-- INTRO STATE: 2-column layout -->
+  <div id="quiz-intro" class="quiz-inner">
     <div class="reveal">
-      <span class="quiz-eyebrow">AI-Powered · Pehchaan</span>
-      <h2 class="quiz-title">Are You <em>Dakhni?</em></h2>
-      <p class="quiz-body">Our AI asks about your city, your food, your dialect and your customs — then tells you how deeply Dakhni you truly are. From Bidar to Bijapur, Golconda to Gulbarga.</p>
+      <span class="quiz-eyebrow">Deccan Heritage · Trivia</span>
+      <h2 class="quiz-title">How Well Do You Know <em>the Deccan?</em></h2>
+      <p class="quiz-body">Ten questions drawn from six centuries of Dakhni history — dynasties, saints, cities, cuisine, architecture and poetry. A different set every visit.</p>
       <div class="quiz-tags">
-        <span class="quiz-tag">From Bidar → Dakhni</span>
-        <span class="quiz-tag">Eat lukhmi → Dakhni</span>
-        <span class="quiz-tag">Know Irani chai → Dakhni</span>
-        <span class="quiz-tag">Say "bol na bhai" → Possibly Dakhni</span>
+        <span class="quiz-tag">Dynasties</span>
+        <span class="quiz-tag">Sufi Saints</span>
+        <span class="quiz-tag">Cities</span>
+        <span class="quiz-tag">Cuisine</span>
+        <span class="quiz-tag">Architecture</span>
+        <span class="quiz-tag">Language &amp; Poetry</span>
       </div>
       <br/><br/>
-      <a href="#quiz" class="btn-primary" aria-disabled="true">Start the Quiz</a>
+      <button class="btn-primary" id="quiz-start">Start the Quiz</button>
     </div>
     <div class="reveal">
       <div class="quiz-card">
-        <p class="quiz-q">🤖 &nbsp;Which city were you born in, or grew up closest to?</p>
+        <p class="quiz-q">A different set of 10 questions every visit — drawn from six centuries of Dakhni heritage.</p>
         <div class="quiz-opts">
-          <button class="quiz-opt">Hyderabad / Secunderabad</button>
-          <button class="quiz-opt">Bidar / Gulbarga / Raichur</button>
-          <button class="quiz-opt">Aurangabad / Osmanabad / Nanded</button>
-          <button class="quiz-opt">Somewhere else in the Deccan</button>
+          <div class="quiz-opt quiz-opt--static">🏰 Dynasties &amp; Rulers</div>
+          <div class="quiz-opt quiz-opt--static">🕌 Sufi Saints &amp; Dargahs</div>
+          <div class="quiz-opt quiz-opt--static">📜 Language &amp; Poetry</div>
+          <div class="quiz-opt quiz-opt--static">🍛 Cuisine &amp; Culture</div>
         </div>
-        <p class="quiz-note">Coming soon</p>
+        <p class="quiz-note">10 questions · randomised each visit</p>
       </div>
     </div>
   </div>
+
+  <!-- QUESTION STATE (hidden initially) -->
+  <div id="quiz-stage" class="quiz-stage" hidden>
+    <div class="quiz-progress-wrap">
+      <span id="quiz-label" class="quiz-progress-label">Question 1 of 10</span>
+      <div class="quiz-bar"><div id="quiz-fill" class="quiz-bar-fill"></div></div>
+    </div>
+    <div class="quiz-card">
+      <p class="quiz-q" id="quiz-q"></p>
+      <div class="quiz-opts" id="quiz-opts"></div>
+    </div>
+    <div class="quiz-next-wrap">
+      <button class="btn-secondary" id="quiz-next" hidden>Next →</button>
+    </div>
+  </div>
+
+  <!-- RESULT STATE (hidden initially) -->
+  <div id="quiz-result" class="quiz-result-panel" hidden>
+    <div class="quiz-score-wrap">
+      <span class="quiz-score-num" id="quiz-score-num">—</span>
+      <span class="quiz-score-denom">out of 10</span>
+    </div>
+    <p class="quiz-score-breakdown" id="quiz-score-breakdown"></p>
+    <p class="quiz-score-comment" id="quiz-score-comment"></p>
+    <button class="btn-primary" id="quiz-replay" style="margin-top:1.5rem">Play Again</button>
+  </div>
+
 </section>
 
 <section class="poetry-wrap" id="language">

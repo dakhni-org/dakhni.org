@@ -48,8 +48,8 @@ Set `body_html` to `""` after migration. Do NOT discard existing prose.
 - [x] Migrate `content/heritage/architecture.json` — Qutb Shahi arch, Deccani stucco, pointed arch
 - [x] Migrate `content/heritage/crafts.json` — Bidriware, Himroo, Paithani, Kalamkari
 - [x] Migrate `content/heritage/language-poetry.json` — Dakhni dialect, Wali Deccani, Divan-e-Wali
-- [ ] Migrate `content/heritage/festivals.json` — Eid Milad, Muharram processions, Bonalu, Bathukamma
-- [ ] Migrate `content/heritage/sufi-tradition.json` — Silsilas, urs gatherings, Chishti lineage in Deccan
+- [x] Migrate `content/heritage/festivals.json` — Eid Milad, Muharram processions, Bonalu, Bathukamma
+- [x] Migrate `content/heritage/sufi-tradition.json` — Silsilas, urs gatherings, Chishti lineage in Deccan
 
 ---
 
@@ -57,8 +57,8 @@ Set `body_html` to `""` after migration. Do NOT discard existing prose.
 
 Same migration pattern as Phase 3.
 
-- [ ] Migrate `content/landmarks/monuments.json` — Charminar, Golconda, Bidar Fort, Gol Gumbaz
-- [ ] Migrate `content/landmarks/institutions.json` — Osmania University, Salar Jung, Chowmahalla
+- [x] Migrate `content/landmarks/monuments.json` — Charminar, Golconda, Bidar Fort, Gol Gumbaz
+- [x] Migrate `content/landmarks/institutions.json` — Osmania University, Salar Jung, Chowmahalla
 
 ---
 
@@ -66,10 +66,10 @@ Same migration pattern as Phase 3.
 
 Same migration pattern as Phase 3.
 
-- [ ] Migrate `content/sacred-sites/dargahs.json` — dargahs of the Deccan
-- [ ] Migrate `content/sacred-sites/masjids.json` — Mecca Masjid, Jama Masjid Bijapur, etc.
-- [ ] Migrate `content/sacred-sites/temples.json` — Birla Mandir, Yadagirigutta, Thousand Pillar Temple
-- [ ] Migrate `content/sacred-sites/religious-structures.json` — ashurkhanas, khanqahs, takias
+- [x] Migrate `content/sacred-sites/dargahs.json` — dargahs of the Deccan
+- [x] Migrate `content/sacred-sites/masjids.json` — Mecca Masjid, Jama Masjid Bijapur, etc.
+- [x] Migrate `content/sacred-sites/temples.json` — Birla Mandir, Yadagirigutta, Thousand Pillar Temple
+- [x] Migrate `content/sacred-sites/religious-structures.json` — ashurkhanas, khanqahs, takias
 
 ---
 
@@ -77,11 +77,11 @@ Same migration pattern as Phase 3.
 
 **Do not start Phase 6 until phases 1–5 are all checked.**
 
-- [ ] Add `cards` block to `content/sufism.json` hub — link all 7 saints with one-line descriptions
-- [ ] Add `cards` block to `content/dynasties.json` hub — link all 5 dynasties with one-line descriptions
-- [ ] Add `cards` block to `content/heritage.json` hub — link all 7 heritage topics
-- [ ] Add `cards` block to `content/landmarks.json` hub — link monuments and institutions sub-pages
-- [ ] Create `content/glossary.json` — a glossary page of Dakhni/Urdu/Persian terms used across the site; wire it into `content/navigation.json` under a new "Reference" section
+- [x] Add `cards` block to `content/sufism.json` hub — link all 7 saints with one-line descriptions
+- [x] Add `cards` block to `content/dynasties.json` hub — link all 5 dynasties with one-line descriptions
+- [x] Add `cards` block to `content/heritage.json` hub — link all 7 heritage topics
+- [x] Add `cards` block to `content/landmarks.json` hub — link monuments and institutions sub-pages
+- [x] Create `content/glossary.json` — a glossary page of Dakhni/Urdu/Persian terms used across the site; wire it into `content/navigation.json` under a new "Reference" section
 
 ---
 
