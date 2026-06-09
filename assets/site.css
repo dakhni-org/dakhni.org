@@ -865,6 +865,14 @@ html:not(.js) .reveal, html:not(.js) .reveal-left, html:not(.js) .reveal-right {
 .hc-name { display:block; font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:500; color:var(--ink); letter-spacing:.02em; }
 .hc-era { display:block; margin-top:.35rem; font-family:'Inter',sans-serif; font-size:.55rem; font-weight:500; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-faint); }
 
+/* ── Quiz: intro panel (single-column centred) ── */
+.quiz-intro-panel { max-width:680px; margin:0 auto; text-align:center; padding:1rem 2rem 2rem; }
+.quiz-intro-panel .quiz-title { text-align:center; }
+.quiz-intro-panel .quiz-body { max-width:500px; margin:0 auto; }
+.quiz-topic-grid { display:flex; flex-wrap:wrap; gap:.5rem; justify-content:center; margin:1.8rem auto 2.5rem; max-width:520px; }
+.quiz-topic { font-family:'Inter',sans-serif; font-size:.68rem; font-weight:400; letter-spacing:.06em; padding:.38rem .9rem; border:1px solid var(--rule); color:var(--ink-soft); background:var(--cream); }
+.quiz-start-btn { margin-top:.5rem; }
+
 /* ── Quiz: interactive states ── */
 .quiz-opt--static { cursor:default; pointer-events:none; opacity:.82; }
 .quiz-opt.correct { background:#1d5c1d; color:#fff; border-left-color:#1d5c1d; border-color:#1d5c1d; }
