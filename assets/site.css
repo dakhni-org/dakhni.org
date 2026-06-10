@@ -132,7 +132,7 @@ a.city { cursor:pointer; }
 .dynasty-dot { width:5px; height:5px; background:var(--gold-deep); transform:rotate(45deg); flex-shrink:0; margin-top:.7rem; }
 .dynasty-name { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:500; color:var(--ink); letter-spacing:.03em; }
 .dynasty-dates { font-family:'EB Garamond',serif; font-style:italic; font-size:.95rem; color:var(--ink-soft); margin-top:.2rem; }
-.quiz-wrap { background:var(--ivory); padding:6rem 3rem; border-top:1px solid var(--rule); }
+.quiz-wrap { background:var(--cream); padding:6rem 3rem; border-top:2px solid var(--gold-soft); }
 .quiz-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
 .quiz-eyebrow { font-family:'Inter',sans-serif; font-size:.62rem; font-weight:500; letter-spacing:.38em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:1rem; display:block; }
 .quiz-title { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(1.9rem,3.4vw,2.8rem); color:var(--ink); line-height:1.2; margin-bottom:1.2rem; letter-spacing:.02em; }
