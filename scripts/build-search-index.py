@@ -28,6 +28,7 @@ STRIP_RE = [
         r"<style\b.*?</style>",
         r"<nav\b.*?</nav>",
         r"<footer\b.*?</footer>",
+        r'<section\s+class="comments-wrap".*?</section>',
         r"<svg\b.*?</svg>",
     )
 ]

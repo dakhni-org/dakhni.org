@@ -27,8 +27,9 @@ KEYWORDS = ("Dakhni, Dakkani, Dakhini, Deccan, Deccani, Hyderabad, Hyderabadi, B
 FALLBACK_COVER = "/assets/dakhni-pattern.png"
 
 # Disqus shortname — register a free site at https://disqus.com/admin/create/
-# and replace this placeholder before comments will load.
-DISQUS_SHORTNAME = "dakhni-org"
+# and replace this placeholder before comments will load. Until it's replaced,
+# comments() renders a quiet "not yet enabled" notice instead of a broken widget.
+DISQUS_SHORTNAME = "REPLACE_WITH_YOUR_DISQUS_SHORTNAME"
 
 PAGE_TYPES = {"home", "section_hub", "city_leaf", "saint_leaf", "institution_leaf", "heritage_leaf", "dynasty_leaf", "language_leaf", "sacred_site_leaf", "general_leaf"}
 LEAF_PAGE_TYPES = PAGE_TYPES - {"home", "section_hub"}
@@ -372,6 +373,14 @@ def footer(dedication):
 
 
 def comments(page):
+    if DISQUS_SHORTNAME == "REPLACE_WITH_YOUR_DISQUS_SHORTNAME":
+        return '''<section class="comments-wrap" id="comments">
+  <header class="comments-hdr">
+    <span class="comments-eyebrow">Join the Conversation</span>
+    <h2 class="comments-title">Comments</h2>
+  </header>
+  <p class="comments-pending">Comments are not yet enabled on this page.</p>
+</section>'''
     url = page["url"]
     page_url = json.dumps("https://dakhni.org" + url)
     page_id = json.dumps(url)
