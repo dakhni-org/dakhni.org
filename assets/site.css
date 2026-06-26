@@ -693,6 +693,10 @@ body.ds-search-open{overflow:hidden;}
 .tl-item::before{content:'';position:absolute;left:-5px;top:1.25rem;width:9px;height:9px;background:var(--gold);transform:rotate(45deg);}
 .tl-year{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--gold-deep);font-size:1.05rem;letter-spacing:.04em;display:inline-block;margin-right:.7rem;}
 .tl-text{font-family:'EB Garamond',Georgia,serif;color:var(--ink-soft);font-size:1rem;line-height:1.65;}
+.comments-wrap{max-width:780px;margin:0 auto;padding:3rem 2rem 5rem;border-top:1px solid var(--rule);}
+.comments-hdr{text-align:center;margin-bottom:2.2rem;}
+.comments-eyebrow{font-family:'Inter',sans-serif;font-size:.62rem;font-weight:500;letter-spacing:.38em;text-transform:uppercase;color:var(--gold-deep);display:block;margin-bottom:.9rem;}
+.comments-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.3rem);color:var(--ink);font-weight:500;letter-spacing:.02em;}
 .reveal,.reveal-left,.reveal-right{opacity:0;transition:opacity .9s ease, transform .9s ease;}
 .reveal-left{transform:translateX(-20px);}
 .reveal-right{transform:translateX(20px);}
