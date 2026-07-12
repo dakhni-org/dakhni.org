@@ -375,35 +375,41 @@ def footer(dedication):
 def comments(page):
     if DISQUS_SHORTNAME == "REPLACE_WITH_YOUR_DISQUS_SHORTNAME":
         return '''<section class="comments-wrap" id="comments">
+  <div class="comments-ornament">✦</div>
   <header class="comments-hdr">
     <span class="comments-eyebrow">Join the Conversation</span>
     <h2 class="comments-title">Comments</h2>
   </header>
-  <p class="comments-pending">Comments are not yet enabled on this page.</p>
+  <div class="comments-panel">
+    <p class="comments-pending">Comments are not yet enabled on this page.</p>
+  </div>
 </section>'''
     url = page["url"]
     page_url = json.dumps("https://dakhni.org" + url)
     page_id = json.dumps(url)
     return f'''<section class="comments-wrap" id="comments">
+  <div class="comments-ornament">✦</div>
   <header class="comments-hdr">
     <span class="comments-eyebrow">Join the Conversation</span>
     <h2 class="comments-title">Comments</h2>
   </header>
-  <div id="disqus_thread"></div>
-  <script>
-    var disqus_config = function () {{
-      this.page.url = {page_url};
-      this.page.identifier = {page_id};
-    }};
-    (function() {{
-      var d = document, s = d.createElement('script');
-      s.src = 'https://{DISQUS_SHORTNAME}.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    }})();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments.</a></noscript>
-  <script id="dsq-count-scr" src="//{DISQUS_SHORTNAME}.disqus.com/count.js" async></script>
+  <div class="comments-panel">
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {{
+        this.page.url = {page_url};
+        this.page.identifier = {page_id};
+      }};
+      (function() {{
+        var d = document, s = d.createElement('script');
+        s.src = 'https://{DISQUS_SHORTNAME}.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      }})();
+    </script>
+    <noscript class="comments-noscript">Please enable JavaScript to view <a href="https://disqus.com/?ref_noscript">comments</a>.</noscript>
+  </div>
+  <script id="comments-count-script" src="//{DISQUS_SHORTNAME}.disqus.com/count.js" async></script>
 </section>'''
 
 
