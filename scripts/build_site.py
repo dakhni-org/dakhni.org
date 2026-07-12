@@ -29,7 +29,7 @@ FALLBACK_COVER = "/assets/dakhni-pattern.png"
 # Disqus shortname — register a free site at https://disqus.com/admin/create/
 # and replace this placeholder before comments will load. Until it's replaced,
 # comments() renders a quiet "not yet enabled" notice instead of a broken widget.
-DISQUS_SHORTNAME = "REPLACE_WITH_YOUR_DISQUS_SHORTNAME"
+DISQUS_SHORTNAME = "dakhni"
 
 PAGE_TYPES = {"home", "section_hub", "city_leaf", "saint_leaf", "institution_leaf", "heritage_leaf", "dynasty_leaf", "language_leaf", "sacred_site_leaf", "general_leaf"}
 LEAF_PAGE_TYPES = PAGE_TYPES - {"home", "section_hub"}
@@ -402,7 +402,8 @@ def comments(page):
       (d.head || d.body).appendChild(s);
     }})();
   </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments.</a></noscript>
+  <script id="dsq-count-scr" src="//{DISQUS_SHORTNAME}.disqus.com/count.js" async></script>
 </section>'''
 
 

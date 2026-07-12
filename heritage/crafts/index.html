@@ -192,7 +192,21 @@
     <span class="comments-eyebrow">Join the Conversation</span>
     <h2 class="comments-title">Comments</h2>
   </header>
-  <p class="comments-pending">Comments are not yet enabled on this page.</p>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://dakhni.org/heritage/crafts/";
+      this.page.identifier = "/heritage/crafts/";
+    };
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://dakhni.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments.</a></noscript>
+  <script id="dsq-count-scr" src="//dakhni.disqus.com/count.js" async></script>
 </section>
 <footer>
   <div class="flag-banner"><img src="/assets/dakhni-org-logo.png" alt="Dakhni.org"/></div>
