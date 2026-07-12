@@ -11,13 +11,6 @@
   "body_html": "",
   "blocks": [
     {
-      "type": "cards",
-      "items": [
-        { "title": "Monuments", "html": "<p>Golconda, Charminar, Gol Gumbaz and the forts, palaces and tombs of the Deccan — six centuries of stone across the plateau.</p><a href='/landmarks/monuments/'>Explore</a>" },
-        { "title": "Institutions", "html": "<p>Osmania University, Jamia Nizamia, the Salar Jung Museum, Tibbi College — the schools, colleges, hospitals and libraries of the Deccan and Hyderabad State.</p><a href='/landmarks/institutions/'>Explore</a>" }
-      ]
-    },
-    {
       "type": "html",
       "html": "<div class=\"article-intro\">\n  <p>Beyond its dynasties and its sacred sites, the Deccan is marked by the works its rulers and citizens built to last — the forts, palaces, tombs and monuments that punctuate the plateau, and the institutions of learning, medicine and culture that carried the region into the modern age. Together they are the visible record of a civilisation.</p>\n  <p>This section gathers those landmarks in two strands: the <a href=\"/landmarks/monuments/\">monuments</a> of stone and the <a href=\"/landmarks/institutions/\">institutions</a> of mind — the universities, colleges, hospitals, libraries and museums founded across the Deccan and the old Hyderabad State.</p>\n</div>\n\n<section class=\"card-grid-wrap\">\n<div class=\"card-grid\">\n  <a href=\"/landmarks/monuments/\" class=\"card\">\n    <span class=\"card-eyebrow\">Forts · Palaces · Tombs</span>\n    <h3 class=\"card-title\">Monuments</h3>\n    <p class=\"card-meta\">Golconda · Charminar · Gol Gumbaz · the tombs</p>\n    <p class=\"card-text\">The forts, palaces, gateways and tombs of the Deccan — Golconda and Daulatabad, the Charminar and Chowmahalla, the Gol Gumbaz of Bijapur and the Qutb Shahi necropolis — the monuments that define the skyline of the plateau.</p>\n    <span class=\"card-cta\">Explore →</span>\n  </a>\n  <a href=\"/landmarks/institutions/\" class=\"card\">\n    <span class=\"card-eyebrow\">Learning · Medicine · Culture</span>\n    <h3 class=\"card-title\">Institutions</h3>\n    <p class=\"card-meta\">Osmania · Jamia Nizamia · Salar Jung · the colleges</p>\n    <p class=\"card-text\">The great institutions of the Deccan and Hyderabad State — Osmania University, Jamia Nizamia, the Tibbi College, the Salar Jung Museum, the State Central Library and the schools and colleges that educated the region.</p>\n    <span class=\"card-cta\">Explore →</span>\n  </a>\n</div>\n</section>"
     }
