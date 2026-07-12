@@ -494,10 +494,10 @@ def render(page, nav_html, url_to_page, subnav_map):
             out.append(f'  <p class="crumb">{crumb}</p>')
         out.append(body)
         out.append('</main>')
-    if subnav:
-        out.append(subnav)
     if page.get("page_type") in LEAF_PAGE_TYPES:
         out.append(comments(page))
+    if subnav:
+        out.append(subnav)
     out.append(footer(page.get("dedication")))
     out.append(DISCLOSURE)
     out.append(SEARCH)
