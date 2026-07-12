@@ -26,7 +26,13 @@ KEYWORDS = ("Dakhni, Dakkani, Dakhini, Deccan, Deccani, Hyderabad, Hyderabadi, B
             "shrines, biryani, haleem, Charminar, Golconda, Bidriware, Deccan heritage")
 FALLBACK_COVER = "/assets/dakhni-pattern.png"
 
+# Disqus shortname — register a free site at https://disqus.com/admin/create/
+# and replace this placeholder before comments will load. Until it's replaced,
+# comments() renders a quiet "not yet enabled" notice instead of a broken widget.
+DISQUS_SHORTNAME = "dakhni"
+
 PAGE_TYPES = {"home", "section_hub", "city_leaf", "saint_leaf", "institution_leaf", "heritage_leaf", "dynasty_leaf", "language_leaf", "sacred_site_leaf", "general_leaf"}
+LEAF_PAGE_TYPES = PAGE_TYPES - {"home", "section_hub"}
 
 BASE_REQUIRED_FIELDS = {
     "title": str,
@@ -366,6 +372,41 @@ def footer(dedication):
 </footer>'''
 
 
+def comments(page):
+    if DISQUS_SHORTNAME == "REPLACE_WITH_YOUR_DISQUS_SHORTNAME":
+        return '''<section class="comments-wrap" id="comments">
+  <header class="comments-hdr">
+    <span class="comments-eyebrow">Join the Conversation</span>
+    <h2 class="comments-title">Comments</h2>
+  </header>
+  <p class="comments-pending">Comments are not yet enabled on this page.</p>
+</section>'''
+    url = page["url"]
+    page_url = json.dumps("https://dakhni.org" + url)
+    page_id = json.dumps(url)
+    return f'''<section class="comments-wrap" id="comments">
+  <header class="comments-hdr">
+    <span class="comments-eyebrow">Join the Conversation</span>
+    <h2 class="comments-title">Comments</h2>
+  </header>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {{
+      this.page.url = {page_url};
+      this.page.identifier = {page_id};
+    }};
+    (function() {{
+      var d = document, s = d.createElement('script');
+      s.src = 'https://{DISQUS_SHORTNAME}.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    }})();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments.</a></noscript>
+  <script id="dsq-count-scr" src="//{DISQUS_SHORTNAME}.disqus.com/count.js" async></script>
+</section>'''
+
+
 def head(page):
     url = page["url"]
     canonical = "https://dakhni.org" + url
@@ -449,6 +490,8 @@ def render(page, nav_html, url_to_page, subnav_map):
         out.append('</main>')
     if subnav:
         out.append(subnav)
+    if page.get("page_type") in LEAF_PAGE_TYPES:
+        out.append(comments(page))
     out.append(footer(page.get("dedication")))
     out.append(DISCLOSURE)
     out.append(SEARCH)
