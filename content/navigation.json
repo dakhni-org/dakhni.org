@@ -93,6 +93,10 @@
       "href": "/sufism/",
       "children": [
         {
+          "label": "The Silsila Tree",
+          "href": "/sufism/silsila/"
+        },
+        {
           "label": "Burhanuddin Gharib",
           "href": "/sufism/burhanuddin/"
         },
