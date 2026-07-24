@@ -911,21 +911,39 @@ html:not(.js) .reveal, html:not(.js) .reveal-left, html:not(.js) .reveal-right {
    keeps its padding and the inner block goes flush to it. Sections that
    still had no mobile padding at all (chrono, diamonds, timeline, comments,
    pull-quote, note card, poetry, heartland) get one, matching the ~1.2rem
-   inset already used by .article/.h-entry. */
+   inset already used by .article/.h-entry.
+
+   Second pass: the desktop vertical rhythm (3-4rem section padding, 6rem
+   card-grid-wrap bottom margin, plain <br> tags used as spacers in
+   content/home.json) reads fine on a tall desktop viewport but costs a
+   disproportionate amount of scroll on a ~700-900px-tall phone, and several
+   "-intro" wrappers had no mobile reduction at all while their siblings
+   did — an inconsistent rhythm from section to section. Tightened both. */
 @media (max-width:600px) {
   .grid-wrap { padding-left:0; padding-right:0; }
-  .dynasties-sec { padding:3rem 1.1rem; }
+  .dynasties-sec { padding:2.4rem 1.1rem; }
   .dynasties-inner > .card-grid-wrap { padding-left:0; padding-right:0; }
-  .card-grid-wrap { padding:1.8rem 1.1rem 0; }
-  .quiz-wrap { padding:3.5rem 1.2rem; }
+  .card-grid-wrap { padding:1.6rem 1.1rem 0; margin-bottom:2.2rem; }
+  .quiz-wrap { padding:2.6rem 1.2rem; }
   .quiz-intro-panel, .quiz-stage, .quiz-result-panel { padding-left:0; padding-right:0; }
   .facts-strip { grid-template-columns:repeat(2,1fr); padding:1.4rem 1.1rem; gap:1.1rem .9rem; }
-  .chrono-wrap { padding:3rem 1.2rem 3.5rem; }
-  .diamonds-wrap { padding:3rem 1.2rem 1.5rem; }
-  .timeline-wrap { padding:3rem 1.2rem; }
-  .comments-wrap { padding:3rem 1.2rem 4rem; }
-  .h-pull { padding:2rem 1.2rem; }
+  .chrono-wrap { padding:2.4rem 1.2rem 2.6rem; }
+  .diamonds-wrap { padding:2.4rem 1.2rem 1.2rem; }
+  .timeline-wrap { padding:2.4rem 1.2rem; }
+  .comments-wrap { padding:2.4rem 1.2rem 3rem; }
+  .h-pull { padding:1.6rem 1.2rem; margin:2.4rem auto; }
   .note-card { padding:1.4rem 1.2rem; }
-  .poetry-wrap { padding:3rem 1.2rem; }
+  .poetry-wrap { padding:2.4rem 1.2rem; }
   .heartland { padding:1.8rem 1.2rem 2.2rem; }
+  .pillars-wrap { padding:2.2rem 1rem 2.4rem; }
+  .pillars-hdr { margin-bottom:1.8rem; }
+  .diamond-rule { margin:1.5rem auto; }
+  .timeline-hdr { margin-bottom:1.8rem; }
+  .comments-hdr { margin-bottom:1.8rem; }
+  .diamonds-hdr { margin-bottom:1.8rem; }
+  .chrono-sub, .cards-sub { margin-bottom:1.6rem; }
+  .intro-wrap { padding:2rem 1.4rem 1.6rem; }
+  .article-intro { padding:2rem 1.4rem 1.6rem; }
+  .index-intro { padding:2rem 1.4rem 1.6rem; }
+  .closing { padding:2.2rem 1.4rem 2.6rem; }
 }
