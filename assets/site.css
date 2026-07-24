@@ -901,3 +901,31 @@ html:not(.js) .reveal, html:not(.js) .reveal-left, html:not(.js) .reveal-right {
 .quiz-score-denom { font-family:'Cormorant Garamond',serif; font-size:1.6rem; color:var(--ink-faint); }
 .quiz-score-breakdown { font-family:'Inter',sans-serif; font-size:.78rem; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:.8rem; }
 .quiz-score-comment { font-style:italic; font-size:1.1rem; color:var(--ink-soft); margin-bottom:0; line-height:1.7; }
+
+/* ── Mobile UX pass: stop stacked wrapper padding from eating the small screen ──
+   Several sections nest a padded outer wrapper around a padded inner block
+   (e.g. .dynasties-sec > .card-grid-wrap, .quiz-wrap > .quiz-intro-panel,
+   .grid-wrap > .card-grid-wrap). On desktop the extra inset is invisible
+   against the wide max-widths; on a ~360-430px phone it doubles up and
+   pushes real content into a narrow center column. Below, the outer wrapper
+   keeps its padding and the inner block goes flush to it. Sections that
+   still had no mobile padding at all (chrono, diamonds, timeline, comments,
+   pull-quote, note card, poetry, heartland) get one, matching the ~1.2rem
+   inset already used by .article/.h-entry. */
+@media (max-width:600px) {
+  .grid-wrap { padding-left:0; padding-right:0; }
+  .dynasties-sec { padding:3rem 1.1rem; }
+  .dynasties-inner > .card-grid-wrap { padding-left:0; padding-right:0; }
+  .card-grid-wrap { padding:1.8rem 1.1rem 0; }
+  .quiz-wrap { padding:3.5rem 1.2rem; }
+  .quiz-intro-panel, .quiz-stage, .quiz-result-panel { padding-left:0; padding-right:0; }
+  .facts-strip { grid-template-columns:repeat(2,1fr); padding:1.4rem 1.1rem; gap:1.1rem .9rem; }
+  .chrono-wrap { padding:3rem 1.2rem 3.5rem; }
+  .diamonds-wrap { padding:3rem 1.2rem 1.5rem; }
+  .timeline-wrap { padding:3rem 1.2rem; }
+  .comments-wrap { padding:3rem 1.2rem 4rem; }
+  .h-pull { padding:2rem 1.2rem; }
+  .note-card { padding:1.4rem 1.2rem; }
+  .poetry-wrap { padding:3rem 1.2rem; }
+  .heartland { padding:1.8rem 1.2rem 2.2rem; }
+}
