@@ -692,6 +692,24 @@ body.ds-search-open{overflow:hidden;}
 .tl-item::before{content:'';position:absolute;left:-5px;top:1.25rem;width:9px;height:9px;background:var(--gold);transform:rotate(45deg);}
 .tl-year{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--gold-deep);font-size:1.05rem;letter-spacing:.04em;display:inline-block;margin-right:.7rem;}
 .tl-text{font-family:'EB Garamond',Georgia,serif;color:var(--ink-soft);font-size:1rem;line-height:1.65;}
+.ref-mark{font-size:.68em;line-height:0;}
+.ref-mark a,.ref-mark span{color:var(--ink-faint);text-decoration:none;padding:0 1px;}
+.ref-mark a:hover{color:var(--gold-deep);}
+.refs-wrap{max-width:1100px;margin:2.6rem auto 0;padding:0 1.4rem;}
+.refs-wrap details{border-top:1px solid var(--rule);padding-top:1.4rem;}
+.refs-summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:.55rem;font-family:'Inter',sans-serif;font-size:.62rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-faint);user-select:none;padding-bottom:1.2rem;}
+.refs-summary::-webkit-details-marker{display:none;}
+.refs-summary::before{content:'';border-style:solid;border-width:3.5px 0 3.5px 5px;border-color:transparent transparent transparent var(--ink-faint);transition:transform .2s ease;flex-shrink:0;}
+.refs-wrap details[open] > .refs-summary::before{transform:rotate(90deg);}
+.refs-summary:hover{color:var(--gold-deep);}
+.refs-summary:hover::before{border-left-color:var(--gold-deep);}
+.refs-list{font-family:'EB Garamond',Georgia,serif;font-size:.86rem;line-height:1.7;color:var(--ink-soft);counter-reset:refnum;padding:0 0 2.2rem;list-style:none;}
+.refs-list li{counter-increment:refnum;margin-bottom:.65rem;padding-left:1.6em;text-indent:-1.6em;}
+.refs-list li::before{content:counter(refnum) ". ";color:var(--ink-faint);font-family:'Inter',sans-serif;font-size:.8em;}
+.refs-back-group a.refs-back{color:var(--ink-faint);text-decoration:none;font-size:.85em;margin-right:.15em;}
+.refs-back-group a.refs-back:hover{color:var(--gold-deep);}
+.refs-url{color:var(--ink-faint);text-decoration:none;}
+.refs-url:hover{color:var(--gold-deep);}
 .comments-wrap{max-width:820px;margin:2rem auto 0;padding:4.5rem 2rem 6rem;border-top:1px solid var(--rule);}
 .comments-ornament{text-align:center;font-size:.8rem;color:var(--gold);letter-spacing:.5em;margin-bottom:1.4rem;}
 .comments-hdr{text-align:center;margin-bottom:2.6rem;}

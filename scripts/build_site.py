@@ -13,7 +13,8 @@ import glob
 import html as _html
 import json
 import os
-from typing import Any, Dict, List
+import re
+from typing import Any, Dict, List, Optional
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONTENT = os.path.join(ROOT, "content")
@@ -111,6 +112,8 @@ def validate_page(page: Dict[str, Any], source: str) -> List[str]:
                             errors.append(f"{source}: blocks[{i}].items[{j}].key must be string")
                         if not isinstance(item.get("value"), str):
                             errors.append(f"{source}: blocks[{i}].items[{j}].value must be string")
+                        if "ref" in item and not _is_ref_value(item["ref"]):
+                            errors.append(f"{source}: blocks[{i}].items[{j}].ref must be a string or array of strings")
             elif btype == "timeline":
                 items = block.get("items")
                 if not isinstance(items, list):
@@ -127,6 +130,27 @@ def validate_page(page: Dict[str, Any], source: str) -> List[str]:
     for key in ("crumb_html", "subnav_html", "urdu", "cover", "hero_html", "level"):
         if key in page and not isinstance(page[key], str):
             errors.append(f"{source}: field '{key}' must be string when provided")
+    if "references" in page:
+        refs = page["references"]
+        if not isinstance(refs, list):
+            errors.append(f"{source}: field 'references' must be an array")
+        else:
+            seen_ids = set()
+            for i, ref in enumerate(refs):
+                if not isinstance(ref, dict):
+                    errors.append(f"{source}: references[{i}] must be object")
+                    continue
+                rid = ref.get("id")
+                if not isinstance(rid, str) or not rid:
+                    errors.append(f"{source}: references[{i}].id must be a non-empty string")
+                elif rid in seen_ids:
+                    errors.append(f"{source}: references[{i}].id '{rid}' is duplicated")
+                else:
+                    seen_ids.add(rid)
+                if not isinstance(ref.get("text"), str) or not ref.get("text"):
+                    errors.append(f"{source}: references[{i}].text must be a non-empty string")
+                if "url" in ref and not isinstance(ref["url"], str):
+                    errors.append(f"{source}: references[{i}].url must be a string")
     if "extra_scripts" in page:
         val = page["extra_scripts"]
         if not isinstance(val, list) or any(not isinstance(x, str) for x in val):
@@ -148,6 +172,141 @@ def validate_page(page: Dict[str, Any], source: str) -> List[str]:
         elif page_type not in PAGE_TYPES:
             errors.append(f"{source}: unknown page_type '{page_type}'; allowed: {sorted(PAGE_TYPES)}")
     return errors
+
+
+# --- Citations -------------------------------------------------------
+# Content marks a claim as sourced with an inline `<cite data-ref="id"></cite>`
+# marker (or, inside a `facts` block item, an item["ref"] field). The build
+# turns each marker into a small numbered, superscript backlink and appends
+# a closed-by-default References section listing everything actually cited,
+# in order of first appearance -- the same convention Wikipedia uses.
+CITE_RE = re.compile(r'<cite\s+data-ref="([^"]+)"\s*/?>(?:\s*</cite>)?')
+
+
+def _is_ref_value(val: Any) -> bool:
+    if isinstance(val, str):
+        return True
+    if isinstance(val, list):
+        return all(isinstance(v, str) for v in val)
+    return False
+
+
+def _normalize_ref_ids(val: Any) -> List[str]:
+    if val is None:
+        return []
+    if isinstance(val, str):
+        return [val]
+    return list(val)
+
+
+def collect_cite_ids(page: Dict[str, Any]) -> List[str]:
+    ids: List[str] = []
+    if not isinstance(page.get("blocks"), list):
+        for m in CITE_RE.findall(page.get("body_html", "") or ""):
+            ids.extend(m.split())
+        return ids
+    for block in page.get("blocks") or []:
+        if not isinstance(block, dict):
+            continue
+        btype = block.get("type")
+        texts: List[str] = []
+        if btype in ("html", "intro", "section"):
+            texts.append(block.get("html", "") or "")
+        elif btype == "cards":
+            texts += [item.get("html", "") or "" for item in block.get("items", []) if isinstance(item, dict)]
+        elif btype == "timeline":
+            texts += [item.get("text", "") or "" for item in block.get("items", []) if isinstance(item, dict)]
+        for t in texts:
+            for m in CITE_RE.findall(t):
+                ids.extend(m.split())
+        if btype == "facts":
+            for item in block.get("items", []):
+                if isinstance(item, dict):
+                    ids.extend(_normalize_ref_ids(item.get("ref")))
+    return ids
+
+
+def check_citations(page: Dict[str, Any], source: str) -> List[str]:
+    errors: List[str] = []
+    refs = page.get("references")
+    if not isinstance(refs, list):
+        refs = []
+    declared = {r["id"] for r in refs if isinstance(r, dict) and isinstance(r.get("id"), str)}
+    cited = set(collect_cite_ids(page))
+    for rid in sorted(cited - declared):
+        errors.append(f"{source}: cites reference '{rid}' which is not declared in 'references'")
+    for rid in sorted(declared - cited):
+        errors.append(f"{source}: declares reference '{rid}' in 'references' but it is never cited in the content")
+    return errors
+
+
+_OPEN_A_RE = re.compile(r"<a[\s>]")
+_CLOSE_A_RE = re.compile(r"</a>")
+
+
+def _inside_anchor(html: str, pos: int) -> bool:
+    """True if `pos` falls inside an unclosed <a>...</a> in `html`.
+
+    Citation markers normally render as <a href="#ref-..."> links, but a few
+    pages embed them inside card grids where the whole card is itself an
+    <a class="card">. Nesting an <a> inside an <a> is invalid HTML -- browsers
+    respond by force-closing the outer anchor at that point, which silently
+    breaks the card's layout. Markers found inside an existing anchor fall
+    back to a plain, non-linking <span> instead.
+    """
+    return len(_OPEN_A_RE.findall(html, 0, pos)) > len(_CLOSE_A_RE.findall(html, 0, pos))
+
+
+def render_citations(body_html: str, references: Optional[List[Dict[str, Any]]]) -> "tuple[str, str]":
+    """Replace <cite data-ref="id"> markers with numbered superscript
+    backlinks and return (new_body_html, references_section_html)."""
+    ref_by_id = {r["id"]: r for r in (references or []) if isinstance(r, dict)}
+    order: List[str] = []
+    numbers: Dict[str, int] = {}
+    counts: Dict[str, int] = {}
+
+    def replace(m: "re.Match[str]") -> str:
+        linkable = not _inside_anchor(body_html, m.start())
+        parts = []
+        for rid in m.group(1).split():
+            counts[rid] = counts.get(rid, 0) + 1
+            if rid not in numbers:
+                numbers[rid] = len(order) + 1
+                order.append(rid)
+            anchor = f"cite_ref-{esc(rid)}-{counts[rid]}"
+            if linkable:
+                parts.append(f'<a href="#ref-{esc(rid)}" id="{anchor}">{numbers[rid]}</a>')
+            else:
+                parts.append(f'<span id="{anchor}">{numbers[rid]}</span>')
+        return '<sup class="ref-mark">[' + ",".join(parts) + ']</sup>'
+
+    new_html = CITE_RE.sub(replace, body_html)
+    if not order:
+        return new_html, ""
+
+    items = []
+    for rid in order:
+        ref = ref_by_id.get(rid, {"text": rid})
+        backlinks = " ".join(
+            f'<a class="refs-back" href="#cite_ref-{esc(rid)}-{k}" aria-label="Jump back to citation {k}">^</a>'
+            for k in range(1, counts[rid] + 1)
+        )
+        url = ref.get("url")
+        url_html = (
+            f' <a class="refs-url" href="{esc(url)}" target="_blank" rel="noopener noreferrer">↗</a>'
+            if url else ""
+        )
+        items.append(
+            f'<li id="ref-{esc(rid)}"><span class="refs-back-group">{backlinks}</span> '
+            f'<span class="refs-text">{esc(ref.get("text", rid))}</span>{url_html}</li>'
+        )
+    refs_html = (
+        '<section class="refs-wrap">'
+        '<details><summary class="refs-summary">References</summary>'
+        '<ol class="refs-list">' + "".join(items) + "</ol>"
+        "</details></section>"
+    )
+    return new_html, refs_html
 
 
 def validate_nav(nav_data: Dict[str, Any]) -> List[str]:
@@ -233,7 +392,8 @@ def render_blocks(page: Dict[str, Any]) -> str:
             for item in block.get("items", []):
                 key = esc(item.get("key", ""))
                 val = esc(item.get("value", ""))
-                out.append(f'<div class="fact"><span class="fact-key">{key}</span><span class="fact-val">{val}</span></div>')
+                cite = "".join(f'<cite data-ref="{esc(rid)}"></cite>' for rid in _normalize_ref_ids(item.get("ref")))
+                out.append(f'<div class="fact"><span class="fact-key">{key}</span><span class="fact-val">{val}{cite}</span></div>')
             out.append('</section>')
         elif btype == "timeline":
             eyebrow = esc(block.get("eyebrow", ""))
@@ -534,6 +694,7 @@ def hero(page):
 
 def render(page, nav_html, url_to_page, subnav_map):
     body = render_blocks(page)
+    body, refs_html = render_citations(body, page.get("references"))
     crumb = page.get("crumb_html") or render_auto_crumb(page, url_to_page)
     subnav = page.get("subnav_html") or render_auto_subnav(page, subnav_map, url_to_page)
     out = [head(page, url_to_page), "<body>", nav_html]
@@ -541,6 +702,8 @@ def render(page, nav_html, url_to_page, subnav_map):
         out.append(page.get("hero_html", ""))
         out.append('<main class="page-main page-main--home">')
         out.append(body)
+        if refs_html:
+            out.append(refs_html)
         out.append('</main>')
     else:
         out.append(hero(page))
@@ -548,6 +711,8 @@ def render(page, nav_html, url_to_page, subnav_map):
         if crumb:
             out.append(f'  <p class="crumb">{crumb}</p>')
         out.append(body)
+        if refs_html:
+            out.append(refs_html)
         out.append('</main>')
     if page.get("page_type") in LEAF_PAGE_TYPES:
         out.append(comments(page))
@@ -643,7 +808,9 @@ def main():
         pages.append(page)
         if page.get("url"):
             page_files[page["url"]] = jf
-        errors.extend(validate_page(page, os.path.relpath(jf, ROOT)))
+        rel_source = os.path.relpath(jf, ROOT)
+        errors.extend(validate_page(page, rel_source))
+        errors.extend(check_citations(page, rel_source))
     if errors:
         print("Content validation failed:")
         for err in errors:

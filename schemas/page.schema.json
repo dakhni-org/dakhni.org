@@ -40,6 +40,19 @@
           "items": {"type": "array"}
         }
       }
+    },
+    "references": {
+      "type": "array",
+      "description": "Bibliography for this page. Every id must be cited at least once in the content, either via a <cite data-ref=\"id\"></cite> marker inside an html/section/timeline block, or via a facts item's 'ref' field.",
+      "items": {
+        "type": "object",
+        "required": ["id", "text"],
+        "properties": {
+          "id": {"type": "string"},
+          "text": {"type": "string"},
+          "url": {"type": "string"}
+        }
+      }
     }
   },
   "additionalProperties": false
