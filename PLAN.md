@@ -85,4 +85,30 @@ Same migration pattern as Phase 3.
 
 ---
 
+## Phase 7 — Dedicated leaf pages for named crafts, dishes, festivals & music
+
+The `cuisine`, `crafts`, `festivals`, and `music` heritage hub pages each mention several
+specific named things in passing — a craft, a dish, a festival, a musical form — that have
+no page of their own to link to from elsewhere on the site (unlike cities, dynasties, saints
+and monuments, which all already are cross-link targets). This phase gives the highest-value
+ones a dedicated leaf page, following the hub + leaf-page pattern already used by
+`content/landmarks/institutions.json` + `content/landmarks/institutions/*.json`.
+
+**Do not start Phase 7 until phases 1–6 are all checked.**
+
+For each item below: create the leaf page with `facts` + `html` blocks (timeline optional —
+only if there are enough genuinely dated milestones), citing sources the way other leaf pages
+do; add its URL to a `cards` block entry on the parent hub page; declare the page's own name
+in its `link_terms` so the cross-linking engine (see `render_crosslinks` in `build_site.py`)
+picks it up sitewide; then rebuild and confirm zero `link_terms` collisions.
+
+- [ ] Create `content/heritage/crafts/bidriware.json` — the silver-inlaid blackened-alloy metalwork of Bidar, c. 1500–present
+- [ ] Create `content/heritage/crafts/paithani.json` — the tapestry-bordered silk sari woven at Paithan, near Aurangabad
+- [ ] Create `content/heritage/cuisine/biryani.json` — Hyderabadi dum biryani; the kachchi vs. pakki distinction
+- [ ] Create `content/heritage/cuisine/haleem.json` — the pounded wheat-lentil-meat dish and its Ramazan/Hyderabadi status
+- [ ] Create `content/heritage/festivals/bonalu.json` — the Hindu festival of Bonalu in Hyderabad's old city
+- [ ] Create `content/heritage/music/qawwali.json` — Sufi devotional ensemble singing at Deccan shrines
+
+---
+
 _Last updated by agent: check git log for latest commit._
