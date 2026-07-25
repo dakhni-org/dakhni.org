@@ -20,12 +20,32 @@
     {
       "type": "facts",
       "items": [
-        { "key": "Orders", "value": "Chishti · Qadiri · Suhrawardi" },
-        { "key": "Pioneers", "value": "Burhanuddin Gharib · Bandanawaz", "ref": "ernst-lawrence-2002" },
-        { "key": "Language", "value": "Dakhni vernacular" },
-        { "key": "Key centres", "value": "Gulbarga · Khuldabad · Hyderabad", "ref": "eaton-bijapur-1978" },
-        { "key": "Living tradition", "value": "Thursday qawwali · langar" },
-        { "key": "Ethos", "value": "Open to every faith" }
+        {
+          "key": "Orders",
+          "value": "Chishti · Qadiri · Suhrawardi"
+        },
+        {
+          "key": "Pioneers",
+          "value": "Burhanuddin Gharib · Bandanawaz",
+          "ref": "ernst-lawrence-2002"
+        },
+        {
+          "key": "Language",
+          "value": "Dakhni vernacular"
+        },
+        {
+          "key": "Key centres",
+          "value": "Gulbarga · Khuldabad · Hyderabad",
+          "ref": "eaton-bijapur-1978"
+        },
+        {
+          "key": "Living tradition",
+          "value": "Thursday qawwali · langar"
+        },
+        {
+          "key": "Ethos",
+          "value": "Open to every faith"
+        }
       ]
     },
     {
@@ -37,14 +57,38 @@
       "eyebrow": "A Spiritual History",
       "title": "Sufi tradition in the Deccan in dates",
       "items": [
-        { "year": "c. early 14th c.", "text": "Burhan-ud-Din Gharib, a chief disciple of Nizamuddin Aulia of Delhi, settles at Khuldabad and brings the Chishti silsila to the Deccan — the first of the great Sufi orders to take root in the plateau.<cite data-ref=\"ernst-lawrence-2002\"></cite>" },
-        { "year": "c. 1347", "text": "The founding of the Bahmani Sultanate brings formal court patronage to the Sufi orders; the sultans at Gulbarga and Bidar support khanqahs and fund dargahs across the new kingdom.<cite data-ref=\"eaton-bijapur-1978\"></cite>" },
-        { "year": "c. 1400", "text": "Khwaja Bandanawaz of Gulbarga begins composing Sufi prose in early Dakhni — the first literary use of the vernacular by any Deccan scholar — making the saints' teaching accessible to disciples who could not read Persian.<cite data-ref=\"eaton-bijapur-1978\"></cite>" },
-        { "year": "d. 1422", "text": "Khwaja Bandanawaz (Gisudaraz) dies at Gulbarga; his dargah becomes the foremost Chishti shrine in the Deccan and the site of an annual urs that draws pilgrims of every faith.<cite data-ref=\"eaton-bijapur-1978\"></cite>" },
-        { "year": "c. 15th–16th c.", "text": "The Chishti disciples fan out across the Deccan: Bandanawaz's successors at Gulbarga, Qadiri masters including Shaikh Ashraf at Bidar, and the Suhrawardis at Khambayat — the orders become, more than the kings, the binding thread of Deccani society.<cite data-ref=\"ernst-lawrence-2002\"></cite>" },
-        { "year": "c. 16th–17th c.", "text": "The Qadiri and Suhrawardi orders expand further under Adil Shahi and Qutb Shahi patronage; Hyderabad grows as a Sufi centre alongside Gulbarga and Khuldabad, with new khanqahs drawing scholars and disciples from across the Deccan.<cite data-ref=\"malik-2008\"></cite>" },
-        { "year": "c. 1700", "text": "The Yousufain — twin Qadiri brothers Yousuf-ud-Din and Sharif-ud-Din — settle at Hyderabad; their dargah becomes one of the city's foremost pilgrimage sites and a centre of Thursday qawwali.<cite data-ref=\"ernst-lawrence-2002\"></cite>" },
-        { "year": "Ongoing", "text": "The dargahs of Khwaja Bandanawaz at Gulbarga, the Yousufain at Hyderabad, and Pahari Sharif still draw visitors of every faith; Thursday nights bring qawwals and langar to courtyards that have been open for six hundred years.<cite data-ref=\"ernst-lawrence-2002\"></cite>" }
+        {
+          "year": "c. early 14th c.",
+          "text": "Burhan-ud-Din Gharib, a chief disciple of Nizamuddin Aulia of Delhi, settles at Khuldabad and brings the Chishti silsila to the Deccan — the first of the great Sufi orders to take root in the plateau.<cite data-ref=\"ernst-lawrence-2002\"></cite>"
+        },
+        {
+          "year": "c. 1347",
+          "text": "The founding of the Bahmani Sultanate brings formal court patronage to the Sufi orders; the sultans at Gulbarga and Bidar support khanqahs and fund dargahs across the new kingdom.<cite data-ref=\"eaton-bijapur-1978\"></cite>"
+        },
+        {
+          "year": "c. 1400",
+          "text": "Khwaja Bandanawaz of Gulbarga begins composing Sufi prose in early Dakhni — the first literary use of the vernacular by any Deccan scholar — making the saints' teaching accessible to disciples who could not read Persian.<cite data-ref=\"eaton-bijapur-1978\"></cite>"
+        },
+        {
+          "year": "d. 1422",
+          "text": "Khwaja Bandanawaz (Gisudaraz) dies at Gulbarga; his dargah becomes the foremost Chishti shrine in the Deccan and the site of an annual urs that draws pilgrims of every faith.<cite data-ref=\"eaton-bijapur-1978\"></cite>"
+        },
+        {
+          "year": "c. 15th–16th c.",
+          "text": "The Chishti disciples fan out across the Deccan: Bandanawaz's successors at Gulbarga, Qadiri masters including Shaikh Ashraf at Bidar, and the Suhrawardis at Khambayat — the orders become, more than the kings, the binding thread of Deccani society.<cite data-ref=\"ernst-lawrence-2002\"></cite>"
+        },
+        {
+          "year": "c. 16th–17th c.",
+          "text": "The Qadiri and Suhrawardi orders expand further under Adil Shahi and Qutb Shahi patronage; Hyderabad grows as a Sufi centre alongside Gulbarga and Khuldabad, with new khanqahs drawing scholars and disciples from across the Deccan.<cite data-ref=\"malik-2008\"></cite>"
+        },
+        {
+          "year": "c. 1700",
+          "text": "The Yousufain — twin Qadiri brothers Yousuf-ud-Din and Sharif-ud-Din — settle at Hyderabad; their dargah becomes one of the city's foremost pilgrimage sites and a centre of Thursday qawwali.<cite data-ref=\"ernst-lawrence-2002\"></cite>"
+        },
+        {
+          "year": "Ongoing",
+          "text": "The dargahs of Khwaja Bandanawaz at Gulbarga, the Yousufain at Hyderabad, and Pahari Sharif still draw visitors of every faith; Thursday nights bring qawwals and langar to courtyards that have been open for six hundred years.<cite data-ref=\"ernst-lawrence-2002\"></cite>"
+        }
       ]
     }
   ],

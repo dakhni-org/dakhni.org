@@ -20,12 +20,33 @@
     {
       "type": "facts",
       "items": [
-        { "key": "Style", "value": "Asaf Jahi court cuisine", "ref": "leonard-1978" },
-        { "key": "Signature", "value": "Kachchi dum biryani", "ref": "britannica-biryani" },
-        { "key": "Fusion", "value": "Persian × Telugu", "ref": "collingham-2006" },
-        { "key": "Ramazan", "value": "Haleem" },
-        { "key": "Dessert", "value": "Khubani ka meetha" },
-        { "key": "Daily rhythm", "value": "Irani chai" }
+        {
+          "key": "Style",
+          "value": "Asaf Jahi court cuisine",
+          "ref": "leonard-1978"
+        },
+        {
+          "key": "Signature",
+          "value": "Kachchi dum biryani",
+          "ref": "britannica-biryani"
+        },
+        {
+          "key": "Fusion",
+          "value": "Persian × Telugu",
+          "ref": "collingham-2006"
+        },
+        {
+          "key": "Ramazan",
+          "value": "Haleem"
+        },
+        {
+          "key": "Dessert",
+          "value": "Khubani ka meetha"
+        },
+        {
+          "key": "Daily rhythm",
+          "value": "Irani chai"
+        }
       ]
     },
     {
@@ -37,14 +58,38 @@
       "eyebrow": "A Culinary History",
       "title": "Hyderabadi cuisine in dates",
       "items": [
-        { "year": "c. 1591", "text": "With the founding of Hyderabad by Muhammad Quli Qutb Shah, the new city's court kitchen draws together Persian, Mughal, and Deccani culinary traditions for the first time.<cite data-ref=\"britannica-biryani\"></cite>" },
-        { "year": "c. 1724", "text": "The Asaf Jahi court establishes Hyderabad as its capital; Persian khansamas arrive carrying the slow techniques of Mughal high cuisine — dum cooking, saffron, dried fruits — into the Telugu kitchen of the plateau.<cite data-ref=\"leonard-1978 collingham-2006\"></cite>" },
-        { "year": "c. 18th c.", "text": "Kachchi dum biryani is codified at the Asaf Jahi court: meat marinated raw in yoghurt and spice, layered with parboiled rice, sealed under a dough lid, and cooked over slow embers.<cite data-ref=\"britannica-biryani\"></cite>" },
-        { "year": "c. 18th c.", "text": "Haleem — wheat, lentils, and meat pounded for hours — becomes Hyderabad's communal Ramazan staple, prepared in neighbourhood kitchens across the city." },
-        { "year": "c. 18th–19th c.", "text": "Marag, lukhmi, mirchi ka salan, and bagara khana find their fixed places in the Hyderabadi feast order, from pre-dawn wedding broth to the everyday lunch table.<cite data-ref=\"leonard-1978\"></cite>" },
-        { "year": "c. 19th c.", "text": "Khubani ka meetha — stewed Saksaul apricots under a slick of thick cream — is established as the conventional close of a Hyderabadi feast." },
-        { "year": "c. late 19th c.", "text": "Irani café culture arrives through Persian commercial connections; Irani chai — strong, milky tea drawn slowly — becomes the defining rhythm of the old city's public life.<cite data-ref=\"leonard-1978\"></cite>" },
-        { "year": "Ongoing", "text": "The kachchi versus pakki biryani distinction survives as a point of local knowledge and civic pride; the Hyderabadi table continues to fuse court Persian technique with the heat of the Deccani masala." }
+        {
+          "year": "c. 1591",
+          "text": "With the founding of Hyderabad by Muhammad Quli Qutb Shah, the new city's court kitchen draws together Persian, Mughal, and Deccani culinary traditions for the first time.<cite data-ref=\"britannica-biryani\"></cite>"
+        },
+        {
+          "year": "c. 1724",
+          "text": "The Asaf Jahi court establishes Hyderabad as its capital; Persian khansamas arrive carrying the slow techniques of Mughal high cuisine — dum cooking, saffron, dried fruits — into the Telugu kitchen of the plateau.<cite data-ref=\"leonard-1978 collingham-2006\"></cite>"
+        },
+        {
+          "year": "c. 18th c.",
+          "text": "Kachchi dum biryani is codified at the Asaf Jahi court: meat marinated raw in yoghurt and spice, layered with parboiled rice, sealed under a dough lid, and cooked over slow embers.<cite data-ref=\"britannica-biryani\"></cite>"
+        },
+        {
+          "year": "c. 18th c.",
+          "text": "Haleem — wheat, lentils, and meat pounded for hours — becomes Hyderabad's communal Ramazan staple, prepared in neighbourhood kitchens across the city."
+        },
+        {
+          "year": "c. 18th–19th c.",
+          "text": "Marag, lukhmi, mirchi ka salan, and bagara khana find their fixed places in the Hyderabadi feast order, from pre-dawn wedding broth to the everyday lunch table.<cite data-ref=\"leonard-1978\"></cite>"
+        },
+        {
+          "year": "c. 19th c.",
+          "text": "Khubani ka meetha — stewed Saksaul apricots under a slick of thick cream — is established as the conventional close of a Hyderabadi feast."
+        },
+        {
+          "year": "c. late 19th c.",
+          "text": "Irani café culture arrives through Persian commercial connections; Irani chai — strong, milky tea drawn slowly — becomes the defining rhythm of the old city's public life.<cite data-ref=\"leonard-1978\"></cite>"
+        },
+        {
+          "year": "Ongoing",
+          "text": "The kachchi versus pakki biryani distinction survives as a point of local knowledge and civic pride; the Hyderabadi table continues to fuse court Persian technique with the heat of the Deccani masala."
+        }
       ]
     }
   ],

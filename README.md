@@ -4,7 +4,7 @@
 
 [**dakhni.org**](https://dakhni.org) is a digital archive and cultural gateway dedicated to the **Dakhni civilisation** — six centuries (1347 – 1948) of language, poetry, food, music, architecture and royal lineage that flourished across the Deccan plateau of southern India.
 
-From the **Bahmani Sultanate** of Gulbarga to the **Asaf Jahi Nizams** of Hyderabad, the site celebrates the kingdoms, the saints, the poets, the cities and the everyday heritage of the region that gave the world its first form of Urdu.
+From the **Bahmani Sultanate** of Gulbarga to the **Asaf Jahi Nizams** of Hyderabad, the site celebrates the kingdoms, the saints, the poets, the cities and the everyday heritage of the region that helped shape one of the earliest literary forms of Urdu/Hindustani.
 
 ## Sections
 
@@ -62,7 +62,7 @@ Generated pages are written as `index.html` files so URLs stay clean (`/cities/h
 ├── scripts/                # Maintenance tooling
 │   └── localize-images.py  # Download hot-linked Wikimedia images into local assets/
 ├── robots.txt
-├── sitemap.xml             # Lists all 62 pages
+├── sitemap.xml             # Lists all generated pages
 ├── CNAME                   # Custom domain (dakhni.org)
 └── README.md
 ```

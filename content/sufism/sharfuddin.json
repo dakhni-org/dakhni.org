@@ -56,16 +56,46 @@
       "eyebrow": "A Suhrawardi Life in the Deccan",
       "title": "Baba Sharfuddin Suhrawardi in dates",
       "items": [
-        { "year": "c. late 14th c.", "text": "Born into a Husayni Sayyid family; receives initiation in the Suhrawardi method through a chain descending from Baha al-Din Zakariya of Multan and Shihab al-Din 'Umar al-Suhrawardi of Baghdad." },
-        { "year": "c. early 15th c.", "text": "Undertakes extensive travels in youth — Makkah, Madina, Iraq, Khorasan, Sindh, and the Punjab — deepening learning in the Sunni-Hanafi sciences." },
-        { "year": "c. mid 15th c.", "text": "Arrives in the Bahmani Deccan and, rejecting the established capitals, chooses a low rocky hill south of the Musi river as his seat of retreat.<cite data-ref=\"eaton-1978\"></cite>" },
-        { "year": "c. mid 15th c.", "text": "Establishes a mosque and hospice on the summit; draws water from a spring on the eastern face of the rock; founds a daily open kitchen for all visitors regardless of faith or station." },
-        { "year": "c. late 15th c.", "text": "Passes away (wisaal) in the late fifteenth century; buried on the summit of his hill at his own request; the spring-fed baoli continues to serve the dargah." },
-        { "year": "1518–1687", "text": "Qutb Shahi sultans endow the dargah; early Qutb Shahi pavilions and a colonnaded gatehouse are added to the hilltop complex.<cite data-ref=\"sherwani-joshi-1973\"></cite>" },
-        { "year": "c. 1850s", "text": "Nasir-ud-Daulah, the fourth Nizam, raises the principal dome over the grave in plain white marble — in keeping with the saint's documented dislike of ornament." },
-        { "year": "Early 20th c.", "text": "The seventh Nizam, Mir Osman Ali Khan, constructs the rail line that links the southern districts of Hyderabad to the foot of the shrine stairway." },
-        { "year": "Annual", "text": "The 'urs in Rabi-ul-Awwal spans three days; a public procession (juloos) on the second day draws 200,000–300,000 pilgrims, making it one of the three great annual Sufi gatherings of the southern Deccan." },
-        { "year": "Post-1948", "text": "The dargah passes under the administration of the Telangana State Wakf Board; the hereditary sajjada-nashin family continues to lead prayer and langar in the classical Suhrawardi manner." }
+        {
+          "year": "c. late 14th c.",
+          "text": "Born into a Husayni Sayyid family; receives initiation in the Suhrawardi method through a chain descending from Baha al-Din Zakariya of Multan and Shihab al-Din 'Umar al-Suhrawardi of Baghdad."
+        },
+        {
+          "year": "c. early 15th c.",
+          "text": "Undertakes extensive travels in youth — Makkah, Madina, Iraq, Khorasan, Sindh, and the Punjab — deepening learning in the Sunni-Hanafi sciences."
+        },
+        {
+          "year": "c. mid 15th c.",
+          "text": "Arrives in the Bahmani Deccan and, rejecting the established capitals, chooses a low rocky hill south of the Musi river as his seat of retreat.<cite data-ref=\"eaton-1978\"></cite>"
+        },
+        {
+          "year": "c. mid 15th c.",
+          "text": "Establishes a mosque and hospice on the summit; draws water from a spring on the eastern face of the rock; founds a daily open kitchen for all visitors regardless of faith or station."
+        },
+        {
+          "year": "c. late 15th c.",
+          "text": "Passes away (wisaal) in the late fifteenth century; buried on the summit of his hill at his own request; the spring-fed baoli continues to serve the dargah."
+        },
+        {
+          "year": "1518–1687",
+          "text": "Qutb Shahi sultans endow the dargah; early Qutb Shahi pavilions and a colonnaded gatehouse are added to the hilltop complex.<cite data-ref=\"sherwani-joshi-1973\"></cite>"
+        },
+        {
+          "year": "c. 1850s",
+          "text": "Nasir-ud-Daulah, the fourth Nizam, raises the principal dome over the grave in plain white marble — in keeping with the saint's documented dislike of ornament."
+        },
+        {
+          "year": "Early 20th c.",
+          "text": "The seventh Nizam, Mir Osman Ali Khan, constructs the rail line that links the southern districts of Hyderabad to the foot of the shrine stairway."
+        },
+        {
+          "year": "Annual",
+          "text": "The 'urs in Rabi-ul-Awwal spans three days; a public procession (juloos) on the second day draws 200,000–300,000 pilgrims, making it one of the three great annual Sufi gatherings of the southern Deccan."
+        },
+        {
+          "year": "Post-1948",
+          "text": "The dargah passes under the administration of the Telangana State Wakf Board; the hereditary sajjada-nashin family continues to lead prayer and langar in the classical Suhrawardi manner."
+        }
       ]
     }
   ],

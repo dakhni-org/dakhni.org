@@ -57,17 +57,50 @@
       "eyebrow": "A Chishti Life in the Deccan",
       "title": "Bandanawaz Gisudaraz in dates",
       "items": [
-        { "year": "1321", "text": "Born in Delhi (721 AH) to a family of Husayni Sayyids; given the epithet Gesudaraz (\"long-tressed\") and later Bandanawaz (\"cherisher of the poor\").<cite data-ref=\"iranica-gisudaraz\"></cite>" },
-        { "year": "c. 1327", "text": "Family migrates to Daulatabad following Muhammad bin Tughluq's forced transfer of Delhi's population to the new southern capital." },
-        { "year": "c. 1340s", "text": "Returns to Delhi and enters the circle of Khwaja Nasir al-Din Chiragh-i-Delhi, the last great Chishti master of the north and chief successor to Nizamuddin Awliya." },
-        { "year": "1356", "text": "Nasir al-Din Chiragh-i-Delhi dies; Bandanawaz carries his khilafat forward and becomes the principal Chishti spiritual heir in the Deccan." },
-        { "year": "c. 1380s", "text": "Authors the Mi'raj al-'Ashiqin, a guide for spiritual seekers in Dakhni Urdu — among the earliest surviving prose compositions in the southern vernacular." },
-        { "year": "c. 1390s", "text": "Scholarly corpus — Quranic commentaries, hadith treatises, Hanafi fiqh manuals, and expositions of Ibn al-'Arabi — grows to over a hundred attributed works; around thirty survive." },
-        { "year": "1399", "text": "Accepts the invitation of Bahmani Sultan Firuz Shah Bahmani and moves to Gulbarga, establishing his khanqah there.<cite data-ref=\"sherwani-joshi-1973\"></cite>" },
-        { "year": "c. 1405", "text": "Declines to give political endorsement to Firuz Shah; instead bestows his blessing on the sultan's younger brother, the future Ahmad Shah I Bahmani." },
-        { "year": "1422", "text": "Dies at Gulbarga (825 AH) at the age of 101 lunar years; interred at his hospice, which Ahmad Shah I converts into a dargah.<cite data-ref=\"iranica-gisudaraz\"></cite>" },
-        { "year": "Post-1422", "text": "The dargah is enlarged by successive Bahmani and later rulers; it becomes the largest Sufi shrine in the southern Deccan." },
-        { "year": "Annual", "text": "The 'urs observed each year in Dhu'l-Qa'da draws hundreds of thousands of pilgrims; the dargah remains the most-visited Sufi shrine in modern Karnataka." }
+        {
+          "year": "1321",
+          "text": "Born in Delhi (721 AH) to a family of Husayni Sayyids; given the epithet Gesudaraz (\"long-tressed\") and later Bandanawaz (\"cherisher of the poor\").<cite data-ref=\"iranica-gisudaraz\"></cite>"
+        },
+        {
+          "year": "c. 1327",
+          "text": "Family migrates to Daulatabad following Muhammad bin Tughluq's forced transfer of Delhi's population to the new southern capital."
+        },
+        {
+          "year": "c. 1340s",
+          "text": "Returns to Delhi and enters the circle of Khwaja Nasir al-Din Chiragh-i-Delhi, the last great Chishti master of the north and chief successor to Nizamuddin Awliya."
+        },
+        {
+          "year": "1356",
+          "text": "Nasir al-Din Chiragh-i-Delhi dies; Bandanawaz carries his khilafat forward and becomes the principal Chishti spiritual heir in the Deccan."
+        },
+        {
+          "year": "c. 1380s",
+          "text": "Authors the Mi'raj al-'Ashiqin, a guide for spiritual seekers in Dakhni Urdu — among the earliest surviving prose compositions in the southern vernacular."
+        },
+        {
+          "year": "c. 1390s",
+          "text": "Scholarly corpus — Quranic commentaries, hadith treatises, Hanafi fiqh manuals, and expositions of Ibn al-'Arabi — grows to over a hundred attributed works; around thirty survive."
+        },
+        {
+          "year": "1399",
+          "text": "Accepts the invitation of Bahmani Sultan Firuz Shah Bahmani and moves to Gulbarga, establishing his khanqah there.<cite data-ref=\"sherwani-joshi-1973\"></cite>"
+        },
+        {
+          "year": "c. 1405",
+          "text": "Declines to give political endorsement to Firuz Shah; instead bestows his blessing on the sultan's younger brother, the future Ahmad Shah I Bahmani."
+        },
+        {
+          "year": "1422",
+          "text": "Dies at Gulbarga (825 AH) at the age of 101 lunar years; interred at his hospice, which Ahmad Shah I converts into a dargah.<cite data-ref=\"iranica-gisudaraz\"></cite>"
+        },
+        {
+          "year": "Post-1422",
+          "text": "The dargah is enlarged by successive Bahmani and later rulers; it becomes the largest Sufi shrine in the southern Deccan."
+        },
+        {
+          "year": "Annual",
+          "text": "The 'urs observed each year in Dhu'l-Qa'da draws hundreds of thousands of pilgrims; the dargah remains the most-visited Sufi shrine in modern Karnataka."
+        }
       ]
     }
   ],

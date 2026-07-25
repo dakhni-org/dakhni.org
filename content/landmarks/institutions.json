@@ -13,12 +13,33 @@
     {
       "type": "facts",
       "items": [
-        { "key": "Eras", "value": "Bahmani · Qutb Shahi · Adil Shahi · Asaf Jahi" },
-        { "key": "Earliest", "value": "Mahmud Gawan Madrasa, Bidar · 1472", "ref": "michell-zebrowski-1999" },
-        { "key": "Medical", "value": "Osmania Medical College · est. 1846", "ref": "britannica-hyderabad" },
-        { "key": "Landmark", "value": "Osmania University · 1918 · Urdu medium", "ref": "osmania-official" },
-        { "key": "Scholarship", "value": "Asafia Library · Persian, Arabic, Urdu MSS" },
-        { "key": "Ethos", "value": "Islamicate learning renewed in modern dress" }
+        {
+          "key": "Eras",
+          "value": "Bahmani · Qutb Shahi · Adil Shahi · Asaf Jahi"
+        },
+        {
+          "key": "Earliest",
+          "value": "Mahmud Gawan Madrasa, Bidar · 1472",
+          "ref": "michell-zebrowski-1999"
+        },
+        {
+          "key": "Medical",
+          "value": "Osmania Medical College · est. 1846",
+          "ref": "britannica-hyderabad"
+        },
+        {
+          "key": "Landmark",
+          "value": "Osmania University · 1918 · Urdu medium",
+          "ref": "osmania-official"
+        },
+        {
+          "key": "Scholarship",
+          "value": "Asafia Library · Persian, Arabic, Urdu MSS"
+        },
+        {
+          "key": "Ethos",
+          "value": "Islamicate learning renewed in modern dress"
+        }
       ]
     },
     {
@@ -30,15 +51,42 @@
       "eyebrow": "A History of Deccan Learning",
       "title": "Institutions of the Deccan in dates",
       "items": [
-        { "year": "1472", "text": "Mahmud Gawan, the Persian wazir of the Bahmanis, completes his three-storey madrasa at Bidar — a library of three thousand manuscripts and a faculty drawn from Iran, Arabia, and Samarkand make it the foremost centre of learning in the Deccan.<cite data-ref=\"michell-zebrowski-1999\"></cite>" },
-        { "year": "1846", "text": "The Hyderabad Medical School is founded under Asaf Jahi patronage — the earliest Western-style medical institution in the Deccan, later renamed Osmania Medical College in 1919 and paired with the great teaching hospital on the Musi." },
-        { "year": "1865", "text": "The Madrasa-i-Aliya is founded in Hyderabad — among the city's oldest schools, later becoming City College and educating generations of the city's poets, civil servants, and physicians from its Indo-Saracenic building on the Musi." },
-        { "year": "1876", "text": "Mawlana Anwarullah Farooqui (Fazilat-Jung) founds Jamia Nizamia, the principal Sunni Hanafi seminary of the Deccan — still active in the old city, training ulama in the classical Deccani tradition of Islamic scholarship." },
-        { "year": "1887 & 1891", "text": "Nizam College is founded under the sixth Nizam Mir Mahbub Ali Khan (1887), and the Asafia State Library (1891) is established to house the growing Nizam collection of Persian, Arabic, and Urdu manuscripts — together marking the high point of sixth-Nizam patronage." },
-        { "year": "1894 & 1907", "text": "The Nizamia Tibbi College (1894) gives the Unani medical tradition a modern institutional form; Mahbubia Girls' School (1907), founded by the sixth Nizam, becomes one of the earliest girls' schools in South India." },
-        { "year": "1918", "text": "Osmania University is founded by the seventh Nizam Mir Osman Ali Khan — the first university in modern India to teach in an Indian language (Urdu); its Arts College building by the Belgian architect Ernest Jasper is a landmark of Indo-Saracenic civic architecture.<cite data-ref=\"osmania-official\"></cite>" },
-        { "year": "1925 & 1929", "text": "The Osmania General Hospital is built on the Musi (1925) as part of the post-flood reconstruction; the College of Engineering (1929) follows — together, the technical and medical pillars of the seventh Nizam's modernisation programme." },
-        { "year": "1951", "text": "The Salar Jung Museum opens to the public — the personal collection of Salar Jung III, wazir of the seventh Nizam, said to be the third-largest one-man art collection in the world, housed on the banks of the Musi.<cite data-ref=\"salar-jung-official\"></cite>" }
+        {
+          "year": "1472",
+          "text": "Mahmud Gawan, the Persian wazir of the Bahmanis, completes his three-storey madrasa at Bidar — a library of three thousand manuscripts and a faculty drawn from Iran, Arabia, and Samarkand make it the foremost centre of learning in the Deccan.<cite data-ref=\"michell-zebrowski-1999\"></cite>"
+        },
+        {
+          "year": "1846",
+          "text": "The Hyderabad Medical School is founded under Asaf Jahi patronage — the earliest Western-style medical institution in the Deccan, later renamed Osmania Medical College in 1919 and paired with the great teaching hospital on the Musi."
+        },
+        {
+          "year": "1865",
+          "text": "The Madrasa-i-Aliya is founded in Hyderabad — among the city's oldest schools, later becoming City College and educating generations of the city's poets, civil servants, and physicians from its Indo-Saracenic building on the Musi."
+        },
+        {
+          "year": "1876",
+          "text": "Mawlana Anwarullah Farooqui (Fazilat-Jung) founds Jamia Nizamia, the principal Sunni Hanafi seminary of the Deccan — still active in the old city, training ulama in the classical Deccani tradition of Islamic scholarship."
+        },
+        {
+          "year": "1887 & 1891",
+          "text": "Nizam College is founded under the sixth Nizam Mir Mahbub Ali Khan (1887), and the Asafia State Library (1891) is established to house the growing Nizam collection of Persian, Arabic, and Urdu manuscripts — together marking the high point of sixth-Nizam patronage."
+        },
+        {
+          "year": "1894 & 1907",
+          "text": "The Nizamia Tibbi College (1894) gives the Unani medical tradition a modern institutional form; Mahbubia Girls' School (1907), founded by the sixth Nizam, becomes one of the earliest girls' schools in South India."
+        },
+        {
+          "year": "1918",
+          "text": "Osmania University is founded by the seventh Nizam Mir Osman Ali Khan — the first university in modern India to teach in an Indian language (Urdu); its Arts College building by the Belgian architect Ernest Jasper is a landmark of Indo-Saracenic civic architecture.<cite data-ref=\"osmania-official\"></cite>"
+        },
+        {
+          "year": "1925 & 1929",
+          "text": "The Osmania General Hospital is built on the Musi (1925) as part of the post-flood reconstruction; the College of Engineering (1929) follows — together, the technical and medical pillars of the seventh Nizam's modernisation programme."
+        },
+        {
+          "year": "1951",
+          "text": "The Salar Jung Museum opens to the public — the personal collection of Salar Jung III, wazir of the seventh Nizam, said to be the third-largest one-man art collection in the world, housed on the banks of the Musi.<cite data-ref=\"salar-jung-official\"></cite>"
+        }
       ]
     }
   ],
