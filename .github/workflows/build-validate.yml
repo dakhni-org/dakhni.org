@@ -37,8 +37,20 @@ jobs:
           "
       - name: Validate and build site
         run: python3 scripts/build_site.py
+      - name: Rebuild search index
+        run: python3 scripts/build-search-index.py
       - name: Check all pages rendered
         run: |
           count=$(find . -name "index.html" | grep -v node_modules | wc -l)
           echo "Rendered $count pages"
           test "$count" -ge 65
+      - name: Fail if committed output is stale
+        run: |
+          git add -A
+          if ! git diff --cached --quiet; then
+            echo "Generated HTML / sitemap.xml / search-index.json don't match what's committed."
+            echo "Run 'python3 scripts/build_site.py && python3 scripts/build-search-index.py' and commit the result."
+            git diff --cached --stat
+            exit 1
+          fi
+          echo "Committed generated output matches a fresh build."
