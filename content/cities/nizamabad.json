@@ -15,6 +15,9 @@
   "urdu": "نظام آباد — قلعۂ اِندور",
   "title_html": "NIZAMABAD",
   "subtitle": "The ancient city of Indur on the Godavari tributary — fortified by the Bahmanis, passed to the Barid Shahis of Bidar, and renamed Nizamabad under the Asaf Jahis; home of the Nizamsagar Dam.",
+  "link_terms": [
+    "Nizamabad"
+  ],
   "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Nizamabad_Fort.jpg?width=1600",
   "extra_scripts": [],
   "blocks": [

@@ -15,6 +15,9 @@
   "eyebrow": "Institutions of the Deccan",
   "title_html": "Hyderabad Public School",
   "subtitle": "Hyderabad · Founded 1923",
+  "link_terms": [
+    "Hyderabad Public School"
+  ],
   "blocks": [
     {
       "type": "facts",
