@@ -55,7 +55,7 @@
   document.getElementById('disclosure-close').addEventListener('click', dismiss);
   el.querySelector('.disclosure-backdrop').addEventListener('click', dismiss);
   document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape' && el.classList.contains('open')) dismiss();
+    if (e.key === 'Escape' && el.classList.contains('open')) { e.stopImmediatePropagation(); dismiss(); }
   });
   setTimeout(show, 3000);
 })();
