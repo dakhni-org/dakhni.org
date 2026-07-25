@@ -321,7 +321,7 @@ def render_citations(body_html: str, references: Optional[List[Dict[str, Any]]])
 # occurrence only, never linking a page to itself, never nesting inside an
 # existing <a> or a heading.
 LINK_SKIP_TAGS = {"a", "h1", "h2", "h3", "h4", "script", "style"}
-_LINK_TAG_SPLIT_RE = re.compile(r'''(<(?:='[^']*'|[^>"]|"[^"]*")*>)''')
+_LINK_TAG_SPLIT_RE = re.compile(r'''(<(?:=\s*'[^']*'|[^>"]|"[^"]*")*>)''')
 _LINK_TAG_NAME_RE = re.compile(r'^</?\s*([a-zA-Z0-9]+)')
 
 
