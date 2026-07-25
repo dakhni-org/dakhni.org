@@ -20,12 +20,33 @@
     {
       "type": "facts",
       "items": [
-        { "key": "Signature craft", "value": "Bidriware · Bidar · c. 1500", "ref": "michell-zebrowski-1999" },
-        { "key": "Weaving", "value": "Paithani · Paithan · since Satavahanas" },
-        { "key": "Gems", "value": "Hyderabadi pearls", "ref": "leonard-1978" },
-        { "key": "Painting", "value": "Deccan miniature school", "ref": "zebrowski-1983" },
-        { "key": "Textile", "value": "Himroo brocade · Aurangabad" },
-        { "key": "Heritage", "value": "Bidriware on UNESCO intangible list" }
+        {
+          "key": "Signature craft",
+          "value": "Bidriware · Bidar · c. 1500",
+          "ref": "michell-zebrowski-1999"
+        },
+        {
+          "key": "Weaving",
+          "value": "Paithani · Paithan · since Satavahanas"
+        },
+        {
+          "key": "Gems",
+          "value": "Hyderabadi pearls",
+          "ref": "leonard-1978"
+        },
+        {
+          "key": "Painting",
+          "value": "Deccan miniature school",
+          "ref": "zebrowski-1983"
+        },
+        {
+          "key": "Textile",
+          "value": "Himroo brocade · Aurangabad"
+        },
+        {
+          "key": "Heritage",
+          "value": "Bidriware on UNESCO intangible list"
+        }
       ]
     },
     {
@@ -37,13 +58,34 @@
       "eyebrow": "A History of Dakhni Crafts",
       "title": "Deccan crafts in dates",
       "items": [
-        { "year": "c. 200 BCE", "text": "The Paithani sari tradition is established at Paithan in the Satavahana age — pure mulberry silk with tapestry-woven zari borders, each piece taking up to a year to complete." },
-        { "year": "c. 1347 onwards", "text": "With the Bahmani Sultanate, Persian metalworking techniques arrive at Bidar and the Deccan develops its distinctive court material culture across metal, textile, and painted arts.<cite data-ref=\"michell-zebrowski-1999\"></cite>" },
-        { "year": "c. 1500", "text": "Bidriware is codified at Bidar: zinc-and-copper vessels inlaid with hammered silver wire and blackened using soil unique to the Bidar fort — a technique that survives nowhere else on earth.<cite data-ref=\"michell-zebrowski-1999\"></cite>" },
-        { "year": "c. 16th c.", "text": "The Deccan miniature school is born at Ahmadnagar and spreads to Bijapur and Golconda, developing taller proportions, lyrical landscapes, and a palette of emerald, lapis, and gold leaf closer to Safavid Persia than to Mughal Delhi.<cite data-ref=\"zebrowski-1983\"></cite>" },
-        { "year": "c. 16th–17th c.", "text": "Kalamkari — hand-painted cotton using vegetable dyes — flourishes under the Golconda court; Himroo silk-and-cotton brocade is established at Aurangabad as a courtly textile of the Mughal Deccan.<cite data-ref=\"michell-zebrowski-1999\"></cite>" },
-        { "year": "c. 1724 onwards", "text": "Hyderabad's pearl trade — fed by the Persian Gulf and the Coromandel coast — reaches its zenith under the Asaf Jahi Nizams; the city becomes the world's leading pearl market.<cite data-ref=\"leonard-1978\"></cite>" },
-        { "year": "Ongoing", "text": "The bazaar near Charminar still sells more pearls than any place on earth; Bidriware is on UNESCO's intangible heritage list; and the Paithani and Himroo looms continue in Paithan and Aurangabad." }
+        {
+          "year": "c. 200 BCE",
+          "text": "The Paithani sari tradition is established at Paithan in the Satavahana age — pure mulberry silk with tapestry-woven zari borders, each piece taking up to a year to complete."
+        },
+        {
+          "year": "c. 1347 onwards",
+          "text": "With the Bahmani Sultanate, Persian metalworking techniques arrive at Bidar and the Deccan develops its distinctive court material culture across metal, textile, and painted arts.<cite data-ref=\"michell-zebrowski-1999\"></cite>"
+        },
+        {
+          "year": "c. 1500",
+          "text": "Bidriware is codified at Bidar: zinc-and-copper vessels inlaid with hammered silver wire and blackened using soil unique to the Bidar fort — a technique that survives nowhere else on earth.<cite data-ref=\"michell-zebrowski-1999\"></cite>"
+        },
+        {
+          "year": "c. 16th c.",
+          "text": "The Deccan miniature school is born at Ahmadnagar and spreads to Bijapur and Golconda, developing taller proportions, lyrical landscapes, and a palette of emerald, lapis, and gold leaf closer to Safavid Persia than to Mughal Delhi.<cite data-ref=\"zebrowski-1983\"></cite>"
+        },
+        {
+          "year": "c. 16th–17th c.",
+          "text": "Kalamkari — hand-painted cotton using vegetable dyes — flourishes under the Golconda court; Himroo silk-and-cotton brocade is established at Aurangabad as a courtly textile of the Mughal Deccan.<cite data-ref=\"michell-zebrowski-1999\"></cite>"
+        },
+        {
+          "year": "c. 1724 onwards",
+          "text": "Hyderabad's pearl trade — fed by the Persian Gulf and the Coromandel coast — reaches its zenith under the Asaf Jahi Nizams; the city becomes the world's leading pearl market.<cite data-ref=\"leonard-1978\"></cite>"
+        },
+        {
+          "year": "Ongoing",
+          "text": "The bazaar near Charminar still sells more pearls than any place on earth; Bidriware is on UNESCO's intangible heritage list; and the Paithani and Himroo looms continue in Paithan and Aurangabad."
+        }
       ]
     }
   ],

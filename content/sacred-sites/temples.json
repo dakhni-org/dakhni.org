@@ -20,12 +20,32 @@
     {
       "type": "facts",
       "items": [
-        { "key": "Traditions", "value": "Chalukya · Rashtrakuta · Kakatiya · Vijayanagara · Hoysala" },
-        { "key": "Oldest", "value": "Ellora Caves · 6th–10th c.", "ref": "whc-unesco-ellora" },
-        { "key": "UNESCO", "value": "Ramappa Temple · 1213 · inscribed 2021", "ref": "whc-unesco-ramappa" },
-        { "key": "Signature", "value": "Kakatiya Toranas, Warangal" },
-        { "key": "Pilgrimage", "value": "Srisailam · Yadagirigutta · Bhadrachalam" },
-        { "key": "Role", "value": "Living shrines — pre-sultanate to present" }
+        {
+          "key": "Traditions",
+          "value": "Chalukya · Rashtrakuta · Kakatiya · Vijayanagara · Hoysala"
+        },
+        {
+          "key": "Oldest",
+          "value": "Ellora Caves · 6th–10th c.",
+          "ref": "whc-unesco-ellora"
+        },
+        {
+          "key": "UNESCO",
+          "value": "Ramappa Temple · 1213 · inscribed 2021",
+          "ref": "whc-unesco-ramappa"
+        },
+        {
+          "key": "Signature",
+          "value": "Kakatiya Toranas, Warangal"
+        },
+        {
+          "key": "Pilgrimage",
+          "value": "Srisailam · Yadagirigutta · Bhadrachalam"
+        },
+        {
+          "key": "Role",
+          "value": "Living shrines — pre-sultanate to present"
+        }
       ]
     },
     {
@@ -37,16 +57,46 @@
       "eyebrow": "Twelve Centuries of Deccan Temples",
       "title": "Historic temples of the Deccan in dates",
       "items": [
-        { "year": "6th–10th c.", "text": "The Rashtrakutas carve thirty-four rock-cut shrines at Ellora — the Kailasa Temple (Cave 16) is the largest monolithic structure in the world, hewn top-down out of a single basalt cliff above the Deccan plain.<cite data-ref=\"whc-unesco-ellora\"></cite>" },
-        { "year": "7th–8th c.", "text": "The Badami Chalukyas raise the nine Navabrahma sandstone temples at Alampur on the Tungabhadra, and the Chalukyan Mahanandi shrine takes shape in the Nallamala foothills — the earliest surviving temple complexes of the Telangana region." },
-        { "year": "12th c.", "text": "The Hoysalas build Chennakeshava at Belur and Hoysaleshwara at Halebidu — densely sculpted soapstone temples at the western edge of the Deccan whose figure carving remains a benchmark for medieval Indian sculpture." },
-        { "year": "1163", "text": "Rudradeva of the Kakatiyas commissions the Thousand Pillar Temple at Hanamkonda — a star-shaped triple shrine dedicated to Shiva, Vishnu and Surya, with a Nandi mandapa carved from a single block of black basalt.<cite data-ref=\"telangana-thousand-pillar\"></cite>" },
-        { "year": "1213", "text": "The Ramappa Temple (Rudreshwara) is built at Palampet under Kakatiya patronage — sculpted by Ramappa and named after him, the only temple in India named for its sculptor; inscribed UNESCO World Heritage in 2021.<cite data-ref=\"whc-unesco-ramappa\"></cite>" },
-        { "year": "14th–16th c.", "text": "The Vijayanagara empire builds Virupaksha, Vitthala and Hazara Rama temples at Hampi (UNESCO); the Veerabhadra temple at Lepakshi (1530s) adds the finest surviving Vijayanagara murals; Srisailam is substantially expanded." },
-        { "year": "17th c.", "text": "Kancherla Gopanna (Bhakta Ramadasu) builds the Bhadrachalam Sri Sita Ramachandra temple as a Qutb Shahi revenue officer, diverting state funds and earning imprisonment at Golconda — his story becomes a cornerstone of Telugu devotional tradition.<cite data-ref=\"sherwani-joshi-1973\"></cite>" },
-        { "year": "18th c.", "text": "Ahilyabai Holkar rebuilds the Grishneshwar Jyotirlinga at Verul over its ancient foundation; the Asaf Jahi Nizams continue to patronise and restore some Hindu temples within their state, including the Karmanghat Hanuman shrine in Hyderabad." },
-        { "year": "1976", "text": "The Birla Foundation builds Birla Mandir in white Rajasthani marble on Naubat Pahad — the most-visited modern temple in Hyderabad, on the hill long associated with the royal drums of the Asaf Jahi court.<cite data-ref=\"telangana-birla-mandir\"></cite>" },
-        { "year": "Ongoing", "text": "Ramappa inscribed UNESCO 2021; Yadagirigutta rebuilt in traditional black granite; Srisailam, Bhadrachalam, and Vemulawada draw millions of pilgrims annually — temple life on the Deccan plateau runs unbroken for twelve centuries.<cite data-ref=\"whc-unesco-ramappa telangana-yadadri\"></cite>" }
+        {
+          "year": "6th–10th c.",
+          "text": "The Rashtrakutas carve thirty-four rock-cut shrines at Ellora — the Kailasa Temple (Cave 16) is the largest monolithic structure in the world, hewn top-down out of a single basalt cliff above the Deccan plain.<cite data-ref=\"whc-unesco-ellora\"></cite>"
+        },
+        {
+          "year": "7th–8th c.",
+          "text": "The Badami Chalukyas raise the nine Navabrahma sandstone temples at Alampur on the Tungabhadra, and the Chalukyan Mahanandi shrine takes shape in the Nallamala foothills — the earliest surviving temple complexes of the Telangana region."
+        },
+        {
+          "year": "12th c.",
+          "text": "The Hoysalas build Chennakeshava at Belur and Hoysaleshwara at Halebidu — densely sculpted soapstone temples at the western edge of the Deccan whose figure carving remains a benchmark for medieval Indian sculpture."
+        },
+        {
+          "year": "1163",
+          "text": "Rudradeva of the Kakatiyas commissions the Thousand Pillar Temple at Hanamkonda — a star-shaped triple shrine dedicated to Shiva, Vishnu and Surya, with a Nandi mandapa carved from a single block of black basalt.<cite data-ref=\"telangana-thousand-pillar\"></cite>"
+        },
+        {
+          "year": "1213",
+          "text": "The Ramappa Temple (Rudreshwara) is built at Palampet under Kakatiya patronage — sculpted by Ramappa and named after him, the only temple in India named for its sculptor; inscribed UNESCO World Heritage in 2021.<cite data-ref=\"whc-unesco-ramappa\"></cite>"
+        },
+        {
+          "year": "14th–16th c.",
+          "text": "The Vijayanagara empire builds Virupaksha, Vitthala and Hazara Rama temples at Hampi (UNESCO); the Veerabhadra temple at Lepakshi (1530s) adds the finest surviving Vijayanagara murals; Srisailam is substantially expanded."
+        },
+        {
+          "year": "17th c.",
+          "text": "Kancherla Gopanna (Bhakta Ramadasu) builds the Bhadrachalam Sri Sita Ramachandra temple as a Qutb Shahi revenue officer, diverting state funds and earning imprisonment at Golconda — his story becomes a cornerstone of Telugu devotional tradition.<cite data-ref=\"sherwani-joshi-1973\"></cite>"
+        },
+        {
+          "year": "18th c.",
+          "text": "Ahilyabai Holkar rebuilds the Grishneshwar Jyotirlinga at Verul over its ancient foundation; the Asaf Jahi Nizams continue to patronise and restore some Hindu temples within their state, including the Karmanghat Hanuman shrine in Hyderabad."
+        },
+        {
+          "year": "1976",
+          "text": "The Birla Foundation builds Birla Mandir in white Rajasthani marble on Naubat Pahad — the most-visited modern temple in Hyderabad, on the hill long associated with the royal drums of the Asaf Jahi court.<cite data-ref=\"telangana-birla-mandir\"></cite>"
+        },
+        {
+          "year": "Ongoing",
+          "text": "Ramappa inscribed UNESCO 2021; Yadagirigutta rebuilt in traditional black granite; Srisailam, Bhadrachalam, and Vemulawada draw millions of pilgrims annually — temple life on the Deccan plateau runs unbroken for twelve centuries.<cite data-ref=\"whc-unesco-ramappa telangana-yadadri\"></cite>"
+        }
       ]
     }
   ],

@@ -20,12 +20,32 @@
     {
       "type": "facts",
       "items": [
-        { "key": "Eras", "value": "Bahmani · Qutb Shahi · Adil Shahi · Asaf Jahi" },
-        { "key": "Oldest", "value": "Jama Masjid, Gulbarga Fort · 1367 · all-domed", "ref": "michell-zebrowski-1999" },
-        { "key": "Signature", "value": "Lotus-medallion stucco (Qutb Shahi)" },
-        { "key": "Largest", "value": "Mecca Masjid, Hyderabad · 1614–1694", "ref": "michell-zebrowski-1999" },
-        { "key": "Unique", "value": "Spanish Mosque, Begumpet · c. 1906" },
-        { "key": "Role", "value": "Town square · school · court of appeal" }
+        {
+          "key": "Eras",
+          "value": "Bahmani · Qutb Shahi · Adil Shahi · Asaf Jahi"
+        },
+        {
+          "key": "Oldest",
+          "value": "Jama Masjid, Gulbarga Fort · 1367 · all-domed",
+          "ref": "michell-zebrowski-1999"
+        },
+        {
+          "key": "Signature",
+          "value": "Lotus-medallion stucco (Qutb Shahi)"
+        },
+        {
+          "key": "Largest",
+          "value": "Mecca Masjid, Hyderabad · 1614–1694",
+          "ref": "michell-zebrowski-1999"
+        },
+        {
+          "key": "Unique",
+          "value": "Spanish Mosque, Begumpet · c. 1906"
+        },
+        {
+          "key": "Role",
+          "value": "Town square · school · court of appeal"
+        }
       ]
     },
     {
@@ -37,16 +57,46 @@
       "eyebrow": "Six Centuries of Mosque-Building",
       "title": "Masjids of the Deccan in dates",
       "items": [
-        { "year": "1367", "text": "The Jama Masjid at Gulbarga Fort is completed — roofed entirely with seventy-five domes and no open courtyard, an Iranian experiment unique in the subcontinent, built within the first Bahmani capital by the Persian architect Rafi of Qazvin.<cite data-ref=\"michell-zebrowski-1999\"></cite>" },
-        { "year": "1424 & 1472", "text": "The Solah Khamba court mosque at Bidar Fort (c. 1424) and the prayer chamber of the Mahmud Gawan Madrasa (1472) — with its Tabriz tilework — establish Bidar as the second great centre of Bahmani mosque-building.<cite data-ref=\"sherwani-joshi-1973\"></cite>" },
-        { "year": "1518", "text": "Sultan Quli Qutb Mulk builds the Jama Masjid on the summit of Golconda's Bala Hisar — the oldest extant mosque of the Qutb Shahi dynasty and one of the first acts of the new independent sultanate.<cite data-ref=\"unesco-qutb-shahi\"></cite>" },
-        { "year": "1576", "text": "Ali Adil Shah I raises the Jama Masjid at Bijapur — a vast prayer hall beneath a single dome with gilt Quranic inscriptions on the mihrab, the grandest of all Adil Shahi mosques.<cite data-ref=\"michell-zebrowski-1999\"></cite>" },
-        { "year": "1591", "text": "Muhammad Quli Qutb Shah builds the Charminar at Hyderabad — its upper floor houses the oldest mosque of the new city; the working jami of Hyderabad until the Mecca Masjid is completed.<cite data-ref=\"asi-charminar\"></cite>" },
-        { "year": "1614–1694", "text": "The Mecca Masjid beside the Charminar is begun by Muhammad Quli (1614) and completed by Aurangzeb (1694) — one of the largest mosques in the subcontinent, its central arch bricks said to be brought from Mecca, capacity for ten thousand worshippers.<cite data-ref=\"michell-zebrowski-1999\"></cite>" },
-        { "year": "1671", "text": "Musa Khan Mahaldar builds the Toli Masjid on the Karwan road — small but architecturally exquisite, with stucco lotus medallions that are unmatched in Deccan mosque ornament.<cite data-ref=\"telangana-heritage-toli-masjid\"></cite>" },
-        { "year": "late 17th c.", "text": "Aurangzeb completes and expands the Jama Masjid at Aurangabad, his southern capital; the Kali Masjid of Malik Ambar and the Hayat Bakshi Masjid in Hyderabad mark the spread of the Mughal-Deccan idiom across the plateau." },
-        { "year": "c. 1906", "text": "Sir Vicar-ul-Umara of the Paigah family builds the Spanish (Begumpet) Mosque in Moorish-revival style after his return from Spain — with horseshoe arches found nowhere else in Hyderabad, it remains the most architecturally singular mosque of the Deccan." },
-        { "year": "Ongoing", "text": "The more than twenty-two historic mosques catalogued here — from Gulbarga to Aurangabad, Bijapur to Hyderabad — still serve as working places of Friday prayer, marking six centuries of unbroken congregational life in the Dakhni heartland." }
+        {
+          "year": "1367",
+          "text": "The Jama Masjid at Gulbarga Fort is completed — roofed entirely with seventy-five domes and no open courtyard, an Iranian experiment unique in the subcontinent, built within the first Bahmani capital by the Persian architect Rafi of Qazvin.<cite data-ref=\"michell-zebrowski-1999\"></cite>"
+        },
+        {
+          "year": "1424 & 1472",
+          "text": "The Solah Khamba court mosque at Bidar Fort (c. 1424) and the prayer chamber of the Mahmud Gawan Madrasa (1472) — with its Tabriz tilework — establish Bidar as the second great centre of Bahmani mosque-building.<cite data-ref=\"sherwani-joshi-1973\"></cite>"
+        },
+        {
+          "year": "1518",
+          "text": "Sultan Quli Qutb Mulk builds the Jama Masjid on the summit of Golconda's Bala Hisar — the oldest extant mosque of the Qutb Shahi dynasty and one of the first acts of the new independent sultanate.<cite data-ref=\"unesco-qutb-shahi\"></cite>"
+        },
+        {
+          "year": "1576",
+          "text": "Ali Adil Shah I raises the Jama Masjid at Bijapur — a vast prayer hall beneath a single dome with gilt Quranic inscriptions on the mihrab, the grandest of all Adil Shahi mosques.<cite data-ref=\"michell-zebrowski-1999\"></cite>"
+        },
+        {
+          "year": "1591",
+          "text": "Muhammad Quli Qutb Shah builds the Charminar at Hyderabad — its upper floor houses the oldest mosque of the new city; the working jami of Hyderabad until the Mecca Masjid is completed.<cite data-ref=\"asi-charminar\"></cite>"
+        },
+        {
+          "year": "1614–1694",
+          "text": "The Mecca Masjid beside the Charminar is begun by Muhammad Quli (1614) and completed by Aurangzeb (1694) — one of the largest mosques in the subcontinent, its central arch bricks said to be brought from Mecca, capacity for ten thousand worshippers.<cite data-ref=\"michell-zebrowski-1999\"></cite>"
+        },
+        {
+          "year": "1671",
+          "text": "Musa Khan Mahaldar builds the Toli Masjid on the Karwan road — small but architecturally exquisite, with stucco lotus medallions that are unmatched in Deccan mosque ornament.<cite data-ref=\"telangana-heritage-toli-masjid\"></cite>"
+        },
+        {
+          "year": "late 17th c.",
+          "text": "Aurangzeb completes and expands the Jama Masjid at Aurangabad, his southern capital; the Kali Masjid of Malik Ambar and the Hayat Bakshi Masjid in Hyderabad mark the spread of the Mughal-Deccan idiom across the plateau."
+        },
+        {
+          "year": "c. 1906",
+          "text": "Sir Vicar-ul-Umara of the Paigah family builds the Spanish (Begumpet) Mosque in Moorish-revival style after his return from Spain — with horseshoe arches found nowhere else in Hyderabad, it remains the most architecturally singular mosque of the Deccan."
+        },
+        {
+          "year": "Ongoing",
+          "text": "The more than twenty-two historic mosques catalogued here — from Gulbarga to Aurangabad, Bijapur to Hyderabad — still serve as working places of Friday prayer, marking six centuries of unbroken congregational life in the Dakhni heartland."
+        }
       ]
     }
   ],

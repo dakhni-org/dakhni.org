@@ -13,12 +13,33 @@
     {
       "type": "facts",
       "items": [
-        { "key": "Tradition", "value": "Third distinct Indo-Islamic school" },
-        { "key": "Dynasties", "value": "Bahmani · Qutb Shahi · Adil Shahi · Asaf Jahi" },
-        { "key": "Signature", "value": "Persian arch meets Vijayanagara bracketing" },
-        { "key": "Largest dome", "value": "Gol Gumbaz, Bijapur · 44 m · 1656", "ref": "asi-golgumbaz" },
-        { "key": "Foundation arch", "value": "Charminar · Hyderabad · 1591", "ref": "asi-charminar" },
-        { "key": "Necropolis", "value": "Qutb Shahi Tombs, Golconda", "ref": "unesco-qutbshahi" }
+        {
+          "key": "Tradition",
+          "value": "Third distinct Indo-Islamic school"
+        },
+        {
+          "key": "Dynasties",
+          "value": "Bahmani · Qutb Shahi · Adil Shahi · Asaf Jahi"
+        },
+        {
+          "key": "Signature",
+          "value": "Persian arch meets Vijayanagara bracketing"
+        },
+        {
+          "key": "Largest dome",
+          "value": "Gol Gumbaz, Bijapur · 44 m · 1656",
+          "ref": "asi-golgumbaz"
+        },
+        {
+          "key": "Foundation arch",
+          "value": "Charminar · Hyderabad · 1591",
+          "ref": "asi-charminar"
+        },
+        {
+          "key": "Necropolis",
+          "value": "Qutb Shahi Tombs, Golconda",
+          "ref": "unesco-qutbshahi"
+        }
       ]
     },
     {
@@ -30,16 +51,46 @@
       "eyebrow": "An Architectural Chronology",
       "title": "Monuments of the Deccan in dates",
       "items": [
-        { "year": "1163", "text": "Rudra Deva of the Kakatiyas raises the Thousand Pillar Temple at Hanamkonda — a triple-shrine on a star-shaped plan with intricate granite carving, among the finest pre-sultanate monuments on the Deccan plateau." },
-        { "year": "1213", "text": "The Ramappa Temple is completed at Palampet near Warangal under the Kakatiyas — basalt and sandstone with floating shikhara bricks; inscribed as a UNESCO World Heritage Site in 2021." },
-        { "year": "1347", "text": "The Bahmani Sultanate is founded at Gulbarga; the fort and its Jama Masjid (1367), roofed entirely with domes with no open courtyard, become the first monuments of the Deccani Indo-Islamic school.<cite data-ref=\"sherwani-joshi-1973\"></cite>" },
-        { "year": "1429", "text": "Ahmad Shah I Bahmani moves the capital to Bidar and raises the fort complex — the Rangin Mahal, Solah Khamba mosque, and the madrasa of Mahmud Gawan (1472) with its turquoise Iranian faience define Bahmani architecture at its height." },
-        { "year": "1518 onwards", "text": "The Qutb Shahis fortify Golconda — an 11-kilometre outer wall, eight gateways, and the acoustic Fateh Darwaza that carries a clap to the durbar hall half a kilometre above — across the sixteenth century." },
-        { "year": "1591", "text": "Muhammad Quli Qutb Shah founds Hyderabad and raises the Charminar at its centre — four 56-metre minarets, an upper-floor mosque, and a four-arched gateway that still anchors the old city.<cite data-ref=\"asi-charminar\"></cite>" },
-        { "year": "1614–1694", "text": "Mecca Masjid at Hyderabad is begun by Muhammad Quli Qutb Shah and completed under Aurangzeb — among the largest mosques of the subcontinent, with bricks said to have been brought from the precincts of the Ka'ba." },
-        { "year": "1626 & 1656", "text": "The Adil Shahis produce their greatest works at Bijapur: the Ibrahim Rauza (1626), called the Taj of the Deccan, and the Gol Gumbaz (1656) — a 44-metre unsupported dome with a whispering gallery that returns a whisper seven times.<cite data-ref=\"unesco-deccan-sultanate\"></cite>" },
-        { "year": "From 1869", "text": "The Asaf Jahi Nizams build Chowmahalla Palace (from 1869) and acquire Falaknuma Palace (1897); the High Court (1919) and other Indo-Saracenic public buildings complete the Nizam-era skyline of Hyderabad." },
-        { "year": "Legacy", "text": "Over thirty monuments spanning 800 years — from Kakatiya temples to Nizam palaces — make the Deccan plateau the most concentrated record of layered architectural patronage in the southern subcontinent." }
+        {
+          "year": "1163",
+          "text": "Rudra Deva of the Kakatiyas raises the Thousand Pillar Temple at Hanamkonda — a triple-shrine on a star-shaped plan with intricate granite carving, among the finest pre-sultanate monuments on the Deccan plateau."
+        },
+        {
+          "year": "1213",
+          "text": "The Ramappa Temple is completed at Palampet near Warangal under the Kakatiyas — basalt and sandstone with floating shikhara bricks; inscribed as a UNESCO World Heritage Site in 2021."
+        },
+        {
+          "year": "1347",
+          "text": "The Bahmani Sultanate is founded at Gulbarga; the fort and its Jama Masjid (1367), roofed entirely with domes with no open courtyard, become the first monuments of the Deccani Indo-Islamic school.<cite data-ref=\"sherwani-joshi-1973\"></cite>"
+        },
+        {
+          "year": "1429",
+          "text": "Ahmad Shah I Bahmani moves the capital to Bidar and raises the fort complex — the Rangin Mahal, Solah Khamba mosque, and the madrasa of Mahmud Gawan (1472) with its turquoise Iranian faience define Bahmani architecture at its height."
+        },
+        {
+          "year": "1518 onwards",
+          "text": "The Qutb Shahis fortify Golconda — an 11-kilometre outer wall, eight gateways, and the acoustic Fateh Darwaza that carries a clap to the durbar hall half a kilometre above — across the sixteenth century."
+        },
+        {
+          "year": "1591",
+          "text": "Muhammad Quli Qutb Shah founds Hyderabad and raises the Charminar at its centre — four 56-metre minarets, an upper-floor mosque, and a four-arched gateway that still anchors the old city.<cite data-ref=\"asi-charminar\"></cite>"
+        },
+        {
+          "year": "1614–1694",
+          "text": "Mecca Masjid at Hyderabad is begun by Muhammad Quli Qutb Shah and completed under Aurangzeb — among the largest mosques of the subcontinent, with bricks said to have been brought from the precincts of the Ka'ba."
+        },
+        {
+          "year": "1626 & 1656",
+          "text": "The Adil Shahis produce their greatest works at Bijapur: the Ibrahim Rauza (1626), called the Taj of the Deccan, and the Gol Gumbaz (1656) — a 44-metre unsupported dome with a whispering gallery that returns a whisper seven times.<cite data-ref=\"unesco-deccan-sultanate\"></cite>"
+        },
+        {
+          "year": "From 1869",
+          "text": "The Asaf Jahi Nizams build Chowmahalla Palace (from 1869) and acquire Falaknuma Palace (1897); the High Court (1919) and other Indo-Saracenic public buildings complete the Nizam-era skyline of Hyderabad."
+        },
+        {
+          "year": "Legacy",
+          "text": "Over thirty monuments spanning 800 years — from Kakatiya temples to Nizam palaces — make the Deccan plateau the most concentrated record of layered architectural patronage in the southern subcontinent."
+        }
       ]
     }
   ],

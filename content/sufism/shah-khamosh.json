@@ -55,15 +55,42 @@
       "eyebrow": "The Silent Saint of Hyderabad",
       "title": "Shah Khamosh in dates",
       "items": [
-        { "year": "Early 18th c.", "text": "Born a Sayyid; receives initiation in the combined Naqshbandi-Qadiri silsila, the path particularly characteristic of Hyderabad in this period." },
-        { "year": "c. 1724", "text": "Active in Hyderabad during the founding decades of the Asaf Jahi state; the city is establishing itself as the new political and spiritual capital of the Deccan under Asaf Jah I." },
-        { "year": "c. 1724–1740", "text": "Establishes his hospice in the old city near the Mecca Masjid; earns the epithet Khamosh — 'the silent one' — for his lifelong practice of avoiding all unnecessary speech." },
-        { "year": "c. 1724–1740", "text": "Teaches a small circle of disciples through writing rather than speech; observes an unusually austere regimen, restricting himself to a single late-evening meal and avoiding all worldly transactions." },
-        { "year": "c. 1724–1740", "text": "Asaf Jah I, the founder of Hyderabad State, visits him repeatedly for counsel; the Nizam's regard is said to have shaped his patronage of Hyderabad's Sufi institutions in the first generation of Asaf Jahi rule." },
-        { "year": "1740", "text": "Dies at Hyderabad (1153 AH) during the reign of Asaf Jah I; buried in the old city near the site of his hospice.<cite data-ref=\"sherwani-joshi-1973\"></cite>" },
-        { "year": "Post-1740", "text": "His tomb becomes one of the smaller but most carefully tended dargahs of Hyderabad; pilgrims observe the discipline of silence at the shrine in keeping with the saint's own practice." },
-        { "year": "Late 19th c.", "text": "Discourses transcribed by his disciples during his lifetime are collected and published in Urdu under the title Malfuzat-i-Khamosh, preserving his teachings for later generations." },
-        { "year": "Ongoing", "text": "The dargah remains an active site in the old city; Shah Khamosh's name is carried in the formal silsila records of the Hyderabad Naqshbandi-Qadiri tradition." }
+        {
+          "year": "Early 18th c.",
+          "text": "Born a Sayyid; receives initiation in the combined Naqshbandi-Qadiri silsila, the path particularly characteristic of Hyderabad in this period."
+        },
+        {
+          "year": "c. 1724",
+          "text": "Active in Hyderabad during the founding decades of the Asaf Jahi state; the city is establishing itself as the new political and spiritual capital of the Deccan under Asaf Jah I."
+        },
+        {
+          "year": "c. 1724–1740",
+          "text": "Establishes his hospice in the old city near the Mecca Masjid; earns the epithet Khamosh — 'the silent one' — for his lifelong practice of avoiding all unnecessary speech."
+        },
+        {
+          "year": "c. 1724–1740",
+          "text": "Teaches a small circle of disciples through writing rather than speech; observes an unusually austere regimen, restricting himself to a single late-evening meal and avoiding all worldly transactions."
+        },
+        {
+          "year": "c. 1724–1740",
+          "text": "Asaf Jah I, the founder of Hyderabad State, visits him repeatedly for counsel; the Nizam's regard is said to have shaped his patronage of Hyderabad's Sufi institutions in the first generation of Asaf Jahi rule."
+        },
+        {
+          "year": "1740",
+          "text": "Dies at Hyderabad (1153 AH) during the reign of Asaf Jah I; buried in the old city near the site of his hospice.<cite data-ref=\"sherwani-joshi-1973\"></cite>"
+        },
+        {
+          "year": "Post-1740",
+          "text": "His tomb becomes one of the smaller but most carefully tended dargahs of Hyderabad; pilgrims observe the discipline of silence at the shrine in keeping with the saint's own practice."
+        },
+        {
+          "year": "Late 19th c.",
+          "text": "Discourses transcribed by his disciples during his lifetime are collected and published in Urdu under the title Malfuzat-i-Khamosh, preserving his teachings for later generations."
+        },
+        {
+          "year": "Ongoing",
+          "text": "The dargah remains an active site in the old city; Shah Khamosh's name is carried in the formal silsila records of the Hyderabad Naqshbandi-Qadiri tradition."
+        }
       ]
     }
   ],

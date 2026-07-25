@@ -20,12 +20,34 @@
     {
       "type": "facts",
       "items": [
-        { "key": "Traditions", "value": "Hindustani classical & Qawwali" },
-        { "key": "Key figure", "value": "Ibrahim Adil Shah II (Bijapur)", "ref": "michell-zebrowski-1999" },
-        { "key": "Work", "value": "Kitab-i-Nauras", "ref": "michell-zebrowski-1999" },
-        { "key": "Court", "value": "Asaf Jahi Hyderabad" },
-        { "key": "Gharana", "value": "Hyderabadi", "ref": "leonard-1978" },
-        { "key": "Sufi centres", "value": "Gulbarga & Yousufain Sharif", "ref": "ernst-lawrence-2002" }
+        {
+          "key": "Traditions",
+          "value": "Hindustani classical & Qawwali"
+        },
+        {
+          "key": "Key figure",
+          "value": "Ibrahim Adil Shah II (Bijapur)",
+          "ref": "michell-zebrowski-1999"
+        },
+        {
+          "key": "Work",
+          "value": "Kitab-i-Nauras",
+          "ref": "michell-zebrowski-1999"
+        },
+        {
+          "key": "Court",
+          "value": "Asaf Jahi Hyderabad"
+        },
+        {
+          "key": "Gharana",
+          "value": "Hyderabadi",
+          "ref": "leonard-1978"
+        },
+        {
+          "key": "Sufi centres",
+          "value": "Gulbarga & Yousufain Sharif",
+          "ref": "ernst-lawrence-2002"
+        }
       ]
     },
     {
@@ -37,13 +59,34 @@
       "eyebrow": "A Musical History",
       "title": "Music in the Deccan in dates",
       "items": [
-        { "year": "c. 14th c.", "text": "Amir Khusrau's qawwali compositions enter the Chishti devotional repertoire and travel south with the silsila to Gulbarga and Bidar, laying the foundation of Sufi music in the Deccan.<cite data-ref=\"ernst-lawrence-2002\"></cite>" },
-        { "year": "1580–1627", "text": "Ibrahim Adil Shah II of Bijapur — the Jagat Guru — composes the Kitab-i-Nauras, a book of songs in Dakhni devoted to the nine ragas; he plays veena himself and addresses songs to both Allah and Saraswati.<cite data-ref=\"michell-zebrowski-1999\"></cite>" },
-        { "year": "c. 1591 onwards", "text": "The Qutb Shahi court at Hyderabad becomes a centre of Dakhni literary song; Muhammad Quli Qutb Shah's poetry is set to the raga structures of the Hindustani tradition.<cite data-ref=\"michell-zebrowski-1999\"></cite>" },
-        { "year": "c. 1724 onwards", "text": "The Asaf Jahi court at Hyderabad patronises Hindustani classical forms — khayal, tarana, thumri — alongside qawwali at the shrines; singers move freely between the royal durbar and the Sufi dargah.<cite data-ref=\"leonard-1978\"></cite>" },
-        { "year": "c. 18th–19th c.", "text": "Artists such as Tanras Khan, Mehboob Khan, and seven generations of the Hyderabadi gharana develop a distinctive southern school of Hindustani classical music under Asaf Jahi patronage.<cite data-ref=\"leonard-1978\"></cite>" },
-        { "year": "Ongoing (Gulbarga)", "text": "Every Thursday at the dargah of Khwaja Bandanawaz in Gulbarga, qawwals open the evening with verses by Amir Khusrau and close with verses by Wali Deccani.<cite data-ref=\"ernst-lawrence-2002\"></cite>" },
-        { "year": "Ongoing (Hyderabad)", "text": "The Thursday qawwali at Yousufain Sharif in Hyderabad continues the same unbroken line of devotional music running from the fourteenth century to the present day.<cite data-ref=\"ernst-lawrence-2002\"></cite>" }
+        {
+          "year": "c. 14th c.",
+          "text": "Amir Khusrau's qawwali compositions enter the Chishti devotional repertoire and travel south with the silsila to Gulbarga and Bidar, laying the foundation of Sufi music in the Deccan.<cite data-ref=\"ernst-lawrence-2002\"></cite>"
+        },
+        {
+          "year": "1580–1627",
+          "text": "Ibrahim Adil Shah II of Bijapur — the Jagat Guru — composes the Kitab-i-Nauras, a book of songs in Dakhni devoted to the nine ragas; he plays veena himself and addresses songs to both Allah and Saraswati.<cite data-ref=\"michell-zebrowski-1999\"></cite>"
+        },
+        {
+          "year": "c. 1591 onwards",
+          "text": "The Qutb Shahi court at Hyderabad becomes a centre of Dakhni literary song; Muhammad Quli Qutb Shah's poetry is set to the raga structures of the Hindustani tradition.<cite data-ref=\"michell-zebrowski-1999\"></cite>"
+        },
+        {
+          "year": "c. 1724 onwards",
+          "text": "The Asaf Jahi court at Hyderabad patronises Hindustani classical forms — khayal, tarana, thumri — alongside qawwali at the shrines; singers move freely between the royal durbar and the Sufi dargah.<cite data-ref=\"leonard-1978\"></cite>"
+        },
+        {
+          "year": "c. 18th–19th c.",
+          "text": "Artists such as Tanras Khan, Mehboob Khan, and seven generations of the Hyderabadi gharana develop a distinctive southern school of Hindustani classical music under Asaf Jahi patronage.<cite data-ref=\"leonard-1978\"></cite>"
+        },
+        {
+          "year": "Ongoing (Gulbarga)",
+          "text": "Every Thursday at the dargah of Khwaja Bandanawaz in Gulbarga, qawwals open the evening with verses by Amir Khusrau and close with verses by Wali Deccani.<cite data-ref=\"ernst-lawrence-2002\"></cite>"
+        },
+        {
+          "year": "Ongoing (Hyderabad)",
+          "text": "The Thursday qawwali at Yousufain Sharif in Hyderabad continues the same unbroken line of devotional music running from the fourteenth century to the present day.<cite data-ref=\"ernst-lawrence-2002\"></cite>"
+        }
       ]
     }
   ],

@@ -56,15 +56,42 @@
       "eyebrow": "Two Brothers, One Shrine",
       "title": "Yousufain Sharif in dates",
       "items": [
-        { "year": "c. 1668", "text": "Sayyid Shah Yousuf-uddin Husayni born (dates approximately 1668–1741); his younger brother Sayyid Shah Sharif-uddin Husayni follows; both descend from Shah Raju Qattal (d. c. 1632) and through him to the Qadiri masters of Baghdad.<cite data-ref=\"eaton-2005\"></cite>" },
-        { "year": "c. late 17th c.", "text": "Both brothers trained in the Qadiri-Sunni sciences: hadith, tafsir, Hanafi fiqh, and the Qadiri litanies characteristic of the Hyderabad branch of the order." },
-        { "year": "c. early 18th c.", "text": "Both brothers settle at Nampally in central Hyderabad and establish an open hospice; Yousuf-uddin teaches religious sciences and is reputed for the precision of his hadith narration." },
-        { "year": "c. early 18th c.", "text": "Sharif-uddin serves as the family's principal khalifa in Sufi matters; both are honoured during their lives as among the leading scholars and saintly figures of Hyderabad." },
-        { "year": "c. 1724", "text": "Asaf Jah I founds the Asaf Jahi state at Hyderabad; the brothers' hospice at Nampally becomes a spiritual anchor of the new capital." },
-        { "year": "c. 1741", "text": "Yousuf-uddin dies (approximately 1741); Sharif-uddin follows; both are buried in the same enclosure at Nampally at their own request.<cite data-ref=\"sherwani-joshi-1973\"></cite>" },
-        { "year": "Post-1741", "text": "The joint tomb grows over the next two centuries into the most-visited Sufi shrine of Hyderabad, surpassing even the older Qadiri tombs of Shah Raju at Misri Gunj." },
-        { "year": "19th c.", "text": "The dargah of Yousufain Sharif at Nampally is substantially rebuilt and developed during the reign of the sixth Nizam Mahbub Ali Khan." },
-        { "year": "Ongoing", "text": "The dargah remains the principal site of Hyderabad's qawwali tradition; the annual 'urs on the brothers' joint death-anniversary draws pilgrims and scholars from across the region." }
+        {
+          "year": "c. 1668",
+          "text": "Sayyid Shah Yousuf-uddin Husayni born (dates approximately 1668–1741); his younger brother Sayyid Shah Sharif-uddin Husayni follows; both descend from Shah Raju Qattal (d. c. 1632) and through him to the Qadiri masters of Baghdad.<cite data-ref=\"eaton-2005\"></cite>"
+        },
+        {
+          "year": "c. late 17th c.",
+          "text": "Both brothers trained in the Qadiri-Sunni sciences: hadith, tafsir, Hanafi fiqh, and the Qadiri litanies characteristic of the Hyderabad branch of the order."
+        },
+        {
+          "year": "c. early 18th c.",
+          "text": "Both brothers settle at Nampally in central Hyderabad and establish an open hospice; Yousuf-uddin teaches religious sciences and is reputed for the precision of his hadith narration."
+        },
+        {
+          "year": "c. early 18th c.",
+          "text": "Sharif-uddin serves as the family's principal khalifa in Sufi matters; both are honoured during their lives as among the leading scholars and saintly figures of Hyderabad."
+        },
+        {
+          "year": "c. 1724",
+          "text": "Asaf Jah I founds the Asaf Jahi state at Hyderabad; the brothers' hospice at Nampally becomes a spiritual anchor of the new capital."
+        },
+        {
+          "year": "c. 1741",
+          "text": "Yousuf-uddin dies (approximately 1741); Sharif-uddin follows; both are buried in the same enclosure at Nampally at their own request.<cite data-ref=\"sherwani-joshi-1973\"></cite>"
+        },
+        {
+          "year": "Post-1741",
+          "text": "The joint tomb grows over the next two centuries into the most-visited Sufi shrine of Hyderabad, surpassing even the older Qadiri tombs of Shah Raju at Misri Gunj."
+        },
+        {
+          "year": "19th c.",
+          "text": "The dargah of Yousufain Sharif at Nampally is substantially rebuilt and developed during the reign of the sixth Nizam Mahbub Ali Khan."
+        },
+        {
+          "year": "Ongoing",
+          "text": "The dargah remains the principal site of Hyderabad's qawwali tradition; the annual 'urs on the brothers' joint death-anniversary draws pilgrims and scholars from across the region."
+        }
       ]
     }
   ],
