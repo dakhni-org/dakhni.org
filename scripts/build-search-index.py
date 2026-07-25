@@ -34,7 +34,15 @@ STRIP_RE = [
 ]
 TAG_RE = re.compile(r"<[^>]+>")
 WS_RE = re.compile(r"\s+")
-SPACE_BEFORE_PUNCT_RE = re.compile(r"\s+([,.;:!?)'’])")
+SPACE_BEFORE_PUNCT_RE = re.compile(r"\s+([,.;:!?)])")
+# Only a possessive/contraction suffix, never an opening quotation mark: a
+# tag stripped to a space right before a *suffix* like "'s" or "'t" leaves a
+# stray space that was never actually rendered ("Hyderabad</a>'s" ->
+# "Hyderabad 's"), but a stray-looking space before an apostrophe used to
+# *open* a quoted phrase ("epithet 'Taj of the Deccan'") is a real word
+# boundary that must be left alone -- the two are only distinguishable by
+# checking what follows the apostrophe.
+SPACE_BEFORE_SUFFIX_RE = re.compile(r"\s+(['’](?:s|t|re|ll|ve|d|m|em)\b)", re.I)
 
 
 def body_text(src):
@@ -50,7 +58,8 @@ def body_text(src):
     # link ending right at a comma: "...Hyderabad</a>, Bidar...") leaves a
     # stray space before the punctuation mark that was never actually
     # rendered on the page.
-    return SPACE_BEFORE_PUNCT_RE.sub(r"\1", text)
+    text = SPACE_BEFORE_PUNCT_RE.sub(r"\1", text)
+    return SPACE_BEFORE_SUFFIX_RE.sub(r"\1", text)
 
 SECTION_NAMES = {
     "heritage": "Heritage",
