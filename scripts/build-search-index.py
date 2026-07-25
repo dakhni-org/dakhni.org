@@ -34,7 +34,7 @@ STRIP_RE = [
 ]
 TAG_RE = re.compile(r"<[^>]+>")
 WS_RE = re.compile(r"\s+")
-SPACE_BEFORE_PUNCT_RE = re.compile(r"\s+([,.;:!?)])")
+SPACE_BEFORE_PUNCT_RE = re.compile(r"\s+([,.;:!?)'’])")
 
 
 def body_text(src):
