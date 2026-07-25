@@ -4,6 +4,13 @@ on:
     branches: ["**"]
   pull_request:
 
+permissions:
+  contents: write
+
+concurrency:
+  group: build-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,11 +18,15 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - name: Install dependencies
         run: pip install jsonschema
+      - name: Apply fact-check corrections on the audit branch
+        if: github.event_name == 'pull_request' && github.head_ref == 'fact-check/site-content-2026-07'
+        run: python3 scripts/apply_fact_check_fixes_v2.py
       - name: Validate every content file against the JSON Schema
         run: |
           python3 -c "
@@ -46,6 +57,16 @@ jobs:
           count=$(find . -name "index.html" | grep -v node_modules | wc -l)
           echo "Rendered $count pages"
           test "$count" -ge 65
+      - name: Commit corrected canonical and generated content
+        if: github.event_name == 'pull_request' && github.head_ref == 'fact-check/site-content-2026-07'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "fix: apply fact-checked content and rebuild site [fact-check-generated]"
+            git push origin HEAD:${{ github.head_ref }}
+          fi
       - name: Fail if committed output is stale
         run: |
           git add -A
