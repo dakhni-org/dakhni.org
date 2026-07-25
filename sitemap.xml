@@ -1,82 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url><loc>https://dakhni.org/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://dakhni.org/about/</loc><lastmod>2026-05-24</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
-
-  <!-- Heritage -->
-  <url><loc>https://dakhni.org/heritage/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://dakhni.org/heritage/language-poetry/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/heritage/cuisine/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/heritage/music/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/heritage/architecture/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/heritage/crafts/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/heritage/sufi-tradition/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/heritage/festivals/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-
-  <!-- Dynasties -->
-  <url><loc>https://dakhni.org/dynasties/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://dakhni.org/dynasties/bahmani/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/dynasties/qutb-shahi/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/dynasties/bidar-barid/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/dynasties/adil-shahi/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/dynasties/asaf-jahi/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-
-  <!-- Language -->
-  <url><loc>https://dakhni.org/language/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://dakhni.org/language/dakhni/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/language/urdu/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/language/faarsi/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/language/telugu/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-
-  <!-- Sufism -->
-  <url><loc>https://dakhni.org/sufism/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://dakhni.org/sufism/burhanuddin/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/sufism/sharfuddin/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/sufism/bandanawaz/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/sufism/hussain-shah-wali/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/sufism/shah-raju/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/sufism/yousufain/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/sufism/shah-khamosh/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-
-  <!-- Cities -->
-  <url><loc>https://dakhni.org/cities/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://dakhni.org/cities/hyderabad/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/cities/bidar/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/cities/gulbarga/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/cities/bijapur/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/cities/aurangabad/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/cities/golconda/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/cities/warangal/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/cities/nanded/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/cities/raichur/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://dakhni.org/cities/nizamabad/</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-
-  <!-- Landmarks -->
-  <url><loc>https://dakhni.org/landmarks/</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://dakhni.org/landmarks/monuments/</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://dakhni.org/landmarks/institutions/</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://dakhni.org/landmarks/institutions/anwar-ul-uloom-college/</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://dakhni.org/landmarks/institutions/city-college/</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://dakhni.org/landmarks/institutions/college-of-engineering/</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://dakhni.org/landmarks/institutions/hyderabad-public-school/</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://dakhni.org/landmarks/institutions/jamia-nizamia/</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://dakhni.org/landmarks/institutions/mahbub-college/</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://dakhni.org/landmarks/institutions/mahbubia-girls-school/</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://dakhni.org/landmarks/institutions/mahmud-gawan-madrasa/</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://dakhni.org/landmarks/institutions/nizam-college/</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://dakhni.org/landmarks/institutions/nizamia-tibbi-college/</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://dakhni.org/landmarks/institutions/osmania-general-hospital/</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://dakhni.org/landmarks/institutions/osmania-medical-college/</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://dakhni.org/landmarks/institutions/osmania-university/</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://dakhni.org/landmarks/institutions/salar-jung-museum/</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://dakhni.org/landmarks/institutions/state-central-library/</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-
-  <!-- Sacred Sites -->
-  <url><loc>https://dakhni.org/sacred-sites/</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://dakhni.org/sacred-sites/masjids/</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://dakhni.org/sacred-sites/dargahs/</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://dakhni.org/sacred-sites/temples/</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://dakhni.org/sacred-sites/religious-structures/</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
+  <url><loc>https://dakhni.org/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://dakhni.org/about/</loc><lastmod>2026-07-25</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://dakhni.org/cities/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://dakhni.org/cities/aurangabad/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/cities/bidar/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/cities/bijapur/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/cities/golconda/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/cities/gulbarga/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/cities/hyderabad/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/cities/nanded/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/cities/nizamabad/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/cities/raichur/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/cities/warangal/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/dynasties/</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://dakhni.org/dynasties/adil-shahi/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/dynasties/asaf-jahi/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/dynasties/bahmani/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/dynasties/bidar-barid/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/dynasties/qutb-shahi/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/glossary/</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://dakhni.org/heritage/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://dakhni.org/heritage/architecture/</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/heritage/crafts/</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/heritage/cuisine/</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/heritage/festivals/</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/heritage/language-poetry/</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/heritage/music/</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/heritage/sufi-tradition/</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/landmarks/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://dakhni.org/landmarks/institutions/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://dakhni.org/landmarks/institutions/anwar-ul-uloom-college/</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/landmarks/institutions/city-college/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/landmarks/institutions/college-of-engineering/</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/landmarks/institutions/hyderabad-public-school/</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/landmarks/institutions/jamia-nizamia/</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/landmarks/institutions/mahbub-college/</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/landmarks/institutions/mahbubia-girls-school/</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/landmarks/institutions/mahmud-gawan-madrasa/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/landmarks/institutions/nizam-college/</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/landmarks/institutions/nizamia-tibbi-college/</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/landmarks/institutions/osmania-general-hospital/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/landmarks/institutions/osmania-medical-college/</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/landmarks/institutions/osmania-university/</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/landmarks/institutions/salar-jung-museum/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/landmarks/institutions/state-central-library/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/landmarks/monuments/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://dakhni.org/language/</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://dakhni.org/language/dakhni/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/language/faarsi/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/language/telugu/</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/language/urdu/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/sacred-sites/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://dakhni.org/sacred-sites/dargahs/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/sacred-sites/masjids/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/sacred-sites/religious-structures/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/sacred-sites/temples/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/sufism/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://dakhni.org/sufism/bandanawaz/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/sufism/burhanuddin/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/sufism/hussain-shah-wali/</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/sufism/shah-khamosh/</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/sufism/shah-raju/</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/sufism/sharfuddin/</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dakhni.org/sufism/silsila/</loc><lastmod>2026-07-25</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://dakhni.org/sufism/yousufain/</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
