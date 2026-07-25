@@ -3,7 +3,7 @@
   "url": "/",
   "section": "Home",
   "title": "Home",
-  "description": "Dakhni.org is the digital home of Deccan heritage — six centuries of Bahmani, Qutb Shahi, Adil Shahi and Asaf Jahi history, Dakhni, cuisine and Sufi poetry.",
+  "description": "Dakhni.org — the digital archive of Deccan and Hyderabad history: the Bahmani, Qutb Shahi, Adil Shahi and Asaf Jahi dynasties, Dakhni Urdu, and Sufi heritage.",
   "dedication": "In memory of the Asaf Jahi dynasty",
   "level": "home",
   "hero_html": "<section class=\"hero\" id=\"home\">\n  <div class=\"hero-inner\">\n    <img class=\"seal-img\" src=\"/assets/dakhni-org-logo-256.png\" alt=\"Dakhni.org emblem — a map of the Deccan plateau framing the Shahada in Persian calligraphy\" width=\"120\" height=\"120\"/>\n    <p class=\"hero-urdu\">دکنی ثقافت کا دروازہ</p>\n    <div class=\"hero-rule\"></div>\n    <h1 class=\"hero-title\">DAKHNI.ORG</h1>\n    <p class=\"hero-subtitle\">The Living Heritage of the Deccan Sultanates</p>\n    <p class=\"hero-desc\">Where the tongue of the Qutb Shahis breathes, where Hyderabadi poetry sings, and where six centuries of Deccan civilisation live on.</p>\n    <div class=\"hero-btns\">\n      <a href=\"#heritage\" class=\"btn-primary\">Explore Heritage</a>\n      <a href=\"#quiz\" class=\"btn-secondary\">Deccan Trivia →</a>\n    </div>\n  </div>\n</section>",
