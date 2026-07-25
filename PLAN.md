@@ -101,7 +101,20 @@ e.g. `content/heritage/bidriware.json` → `/heritage/bidriware/` — **not** ne
 `build_page_maps` in `scripts/build_site.py` (~line 544) classifies any URL that is another
 page's parent as a hub, and hub pages are excluded from their own parent's Prev/Next sibling
 group. Nesting a leaf under `crafts.json`'s URL would turn `/heritage/crafts/` into a hub and
-silently drop it out of the `/heritage/` topic navigator — flat URLs avoid this entirely.
+silently drop it out of the `/heritage/` topic navigator — flat URLs avoid that specific bug.
+
+**But flat URLs alone are not enough:** `build_page_maps` groups *every* non-hub child of a
+parent into one shared Prev/Next sibling group by `parent_url`, with no notion of tier. Left
+alone, these 6 sub-topic pages (default `sort_order` 999, same tier as pillars in the sort key)
+would join the 7 pillars' `/heritage/` Prev/Next sequence directly — e.g. `festivals.json`
+(`sort_order` 70, currently last) would gain "Bidriware" as its Next, mixing sub-topics into
+the pillar tour. Before creating the first leaf page, add an explicit opt-out so sub-topic
+pages join neither their own subnav nor their parent's group:
+  1. In `schemas/page.schema.json`, add an optional `"no_subnav": {"type": "boolean"}` property.
+  2. In `build_page_maps` (`scripts/build_site.py`), change the skip condition from
+     `if url in hub_urls: continue` to `if url in hub_urls or page.get("no_subnav"): continue`.
+  3. Set `"no_subnav": true` on each of the 6 new leaf pages below.
+Verify afterward that none of the 7 pillar pages' rendered Prev/Next links point at a sub-topic.
 
 **Discovery:** do not add a `cards` block anywhere for these — `render_blocks` emits
 `content-cards`/`cards-grid`/`content-card` markup that `assets/site.css` does not style (this
@@ -117,9 +130,10 @@ needed either (that dropdown lists the 7 pillars, not their sub-topics).
 
 For each item below: create the leaf page with `facts` + `html` blocks (timeline optional —
 only if there are enough genuinely dated milestones), citing sources the way other leaf pages
-do; declare the page's own name in its `link_terms`; then rebuild and confirm (a) zero
-`link_terms` collisions, (b) the parent topic page's existing mention now renders as an
-`xref-link` to the new page, and (c) the new URL appears in `sitemap.xml`.
+do; declare the page's own name in its `link_terms`; set `"no_subnav": true`; then rebuild and
+confirm (a) zero `link_terms` collisions, (b) the parent topic page's existing mention now
+renders as an `xref-link` to the new page, (c) the new URL appears in `sitemap.xml`, and
+(d) none of the 7 pillar pages' Prev/Next now points at a sub-topic page.
 
 - [ ] Create `content/heritage/bidriware.json` — the silver-inlaid blackened-alloy metalwork of Bidar, c. 1500–present
 - [ ] Create `content/heritage/paithani.json` — the tapestry-bordered silk sari woven at Paithan, near Aurangabad
