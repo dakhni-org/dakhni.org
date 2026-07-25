@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: rebuild-${{ github.event.pull_request.number || github.ref }}
+  group: cleanup-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -24,6 +24,44 @@ jobs:
           python-version: "3.12"
       - name: Install dependencies
         run: pip install jsonschema
+      - name: Remove migration-only empty references
+        if: github.event_name == 'pull_request' && github.head_ref == 'fact-check/site-content-2026-07'
+        run: |
+          python3 - <<'PY'
+          import json
+          import subprocess
+          from pathlib import Path
+
+          restored = 0
+          cleaned = 0
+          for path in sorted(Path('content').rglob('*.json')):
+              rel = path.as_posix()
+              current_text = path.read_text(encoding='utf-8')
+              current = json.loads(current_text)
+              try:
+                  base_text = subprocess.check_output(
+                      ['git', 'show', f'origin/main:{rel}'],
+                      text=True,
+                      encoding='utf-8',
+                  )
+              except subprocess.CalledProcessError:
+                  continue
+              base = json.loads(base_text)
+
+              if current.get('references') == [] and 'references' not in base:
+                  del current['references']
+                  if current == base:
+                      path.write_text(base_text, encoding='utf-8')
+                      restored += 1
+                  else:
+                      path.write_text(
+                          json.dumps(current, ensure_ascii=False, indent=2) + '\n',
+                          encoding='utf-8',
+                      )
+                      cleaned += 1
+
+          print(f'Restored {restored} unchanged files and cleaned {cleaned} corrected files.')
+          PY
       - name: Validate every content file against the JSON Schema
         run: |
           python3 -c "
@@ -54,14 +92,14 @@ jobs:
           count=$(find . -name "index.html" | grep -v node_modules | wc -l)
           echo "Rendered $count pages"
           test "$count" -ge 65
-      - name: Commit final generated output
+      - name: Commit cleaned fact-check output
         if: github.event_name == 'pull_request' && github.head_ref == 'fact-check/site-content-2026-07'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           if ! git diff --cached --quiet; then
-            git commit -m "build: sync fact-check generated output [fact-check-generated]"
+            git commit -m "chore: remove fact-check migration noise [fact-check-generated]"
             git push origin HEAD:${{ github.head_ref }}
           fi
       - name: Fail if committed output is stale
