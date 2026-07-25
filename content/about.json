@@ -5,6 +5,12 @@
   "title": "About",
   "description": "About Dakhni.org — a digital archive of Deccan heritage: dynasties, language, Sufism, cuisine, crafts and cities of the Deccan plateau.",
   "dedication": "In memory of the Asaf Jahi dynasty",
+  "tags": [
+    "Dakhni.org",
+    "About",
+    "Deccan Heritage",
+    "Cultural Project"
+  ],
   "eyebrow": "About the Project",
   "urdu": "ہمارے بارے میں",
   "title_html": "About <em>Dakhni.org</em>",

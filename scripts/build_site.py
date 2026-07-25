@@ -131,6 +131,10 @@ def validate_page(page: Dict[str, Any], source: str) -> List[str]:
         val = page["extra_scripts"]
         if not isinstance(val, list) or any(not isinstance(x, str) for x in val):
             errors.append(f"{source}: field 'extra_scripts' must be an array of strings")
+    if "tags" in page:
+        val = page["tags"]
+        if not isinstance(val, list) or any(not isinstance(x, str) for x in val):
+            errors.append(f"{source}: field 'tags' must be an array of strings")
     url = page.get("url")
     if isinstance(url, str):
         if not url.startswith("/"):
@@ -442,6 +446,8 @@ def head(page, url_to_page: Dict[str, Any]):
     desc = page.get("description", "")
     cover = page.get("cover") or ""
     og_img = ("https://dakhni.org" + cover) if cover.startswith("/") else (cover or "https://dakhni.org/assets/icon-512.png")
+    page_tags = page.get("tags", [])
+    all_keywords = KEYWORDS + (", " + ", ".join(page_tags) if page_tags else "")
     jsonld = [] if url == "/" else [breadcrumb_jsonld(page, url_to_page)]
     if url == "/":
         site_ld = {
@@ -480,7 +486,7 @@ def head(page, url_to_page: Dict[str, Any]):
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"/>
   <link rel="manifest" href="/assets/site.webmanifest"/>
   <meta name="description" content="{esc(desc)}"/>
-  <meta name="keywords" content="{KEYWORDS}"/>
+  <meta name="keywords" content="{esc(all_keywords)}"/>
   <meta name="author" content="Dakhni.org"/>
   <meta name="robots" content="index, follow, max-image-preview:large"/>
   <meta name="theme-color" content="#1A1814"/>

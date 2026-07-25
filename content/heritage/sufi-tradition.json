@@ -6,6 +6,12 @@
   "description": "The Sufi tradition of the Deccan — Chishti, Qadiri and Suhrawardi orders, dargahs that have drawn pilgrims for six centuries.",
   "dedication": "In memory of the Asaf Jahi dynasty",
   "sort_order": 60,
+  "tags": [
+    "Sufism",
+    "Dargah",
+    "Urs",
+    "Qawwali"
+  ],
   "eyebrow": "Pillars of Dakhni Heritage",
   "title_html": "The path the <em>court</em> followed",
   "subtitle": "Chishti, Qadiri and Suhrawardi orders in the Deccan plateau",
