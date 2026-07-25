@@ -723,6 +723,8 @@ body.ds-search-open{overflow:hidden;}
 .tl-item::before{content:'';position:absolute;left:-5px;top:1.25rem;width:9px;height:9px;background:var(--gold);transform:rotate(45deg);}
 .tl-year{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--gold-deep);font-size:1.05rem;letter-spacing:.04em;display:inline-block;margin-right:.7rem;}
 .tl-text{font-family:'EB Garamond',Georgia,serif;color:var(--ink-soft);font-size:1rem;line-height:1.65;}
+.xref-link{color:inherit;text-decoration:none;border-bottom:1px dotted var(--ink-faint);transition:color .2s,border-color .2s;}
+.xref-link:hover{color:var(--gold-deep);border-bottom:1px solid var(--gold-deep);}
 .ref-mark{font-size:.68em;line-height:0;}
 .ref-mark a,.ref-mark span{color:var(--ink-faint);text-decoration:none;padding:0 1px;}
 .ref-mark a:hover{color:var(--gold-deep);}

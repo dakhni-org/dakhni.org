@@ -34,6 +34,7 @@ STRIP_RE = [
 ]
 TAG_RE = re.compile(r"<[^>]+>")
 WS_RE = re.compile(r"\s+")
+SPACE_BEFORE_PUNCT_RE = re.compile(r"\s+([,.;:!?)])")
 
 
 def body_text(src):
@@ -44,7 +45,12 @@ def body_text(src):
     for rx in STRIP_RE:
         src = rx.sub(" ", src)
     src = TAG_RE.sub(" ", src)
-    return WS_RE.sub(" ", html.unescape(src)).strip()
+    text = WS_RE.sub(" ", html.unescape(src)).strip()
+    # A tag stripped to a space right before punctuation (e.g. an inline
+    # link ending right at a comma: "...Hyderabad</a>, Bidar...") leaves a
+    # stray space before the punctuation mark that was never actually
+    # rendered on the page.
+    return SPACE_BEFORE_PUNCT_RE.sub(r"\1", text)
 
 SECTION_NAMES = {
     "heritage": "Heritage",

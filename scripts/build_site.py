@@ -151,6 +151,10 @@ def validate_page(page: Dict[str, Any], source: str) -> List[str]:
                     errors.append(f"{source}: references[{i}].text must be a non-empty string")
                 if "url" in ref and not isinstance(ref["url"], str):
                     errors.append(f"{source}: references[{i}].url must be a string")
+    if "link_terms" in page:
+        terms = page["link_terms"]
+        if not isinstance(terms, list) or any(not isinstance(t, str) or not t for t in terms):
+            errors.append(f"{source}: field 'link_terms' must be an array of non-empty strings")
     if "extra_scripts" in page:
         val = page["extra_scripts"]
         if not isinstance(val, list) or any(not isinstance(x, str) for x in val):
@@ -307,6 +311,78 @@ def render_citations(body_html: str, references: Optional[List[Dict[str, Any]]])
         "</details></section>"
     )
     return new_html, refs_html
+
+
+# --- Cross-links -------------------------------------------------------
+# Any page can declare `link_terms`: exact-phrase names for itself (its own
+# title and any natural variants -- "Bahmani", "the Bahmanis", etc). Any of
+# those phrases found as plain text on another page becomes a subtle link
+# to this page, the way Wikipedia links a topic once per article -- first
+# occurrence only, never linking a page to itself, never nesting inside an
+# existing <a> or a heading.
+LINK_SKIP_TAGS = {"a", "h1", "h2", "h3", "h4", "script", "style"}
+_LINK_TAG_SPLIT_RE = re.compile(r'(<[^>]+>)')
+_LINK_TAG_NAME_RE = re.compile(r'^</?\s*([a-zA-Z0-9]+)')
+
+
+def collect_link_terms(pages: List[Dict[str, Any]]) -> "tuple[Dict[str, str], List[str]]":
+    term_to_url: Dict[str, str] = {}
+    errors: List[str] = []
+    for page in pages:
+        terms = page.get("link_terms")
+        url = page.get("url")
+        if not isinstance(terms, list) or not url:
+            continue
+        for term in terms:
+            if not isinstance(term, str) or not term:
+                continue
+            existing = term_to_url.get(term)
+            if existing is not None and existing != url:
+                errors.append(
+                    f"link_terms conflict: '{term}' is claimed by both {existing} and {url}"
+                )
+                continue
+            term_to_url[term] = url
+    return term_to_url, errors
+
+
+def render_crosslinks(body_html: str, current_url: str, term_to_url: Dict[str, str]) -> str:
+    candidates = {t: u for t, u in term_to_url.items() if u != current_url}
+    if not candidates:
+        return body_html
+    # Longest term first, so a declared multi-word phrase wins over a
+    # shorter one that happens to be its prefix (e.g. "Qutb Shahi Dynasty"
+    # before "Qutb Shahi").
+    terms_sorted = sorted(candidates, key=len, reverse=True)
+    pattern = re.compile(r"\b(?:" + "|".join(re.escape(t) for t in terms_sorted) + r")\b")
+
+    segments = _LINK_TAG_SPLIT_RE.split(body_html)
+    linked_targets: set = set()
+    skip_depth = 0
+    out: List[str] = []
+    for seg in segments:
+        if seg.startswith("<") and seg.endswith(">"):
+            m = _LINK_TAG_NAME_RE.match(seg)
+            name = m.group(1).lower() if m else ""
+            if name in LINK_SKIP_TAGS:
+                skip_depth += -1 if seg.startswith("</") else 1
+                skip_depth = max(skip_depth, 0)
+            out.append(seg)
+            continue
+        if skip_depth > 0 or not seg:
+            out.append(seg)
+            continue
+
+        def replace(m: "re.Match[str]") -> str:
+            term = m.group(0)
+            url = candidates[term]
+            if url in linked_targets:
+                return term
+            linked_targets.add(url)
+            return f'<a class="xref-link" href="{esc(url)}">{term}</a>'
+
+        out.append(pattern.sub(replace, seg))
+    return "".join(out)
 
 
 def validate_nav(nav_data: Dict[str, Any]) -> List[str]:
@@ -693,9 +769,10 @@ def hero(page):
     return "\n".join(parts)
 
 
-def render(page, nav_html, url_to_page, subnav_map):
+def render(page, nav_html, url_to_page, subnav_map, term_to_url=None):
     body = render_blocks(page)
     body, refs_html = render_citations(body, page.get("references"))
+    body = render_crosslinks(body, page.get("url", ""), term_to_url or {})
     crumb = page.get("crumb_html") or render_auto_crumb(page, url_to_page)
     subnav = page.get("subnav_html") or render_auto_subnav(page, subnav_map, url_to_page)
     out = [head(page, url_to_page), "<body>", nav_html]
@@ -812,6 +889,8 @@ def main():
         rel_source = os.path.relpath(jf, ROOT)
         errors.extend(validate_page(page, rel_source))
         errors.extend(check_citations(page, rel_source))
+    term_to_url, link_term_errors = collect_link_terms(pages)
+    errors.extend(link_term_errors)
     if errors:
         print("Content validation failed:")
         for err in errors:
@@ -824,7 +903,7 @@ def main():
         outdir = os.path.join(ROOT, rel) if rel else ROOT
         os.makedirs(outdir, exist_ok=True)
         with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as fh:
-            fh.write(render(page, nav_html, url_to_page, subnav_map))
+            fh.write(render(page, nav_html, url_to_page, subnav_map, term_to_url))
         n += 1
     write_sitemap(pages, page_files)
     print(f"Rendered {n} pages")
