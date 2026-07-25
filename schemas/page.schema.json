@@ -53,6 +53,11 @@
           "url": {"type": "string"}
         }
       }
+    },
+    "link_terms": {
+      "type": "array",
+      "description": "Exact-phrase names for this page (its title and natural variants). Any of these phrases found as plain text on another page is auto-linked to this page's url, once per page.",
+      "items": {"type": "string"}
     }
   },
   "additionalProperties": false
