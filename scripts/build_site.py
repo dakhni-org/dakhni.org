@@ -201,6 +201,10 @@ def _normalize_ref_ids(val: Any) -> List[str]:
 
 def collect_cite_ids(page: Dict[str, Any]) -> List[str]:
     ids: List[str] = []
+    if not isinstance(page.get("blocks"), list):
+        for m in CITE_RE.findall(page.get("body_html", "") or ""):
+            ids.extend(m.split())
+        return ids
     for block in page.get("blocks") or []:
         if not isinstance(block, dict):
             continue
