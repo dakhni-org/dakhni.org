@@ -228,7 +228,10 @@ def collect_cite_ids(page: Dict[str, Any]) -> List[str]:
 
 def check_citations(page: Dict[str, Any], source: str) -> List[str]:
     errors: List[str] = []
-    declared = {r["id"] for r in page.get("references", []) if isinstance(r, dict) and isinstance(r.get("id"), str)}
+    refs = page.get("references")
+    if not isinstance(refs, list):
+        refs = []
+    declared = {r["id"] for r in refs if isinstance(r, dict) and isinstance(r.get("id"), str)}
     cited = set(collect_cite_ids(page))
     for rid in sorted(cited - declared):
         errors.append(f"{source}: cites reference '{rid}' which is not declared in 'references'")
@@ -699,6 +702,8 @@ def render(page, nav_html, url_to_page, subnav_map):
         out.append(page.get("hero_html", ""))
         out.append('<main class="page-main page-main--home">')
         out.append(body)
+        if refs_html:
+            out.append(refs_html)
         out.append('</main>')
     else:
         out.append(hero(page))
