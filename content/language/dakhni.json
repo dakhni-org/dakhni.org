@@ -16,6 +16,9 @@
   "urdu": "دَکَّنی",
   "title_html": "Dakhni",
   "subtitle": "A literature older than its descendants — the tongue born in the bazaar.",
+  "link_terms": [
+    "Dakhni"
+  ],
   "blocks": [
     {
       "type": "facts",

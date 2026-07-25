@@ -14,6 +14,9 @@
   "eyebrow": "Institutions of the Deccan",
   "title_html": "Jamia Nizamia",
   "subtitle": "Hyderabad · Founded 1876",
+  "link_terms": [
+    "Jamia Nizamia"
+  ],
   "blocks": [
     {
       "type": "facts",

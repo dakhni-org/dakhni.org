@@ -15,6 +15,9 @@
   "eyebrow": "Institutions of the Deccan",
   "title_html": "College of Engineering",
   "subtitle": "Hyderabad · Founded 1929 · Now JNTU",
+  "link_terms": [
+    "College of Engineering"
+  ],
   "blocks": [
     {
       "type": "facts",

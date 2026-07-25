@@ -15,6 +15,9 @@
   "eyebrow": "Institutions of the Deccan",
   "title_html": "Osmania University",
   "subtitle": "Hyderabad · Founded 1918",
+  "link_terms": [
+    "Osmania University"
+  ],
   "blocks": [
     {
       "type": "facts",

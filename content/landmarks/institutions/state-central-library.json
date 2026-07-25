@@ -15,6 +15,10 @@
   "eyebrow": "Institutions of the Deccan",
   "title_html": "State Central Library (Asafia)",
   "subtitle": "Hyderabad · Founded 1891",
+  "link_terms": [
+    "State Central Library",
+    "Asafia Library"
+  ],
   "blocks": [
     {
       "type": "facts",

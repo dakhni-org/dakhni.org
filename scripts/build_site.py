@@ -354,7 +354,13 @@ def render_crosslinks(body_html: str, current_url: str, term_to_url: Dict[str, s
     # shorter one that happens to be its prefix (e.g. "Qutb Shahi Dynasty"
     # before "Qutb Shahi").
     terms_sorted = sorted(candidates, key=len, reverse=True)
-    pattern = re.compile(r"\b(?:" + "|".join(re.escape(t) for t in terms_sorted) + r")\b")
+    # Negative lookahead excludes domain-like continuations (e.g. the site's
+    # own name "Dakhni.org") -- a real word boundary is never immediately
+    # followed by "." + a letter with no space, so this never touches
+    # ordinary sentence-ending punctuation.
+    pattern = re.compile(
+        r"\b(?:" + "|".join(re.escape(t) for t in terms_sorted) + r")\b(?!\.[A-Za-z])"
+    )
 
     segments = _LINK_TAG_SPLIT_RE.split(body_html)
     linked_targets: set = set()
