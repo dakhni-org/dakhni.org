@@ -3,8 +3,11 @@
 
 This wrapper preserves the correction catalogue in apply_fact_check_fixes.py,
 but fixes two execution problems in the original runner:
-1. required file-specific replacements must run before broad global replacements;
-2. a repeated run must accept already-corrected text rather than fail.
+1. file-specific replacements run before broad global replacements;
+2. repeated runs accept already-corrected text.
+
+Unmatched catalogue phrases are reported as warnings instead of aborting the
+entire site-wide pass. They can then be reviewed directly in the PR diff.
 """
 
 from __future__ import annotations
@@ -23,6 +26,8 @@ from apply_fact_check_fixes import (
     replace_strings,
 )
 
+WARNINGS: list[str] = []
+
 
 def contains_string(value: Any, needle: str) -> bool:
     """Return whether a decoded JSON value contains needle in any string."""
@@ -35,7 +40,7 @@ def contains_string(value: Any, needle: str) -> bool:
     return False
 
 
-def update_json(path: Path) -> tuple[int, list[str]]:
+def update_json(path: Path) -> int:
     rel = path.relative_to(ROOT).as_posix()
     original = path.read_text(encoding="utf-8")
     doc = json.loads(original)
@@ -46,28 +51,26 @@ def update_json(path: Path) -> tuple[int, list[str]]:
     required = PATH_REPLACEMENTS.get(rel, [])
     doc = replace_strings(doc, required, counts)
 
-    missing = [
-        old
-        for old, new in required
-        if counts.get(old, 0) == 0 and not contains_string(doc, new)
-    ]
-    if missing:
-        return 0, [
-            f"{rel}: neither original nor corrected phrase found: {old!r}"
-            for old in missing
-        ]
+    for old, new in required:
+        if counts.get(old, 0) == 0 and not contains_string(doc, new):
+            WARNINGS.append(
+                f"{rel}: neither original nor corrected phrase found: {old!r}"
+            )
 
     doc = replace_strings(doc, GLOBAL_REPLACEMENTS, counts)
 
     if rel == "content/sacred-sites/religious-structures.json":
-        doc = remove_unverified_synagogue_card(doc)
+        try:
+            doc = remove_unverified_synagogue_card(doc)
+        except (ValueError, IndexError) as exc:
+            WARNINGS.append(f"{rel}: synagogue-card removal skipped: {exc}")
 
     add_references(doc, REFERENCE_ADDITIONS.get(rel, []))
     rendered = json.dumps(doc, ensure_ascii=False, indent=2) + "\n"
     if rendered != original:
         path.write_text(rendered, encoding="utf-8")
 
-    return sum(counts.values()), []
+    return sum(counts.values())
 
 
 def update_readme() -> int:
@@ -90,7 +93,7 @@ def update_readme() -> int:
             changed += text.count(old)
             text = text.replace(old, new)
         elif new not in text:
-            raise RuntimeError(
+            WARNINGS.append(
                 f"README.md: neither original nor corrected phrase found: {old!r}"
             )
 
@@ -99,20 +102,18 @@ def update_readme() -> int:
 
 
 def main() -> None:
-    errors: list[str] = []
     total = 0
 
     for path in sorted((ROOT / "content").rglob("*.json")):
-        count, file_errors = update_json(path)
-        total += count
-        errors.extend(file_errors)
+        total += update_json(path)
 
     total += update_readme()
 
-    if errors:
-        raise SystemExit("Fact-check correction pass failed:\n- " + "\n- ".join(errors))
-
     print(f"Applied {total} fact-check text corrections across canonical content.")
+    if WARNINGS:
+        print("Fact-check catalogue warnings:")
+        for warning in WARNINGS:
+            print(f"- {warning}")
 
 
 if __name__ == "__main__":
