@@ -693,7 +693,7 @@ body.ds-search-open{overflow:hidden;}
 .tl-year{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--gold-deep);font-size:1.05rem;letter-spacing:.04em;display:inline-block;margin-right:.7rem;}
 .tl-text{font-family:'EB Garamond',Georgia,serif;color:var(--ink-soft);font-size:1rem;line-height:1.65;}
 .ref-mark{font-size:.68em;line-height:0;}
-.ref-mark a{color:var(--ink-faint);text-decoration:none;padding:0 1px;}
+.ref-mark a,.ref-mark span{color:var(--ink-faint);text-decoration:none;padding:0 1px;}
 .ref-mark a:hover{color:var(--gold-deep);}
 .refs-wrap{max-width:1100px;margin:2.6rem auto 0;padding:0 1.4rem;}
 .refs-wrap details{border-top:1px solid var(--rule);padding-top:1.4rem;}

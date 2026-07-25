@@ -237,6 +237,23 @@ def check_citations(page: Dict[str, Any], source: str) -> List[str]:
     return errors
 
 
+_OPEN_A_RE = re.compile(r"<a[\s>]")
+_CLOSE_A_RE = re.compile(r"</a>")
+
+
+def _inside_anchor(html: str, pos: int) -> bool:
+    """True if `pos` falls inside an unclosed <a>...</a> in `html`.
+
+    Citation markers normally render as <a href="#ref-..."> links, but a few
+    pages embed them inside card grids where the whole card is itself an
+    <a class="card">. Nesting an <a> inside an <a> is invalid HTML -- browsers
+    respond by force-closing the outer anchor at that point, which silently
+    breaks the card's layout. Markers found inside an existing anchor fall
+    back to a plain, non-linking <span> instead.
+    """
+    return len(_OPEN_A_RE.findall(html, 0, pos)) > len(_CLOSE_A_RE.findall(html, 0, pos))
+
+
 def render_citations(body_html: str, references: Optional[List[Dict[str, Any]]]) -> "tuple[str, str]":
     """Replace <cite data-ref="id"> markers with numbered superscript
     backlinks and return (new_body_html, references_section_html)."""
@@ -246,6 +263,7 @@ def render_citations(body_html: str, references: Optional[List[Dict[str, Any]]])
     counts: Dict[str, int] = {}
 
     def replace(m: "re.Match[str]") -> str:
+        linkable = not _inside_anchor(body_html, m.start())
         parts = []
         for rid in m.group(1).split():
             counts[rid] = counts.get(rid, 0) + 1
@@ -253,7 +271,10 @@ def render_citations(body_html: str, references: Optional[List[Dict[str, Any]]])
                 numbers[rid] = len(order) + 1
                 order.append(rid)
             anchor = f"cite_ref-{esc(rid)}-{counts[rid]}"
-            parts.append(f'<a href="#ref-{esc(rid)}" id="{anchor}">{numbers[rid]}</a>')
+            if linkable:
+                parts.append(f'<a href="#ref-{esc(rid)}" id="{anchor}">{numbers[rid]}</a>')
+            else:
+                parts.append(f'<span id="{anchor}">{numbers[rid]}</span>')
         return '<sup class="ref-mark">[' + ",".join(parts) + ']</sup>'
 
     new_html = CITE_RE.sub(replace, body_html)
