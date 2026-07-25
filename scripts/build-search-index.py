@@ -42,7 +42,7 @@ SPACE_BEFORE_PUNCT_RE = re.compile(r"\s+([,.;:!?)])")
 # *open* a quoted phrase ("epithet 'Taj of the Deccan'") is a real word
 # boundary that must be left alone -- the two are only distinguishable by
 # checking what follows the apostrophe.
-SPACE_BEFORE_SUFFIX_RE = re.compile(r"\s+(['’](?:s|t|re|ll|ve|d|m|em)\b)", re.I)
+SPACE_BEFORE_SUFFIX_RE = re.compile(r"\s+(['’](?:s|t|re|ll|ve|d|m)\b)", re.I)
 
 
 def body_text(src):
