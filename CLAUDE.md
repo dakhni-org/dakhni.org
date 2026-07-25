@@ -132,7 +132,7 @@ A task is complete when ALL of the following are true:
 
 - After opening a PR, wait for the automated Codex review bot to post its comments before treating the PR as ready — its suggestions are generally worth acting on.
 - Apply Codex's actionable suggestions (fix real issues; a suggestion that's wrong or out of scope can be skipped, but say so rather than silently ignoring it), commit the fixes, and push to the same branch.
-- Once CI is green and review feedback (Codex and any human reviewers) has been addressed, merge the PR without asking the user to do it manually — merging is pre-authorized for this repo.
+- This repo's GitHub Actions (`build-search-index.yml`, `localize-images.yml`) are push-triggered auto-commit jobs, not PR checks — they don't run on `pull_request` and never post a status to a PR, so "wait for CI to go green" cannot mean waiting for a check run here. Once `python3 scripts/build_site.py` succeeds locally, the PR reports no merge conflicts, and Codex/human review feedback has been addressed, merge the PR without asking the user to do it manually — merging is pre-authorized for this repo.
 
 ## Guardrails for unattended runs
 
