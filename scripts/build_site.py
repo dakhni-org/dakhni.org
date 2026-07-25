@@ -566,8 +566,28 @@ def render(page, nav_html, url_to_page, subnav_map):
 def write_sitemap(pages: List[Dict[str, Any]], page_files: Dict[str, str]) -> None:
     """Regenerate sitemap.xml from the actual content set so it can never
     drift out of sync with the pages the build produces (it previously did:
-    two live pages were missing from the hand-maintained file)."""
+    two live pages were missing from the hand-maintained file).
+
+    lastmod comes from `git log` on each source file, not filesystem mtime.
+    Git doesn't preserve mtimes across clones -- every fresh checkout
+    (including every CI run) stamps files with the checkout time, so an
+    mtime-based lastmod would regenerate differently on every machine and
+    never match what's actually committed."""
     import datetime
+    import subprocess
+
+    today = datetime.date.today().isoformat()
+
+    def git_lastmod(jf: str) -> str:
+        try:
+            out = subprocess.run(
+                ["git", "log", "-1", "--format=%ad", "--date=short", "--", jf],
+                cwd=ROOT, capture_output=True, text=True, timeout=5,
+            )
+            date = out.stdout.strip()
+            return date if date else today
+        except Exception:
+            return today
 
     def priority_freq(page):
         pt = page.get("page_type")
@@ -585,10 +605,7 @@ def write_sitemap(pages: List[Dict[str, Any]], page_files: Dict[str, str]) -> No
         if not url:
             continue
         jf = page_files.get(url)
-        if jf and os.path.exists(jf):
-            lastmod = datetime.date.fromtimestamp(os.path.getmtime(jf)).isoformat()
-        else:
-            lastmod = datetime.date.today().isoformat()
+        lastmod = git_lastmod(jf) if jf else today
         priority, freq = priority_freq(page)
         entries.append(
             f'  <url><loc>https://dakhni.org{esc(url)}</loc><lastmod>{lastmod}</lastmod>'
