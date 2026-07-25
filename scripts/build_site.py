@@ -184,7 +184,7 @@ def render_nav(nav_data: Dict[str, Any]) -> str:
     items = nav_data["items"]
     out = ['<nav>']
     out.append(f'  <a href="{esc(brand["href"])}" class="nav-brand" aria-label="{esc(brand["aria_label"])}">')
-    out.append(f'    <img class="nav-mark" src="{esc(brand["logo"])}" alt=""/>')
+    out.append(f'    <img class="nav-mark" src="{esc(brand["logo"])}" alt="" width="30" height="30"/>')
     out.append(f'    <span>{esc(brand["label"])}</span>')
     out.append('  </a>')
     out.append('  <button class="nav-search-btn" type="button" aria-label="Search" aria-expanded="false" aria-controls="ds-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>')
@@ -318,18 +318,39 @@ def build_page_maps(pages):
             }
     return url_to_page, hub_urls, subnav_map
 
-def render_auto_crumb(page: Dict[str, Any], url_to_page: Dict[str, Any]) -> str:
+def breadcrumb_items(page: Dict[str, Any], url_to_page: Dict[str, Any]) -> List[Dict[str, str]]:
+    """Ordered [{name, url}] from Home down to the current page (url="" for the current page)."""
     url = page["url"]
     parts = [p for p in url.strip("/").split("/") if p]
-    items = ['<a href="/">Home</a>']
+    items = [{"name": "Home", "url": "/"}]
     for i in range(len(parts) - 1):
         href = "/" + "/".join(parts[: i + 1]) + "/"
         hub = url_to_page.get(href)
         label = hub["title"] if hub else parts[i].replace("-", " ").title()
-        items.append(f'<a href="{esc(href)}">{esc(label)}</a>')
-    items.append(esc(page["title"]))
+        items.append({"name": label, "url": href})
+    items.append({"name": page["title"], "url": ""})
+    return items
+
+
+def render_auto_crumb(page: Dict[str, Any], url_to_page: Dict[str, Any]) -> str:
+    items = breadcrumb_items(page, url_to_page)
     sep = '<span class="crumb-sep">›</span>'
-    return sep.join(items)
+    parts = [esc(it["name"]) if not it["url"] else f'<a href="{esc(it["url"])}">{esc(it["name"])}</a>' for it in items]
+    return sep.join(parts)
+
+
+def breadcrumb_jsonld(page: Dict[str, Any], url_to_page: Dict[str, Any]) -> str:
+    items = breadcrumb_items(page, url_to_page)
+    if len(items) < 2:
+        return ""
+    entries = []
+    for i, it in enumerate(items):
+        entry = {"@type": "ListItem", "position": i + 1, "name": it["name"]}
+        if it["url"]:
+            entry["item"] = "https://dakhni.org" + it["url"]
+        entries.append(entry)
+    data = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": entries}
+    return f'<script type="application/ld+json">{json.dumps(data, ensure_ascii=False)}</script>'
 
 def render_auto_subnav(page: Dict[str, Any], subnav_map: Dict, url_to_page: Dict) -> str:
     data = subnav_map.get(page.get("url", ""))
@@ -355,7 +376,7 @@ def render_auto_subnav(page: Dict[str, Any], subnav_map: Dict, url_to_page: Dict
 def footer(dedication):
     ded = dedication or "Built with love for the Deccan"
     return f'''<footer>
-  <div class="flag-banner"><img src="/assets/dakhni-org-logo.png" alt="Dakhni.org"/></div>
+  <div class="flag-banner"><img src="/assets/dakhni-org-logo-256.png" alt="Dakhni.org" width="256" height="256" loading="lazy"/></div>
   <div class="ft-divider"></div>
   <div class="ft-name">DAKHNI.ORG</div>
   <p class="ft-tagline">Preserving the soul of the Deccan, one story at a time.</p>
@@ -413,14 +434,32 @@ def comments(page):
 </section>'''
 
 
-def head(page):
+def head(page, url_to_page: Dict[str, Any]):
     url = page["url"]
     canonical = "https://dakhni.org" + url
     title = page["title"]
     full_title = "Dakhni.org — Heritage of the Deccan" if url == "/" else f'{title} — Dakhni.org'
     desc = page.get("description", "")
     cover = page.get("cover") or ""
-    og_img = ("https://dakhni.org" + cover) if cover.startswith("/") else (cover or "https://dakhni.org/assets/dakhni-org-logo.png")
+    og_img = ("https://dakhni.org" + cover) if cover.startswith("/") else (cover or "https://dakhni.org/assets/icon-512.png")
+    jsonld = [] if url == "/" else [breadcrumb_jsonld(page, url_to_page)]
+    if url == "/":
+        site_ld = {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Dakhni.org",
+            "alternateName": "Dakhni.org — Heritage of the Deccan",
+            "url": "https://dakhni.org/",
+            "description": desc,
+            "publisher": {
+                "@type": "Organization",
+                "name": "Dakhni.org",
+                "url": "https://dakhni.org/",
+                "logo": "https://dakhni.org/assets/icon-512.png",
+            },
+        }
+        jsonld.append(f'<script type="application/ld+json">{json.dumps(site_ld, ensure_ascii=False)}</script>')
+    jsonld_html = "\n  ".join(j for j in jsonld if j)
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -435,7 +474,11 @@ def head(page):
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>{esc(full_title)}</title>
-  <link rel="icon" type="image/png" href="/assets/dakhni-org-logo.png"/>
+  <link rel="icon" href="/assets/favicon.ico" sizes="32x32"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"/>
+  <link rel="manifest" href="/assets/site.webmanifest"/>
   <meta name="description" content="{esc(desc)}"/>
   <meta name="keywords" content="{KEYWORDS}"/>
   <meta name="author" content="Dakhni.org"/>
@@ -443,15 +486,21 @@ def head(page):
   <meta name="theme-color" content="#1A1814"/>
   <link rel="canonical" href="{canonical}"/>
   <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Dakhni.org"/>
+  <meta property="og:locale" content="en_US"/>
   <meta property="og:title" content="{esc(full_title)}"/>
   <meta property="og:description" content="{esc(desc)}"/>
   <meta property="og:url" content="{canonical}"/>
   <meta property="og:image" content="{esc(og_img)}"/>
   <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="{esc(full_title)}"/>
+  <meta name="twitter:description" content="{esc(desc)}"/>
+  <meta name="twitter:image" content="{esc(og_img)}"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&family=Lateef:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="/assets/site.css"/>
+  {jsonld_html}
 </head>'''
 
 
@@ -481,7 +530,7 @@ def render(page, nav_html, url_to_page, subnav_map):
     body = render_blocks(page)
     crumb = page.get("crumb_html") or render_auto_crumb(page, url_to_page)
     subnav = page.get("subnav_html") or render_auto_subnav(page, subnav_map, url_to_page)
-    out = [head(page), "<body>", nav_html]
+    out = [head(page, url_to_page), "<body>", nav_html]
     if page.get("level") == "home":
         out.append(page.get("hero_html", ""))
         out.append('<main class="page-main page-main--home">')
@@ -508,6 +557,47 @@ def render(page, nav_html, url_to_page, subnav_map):
     return "\n".join(out) + "\n"
 
 
+def write_sitemap(pages: List[Dict[str, Any]], page_files: Dict[str, str]) -> None:
+    """Regenerate sitemap.xml from the actual content set so it can never
+    drift out of sync with the pages the build produces (it previously did:
+    two live pages were missing from the hand-maintained file)."""
+    import datetime
+
+    def priority_freq(page):
+        pt = page.get("page_type")
+        if pt == "home":
+            return "1.0", "monthly"
+        if pt == "general_leaf":
+            return "0.5", "yearly"
+        if pt == "section_hub":
+            return "0.9", "monthly"
+        return "0.7", "monthly"
+
+    entries = []
+    for page in sorted(pages, key=lambda p: p.get("url", "")):
+        url = page.get("url")
+        if not url:
+            continue
+        jf = page_files.get(url)
+        if jf and os.path.exists(jf):
+            lastmod = datetime.date.fromtimestamp(os.path.getmtime(jf)).isoformat()
+        else:
+            lastmod = datetime.date.today().isoformat()
+        priority, freq = priority_freq(page)
+        entries.append(
+            f'  <url><loc>https://dakhni.org{esc(url)}</loc><lastmod>{lastmod}</lastmod>'
+            f'<changefreq>{freq}</changefreq><priority>{priority}</priority></url>'
+        )
+    xml = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "\n".join(entries)
+        + "\n</urlset>\n"
+    )
+    with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8") as fh:
+        fh.write(xml)
+
+
 def main():
     with open(NAV_FILE, encoding="utf-8") as fh:
         nav_data = json.load(fh)
@@ -520,6 +610,7 @@ def main():
     nav_html = render_nav(nav_data)
 
     pages = []
+    page_files: Dict[str, str] = {}
     errors: List[str] = []
     for jf in sorted(glob.glob(os.path.join(CONTENT, "**", "*.json"), recursive=True)):
         if os.path.abspath(jf) == os.path.abspath(NAV_FILE):
@@ -527,6 +618,8 @@ def main():
         with open(jf, encoding="utf-8") as fh:
             page = json.load(fh)
         pages.append(page)
+        if page.get("url"):
+            page_files[page["url"]] = jf
         errors.extend(validate_page(page, os.path.relpath(jf, ROOT)))
     if errors:
         print("Content validation failed:")
@@ -542,6 +635,7 @@ def main():
         with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as fh:
             fh.write(render(page, nav_html, url_to_page, subnav_map))
         n += 1
+    write_sitemap(pages, page_files)
     print(f"Rendered {n} pages")
 
 
