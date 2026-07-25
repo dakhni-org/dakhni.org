@@ -417,6 +417,7 @@ def render_blocks(page: Dict[str, Any]) -> str:
 DISCLOSURE = '''<div id="ai-disclosure" role="dialog" aria-modal="true" aria-labelledby="disclosure-title">
   <div class="disclosure-backdrop"></div>
   <div class="disclosure-card">
+    <button class="disclosure-close" id="disclosure-close" type="button" aria-label="Close">&times;</button>
     <div class="disclosure-ornament">✦</div>
     <p class="disclosure-label">A Note on Our Content</p>
     <h2 class="disclosure-title" id="disclosure-title">AI-Assisted Research</h2>

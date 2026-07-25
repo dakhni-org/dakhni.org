@@ -39,7 +39,10 @@
 (function(){
   var el = document.getElementById('ai-disclosure');
   if (!el) return;
-  if (!localStorage.getItem('dakhni_disclosure_seen')) {
+  var shown = false;
+  function show() {
+    if (shown || localStorage.getItem('dakhni_disclosure_seen')) return;
+    shown = true;
     el.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -49,7 +52,12 @@
     document.body.style.overflow = '';
   }
   document.getElementById('disclosure-accept').addEventListener('click', dismiss);
+  document.getElementById('disclosure-close').addEventListener('click', dismiss);
   el.querySelector('.disclosure-backdrop').addEventListener('click', dismiss);
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && el.classList.contains('open')) dismiss();
+  });
+  setTimeout(show, 3000);
 })();
 
 /* ---- */
