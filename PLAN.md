@@ -91,23 +91,42 @@ The `cuisine`, `crafts`, `festivals`, and `music` heritage hub pages each mentio
 specific named things in passing — a craft, a dish, a festival, a musical form — that have
 no page of their own to link to from elsewhere on the site (unlike cities, dynasties, saints
 and monuments, which all already are cross-link targets). This phase gives the highest-value
-ones a dedicated leaf page, following the hub + leaf-page pattern already used by
-`content/landmarks/institutions.json` + `content/landmarks/institutions/*.json`.
+ones a dedicated leaf page.
 
 **Do not start Phase 7 until phases 1–6 are all checked.**
 
+**URL structure:** create these as flat siblings directly under `/heritage/` —
+e.g. `content/heritage/bidriware.json` → `/heritage/bidriware/` — **not** nested under
+`crafts/`, `cuisine/`, `festivals/` or `music/` (e.g. NOT `content/heritage/crafts/bidriware.json`).
+`build_page_maps` in `scripts/build_site.py` (~line 544) classifies any URL that is another
+page's parent as a hub, and hub pages are excluded from their own parent's Prev/Next sibling
+group. Nesting a leaf under `crafts.json`'s URL would turn `/heritage/crafts/` into a hub and
+silently drop it out of the `/heritage/` topic navigator — flat URLs avoid this entirely.
+
+**Discovery:** do not add a `cards` block anywhere for these — `render_blocks` emits
+`content-cards`/`cards-grid`/`content-card` markup that `assets/site.css` does not style (this
+exact mistake was already made and reverted once, commit `355598c`). The existing hand-styled
+card-grid pattern (`<a class="card">…</a>` inside `<div class="card-grid">`, see
+`content/heritage.json`'s own `html` block) is for the 7 top-level heritage pillars only —
+don't extend it either; these are sub-topics, not new pillars. Instead, rely on the
+cross-linking engine: each parent topic page's prose already names these things verbatim
+("Bidriware — the signature craft of Bidar…" in `crafts.json`, etc.), so once the new leaf
+page declares its own name in `link_terms`, `render_crosslinks` will automatically hyperlink
+that existing mention — no manual wiring, and no `content/navigation.json` dropdown entry
+needed either (that dropdown lists the 7 pillars, not their sub-topics).
+
 For each item below: create the leaf page with `facts` + `html` blocks (timeline optional —
 only if there are enough genuinely dated milestones), citing sources the way other leaf pages
-do; add its URL to a `cards` block entry on the parent hub page; declare the page's own name
-in its `link_terms` so the cross-linking engine (see `render_crosslinks` in `build_site.py`)
-picks it up sitewide; then rebuild and confirm zero `link_terms` collisions.
+do; declare the page's own name in its `link_terms`; then rebuild and confirm (a) zero
+`link_terms` collisions, (b) the parent topic page's existing mention now renders as an
+`xref-link` to the new page, and (c) the new URL appears in `sitemap.xml`.
 
-- [ ] Create `content/heritage/crafts/bidriware.json` — the silver-inlaid blackened-alloy metalwork of Bidar, c. 1500–present
-- [ ] Create `content/heritage/crafts/paithani.json` — the tapestry-bordered silk sari woven at Paithan, near Aurangabad
-- [ ] Create `content/heritage/cuisine/biryani.json` — Hyderabadi dum biryani; the kachchi vs. pakki distinction
-- [ ] Create `content/heritage/cuisine/haleem.json` — the pounded wheat-lentil-meat dish and its Ramazan/Hyderabadi status
-- [ ] Create `content/heritage/festivals/bonalu.json` — the Hindu festival of Bonalu in Hyderabad's old city
-- [ ] Create `content/heritage/music/qawwali.json` — Sufi devotional ensemble singing at Deccan shrines
+- [ ] Create `content/heritage/bidriware.json` — the silver-inlaid blackened-alloy metalwork of Bidar, c. 1500–present
+- [ ] Create `content/heritage/paithani.json` — the tapestry-bordered silk sari woven at Paithan, near Aurangabad
+- [ ] Create `content/heritage/biryani.json` — Hyderabadi dum biryani; the kachchi vs. pakki distinction
+- [ ] Create `content/heritage/haleem.json` — the pounded wheat-lentil-meat dish and its Ramazan/Hyderabadi status
+- [ ] Create `content/heritage/bonalu.json` — the Hindu festival of Bonalu in Hyderabad's old city
+- [ ] Create `content/heritage/qawwali.json` — Sufi devotional ensemble singing at Deccan shrines
 
 ---
 
