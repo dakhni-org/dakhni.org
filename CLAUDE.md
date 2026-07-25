@@ -128,6 +128,12 @@ A task is complete when ALL of the following are true:
 - One commit per PLAN.md task — commit message: `content: <what was added>`
 - Push immediately after each commit (so the remote is always up to date)
 
+## Pull request review & merge
+
+- After opening a PR, wait for the automated Codex review bot to post its comments before treating the PR as ready — its suggestions are generally worth acting on.
+- Apply Codex's actionable suggestions (fix real issues; a suggestion that's wrong or out of scope can be skipped, but say so rather than silently ignoring it), commit the fixes, and push to the same branch.
+- Once CI is green and review feedback (Codex and any human reviewers) has been addressed, merge the PR without asking the user to do it manually — merging is pre-authorized for this repo.
+
 ## Guardrails for unattended runs
 
 - Only edit files in `content/` and update checkboxes in `PLAN.md`
