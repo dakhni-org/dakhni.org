@@ -6,6 +6,14 @@
   "description": "An interactive shajara of the Sufi saints of the Deccan, traced master by master through the Chishti, Qadiri, Suhrawardi and Naqshbandi chains.",
   "dedication": "In memory of the Asaf Jahi dynasty",
   "sort_order": 5,
+  "tags": [
+    "Silsila",
+    "Chishti",
+    "Qadiri",
+    "Suhrawardi",
+    "Naqshbandi",
+    "Shajara"
+  ],
   "eyebrow": "Sufi Saints of the Deccan",
   "urdu": "شجرہ",
   "title_html": "The Silsila Tree",

@@ -1,0 +1,58 @@
+name: Build & Validate
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install jsonschema
+      - name: Validate every content file against the JSON Schema
+        run: |
+          python3 -c "
+          import glob, json, jsonschema, sys
+          schema = json.load(open('schemas/page.schema.json'))
+          errors = []
+          for jf in sorted(glob.glob('content/**/*.json', recursive=True)):
+              if jf.endswith('navigation.json'):
+                  continue
+              d = json.load(open(jf))
+              try:
+                  jsonschema.validate(d, schema)
+              except jsonschema.ValidationError as e:
+                  errors.append(f'{jf}: {e.message}')
+          if errors:
+              print('Schema validation failed:')
+              for e in errors:
+                  print(f'- {e}')
+              sys.exit(1)
+          print(f'{len(glob.glob(\"content/**/*.json\", recursive=True))} content files validated against schema')
+          "
+      - name: Validate and build site
+        run: python3 scripts/build_site.py
+      - name: Rebuild search index
+        run: python3 scripts/build-search-index.py
+      - name: Check all pages rendered
+        run: |
+          count=$(find . -name "index.html" | grep -v node_modules | wc -l)
+          echo "Rendered $count pages"
+          test "$count" -ge 65
+      - name: Fail if committed output is stale
+        run: |
+          git add -A
+          if ! git diff --cached --quiet; then
+            echo "Generated HTML / sitemap.xml / search-index.json don't match what's committed."
+            echo "Run 'python3 scripts/build_site.py && python3 scripts/build-search-index.py' and commit the result."
+            git diff --cached --stat
+            exit 1
+          fi
+          echo "Committed generated output matches a fresh build."

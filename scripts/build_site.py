@@ -131,6 +131,10 @@ def validate_page(page: Dict[str, Any], source: str) -> List[str]:
         val = page["extra_scripts"]
         if not isinstance(val, list) or any(not isinstance(x, str) for x in val):
             errors.append(f"{source}: field 'extra_scripts' must be an array of strings")
+    if "tags" in page:
+        val = page["tags"]
+        if not isinstance(val, list) or any(not isinstance(x, str) for x in val):
+            errors.append(f"{source}: field 'tags' must be an array of strings")
     url = page.get("url")
     if isinstance(url, str):
         if not url.startswith("/"):
@@ -442,6 +446,8 @@ def head(page, url_to_page: Dict[str, Any]):
     desc = page.get("description", "")
     cover = page.get("cover") or ""
     og_img = ("https://dakhni.org" + cover) if cover.startswith("/") else (cover or "https://dakhni.org/assets/icon-512.png")
+    page_tags = page.get("tags", [])
+    all_keywords = KEYWORDS + (", " + ", ".join(page_tags) if page_tags else "")
     jsonld = [] if url == "/" else [breadcrumb_jsonld(page, url_to_page)]
     if url == "/":
         site_ld = {
@@ -480,7 +486,7 @@ def head(page, url_to_page: Dict[str, Any]):
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"/>
   <link rel="manifest" href="/assets/site.webmanifest"/>
   <meta name="description" content="{esc(desc)}"/>
-  <meta name="keywords" content="{KEYWORDS}"/>
+  <meta name="keywords" content="{esc(all_keywords)}"/>
   <meta name="author" content="Dakhni.org"/>
   <meta name="robots" content="index, follow, max-image-preview:large"/>
   <meta name="theme-color" content="#1A1814"/>
@@ -560,8 +566,28 @@ def render(page, nav_html, url_to_page, subnav_map):
 def write_sitemap(pages: List[Dict[str, Any]], page_files: Dict[str, str]) -> None:
     """Regenerate sitemap.xml from the actual content set so it can never
     drift out of sync with the pages the build produces (it previously did:
-    two live pages were missing from the hand-maintained file)."""
+    two live pages were missing from the hand-maintained file).
+
+    lastmod comes from `git log` on each source file, not filesystem mtime.
+    Git doesn't preserve mtimes across clones -- every fresh checkout
+    (including every CI run) stamps files with the checkout time, so an
+    mtime-based lastmod would regenerate differently on every machine and
+    never match what's actually committed."""
     import datetime
+    import subprocess
+
+    today = datetime.date.today().isoformat()
+
+    def git_lastmod(jf: str) -> str:
+        try:
+            out = subprocess.run(
+                ["git", "log", "-1", "--format=%ad", "--date=short", "--", jf],
+                cwd=ROOT, capture_output=True, text=True, timeout=5,
+            )
+            date = out.stdout.strip()
+            return date if date else today
+        except Exception:
+            return today
 
     def priority_freq(page):
         pt = page.get("page_type")
@@ -579,10 +605,7 @@ def write_sitemap(pages: List[Dict[str, Any]], page_files: Dict[str, str]) -> No
         if not url:
             continue
         jf = page_files.get(url)
-        if jf and os.path.exists(jf):
-            lastmod = datetime.date.fromtimestamp(os.path.getmtime(jf)).isoformat()
-        else:
-            lastmod = datetime.date.today().isoformat()
+        lastmod = git_lastmod(jf) if jf else today
         priority, freq = priority_freq(page)
         entries.append(
             f'  <url><loc>https://dakhni.org{esc(url)}</loc><lastmod>{lastmod}</lastmod>'
