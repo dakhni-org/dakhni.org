@@ -539,6 +539,23 @@ def build_page_maps(pages):
 
     hub_urls: set of URLs that have at least one child page.
     subnav_map: url -> {prev, next, index_href} for each leaf page.
+
+    By default, any page whose URL is another page's parent (hub_urls) is
+    excluded from ever appearing in a subnav group -- it doesn't get its
+    own Prev/Next, and it isn't listed as a sibling in its own parent's
+    group either. That's correct for a pure listing page like
+    content/heritage.json, which exists only to host its 7 pillar
+    children and was never a "sibling" of anything itself.
+
+    It's wrong, though, for a page that is itself a normal, contentful
+    sibling in its parent's tour *and* separately hosts its own children
+    -- e.g. content/heritage/crafts.json is one of the 7 heritage pillars
+    (wants its own Prev/Next among the other 6) while also being the
+    parent of content/heritage/crafts/bidriware.json (which wants its own
+    Prev/Next among its own craft siblings, with index_href pointing at
+    crafts, not all the way up at heritage). Such a page opts in with
+    `"nested_hub": true`, which keeps it in its own parent's group despite
+    having children of its own.
     """
     url_to_page = {p["url"]: p for p in pages if p.get("url")}
     hub_urls = {parent_url(p["url"]) for p in pages if p.get("url") and parent_url(p["url"]) != p["url"]}
@@ -549,8 +566,8 @@ def build_page_maps(pages):
         url = page.get("url", "")
         if not url or page.get("level") == "home":
             continue
-        if url in hub_urls or page.get("no_subnav"):
-            continue  # hub pages, and pages opted out via no_subnav, don't get subnav
+        if (url in hub_urls and not page.get("nested_hub")) or page.get("no_subnav"):
+            continue  # hub pages (unless nested_hub), and pages opted out via no_subnav, don't get subnav
         p = parent_url(url)
         groups[p].append(page)
 

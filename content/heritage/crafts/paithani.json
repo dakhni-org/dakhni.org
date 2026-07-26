@@ -1,11 +1,11 @@
 {
   "page_type": "heritage_leaf",
-  "url": "/heritage/paithani/",
+  "url": "/heritage/crafts/paithani/",
   "section": "Heritage",
   "title": "Paithani",
   "description": "Paithani is the tapestry-bordered silk sari woven at Paithan, near Aurangabad, since the Satavahana age around 200 BCE — pure mulberry silk with a border in real zari, still made on the looms of Paithan today.",
   "dedication": "In memory of the Asaf Jahi dynasty",
-  "sort_order": 210,
+  "sort_order": 20,
   "tags": [
     "Paithani",
     "Paithan",
@@ -18,7 +18,6 @@
   "link_terms": [
     "Paithani"
   ],
-  "no_subnav": true,
   "blocks": [
     {
       "type": "facts",

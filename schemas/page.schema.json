@@ -62,6 +62,10 @@
     "no_subnav": {
       "type": "boolean",
       "description": "If true, this page is excluded from the auto Prev/Next subnav entirely: it gets no subnav of its own, and it is never listed as a sibling in its parent's subnav group. For sub-topic leaf pages that share a URL prefix with unrelated sibling pages but shouldn't join their Prev/Next tour."
+    },
+    "nested_hub": {
+      "type": "boolean",
+      "description": "If true, this page keeps its own Prev/Next entry in its parent's subnav group even though its URL is itself the parent of other pages (which would otherwise exclude it, as with a pure listing hub). For a contentful page that is both a normal sibling in its own parent's tour and a hub for its own nested children, e.g. a heritage pillar page that hosts named-topic sub-pages under its own URL."
     }
   },
   "additionalProperties": false
