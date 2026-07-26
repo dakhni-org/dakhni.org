@@ -6,6 +6,7 @@
   "description": "Music in the Deccan — the nine ragas, the Hyderabadi gharana, qawwali at the dargah.",
   "dedication": "In memory of the Asaf Jahi dynasty",
   "sort_order": 30,
+  "nested_hub": true,
   "tags": [
     "Qawwali",
     "Hindustani",
