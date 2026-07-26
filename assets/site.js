@@ -33,6 +33,19 @@
       });
     });
   }
+
+  // The mobile dropdown menu is fixed to nav's bottom edge. nav is sticky,
+  // so at scroll position 0 it isn't necessarily at y=0 -- the AI notice
+  // banner above it (when shown) pushes it down. Keep --nav-bottom in
+  // sync so the dropdown never renders assuming nav is still at the very
+  // top of the viewport.
+  var navEl = document.querySelector('nav');
+  function syncNavOffset(){
+    if (navEl) root.style.setProperty('--nav-bottom', Math.ceil(navEl.getBoundingClientRect().bottom) + 'px');
+  }
+  syncNavOffset();
+  window.addEventListener('resize', syncNavOffset);
+  window.dakhniSyncNavOffset = syncNavOffset;
 })();
 
 /* ---- */
@@ -47,12 +60,16 @@
   function show() {
     if (localStorage.getItem('dakhni_ai_notice_seen')) return;
     el.hidden = false;
+    if (window.dakhniSyncNavOffset) window.dakhniSyncNavOffset();
     requestAnimationFrame(function(){ el.classList.add('open'); });
   }
   function dismiss() {
     localStorage.setItem('dakhni_ai_notice_seen', '1');
     el.classList.remove('open');
-    setTimeout(function(){ el.hidden = true; }, 300);
+    setTimeout(function(){
+      el.hidden = true;
+      if (window.dakhniSyncNavOffset) window.dakhniSyncNavOffset();
+    }, 300);
   }
   closeBtn.addEventListener('click', dismiss);
   setTimeout(show, 5000);
