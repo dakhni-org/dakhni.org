@@ -1,0 +1,55 @@
+{
+  "page_type": "heritage_leaf",
+  "url": "/heritage/cuisine/haleem/",
+  "section": "Heritage",
+  "title": "Haleem",
+  "description": "Haleem is wheat, lentils and meat pounded for hours into a thick, rich paste — the Ramazan staple of the Hyderabadi table.",
+  "dedication": "In memory of the Asaf Jahi dynasty",
+  "sort_order": 20,
+  "tags": [
+    "Haleem",
+    "Hyderabad",
+    "Cuisine",
+    "Ramazan"
+  ],
+  "eyebrow": "Cuisine of the Deccan",
+  "title_html": "Haleem",
+  "subtitle": "Hyderabad · A Ramazan Staple",
+  "link_terms": [
+    "Haleem"
+  ],
+  "blocks": [
+    {
+      "type": "facts",
+      "items": [
+        {
+          "key": "Ingredients",
+          "value": "Wheat, lentils and meat"
+        },
+        {
+          "key": "Preparation",
+          "value": "Pounded for hours into a thick paste"
+        },
+        {
+          "key": "Season",
+          "value": "The month of Ramazan",
+          "ref": "leonard-1978"
+        },
+        {
+          "key": "City",
+          "value": "Hyderabad"
+        }
+      ]
+    },
+    {
+      "type": "html",
+      "html": "<div class=\"article-intro reveal\">\n  <p><em>Haleem</em> is wheat, lentils and meat pounded together for hours into a thick, rich paste — a dish of patience rather than technique, the way <em>kachchi</em> biryani is. It is the great Ramazan staple of the Hyderabadi table, part of the wider Hyderabadi cuisine that grew where the Persian khansamas of the Asaf Jahi court met the Telugu cooks of the Deccan plateau.<cite data-ref=\"leonard-1978\"></cite></p>\n</div>\n\n<div class=\"h-wrap\">\n  <section class=\"h-entry\" id=\"s1\">\n    <div class=\"h-text reveal-right\">\n      <span class=\"h-numeral\">I · The Dish</span>\n      <span class=\"h-eyebrow\">Wheat, Lentils, Meat</span>\n      <h2 class=\"h-title\">Pounded to a <em>paste</em></h2>\n      <p class=\"h-sub\">Hours of slow cooking and pounding, not layering</p>\n      <div class=\"h-body\">\n        <p>Unlike the layered, sealed cooking of dum biryani, haleem is built by long, slow simmering of wheat, lentils and meat together until the grains and meat break down into a single thick, rich paste — a dish that rewards the hours put into it rather than any single technique.</p>\n      </div>\n    </div>\n  </section>\n  <section class=\"h-entry\" id=\"s2\">\n    <div class=\"h-text reveal-left\">\n      <span class=\"h-numeral\">II · Ramazan</span>\n      <span class=\"h-eyebrow\">The Month It Belongs To</span>\n      <h2 class=\"h-title\">A dish for <em>breaking the fast</em></h2>\n      <p class=\"h-sub\">Around the wider Hyderabadi table</p>\n      <div class=\"h-body\">\n        <p>Haleem is above all a dish of Ramazan, sitting alongside marag, mirchi ka salan and khubani ka meetha as part of the wider Hyderabadi table that surrounds the city's signature biryani.<cite data-ref=\"leonard-1978\"></cite></p>\n      </div>\n    </div>\n  </section>\n</div>"
+    }
+  ],
+  "references": [
+    {
+      "id": "leonard-1978",
+      "text": "Karen Leonard, Social History of an Indian Caste: The Kayasths of Hyderabad, University of California Press, 1978."
+    }
+  ]
+}
