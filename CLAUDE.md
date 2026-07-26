@@ -139,7 +139,7 @@ A task is complete when ALL of the following are true:
 
 - Only edit files in `content/` and update checkboxes in `PLAN.md`
 - Do not touch `scripts/`, `assets/`, `.github/`, or `schemas/` unless the task explicitly says so
-- Do not create new pages unless a Phase 6 task says to — enrich existing pages first
+- Do not create new pages unless a PLAN.md phase explicitly calls for it (e.g. Phase 6, Phase 7) — enrich existing pages first
 - If `build_site.py` fails, fix the JSON before committing (never commit a broken state)
 - Complete **one task per run** — check the box, commit, push, then stop
 - When writing new historical content (timeline entries, facts), use only information consistent with what already appears in the file; do not invent dates or names not supported by the existing content
