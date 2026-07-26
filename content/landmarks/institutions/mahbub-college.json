@@ -44,8 +44,58 @@
       ]
     },
     {
-      "type": "html",
-      "html": "<div class=\"pillars-strip\">\n  <span class=\"pillars-strip-label\">The College</span>\n  <a href=\"#s1\">The Founding</a><span class=\"pillars-strip-sep\">◆</span><a href=\"#s2\">The Campus</a><span class=\"pillars-strip-sep\">◆</span><a href=\"#s3\">A Long Roll</a>\n</div>\n\n<div class=\"article-intro reveal\">\n  <p><em>Mahbub College</em> at Secunderabad began in 1862 as the <em>Anglo Vernacular School</em>, founded by <em>Somasundaram Mudaliar</em>. It was later renamed in honour of the young sovereign <em>Mir Mahbub Ali Khan</em>, the sixth Nizam, whose patronage supported the school's growth. Set up as a Western-style English-medium school for the sons of the state's officers and the British residency establishment at Secunderabad, it became, with its elegant colonnaded main block — still in use — one of the earliest institutions of Hyderabad to teach the modern sciences and English literature alongside Persian and Arabic, setting a model that the later Asafi schools and colleges of the city would follow.<cite data-ref=\"wikipedia-mahbub-college\"></cite></p>\n</div>\n\n<div class=\"h-wrap\">\n  <section class=\"h-entry\" id=\"s1\">\n    <div class=\"h-text reveal-left\">\n      <span class=\"h-numeral\">I · The Founding</span>\n      <span class=\"h-eyebrow\">A School Renamed for a Nizam</span>\n      <h2 class=\"h-title\">From <em>Anglo Vernacular School</em> to Mahbub College</h2>\n      <p class=\"h-sub\">A Secunderabad school that took the sixth Nizam's name</p>\n      <div class=\"h-body\">\n        <p>The school that became Mahbub College was founded in 1862 by Somasundaram Mudaliar as the Anglo Vernacular School. It was renamed for Mir Mahbub Ali Khan, the sixth Nizam, whose support helped establish it among the most prestigious English-medium schools in the state — part of the same era of educational expansion that, under Salar Jung I's reforming administration from 1853 onward, also produced City College, the engineering and survey schools, and the modern courts of Hyderabad State.<cite data-ref=\"karen-leonard-1978\"></cite></p>\n      </div>\n    </div>\n  </section>\n  <section class=\"h-entry\" id=\"s2\">\n    <div class=\"h-text reveal-right\">\n      <span class=\"h-numeral\">II · The Campus</span>\n      <span class=\"h-eyebrow\">Secunderabad</span>\n      <h2 class=\"h-title\">The <em>campus</em></h2>\n      <p class=\"h-sub\">A colonnaded Anglo-Indian block and broad playing fields</p>\n      <div class=\"h-body\">\n        <p>The school occupies an extensive site at Secunderabad, with a colonnaded principal block in the late nineteenth-century Anglo-Indian institutional manner, a chapel-like assembly hall, and broad playing fields. The buildings have been added to repeatedly, but the original frontage remains.</p>\n      </div>\n    </div>\n  </section>\n  <section class=\"h-entry\" id=\"s3\">\n    <div class=\"h-text reveal-left\">\n      <span class=\"h-numeral\">III · A Long Roll</span>\n      <span class=\"h-eyebrow\">The Twin Cities</span>\n      <h2 class=\"h-title\">A long <em>roll</em></h2>\n      <p class=\"h-sub\">Educator of Hyderabad's civil and military officers</p>\n      <div class=\"h-body\">\n        <p>Mahbub College has educated several generations of Hyderabad's civil and military officers, and remains a leading school of the twin cities. It is now Mahbub College High School, affiliated to the state board, and continues on its original campus.<cite data-ref=\"wikipedia-mahbub-college\"></cite></p>\n      </div>\n    </div>\n  </section>\n</div>"
+      "type": "narrative",
+      "tour_label": "The College",
+      "tour": [
+        {
+          "id": "s1",
+          "label": "The Founding"
+        },
+        {
+          "id": "s2",
+          "label": "The Campus"
+        },
+        {
+          "id": "s3",
+          "label": "A Long Roll"
+        }
+      ],
+      "intro": "<p><em>Mahbub College</em> at Secunderabad began in 1862 as the <em>Anglo Vernacular School</em>, founded by <em>Somasundaram Mudaliar</em>. It was later renamed in honour of the young sovereign <em>Mir Mahbub Ali Khan</em>, the sixth Nizam, whose patronage supported the school's growth. Set up as a Western-style English-medium school for the sons of the state's officers and the British residency establishment at Secunderabad, it became, with its elegant colonnaded main block — still in use — one of the earliest institutions of Hyderabad to teach the modern sciences and English literature alongside Persian and Arabic, setting a model that the later Asafi schools and colleges of the city would follow.<cite data-ref=\"wikipedia-mahbub-college\"></cite></p>",
+      "sections": [
+        {
+          "id": "s1",
+          "eyebrow": "A School Renamed for a Nizam",
+          "numeral_label": "The Founding",
+          "title_html": "From <em>Anglo Vernacular School</em> to Mahbub College",
+          "sub": "A Secunderabad school that took the sixth Nizam's name",
+          "body": [
+            "The school that became Mahbub College was founded in 1862 by Somasundaram Mudaliar as the Anglo Vernacular School. It was renamed for Mir Mahbub Ali Khan, the sixth Nizam, whose support helped establish it among the most prestigious English-medium schools in the state — part of the same era of educational expansion that, under Salar Jung I's reforming administration from 1853 onward, also produced City College, the engineering and survey schools, and the modern courts of Hyderabad State.<cite data-ref=\"karen-leonard-1978\"></cite>"
+          ],
+          "reveal": "reveal-left"
+        },
+        {
+          "id": "s2",
+          "eyebrow": "Secunderabad",
+          "numeral_label": "The Campus",
+          "title_html": "The <em>campus</em>",
+          "sub": "A colonnaded Anglo-Indian block and broad playing fields",
+          "body": [
+            "The school occupies an extensive site at Secunderabad, with a colonnaded principal block in the late nineteenth-century Anglo-Indian institutional manner, a chapel-like assembly hall, and broad playing fields. The buildings have been added to repeatedly, but the original frontage remains."
+          ],
+          "reveal": "reveal-right"
+        },
+        {
+          "id": "s3",
+          "eyebrow": "The Twin Cities",
+          "numeral_label": "A Long Roll",
+          "title_html": "A long <em>roll</em>",
+          "sub": "Educator of Hyderabad's civil and military officers",
+          "body": [
+            "Mahbub College has educated several generations of Hyderabad's civil and military officers, and remains a leading school of the twin cities. It is now Mahbub College High School, affiliated to the state board, and continues on its original campus.<cite data-ref=\"wikipedia-mahbub-college\"></cite>"
+          ],
+          "reveal": "reveal-left"
+        }
+      ]
     }
   ],
   "references": [

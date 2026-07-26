@@ -38,8 +38,32 @@
       ]
     },
     {
-      "type": "html",
-      "html": "<div class=\"article-intro reveal\">\n  <p><em>Bonalu</em> is the Hindu festival honouring the goddess Mahankali, celebrated in Hyderabad's old city. It stands among the clearest signs of the Deccan's plural festival calendar: a Hindu observance that draws Muslim shopkeepers as readily as Hindu families.<cite data-ref=\"eaton-2005\"></cite></p>\n</div>\n\n<div class=\"h-wrap\">\n  <section class=\"h-entry\" id=\"s1\">\n    <div class=\"h-text reveal-right\">\n      <span class=\"h-numeral\">I · The Festival</span>\n      <span class=\"h-eyebrow\">Mahankali</span>\n      <h2 class=\"h-title\">Honouring the <em>goddess</em></h2>\n      <p class=\"h-sub\">A Hindu observance rooted in the old city</p>\n      <div class=\"h-body\">\n        <p>Bonalu honours the goddess Mahankali in the old city of Hyderabad, one of the observances that make up the wider Hindu strand of the Deccan's festival year alongside Bathukamma and Ugadi.<cite data-ref=\"eaton-2005\"></cite></p>\n      </div>\n    </div>\n  </section>\n  <section class=\"h-entry\" id=\"s2\">\n    <div class=\"h-text reveal-left\">\n      <span class=\"h-numeral\">II · A Plural Calendar</span>\n      <span class=\"h-eyebrow\">Across Faiths</span>\n      <h2 class=\"h-title\">Muslim and Hindu, <em>together</em></h2>\n      <p class=\"h-sub\">One of the clearest signs of Hyderabad's plural festival year</p>\n      <div class=\"h-body\">\n        <p>Hyderabad's festivals are remarkably plural, and Bonalu is one of the clearest examples: it draws Muslim shopkeepers as readily as Hindu families, standing alongside the urs at Gulbarga and Yousufain Sharif and the Deccan Festival each February as evidence of a shared civic calendar rather than separate ones.<cite data-ref=\"eaton-2005\"></cite></p>\n      </div>\n    </div>\n  </section>\n</div>"
+      "type": "narrative",
+      "intro": "<p><em>Bonalu</em> is the Hindu festival honouring the goddess Mahankali, celebrated in Hyderabad's old city. It stands among the clearest signs of the Deccan's plural festival calendar: a Hindu observance that draws Muslim shopkeepers as readily as Hindu families.<cite data-ref=\"eaton-2005\"></cite></p>",
+      "sections": [
+        {
+          "id": "s1",
+          "eyebrow": "Mahankali",
+          "numeral_label": "The Festival",
+          "title_html": "Honouring the <em>goddess</em>",
+          "sub": "A Hindu observance rooted in the old city",
+          "body": [
+            "Bonalu honours the goddess Mahankali in the old city of Hyderabad, one of the observances that make up the wider Hindu strand of the Deccan's festival year alongside Bathukamma and Ugadi.<cite data-ref=\"eaton-2005\"></cite>"
+          ],
+          "reveal": "reveal-right"
+        },
+        {
+          "id": "s2",
+          "eyebrow": "Across Faiths",
+          "numeral_label": "A Plural Calendar",
+          "title_html": "Muslim and Hindu, <em>together</em>",
+          "sub": "One of the clearest signs of Hyderabad's plural festival year",
+          "body": [
+            "Hyderabad's festivals are remarkably plural, and Bonalu is one of the clearest examples: it draws Muslim shopkeepers as readily as Hindu families, standing alongside the urs at Gulbarga and Yousufain Sharif and the Deccan Festival each February as evidence of a shared civic calendar rather than separate ones.<cite data-ref=\"eaton-2005\"></cite>"
+          ],
+          "reveal": "reveal-left"
+        }
+      ]
     }
   ],
   "references": [

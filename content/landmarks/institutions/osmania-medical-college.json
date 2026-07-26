@@ -38,8 +38,58 @@
       ]
     },
     {
-      "type": "html",
-      "html": "<div class=\"pillars-strip\">\n  <span class=\"pillars-strip-label\">The College</span>\n  <a href=\"#s1\">The 1846 School</a><span class=\"pillars-strip-sep\">◆</span><a href=\"#s2\">The Reform</a><span class=\"pillars-strip-sep\">◆</span><a href=\"#s3\">Today</a>\n</div>\n\n<div class=\"article-intro reveal\">\n  <p><em>Osmania Medical College</em> is among the oldest medical colleges in India. It was founded in 1846 as the <em>Hyderabad Medical School</em> by the fourth Nizam Mir Farkhonda Ali Khan, renamed Mahbub Medical School under his successor, and renamed again in 1919 as <em>Osmania Medical College</em> in honour of the seventh Nizam, who folded it into the wider Osmania reform alongside the building of the Osmania General Hospital across the Musi. Together the college and the hospital formed a single teaching-hospital complex on the lines of the great European medical schools of the period, and it has continued in that role for more than a century.<cite data-ref=\"omc-official\"></cite></p>\n</div>\n\n<div class=\"h-wrap\">\n  <section class=\"h-entry\" id=\"s1\">\n    <div class=\"h-text reveal-left\">\n      <span class=\"h-numeral\">I · The 1846 School</span>\n      <span class=\"h-eyebrow\">Medicine in Urdu</span>\n      <h2 class=\"h-title\">The <em>1846 school</em></h2>\n      <p class=\"h-sub\">The original Hyderabad Medical School on the Musi</p>\n      <div class=\"h-body\">\n        <p>The original Hyderabad Medical School taught Western medicine in Urdu, with English as a secondary medium, and was attached to a small teaching hospital on the south bank of the Musi. Its first cohorts of graduates went on to serve as civil surgeons in the state and across the Deccan. It was one of the first three modern medical schools of South Asia.<cite data-ref=\"wikipedia-omc\"></cite></p>\n      </div>\n    </div>\n  </section>\n  <section class=\"h-entry\" id=\"s2\">\n    <div class=\"h-text reveal-right\">\n      <span class=\"h-numeral\">II · The Reform</span>\n      <span class=\"h-eyebrow\">Osmania · 1919</span>\n      <h2 class=\"h-title\"><em>Osmania</em> reform</h2>\n      <p class=\"h-sub\">Raised to a degree college with its own teaching hospital</p>\n      <div class=\"h-body\">\n        <p>The seventh Nizam reorganised the school as Osmania Medical College in 1919, raised its syllabus to that of a full degree-granting college, and built around it the new Osmania General Hospital — completed in 1925 — as a teaching hospital on the lines of Edinburgh and Vienna. The college became one of the principal medical schools of British and princely India.<cite data-ref=\"wikipedia-omc\"></cite></p>\n      </div>\n    </div>\n  </section>\n  <section class=\"h-entry\" id=\"s3\">\n    <div class=\"h-text reveal-left\">\n      <span class=\"h-numeral\">III · Today</span>\n      <span class=\"h-eyebrow\">A Leading College</span>\n      <h2 class=\"h-title\">A continuing <em>institution</em></h2>\n      <p class=\"h-sub\">Among the leading medical colleges of South India</p>\n      <div class=\"h-body\">\n        <p>Now affiliated to Kaloji Narayana Rao University of Health Sciences, Osmania Medical College remains one of the leading medical colleges of South India. Its original buildings, and the great Indo-Saracenic block of the Osmania General Hospital across the river, are among the most recognisable institutional silhouettes of Hyderabad.</p>\n      </div>\n    </div>\n  </section>\n</div>"
+      "type": "narrative",
+      "tour_label": "The College",
+      "tour": [
+        {
+          "id": "s1",
+          "label": "The 1846 School"
+        },
+        {
+          "id": "s2",
+          "label": "The Reform"
+        },
+        {
+          "id": "s3",
+          "label": "Today"
+        }
+      ],
+      "intro": "<p><em>Osmania Medical College</em> is among the oldest medical colleges in India. It was founded in 1846 as the <em>Hyderabad Medical School</em> by the fourth Nizam Mir Farkhonda Ali Khan, renamed Mahbub Medical School under his successor, and renamed again in 1919 as <em>Osmania Medical College</em> in honour of the seventh Nizam, who folded it into the wider Osmania reform alongside the building of the Osmania General Hospital across the Musi. Together the college and the hospital formed a single teaching-hospital complex on the lines of the great European medical schools of the period, and it has continued in that role for more than a century.<cite data-ref=\"omc-official\"></cite></p>",
+      "sections": [
+        {
+          "id": "s1",
+          "eyebrow": "Medicine in Urdu",
+          "numeral_label": "The 1846 School",
+          "title_html": "The <em>1846 school</em>",
+          "sub": "The original Hyderabad Medical School on the Musi",
+          "body": [
+            "The original Hyderabad Medical School taught Western medicine in Urdu, with English as a secondary medium, and was attached to a small teaching hospital on the south bank of the Musi. Its first cohorts of graduates went on to serve as civil surgeons in the state and across the Deccan. It was one of the first three modern medical schools of South Asia.<cite data-ref=\"wikipedia-omc\"></cite>"
+          ],
+          "reveal": "reveal-left"
+        },
+        {
+          "id": "s2",
+          "eyebrow": "Osmania · 1919",
+          "numeral_label": "The Reform",
+          "title_html": "<em>Osmania</em> reform",
+          "sub": "Raised to a degree college with its own teaching hospital",
+          "body": [
+            "The seventh Nizam reorganised the school as Osmania Medical College in 1919, raised its syllabus to that of a full degree-granting college, and built around it the new Osmania General Hospital — completed in 1925 — as a teaching hospital on the lines of Edinburgh and Vienna. The college became one of the principal medical schools of British and princely India.<cite data-ref=\"wikipedia-omc\"></cite>"
+          ],
+          "reveal": "reveal-right"
+        },
+        {
+          "id": "s3",
+          "eyebrow": "A Leading College",
+          "numeral_label": "Today",
+          "title_html": "A continuing <em>institution</em>",
+          "sub": "Among the leading medical colleges of South India",
+          "body": [
+            "Now affiliated to Kaloji Narayana Rao University of Health Sciences, Osmania Medical College remains one of the leading medical colleges of South India. Its original buildings, and the great Indo-Saracenic block of the Osmania General Hospital across the river, are among the most recognisable institutional silhouettes of Hyderabad."
+          ],
+          "reveal": "reveal-left"
+        }
+      ]
     }
   ],
   "references": [

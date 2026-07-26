@@ -52,8 +52,64 @@
       ]
     },
     {
-      "type": "html",
-      "html": "<div class=\"pillars-strip\">\n  <span class=\"pillars-strip-label\">The Two Brothers</span>\n  <a href=\"#s1\">The Brothers</a><span class=\"pillars-strip-sep\">◆</span><a href=\"#s2\">Their Lives</a><span class=\"pillars-strip-sep\">◆</span><a href=\"#s3\">The Dargah</a>\n</div>\n\n<div class=\"h-wrap\">\n  <section class=\"h-entry\" id=\"s1\">\n    <figure class=\"h-figure reveal-left\">\n      <img loading=\"lazy\" alt=\"Charminar, Hyderabad; the Yousufain dargah lies at Nampally\" src=\"/sufism/yousufain/assets/charminar-hyderabad.jpg\"/>\n      <figcaption>Charminar · Hyderabad · the brothers' dargah at Nampally is the city's most-visited shrine</figcaption>\n    </figure>\n    <div class=\"h-text reveal-right\">\n      <span class=\"h-numeral\">I · The Brothers</span>\n      <span class=\"h-eyebrow\">Nampally · 18th century</span>\n      <h2 class=\"h-title\">The two brothers and the city's most-loved <em>dargah</em></h2>\n      <p class=\"h-sub\">Two Qadiri Sayyids descended from Shah Raju Qattal of Baghdad's chain</p>\n      <div class=\"h-body\">\n        <p>The shrine known as <em>Yousufain Sharif</em> — \"the two Yusufs\" — at Nampally in central Hyderabad commemorates two brothers of Qadiri descent: <em>Sayyid Shah Yousuf-uddin Husayni</em> and <em>Sayyid Shah Sharif-uddin Husayni</em>, both of whom flourished in the eighteenth century during the early Asaf Jahi period. They descended through documented chain from Shah Raju Qattal of the previous century and through him to the Qadiri masters of Baghdad. Their scholarly training was conventional: hadith, tafsir, the Hanafi books, the Qadiri litanies.<cite data-ref=\"eaton-1978\"></cite></p>\n      </div>\n    </div>\n  </section>\n  <section class=\"h-entry\" id=\"s2\">\n    <div class=\"h-text reveal-right\">\n      <span class=\"h-numeral\">II · Their Lives</span>\n      <span class=\"h-eyebrow\">Teachers of the City</span>\n      <h2 class=\"h-title\">A scholar and a <em>khalifa</em></h2>\n      <p class=\"h-sub\">The elder precise in hadith, the younger the family's principal Sufi successor</p>\n      <div class=\"h-body\">\n        <p>Sayyid Shah Yousuf-uddin (whose dates are usually given as approximately 1668–1741) was the elder of the two. He served for some years as a teacher of religious sciences at Hyderabad and was reputed for the precision of his hadith narration. His brother Sayyid Shah Sharif-uddin, somewhat younger, was the principal khalifa of the family in Sufi matters. Both maintained an open hospice in Nampally and were honoured during their lives as among the leading scholars and saintly figures of the city.<cite data-ref=\"eaton-2005\"></cite></p>\n      </div>\n    </div>\n  </section>\n  <section class=\"h-entry\" id=\"s3\">\n    <div class=\"h-text reveal-left\">\n      <span class=\"h-numeral\">III · The Dargah</span>\n      <span class=\"h-eyebrow\">Rebuilt under Mahbub Ali Khan</span>\n      <h2 class=\"h-title\">The heart of Hyderabad's <em>qawwali</em></h2>\n      <p class=\"h-sub\">A joint tomb that became the principal Sufi shrine of the city</p>\n      <div class=\"h-body\">\n        <p>The brothers were buried, by their own request, in the same enclosure. Their joint tomb became, over the next two centuries, the most-visited Sufi shrine of Hyderabad — surpassing even the older Qadiri tombs at Misri Gunj. The dargah of <em>Yousufain Sharif</em> at Nampally was developed in the nineteenth century and substantially rebuilt during the reign of the sixth Nizam Mahbub Ali Khan. It remains today the principal site of the city's qawwali tradition, of its 'urs gatherings on the brothers' joint death-anniversary, and of the daily congregations of pilgrims, scholars and householders.<cite data-ref=\"sherwani-joshi-1973\"></cite></p>\n      </div>\n    </div>\n  </section>\n</div>"
+      "type": "narrative",
+      "tour_label": "The Two Brothers",
+      "tour": [
+        {
+          "id": "s1",
+          "label": "The Brothers"
+        },
+        {
+          "id": "s2",
+          "label": "Their Lives"
+        },
+        {
+          "id": "s3",
+          "label": "The Dargah"
+        }
+      ],
+      "sections": [
+        {
+          "id": "s1",
+          "eyebrow": "Nampally · 18th century",
+          "numeral_label": "The Brothers",
+          "title_html": "The two brothers and the city's most-loved <em>dargah</em>",
+          "sub": "Two Qadiri Sayyids descended from Shah Raju Qattal of Baghdad's chain",
+          "body": [
+            "The shrine known as <em>Yousufain Sharif</em> — \"the two Yusufs\" — at Nampally in central Hyderabad commemorates two brothers of Qadiri descent: <em>Sayyid Shah Yousuf-uddin Husayni</em> and <em>Sayyid Shah Sharif-uddin Husayni</em>, both of whom flourished in the eighteenth century during the early Asaf Jahi period. They descended through documented chain from Shah Raju Qattal of the previous century and through him to the Qadiri masters of Baghdad. Their scholarly training was conventional: hadith, tafsir, the Hanafi books, the Qadiri litanies.<cite data-ref=\"eaton-1978\"></cite>"
+          ],
+          "media_first": true,
+          "reveal": "reveal-right",
+          "figure": {
+            "src": "/sufism/yousufain/assets/charminar-hyderabad.jpg",
+            "alt": "Charminar, Hyderabad; the Yousufain dargah lies at Nampally",
+            "caption": "Charminar · Hyderabad · the brothers' dargah at Nampally is the city's most-visited shrine",
+            "reveal": "reveal-left"
+          }
+        },
+        {
+          "id": "s2",
+          "eyebrow": "Teachers of the City",
+          "numeral_label": "Their Lives",
+          "title_html": "A scholar and a <em>khalifa</em>",
+          "sub": "The elder precise in hadith, the younger the family's principal Sufi successor",
+          "body": [
+            "Sayyid Shah Yousuf-uddin (whose dates are usually given as approximately 1668–1741) was the elder of the two. He served for some years as a teacher of religious sciences at Hyderabad and was reputed for the precision of his hadith narration. His brother Sayyid Shah Sharif-uddin, somewhat younger, was the principal khalifa of the family in Sufi matters. Both maintained an open hospice in Nampally and were honoured during their lives as among the leading scholars and saintly figures of the city.<cite data-ref=\"eaton-2005\"></cite>"
+          ],
+          "reveal": "reveal-right"
+        },
+        {
+          "id": "s3",
+          "eyebrow": "Rebuilt under Mahbub Ali Khan",
+          "numeral_label": "The Dargah",
+          "title_html": "The heart of Hyderabad's <em>qawwali</em>",
+          "sub": "A joint tomb that became the principal Sufi shrine of the city",
+          "body": [
+            "The brothers were buried, by their own request, in the same enclosure. Their joint tomb became, over the next two centuries, the most-visited Sufi shrine of Hyderabad — surpassing even the older Qadiri tombs at Misri Gunj. The dargah of <em>Yousufain Sharif</em> at Nampally was developed in the nineteenth century and substantially rebuilt during the reign of the sixth Nizam Mahbub Ali Khan. It remains today the principal site of the city's qawwali tradition, of its 'urs gatherings on the brothers' joint death-anniversary, and of the daily congregations of pilgrims, scholars and householders.<cite data-ref=\"sherwani-joshi-1973\"></cite>"
+          ],
+          "reveal": "reveal-left"
+        }
+      ]
     },
     {
       "type": "timeline",

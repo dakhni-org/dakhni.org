@@ -33,7 +33,7 @@
         "type": "object",
         "required": ["type"],
         "properties": {
-          "type": {"type": "string", "enum": ["html", "intro", "section", "cards", "facts", "timeline"]},
+          "type": {"type": "string", "enum": ["html", "intro", "section", "cards", "facts", "timeline", "narrative"]},
           "html": {"type": "string"},
           "title": {"type": "string"},
           "eyebrow": {"type": "string"},
