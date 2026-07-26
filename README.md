@@ -103,4 +103,4 @@ historical claim. When adding images, follow the conventions in
 
 ## Licence
 
-Content © 2025 Dakhni.org. The site is published in memory of the Asaf Jahi dynasty and built with love for the Deccan.
+Content © 2026 Dakhni.org. The site is published in memory of the Asaf Jahi dynasty and built with love for the Deccan.
