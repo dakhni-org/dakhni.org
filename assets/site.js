@@ -32,6 +32,17 @@
         document.body.classList.remove('menu-open');
       });
     });
+    // Each top-level section with sub-pages starts collapsed on mobile --
+    // its own toggle button expands just that section, so opening the menu
+    // never dumps every section's full page list on screen at once.
+    links.querySelectorAll('.dropdown-toggle').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var li = btn.closest('.has-dropdown');
+        if (!li) return;
+        var open = li.classList.toggle('dropdown-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    });
   }
 
   // The mobile dropdown menu is fixed to nav's bottom edge. nav is sticky,
@@ -98,9 +109,18 @@
       break;
     }
   }
-  // mark the deeper sub-item if any
+  // mark the deeper sub-item if any, and pre-expand its collapsed mobile
+  // section so the highlighted current page isn't hidden behind a toggle
   var sub = document.querySelector('.dropdown a[href="' + path + '"]');
-  if (sub) sub.setAttribute('aria-current', 'page');
+  if (sub) {
+    sub.setAttribute('aria-current', 'page');
+    var currentLi = sub.closest('.has-dropdown');
+    if (currentLi) {
+      currentLi.classList.add('dropdown-open');
+      var currentToggle = currentLi.querySelector('.dropdown-toggle');
+      if (currentToggle) currentToggle.setAttribute('aria-expanded', 'true');
+    }
+  }
 })();
 
 /* ---- */
