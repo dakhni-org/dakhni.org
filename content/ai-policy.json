@@ -1,0 +1,23 @@
+{
+  "page_type": "general_leaf",
+  "url": "/ai-policy/",
+  "section": "About",
+  "title": "AI Policy",
+  "description": "How Dakhni.org uses artificial intelligence to compile and synthesise its content, and what that means for readers.",
+  "dedication": "In memory of the Asaf Jahi dynasty",
+  "sort_order": 1000,
+  "tags": [
+    "AI Policy",
+    "About",
+    "Disclosure"
+  ],
+  "eyebrow": "About the Project",
+  "title_html": "AI <em>Policy</em>",
+  "subtitle": "How artificial intelligence is used to compile and synthesise the content of this archive",
+  "blocks": [
+    {
+      "type": "html",
+      "html": "<div class=\"article-intro reveal\">\n  <p>The information on this website is compiled and synthesised with the assistance of artificial intelligence, drawing from publicly available historical records, academic publications, and cultural archives. While every effort is made to ensure accuracy, AI-generated content may occasionally reflect interpretations rather than universally established fact.</p>\n</div>\n\n<div class=\"h-wrap\">\n  <section class=\"h-entry\" id=\"s1\">\n    <div class=\"h-text reveal-right\">\n      <span class=\"h-numeral\">I · How It's Used</span>\n      <span class=\"h-eyebrow\">Compilation, Not Invention</span>\n      <h2 class=\"h-title\">Drawing from the <em>historical record</em></h2>\n      <p class=\"h-sub\">Publicly available sources, brought together in one voice</p>\n      <div class=\"h-body\">\n        <p>Each page on Dakhni.org is compiled from publicly available historical records, academic publications, and cultural archives, and synthesised with the assistance of artificial intelligence into a single, consistent voice. The aim is to gather scattered scholarship on the Deccan into one accessible place, not to introduce new historical claims of its own.</p>\n      </div>\n    </div>\n  </section>\n  <section class=\"h-entry\" id=\"s2\">\n    <div class=\"h-text reveal-left\">\n      <span class=\"h-numeral\">II · What This Means for Readers</span>\n      <span class=\"h-eyebrow\">Interpretation, Not Certainty</span>\n      <h2 class=\"h-title\">Accuracy is the <em>goal</em>, not a guarantee</h2>\n      <p class=\"h-sub\">AI-assisted synthesis can occasionally reflect interpretation rather than fact</p>\n      <div class=\"h-body\">\n        <p>While every effort is made to ensure accuracy, AI-generated content may occasionally reflect interpretations rather than universally established fact. Readers doing scholarly or historical research are encouraged to consult primary sources rather than treat any single page here as final.</p>\n      </div>\n    </div>\n  </section>\n  <section class=\"h-entry\" id=\"s3\">\n    <div class=\"h-text reveal-right\">\n      <span class=\"h-numeral\">III · Independence</span>\n      <span class=\"h-eyebrow\">An Independent Project</span>\n      <h2 class=\"h-title\">Not affiliated with any <em>institution</em></h2>\n      <p class=\"h-sub\">A personal cultural project, not an official record</p>\n      <div class=\"h-body\">\n        <p>Dakhni.org is an independent cultural project, not affiliated with any institution or government body. It exists to preserve and share the heritage of the Deccan, not to serve as an official or authoritative record.</p>\n      </div>\n    </div>\n  </section>\n</div>"
+    }
+  ]
+}
