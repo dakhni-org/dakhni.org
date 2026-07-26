@@ -12,7 +12,7 @@
   --rule-soft:rgba(26,24,20,0.05);
 }
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
+html { scroll-behavior:smooth; scroll-padding-top:78px; }
 body { background:var(--ivory); color:var(--ink); font-family:'EB Garamond',Georgia,serif; overflow-x:hidden; }
 .flag-banner { display:flex; justify-content:center; margin:0 auto 1.8rem; line-height:0; }
 .flag-banner img { width:auto; max-width:96px; height:auto; max-height:96px; object-fit:contain; object-position:center; display:block; opacity:.95; border:none; }
