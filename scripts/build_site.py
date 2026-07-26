@@ -49,6 +49,99 @@ LEAF_REQUIRED_FIELDS = {
     "subtitle": str,
 }
 
+def _validate_narrative_block(block: Dict[str, Any], prefix: str) -> List[str]:
+    errors: List[str] = []
+    if "tour_label" in block and not isinstance(block["tour_label"], str):
+        errors.append(f"{prefix}.tour_label must be string")
+    if "tour" in block:
+        tour = block["tour"]
+        if not isinstance(tour, list):
+            errors.append(f"{prefix}.tour must be array")
+        else:
+            for j, t in enumerate(tour):
+                if not isinstance(t, dict) or not isinstance(t.get("id"), str) or not isinstance(t.get("label"), str):
+                    errors.append(f"{prefix}.tour[{j}] must be an object with string 'id' and 'label'")
+    if "intro" in block and not isinstance(block["intro"], str):
+        errors.append(f"{prefix}.intro must be string")
+    sections = block.get("sections")
+    if not isinstance(sections, list) or not sections:
+        errors.append(f"{prefix}.sections must be a non-empty array")
+        sections = []
+    seen_ids = set()
+    for j, s in enumerate(sections):
+        sp = f"{prefix}.sections[{j}]"
+        if not isinstance(s, dict):
+            errors.append(f"{sp} must be object")
+            continue
+        sid = s.get("id")
+        if not isinstance(sid, str) or not sid:
+            errors.append(f"{sp}.id must be a non-empty string")
+        elif sid in seen_ids:
+            errors.append(f"{sp}.id '{sid}' is duplicated")
+        else:
+            seen_ids.add(sid)
+        if not isinstance(s.get("title_html"), str):
+            errors.append(f"{sp}.title_html must be string")
+        body = s.get("body")
+        if not isinstance(body, list) or not all(isinstance(p, str) for p in body):
+            errors.append(f"{sp}.body must be an array of strings")
+        for key in ("eyebrow", "numeral_label", "sub", "reveal"):
+            if key in s and not isinstance(s[key], str):
+                errors.append(f"{sp}.{key} must be string")
+        if "media_first" in s and not isinstance(s["media_first"], bool):
+            errors.append(f"{sp}.media_first must be boolean")
+        if "tags" in s:
+            tags = s["tags"]
+            if not isinstance(tags, list) or not all(isinstance(t, str) for t in tags):
+                errors.append(f"{sp}.tags must be an array of strings")
+        if "aside" in s and "figure" in s:
+            errors.append(f"{sp} may declare 'aside' or 'figure', not both")
+        if "aside" in s:
+            a = s["aside"]
+            if not isinstance(a, dict):
+                errors.append(f"{sp}.aside must be object")
+            else:
+                if not isinstance(a.get("label"), str):
+                    errors.append(f"{sp}.aside.label must be string")
+                items = a.get("items")
+                if not isinstance(items, list) or not items:
+                    errors.append(f"{sp}.aside.items must be a non-empty array")
+                else:
+                    for k, it in enumerate(items):
+                        if not isinstance(it, dict) or not isinstance(it.get("key"), str) or not isinstance(it.get("value"), str):
+                            errors.append(f"{sp}.aside.items[{k}] must be an object with string 'key' and 'value'")
+                if "note" in a and not isinstance(a["note"], str):
+                    errors.append(f"{sp}.aside.note must be string")
+                if "reveal" in a and not isinstance(a["reveal"], str):
+                    errors.append(f"{sp}.aside.reveal must be string")
+        if "figure" in s:
+            fg = s["figure"]
+            if not isinstance(fg, dict):
+                errors.append(f"{sp}.figure must be object")
+            else:
+                if not isinstance(fg.get("src"), str):
+                    errors.append(f"{sp}.figure.src must be string")
+                if not isinstance(fg.get("alt"), str):
+                    errors.append(f"{sp}.figure.alt must be string")
+                if not isinstance(fg.get("caption"), str):
+                    errors.append(f"{sp}.figure.caption must be string")
+                for key in ("loading", "reveal"):
+                    if key in fg and not isinstance(fg[key], str):
+                        errors.append(f"{sp}.figure.{key} must be string")
+    if "pull_quote" in block:
+        pq = block["pull_quote"]
+        if not isinstance(pq, dict):
+            errors.append(f"{prefix}.pull_quote must be object")
+        else:
+            for key in ("urdu", "translation", "attribution"):
+                if not isinstance(pq.get(key), str):
+                    errors.append(f"{prefix}.pull_quote.{key} must be string")
+            for key in ("urdu_lang", "urdu_style"):
+                if key in pq and not isinstance(pq[key], str):
+                    errors.append(f"{prefix}.pull_quote.{key} must be string")
+    return errors
+
+
 def validate_page(page: Dict[str, Any], source: str) -> List[str]:
     errors: List[str] = []
     required = dict(BASE_REQUIRED_FIELDS)
@@ -127,6 +220,8 @@ def validate_page(page: Dict[str, Any], source: str) -> List[str]:
                             errors.append(f"{source}: blocks[{i}].items[{j}].year must be string")
                         if not isinstance(item.get("text"), str):
                             errors.append(f"{source}: blocks[{i}].items[{j}].text must be string")
+            elif btype == "narrative":
+                errors.extend(_validate_narrative_block(block, f"{source}: blocks[{i}]"))
     for key in ("crumb_html", "subnav_html", "urdu", "cover", "hero_html", "level"):
         if key in page and not isinstance(page[key], str):
             errors.append(f"{source}: field '{key}' must be string when provided")
@@ -224,6 +319,8 @@ def collect_cite_ids(page: Dict[str, Any]) -> List[str]:
             texts += [item.get("html", "") or "" for item in block.get("items", []) if isinstance(item, dict)]
         elif btype == "timeline":
             texts += [item.get("text", "") or "" for item in block.get("items", []) if isinstance(item, dict)]
+        elif btype == "narrative":
+            texts += _narrative_texts(block)
         for t in texts:
             for m in CITE_RE.findall(t):
                 ids.extend(m.split())
@@ -453,6 +550,144 @@ def render_nav(nav_data: Dict[str, Any]) -> str:
     return "\n".join(out)
 
 
+_ROMAN = [(1000, "M"), (900, "CM"), (500, "D"), (400, "CD"), (100, "C"), (90, "XC"),
+          (50, "L"), (40, "XL"), (10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I")]
+
+
+def to_roman(n: int) -> str:
+    out = []
+    for val, sym in _ROMAN:
+        while n >= val:
+            out.append(sym)
+            n -= val
+    return "".join(out)
+
+
+def render_narrative_block(block: Dict[str, Any]) -> str:
+    """Render a `narrative` block: the alternating-panel "tour" layout used
+    by leaf pages (city/dynasty/saint/heritage/language/sacred-site/
+    institution content) -- an optional pillars-strip anchor nav, an intro
+    paragraph, a sequence of h-entry sections (each pairing prose with an
+    aside fact-list or a figure, alternating sides), and an optional closing
+    pull-quote. Replaces hand-typed h-wrap HTML with structured data so the
+    same markup/CSS is generated consistently across all leaf pages."""
+    out: List[str] = []
+    sections = block.get("sections", [])
+    tour = block.get("tour")
+    tour_label = block.get("tour_label")
+    if tour_label and tour:
+        links = [f'<a href="#{esc(t["id"])}">{t["label"]}</a>' for t in tour]
+        sep = '<span class="pillars-strip-sep">◆</span>'
+        out.append(
+            f'<div class="pillars-strip"><span class="pillars-strip-label">{tour_label}</span>'
+            + sep.join(links) + '</div>'
+        )
+
+    if block.get("intro"):
+        out.append(f'<div class="article-intro reveal">{block["intro"]}</div>')
+
+    entries = []
+    for i, s in enumerate(sections):
+        roman = to_roman(i + 1)
+        numeral = f'{roman} · {s["numeral_label"]}' if s.get("numeral_label") else roman
+        reveal_text = s.get("reveal") or ("reveal-right" if (i + 1) % 2 == 1 else "reveal-left")
+        media_reveal = "reveal-left" if reveal_text == "reveal-right" else "reveal-right"
+
+        text_parts = [f'<span class="h-numeral">{numeral}</span>']
+        if s.get("eyebrow"):
+            text_parts.append(f'<span class="h-eyebrow">{s["eyebrow"]}</span>')
+        text_parts.append(f'<h2 class="h-title">{s["title_html"]}</h2>')
+        if s.get("sub"):
+            text_parts.append(f'<p class="h-sub">{s["sub"]}</p>')
+        body_html = "".join(f'<p>{p}</p>' for p in s.get("body", []))
+        text_parts.append(f'<div class="h-body">{body_html}</div>')
+        if s.get("tags"):
+            tag_html = "".join(f'<span class="h-tag">{t}</span>' for t in s["tags"])
+            text_parts.append(f'<div class="h-tags">{tag_html}</div>')
+        text_html = f'<div class="h-text {reveal_text}">' + "".join(text_parts) + '</div>'
+
+        media_html = ""
+        if s.get("aside"):
+            a = s["aside"]
+            items_html = "".join(
+                f'<li><span class="h-key">{it["key"]}</span><span>{it["value"]}</span></li>'
+                for it in a.get("items", [])
+            )
+            note_html = f'<p class="h-aside-note">{a["note"]}</p>' if a.get("note") else ""
+            media_html = (
+                f'<aside class="h-aside {a.get("reveal") or media_reveal}">'
+                f'<span class="h-aside-label">{a["label"]}</span>'
+                f'<ul class="h-list">{items_html}</ul>{note_html}</aside>'
+            )
+        elif s.get("figure"):
+            fg = s["figure"]
+            media_html = (
+                f'<figure class="h-figure {fg.get("reveal") or media_reveal}">'
+                f'<img loading="{esc(fg.get("loading", "lazy"))}" alt="{esc(fg.get("alt"))}" src="{esc(fg["src"])}"/>'
+                f'<figcaption>{fg["caption"]}</figcaption></figure>'
+            )
+
+        if media_html and s.get("media_first"):
+            inner = media_html + text_html
+        elif media_html:
+            inner = text_html + media_html
+        else:
+            inner = text_html
+        entries.append(f'<section class="h-entry" id="{esc(s["id"])}">{inner}</section>')
+
+    out.append('<div class="h-wrap">' + "".join(entries) + '</div>')
+
+    if block.get("pull_quote"):
+        pq = block["pull_quote"]
+        urdu_attrs = ""
+        if pq.get("urdu_lang"):
+            urdu_attrs += f' lang="{esc(pq["urdu_lang"])}"'
+        if pq.get("urdu_style"):
+            urdu_attrs += f' style="{esc(pq["urdu_style"])}"'
+        out.append(
+            f'<section class="h-pull"><p class="h-pull-urdu"{urdu_attrs}>{pq["urdu"]}</p>'
+            f'<p class="h-pull-trans">{pq["translation"]}</p>'
+            f'<p class="h-pull-attr">{pq["attribution"]}</p></section>'
+        )
+
+    return "".join(out)
+
+
+def _narrative_texts(block: Dict[str, Any]) -> List[str]:
+    """All free-text fields of a narrative block that may carry inline
+    <cite> markers, for citation collection."""
+    texts: List[str] = []
+    if block.get("intro"):
+        texts.append(block["intro"])
+    for s in block.get("sections", []) or []:
+        if not isinstance(s, dict):
+            continue
+        for key in ("eyebrow", "title_html", "sub"):
+            if s.get(key):
+                texts.append(s[key])
+        texts.extend(s.get("body", []) or [])
+        texts.extend(s.get("tags", []) or [])
+        aside = s.get("aside")
+        if isinstance(aside, dict):
+            if aside.get("label"):
+                texts.append(aside["label"])
+            if aside.get("note"):
+                texts.append(aside["note"])
+            for it in aside.get("items", []) or []:
+                if isinstance(it, dict):
+                    texts.append(it.get("key", ""))
+                    texts.append(it.get("value", ""))
+        figure = s.get("figure")
+        if isinstance(figure, dict) and figure.get("caption"):
+            texts.append(figure["caption"])
+    pull = block.get("pull_quote")
+    if isinstance(pull, dict):
+        for key in ("urdu", "translation", "attribution"):
+            if pull.get(key):
+                texts.append(pull[key])
+    return texts
+
+
 def render_blocks(page: Dict[str, Any]) -> str:
     blocks = page.get("blocks")
     if not isinstance(blocks, list):
@@ -481,6 +716,8 @@ def render_blocks(page: Dict[str, Any]) -> str:
                 cite = "".join(f'<cite data-ref="{esc(rid)}"></cite>' for rid in _normalize_ref_ids(item.get("ref")))
                 out.append(f'<div class="fact"><span class="fact-key">{key}</span><span class="fact-val">{val}{cite}</span></div>')
             out.append('</section>')
+        elif btype == "narrative":
+            out.append(render_narrative_block(block))
         elif btype == "timeline":
             eyebrow = esc(block.get("eyebrow", ""))
             title = esc(block.get("title", ""))
