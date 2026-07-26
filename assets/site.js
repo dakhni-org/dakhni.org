@@ -136,13 +136,16 @@
     }).join('');
   }
   var historyPushed=false;
-  function openSearch(){
-    if(!modal.hidden) return;
+  function showOverlay(){
     modal.hidden=false;
     document.body.classList.add('ds-search-open');
     btn.setAttribute('aria-expanded','true');
     load();
     setTimeout(function(){input.focus();},30);
+  }
+  function openSearch(){
+    if(!modal.hidden) return;
+    showOverlay();
     // On mobile, the back gesture normally navigates the browser away from
     // the page entirely. Pushing a history entry here means that gesture
     // instead just closes the overlay -- the same thing Escape does --
@@ -167,7 +170,15 @@
       if(!fromPopstate) history.back();
     }
   }
-  window.addEventListener('popstate',function(){
+  window.addEventListener('popstate',function(e){
+    if(e.state&&e.state.dsSearchOpen){
+      // Forward-navigated back into the search-open history entry (e.g.
+      // Back closed the overlay, then Forward). Reopen it to match --
+      // without this the entry would still exist but Forward would look
+      // like it did nothing, since the URL never changes either way.
+      if(modal.hidden){ showOverlay(); historyPushed=true; }
+      return;
+    }
     if(!modal.hidden) closeSearch(true);
   });
   btn.addEventListener('click',openSearch);
