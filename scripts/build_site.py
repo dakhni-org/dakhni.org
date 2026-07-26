@@ -541,7 +541,12 @@ def render_nav(nav_data: Dict[str, Any]) -> str:
     for item in items:
         children = item.get("children", [])
         if children:
-            out.append(f'    <li class="has-dropdown"><a href="{esc(item["href"])}">{esc(item["label"])}</a><ul class="dropdown">')
+            toggle_label = f'Toggle {esc(item["label"])} submenu'
+            out.append(
+                f'    <li class="has-dropdown"><a href="{esc(item["href"])}">{esc(item["label"])}</a>'
+                f'<button class="dropdown-toggle" type="button" aria-expanded="false" aria-label="{toggle_label}"></button>'
+                f'<ul class="dropdown">'
+            )
             for child in children:
                 out.append(f'      <li><a href="{esc(child["href"])}">{esc(child["label"])}</a></li>')
             out.append('    </ul></li>')
