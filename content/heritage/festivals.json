@@ -6,6 +6,7 @@
   "description": "A year in the Dakhni calendar — Ramazan at Charminar, Muharram marsiya, Bonalu, the Deccan Festival.",
   "dedication": "In memory of the Asaf Jahi dynasty",
   "sort_order": 70,
+  "nested_hub": true,
   "tags": [
     "Eid",
     "Deccan Festivals",
