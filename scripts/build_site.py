@@ -63,6 +63,8 @@ def _validate_narrative_block(block: Dict[str, Any], prefix: str) -> List[str]:
                     errors.append(f"{prefix}.tour[{j}] must be an object with string 'id' and 'label'")
     if "intro" in block and not isinstance(block["intro"], str):
         errors.append(f"{prefix}.intro must be string")
+    if "start" in block and not isinstance(block["start"], int):
+        errors.append(f"{prefix}.start must be integer")
     sections = block.get("sections")
     if not isinstance(sections, list) or not sections:
         errors.append(f"{prefix}.sections must be a non-empty array")
@@ -573,6 +575,7 @@ def render_narrative_block(block: Dict[str, Any]) -> str:
     same markup/CSS is generated consistently across all leaf pages."""
     out: List[str] = []
     sections = block.get("sections", [])
+    start = block.get("start", 1)
     tour = block.get("tour")
     tour_label = block.get("tour_label")
     if tour_label and tour:
@@ -588,9 +591,10 @@ def render_narrative_block(block: Dict[str, Any]) -> str:
 
     entries = []
     for i, s in enumerate(sections):
-        roman = to_roman(i + 1)
+        idx = start + i
+        roman = to_roman(idx)
         numeral = f'{roman} · {s["numeral_label"]}' if s.get("numeral_label") else roman
-        reveal_text = s.get("reveal") or ("reveal-right" if (i + 1) % 2 == 1 else "reveal-left")
+        reveal_text = s.get("reveal") or ("reveal-right" if idx % 2 == 1 else "reveal-left")
         media_reveal = "reveal-left" if reveal_text == "reveal-right" else "reveal-right"
 
         text_parts = [f'<span class="h-numeral">{numeral}</span>']
