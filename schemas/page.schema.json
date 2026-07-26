@@ -58,6 +58,10 @@
       "type": "array",
       "description": "Exact-phrase names for this page (its title and natural variants). Any of these phrases found as plain text on another page is auto-linked to this page's url, once per page.",
       "items": {"type": "string"}
+    },
+    "no_subnav": {
+      "type": "boolean",
+      "description": "If true, this page is excluded from the auto Prev/Next subnav entirely: it gets no subnav of its own, and it is never listed as a sibling in its parent's subnav group. For sub-topic leaf pages that share a URL prefix with unrelated sibling pages but shouldn't join their Prev/Next tour."
     }
   },
   "additionalProperties": false

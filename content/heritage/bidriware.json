@@ -1,0 +1,63 @@
+{
+  "page_type": "heritage_leaf",
+  "url": "/heritage/bidriware/",
+  "section": "Heritage",
+  "title": "Bidriware",
+  "description": "Bidriware is the signature metalcraft of Bidar: a zinc-and-copper alloy inlaid with hammered silver and blackened with a paste of soil from the Bidar fort, made the same way for more than five centuries.",
+  "dedication": "In memory of the Asaf Jahi dynasty",
+  "sort_order": 200,
+  "tags": [
+    "Bidriware",
+    "Bidar",
+    "Crafts",
+    "Metalwork"
+  ],
+  "eyebrow": "Crafts of the Deccan",
+  "title_html": "Bidriware",
+  "subtitle": "Bidar · Since c. 1500",
+  "link_terms": [
+    "Bidriware"
+  ],
+  "no_subnav": true,
+  "blocks": [
+    {
+      "type": "facts",
+      "items": [
+        {
+          "key": "Origin",
+          "value": "Bidar, Deccan",
+          "ref": "michell-zebrowski-1999"
+        },
+        {
+          "key": "In production since",
+          "value": "c. 1500",
+          "ref": "michell-zebrowski-1999"
+        },
+        {
+          "key": "Material",
+          "value": "Zinc-and-copper alloy, inlaid with hammered silver and brass wire",
+          "ref": "michell-zebrowski-1999"
+        },
+        {
+          "key": "Blackening agent",
+          "value": "A paste of soil from the Bidar fort",
+          "ref": "michell-zebrowski-1999"
+        },
+        {
+          "key": "Recognition",
+          "value": "Registered as a Geographical Indication (GI) of India"
+        }
+      ]
+    },
+    {
+      "type": "html",
+      "html": "<div class=\"article-intro reveal\">\n  <p><em>Bidriware</em> is the signature metalcraft of Bidar, made the same way for more than five centuries. A vessel of zinc-and-copper alloy is cast, scored with a steel point, inlaid with hammered silver and brass wire, and then dipped in a paste of soil from the Bidar fort that turns the alloy a deep matte black — leaving the silver inlay untouched and gleaming against it.<cite data-ref=\"michell-zebrowski-1999\"></cite> No other metalwork looks like it.</p>\n</div>\n\n<div class=\"h-wrap\">\n  <section class=\"h-entry\" id=\"s1\">\n    <div class=\"h-text reveal-right\">\n      <span class=\"h-numeral\">I · The Craft</span>\n      <span class=\"h-eyebrow\">Bidar · Five Centuries</span>\n      <h2 class=\"h-title\">Black metal inlaid with <em>silver</em></h2>\n      <p class=\"h-sub\">Casting, scoring, inlay, and the blackening paste unique to Bidar</p>\n      <div class=\"h-body\">\n        <p>The craft takes its name from Bidar, the only place it has ever been made. A vessel is cast in an alloy of zinc and copper, its surface scored with a steel point in a pattern, then inlaid with hammered silver and brass wire set into the scored lines. The vessel is finally dipped in a paste made from soil taken from within the Bidar fort itself, which reacts with the alloy to turn it a deep matte black — while leaving the silver, untouched by the reaction, standing out bright against it.<cite data-ref=\"michell-zebrowski-1999\"></cite></p>\n      </div>\n    </div>\n  </section>\n  <section class=\"h-entry\" id=\"s2\">\n    <div class=\"h-text reveal-left\">\n      <span class=\"h-numeral\">II · Recognition</span>\n      <span class=\"h-eyebrow\">A Craft Made Nowhere Else</span>\n      <h2 class=\"h-title\">Continuing <em>tradition</em></h2>\n      <p class=\"h-sub\">Still practised by Bidar's karigars, and protected as a Geographical Indication</p>\n      <div class=\"h-body\">\n        <p>Bidriware remains in production in Bidar today, carried on by the same families of karigars who have practised it for generations. It is registered as a Geographical Indication (GI) of India, recognition of a craft that, despite its fame across the Deccan and beyond, has never been successfully replicated anywhere else — the blackening reaction depends on the particular soil of the Bidar fort itself.</p>\n      </div>\n    </div>\n  </section>\n</div>"
+    }
+  ],
+  "references": [
+    {
+      "id": "michell-zebrowski-1999",
+      "text": "George Michell & Mark Zebrowski, Architecture and Art of the Deccan Sultanates (The New Cambridge History of India I.7), Cambridge University Press, 1999."
+    }
+  ]
+}

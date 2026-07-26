@@ -549,8 +549,8 @@ def build_page_maps(pages):
         url = page.get("url", "")
         if not url or page.get("level") == "home":
             continue
-        if url in hub_urls:
-            continue  # hub pages don't get subnav
+        if url in hub_urls or page.get("no_subnav"):
+            continue  # hub pages, and pages opted out via no_subnav, don't get subnav
         p = parent_url(url)
         groups[p].append(page)
 

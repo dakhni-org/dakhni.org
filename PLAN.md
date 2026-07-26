@@ -135,7 +135,7 @@ confirm (a) zero `link_terms` collisions, (b) the parent topic page's existing m
 renders as an `xref-link` to the new page, (c) the new URL appears in `sitemap.xml`, and
 (d) none of the 7 pillar pages' Prev/Next now points at a sub-topic page.
 
-- [ ] Create `content/heritage/bidriware.json` — the silver-inlaid blackened-alloy metalwork of Bidar, c. 1500–present
+- [x] Create `content/heritage/bidriware.json` — the silver-inlaid blackened-alloy metalwork of Bidar, c. 1500–present
 - [ ] Create `content/heritage/paithani.json` — the tapestry-bordered silk sari woven at Paithan, near Aurangabad
 - [ ] Create `content/heritage/biryani.json` — Hyderabadi dum biryani; the kachchi vs. pakki distinction
 - [ ] Create `content/heritage/haleem.json` — the pounded wheat-lentil-meat dish and its Ramazan/Hyderabadi status
