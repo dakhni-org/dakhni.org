@@ -145,8 +145,8 @@ CLAUDE.md note on `write_sitemap`'s git-log-based `lastmod`.
 
 - [x] Create `content/heritage/crafts/bidriware.json` — the silver-inlaid blackened-alloy metalwork of Bidar, c. 1500–present
 - [x] Create `content/heritage/crafts/paithani.json` — the tapestry-bordered silk sari woven at Paithan, near Aurangabad
-- [ ] Create `content/heritage/cuisine/biryani.json` — Hyderabadi dum biryani; the kachchi vs. pakki distinction
-- [ ] Create `content/heritage/cuisine/haleem.json` — the pounded wheat-lentil-meat dish and its Ramazan/Hyderabadi status
+- [x] Create `content/heritage/cuisine/biryani.json` — Hyderabadi dum biryani; the kachchi vs. pakki distinction
+- [x] Create `content/heritage/cuisine/haleem.json` — the pounded wheat-lentil-meat dish and its Ramazan/Hyderabadi status
 - [ ] Create `content/heritage/festivals/bonalu.json` — the Hindu festival of Bonalu in Hyderabad's old city
 - [ ] Create `content/heritage/music/qawwali.json` — Sufi devotional ensemble singing at Deccan shrines
 

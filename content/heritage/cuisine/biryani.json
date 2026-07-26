@@ -1,0 +1,59 @@
+{
+  "page_type": "heritage_leaf",
+  "url": "/heritage/cuisine/biryani/",
+  "section": "Heritage",
+  "title": "Biryani",
+  "description": "Hyderabadi dum biryani is the signature dish of the Deccan: meat marinated raw, layered with parboiled rice, sealed under a dough lid and cooked over slow embers — the kachchi technique that Hyderabad insists is the only true biryani.",
+  "dedication": "In memory of the Asaf Jahi dynasty",
+  "sort_order": 10,
+  "tags": [
+    "Biryani",
+    "Dum Biryani",
+    "Hyderabad",
+    "Cuisine"
+  ],
+  "eyebrow": "Cuisine of the Deccan",
+  "title_html": "Biryani",
+  "subtitle": "Hyderabad · Kachchi Dum",
+  "link_terms": [
+    "Dum Biryani",
+    "Biryani"
+  ],
+  "blocks": [
+    {
+      "type": "facts",
+      "items": [
+        {
+          "key": "Signature of",
+          "value": "Hyderabad",
+          "ref": "britannica-biryani"
+        },
+        {
+          "key": "Technique",
+          "value": "Kachchi dum — raw-marinated, sealed and slow-cooked",
+          "ref": "britannica-biryani"
+        },
+        {
+          "key": "Origin",
+          "value": "Persian court technique met Telugu spice under the Asaf Jahi kitchen",
+          "ref": "collingham-2006"
+        }
+      ]
+    },
+    {
+      "type": "html",
+      "html": "<div class=\"article-intro reveal\">\n  <p><em>Biryani</em> is the signature dish of Hyderabadi cuisine, born where the Persian khansamas of the Asaf Jahi court met the Telugu cooks of the Deccan plateau. Hyderabad's own style is <em>kachchi dum</em>: meat marinated raw, layered with rice that has been parboiled separately, sealed under a dough lid, and cooked over slow embers until the steam alone has done the work.<cite data-ref=\"britannica-biryani collingham-2006\"></cite></p>\n</div>\n\n<div class=\"h-wrap\">\n  <section class=\"h-entry\" id=\"s1\">\n    <div class=\"h-text reveal-right\">\n      <span class=\"h-numeral\">I · The Technique</span>\n      <span class=\"h-eyebrow\">Kachchi Dum</span>\n      <h2 class=\"h-title\">Meat, rice, and <em>patience</em></h2>\n      <p class=\"h-sub\">Nothing about it is hurried</p>\n      <div class=\"h-body\">\n        <p>The meat is marinated raw in yoghurt, ginger, fried onions and spice, then layered with parboiled rice and sealed under a dough lid to cook over slow embers. Done well, the meat is melting, the rice is dry-grained, and every spoonful carries saffron at one bite and chilli at the next.<cite data-ref=\"britannica-biryani collingham-2006\"></cite></p>\n      </div>\n    </div>\n  </section>\n  <section class=\"h-entry\" id=\"s2\">\n    <div class=\"h-text reveal-left\">\n      <span class=\"h-numeral\">II · Kachchi vs. Pakki</span>\n      <span class=\"h-eyebrow\">A Distinction Hyderabad Insists On</span>\n      <h2 class=\"h-title\">Raw <em>marinade</em>, not pre-cooked meat</h2>\n      <p class=\"h-sub\">The difference between a Hyderabadi feast and any other biryani</p>\n      <div class=\"h-body\">\n        <p>A Dakhni feast is judged by the <em>kachchi</em> biryani, in which raw meat is layered with rice and cooked together in one sealed pot. Anything made instead with meat cooked separately before layering is <em>pakki</em> — and Hyderabad will tell you the difference matters.</p>\n      </div>\n    </div>\n  </section>\n</div>"
+    }
+  ],
+  "references": [
+    {
+      "id": "britannica-biryani",
+      "text": "Encyclopaedia Britannica, \"Biryani.\"",
+      "url": "https://www.britannica.com/topic/biryani"
+    },
+    {
+      "id": "collingham-2006",
+      "text": "Lizzie Collingham, Curry: A Tale of Cooks and Conquerors, Oxford University Press, 2006."
+    }
+  ]
+}
