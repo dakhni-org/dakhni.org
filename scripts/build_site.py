@@ -500,17 +500,10 @@ def render_blocks(page: Dict[str, Any]) -> str:
             out.append('</ol></section>')
     return "\n".join(out)
 
-DISCLOSURE = '''<div id="ai-disclosure" role="dialog" aria-modal="true" aria-labelledby="disclosure-title">
-  <div class="disclosure-backdrop"></div>
-  <button class="disclosure-close" id="disclosure-close" type="button" aria-label="Close">&times;</button>
-  <div class="disclosure-card" tabindex="-1">
-    <div class="disclosure-ornament">✦</div>
-    <p class="disclosure-label">A Note on Our Content</p>
-    <h2 class="disclosure-title" id="disclosure-title">AI-Assisted Research</h2>
-    <div class="disclosure-rule"></div>
-    <p class="disclosure-body">The information on this website is compiled and synthesised with the assistance of artificial intelligence, drawing from publicly available historical records, academic publications, and cultural archives. While every effort is made to ensure accuracy, AI-generated content may occasionally reflect interpretations rather than universally established fact.</p>
-    <p class="disclosure-body disclosure-body--note">Dakhni.org is an independent cultural project, not affiliated with any institution or government body. We encourage readers to consult primary sources for scholarly research.</p>
-    <button class="disclosure-btn" id="disclosure-accept">I Understand</button>
+AI_NOTICE = '''<div id="ai-notice" class="ai-notice" role="status" hidden>
+  <div class="ai-notice-inner">
+    <p class="ai-notice-text">This site's content is compiled with AI assistance from historical sources — accuracy isn't guaranteed.<a href="/ai-policy/">Read more</a></p>
+    <button class="ai-notice-close" id="ai-notice-close" type="button" aria-label="Dismiss this notice">&times;</button>
   </div>
 </div>'''
 
@@ -656,6 +649,7 @@ def footer(dedication):
     <li><a href="/cities/">Cities</a></li>
     <li><a href="/#quiz">Quiz</a></li>
     <li><a href="/about/">About</a></li>
+    <li><a href="/ai-policy/">AI Policy</a></li>
   </ul>
   <p class="ft-copy">© <span id="year">2025</span> Dakhni.org · {esc(ded)} · Built with love for the Deccan</p>
 </footer>'''
@@ -802,7 +796,7 @@ def render(page, nav_html, url_to_page, subnav_map, term_to_url=None):
     body = render_crosslinks(body, page.get("url", ""), term_to_url or {})
     crumb = page.get("crumb_html") or render_auto_crumb(page, url_to_page)
     subnav = page.get("subnav_html") or render_auto_subnav(page, subnav_map, url_to_page)
-    out = [head(page, url_to_page), "<body>", nav_html]
+    out = [head(page, url_to_page), "<body>", AI_NOTICE, nav_html]
     if page.get("level") == "home":
         out.append(page.get("hero_html", ""))
         out.append('<main class="page-main page-main--home">')
@@ -824,7 +818,6 @@ def render(page, nav_html, url_to_page, subnav_map, term_to_url=None):
     if subnav:
         out.append(subnav)
     out.append(footer(page.get("dedication")))
-    out.append(DISCLOSURE)
     out.append(SEARCH)
     for sc in page.get("extra_scripts", []):
         out.append("<script>\n" + sc + "\n</script>")

@@ -37,50 +37,25 @@
 
 /* ---- */
 (function(){
-  var el = document.getElementById('ai-disclosure');
+  // A single-line, non-blocking notice -- not a modal. It never steals
+  // focus and has no backdrop, so it can't interrupt whatever the visitor
+  // is already doing (e.g. mid-quiz) the way the previous full-screen
+  // disclosure dialog could.
+  var el = document.getElementById('ai-notice');
   if (!el) return;
-  var closeBtn = document.getElementById('disclosure-close');
-  var acceptBtn = document.getElementById('disclosure-accept');
-  var shown = false;
-  var lastFocused = null;
-  function focusable() {
-    // Both buttons are always present and visible together whenever the
-    // dialog is open, so no visibility check is needed here — and
-    // offsetParent (a common visibility check) is always null for
-    // position:fixed elements like .disclosure-close, which would
-    // otherwise wrongly filter it out.
-    return [closeBtn, acceptBtn].filter(Boolean);
-  }
+  var closeBtn = document.getElementById('ai-notice-close');
   function show() {
-    if (shown || localStorage.getItem('dakhni_disclosure_seen')) return;
-    shown = true;
-    lastFocused = document.activeElement;
-    el.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    closeBtn.focus();
+    if (localStorage.getItem('dakhni_ai_notice_seen')) return;
+    el.hidden = false;
+    requestAnimationFrame(function(){ el.classList.add('open'); });
   }
   function dismiss() {
-    localStorage.setItem('dakhni_disclosure_seen', '1');
+    localStorage.setItem('dakhni_ai_notice_seen', '1');
     el.classList.remove('open');
-    document.body.style.overflow = '';
-    if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
-    lastFocused = null;
+    setTimeout(function(){ el.hidden = true; }, 300);
   }
-  acceptBtn.addEventListener('click', dismiss);
   closeBtn.addEventListener('click', dismiss);
-  el.querySelector('.disclosure-backdrop').addEventListener('click', dismiss);
-  document.addEventListener('keydown', function(e){
-    if (!el.classList.contains('open')) return;
-    if (e.key === 'Escape') { e.stopImmediatePropagation(); dismiss(); return; }
-    if (e.key !== 'Tab') return;
-    // Trap focus inside the dialog while it's open.
-    var items = focusable();
-    if (!items.length) return;
-    var first = items[0], last = items[items.length - 1];
-    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-  });
-  setTimeout(show, 3000);
+  setTimeout(show, 5000);
 })();
 
 /* ---- */
