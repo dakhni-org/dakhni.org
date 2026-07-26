@@ -154,11 +154,24 @@
     modal.hidden=true;
     document.body.classList.remove('ds-search-open');
     btn.setAttribute('aria-expanded','false');
+    btn.focus();
   }
   btn.addEventListener('click',openSearch);
   input.addEventListener('input',render);
   modal.addEventListener('click',function(e){if(e.target.hasAttribute('data-close'))closeSearch();});
   list.addEventListener('click',function(e){if(e.target.closest('a'))closeSearch();});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)closeSearch();});
+  document.addEventListener('keydown',function(e){
+    if(modal.hidden) return;
+    if(e.key==='Escape'){closeSearch();return;}
+    if(e.key!=='Tab') return;
+    // Trap focus inside the dialog while it's open -- the result list is
+    // rebuilt on every keystroke, so the focusable set is recomputed fresh
+    // each time rather than cached.
+    var items=modal.querySelectorAll('input, button, a[href]');
+    if(!items.length) return;
+    var first=items[0], last=items[items.length-1];
+    if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
+    else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
+  });
 })();
 
