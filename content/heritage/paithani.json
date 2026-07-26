@@ -1,0 +1,59 @@
+{
+  "page_type": "heritage_leaf",
+  "url": "/heritage/paithani/",
+  "section": "Heritage",
+  "title": "Paithani",
+  "description": "Paithani is the tapestry-bordered silk sari woven at Paithan, near Aurangabad, since the Satavahana age around 200 BCE — pure mulberry silk with a border in real zari, still made on the looms of Paithan today.",
+  "dedication": "In memory of the Asaf Jahi dynasty",
+  "sort_order": 210,
+  "tags": [
+    "Paithani",
+    "Paithan",
+    "Crafts",
+    "Textiles"
+  ],
+  "eyebrow": "Crafts of the Deccan",
+  "title_html": "Paithani",
+  "subtitle": "Paithan · Since c. 200 BCE",
+  "link_terms": [
+    "Paithani"
+  ],
+  "no_subnav": true,
+  "blocks": [
+    {
+      "type": "facts",
+      "items": [
+        {
+          "key": "Origin",
+          "value": "Paithan, near Aurangabad",
+          "ref": "michell-zebrowski-1999"
+        },
+        {
+          "key": "Tradition established",
+          "value": "c. 200 BCE, in the Satavahana age",
+          "ref": "michell-zebrowski-1999"
+        },
+        {
+          "key": "Material",
+          "value": "Pure mulberry silk with a tapestry-woven zari border",
+          "ref": "michell-zebrowski-1999"
+        },
+        {
+          "key": "Production time",
+          "value": "Up to a year per piece",
+          "ref": "michell-zebrowski-1999"
+        }
+      ]
+    },
+    {
+      "type": "html",
+      "html": "<div class=\"article-intro reveal\">\n  <p><em>Paithani</em> is the tapestry-bordered silk sari woven at Paithan, south of Aurangabad, a tradition established in the Satavahana age around 200 BCE. It is woven in pure mulberry silk with a border and end-piece in real zari — gold and silver thread — worked into the fabric itself rather than embroidered onto it, with a single sari taking up to a year to complete.<cite data-ref=\"michell-zebrowski-1999\"></cite></p>\n</div>\n\n<div class=\"h-wrap\">\n  <section class=\"h-entry\" id=\"s1\">\n    <div class=\"h-text reveal-right\">\n      <span class=\"h-numeral\">I · The Weave</span>\n      <span class=\"h-eyebrow\">Paithan · Since the Satavahanas</span>\n      <h2 class=\"h-title\">Woven <em>gold</em> on silk</h2>\n      <p class=\"h-sub\">A tapestry-woven border, worked thread by thread into the silk</p>\n      <div class=\"h-body\">\n        <p>Unlike embroidery, which is applied after weaving, the Paithani border is built into the fabric on the loom itself — a tapestry technique in which the weft threads carrying the zari pattern are interlocked directly with the silk warp, producing a border and end-piece as strong as the silk ground it sits on. The scale of the work is why a single sari can take up to a year on the loom.<cite data-ref=\"michell-zebrowski-1999\"></cite></p>\n      </div>\n    </div>\n  </section>\n  <section class=\"h-entry\" id=\"s2\">\n    <div class=\"h-text reveal-left\">\n      <span class=\"h-numeral\">II · Continuing Tradition</span>\n      <span class=\"h-eyebrow\">The Looms of Paithan</span>\n      <h2 class=\"h-title\">Still on the <em>loom</em></h2>\n      <p class=\"h-sub\">A craft that has outlasted the empires it was woven under</p>\n      <div class=\"h-body\">\n        <p>The looms of Paithan have continued weaving the Paithani sari since the Satavahana age and into the present — one of the longest continuously practised textile traditions of the Deccan plateau.<cite data-ref=\"michell-zebrowski-1999\"></cite></p>\n      </div>\n    </div>\n  </section>\n</div>"
+    }
+  ],
+  "references": [
+    {
+      "id": "michell-zebrowski-1999",
+      "text": "George Michell & Mark Zebrowski, Architecture and Art of the Deccan Sultanates (The New Cambridge History of India I.7), Cambridge University Press, 1999."
+    }
+  ]
+}
