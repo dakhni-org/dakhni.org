@@ -102,6 +102,8 @@ def main():
         rel = os.path.relpath(path, ROOT)
         with open(path, encoding="utf-8") as fh:
             src = fh.read()
+        if 'name="robots" content="noindex"' in src:
+            continue  # redirect stubs and other noindex pages don't belong in search
         tm = TITLE_RE.search(src)
         if not tm:
             continue

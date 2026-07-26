@@ -18,6 +18,9 @@
   "link_terms": [
     "Bidriware"
   ],
+  "redirect_from": [
+    "/heritage/bidriware/"
+  ],
   "blocks": [
     {
       "type": "facts",

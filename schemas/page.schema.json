@@ -66,6 +66,11 @@
     "nested_hub": {
       "type": "boolean",
       "description": "If true, this page keeps its own Prev/Next entry in its parent's subnav group even though its URL is itself the parent of other pages (which would otherwise exclude it, as with a pure listing hub). For a contentful page that is both a normal sibling in its own parent's tour and a hub for its own nested children, e.g. a heritage pillar page that hosts named-topic sub-pages under its own URL."
+    },
+    "redirect_from": {
+      "type": "array",
+      "description": "Old URLs this page used to live at, e.g. because its URL was later changed. A small static redirect stub (meta refresh + canonical, noindex) is written at each old URL, pointing at this page's current url -- so a moved page's previously published address doesn't 404 for bookmarks or already-indexed search results.",
+      "items": {"type": "string"}
     }
   },
   "additionalProperties": false
