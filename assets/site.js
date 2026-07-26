@@ -135,19 +135,41 @@
       return '<li role="option"><a href="'+esc(p.u)+'"><span class="ds-r-title">'+hl(p.t,terms)+'</span><span class="ds-r-sec">'+esc(p.s)+'</span><span class="ds-r-desc">'+snippet(p,terms)+'</span></a></li>';
     }).join('');
   }
+  var historyPushed=false;
   function openSearch(){
+    if(!modal.hidden) return;
     modal.hidden=false;
     document.body.classList.add('ds-search-open');
     btn.setAttribute('aria-expanded','true');
     load();
     setTimeout(function(){input.focus();},30);
+    // On mobile, the back gesture normally navigates the browser away from
+    // the page entirely. Pushing a history entry here means that gesture
+    // instead just closes the overlay -- the same thing Escape does --
+    // rather than leaving the page the visitor was reading.
+    if(window.history&&window.history.pushState){
+      history.pushState({dsSearchOpen:true},'',location.href);
+      historyPushed=true;
+    }
   }
-  function closeSearch(){
+  function closeSearch(fromPopstate){
     modal.hidden=true;
     document.body.classList.remove('ds-search-open');
     btn.setAttribute('aria-expanded','false');
     btn.focus();
+    if(historyPushed){
+      historyPushed=false;
+      // Only step back ourselves when *we* triggered the close (Escape,
+      // the cancel button, the backdrop, a result link). When the close
+      // was triggered by the back gesture itself, the browser has already
+      // moved back one step -- calling history.back() again here would
+      // skip past the page the visitor actually wanted.
+      if(!fromPopstate) history.back();
+    }
   }
+  window.addEventListener('popstate',function(){
+    if(!modal.hidden) closeSearch(true);
+  });
   btn.addEventListener('click',openSearch);
   input.addEventListener('input',render);
   modal.addEventListener('click',function(e){if(e.target.hasAttribute('data-close'))closeSearch();});
