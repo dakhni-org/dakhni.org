@@ -155,6 +155,10 @@ def validate_page(page: Dict[str, Any], source: str) -> List[str]:
         terms = page["link_terms"]
         if not isinstance(terms, list) or any(not isinstance(t, str) or not t for t in terms):
             errors.append(f"{source}: field 'link_terms' must be an array of non-empty strings")
+    if "redirect_from" in page:
+        olds = page["redirect_from"]
+        if not isinstance(olds, list) or any(not isinstance(u, str) or not u for u in olds):
+            errors.append(f"{source}: field 'redirect_from' must be an array of non-empty strings")
     if "extra_scripts" in page:
         val = page["extra_scripts"]
         if not isinstance(val, list) or any(not isinstance(x, str) for x in val):
@@ -539,6 +543,23 @@ def build_page_maps(pages):
 
     hub_urls: set of URLs that have at least one child page.
     subnav_map: url -> {prev, next, index_href} for each leaf page.
+
+    By default, any page whose URL is another page's parent (hub_urls) is
+    excluded from ever appearing in a subnav group -- it doesn't get its
+    own Prev/Next, and it isn't listed as a sibling in its own parent's
+    group either. That's correct for a pure listing page like
+    content/heritage.json, which exists only to host its 7 pillar
+    children and was never a "sibling" of anything itself.
+
+    It's wrong, though, for a page that is itself a normal, contentful
+    sibling in its parent's tour *and* separately hosts its own children
+    -- e.g. content/heritage/crafts.json is one of the 7 heritage pillars
+    (wants its own Prev/Next among the other 6) while also being the
+    parent of content/heritage/crafts/bidriware.json (which wants its own
+    Prev/Next among its own craft siblings, with index_href pointing at
+    crafts, not all the way up at heritage). Such a page opts in with
+    `"nested_hub": true`, which keeps it in its own parent's group despite
+    having children of its own.
     """
     url_to_page = {p["url"]: p for p in pages if p.get("url")}
     hub_urls = {parent_url(p["url"]) for p in pages if p.get("url") and parent_url(p["url"]) != p["url"]}
@@ -549,8 +570,8 @@ def build_page_maps(pages):
         url = page.get("url", "")
         if not url or page.get("level") == "home":
             continue
-        if url in hub_urls or page.get("no_subnav"):
-            continue  # hub pages, and pages opted out via no_subnav, don't get subnav
+        if (url in hub_urls and not page.get("nested_hub")) or page.get("no_subnav"):
+            continue  # hub pages (unless nested_hub), and pages opted out via no_subnav, don't get subnav
         p = parent_url(url)
         groups[p].append(page)
 
@@ -870,6 +891,62 @@ def write_sitemap(pages: List[Dict[str, Any]], page_files: Dict[str, str]) -> No
         fh.write(xml)
 
 
+REDIRECT_TEMPLATE = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Redirecting…</title>
+<link rel="canonical" href="{canonical}"/>
+<meta http-equiv="refresh" content="0; url={new_url}"/>
+<meta name="robots" content="noindex"/>
+</head>
+<body>
+<p>This page has moved to <a href="{new_url}">{new_url}</a>.</p>
+</body>
+</html>
+"""
+
+
+def validate_redirects(pages: List[Dict[str, Any]]) -> List[str]:
+    errors: List[str] = []
+    live_urls = {p["url"] for p in pages if p.get("url")}
+    for page in pages:
+        for old_url in page.get("redirect_from") or []:
+            if old_url in live_urls:
+                errors.append(
+                    f"redirect_from conflict: '{old_url}' on {page.get('url')} is still a live page URL"
+                )
+    return errors
+
+
+def write_redirects(pages: List[Dict[str, Any]]) -> List[str]:
+    """A page can declare `redirect_from`: a list of old URLs it used to
+    live at. For each one, write a small static redirect stub (meta
+    refresh + canonical, noindex) at the old output path, so a moved
+    page's previously published URL doesn't start 404ing -- for
+    visitors following a bookmark, and for search engines that already
+    indexed it. Returns the list of URLs actually written, for the
+    build summary."""
+    live_urls = {p["url"] for p in pages if p.get("url")}
+    written: List[str] = []
+    for page in pages:
+        new_url = page.get("url")
+        if not new_url:
+            continue
+        for old_url in page.get("redirect_from") or []:
+            if old_url in live_urls:
+                continue  # a real page already owns this URL; never clobber it
+            canonical = "https://dakhni.org" + new_url
+            html = REDIRECT_TEMPLATE.format(canonical=esc(canonical), new_url=esc(new_url))
+            rel = old_url.strip("/")
+            outdir = os.path.join(ROOT, rel) if rel else ROOT
+            os.makedirs(outdir, exist_ok=True)
+            with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as fh:
+                fh.write(html)
+            written.append(old_url)
+    return written
+
+
 def main():
     with open(NAV_FILE, encoding="utf-8") as fh:
         nav_data = json.load(fh)
@@ -897,6 +974,7 @@ def main():
         errors.extend(check_citations(page, rel_source))
     term_to_url, link_term_errors = collect_link_terms(pages)
     errors.extend(link_term_errors)
+    errors.extend(validate_redirects(pages))
     if errors:
         print("Content validation failed:")
         for err in errors:
@@ -912,7 +990,10 @@ def main():
             fh.write(render(page, nav_html, url_to_page, subnav_map, term_to_url))
         n += 1
     write_sitemap(pages, page_files)
+    redirects = write_redirects(pages)
     print(f"Rendered {n} pages")
+    if redirects:
+        print(f"Wrote {len(redirects)} redirect stub(s): {', '.join(redirects)}")
 
 
 if __name__ == "__main__":

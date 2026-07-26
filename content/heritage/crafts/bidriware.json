@@ -1,11 +1,11 @@
 {
   "page_type": "heritage_leaf",
-  "url": "/heritage/bidriware/",
+  "url": "/heritage/crafts/bidriware/",
   "section": "Heritage",
   "title": "Bidriware",
   "description": "Bidriware is the signature metalcraft of Bidar: a zinc-and-copper alloy inlaid with hammered silver and blackened with a paste of soil from the Bidar fort, made the same way for more than five centuries.",
   "dedication": "In memory of the Asaf Jahi dynasty",
-  "sort_order": 200,
+  "sort_order": 10,
   "tags": [
     "Bidriware",
     "Bidar",
@@ -18,7 +18,9 @@
   "link_terms": [
     "Bidriware"
   ],
-  "no_subnav": true,
+  "redirect_from": [
+    "/heritage/bidriware/"
+  ],
   "blocks": [
     {
       "type": "facts",

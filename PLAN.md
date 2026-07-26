@@ -95,26 +95,30 @@ ones a dedicated leaf page.
 
 **Do not start Phase 7 until phases 1–6 are all checked.**
 
-**URL structure:** create these as flat siblings directly under `/heritage/` —
-e.g. `content/heritage/bidriware.json` → `/heritage/bidriware/` — **not** nested under
-`crafts/`, `cuisine/`, `festivals/` or `music/` (e.g. NOT `content/heritage/crafts/bidriware.json`).
-`build_page_maps` in `scripts/build_site.py` (~line 544) classifies any URL that is another
-page's parent as a hub, and hub pages are excluded from their own parent's Prev/Next sibling
-group. Nesting a leaf under `crafts.json`'s URL would turn `/heritage/crafts/` into a hub and
-silently drop it out of the `/heritage/` topic navigator — flat URLs avoid that specific bug.
+**URL structure:** create these nested under their parent pillar's own URL, mirroring the
+`content/landmarks/institutions.json` + `content/landmarks/institutions/*.json` pattern —
+e.g. `content/heritage/cuisine/biryani.json` → `/heritage/cuisine/biryani/`, **not** flat under
+`/heritage/`. (Bidriware and Paithani were originally created flat and later migrated to
+`content/heritage/crafts/bidriware.json` / `.../paithani.json` once the navigation issue below
+was fixed properly — nested is now the standing convention, not an exception.)
 
-**But flat URLs alone are not enough:** `build_page_maps` groups *every* non-hub child of a
-parent into one shared Prev/Next sibling group by `parent_url`, with no notion of tier. Left
-alone, these 6 sub-topic pages (default `sort_order` 999, same tier as pillars in the sort key)
-would join the 7 pillars' `/heritage/` Prev/Next sequence directly — e.g. `festivals.json`
-(`sort_order` 70, currently last) would gain "Bidriware" as its Next, mixing sub-topics into
-the pillar tour. Before creating the first leaf page, add an explicit opt-out so sub-topic
-pages join neither their own subnav nor their parent's group:
-  1. In `schemas/page.schema.json`, add an optional `"no_subnav": {"type": "boolean"}` property.
-  2. In `build_page_maps` (`scripts/build_site.py`), change the skip condition from
-     `if url in hub_urls: continue` to `if url in hub_urls or page.get("no_subnav"): continue`.
-  3. Set `"no_subnav": true` on each of the 6 new leaf pages below.
-Verify afterward that none of the 7 pillar pages' rendered Prev/Next links point at a sub-topic.
+**Why nesting works now:** `build_page_maps` in `scripts/build_site.py` excludes any URL that
+is another page's parent (`hub_urls`) from ever appearing in a subnav group — right for a pure
+listing page like `content/heritage.json`, wrong for a pillar page (e.g. `crafts.json`) that is
+itself a normal sibling in the 7-pillar tour *and* separately hosts nested children. Each
+top-level pillar page that gains its first nested child needs `"nested_hub": true` set on it
+(already done for `content/heritage/crafts.json`) — this keeps the pillar in its own parent's
+Prev/Next group despite having children, while its children automatically get their own
+Prev/Next among each other with `index_href` pointing at the pillar, not all the way up at
+`/heritage/`. Do this once per pillar the first time it gains a child:
+  - `cuisine.json` needs `"nested_hub": true` before creating `biryani.json` (its first child).
+  - `festivals.json` needs it before creating `bonalu.json`.
+  - `music.json` needs it before creating `qawwali.json`.
+  - `haleem.json` goes under the already-flagged `cuisine.json`, no further change needed.
+No schema/engine change is needed beyond what's already shipped — `nested_hub` and `no_subnav`
+are both already properties on `schemas/page.schema.json`. (`no_subnav` remains available as a
+general escape hatch for a genuinely standalone page, but sub-topic pages under a `nested_hub`
+pillar don't need it — they get correct sibling Prev/Next for free.)
 
 **Discovery:** do not add a `cards` block anywhere for these — `render_blocks` emits
 `content-cards`/`cards-grid`/`content-card` markup that `assets/site.css` does not style (this
@@ -122,25 +126,29 @@ exact mistake was already made and reverted once, commit `355598c`). The existin
 card-grid pattern (`<a class="card">…</a>` inside `<div class="card-grid">`, see
 `content/heritage.json`'s own `html` block) is for the 7 top-level heritage pillars only —
 don't extend it either; these are sub-topics, not new pillars. Instead, rely on the
-cross-linking engine: each parent topic page's prose already names these things verbatim
+cross-linking engine: each parent pillar page's prose already names these things verbatim
 ("Bidriware — the signature craft of Bidar…" in `crafts.json`, etc.), so once the new leaf
 page declares its own name in `link_terms`, `render_crosslinks` will automatically hyperlink
 that existing mention — no manual wiring, and no `content/navigation.json` dropdown entry
 needed either (that dropdown lists the 7 pillars, not their sub-topics).
 
-For each item below: create the leaf page with `facts` + `html` blocks (timeline optional —
-only if there are enough genuinely dated milestones), citing sources the way other leaf pages
-do; declare the page's own name in its `link_terms`; set `"no_subnav": true`; then rebuild and
-confirm (a) zero `link_terms` collisions, (b) the parent topic page's existing mention now
-renders as an `xref-link` to the new page, (c) the new URL appears in `sitemap.xml`, and
-(d) none of the 7 pillar pages' Prev/Next now points at a sub-topic page.
+For each item below: create the leaf page nested under its pillar's URL with `facts` + `html`
+blocks (timeline optional — only if there are enough genuinely dated milestones), citing
+sources the way other leaf pages do; declare the page's own name in its `link_terms`; set
+`"nested_hub": true` on the parent pillar page the first time it gains a child (see above);
+then rebuild and confirm (a) zero `link_terms` collisions, (b) the parent pillar's existing
+mention now renders as an `xref-link` to the new page, (c) the new URL appears in
+`sitemap.xml`, (d) the 7 pillar pages' Prev/Next sequence is unchanged, and (e) the new page
+gets a correct Prev/Next among its own siblings with `index_href` pointing at its pillar.
+Also: rebuild *after* committing, not just before, and check for `sitemap.xml` drift — see the
+CLAUDE.md note on `write_sitemap`'s git-log-based `lastmod`.
 
-- [x] Create `content/heritage/bidriware.json` — the silver-inlaid blackened-alloy metalwork of Bidar, c. 1500–present
-- [x] Create `content/heritage/paithani.json` — the tapestry-bordered silk sari woven at Paithan, near Aurangabad
-- [ ] Create `content/heritage/biryani.json` — Hyderabadi dum biryani; the kachchi vs. pakki distinction
-- [ ] Create `content/heritage/haleem.json` — the pounded wheat-lentil-meat dish and its Ramazan/Hyderabadi status
-- [ ] Create `content/heritage/bonalu.json` — the Hindu festival of Bonalu in Hyderabad's old city
-- [ ] Create `content/heritage/qawwali.json` — Sufi devotional ensemble singing at Deccan shrines
+- [x] Create `content/heritage/crafts/bidriware.json` — the silver-inlaid blackened-alloy metalwork of Bidar, c. 1500–present
+- [x] Create `content/heritage/crafts/paithani.json` — the tapestry-bordered silk sari woven at Paithan, near Aurangabad
+- [ ] Create `content/heritage/cuisine/biryani.json` — Hyderabadi dum biryani; the kachchi vs. pakki distinction
+- [ ] Create `content/heritage/cuisine/haleem.json` — the pounded wheat-lentil-meat dish and its Ramazan/Hyderabadi status
+- [ ] Create `content/heritage/festivals/bonalu.json` — the Hindu festival of Bonalu in Hyderabad's old city
+- [ ] Create `content/heritage/music/qawwali.json` — Sufi devotional ensemble singing at Deccan shrines
 
 ---
 
