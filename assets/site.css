@@ -10,6 +10,29 @@
   --ink-faint:#8B8472;
   --rule:rgba(26,24,20,0.10);
   --rule-soft:rgba(26,24,20,0.05);
+  color-scheme:light dark;
+}
+/* Dark mode -- the whole site is built on these role variables (page bg,
+   panel bg, three text tones, gold accents, hairline rules), so redefining
+   them here re-themes almost everything automatically. A handful of
+   elements that are hardcoded dark regardless of site theme on purpose
+   (footer, the photo-cover hero) don't reference these and are untouched;
+   the few remaining hardcoded literals (nav's translucent backdrop, the
+   mobile menu panel, quiz "selected" state, the homepage seal watermark)
+   get their own overrides at the bottom of this file. */
+@media (prefers-color-scheme:dark){
+  :root{
+    --gold:#C99A56;
+    --gold-deep:#E0B36B;
+    --gold-soft:#EDD39C;
+    --cream:#221E17;
+    --ivory:#15130F;
+    --ink:#ECE6D8;
+    --ink-soft:#C6BFAD;
+    --ink-faint:#948C77;
+    --rule:rgba(236,230,216,0.14);
+    --rule-soft:rgba(236,230,216,0.07);
+  }
 }
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; scroll-padding-top:78px; }
@@ -154,8 +177,10 @@ a.city { cursor:pointer; }
 .poetry-urdu { font-family:'Lateef',serif; font-size:clamp(1.6rem,3.6vw,2.4rem); color:var(--gold-deep); direction:rtl; line-height:1.9; margin-bottom:1.4rem; font-weight:400; }
 .poetry-trans { font-style:italic; font-size:clamp(1rem,2vw,1.15rem); color:var(--ink-soft); line-height:1.9; }
 .poetry-attr { margin-top:1.6rem; font-family:'Inter',sans-serif; font-size:.62rem; font-weight:500; letter-spacing:.28em; text-transform:uppercase; color:var(--ink-faint); }
-footer { background:var(--ink); padding:3.5rem 3rem 2.5rem; text-align:center; }
-.ft-name { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:500; letter-spacing:.22em; color:var(--ivory); margin-bottom:.5rem; }
+/* footer is a fixed dark band regardless of site theme -- like the photo-cover
+   hero below, it doesn't reference the swappable --ink/--ivory roles. */
+footer { background:#1A1814; padding:3.5rem 3rem 2.5rem; text-align:center; }
+.ft-name { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:500; letter-spacing:.22em; color:#FAF7EF; margin-bottom:.5rem; }
 .ft-tagline { font-style:italic; font-size:.92rem; color:rgba(250,247,239,0.55); margin-bottom:2rem; }
 .ft-links { display:flex; gap:1.8rem; justify-content:center; list-style:none; flex-wrap:wrap; margin-bottom:2rem; }
 .ft-links a { font-family:'Inter',sans-serif; font-size:.62rem; font-weight:400; letter-spacing:.22em; text-transform:uppercase; color:rgba(250,247,239,0.5); text-decoration:none; transition:color .2s; }
@@ -630,13 +655,13 @@ body.ds-search-open{overflow:hidden;}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 .city-hero{
       position:relative;min-height:520px;display:flex;align-items:flex-end;justify-content:center;
-      color:var(--ivory);text-align:center;padding:6rem 2rem 3.4rem;border-bottom:1px solid var(--rule);
+      color:#FAF7EF;text-align:center;padding:6rem 2rem 3.4rem;border-bottom:1px solid var(--rule);
     }
 .city-hero::after{content:'';position:absolute;inset:0;background:url('/assets/dakhni-pattern.png') repeat;background-size:120px;opacity:0.10;pointer-events:none;z-index:0;}
 .city-hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1;}
 .city-hero-eyebrow{font-family:'Inter',sans-serif;font-size:.66rem;font-weight:500;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-soft);display:block;margin-bottom:1rem;}
 .city-hero-urdu{font-family:'Lateef',serif;font-size:clamp(1.6rem,3.4vw,2.2rem);color:var(--gold-soft);line-height:1.4;margin-bottom:.4rem;}
-.city-hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,6vw,4.2rem);color:var(--ivory);line-height:1.1;font-weight:500;letter-spacing:.06em;}
+.city-hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,6vw,4.2rem);color:#FAF7EF;line-height:1.1;font-weight:500;letter-spacing:.06em;}
 .city-hero-rule{width:64px;height:1px;background:var(--gold-soft);margin:1.4rem auto;}
 .city-hero-sub{font-family:'EB Garamond',Georgia,serif;font-style:italic;font-size:clamp(1rem,1.7vw,1.12rem);color:#E5DDC8;max-width:580px;margin:0 auto;line-height:1.85;}
 .facts-strip{background:var(--cream);padding:1.6rem 2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.2rem;border-bottom:1px solid var(--rule);}
@@ -967,4 +992,25 @@ html:not(.js) .reveal, html:not(.js) .reveal-left, html:not(.js) .reveal-right {
   .hero-subtitle { margin-top:.6rem; }
   .hero-desc { margin-top:1.1rem; }
   .hero-btns { margin-top:1.6rem; }
+}
+
+/* Dark mode: the handful of surfaces that hardcode a literal light color
+   instead of referencing the swappable role variables above (translucent
+   nav backdrops need actual transparency, not a variable; a couple of
+   interactive states were pinned to literal white/black). Kept as one
+   block, last in the cascade, so these always win over the light-mode
+   values defined earlier regardless of selector specificity. */
+@media (prefers-color-scheme:dark){
+  nav { background:rgba(21,19,15,0.90); }
+  .nav-links { background:rgba(21,19,15,0.97); }
+  .dropdown { background:rgba(21,19,15,0.97); box-shadow:0 10px 30px rgba(0,0,0,0.45); }
+  .ds-search-backdrop { background:rgba(0,0,0,0.6); }
+  .quiz-opt.sel { background:#2A2519; }
+  .heartland-city:hover { background:#2A2519; }
+  /* The seal watermark is black line-art on a white JPG, faked-transparent
+     with multiply -- that only works on a light page (multiply toward
+     black on an already-dark page just goes to black and disappears).
+     Inverting first (white lines on black) then screening reproduces the
+     same "ghost" effect against a dark background. */
+  .dynasties-seal-bg { filter:invert(1); mix-blend-mode:screen; }
 }
