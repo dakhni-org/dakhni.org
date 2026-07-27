@@ -247,7 +247,7 @@ footer { background:var(--ink); padding:3.5rem 3rem 2.5rem; text-align:center; }
 @media (max-width:880px){
       .has-dropdown > a::after { content:''; }
       .nav-links > li.has-dropdown { display:flex; flex-wrap:wrap; align-items:center; }
-      .nav-links > li.has-dropdown > a { flex:1 1 auto; }
+      .nav-links > li.has-dropdown > a { flex:1 1 auto; width:auto; }
       .dropdown-toggle { display:flex; }
       .dropdown{
         position:static; opacity:1; pointer-events:auto; transform:none;
