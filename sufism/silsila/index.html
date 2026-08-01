@@ -136,106 +136,202 @@
 </section>
 <style>
 /* ══════════ Silsila tree — scoped st- namespace ══════════ */
-.st-app{margin:1rem 0 0}
-.st-toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.8rem;margin-bottom:.9rem}
-.st-btn{font-family:'Inter',sans-serif;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);background:#FDFBF5;border:1px solid var(--rule);border-radius:99px;padding:.5rem 1rem;cursor:pointer;transition:color .2s,border-color .2s,background .2s}
-.st-btn:hover{color:var(--gold-deep);border-color:var(--gold)}
-.st-btn-gold{color:var(--gold-deep);border:1.5px dashed var(--gold);background:#FBF3DE}
-.st-btn-gold:hover{background:#F6E9C9}
-.st-tools{display:inline-flex;gap:.4rem}
-.st-tools .st-btn{padding:.5rem .85rem}
-.st-legend{display:flex;flex-wrap:wrap;gap:.45rem .6rem;margin-bottom:1rem}
-.st-lg{display:inline-flex;align-items:center;gap:.4rem;font-family:'Inter',sans-serif;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);border:1px solid var(--rule-soft);border-radius:99px;padding:.3rem .7rem;background:#FDFBF5}
-.st-dot{width:10px;height:10px;border-radius:50%;flex:none}
-.st-lg-saint .st-dot{background:linear-gradient(180deg,#FBF3DE,#E8CE8F);border:1.5px solid var(--gold-deep)}
-.st-lg-founder .st-dot{background:var(--ink-soft)}
-.st-lg-dash .st-dot{background:transparent;border:1.5px dashed var(--gold-deep)}
-.st-viewport{position:relative;overflow:auto;background:#FCFAF4;border:1px solid var(--rule);border-radius:14px;box-shadow:inset 0 1px 8px rgba(26,24,20,.04);cursor:grab;-webkit-overflow-scrolling:touch}
-.st-viewport.st-grabbing{cursor:grabbing}
+.st-app{
+  /* surfaces */
+  --st-panel:#FCFAF4;
+  --st-card:#FDFBF5;
+  --st-card-alt:#F6F3E8;
+  --st-deep:#1A1814;
+  --st-shadow:rgba(26,24,20,.08);
+  --st-ctrl:rgba(253,251,245,.94);
+  --st-onc:#FAF7EF;          /* text sitting on a filled branch colour */
+  --st-saint-a:#FBF3DE;
+  --st-saint-b:#F3E5C0;
+  --st-saint-ink:#5C4A22;
+  /* branch colours */
+  --st-qadiri:#7B3030;
+  --st-suhrawardi:#2E5A66;
+  --st-chishti:#3F5D3B;
+  --st-hamadani:#46617A;
+  --st-naqshbandi:#5C3A6B;
+  margin:1.6rem 0 0;
+}
+@media (prefers-color-scheme:dark){
+  .st-app{
+    --st-panel:#1A1712;
+    --st-card:#211D16;
+    --st-card-alt:#1B1812;
+    --st-deep:#0C0A07;
+    --st-shadow:rgba(0,0,0,.55);
+    --st-ctrl:rgba(33,29,22,.94);
+    --st-onc:#14120E;
+    --st-saint-a:#332B1A;
+    --st-saint-b:#282111;
+    --st-saint-ink:#E3CE9C;
+    --st-qadiri:#CE8686;
+    --st-suhrawardi:#82B8C6;
+    --st-chishti:#96C48D;
+    --st-hamadani:#9DB9D1;
+    --st-naqshbandi:#C59DD4;
+  }
+}
+
+/* ── filter / key rail above the frame ── */
+.st-rail{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;margin-bottom:.7rem}
+.st-rail-lab{font-family:'Inter',sans-serif;font-size:.55rem;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-faint);margin-right:.3rem}
+.st-f{display:inline-flex;align-items:center;gap:.42rem;font-family:'Inter',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);background:var(--st-card);border:1px solid var(--rule);border-radius:99px;padding:.42rem .82rem;cursor:pointer;transition:color .18s,border-color .18s,background .18s}
+.st-f:hover{color:var(--gold-deep);border-color:var(--gold)}
+.st-f i{width:9px;height:9px;border-radius:50%;background:var(--c,var(--ink-faint));flex:none;font-style:normal}
+.st-f[aria-pressed="true"]{color:var(--ink);border-color:var(--c,var(--gold));box-shadow:inset 0 0 0 1px var(--c,var(--gold))}
+.st-f[aria-pressed="true"] i{box-shadow:0 0 0 3px color-mix(in srgb,var(--c,var(--gold)) 22%,transparent)}
+
+/* ── the frame ── */
+.st-frame{position:relative;background:var(--st-panel);border:1px solid var(--rule);border-radius:16px;overflow:hidden;box-shadow:0 1px 3px var(--st-shadow);height:clamp(430px,74vh,840px);display:flex}
+.st-viewport{flex:1;min-width:0;overflow:auto;cursor:grab;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.st-viewport:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+.st-viewport.is-grabbing{cursor:grabbing}
 .st-canvas{position:relative;margin:0 auto}
-.st-tree{position:absolute;top:0;left:0;transform-origin:0 0;padding:2.2rem 2rem 2.6rem;width:max-content}
-/* ── org-chart connector geometry ── */
-.st-tree ul{display:flex;justify-content:center;list-style:none;margin:0;padding:1.7rem 0 0;position:relative}
-.st-tree li{display:flex;flex-direction:column;align-items:center;position:relative;padding:1.7rem .55rem 0;--lc:rgba(107,71,16,.32)}
-.st-tree li::before,.st-tree li::after{content:'';position:absolute;top:0;right:50%;width:50%;height:1.7rem;border-top:1.5px solid var(--lc)}
-.st-tree li::after{right:auto;left:50%;border-left:1.5px solid var(--lc)}
-.st-tree li:only-child::before,.st-tree li:only-child::after{display:none}
+/* the padding keeps the first and last rows clear of the floating controls */
+.st-tree{position:absolute;top:0;left:0;transform-origin:0 0;padding:2.4rem 2rem 3.8rem;width:max-content}
+
+/* ── floating controls, inside the chart area ── */
+.st-ctl{position:absolute;z-index:6;display:flex;gap:.15rem;align-items:center}
+.st-ctl-tl{top:.75rem;left:.75rem}
+.st-ctl-br{right:.75rem;bottom:.75rem;background:var(--st-ctrl);border:1px solid var(--rule);border-radius:99px;padding:.28rem;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);box-shadow:0 2px 10px var(--st-shadow)}
+.st-sq{width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:.95rem;line-height:1;color:var(--ink-soft);background:transparent;border:0;border-radius:99px;cursor:pointer;transition:background .16s,color .16s}
+.st-sq:hover{background:var(--cream);color:var(--gold-deep)}
+.st-sq:focus-visible{outline:2px solid var(--gold);outline-offset:1px}
+.st-sq-txt{width:auto;padding:0 .7rem;font-size:.56rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase}
+.st-sep{width:1px;height:18px;background:var(--rule);margin:0 .22rem;flex:none}
+.st-zlab{min-width:3.1rem;text-align:center;font-family:'Inter',sans-serif;font-size:.58rem;font-weight:500;letter-spacing:.1em;color:var(--ink-faint);-webkit-user-select:none;user-select:none}
+.st-pill{display:inline-flex;align-items:center;gap:.45rem;font-family:'Inter',sans-serif;font-size:.58rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-deep);background:var(--st-ctrl);border:1px solid var(--gold);border-radius:99px;padding:.5rem 1rem;cursor:pointer;box-shadow:0 2px 10px var(--st-shadow);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:background .16s}
+.st-pill:hover{background:var(--cream)}
+.st-pill:focus-visible{outline:2px solid var(--gold);outline-offset:1px}
+
+/* ── full screen ── */
+.st-app.is-full{position:fixed;inset:0;z-index:500;margin:0;padding:.7rem;background:var(--ivory);display:flex;flex-direction:column;gap:.55rem}
+.st-app.is-full .st-rail{margin:0}
+.st-app.is-full .st-frame{flex:1;height:auto;min-height:0;border-radius:12px}
+.st-app.is-full .st-key{display:none}
+.st-app.is-full .st-hint{margin:0}
+body.st-locked{overflow:hidden}
+
+/* ── org-chart connector geometry ──
+   line style travels in --ls so that the dashed variant never resurrects a
+   border that first-child / last-child suppression has already removed. */
+.st-tree ul{display:flex;justify-content:center;list-style:none;margin:0;padding:1.5rem 0 0;position:relative}
+.st-tree li{display:flex;flex-direction:column;align-items:center;position:relative;padding:1.5rem .4rem 0;--lc:rgba(107,71,16,.34);--ls:solid}
+.st-tree li.st-dash{--ls:dashed}
+.st-tree li::before,.st-tree li::after{content:'';position:absolute;top:0;right:50%;width:50%;height:1.5rem;border-top:1.5px var(--ls) var(--lc)}
+.st-tree li::after{right:auto;left:50%;border-left:1.5px var(--ls) var(--lc)}
 .st-tree li:only-child{padding-top:0}
-.st-tree li:first-child::before,.st-tree li:last-child::after{border-top:none}
-.st-tree li:last-child::before{border-right:1.5px solid var(--lc);border-radius:0 8px 0 0}
+.st-tree li:only-child::before,.st-tree li:only-child::after{display:none}
+.st-tree li:first-child::before,.st-tree li:last-child::after{border-top-width:0}
+.st-tree li:last-child::before{border-right:1.5px var(--ls) var(--lc);border-radius:0 8px 0 0}
 .st-tree li:first-child::after{border-radius:8px 0 0 0}
-.st-tree ul ul::before{content:'';position:absolute;top:0;left:50%;width:0;height:1.7rem;border-left:1.5px solid var(--lc)}
-.st-tree>ul{padding-top:0}
-.st-tree>ul>li{padding-top:0}
-.st-tree>ul>li::before,.st-tree>ul>li::after{display:none}
-/* dashed connectors = documented but unnamed links, or family descent */
-.st-tree li.st-dash::before,.st-tree li.st-dash::after{border-top-style:dashed;border-left-style:dashed}
-.st-tree li.st-dash:last-child::before{border-right-style:dashed}
+.st-tree ul ul::before{content:'';position:absolute;top:0;left:50%;width:0;height:1.5rem;border-left:1.5px solid var(--lc)}
 .st-tree ul.st-dashkids::before{border-left-style:dashed}
+.st-tree>ul,.st-tree>ul>li{padding-top:0}
+.st-tree>ul>li::before,.st-tree>ul>li::after{display:none}
+@media (prefers-color-scheme:dark){.st-tree li{--lc:rgba(224,179,107,.34)}}
+
 /* branch colours */
-.st-b-qadiri{--oc:#7B3030;--lc:rgba(123,48,48,.4)}
-.st-b-suhrawardi{--oc:#2E5A66;--lc:rgba(46,90,102,.4)}
-.st-b-chishti{--oc:#3F5D3B;--lc:rgba(63,93,59,.42)}
-.st-b-hamadani{--oc:#46617A;--lc:rgba(70,97,122,.4)}
-.st-b-naqshbandi{--oc:#5C3A6B;--lc:rgba(92,58,107,.4)}
-.st-b-root{--oc:var(--gold-deep);--lc:rgba(160,112,32,.45)}
+.st-b-qadiri{--oc:var(--st-qadiri)}
+.st-b-suhrawardi{--oc:var(--st-suhrawardi)}
+.st-b-chishti{--oc:var(--st-chishti)}
+.st-b-hamadani{--oc:var(--st-hamadani)}
+.st-b-naqshbandi{--oc:var(--st-naqshbandi)}
+.st-b-root{--oc:var(--gold-deep)}
+.st-tree li.st-b-qadiri{--lc:color-mix(in srgb,var(--st-qadiri) 55%,transparent)}
+.st-tree li.st-b-suhrawardi{--lc:color-mix(in srgb,var(--st-suhrawardi) 55%,transparent)}
+.st-tree li.st-b-chishti{--lc:color-mix(in srgb,var(--st-chishti) 55%,transparent)}
+.st-tree li.st-b-hamadani{--lc:color-mix(in srgb,var(--st-hamadani) 55%,transparent)}
+.st-tree li.st-b-naqshbandi{--lc:color-mix(in srgb,var(--st-naqshbandi) 55%,transparent)}
+.st-tree li.st-b-root{--lc:color-mix(in srgb,var(--gold) 60%,transparent)}
+
 /* ── node cards ── */
 .st-cardwrap{position:relative;z-index:1}
-.st-node{display:block;position:relative;background:#FDFBF5;border:1px solid rgba(26,24,20,.14);border-top:3px solid var(--oc,#8B8472);border-radius:9px;min-width:158px;max-width:200px;padding:.85rem .9rem .8rem;text-align:center;box-shadow:0 1px 3px rgba(26,24,20,.06);color:inherit;text-decoration:none}
-.st-chip{display:inline-block;font-family:'Inter',sans-serif;font-size:.52rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:#FAF7EF;background:var(--oc,#8B8472);padding:.16rem .55rem;border-radius:99px;margin-bottom:.5rem}
-.st-name{font-family:'Cormorant Garamond',serif;font-size:1.04rem;font-weight:600;line-height:1.22;color:var(--ink);margin:0}
-.st-sub{font-family:'EB Garamond',serif;font-style:italic;font-size:.78rem;color:var(--ink-faint);margin:.25rem 0 0}
-.st-role{font-family:'Inter',sans-serif;font-size:.58rem;letter-spacing:.03em;line-height:1.5;color:var(--ink-soft);margin:.45rem 0 0}
-.st-urdu{font-family:'Lateef',serif;font-size:1.15rem;line-height:1.1;color:var(--oc);margin:0 0 .1rem}
-/* masters in the chain */
+.st-node{display:block;position:relative;background:var(--st-card);border:1px solid var(--rule);border-top:3px solid var(--oc,var(--ink-faint));border-radius:10px;width:186px;padding:.85rem .85rem .8rem;text-align:center;box-shadow:0 1px 3px var(--st-shadow);color:inherit;text-decoration:none;text-wrap:balance;overflow-wrap:break-word;hyphens:none}
+.st-chip{display:inline-block;font-family:'Inter',sans-serif;font-size:.5rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--st-onc);background:var(--oc,var(--ink-faint));padding:.18rem .55rem;border-radius:99px;margin-bottom:.5rem}
+.st-name{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;line-height:1.25;color:var(--ink);margin:0}
+.st-sub{font-family:'EB Garamond',serif;font-style:italic;font-size:.76rem;line-height:1.4;color:var(--ink-faint);margin:.28rem 0 0}
+.st-role{font-family:'Inter',sans-serif;font-size:.57rem;letter-spacing:.02em;line-height:1.55;color:var(--ink-soft);margin:.45rem 0 0}
+.st-urdu{font-family:'Lateef',serif;font-size:1.15rem;line-height:1.2;color:var(--oc);margin:0 0 .15rem}
+.st-nb{white-space:nowrap}
+
+/* masters named in a chain */
 .st-link .st-chip{background:transparent;color:var(--oc);border:1px solid var(--oc)}
-/* lineage nodes */
-.st-line{background:#F7F4EA;border-style:dashed}
+/* lineages / collective lines */
+.st-line{background:var(--st-card-alt);border-left-style:dashed;border-right-style:dashed;border-bottom-style:dashed}
 .st-line .st-chip{background:transparent;color:var(--oc);border:1px dashed var(--oc)}
 /* founders — filled in the order colour */
 .st-founder{background:var(--oc);border-color:var(--oc)}
-.st-founder .st-chip{background:rgba(250,247,239,.16);color:#FAF7EF}
-.st-founder .st-name{color:#FAF7EF}
-.st-founder .st-sub{color:rgba(250,247,239,.72)}
-.st-founder .st-role{color:rgba(250,247,239,.8)}
-.st-founder .st-urdu{color:rgba(250,247,239,.92)}
-/* the seven saints of this archive — gold */
-.st-saint{background:linear-gradient(180deg,#FBF3DE,#F3E5C0);border:1.5px solid var(--gold);border-top:3.5px solid var(--gold-deep);box-shadow:0 3px 12px rgba(160,112,32,.18)}
+.st-founder .st-chip{background:color-mix(in srgb,var(--st-onc) 20%,transparent);color:var(--st-onc)}
+.st-founder .st-name,.st-founder .st-urdu{color:var(--st-onc)}
+.st-founder .st-sub,.st-founder .st-role{color:color-mix(in srgb,var(--st-onc) 78%,transparent)}
+/* the saints of this archive — gold */
+.st-saint{background:linear-gradient(180deg,var(--st-saint-a),var(--st-saint-b));border:1.5px solid var(--gold);border-top:3.5px solid var(--gold-deep);box-shadow:0 3px 12px rgba(160,112,32,.18)}
 .st-saint .st-name{color:var(--gold-deep);font-size:1.1rem}
-.st-saint .st-chip{background:var(--gold-deep)}
-.st-saint .st-role{color:#5c4a22}
-.st-star{position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:20px;height:20px;line-height:20px;border-radius:50%;background:var(--gold-deep);color:#F6E9C9;font-size:.62rem;text-align:center}
-.st-goto{display:inline-block;margin-top:.5rem;font-family:'Inter',sans-serif;font-size:.54rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);border-bottom:1px solid var(--gold);padding-bottom:1px}
+.st-saint .st-chip{background:var(--gold-deep);color:var(--st-onc)}
+.st-saint .st-sub{color:var(--st-saint-ink)}
+.st-saint .st-role{color:var(--st-saint-ink)}
+.st-star{position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:20px;height:20px;line-height:19px;border-radius:50%;background:var(--gold-deep);color:var(--st-onc);font-size:.6rem;text-align:center}
+.st-goto{display:inline-block;margin-top:.55rem;font-family:'Inter',sans-serif;font-size:.53rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);border-bottom:1px solid var(--gold);padding-bottom:1px}
 a.st-node{transition:transform .2s,box-shadow .2s}
-a.st-node:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(160,112,32,.25)}
-/* Prophet ﷺ */
-.st-prophet{background:var(--ink);border-color:var(--ink);border-top:3.5px solid var(--gold);min-width:230px;padding:1.05rem 1.2rem 1rem}
+a.st-node:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(160,112,32,.28)}
+a.st-node:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+/* the Prophet ﷺ */
+.st-prophet{background:var(--st-deep);border-color:var(--st-deep);border-top:3.5px solid var(--gold);width:250px;padding:1.05rem 1.2rem 1rem}
 .st-prophet .st-urdu{font-size:1.7rem;color:var(--gold-soft)}
 .st-prophet .st-name{color:var(--gold-soft);font-size:1.18rem}
-.st-prophet .st-sub{color:rgba(201,169,104,.75)}
-.st-prophet .st-role{color:rgba(250,247,239,.7)}
-/* Companions */
+.st-prophet .st-sub{color:rgba(201,169,104,.78)}
+.st-prophet .st-role{color:rgba(250,247,239,.72)}
+/* the Companions */
 .st-comp{background:var(--cream)}
 .st-comp .st-chip{background:transparent;color:var(--gold-deep);border:1px solid var(--gold)}
 .st-comp .st-name{color:var(--gold-deep)}
 /* unnamed generations */
-.st-gap{min-width:0;max-width:150px;background:transparent;border:1.5px dashed rgba(107,71,16,.45);border-radius:11px;padding:.45rem .7rem .5rem;box-shadow:none}
-.st-dots{display:block;font-size:.85rem;letter-spacing:.35em;color:var(--gold-deep);line-height:1}
-.st-glabel{display:block;font-family:'Inter',sans-serif;font-size:.5rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);line-height:1.5;margin-top:.28rem}
+.st-gap{width:auto;max-width:190px;background:transparent;border:1.5px dashed color-mix(in srgb,var(--oc,var(--gold)) 60%,transparent);border-radius:99px;padding:.4rem .9rem .45rem;box-shadow:none}
+.st-dots{display:block;font-size:.8rem;letter-spacing:.32em;color:var(--oc,var(--gold-deep));line-height:1}
+.st-glabel{display:block;font-family:'Inter',sans-serif;font-size:.5rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);line-height:1.5;margin-top:.25rem}
 /* condensed-origin capsule */
-.st-origin{display:flex;align-items:center;gap:.8rem;background:#FBF3DE;border:1.5px dashed var(--gold);border-radius:99px;min-width:0;max-width:none;padding:.7rem 1.6rem;cursor:pointer;box-shadow:none;text-align:left}
-.st-origin:hover{background:#F6E9C9}
+.st-origin{display:flex;align-items:center;gap:.85rem;width:auto;background:var(--st-saint-a);border:1.5px dashed var(--gold);border-radius:99px;padding:.7rem 1.6rem;cursor:pointer;box-shadow:none;text-align:left}
+.st-origin:hover{background:var(--st-saint-b)}
 .st-origin .st-up{font-size:1rem;color:var(--gold-deep)}
 .st-origin .st-name{font-size:.98rem;color:var(--gold-deep);white-space:nowrap}
-.st-origin .st-sub{margin:0;white-space:nowrap}
+.st-origin .st-sub{margin:0;white-space:nowrap;color:var(--st-saint-ink)}
 /* fold / unfold chip */
-.st-tg{position:absolute;bottom:-11px;left:50%;transform:translateX(-50%);z-index:3;min-width:22px;height:22px;padding:0 .4rem;border-radius:99px;border:1.5px solid var(--oc,#8B8472);background:#FDFBF5;color:var(--oc,#8B8472);font-family:'Inter',sans-serif;font-size:.62rem;line-height:19px;cursor:pointer}
-.st-tg:hover{background:var(--oc);color:#FAF7EF}
+.st-tg{position:absolute;bottom:-11px;left:50%;transform:translateX(-50%);z-index:3;min-width:22px;height:22px;padding:0 .4rem;border-radius:99px;border:1.5px solid var(--oc,var(--ink-faint));background:var(--st-card);color:var(--oc,var(--ink-faint));font-family:'Inter',sans-serif;font-size:.6rem;font-weight:600;line-height:19px;cursor:pointer;transition:background .16s,color .16s}
+.st-tg:hover{background:var(--oc);color:var(--st-onc)}
+.st-tg:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 li.st-closed>ul{display:none}
-.st-hint{font-family:'Inter',sans-serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);text-align:center;margin-top:.8rem}
-@media(max-width:640px){
-  .st-toolbar{justify-content:center}
-  .st-tree{padding:1.4rem 1rem 1.8rem}
+
+/* ── key + hint below the frame ── */
+.st-key{display:flex;flex-wrap:wrap;gap:.4rem .9rem;justify-content:center;margin-top:.75rem}
+.st-lg{display:inline-flex;align-items:center;gap:.42rem;font-family:'Inter',sans-serif;font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint)}
+.st-dot{width:11px;height:11px;border-radius:50%;flex:none}
+.st-lg-saint .st-dot{background:linear-gradient(180deg,var(--st-saint-a),var(--st-saint-b));border:1.5px solid var(--gold-deep)}
+.st-lg-founder .st-dot{background:var(--ink-faint)}
+.st-lg-dash .st-dot{background:transparent;border:1.5px dashed var(--gold-deep)}
+.st-hint{font-family:'Inter',sans-serif;font-size:.58rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-faint);text-align:center;line-height:1.9;margin-top:.7rem}
+.st-hint kbd{font-family:'Inter',sans-serif;font-size:.55rem;border:1px solid var(--rule);border-radius:4px;padding:.1rem .3rem;color:var(--ink-soft)}
+
+@media (max-width:760px){
+  .st-frame{height:clamp(400px,68vh,640px)}
+  .st-rail-lab{width:100%;text-align:center;margin:0 0 .15rem}
+  .st-rail{justify-content:center;gap:.32rem}
+  .st-f{font-size:.55rem;padding:.36rem .66rem}
+  .st-tree{padding:3.6rem 1.1rem 4.4rem}
+  .st-ctl-tl{left:.5rem;top:.5rem;right:.5rem}
+  .st-pill{font-size:.53rem;padding:.44rem .7rem;width:100%;justify-content:center}
+  .st-ctl-br{right:.5rem;bottom:.5rem;left:.5rem;justify-content:center}
+  .st-sq{width:30px;height:30px}
+  .st-zlab{min-width:2.7rem}
+  .st-keys{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  a.st-node,.st-sq,.st-f,.st-tg{transition:none}
+  a.st-node:hover{transform:none}
 }
 </style>
 
@@ -251,6 +347,7 @@ li.st-closed>ul{display:none}
   <div class="prose">
     <p>A Sufi's authority is documentary. Each of the seven saints whose lives this archive records held a formal place in a <em>silsila</em> — a chain of teachers in which each master licensed his successor by <em>khilafat</em>, link by link, back through the founder of the order and the generations before him to the Companions of the Prophet ﷺ and to the Prophet ﷺ himself. To ask "who was this saint's master?" is therefore always answerable, and the answers connect: <a class="xref-link" href="/sufism/burhanuddin/">Burhanuddin Gharib</a> and <a class="xref-link" href="/sufism/bandanawaz/">Bandanawaz Gisudaraz</a> meet two links apart in the hospice of Nizamuddin Awliya; <a class="xref-link" href="/sufism/shah-raju/">Shah Raju</a> Qattal and the <a class="xref-link" href="/sufism/yousufain/">Yousufain</a> brothers stand on one Qadiri stem; and all of the chains, followed far enough upward, converge.</p>
     <p>The chart below assembles those chains — exactly as each saint's own record on this site documents them — into a single tree, or <em>shajara</em>. The <strong style="color:var(--gold-deep);">gold cards</strong> are the seven saints of this archive; selecting one opens his full record. The filled, coloured cards are the founders of the four classical silsilas of the Deccan — Chishti, Qadiri, Suhrawardi and Naqshbandi — with a fifth, slate-coloured line for the Hamadani family descent of <a class="xref-link" href="/sufism/hussain-shah-wali/">Hussain Shah Wali</a>. Dashed connectors mark links the records document but do not name, or descent by family rather than formal khilafat.</p>
+    <p>Five chains at once make a wide chart. Use the row of chips above the chart to read one silsila at a time; the zoom, fit and full-screen controls sit in the corners of the chart itself.</p>
   </div>
 </section>
 
@@ -259,73 +356,92 @@ li.st-closed>ul{display:none}
 <section class="section-wrap" id="tree">
   <span class="sec-label">II · The Tree</span>
   <h2 class="sec-title">From the Prophet ﷺ to the <em style="color:var(--gold-deep);font-style:italic;">Deccan</em></h2>
-  <p class="section-intro">The tree opens at the founders of the orders. Use the bar at the top of the chart — or the button below — to reveal the earlier generations, up to the Companions and the Prophet ﷺ.</p>
+  <p class="section-intro">The tree opens at the founders of the orders. Use the button in the top-left of the chart to reveal the earlier generations, up to the Companions and the Prophet ﷺ.</p>
 
-  <div class="st-app">
-    <div class="st-toolbar">
-      <button type="button" id="st-up" class="st-btn st-btn-gold" aria-expanded="false">⌃ &nbsp;Show the chain to the Prophet ﷺ</button>
-      <span class="st-tools">
-        <button type="button" id="st-zout" class="st-btn" aria-label="Zoom out">−</button>
-        <button type="button" id="st-zin" class="st-btn" aria-label="Zoom in">+</button>
-        <button type="button" id="st-fit" class="st-btn">Fit</button>
-      </span>
+  <div class="st-app" id="st-app">
+    <div class="st-rail" role="group" aria-label="Show one silsila at a time">
+      <span class="st-rail-lab">Chain</span>
+      <button type="button" class="st-f" data-b="all" aria-pressed="true">All five</button>
+      <button type="button" class="st-f" data-b="chishti" style="--c:var(--st-chishti)" aria-pressed="false"><i></i>Chishti</button>
+      <button type="button" class="st-f" data-b="qadiri" style="--c:var(--st-qadiri)" aria-pressed="false"><i></i>Qadiri</button>
+      <button type="button" class="st-f" data-b="suhrawardi" style="--c:var(--st-suhrawardi)" aria-pressed="false"><i></i>Suhrawardi</button>
+      <button type="button" class="st-f" data-b="naqshbandi" style="--c:var(--st-naqshbandi)" aria-pressed="false"><i></i>Naqshbandi</button>
+      <button type="button" class="st-f" data-b="hamadani" style="--c:var(--st-hamadani)" aria-pressed="false"><i></i>Hamadani</button>
     </div>
-    <div class="st-legend" aria-label="Legend">
-      <span class="st-lg st-lg-saint"><span class="st-dot"></span>✦ Saint of this archive — opens his record</span>
-      <span class="st-lg st-lg-founder"><span class="st-dot"></span>Founder of a silsila</span>
-      <span class="st-lg st-lg-dash"><span class="st-dot"></span>Documented, unnamed links · family descent</span>
-      <span class="st-lg"><span class="st-dot" style="background:#7B3030"></span>Qadiri</span>
-      <span class="st-lg"><span class="st-dot" style="background:#2E5A66"></span>Suhrawardi</span>
-      <span class="st-lg"><span class="st-dot" style="background:#3F5D3B"></span>Chishti</span>
-      <span class="st-lg"><span class="st-dot" style="background:#46617A"></span>Hamadani line</span>
-      <span class="st-lg"><span class="st-dot" style="background:#5C3A6B"></span>Naqshbandi</span>
-    </div>
-    <div class="st-viewport" id="st-viewport">
-      <div class="st-canvas" id="st-canvas">
-        <div class="st-tree" id="st-tree"></div>
+
+    <div class="st-frame" id="st-frame">
+      <div class="st-viewport" id="st-viewport" tabindex="0" role="group" aria-label="Silsila tree. Drag to pan; use the zoom controls, or the plus, minus and zero keys.">
+        <div class="st-canvas" id="st-canvas">
+          <div class="st-tree" id="st-tree"></div>
+        </div>
+      </div>
+
+      <div class="st-ctl st-ctl-tl">
+        <button type="button" id="st-up" class="st-pill" aria-expanded="false">⌃&nbsp; Show the chain to the Prophet ﷺ</button>
+      </div>
+
+      <div class="st-ctl st-ctl-br">
+        <button type="button" id="st-zout" class="st-sq" aria-label="Zoom out" title="Zoom out (−)">−</button>
+        <span class="st-zlab" id="st-zlab" aria-live="polite" aria-label="Current zoom">100%</span>
+        <button type="button" id="st-zin" class="st-sq" aria-label="Zoom in" title="Zoom in (+)">+</button>
+        <span class="st-sep" aria-hidden="true"></span>
+        <button type="button" id="st-fit" class="st-sq st-sq-txt" title="Fit the whole chain in view (0)">Fit</button>
+        <span class="st-sep" aria-hidden="true"></span>
+        <button type="button" id="st-full" class="st-sq" aria-pressed="false" aria-label="Enter full screen" title="Full screen (F)">⛶</button>
       </div>
     </div>
-    <p class="st-hint">Drag or scroll sideways to travel across the tree · use the circle beneath a card to fold or unfold its successors</p>
+
+    <div class="st-key" aria-label="Key">
+      <span class="st-lg st-lg-saint"><span class="st-dot"></span>✦ Saint of this archive — opens his record</span>
+      <span class="st-lg st-lg-founder"><span class="st-dot"></span>Founder of a silsila</span>
+      <span class="st-lg st-lg-dash"><span class="st-dot"></span>Documented but unnamed links · family descent</span>
+    </div>
+
+    <p class="st-hint">Drag the chart to travel across it · the circle beneath a card folds or unfolds its successors<span class="st-keys"> · <kbd>+</kbd> <kbd>−</kbd> zoom, <kbd>0</kbd> fit, <kbd>F</kbd> full screen, <kbd>Esc</kbd> to leave it</span></p>
   </div>
 
   <noscript>
     <div class="prose" style="margin-top:2rem;">
       <p><strong>The chains, in brief</strong> (the interactive tree needs JavaScript):</p>
-      <p><em>Chishti</em> — Khwaja Mu'inuddin Chishti of Ajmer → Qutbuddin Bakhtiyar Kaki → Baba Farid of Pakpattan → Nizamuddin Awliya → <a href="/sufism/burhanuddin/">Burhanuddin Gharib</a> of Khuldabad; and Nizamuddin Awliya → Nasir al-Din Chiragh-i-Delhi → <a href="/sufism/bandanawaz/">Bandanawaz Gisudaraz</a> of Gulbarga.</p>
-      <p><em>Qadiri</em> — Shaykh 'Abd al-Qadir Jilani of Baghdad → (documented chain) → Sayyid Yusuf al-Husayni of <a class="xref-link" href="/cities/bidar/">Bidar</a> → <a href="/sufism/shah-raju/">Shah Raju Qattal</a> of Hyderabad → his descendants, the <a href="/sufism/yousufain/">Yousufain brothers</a> and the Mahbub Subhani line.</p>
+      <p><em>Chishti</em> — Khwaja Mu'inuddin Chishti of Ajmer → Qutbuddin Bakhtiyar Kaki → Baba Farid of Pakpattan → Nizamuddin Awliya → <a href="/sufism/burhanuddin/">Burhanuddin Gharib</a> of Khuldabad, whose successors were Zayn al-Din Shirazi and Rukn al-Din Dabir al-Mulk; and Nizamuddin Awliya → Nasir al-Din Chiragh-i-Delhi → <a href="/sufism/bandanawaz/">Bandanawaz Gisudaraz</a> of Gulbarga, whose disciple Sayyid Muhammad Akbar Husayni compiled his discourses.</p>
+      <p><em>Qadiri</em> — Shaykh 'Abd al-Qadir Jilani of Baghdad → (documented chain) → Sayyid Yusuf al-Husayni of <a class="xref-link" href="/cities/bidar/">Bidar</a> → <a href="/sufism/shah-raju/">Shah Raju Qattal</a> of Hyderabad, whose own Husayni Sayyid ancestry runs through Sayyid Hamza → his descendants, the <a href="/sufism/yousufain/">Yousufain brothers</a> and the Mahbub Subhani line.</p>
       <p><em>Suhrawardi</em> — Shaykh Shihab al-Din 'Umar al-Suhrawardi of Baghdad → Baha al-Din Zakariya of Multan → (documented chain) → <a href="/sufism/sharfuddin/">Baba Sharfuddin</a> of Pahadi Sharif.</p>
       <p><em>Hamadani line</em> — the family of Sayyid 'Ali al-Hamadhani of Kashmir → <a href="/sufism/hussain-shah-wali/">Hussain Shah Wali</a> of Hyderabad.</p>
-      <p><em>Naqshbandi</em> — Khwaja Baha al-Din Naqshband of Bukhara → (brought south by Mughal-era scholars) → the Naqshbandi-Qadiri line of Hyderabad → <a href="/sufism/shah-khamosh/">Shah Khamosh</a>.</p>
+      <p><em>Naqshbandi</em> — Khwaja Baha al-Din Naqshband of Bukhara → (brought south by Mughal-era scholars) → Khwaja Habibullah Naqshbandi → the Naqshbandi-Qadiri line of Hyderabad → <a href="/sufism/shah-khamosh/">Shah Khamosh</a>.</p>
     </div>
   </noscript>
 </section>
 
 <section class="note-card" id="notes" aria-label="A note on reading the tree">
   <span class="note-card-label">Reading the Tree</span>
-  <p class="note-card-body">This shajara is drawn strictly from the seven saint records of this archive and the Sufism index page; it introduces no names or dates beyond them. A solid line is a master-to-disciple (or master-to-khalifa) relation named in the records — comparable, as the index page notes, to a hadith chain of transmission (<em>isnad</em>). A dashed line marks either links the records document but do not name — as between 'Abd al-Qadir Jilani and Sayyid Yusuf al-Husayni of Bidar, or in the Multan chain above Baba <a class="xref-link" href="/sufism/sharfuddin/">Sharfuddin</a> — or descent by family rather than formal khilafat, as with the Yousufain brothers from Shah Raju Qattal and Hussain Shah Wali from the family of 'Ali al-Hamadhani. <a class="xref-link" href="/sufism/shah-khamosh/">Shah Khamosh</a> belonged to the combined Naqshbandi-Qadiri silsila characteristic of early <a class="xref-link" href="/dynasties/asaf-jahi/">Asaf Jahi</a> Hyderabad; the tree places him on the Naqshbandi stem, which by the classical reckoning ascends through Abu Bakr al-Siddiq, while the other chains ascend through 'Ali ibn Abi Talib. The generations between the Companions and the founders of the orders are shown condensed.</p>
+  <p class="note-card-body">This shajara is drawn strictly from the seven saint records of this archive and the Sufism index page; it introduces no names or dates beyond them. A solid line is a master-to-disciple (or master-to-khalifa) relation named in the records — comparable, as the index page notes, to a hadith chain of transmission (<em>isnad</em>). A dashed line marks either links the records document but do not name — as between 'Abd al-Qadir Jilani and Sayyid Yusuf al-Husayni of Bidar, or in the Multan chain above Baba <a class="xref-link" href="/sufism/sharfuddin/">Sharfuddin</a> — or descent by family rather than formal khilafat, as with the Yousufain brothers from Shah Raju Qattal and Hussain Shah Wali from the family of 'Ali al-Hamadhani. Shah Raju Qattal's record documents two separate threads back to Baghdad, and the tree shows both side by side: his initiatic chain, which passes through Sayyid Yusuf al-Husayni of Bidar, and his Husayni Sayyid ancestry, which runs through Sayyid Hamza, the spiritual brother of Sayyid Muhammad Gisudaraz. <a class="xref-link" href="/sufism/shah-khamosh/">Shah Khamosh</a> belonged to the combined Naqshbandi-Qadiri silsila characteristic of early <a class="xref-link" href="/dynasties/asaf-jahi/">Asaf Jahi</a> Hyderabad; the tree places him on the Naqshbandi stem, which by the classical reckoning ascends through Abu Bakr al-Siddiq, while the other chains ascend through 'Ali ibn Abi Talib. The generations between the Companions and the founders of the orders are shown condensed.</p>
 </section>
 
 <script>
 (function(){
   "use strict";
 
-  /* ── the tree, drawn from the saint records of this site ── */
+  /* ══ the tree, drawn from the saint records of this site ══ */
 
+  /* — Qadiri — */
   var yousuf = {k:"saint", b:"qadiri", dash:true, chip:"Qadiri · Descendant", name:"Shah Yousuf-uddin Husayni", sub:"Nampally, Hyderabad · c. 1668–1741", role:"The elder of the Yousufain — teacher of hadith at Hyderabad", url:"/sufism/yousufain/"};
   var sharif = {k:"saint", b:"qadiri", dash:true, chip:"Qadiri · Descendant", name:"Shah Sharif-uddin Husayni", sub:"Nampally, Hyderabad · 18th c.", role:"The younger of the Yousufain — principal khalifa of the family", url:"/sufism/yousufain/"};
   var mahbub = {k:"line", b:"qadiri", dash:true, chip:"Lineage", name:"The Mahbub Subhani line", sub:"Later Asaf Jahi period", role:"Qadiri family line descended from Shah Raju"};
   var shahraju = {k:"saint", b:"qadiri", chip:"Qadiri", name:"Shah Raju Qattal Qadiri", sub:"Bidar → Misri Gunj, Hyderabad · d. c. 1632", role:"Founder of the Qadiri silsila at Hyderabad", url:"/sufism/shah-raju/", kids:[yousuf, sharif, mahbub]};
-  var yusufBidar = {k:"link", b:"qadiri", dash:true, chip:"In the chain", name:"Sayyid Yusuf al-Husayni", sub:"Bidar", role:"Named link in the silsila records of the Hyderabad Qadiri family", kids:[shahraju]};
-  var gapQ = {k:"gap", b:"qadiri", dash:true, name:"Unnamed links of the documented chain", kids:[yusufBidar]};
+  var yusufBidar = {k:"link", b:"qadiri", dash:true, chip:"Initiatic chain", name:"Sayyid Yusuf al-Husayni", sub:"Bidar", role:"The named link through which Shah Raju received Qadiri initiation", kids:[shahraju]};
+  var hamza = {k:"line", b:"qadiri", dash:true, chip:"Family descent", name:"Sayyid Hamza", sub:"Spiritual brother of Sayyid Muhammad Gisudaraz", role:"Shah Raju's Husayni Sayyid ancestry traces to the Qadiri masters of Baghdad through him"};
+  var gapQ = {k:"gap", b:"qadiri", dash:true, name:"Unnamed links of the documented chain", kids:[hamza, yusufBidar]};
   var jilani = {k:"founder", b:"qadiri", dash:true, chip:"Qadiriyya · Founder", urdu:"قادریہ", name:"Shaykh 'Abd al-Qadir Jilani", sub:"Baghdad · d. 1166", role:"Master of the Qadiri silsila", kids:[gapQ]};
 
+  /* — Suhrawardi — */
   var sharfuddin = {k:"saint", b:"suhrawardi", dash:true, chip:"Suhrawardi", name:"Baba Sharfuddin", sub:"Pahadi Sharif, Hyderabad · late 15th c.", role:"The Suhrawardi saint of the hill — Pahadi Wale Baba", url:"/sufism/sharfuddin/"};
   var gapS = {k:"gap", b:"suhrawardi", dash:true, name:"Unnamed masters of the Multan chain", kids:[sharfuddin]};
   var zakariya = {k:"link", b:"suhrawardi", chip:"Khalifa", name:"Baha al-Din Zakariya", sub:"Multan", role:"The great khalifa who carried the order into the subcontinent", kids:[gapS]};
   var suhrawardi = {k:"founder", b:"suhrawardi", dash:true, chip:"Suhrawardiyya · Founder", urdu:"سہروردیہ", name:"Shihab al-Din 'Umar al-Suhrawardi", sub:"Baghdad · d. 1234", role:"Master of the Suhrawardi silsila", kids:[zakariya]};
 
-  var zayn = {k:"link", b:"chishti", chip:"Khalifa · Successor", name:"Zayn al-Din Shirazi", sub:"Khuldabad · d. 1369", role:"Successor at the Khuldabad hospice"};
-  var rukn = {k:"link", b:"chishti", chip:"Disciple", name:"Rukn al-Din Dabir al-Mulk", sub:"Khuldabad", role:"Compiler of the Nafa'is al-Anfas"};
+  /* — Chishti — */
+  var zayn = {k:"link", b:"chishti", chip:"Khalifa · Successor", name:"Zayn al-Din Shirazi", sub:"Khuldabad · d. 1369", role:"Burhanuddin's principal successor at the Khuldabad hospice"};
+  var rukn = {k:"link", b:"chishti", chip:"Disciple", name:"Rukn al-Din Dabir al-Mulk", sub:"Khuldabad", role:"Compiler of the Nafa'is al-Anfas, the hospice's discourses"};
   var burhanuddin = {k:"saint", b:"chishti", chip:"Chishti", name:"Burhanuddin Gharib", sub:"Hansi → Khuldabad · d. 1337", role:"First Chishti shaykh of the Deccan — founder of the Khuldabad hospice", url:"/sufism/burhanuddin/", kids:[zayn, rukn]};
   var akbar = {k:"link", b:"chishti", chip:"Disciple", name:"Sayyid Muhammad Akbar Husayni", sub:"Gulbarga", role:"Compiler of the Javami' al-Kalim"};
   var bandanawaz = {k:"saint", b:"chishti", chip:"Chishti", name:"Bandanawaz Gisudaraz", sub:"Delhi → Gulbarga · 1321–1422", role:"The most learned Sufi of the medieval Deccan", url:"/sufism/bandanawaz/", kids:[akbar]};
@@ -335,55 +451,98 @@ li.st-closed>ul{display:none}
   var kaki = {k:"link", b:"chishti", chip:"Khalifa", name:"Qutbuddin Bakhtiyar Kaki", sub:"Delhi", role:"Successor of Mu'inuddin in the Indian Chishti chain", kids:[farid]};
   var moinuddin = {k:"founder", b:"chishti", dash:true, chip:"Chishtiyya · Founder", urdu:"چشتیہ", name:"Khwaja Mu'inuddin Chishti", sub:"Ajmer · d. 1236", role:"Master of the Chishti silsila in India", kids:[kaki]};
 
+  /* — Hamadani family line — */
   var hussain = {k:"saint", b:"hamadani", dash:true, chip:"Hamadani line", name:"Hussain Shah Wali", sub:"Golconda → Hyderabad · d. 1599", role:"Scholar-engineer of the Hussain Sagar (1562)", url:"/sufism/hussain-shah-wali/"};
-  var gapH = {k:"gap", b:"hamadani", dash:true, name:"Family descent · generations", kids:[hussain]};
+  var gapH = {k:"gap", b:"hamadani", dash:true, name:"Kashmiri Sayyid family · generations", kids:[hussain]};
   var hamadani = {k:"founder", b:"hamadani", dash:true, chip:"Hamadani line", name:"Sayyid 'Ali al-Hamadhani", sub:"Kashmir", role:"The Sufi master whose family line reached the Deccan", kids:[gapH]};
 
+  /* — Naqshbandi — */
   var khamosh = {k:"saint", b:"naqshbandi", dash:true, chip:"Naqshbandi-Qadiri", name:"Shah Khamosh", sub:"Old City, Hyderabad · d. 1740", role:"The silent saint — counsellor to Asaf Jah I", url:"/sufism/shah-khamosh/"};
-  var nqline = {k:"line", b:"naqshbandi", dash:true, chip:"Combined line", name:"The Naqshbandi-Qadiri line of Hyderabad", sub:"17th–18th c.", role:"Established through Khwaja Habibullah Naqshbandi and others — joined with the Qadiri chain", kids:[khamosh]};
-  var gapN = {k:"gap", b:"naqshbandi", dash:true, name:"Carried to India by Mughal-era scholars", kids:[nqline]};
+  var nqline = {k:"line", b:"naqshbandi", dash:true, chip:"Combined line", name:"The Naqshbandi-Qadiri line of Hyderabad", sub:"17th–18th c.", role:"The Hyderabad Naqshbandi chain joined with the Qadiri — the path Shah Khamosh received", kids:[khamosh]};
+  var habibullah = {k:"link", b:"naqshbandi", dash:true, chip:"In the chain", name:"Khwaja Habibullah Naqshbandi", sub:"Hyderabad · 17th–18th c.", role:"The named master through whom, with others, the order was established at Hyderabad", kids:[nqline]};
+  var gapN = {k:"gap", b:"naqshbandi", dash:true, name:"Carried south by Mughal-era scholars", kids:[habibullah]};
   var naqshband = {k:"founder", b:"naqshbandi", dash:true, chip:"Naqshbandiyya · Founder", urdu:"نقشبندیہ", name:"Khwaja Baha al-Din Naqshband", sub:"Bukhara · d. 1389", role:"Master of the Naqshbandi silsila", kids:[gapN]};
 
-  var branches = [jilani, suhrawardi, moinuddin, hamadani, naqshband];
+  var FOUNDERS = {chishti:moinuddin, qadiri:jilani, suhrawardi:suhrawardi, naqshbandi:naqshband, hamadani:hamadani};
+  var ORDER = ["chishti","qadiri","suhrawardi","naqshbandi","hamadani"];
+  var ALI_CHAINS = ["chishti","qadiri","suhrawardi","hamadani"];
 
-  var origin = {k:"origin", b:"root", name:"The chains continue upward", sub:"through the Companions to the Prophet ﷺ — show the earlier generations", kids:branches};
+  var LABEL = {chishti:"Chishti", qadiri:"Qadiri", suhrawardi:"Suhrawardi", naqshbandi:"Naqshbandi", hamadani:"Hamadani"};
+  function gapTo(b, node){
+    return {k:"gap", b:b, dash:true, name:"Generations of the " + LABEL[b] + " chain", kids:[node]};
+  }
 
-  var ali = {k:"comp", b:"root", chip:"Companion", name:"'Ali ibn Abi Talib", role:"Fountainhead of the Chishti, Qadiri, Suhrawardi and Hamadani chains",
-    kids:[
-      {k:"gap", b:"qadiri", dash:true, name:"Generations of the chain", kids:[jilani]},
-      {k:"gap", b:"suhrawardi", dash:true, name:"Generations of the chain", kids:[suhrawardi]},
-      {k:"gap", b:"chishti", dash:true, name:"Generations of the chain", kids:[moinuddin]},
-      {k:"gap", b:"hamadani", dash:true, name:"Generations of the chain", kids:[hamadani]}
-    ]};
-  var abubakr = {k:"comp", b:"root", chip:"Companion", name:"Abu Bakr al-Siddiq", role:"Fountainhead of the Naqshbandi chain",
-    kids:[ {k:"gap", b:"naqshbandi", dash:true, name:"Generations of the chain", kids:[naqshband]} ]};
-  var prophet = {k:"prophet", b:"root", urdu:"مُحَمَّد رَسُولُ الله ﷺ", name:"The Prophet Muhammad ﷺ", sub:"Madina · d. 632 CE", role:"Every silsila of Tasawwuf begins its chain with him", kids:[ali, abubakr]};
+  /* roots are rebuilt per filter so that one chain can be read on its own */
+  function condensedRoot(filter){
+    var kids = ORDER.filter(function(b){ return filter === "all" || filter === b; })
+                    .map(function(b){ return FOUNDERS[b]; });
+    if(kids.length === 1){ return kids[0]; }
+    return {k:"origin", b:"root", name:"The chains continue upward",
+            sub:"through the Companions to the Prophet ﷺ — show the earlier generations", kids:kids};
+  }
 
-  /* ── rendering ── */
+  function fullRoot(filter){
+    var aliKids = ALI_CHAINS.filter(function(b){ return filter === "all" || filter === b; })
+                            .map(function(b){ return gapTo(b, FOUNDERS[b]); });
+    var comps = [];
+    if(aliKids.length){
+      comps.push({k:"comp", b:"root", chip:"Companion", name:"'Ali ibn Abi Talib",
+        role:"Fountainhead of the Chishti, Qadiri, Suhrawardi and Hamadani chains", kids:aliKids});
+    }
+    if(filter === "all" || filter === "naqshbandi"){
+      comps.push({k:"comp", b:"root", chip:"Companion", name:"Abu Bakr al-Siddiq",
+        role:"Fountainhead of the Naqshbandi chain", kids:[gapTo("naqshbandi", naqshband)]});
+    }
+    return {k:"prophet", b:"root", urdu:"مُحَمَّد رَسُولُ الله ﷺ", name:"The Prophet Muhammad ﷺ",
+            sub:"Madina · d. 632 CE", role:"Every silsila of Tasawwuf begins its chain with him", kids:comps};
+  }
 
-  var treeEl = document.getElementById("st-tree");
-  var canvas = document.getElementById("st-canvas");
+  /* ══ rendering ══ */
+
+  var app      = document.getElementById("st-app");
+  var frame    = document.getElementById("st-frame");
+  var treeEl   = document.getElementById("st-tree");
+  var canvas   = document.getElementById("st-canvas");
   var viewport = document.getElementById("st-viewport");
-  var upBtn = document.getElementById("st-up");
-  var full = false;
+  var upBtn    = document.getElementById("st-up");
+  var fullBtn  = document.getElementById("st-full");
+  var zlab     = document.getElementById("st-zlab");
+
+  var MIN_Z = 0.3, MAX_Z = 1.6;
+  var toProphet = false;   /* is the chain above the founders shown? */
+  var filter = "all";
   var z = 1;
+  var isFull = false;
+  var scrollY = 0;
+
+  /* apostrophes are everywhere in these names and the markup below is built
+     with single-quoted attributes, so quotes have to be escaped too */
+  function esc(s){
+    return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+                    .replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+  }
+
+  /* names such as "Shah Yousuf-uddin Husayni" or "Nasir al-Din Chiragh-i-Delhi"
+     must not be split at their hyphens, so those become non-breaking hyphens */
+  function name(s){ return esc(s).replace(/(\S)-(\S)/g, "$1\u2011$2"); }
 
   function cardHtml(n){
     var h = "";
     if(n.k === "gap"){
-      h = "<span class='st-dots'>· · ·</span><span class='st-glabel'>" + n.name + "</span>";
-      return "<div class='st-node st-gap'>" + h + "</div>";
+      return "<div class='st-node st-gap'><span class='st-dots'>· · ·</span>" +
+             "<span class='st-glabel'>" + esc(n.name) + "</span></div>";
     }
     if(n.k === "origin"){
-      h = "<span class='st-up'>⌃</span><span><h4 class='st-name'>" + n.name + "</h4><p class='st-sub'>" + n.sub + "</p></span>";
-      return "<button type='button' class='st-node st-origin' id='st-origin-node'>" + h + "</button>";
+      return "<button type='button' class='st-node st-origin' id='st-origin-node'>" +
+             "<span class='st-up'>⌃</span><span><span class='st-name'>" + name(n.name) + "</span>" +
+             "<p class='st-sub'>" + esc(n.sub) + "</p></span></button>";
     }
-    if(n.k === "saint"){ h += "<span class='st-star'>✦</span>"; }
-    if(n.chip){ h += "<span class='st-chip'>" + n.chip + "</span>"; }
-    if(n.urdu){ h += "<div class='st-urdu'>" + n.urdu + "</div>"; }
-    h += "<h4 class='st-name'>" + n.name + "</h4>";
-    if(n.sub){ h += "<p class='st-sub'>" + n.sub + "</p>"; }
-    if(n.role){ h += "<p class='st-role'>" + n.role + "</p>"; }
+    if(n.k === "saint"){ h += "<span class='st-star' aria-hidden='true'>✦</span>"; }
+    if(n.chip){ h += "<span class='st-chip'>" + esc(n.chip) + "</span>"; }
+    if(n.urdu){ h += "<div class='st-urdu' dir='rtl'>" + n.urdu + "</div>"; }
+    h += "<h4 class='st-name'>" + name(n.name) + "</h4>";
+    if(n.sub){ h += "<p class='st-sub'>" + esc(n.sub) + "</p>"; }
+    if(n.role){ h += "<p class='st-role'>" + esc(n.role) + "</p>"; }
     if(n.url){ h += "<span class='st-goto'>Read the record</span>"; }
     var cls = "st-node st-" + n.k;
     if(n.url){ return "<a class='" + cls + "' href='" + n.url + "'>" + h + "</a>"; }
@@ -403,8 +562,10 @@ li.st-closed>ul{display:none}
     var cls = "st-b-" + (n.b || "root") + (n.dash ? " st-dash" : "");
     var h = "<li class='" + cls + "'><div class='st-cardwrap'>" + cardHtml(n);
     var kids = n.kids || [];
-    if(kids.length && n.k !== "gap" && n.k !== "origin" && n.k !== "prophet" && n.k !== "comp"){
-      h += "<button type='button' class='st-tg' data-count='" + countBelow(n) + "' aria-expanded='true' aria-label='Fold or unfold successors'>−</button>";
+    var foldable = kids.length && n.k !== "gap" && n.k !== "origin" && n.k !== "prophet" && n.k !== "comp";
+    if(foldable){
+      h += "<button type='button' class='st-tg' data-count='" + countBelow(n) +
+           "' aria-expanded='true' aria-label='Fold or unfold the successors of " + esc(n.name) + "'>−</button>";
     }
     h += "</div>";
     if(kids.length){
@@ -414,42 +575,90 @@ li.st-closed>ul{display:none}
     return h + "</li>";
   }
 
+  /* ══ zoom / pan ══ */
+
   function layout(){
     treeEl.style.transform = "scale(" + z + ")";
-    canvas.style.width = Math.round(treeEl.offsetWidth * z) + "px";
-    canvas.style.height = Math.round(treeEl.offsetHeight * z) + "px";
+    var w = Math.round(treeEl.offsetWidth * z);
+    var hh = Math.round(treeEl.offsetHeight * z);
+    canvas.style.width  = w + "px";
+    canvas.style.height = hh + "px";
+    /* a short chart sits in the middle of the frame rather than leaving a
+       block of dead space beneath it */
+    var slack = viewport.clientHeight - hh;
+    canvas.style.marginTop = (slack > 0 ? Math.round(slack / 2) : 0) + "px";
+    zlab.textContent = Math.round(z * 100) + "%";
   }
 
-  function centerView(){
+  function centerX(){
     viewport.scrollLeft = Math.max(0, (canvas.offsetWidth - viewport.clientWidth) / 2);
+  }
+
+  /* fit the chain across the width of the view and never past 1:1 — a long
+     chain is meant to be scrolled down, not shrunk until it cannot be read */
+  function fit(floor){
+    var w = treeEl.offsetWidth;
+    if(!w){ return; }
+    z = Math.max(MIN_Z, Math.min(1, (viewport.clientWidth - 8) / w));
+    /* the opening view passes a floor: on a narrow screen a whole-tree fit
+       lands somewhere near 30%, which is a blur rather than a chart */
+    if(floor){ z = Math.max(z, floor); }
+    layout();
+    centerX();
     viewport.scrollTop = 0;
   }
+  var OPEN_FLOOR = 0.5;
 
-  function fit(){
-    var w = treeEl.offsetWidth;
-    if(w > 0){
-      z = Math.min(1, Math.max(0.45, (viewport.clientWidth - 16) / w));
-      layout();
-      centerView();
-    }
-  }
-
-  function setZoom(nz){
-    var cx = (viewport.scrollLeft + viewport.clientWidth / 2) / Math.max(1, canvas.offsetWidth);
-    var cy = (viewport.scrollTop + viewport.clientHeight / 2) / Math.max(1, canvas.offsetHeight);
+  function setZoom(nz, ax, ay){
+    nz = Math.max(MIN_Z, Math.min(MAX_Z, nz));
+    if(nz === z){ return; }
+    /* keep the given viewport point (defaults to the centre) fixed */
+    var px = (ax === undefined ? viewport.clientWidth  / 2 : ax);
+    var py = (ay === undefined ? viewport.clientHeight / 2 : ay);
+    var tx = (viewport.scrollLeft + px) / z;
+    var ty = (viewport.scrollTop  + py) / z;
     z = nz;
     layout();
-    viewport.scrollLeft = cx * canvas.offsetWidth - viewport.clientWidth / 2;
-    viewport.scrollTop = cy * canvas.offsetHeight - viewport.clientHeight / 2;
+    viewport.scrollLeft = tx * z - px;
+    viewport.scrollTop  = ty * z - py;
   }
 
-  function render(){
-    var root = full ? prophet : origin;
-    treeEl.innerHTML = "<ul>" + liHtml(root) + "</ul>";
-    upBtn.innerHTML = full ? "⌄ &nbsp;Condense the earlier generations" : "⌃ &nbsp;Show the chain to the Prophet ﷺ";
-    upBtn.setAttribute("aria-expanded", full ? "true" : "false");
-    fit();
+  function step(dir){ setZoom(z * (dir > 0 ? 1.18 : 1 / 1.18)); }
+
+  /* ══ full screen ══ */
+
+  function setFull(on){
+    if(on === isFull){ return; }
+    isFull = on;
+    if(on){
+      scrollY = window.scrollY;
+      app.classList.add("is-full");
+      document.body.classList.add("st-locked");
+    }else{
+      app.classList.remove("is-full");
+      document.body.classList.remove("st-locked");
+      window.scrollTo(0, scrollY);
+    }
+    fullBtn.setAttribute("aria-pressed", on ? "true" : "false");
+    fullBtn.setAttribute("aria-label", on ? "Leave full screen" : "Enter full screen");
+    fullBtn.setAttribute("title", on ? "Leave full screen (Esc)" : "Full screen (F)");
+    fullBtn.textContent = on ? "✕" : "⛶";
+    requestAnimationFrame(function(){ fit(OPEN_FLOOR); });
   }
+
+  /* ══ render ══ */
+
+  function render(keepZoom){
+    var root = toProphet ? fullRoot(filter) : condensedRoot(filter);
+    treeEl.innerHTML = "<ul>" + liHtml(root) + "</ul>";
+    upBtn.innerHTML = toProphet
+      ? "⌄&nbsp; Condense the earlier generations"
+      : "⌃&nbsp; Show the chain to the Prophet ﷺ";
+    upBtn.setAttribute("aria-expanded", toProphet ? "true" : "false");
+    if(keepZoom){ layout(); centerX(); } else { fit(OPEN_FLOOR); }
+  }
+
+  /* ══ events ══ */
 
   treeEl.addEventListener("click", function(e){
     var tg = e.target.closest(".st-tg");
@@ -462,35 +671,71 @@ li.st-closed>ul{display:none}
       return;
     }
     if(e.target.closest("#st-origin-node")){
-      full = true;
+      toProphet = true;
       render();
     }
   });
 
-  upBtn.addEventListener("click", function(){ full = !full; render(); });
-  document.getElementById("st-zin").addEventListener("click", function(){ setZoom(Math.min(1.3, z + 0.12)); });
-  document.getElementById("st-zout").addEventListener("click", function(){ setZoom(Math.max(0.4, z - 0.12)); });
-  document.getElementById("st-fit").addEventListener("click", fit);
-  window.addEventListener("resize", layout);
+  upBtn.addEventListener("click", function(){ toProphet = !toProphet; render(); });
+  fullBtn.addEventListener("click", function(){ setFull(!isFull); });
+  document.getElementById("st-zin").addEventListener("click", function(){ step(1); });
+  document.getElementById("st-zout").addEventListener("click", function(){ step(-1); });
+  document.getElementById("st-fit").addEventListener("click", function(){ fit(); });
+
+  Array.prototype.forEach.call(app.querySelectorAll(".st-f"), function(btn){
+    btn.addEventListener("click", function(){
+      filter = btn.getAttribute("data-b");
+      Array.prototype.forEach.call(app.querySelectorAll(".st-f"), function(b){
+        b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+      });
+      render();
+    });
+  });
+
+  window.addEventListener("resize", function(){ layout(); });
+
+  /* ctrl/⌘ + wheel zooms; a plain wheel keeps its normal scrolling */
+  viewport.addEventListener("wheel", function(e){
+    if(!(e.ctrlKey || e.metaKey)){ return; }
+    e.preventDefault();
+    var r = viewport.getBoundingClientRect();
+    setZoom(z * (e.deltaY < 0 ? 1.1 : 1 / 1.1), e.clientX - r.left, e.clientY - r.top);
+  }, {passive:false});
 
   /* drag to pan */
   var drag = null;
   viewport.addEventListener("pointerdown", function(e){
-    if(e.target.closest("a, button")){ return; }
+    if(e.button !== 0 || e.target.closest("a, button")){ return; }
     drag = {x:e.clientX, y:e.clientY, sl:viewport.scrollLeft, st:viewport.scrollTop};
-    viewport.classList.add("st-grabbing");
+    viewport.classList.add("is-grabbing");
   });
   window.addEventListener("pointermove", function(e){
     if(!drag){ return; }
     viewport.scrollLeft = drag.sl - (e.clientX - drag.x);
-    viewport.scrollTop = drag.st - (e.clientY - drag.y);
+    viewport.scrollTop  = drag.st - (e.clientY - drag.y);
   });
-  window.addEventListener("pointerup", function(){
-    drag = null;
-    viewport.classList.remove("st-grabbing");
+  function endDrag(){ drag = null; viewport.classList.remove("is-grabbing"); }
+  window.addEventListener("pointerup", endDrag);
+  window.addEventListener("pointercancel", endDrag);
+
+  /* keyboard */
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && isFull){ setFull(false); return; }
+    if(e.ctrlKey || e.metaKey || e.altKey){ return; }
+    var inside = isFull || app.contains(document.activeElement);
+    if(!inside){ return; }
+    var t = e.target;
+    if(t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable)){ return; }
+    if(e.key === "+" || e.key === "="){ e.preventDefault(); step(1); }
+    else if(e.key === "-" || e.key === "_"){ e.preventDefault(); step(-1); }
+    else if(e.key === "0"){ e.preventDefault(); fit(); }
+    else if(e.key === "f" || e.key === "F"){ e.preventDefault(); setFull(!isFull); }
   });
 
   render();
+
+  /* the web fonts change card metrics; re-fit once they have settled */
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(function(){ fit(OPEN_FLOOR); }); }
 })();
 </script>
 </main>
