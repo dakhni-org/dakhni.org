@@ -249,6 +249,12 @@ body.st-locked{overflow:hidden}
 .st-tree li.st-b-naqshbandi{--lc:color-mix(in srgb,var(--st-naqshbandi) 55%,transparent)}
 .st-tree li.st-b-root{--lc:color-mix(in srgb,var(--gold) 60%,transparent)}
 
+/* ── cross-links: a second documented thread between two cards that the
+      single-parent tree cannot express by nesting ── */
+.st-xlink{position:absolute;left:0;top:0;overflow:visible;pointer-events:none}
+.st-xlink path{fill:none;stroke:var(--st-qadiri);stroke-width:1.5;stroke-dasharray:5 4}
+.st-xlink text{font-family:'Inter',sans-serif;font-size:8px;letter-spacing:.12em;text-transform:uppercase;fill:var(--st-qadiri)}
+
 /* ── node cards ── */
 .st-cardwrap{position:relative;z-index:1}
 .st-node{display:block;position:relative;background:var(--st-card);border:1px solid var(--rule);border-top:3px solid var(--oc,var(--ink-faint));border-radius:10px;width:186px;padding:.85rem .85rem .8rem;text-align:center;box-shadow:0 1px 3px var(--st-shadow);color:inherit;text-decoration:none;text-wrap:balance;overflow-wrap:break-word;hyphens:none}
@@ -414,7 +420,7 @@ li.st-closed>ul{display:none}
 
 <section class="note-card" id="notes" aria-label="A note on reading the tree">
   <span class="note-card-label">Reading the Tree</span>
-  <p class="note-card-body">This shajara is drawn strictly from the seven saint records of this archive and the Sufism index page; it introduces no names or dates beyond them. A solid line is a master-to-disciple (or master-to-khalifa) relation named in the records — comparable, as the index page notes, to a hadith chain of transmission (<em>isnad</em>). A dashed line marks either links the records document but do not name — as between 'Abd al-Qadir Jilani and Sayyid Yusuf al-Husayni of Bidar, or in the Multan chain above Baba <a class="xref-link" href="/sufism/sharfuddin/">Sharfuddin</a> — or descent by family rather than formal khilafat, as with the Yousufain brothers from Shah Raju Qattal and Hussain Shah Wali from the family of 'Ali al-Hamadhani. Shah Raju Qattal's record documents two separate threads back to Baghdad, and the tree shows both side by side: his initiatic chain, which passes through Sayyid Yusuf al-Husayni of Bidar, and his Husayni Sayyid ancestry, which runs through Sayyid Hamza, the spiritual brother of Sayyid Muhammad Gisudaraz. <a class="xref-link" href="/sufism/shah-khamosh/">Shah Khamosh</a> belonged to the combined Naqshbandi-Qadiri silsila characteristic of early <a class="xref-link" href="/dynasties/asaf-jahi/">Asaf Jahi</a> Hyderabad; the tree places him on the Naqshbandi stem, which by the classical reckoning ascends through Abu Bakr al-Siddiq, while the other chains ascend through 'Ali ibn Abi Talib. The generations between the Companions and the founders of the orders are shown condensed.</p>
+  <p class="note-card-body">This shajara is drawn strictly from the seven saint records of this archive and the Sufism index page; it introduces no names or dates beyond them. A solid line is a master-to-disciple (or master-to-khalifa) relation named in the records — comparable, as the index page notes, to a hadith chain of transmission (<em>isnad</em>). A dashed line marks either links the records document but do not name — as between 'Abd al-Qadir Jilani and Sayyid Yusuf al-Husayni of Bidar, or in the Multan chain above Baba <a class="xref-link" href="/sufism/sharfuddin/">Sharfuddin</a> — or descent by family rather than formal khilafat, as with the Yousufain brothers from Shah Raju Qattal and Hussain Shah Wali from the family of 'Ali al-Hamadhani. Shah Raju Qattal's record documents two separate threads back to Baghdad, and the tree shows both: his initiatic chain, which passes through Sayyid Yusuf al-Husayni of Bidar and forms his line of descent in the chart, and his Husayni Sayyid ancestry, which runs through Sayyid Hamza, the spiritual brother of Sayyid Muhammad Gisudaraz, and is drawn as a separate dashed arrow into his card. The records do not place these two threads in any order relative to one another, so the tree does not either. <a class="xref-link" href="/sufism/shah-khamosh/">Shah Khamosh</a> belonged to the combined Naqshbandi-Qadiri silsila characteristic of early <a class="xref-link" href="/dynasties/asaf-jahi/">Asaf Jahi</a> Hyderabad; the tree places him on the Naqshbandi stem, which by the classical reckoning ascends through Abu Bakr al-Siddiq, while the other chains ascend through 'Ali ibn Abi Talib. The generations between the Companions and the founders of the orders are shown condensed.</p>
 </section>
 
 <script>
@@ -427,9 +433,14 @@ li.st-closed>ul{display:none}
   var yousuf = {k:"saint", b:"qadiri", dash:true, chip:"Qadiri · Descendant", name:"Shah Yousuf-uddin Husayni", sub:"Nampally, Hyderabad · c. 1668–1741", role:"The elder of the Yousufain — teacher of hadith at Hyderabad", url:"/sufism/yousufain/"};
   var sharif = {k:"saint", b:"qadiri", dash:true, chip:"Qadiri · Descendant", name:"Shah Sharif-uddin Husayni", sub:"Nampally, Hyderabad · 18th c.", role:"The younger of the Yousufain — principal khalifa of the family", url:"/sufism/yousufain/"};
   var mahbub = {k:"line", b:"qadiri", dash:true, chip:"Lineage", name:"The Mahbub Subhani line", sub:"Later Asaf Jahi period", role:"Qadiri family line descended from Shah Raju"};
-  var shahraju = {k:"saint", b:"qadiri", chip:"Qadiri", name:"Shah Raju Qattal Qadiri", sub:"Bidar → Misri Gunj, Hyderabad · d. c. 1632", role:"Founder of the Qadiri silsila at Hyderabad", url:"/sufism/shah-raju/", kids:[yousuf, sharif, mahbub]};
+  var shahraju = {k:"saint", b:"qadiri", a:"shahraju", chip:"Qadiri", name:"Shah Raju Qattal Qadiri", sub:"Bidar → Misri Gunj, Hyderabad · d. c. 1632", role:"Founder of the Qadiri silsila at Hyderabad", url:"/sufism/shah-raju/", kids:[yousuf, sharif, mahbub]};
   var yusufBidar = {k:"link", b:"qadiri", dash:true, chip:"Initiatic chain", name:"Sayyid Yusuf al-Husayni", sub:"Bidar", role:"The named link through which Shah Raju received Qadiri initiation", kids:[shahraju]};
-  var hamza = {k:"line", b:"qadiri", dash:true, chip:"Family descent", name:"Sayyid Hamza", sub:"Spiritual brother of Sayyid Muhammad Gisudaraz", role:"Shah Raju's Husayni Sayyid ancestry traces to the Qadiri masters of Baghdad through him"};
+  var hamza = {k:"line", b:"qadiri", dash:true, a:"hamza", chip:"Family descent", name:"Sayyid Hamza", sub:"Spiritual brother of Sayyid Muhammad Gisudaraz", role:"Shah Raju's Husayni Sayyid ancestry traces to the Qadiri masters of Baghdad through him"};
+
+  /* Shah Raju's record documents two threads back to Baghdad. The initiatic
+     one is his line of descent in the tree; the family one cannot also be a
+     parent edge in a single-parent chart, so it is drawn across as a link. */
+  var XLINKS = [{from:"hamza", to:"shahraju", label:"family descent"}];
   var gapQ = {k:"gap", b:"qadiri", dash:true, name:"Unnamed links of the documented chain", kids:[hamza, yusufBidar]};
   var jilani = {k:"founder", b:"qadiri", dash:true, chip:"Qadiriyya · Founder", urdu:"قادریہ", name:"Shaykh 'Abd al-Qadir Jilani", sub:"Baghdad · d. 1166", role:"Master of the Qadiri silsila", kids:[gapQ]};
 
@@ -545,8 +556,9 @@ li.st-closed>ul{display:none}
     if(n.role){ h += "<p class='st-role'>" + esc(n.role) + "</p>"; }
     if(n.url){ h += "<span class='st-goto'>Read the record</span>"; }
     var cls = "st-node st-" + n.k;
-    if(n.url){ return "<a class='" + cls + "' href='" + n.url + "'>" + h + "</a>"; }
-    return "<div class='" + cls + "'>" + h + "</div>";
+    var at = n.a ? " data-a='" + n.a + "'" : "";
+    if(n.url){ return "<a class='" + cls + "' href='" + n.url + "'" + at + ">" + h + "</a>"; }
+    return "<div class='" + cls + "'" + at + ">" + h + "</div>";
   }
 
   function countBelow(n){
@@ -577,6 +589,39 @@ li.st-closed>ul{display:none}
 
   /* ══ zoom / pan ══ */
 
+  /* draw the cross-links, in the tree's own unscaled coordinates, whenever
+     the chart is re-laid-out (render, fold, zoom, resize) */
+  function drawXlinks(){
+    var svg = treeEl.querySelector(".st-xlink");
+    if(!svg){ return; }
+    var w = treeEl.offsetWidth, hh = treeEl.offsetHeight;
+    svg.setAttribute("width", w);
+    svg.setAttribute("height", hh);
+    svg.setAttribute("viewBox", "0 0 " + w + " " + hh);
+    var tr = treeEl.getBoundingClientRect();
+    var out = "";
+    XLINKS.forEach(function(lk){
+      var a = treeEl.querySelector("[data-a='" + lk.from + "']");
+      var c = treeEl.querySelector("[data-a='" + lk.to + "']");
+      if(!a || !c || a.offsetParent === null || c.offsetParent === null){ return; }
+      var ra = a.getBoundingClientRect(), rc = c.getBoundingClientRect();
+      var x1 = (ra.left + ra.width / 2 - tr.left) / z;
+      var y1 = (ra.bottom - tr.top) / z;
+      var x2 = (rc.left - tr.left) / z - 9;
+      var y2 = (rc.top + rc.height / 2 - tr.top) / z;
+      if(x2 <= x1 + 24 || y2 <= y1 + 24){ return; }
+      var r = 12;
+      out += "<path d='M" + x1 + "," + y1 + " V" + (y2 - r) +
+             " Q" + x1 + "," + y2 + " " + (x1 + r) + "," + y2 +
+             " H" + x2 + "' marker-end='url(#st-arrow)'></path>";
+      out += "<text x='" + (x1 + r + 6) + "' y='" + (y2 - 6) + "'>" + lk.label + "</text>";
+    });
+    svg.innerHTML =
+      "<defs><marker id='st-arrow' viewBox='0 0 8 8' refX='7' refY='4' markerWidth='6' " +
+      "markerHeight='6' orient='auto'><path d='M0,0 L8,4 L0,8 z' fill='var(--st-qadiri)' " +
+      "stroke='none'></path></marker></defs>" + out;
+  }
+
   function layout(){
     treeEl.style.transform = "scale(" + z + ")";
     var w = Math.round(treeEl.offsetWidth * z);
@@ -588,6 +633,7 @@ li.st-closed>ul{display:none}
     var slack = viewport.clientHeight - hh;
     canvas.style.marginTop = (slack > 0 ? Math.round(slack / 2) : 0) + "px";
     zlab.textContent = Math.round(z * 100) + "%";
+    drawXlinks();
   }
 
   function centerX(){
@@ -650,7 +696,7 @@ li.st-closed>ul{display:none}
 
   function render(keepZoom){
     var root = toProphet ? fullRoot(filter) : condensedRoot(filter);
-    treeEl.innerHTML = "<ul>" + liHtml(root) + "</ul>";
+    treeEl.innerHTML = "<svg class='st-xlink' aria-hidden='true'></svg><ul>" + liHtml(root) + "</ul>";
     upBtn.innerHTML = toProphet
       ? "⌄&nbsp; Condense the earlier generations"
       : "⌃&nbsp; Show the chain to the Prophet ﷺ";
