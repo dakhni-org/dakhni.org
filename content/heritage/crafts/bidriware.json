@@ -3,7 +3,7 @@
   "url": "/heritage/crafts/bidriware/",
   "section": "Heritage",
   "title": "Bidriware",
-  "description": "Bidriware is the signature metalcraft of Bidar: a zinc-and-copper alloy inlaid with hammered silver and blackened with a paste of soil from the Bidar fort, made the same way for more than five centuries.",
+  "description": "Bidriware is the signature metalcraft associated with Bidar: a blackened zinc-and-copper alloy inlaid with silver, with historic and living production across parts of the Deccan.",
   "dedication": "In memory of the Asaf Jahi dynasty",
   "sort_order": 10,
   "tags": [
@@ -14,7 +14,7 @@
   ],
   "eyebrow": "Crafts of the Deccan",
   "title_html": "Bidriware",
-  "subtitle": "Bidar · Since c. 1500",
+  "subtitle": "Bidar · A Deccan tradition of black metal and silver inlay",
   "link_terms": [
     "Bidriware"
   ],
@@ -28,52 +28,52 @@
         {
           "key": "Origin",
           "value": "Bidar, Deccan",
-          "ref": "michell-zebrowski-1999"
+          "ref": "handicrafts-bidri"
         },
         {
-          "key": "In production since",
-          "value": "c. 1500",
-          "ref": "michell-zebrowski-1999"
+          "key": "Historic period",
+          "value": "Bahmani-era Deccan",
+          "ref": "handicrafts-bidri"
         },
         {
           "key": "Material",
-          "value": "Zinc-and-copper alloy, inlaid with hammered silver and brass wire",
-          "ref": "michell-zebrowski-1999"
+          "value": "Blackened zinc-and-copper alloy inlaid with silver",
+          "ref": "handicrafts-bidri"
         },
         {
-          "key": "Blackening agent",
-          "value": "A paste of soil from the Bidar fort",
-          "ref": "michell-zebrowski-1999"
+          "key": "Main production centres",
+          "value": "Bidar and Hyderabad; also documented in Aurangabad",
+          "ref": "handicrafts-process"
         },
         {
           "key": "Recognition",
-          "value": "Registered as a Geographical Indication (GI) of India"
+          "value": "Bidriware is protected through India's Geographical Indications system"
         }
       ]
     },
     {
       "type": "narrative",
-      "intro": "<p><em>Bidriware</em> is the signature metalcraft of Bidar, made the same way for more than five centuries. A vessel of zinc-and-copper alloy is cast, scored with a steel point, inlaid with hammered silver and brass wire, and then dipped in a paste of soil from the Bidar fort that turns the alloy a deep matte black — leaving the silver inlay untouched and gleaming against it.<cite data-ref=\"michell-zebrowski-1999\"></cite> No other metalwork looks like it.</p>",
+      "intro": "<p><em>Bidriware</em> is the black-and-silver metalcraft named for Bidar. The craft uses a zinc-and-copper alloy whose surface is engraved and inlaid with silver before being chemically blackened, producing the contrast that defines Bidri work.<cite data-ref=\"handicrafts-bidri\"></cite> Bidar remains its principal historic centre, but Government of India craft documentation also records production in Hyderabad and Aurangabad.<cite data-ref=\"handicrafts-process\"></cite></p>",
       "sections": [
         {
           "id": "s1",
-          "eyebrow": "Bidar · Five Centuries",
+          "eyebrow": "Bidar · Deccan Metalwork",
           "numeral_label": "The Craft",
           "title_html": "Black metal inlaid with <em>silver</em>",
-          "sub": "Casting, scoring, inlay, and the blackening paste unique to Bidar",
+          "sub": "Casting, engraving, inlay and controlled blackening",
           "body": [
-            "The craft takes its name from Bidar, the only place it has ever been made. A vessel is cast in an alloy of zinc and copper, its surface scored with a steel point in a pattern, then inlaid with hammered silver and brass wire set into the scored lines. The vessel is finally dipped in a paste made from soil taken from within the Bidar fort itself, which reacts with the alloy to turn it a deep matte black — while leaving the silver, untouched by the reaction, standing out bright against it.<cite data-ref=\"michell-zebrowski-1999\"></cite>"
+            "Bidriware takes its name from Bidar, which remains the craft's chief historic centre. A zinc-and-copper alloy is cast and worked, patterns are engraved into the surface, and silver is inlaid into the design. The object is then oxidised to darken the base metal while the silver remains bright, creating Bidriware's characteristic black-and-silver contrast.<cite data-ref=\"handicrafts-bidri handicrafts-process\"></cite>"
           ],
           "reveal": "reveal-right"
         },
         {
           "id": "s2",
-          "eyebrow": "A Craft Made Nowhere Else",
+          "eyebrow": "A Living Deccan Craft",
           "numeral_label": "Recognition",
           "title_html": "Continuing <em>tradition</em>",
-          "sub": "Still practised by Bidar's karigars, and protected as a Geographical Indication",
+          "sub": "Bidar at the centre of a wider Deccan craft geography",
           "body": [
-            "Bidriware remains in production in Bidar today, carried on by the same families of karigars who have practised it for generations. It is registered as a Geographical Indication (GI) of India, recognition of a craft that, despite its fame across the Deccan and beyond, has never been successfully replicated anywhere else — the blackening reaction depends on the particular soil of the Bidar fort itself."
+            "Bidar remains the place most closely identified with Bidriware and an important centre of living production. Government of India craft documentation, however, also records Bidri work in Hyderabad and Aurangabad; the tradition is therefore better understood as a craft centred on Bidar rather than one that has existed nowhere else.<cite data-ref=\"handicrafts-process\"></cite>"
           ],
           "reveal": "reveal-left"
         }
@@ -82,8 +82,14 @@
   ],
   "references": [
     {
-      "id": "michell-zebrowski-1999",
-      "text": "George Michell & Mark Zebrowski, Architecture and Art of the Deccan Sultanates (The New Cambridge History of India I.7), Cambridge University Press, 1999."
+      "id": "handicrafts-bidri",
+      "text": "Office of the Development Commissioner (Handicrafts), Government of India, ‘Bidriware.’",
+      "url": "https://handicrafts.nic.in/crafts/All_Crafts/Craft_Categories/Metal/Other_Metal/Bidriware/BidriwareWebPage.html"
+    },
+    {
+      "id": "handicrafts-process",
+      "text": "Office of the Development Commissioner (Handicrafts), Government of India, Craft Processes and Other Details of 32 Crafts — Bidriware.",
+      "url": "https://handicrafts.gov.in/CmsUpload/2039201602393132craftprocess.pdf"
     }
   ]
 }
