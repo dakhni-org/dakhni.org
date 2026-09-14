@@ -7,7 +7,7 @@ How images, logos and other static files are organised on dakhni.org.
 **1. Shared / global — this folder (`/assets/`)**
 Files used across many pages live here and are referenced by absolute path:
 
-- `dakhni-org-logo.png` — site logo / favicon (`/assets/dakhni-org-logo.png`)
+- `dakhni-org-logo.svg` — canonical site logo and favicon (`/assets/dakhni-org-logo.svg`)
 - `dakhni-pattern.png` — hero background pattern
 - `Asafia_flag_of_Hyderabad_State.svg.png` — Asaf Jahi flag
 - `image013.jpg`, `image015.jpg` — shared decorative images

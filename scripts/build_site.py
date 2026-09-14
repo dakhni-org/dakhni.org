@@ -883,7 +883,7 @@ def render_auto_subnav(page: Dict[str, Any], subnav_map: Dict, url_to_page: Dict
 def footer(dedication):
     ded = dedication or "Built with love for the Deccan"
     return f'''<footer>
-  <div class="flag-banner"><img src="/assets/dakhni-org-logo-256.png" alt="Dakhni.org" width="256" height="256" loading="lazy"/></div>
+  <div class="flag-banner"><img src="/assets/dakhni-org-logo.svg" alt="Dakhni.org" width="256" height="256" loading="lazy"/></div>
   <div class="ft-divider"></div>
   <div class="ft-name">DAKHNI.ORG</div>
   <p class="ft-tagline">Preserving the soul of the Deccan, one story at a time.</p>
@@ -951,7 +951,7 @@ def head(page, url_to_page: Dict[str, Any]):
     full_title = "Dakhni.org — Heritage of the Deccan" if url == "/" else f'{title} — Dakhni.org'
     desc = page.get("description", "")
     cover = page.get("cover") or ""
-    og_img = ("https://dakhni.org" + cover) if cover.startswith("/") else (cover or "https://dakhni.org/assets/icon-512.png")
+    og_img = ("https://dakhni.org" + cover) if cover.startswith("/") else (cover or "https://dakhni.org/assets/dakhni-org-logo.svg")
     page_tags = page.get("tags", [])
     all_keywords = KEYWORDS + (", " + ", ".join(page_tags) if page_tags else "")
     jsonld = [] if url == "/" else [breadcrumb_jsonld(page, url_to_page)]
@@ -967,7 +967,7 @@ def head(page, url_to_page: Dict[str, Any]):
                 "@type": "Organization",
                 "name": "Dakhni.org",
                 "url": "https://dakhni.org/",
-                "logo": "https://dakhni.org/assets/icon-512.png",
+                "logo": "https://dakhni.org/assets/dakhni-org-logo.svg",
             },
         }
         jsonld.append(f'<script type="application/ld+json">{json.dumps(site_ld, ensure_ascii=False)}</script>')
@@ -986,10 +986,7 @@ def head(page, url_to_page: Dict[str, Any]):
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>{esc(full_title)}</title>
-  <link rel="icon" href="/assets/favicon.ico" sizes="32x32"/>
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png"/>
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"/>
+  <link rel="icon" type="image/svg+xml" href="/assets/dakhni-org-logo.svg"/>
   <link rel="manifest" href="/assets/site.webmanifest"/>
   <meta name="description" content="{esc(desc)}"/>
   <meta name="keywords" content="{esc(all_keywords)}"/>
