@@ -1,0 +1,37 @@
+name: Import exact SVG logo
+
+on:
+  push:
+    branches:
+      - chatgpt/exact-logo-svg
+    paths:
+      - '.logo-import/logo.svg.xz.b64'
+      - '.github/workflows/import-exact-logo.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  import-logo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Restore uploaded SVG exactly
+        run: |
+          base64 -d .logo-import/logo.svg.xz.b64 | xz -d > assets/dakhni-org-logo.svg
+          actual="$(git hash-object assets/dakhni-org-logo.svg)"
+          expected="1e9aa6384558d27614a69e9170c92763de5dfb98"
+          echo "SVG git blob: $actual"
+          test "$actual" = "$expected"
+
+      - name: Commit exact SVG
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/dakhni-org-logo.svg
+          if ! git diff --cached --quiet; then
+            git commit -m "Use supplied exact SVG logo [skip ci]"
+            git push
+          fi
