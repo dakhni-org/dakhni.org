@@ -3,52 +3,60 @@
   "url": "/language/dakhni/",
   "section": "Language",
   "title": "Dakhni",
-  "description": "Dakhni: adjective meaning 'of the Deccan' or 'southern' — the register of Urdu spoken across the Deccan, from Hyderabad to Bijapur, since the 14th century.",
+  "description": "Dakhni (also Dakhini, Dakani or Deccani) is the historic southern form of Hindustani/Urdu that developed in the Deccan and built a major literary tradition under the Deccan sultanates.",
   "dedication": "In memory of the Asaf Jahi dynasty",
   "sort_order": 10,
   "tags": [
     "Dakhni",
+    "Dakhini",
+    "Dakani",
     "Dakkani",
+    "Deccani",
     "Dakhni Urdu",
+    "Dakhini Urdu",
     "Deccan Language"
   ],
   "eyebrow": "Languages of the Deccan",
   "urdu": "دَکَّنی",
   "title_html": "Dakhni",
-  "subtitle": "A literature older than its descendants — the tongue born in the bazaar.",
+  "subtitle": "Dakhni · Dakhini · Dakani · Deccani — a southern literary and spoken form of Hindustani/Urdu",
   "link_terms": [
-    "Dakhni"
+    "Dakhni",
+    "Dakhini",
+    "Dakani",
+    "Deccani"
   ],
   "blocks": [
     {
       "type": "facts",
       "items": [
         {
-          "key": "Family",
-          "value": "Southern register of Urdu",
-          "ref": "britannica-dakhni"
+          "key": "Names",
+          "value": "Dakhni · Dakhini · Dakani · Deccani",
+          "ref": "iranica-urdu"
+        },
+        {
+          "key": "Classification",
+          "value": "Southern form of Hindustani/Urdu",
+          "ref": "iranica-urdu"
         },
         {
           "key": "Region",
-          "value": "The Deccan"
+          "value": "The Deccan — especially Hyderabad and the historic sultanate centres"
         },
         {
           "key": "Script",
-          "value": "Perso-Arabic"
+          "value": "Historically Perso-Arabic"
         },
         {
-          "key": "First text",
-          "value": "c. 1410 · Bandanawaz",
-          "ref": "eaton-2005"
+          "key": "Literary florescence",
+          "value": "15th–17th centuries under Sufi and sultanate patronage",
+          "ref": "iranica-urdu"
         },
         {
-          "key": "Speakers",
-          "value": "~12 million",
-          "ref": "rahman-2011"
-        },
-        {
-          "key": "Status",
-          "value": "Spoken, once literary"
+          "key": "Modern continuity",
+          "value": "A distinctive spoken form of Urdu remains associated with Hyderabad and the wider Deccan",
+          "ref": "iranica-urdu"
         }
       ]
     },
@@ -58,237 +66,227 @@
       "tour": [
         {
           "id": "s1",
-          "label": "The Dialect"
+          "label": "Names & Classification"
         },
         {
           "id": "s2",
-          "label": "The Saint"
+          "label": "Early Writing"
         },
         {
           "id": "s3",
-          "label": "The King"
+          "label": "Golconda"
         },
         {
           "id": "s4",
-          "label": "The Songbook"
+          "label": "Bijapur"
         },
         {
           "id": "s5",
-          "label": "The Novel"
+          "label": "Sab Ras"
         },
         {
           "id": "s6",
-          "label": "The Last Master"
+          "label": "Wali & the North"
         },
         {
           "id": "s7",
-          "label": "The Living Tongue"
+          "label": "Living Dakhni"
+        },
+        {
+          "id": "s8",
+          "label": "Research Guide"
         },
         {
           "id": "timeline",
           "label": "Timeline"
         }
       ],
-      "intro": "<p>The southern register that became literary before Urdu flourished at Delhi, and that — uniquely in South Asia — still survives as everyday speech in the cities that first wrote it down.</p>",
+      "intro": "<p><em>Dakhni</em> is one modern spelling for the historic southern form of Hindustani/Urdu known in scholarship by several names. Encyclopaedia Iranica records <em>Dakanī</em> and <em>Dakhinī</em> as Deccan names for the language and notes that Hyderabadis still use the term for their distinctive form of Urdu. This page uses <strong>Dakhni</strong> as its house spelling while preserving the major variants readers will encounter in archives and scholarship.<cite data-ref=\"iranica-urdu\"></cite></p>",
       "sections": [
         {
           "id": "s1",
-          "eyebrow": "Grammar & Speech",
-          "numeral_label": "The Dialect",
-          "title_html": "A grammar of its <em>own</em>",
-          "sub": "What Dakhni is — and is not",
+          "eyebrow": "Dakhni · Dakhini · Dakani · Deccani",
+          "numeral_label": "Names & Classification",
+          "title_html": "One tradition, <em>many spellings</em>",
+          "sub": "Why the same language appears under several names",
           "body": [
-            "Dakhni — written variously as <em>Dakhini</em>, <em>Deccani</em> or <em>Dakkhani</em> — is the southern register of Urdu that took shape in the Deccan between the fourteenth and sixteenth centuries. It is variously classified as a southern variety or register of Hindustani/Urdu rather than through a universally agreed language–dialect boundary: it shares the Persian-Arabic script, the broad grammar and most of the vocabulary of standard Urdu, but it carries its own grammatical signatures, its own loan-word stratum from Telugu, Marathi and Kannada, and a vowel-music quite unlike the clipped speech of Delhi.",
-            "The most visible markers are everyday words. Dakhni uses <em>kaiku</em> for \"why\" (where standard Urdu uses <em>kyon</em>); <em>nakko</em> for \"no, don't\" (vs. <em>nahin</em>); <em>hau</em> for an emphatic \"yes\"; <em>potti</em> for a girl, <em>poyya</em> for a boy; <em>so gaye kya?</em> instead of <em>so gaye ho kya?</em> — the dropped auxiliary verb being a southern habit. The vocative <em>miyan</em>, lengthened to <em>miyaaaan</em>, is so characteristic of old-city Hyderabad that it has become a piece of national comedy.",
-            "Beneath these surface markers lies a deeper grammar. Dakhni preserves verb endings — <em>karta-un</em>, <em>jata-un</em> — that the standard Urdu of the north dropped in the eighteenth century. It uses the plural future <em>karinge</em> where standard Urdu writes <em>karenge</em>. It tolerates Dravidian compound verbs that no northern editor would pass. Read aloud, Muhammad Quli Qutb Shah's diwan of 1605 sounds, to a Hyderabadi ear, recognisably continuous with the speech of the Hussaini Alam bazaar today.<cite data-ref=\"malik-2008\"></cite>"
+            "The historical language has never had a single Roman spelling. <em>Dakhni</em>, <em>Dakhini</em>, <em>Dakani</em>, <em>Dakkani</em> and <em>Deccani</em> all occur in modern writing. Encyclopaedia Iranica uses <em>Dakanī</em> and <em>Dakhinī</em>, describing the term as meaning ‘southern’ and identifying it as the Deccan form of Urdu/Hindustani.<cite data-ref=\"iranica-urdu\"></cite>",
+            "Those labels cover both a historical literary tradition and living regional speech. Treating Dakhni simply as either a separate language or merely a modern slang dialect can flatten that history: medieval Dakhni supported court poetry, Sufi devotional writing and extended prose, while modern Deccan varieties continue primarily in speech.",
+            "Contact with Telugu, Marathi and Kannada shaped vocabulary and usage in the south, while Persian and Arabic remained important literary sources. The precise boundaries between Dakhni, Hindavi, Rekhta and later standard Urdu changed over time, so this archive avoids presenting one modern language label as though it had been fixed for six centuries.<cite data-ref=\"iranica-urdu\"></cite>"
           ],
           "reveal": "reveal-left"
         },
         {
           "id": "s2",
-          "eyebrow": "Gulbarga · 1400–1500",
-          "numeral_label": "The Saint",
-          "title_html": "A saint who wrote in the <em>language of his disciples</em>",
-          "sub": "Khwaja Bandanawaz and the deliberate use of the vernacular at Gulbarga · 1400–1500",
+          "eyebrow": "Gulbarga · Fifteenth Century",
+          "numeral_label": "Early Writing",
+          "title_html": "From lingua franca to <em>literary medium</em>",
+          "sub": "Sufi networks and vernacular writing in the early Deccan",
           "body": [
-            "Bandanawaz is traditionally identified as an early figure in literary Dakhni, although the attribution of particular vernacular works remains debated. <em>Khwaja Sayyid Muhammad Husayni Gesudaraz Bandanawaz</em> (1321–1422), who arrived at Gulbarga from Delhi in 1399 at the invitation of the Bahmani sultan Firuz Shah, was the foremost Chishti master of his generation. He left dozens of works in Persian and Arabic for his learned disciples — but he also wrote, in the local vernacular, a number of devotional prose tracts and verse fragments addressed to the common people who came to his hospice for instruction.",
-            "The decision was theological as much as linguistic. The Chishti silsila held that the saint's first duty was to the poor and the local; the language of the bazaar was the language of teaching. Bandanawaz's <em>Mi'raj-ul-Ashiqin</em> and <em>Hidayat-nama</em> are traditionally associated with early Dakhni prose, but modern scholarship debates the authorship and dating of some works attributed to Bandanawaz. They remain important to discussions of Dakhni's emergence as a written literary medium.<cite data-ref=\"eaton-2005\"></cite>",
-            "The example outlasted the saint. Through the fifteenth century the Chishti and Qadiri orders of the Deccan wrote tracts, hagiographies and sung quatrains in Dakhni for their disciples. The dargahs of Gulbarga, Bidar, Bijapur and later Hyderabad and Aurangabad became, in effect, the first literary salons of the new tongue — the unbroken thread that runs from the saint's hospice to the sovereign-poet's diwan.<cite data-ref=\"eaton-2005\"></cite>"
+            "The movement of armies, administrators, migrants and Sufis from north India into the Deccan made a form of Hindavi useful as a lingua franca among communities speaking several Indo-Aryan and Dravidian languages. In the Deccan it acquired the local name Dakanī/Dakhinī and gradually developed a substantial religious and literary corpus.<cite data-ref=\"iranica-urdu\"></cite>",
+            "Khwaja Sayyid Muhammad Husayni Gesudaraz, better known as Bandanawaz (1321–1422), settled at Gulbarga around the turn of the fifteenth century. Vernacular devotional works have long been associated with him and his circle, although modern scholarship disputes the authorship and dating of some individual texts. That uncertainty matters: early Dakhni history is better described as an emerging textual tradition than as a single precisely dated ‘first book.’<cite data-ref=\"eaton-2005\"></cite>",
+            "Sufi centres at Gulbarga and later other Deccan cities helped vernacular religious writing circulate beyond elite Persian-reading audiences. By the later sixteenth century the southern sultanates were actively patronising Dakhni poets and writers even while Persian remained central to administration.<cite data-ref=\"iranica-urdu\"></cite>"
           ],
           "reveal": "reveal-right"
         },
         {
           "id": "s3",
-          "eyebrow": "Golconda · 1580–1611",
-          "numeral_label": "The King",
-          "title_html": "A king who wrote <em>fifty thousand verses</em> in his own tongue",
+          "eyebrow": "Golconda & Hyderabad · 1580–1611",
+          "numeral_label": "Golconda",
+          "title_html": "A sovereign-poet writes the <em>Deccan into verse</em>",
           "sub": "Muhammad Quli Qutb Shah · r. 1580–1611",
           "body": [
-            "The fifth Qutb Shahi sultan of Golconda, <em>Muhammad Quli Qutb Shah</em> (b. 1565, r. 1580–1611), founded the city of Hyderabad in 1591 and within a single reign elevated Dakhni from a regional dialect to a full literary medium. He left a substantial surviving divan in Dakhni — one of the earliest substantial royal divans in a South Asian vernacular. It is preserved in the Salar Jung Museum and the Hyderabad State archives, in two near-complete manuscripts.<cite data-ref=\"eaton-2005\"></cite>",
-            "The diwan's range is what astonishes. There are ghazals to his Hindu beloved Bhagmati; verses on the rains of Hyderabad; on the festivals of Holi, Diwali, Basant and Eid; on the lamps of the durbar; on the night watch of the city; on the eating of mangoes; on the fragrance of <em>champa</em>. Persian convention is everywhere — the wine cup, the rose and the nightingale, the moon as the cheek of the beloved — but the local detail is unmistakable. The king writes about <em>his</em> city, in <em>his</em> tongue, with a frankness no Mughal sovereign ever attempted.",
-            "The most quoted couplet is among the simplest. <em>\"Piya baaj pyaala piya jaye na / Piya baaj yek til jiya jaye na\"</em> — without the beloved I cannot drink the cup, without the beloved I cannot live one moment. Five centuries on, the line is still sung at Hyderabadi weddings and at the dargah of Yousufain."
+            "Muhammad Quli Qutb Shah, the fifth Qutb Shahi ruler, founded Hyderabad in 1591 and left a substantial body of poetry in Dakhni. His work is among the most important surviving evidence for the language as a mature courtly literary medium under the Deccan sultanates.<cite data-ref=\"eaton-2005\"></cite>",
+            "His poetry joins Persianate forms and imagery to a recognisably Deccan setting: the city, monsoon, festivals, flowers, food and courtly life enter the verse alongside the conventional beloved, rose, wine cup and nightingale. That combination is one reason his divan is central to histories of Dakhni literature.",
+            "A well-known couplet associated with Muhammad Quli begins <em>‘Piya baaj pyaala piya jaye na / Piya baaj yek til jiya jaye na’</em> — a compact example of the idiom in which the Golconda court wrote and sang."
           ],
           "reveal": "reveal-left"
         },
         {
           "id": "s4",
           "eyebrow": "Bijapur · 1580–1627",
-          "numeral_label": "The Songbook",
-          "title_html": "A book of <em>nine flavours</em> at the Bijapur court",
-          "sub": "Ibrahim Adil Shah II · r. 1580–1627",
+          "numeral_label": "Bijapur",
+          "title_html": "The musical world of the <em>Kitab-i-Nauras</em>",
+          "sub": "Ibrahim Adil Shah II and the multilingual culture of Bijapur",
           "body": [
-            "While Muhammad Quli was writing his Hyderabad diwan, the Adil Shahi sultan <em>Ibrahim II</em> at Bijapur (r. 1580–1627) was producing a Dakhni text of a quite different kind. The <em>Kitab-i-Nauras</em> — \"the book of nine flavours\", a reference to the nine <em>rasas</em> of Sanskrit aesthetic theory — is a sequence of fifty-nine songs and seventeen couplets on music, devotion and the inner life. Each song is keyed to a particular raga; the whole work is intended to be sung, not read.<cite data-ref=\"sherwani-joshi-1973\"></cite>",
-            "What sets the Nauras apart is its religious tone. Ibrahim, a Sunni sovereign, addresses his songs not only to Allah and the Prophet but to <em>Saraswati</em>, the Hindu goddess of learning, to <em>Ganapati</em>, to the Sufi master <em>Gisu Daraz</em> at Gulbarga, and to his own veena. He calls himself <em>Jagat Guru</em>, world-teacher; he signs himself, in some manuscripts, <em>Ibrahim</em> with a Sanskrit honorific. The combination — Islamic sovereignty, Sanskrit aesthetic vocabulary, Sufi devotional impulse, all in Dakhni verse — is unique to his court and to that decade.",
-            "The Nauras is now preserved in several illustrated manuscripts at the British Library, the Salarjung Museum, and the Bharat Itihas Samshodhak Mandal at Pune. A handful of its songs are still performed by Dhrupad and Khayal singers in the Hyderabad tradition. The work is an important surviving witness to the interaction of Dakhni poetry and court music."
+            "At Bijapur, Ibrahim Adil Shah II (r. 1580–1627) patronised a court in which Persianate, Indic and Sufi cultural vocabularies interacted closely. The <em>Kitab-i-Nauras</em>, associated with his court and musical interests, is an important witness to that environment and to Dakhni's place in elite artistic life.<cite data-ref=\"sherwani-joshi-1973\"></cite>",
+            "The work invokes musical modes, devotional figures and courtly aesthetics across traditions. Rather than treating this mixture as proof of a uniquely harmonious age, it is more useful historically as evidence of the multilingual and multi-religious repertoire available to an early-modern Deccan court.",
+            "Together, Bijapur and Golconda show that Dakhni literature was not confined to one dynasty or city: by the late sixteenth and early seventeenth centuries it had multiple centres of patronage across the southern sultanates.<cite data-ref=\"iranica-urdu\"></cite>"
           ],
           "reveal": "reveal-right"
         },
         {
           "id": "s5",
           "eyebrow": "Golconda · c. 1635",
-          "numeral_label": "The Novel",
-          "title_html": "An early Dakhni <em>allegorical prose romance</em>",
-          "sub": "Mulla Wajhi · fl. c. 1605–1635",
+          "numeral_label": "Sab Ras",
+          "title_html": "Dakhni in <em>extended prose</em>",
+          "sub": "Mulla Wajhi and the literary possibilities of the vernacular",
           "body": [
-            "<em>Mulla Asadullah Wajhi</em> was poet-laureate to Muhammad Quli's successor Sultan Muhammad Qutb Shah at Golconda. He left a Dakhni divan of his own; but his enduring achievement is the prose romance <em>Sab Ras</em> (\"all flavours\"), completed at Golconda around 1635. It is a landmark early work of extended prose in Dakhni.<cite data-ref=\"eaton-2005\"></cite>",
-            "The plot is borrowed: Wajhi adapted it from the Persian Sufi allegory <em>Dastur-i-Ushshaq</em> of Fattahi Nishapuri. The names of the personified characters — <em>Husn</em> (Beauty), <em>Ishq</em> (Love), <em>Aql</em> (Reason), <em>Nazar</em> (the Glance), <em>Dil</em> (the Heart) — are kept. What is new is the prose itself. Wajhi writes Dakhni paragraphs of considerable length, mixing direct speech, narrative, and lyric inserts. He treats the vernacular as a fit medium for the long form. Nothing of the kind would be attempted in the north for another century and a half.",
-            "<em>Sab Ras</em> was widely copied; manuscripts survive at Hyderabad, Patna, the British Library and the Bibliothèque Nationale. The first printed edition appeared at Lucknow in 1879. As prose model it shaped early Urdu novel-writing — the <em>Bagh-o-Bahar</em> tradition of Mir Amman in 1803 owes Wajhi an unacknowledged debt. He is the patron-saint of the long sentence in Urdu."
+            "Mulla Wajhi's <em>Sab Ras</em>, completed at Golconda around the 1630s, is a major early work of extended Dakhni prose. Wajhi adapts a Persian allegorical tradition while giving the vernacular sustained narrative and rhetorical work to do.<cite data-ref=\"eaton-2005\"></cite>",
+            "Its personified figures — Beauty, Love, Reason, the Glance and the Heart — belong to an established Persianate allegorical vocabulary, but the prose demonstrates that Dakhni had become capable of carrying long-form literary composition rather than only lyric or devotional fragments.",
+            "For researchers, <em>Sab Ras</em> is especially valuable because it preserves prose syntax and vocabulary that poetry alone cannot show. It is therefore a key text for studying the historical structure of Dakhni as well as its literature."
           ],
           "reveal": "reveal-left"
         },
         {
           "id": "s6",
-          "eyebrow": "Aurangabad · 1715–1763",
-          "numeral_label": "The Last Master",
-          "title_html": "The torch <em>passed</em>, and the southern flame steady",
-          "sub": "Siraj Aurangabadi · the last classical voice · 1715–1763",
+          "eyebrow": "Late Seventeenth–Eighteenth Century",
+          "numeral_label": "Wali & the North",
+          "title_html": "When southern verse entered the <em>Delhi literary world</em>",
+          "sub": "Wali Deccani and a shifting centre of Urdu literary culture",
           "body": [
-            "By the turn of the eighteenth century, Dakhni's place at the centre of the South Asian literary imagination was being challenged from its own offspring. Wali Deccani — born at Aurangabad, the same city that had hosted Muhammad bin Tughluq's exiled court four centuries earlier — travelled to Delhi around 1700 and showed the Mughal poets that the vernacular could carry serious verse. Within twenty years the Delhi poets were writing in <em>their</em> Khari Boli-based Urdu, and the centre of literary gravity shifted decisively north.<cite data-ref=\"rahman-2011\"></cite>",
-            "But the southern line did not die at once. <em>Siraj-ud-Din Siraj Aurangabadi</em> (1715–1763) is the last of the classical Dakhni masters. His ghazals — <em>\"Khabar-e-tahayyur-e-ishq sun, na junoon raha na pari rahi\"</em> — are still sung in qawwali. His diwan was compiled posthumously and circulated widely; Ghalib, writing a century later in Delhi, cites Siraj more than once with respect. Siraj wrote in a Dakhni that already showed some northern influence — the standardising pull of the Lucknow and Delhi schools is visible in his diction — but his vocabulary, syntax, and music are still recognisably southern.",
-            "After Siraj, the canonical line of Dakhni poets ends. New poets at Hyderabad and Aurangabad still wrote southern verse, but the literary capital was no longer their concern. Dakhni had given Urdu its body and its first canon; it now stepped back into the everyday life of its own cities, where it had always belonged."
+            "By the late seventeenth and early eighteenth centuries, poets associated with the Deccan were increasingly important to the vernacular literary culture of north India. Wali Deccani became especially influential as his poetry circulated in Delhi, where serious vernacular poetry was gaining a new elite audience.<cite data-ref=\"oxford-arzu\"></cite>",
+            "This did not mean that Dakhni simply ‘became Urdu’ at a single moment. Literary terminology, spelling and standards remained fluid, while patronage and prestige shifted increasingly toward Delhi and later Lucknow. The older southern tradition continued, but it no longer monopolised the prestige of vernacular Persianate poetry.",
+            "Siraj Aurangabadi (1715–1763) belongs to this later southern literary world. His work is often placed near the end of the classical Dakhni canon, while the spoken varieties of the Deccan continued independently of the northward shift in literary standardisation."
           ],
           "reveal": "reveal-right"
         },
         {
           "id": "s7",
-          "eyebrow": "1948 – present",
-          "numeral_label": "The Living Tongue",
-          "title_html": "A <em>spoken</em> civilisation, still on the bazaar tongue",
-          "sub": "The living tongue · 1948–present",
+          "eyebrow": "Modern Deccan",
+          "numeral_label": "Living Dakhni",
+          "title_html": "A literary inheritance that remains <em>spoken</em>",
+          "sub": "Hyderabad and the wider Deccan today",
           "body": [
-            "Dakhni today is the everyday speech of perhaps twelve million people across Telangana, the Marathwada districts of Maharashtra, the Hyderabad-Karnataka region of Karnataka, and pockets of Andhra and northern Tamil Nadu. It is no longer written as a separate literary language — printed Urdu in India has long since standardised on northern norms — but it is spoken, joked in, scolded in, sung in, and lived in. In old Hyderabad, in Aurangabad's Gulmandi, in Bidar's Old City and Gulbarga's Kotwal Bazaar, it is the first language of the street.<cite data-ref=\"rahman-2011\"></cite>",
-            "The post-independence decades made Dakhni a comic dialect on the Hindi cinema screen — a cheerful, slightly mocking caricature of the Hyderabadi who said <em>\"miyaan, kaiku itna gussa?\"</em> instead of <em>\"yaar, kyon itna gussa?\"</em>. The films of the 1990s and 2000s — <em>Angrez</em> (2005), <em>Hyderabad Nawabs</em> (2006), <em>The Angrez 2</em> (2015) — written and performed by a generation of Hyderabadi actors (Mast Ali, Aziz Naser, Adnan Sajid Khan) — turned the dialect into its own subgenre. The films are still cited as the best preserved sample of late-twentieth-century spoken Dakhni.",
-            "The literary continuation is quieter but real. Sulaiman Khateeb's <em>Dakhni Adab ki Tarikh</em> at Osmania University in the 1960s; the magazine <em>Sa'oot</em> at Hyderabad; the Dakhni qawwali still sung at the dargah of Yousufain Sharif; the bilingual poet Mujtaba Husain in his Urdu prose. Dakhni in the twenty-first century is what it has always been beneath its political vicissitudes: a tongue that the south uses to be itself. A language is, after all, only the sound a city makes when it is at home."
+            "Dakhni survives most visibly today in speech across Hyderabad and other parts of the Deccan. Encyclopaedia Iranica specifically notes that inhabitants of Hyderabad continue to use Dakhinī for their distinctive form of Urdu.<cite data-ref=\"iranica-urdu\"></cite>",
+            "Modern Dakhni is heard in domestic conversation, humour, performance, film, qawwali and everyday city life. Its vocabulary and pronunciation vary by place and community, so there is no single spoken form that can stand for the entire Deccan.",
+            "Urdu's legal status is a separate question from Dakhni's linguistic identity. Telangana made Urdu the second official language throughout the state through the 2017 amendment to its Official Languages Act; that statute concerns Urdu as an official language and should not be read as a legal recognition of Dakhni as a separate official language.<cite data-ref=\"telangana-language-law\"></cite>"
           ],
           "reveal": "reveal-left"
+        },
+        {
+          "id": "s8",
+          "eyebrow": "Research Guide",
+          "numeral_label": "Finding Dakhni",
+          "title_html": "How to search the <em>archive and scholarship</em>",
+          "sub": "Spellings, key texts and starting points for further research",
+          "body": [
+            "A search for only <em>Dakhni</em> will miss a large part of the scholarship. Researchers should also try <em>Dakhini</em>, <em>Dakani</em>, <em>Dakkani</em>, <em>Deccani</em>, <em>Dakani Urdu</em> and older terms such as <em>Hindavi</em> where the historical context warrants it. Iranica's bibliography is a useful gateway to linguistic scholarship, including work by D. J. Matthews and Ruth Laila Schmidt.<cite data-ref=\"iranica-urdu\"></cite>",
+            "For literary study, useful anchor texts include the poetry of Muhammad Quli Qutb Shah, Ibrahim Adil Shah II's <em>Kitab-i-Nauras</em>, Mulla Wajhi's <em>Sab Ras</em>, Wali Deccani and Siraj Aurangabadi. Rekhta's Deccani-adab collection provides a searchable route into digitised editions and later scholarship under several spelling variants.<cite data-ref=\"rekhta-deccani\"></cite>",
+            "Within Dakhni.org, this page should be read together with the <a href=\"/language/urdu/\">Urdu</a> overview and the <a href=\"/heritage/language-poetry/\">Language &amp; Poetry</a> heritage section. The aim is to separate what is documented from what is traditional, and to make alternate spellings discoverable rather than treating them as competing identities."
+          ],
+          "reveal": "reveal-right"
         }
       ],
       "pull_quote": {
         "urdu": "پیا باج پیالا پیا جاے نہ<br/>پیا باج اِک تِل جیا جاے نہ",
         "translation": "\"Without the beloved, the cup cannot be drunk;<br/>without the beloved, not one moment can be lived.\"",
-        "attribution": "— Muhammad Quli Qutb Shah · Hyderabad · c. 1605"
+        "attribution": "— Muhammad Quli Qutb Shah · Hyderabad · late 16th/early 17th century"
       }
     },
     {
       "type": "timeline",
-      "eyebrow": "A Chronology of Dakhni · Six Centuries on its own Plateau",
-      "title": "From Bandanawaz's tracts to Mast Ali's films",
+      "eyebrow": "A Chronology of Dakhni",
+      "title": "From medieval Deccan lingua franca to a living regional speech",
       "items": [
         {
-          "year": "1327",
-          "text": "Muhammad bin Tughluq's mass relocation from Delhi to Daulatabad seeds the Deccan with a Hindavi-speaking population."
+          "year": "early 14th c.",
+          "text": "Delhi Sultanate expansion, migration and Sufi networks carry a north-Indian vernacular lingua franca into the multilingual Deccan.<cite data-ref=\"iranica-urdu\"></cite>"
         },
         {
           "year": "1347",
-          "text": "Bahmani sultanate founded at Daulatabad; Hindavi begins its long southern life.<cite data-ref=\"sherwani-joshi-1973\"></cite>"
+          "text": "The Bahmani Sultanate is established with its first capital at Gulbarga, one of the principal early centres of the political and cultural world in which Dakhni developed.<cite data-ref=\"eaton-2005\"></cite>"
         },
         {
-          "year": "1399",
-          "text": "Khwaja Bandanawaz Gesudaraz settles at Gulbarga at the invitation of Firuz Shah Bahmani.<cite data-ref=\"eaton-2005\"></cite>"
+          "year": "c. 1399",
+          "text": "Khwaja Bandanawaz Gesudaraz settles at Gulbarga; vernacular devotional works are later associated with him and his circle, though individual attributions are debated.<cite data-ref=\"eaton-2005\"></cite>"
         },
         {
-          "year": "c. 1410",
-          "text": "Bandanawaz writes the <em>Mi'raj-ul-Ashiqin</em> and other tracts in the local vernacular — the earliest dated prose in any north-Indian-derived language.<cite data-ref=\"eaton-2005\"></cite>"
+          "year": "15th c.",
+          "text": "Dakanī/Dakhinī develops a growing corpus of religious and literary writing in the Deccan.<cite data-ref=\"iranica-urdu\"></cite>"
         },
         {
-          "year": "d. 1422",
-          "text": "Death of Bandanawaz at Gulbarga; his dargah becomes the chief centre of Dakhni Sufi instruction."
+          "year": "c. 1425–1429",
+          "text": "The Bahmani capital moves from Gulbarga to Bidar; the exact year is given differently in modern histories."
         },
         {
-          "year": "1424",
-          "text": "Bahmani capital moves to Bidar; Dakhni literary activity intensifies under Mahmud Gawan's patronage."
-        },
-        {
-          "year": "1490",
-          "text": "Bahmani sultanate fragments into the five successor states; Dakhni now flourishes at Bijapur, Golconda and Ahmadnagar in parallel."
-        },
-        {
-          "year": "c. 1500",
-          "text": "The name <em>zaban-i-dakhni</em> is in regular use, distinguishing the southern tongue from the Hindavi of Delhi."
+          "year": "late 16th c.",
+          "text": "The southern sultanates increasingly patronise Dakhni poets and writers while Persian remains important in administration.<cite data-ref=\"iranica-urdu\"></cite>"
         },
         {
           "year": "1591",
-          "text": "Muhammad Quli Qutb Shah founds the city of Hyderabad.<cite data-ref=\"malik-2008\"></cite>"
+          "text": "Muhammad Quli Qutb Shah founds Hyderabad and becomes one of the best-known sovereign-poets associated with Dakhni."
         },
         {
-          "year": "c. 1605",
-          "text": "Muhammad Quli completes his Dakhni divan of 50,000 verses; Ibrahim Adil Shah II writes the <em>Kitab-i-Nauras</em> at Bijapur in parallel."
+          "year": "c. 1600",
+          "text": "Muhammad Quli's Dakhni poetry and the musical-literary culture of Ibrahim Adil Shah II's Bijapur illustrate multiple centres of high literary patronage."
         },
         {
           "year": "c. 1635",
-          "text": "Mulla Wajhi at Golconda completes <em>Sab Ras</em>, the first prose romance in a north-Indian-derived vernacular.<cite data-ref=\"eaton-2005\"></cite>"
+          "text": "Mulla Wajhi completes <em>Sab Ras</em>, a major early work of extended Dakhni prose.<cite data-ref=\"eaton-2005\"></cite>"
         },
         {
-          "year": "1687",
-          "text": "Fall of Golconda to Aurangzeb; royal Dakhni patronage at Hyderabad ends."
+          "year": "late 17th–early 18th c.",
+          "text": "Southern vernacular poetry, especially the work associated with Wali Deccani, circulates in Delhi and contributes to the rapid growth of elite vernacular literary culture there.<cite data-ref=\"oxford-arzu\"></cite>"
         },
         {
-          "year": "c. 1700",
-          "text": "Wali Deccani of Aurangabad arrives in Delhi with his diwan; the northern poets begin writing in their own vernacular.<cite data-ref=\"rahman-2011\"></cite>"
-        },
-        {
-          "year": "1763",
-          "text": "Death of Siraj Aurangabadi — the last classical Dakhni poet."
-        },
-        {
-          "year": "c. 1800–1870",
-          "text": "The Asaf Jahi state at Hyderabad supports Urdu in northern-standard form; Dakhni recedes into spoken use."
-        },
-        {
-          "year": "1879",
-          "text": "First printed edition of <em>Sab Ras</em> at Lucknow brings Wajhi's prose to a wide readership."
+          "year": "18th c.",
+          "text": "Delhi and later Lucknow become major centres of the literary standard increasingly known as Urdu, while Dakhni remains rooted in the south."
         },
         {
           "year": "1918",
-          "text": "Osmania University founded; standard Urdu — not Dakhni — becomes the medium of instruction."
+          "text": "Osmania University is founded in Hyderabad with Urdu as its principal medium of higher instruction, reflecting the prestige of standard Urdu in the Asaf Jahi state."
         },
         {
           "year": "1948",
-          "text": "Operation Polo ends Asaf Jahi rule; Dakhni continues as the unofficial vernacular of old Hyderabad."
+          "text": "The Asaf Jahi state ends; Dakhni continues as a spoken regional form across Hyderabad and the wider Deccan."
         },
         {
-          "year": "1960s",
-          "text": "Sulaiman Khateeb and others publish histories of Dakhni literature at Osmania University, recovering the medieval canon."
-        },
-        {
-          "year": "2005",
-          "text": "Mast Ali's film <em>Angrez</em> turns Hyderabadi Dakhni into a national subgenre of Indian cinema."
-        },
-        {
-          "year": "2014",
-          "text": "Telangana formed; Urdu becomes the second official language of the new state, with Dakhni its de-facto spoken register."
+          "year": "2017",
+          "text": "Telangana amends its Official Languages Act to make Urdu the second official language throughout the state; the law concerns Urdu and does not separately designate Dakhni.<cite data-ref=\"telangana-language-law\"></cite>"
         },
         {
           "year": "today",
-          "text": "Approximately twelve million speakers across Telangana, the Marathwada districts of Maharashtra, and the Hyderabad-Karnataka region — six centuries of an unbroken southern tongue.<cite data-ref=\"rahman-2011\"></cite>"
+          "text": "Dakhni/Dakhini remains a living spoken identity in Hyderabad and the Deccan while its historical literature is studied under multiple spellings and classifications.<cite data-ref=\"iranica-urdu\"></cite>"
         }
       ]
     }
   ],
   "references": [
     {
-      "id": "malik-2008",
-      "text": "Jamal Malik, Islam in South Asia: A Short History, Brill, Leiden, 2008."
+      "id": "iranica-urdu",
+      "text": "Encyclopaedia Iranica, ‘Urdu’ — discussion of Dakanī/Dakhinī, its Deccan development and literary patronage.",
+      "url": "https://www.iranicaonline.org/articles/urdu/"
     },
     {
       "id": "eaton-2005",
@@ -299,13 +297,19 @@
       "text": "H. K. Sherwani & P. M. Joshi (eds.), History of Medieval Deccan (1295–1724), Government of Andhra Pradesh, Hyderabad, 1973–74."
     },
     {
-      "id": "britannica-dakhni",
-      "text": "Encyclopaedia Britannica, \"Dakhnī.\"",
-      "url": "https://www.britannica.com/topic/dakhni"
+      "id": "oxford-arzu",
+      "text": "Arthur Dudney, ‘Building a Vernacular Culture on the Ruins of Persian?’, in India in the Persian World of Letters, Oxford University Press, 2022.",
+      "url": "https://academic.oup.com/book/41469/chapter/352858732"
     },
     {
-      "id": "rahman-2011",
-      "text": "Tariq Rahman, From Hindi to Urdu: A Social and Political History, Oxford University Press, Karachi, 2011."
+      "id": "rekhta-deccani",
+      "text": "Rekhta E-Books, ‘Top 100 Books on Deccani Adab’ — digitised books and research under Dakani/Dakhni/Deccani spellings.",
+      "url": "https://www.rekhta.org/ebooks/collection/top-100-books-on-deccani-adab"
+    },
+    {
+      "id": "telangana-language-law",
+      "text": "Telangana Official Languages Act, 1966, section 2 as substituted by Act No. 30 of 2017: Telugu official language; Urdu second official language.",
+      "url": "https://indiankanoon.org/doc/98345772/"
     }
   ]
 }
