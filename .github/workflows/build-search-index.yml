@@ -3,6 +3,7 @@ name: Build search index
 # Regenerates assets/search-index.json from the page HTML whenever content
 # changes, so the in-nav search overlay always matches what's published.
 # Commits the rebuilt index back with [skip ci] so it can't loop.
+# Temporary branch run ensures generated output is reproducible after source commits.
 
 on:
   workflow_dispatch:
