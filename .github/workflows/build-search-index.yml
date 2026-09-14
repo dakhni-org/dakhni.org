@@ -3,7 +3,6 @@ name: Build search index
 # Regenerates assets/search-index.json from the page HTML whenever content
 # changes, so the in-nav search overlay always matches what's published.
 # Commits the rebuilt index back with [skip ci] so it can't loop.
-# Temporary branch run ensures generated output is reproducible after source commits.
 
 on:
   workflow_dispatch:
@@ -11,11 +10,9 @@ on:
     branches:
       - main
       - claude/magical-hypatia-UDPXc
-      - chatgpt/svg-logo-favicon
     paths:
       - '**.html'
       - 'scripts/build-search-index.py'
-      - 'scripts/migrate_svg_logo.py'
       - '.github/workflows/build-search-index.yml'
 
 permissions:
@@ -31,31 +28,23 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      - name: Migrate branding to SVG
-        run: python3 scripts/migrate_svg_logo.py
-
-      - name: Rebuild site
-        run: python3 scripts/build_site.py
-
       - name: Rebuild search index
         run: python3 scripts/build-search-index.py
 
-      - name: Commit updated site
+      - name: Commit updated index
         run: |
-          if [ -n "$(git status --porcelain)" ]; then
+          if [ -n "$(git status --porcelain assets/search-index.json)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add -A
-            git commit -m "Use SVG logo assets throughout site [skip ci]"
+            git add assets/search-index.json
+            git commit -m "Rebuild search index [skip ci]"
             git push
           else
-            echo "Site branding is already up to date."
+            echo "Search index already up to date."
           fi
