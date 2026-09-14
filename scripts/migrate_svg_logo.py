@@ -6,6 +6,8 @@ import json
 ROOT = Path(__file__).resolve().parents[1]
 SVG_PATH = "/assets/dakhni-org-logo.svg"
 SVG_URL = "https://dakhni.org/assets/dakhni-org-logo.svg"
+OLD_LOGO_PATH = "/assets/dakhni-org-logo-256.png"
+OLD_SOCIAL_URL = "https://dakhni.org/assets/icon-512.png"
 
 build_path = ROOT / "scripts" / "build_site.py"
 build = build_path.read_text(encoding="utf-8")
@@ -18,17 +20,18 @@ old_favicon_block = '''  <link rel="icon" href="/assets/favicon.ico" sizes="32x3
 new_favicon_block = f'''  <link rel="icon" type="image/svg+xml" href="{SVG_PATH}"/>
 '''
 
-if old_favicon_block not in build:
-    raise SystemExit("Expected legacy favicon block was not found in scripts/build_site.py")
-if "/assets/dakhni-org-logo-256.png" not in build:
-    raise SystemExit("Expected raster site-logo reference was not found in scripts/build_site.py")
-if "https://dakhni.org/assets/icon-512.png" not in build:
-    raise SystemExit("Expected raster fallback social-image reference was not found in scripts/build_site.py")
-
 build = build.replace(old_favicon_block, new_favicon_block)
-build = build.replace("/assets/dakhni-org-logo-256.png", SVG_PATH)
-build = build.replace("https://dakhni.org/assets/icon-512.png", SVG_URL)
+build = build.replace(OLD_LOGO_PATH, SVG_PATH)
+build = build.replace(OLD_SOCIAL_URL, SVG_URL)
 build_path.write_text(build, encoding="utf-8")
+
+# Navigation and the homepage hero store their logo path in JSON source.
+# Replace only the known legacy logo path so unrelated PNG/JPG content remains untouched.
+for content_path in (ROOT / "content").rglob("*.json"):
+    text = content_path.read_text(encoding="utf-8")
+    updated = text.replace(OLD_LOGO_PATH, SVG_PATH).replace(OLD_SOCIAL_URL, SVG_URL)
+    if updated != text:
+        content_path.write_text(updated, encoding="utf-8")
 
 manifest_path = ROOT / "assets" / "site.webmanifest"
 manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
