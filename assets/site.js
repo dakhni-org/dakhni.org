@@ -220,3 +220,9 @@
   });
 })();
 
+/* Keep the canonical SVG logo visually identical in every color scheme. */
+(function(){
+  var style=document.createElement('style');
+  style.textContent='.nav-mark,.seal-img{filter:none!important;mix-blend-mode:normal!important;color-scheme:only light;forced-color-adjust:none}.nav-mark{transform:none!important;transition:none!important}.nav-brand:hover .nav-mark{transform:none!important}.seal-img{animation:none!important;opacity:1!important;transform:none!important}';
+  document.head.appendChild(style);
+})();
