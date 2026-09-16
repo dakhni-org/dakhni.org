@@ -3,6 +3,20 @@
 /* ---- */
 (function(){
   var root = document.documentElement;
+
+  // Opt the document out of browser-generated/forced dark transformations.
+  // The site already provides its own authored dark theme through
+  // prefers-color-scheme, so this prevents Samsung Internet from applying
+  // a second colour transformation on top of the SVG logo.
+  root.style.setProperty('color-scheme','only light','important');
+  var schemeMeta = document.querySelector('meta[name="color-scheme"]');
+  if (!schemeMeta) {
+    schemeMeta = document.createElement('meta');
+    schemeMeta.setAttribute('name','color-scheme');
+    document.head.appendChild(schemeMeta);
+  }
+  schemeMeta.setAttribute('content','only light');
+
   root.classList.add('js');               // content is visible by default; .js enables the reveal animation
   try { var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear(); } catch (e) {}
   var els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
@@ -220,12 +234,11 @@
   });
 })();
 
-/* Preserve the canonical logo in Samsung Internet forced dark mode.
-   Marking the logo as dark-compatible prevents Samsung's Force Dark image
-   treatment from recolouring it; the SVG's own fills remain authoritative. */
+/* Preserve the canonical logo after opting the document out of browser
+   auto-dark. The SVG's authored fills remain authoritative in both modes. */
 (function(){
   var style=document.createElement('style');
-  style.textContent='.nav-mark,.seal-img{filter:none!important;mix-blend-mode:normal!important;forced-color-adjust:none!important;color-scheme:dark!important}.nav-mark{transform:none!important;transition:none!important}.nav-brand:hover .nav-mark{transform:none!important}.seal-img{animation:none!important;opacity:1!important;transform:none!important}';
+  style.textContent='.nav-mark,.seal-img{filter:none!important;mix-blend-mode:normal!important;forced-color-adjust:none!important;color-scheme:only light!important}.nav-mark{transform:none!important;transition:none!important}.nav-brand:hover .nav-mark{transform:none!important}.seal-img{animation:none!important;opacity:1!important;transform:none!important}';
   document.head.appendChild(style);
 
   var targets=document.querySelectorAll('img.nav-mark[src$="dakhni-org-logo.svg"],img.seal-img[src$="dakhni-org-logo.svg"]');
@@ -262,7 +275,7 @@
         svg.style.setProperty('filter','none','important');
         svg.style.setProperty('mix-blend-mode','normal','important');
         svg.style.setProperty('forced-color-adjust','none','important');
-        svg.style.setProperty('color-scheme','dark','important');
+        svg.style.setProperty('color-scheme','only light','important');
 
         var paths=svg.querySelectorAll('path');
         if(paths[0]) paths[0].style.setProperty('fill','#FAF7EF','important');
