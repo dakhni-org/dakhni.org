@@ -1,6 +1,8 @@
 /* Preserve the canonical SVG logo colours in browsers that apply a special
-   dark-mode filter to small images/logos. The SVG remains the source artwork,
-   but its paths are used only as alpha masks; visible colour is painted by CSS. */
+   dark-mode filter to small images/logos. The SVG remains the source artwork.
+   Its paths are alpha masks, while their visible colour is painted as actual
+   foreground text rather than background/image pixels. This matters on
+   Samsung Internet, whose forced-dark engine can darken masked backgrounds. */
 (function(){
   'use strict';
 
@@ -23,14 +25,20 @@
     return 'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(text);
   }
 
-  function layer(maskUrl, colour){
+  /* Fill a masked layer with foreground glyph pixels rather than a CSS
+     background. Full-block glyphs deliberately overlap slightly so the
+     resulting field is visually solid before the SVG alpha mask is applied. */
+  function layer(maskUrl, colour, w, h){
     var s=document.createElement('span');
     s.setAttribute('aria-hidden','true');
     s.style.position='absolute';
     s.style.inset='0';
     s.style.display='block';
+    s.style.overflow='hidden';
     s.style.pointerEvents='none';
-    s.style.backgroundColor=colour;
+    s.style.background='transparent';
+    s.style.color=colour;
+    s.style.webkitTextFillColor=colour;
     s.style.webkitMaskImage='url("'+maskUrl+'")';
     s.style.maskImage='url("'+maskUrl+'")';
     s.style.webkitMaskRepeat='no-repeat';
@@ -39,6 +47,26 @@
     s.style.maskPosition='center';
     s.style.webkitMaskSize='contain';
     s.style.maskSize='contain';
+
+    var ink=document.createElement('span');
+    var cols=Math.max(10,Math.ceil(w/5)+6);
+    var rows=Math.max(8,Math.ceil(h/8)+6);
+    var line=new Array(cols+1).join('\u2588');
+    ink.textContent=new Array(rows+1).join(line+'\n');
+    ink.style.position='absolute';
+    ink.style.left='-12px';
+    ink.style.top='-12px';
+    ink.style.whiteSpace='pre';
+    ink.style.fontFamily='monospace';
+    ink.style.fontSize='12px';
+    ink.style.fontWeight='900';
+    ink.style.lineHeight='8px';
+    ink.style.letterSpacing='-2px';
+    ink.style.color=colour;
+    ink.style.webkitTextFillColor=colour;
+    ink.style.userSelect='none';
+    ink.style.webkitUserSelect='none';
+    s.appendChild(ink);
     return s;
   }
 
@@ -81,8 +109,8 @@
           wrap.setAttribute('aria-hidden','true');
         }
 
-        wrap.appendChild(layer(creamMask,'#FAF7EF'));
-        wrap.appendChild(layer(brownMask,'#6B4710'));
+        wrap.appendChild(layer(creamMask,'#FAF7EF',w,h));
+        wrap.appendChild(layer(brownMask,'#6B4710',w,h));
         el.replaceWith(wrap);
       }
 
@@ -91,7 +119,7 @@
       }
       scan();
       /* The legacy logo normalizer in site.core.js is asynchronous. Re-scan
-         briefly so the mask renderer wins any race without a permanent observer. */
+         briefly so this renderer wins any race without a permanent observer. */
       setTimeout(scan,120);
       setTimeout(scan,500);
       setTimeout(scan,1200);
