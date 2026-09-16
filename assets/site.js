@@ -220,11 +220,12 @@
   });
 })();
 
-/* Render the canonical logo as inline SVG so Samsung Internet cannot apply
-   its dark-mode image classifier/filter to the logo pixels. */
+/* Preserve the canonical logo in Samsung Internet forced dark mode.
+   Marking the logo as dark-compatible prevents Samsung's Force Dark image
+   treatment from recolouring it; the SVG's own fills remain authoritative. */
 (function(){
   var style=document.createElement('style');
-  style.textContent='.nav-mark,.seal-img{filter:none!important;mix-blend-mode:normal!important;forced-color-adjust:none!important;color-scheme:only light!important}.nav-mark{transform:none!important;transition:none!important}.nav-brand:hover .nav-mark{transform:none!important}.seal-img{animation:none!important;opacity:1!important;transform:none!important}';
+  style.textContent='.nav-mark,.seal-img{filter:none!important;mix-blend-mode:normal!important;forced-color-adjust:none!important;color-scheme:dark!important}.nav-mark{transform:none!important;transition:none!important}.nav-brand:hover .nav-mark{transform:none!important}.seal-img{animation:none!important;opacity:1!important;transform:none!important}';
   document.head.appendChild(style);
 
   var targets=document.querySelectorAll('img.nav-mark[src$="dakhni-org-logo.svg"],img.seal-img[src$="dakhni-org-logo.svg"]');
@@ -261,7 +262,7 @@
         svg.style.setProperty('filter','none','important');
         svg.style.setProperty('mix-blend-mode','normal','important');
         svg.style.setProperty('forced-color-adjust','none','important');
-        svg.style.setProperty('color-scheme','only light','important');
+        svg.style.setProperty('color-scheme','dark','important');
 
         var paths=svg.querySelectorAll('path');
         if(paths[0]) paths[0].style.setProperty('fill','#FAF7EF','important');
