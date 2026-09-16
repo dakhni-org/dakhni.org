@@ -220,9 +220,55 @@
   });
 })();
 
-/* Keep the canonical SVG logo visually identical in every color scheme. */
+/* Render the canonical logo as inline SVG so Samsung Internet cannot apply
+   its dark-mode image classifier/filter to the logo pixels. */
 (function(){
   var style=document.createElement('style');
-  style.textContent='.nav-mark,.seal-img{filter:none!important;mix-blend-mode:normal!important;color-scheme:only light;forced-color-adjust:none}.nav-mark{transform:none!important;transition:none!important}.nav-brand:hover .nav-mark{transform:none!important}.seal-img{animation:none!important;opacity:1!important;transform:none!important}';
+  style.textContent='.nav-mark,.seal-img{filter:none!important;mix-blend-mode:normal!important;forced-color-adjust:none!important;color-scheme:only light!important}.nav-mark{transform:none!important;transition:none!important}.nav-brand:hover .nav-mark{transform:none!important}.seal-img{animation:none!important;opacity:1!important;transform:none!important}';
   document.head.appendChild(style);
+
+  var targets=document.querySelectorAll('img.nav-mark[src$="dakhni-org-logo.svg"],img.seal-img[src$="dakhni-org-logo.svg"]');
+  if(!targets.length) return;
+
+  fetch('/assets/dakhni-org-logo.svg',{cache:'force-cache'})
+    .then(function(r){if(!r.ok) throw new Error('logo'); return r.text();})
+    .then(function(text){
+      var parsed=new DOMParser().parseFromString(text,'image/svg+xml');
+      var base=parsed.documentElement;
+      if(!base||base.nodeName.toLowerCase()!=='svg') return;
+
+      targets.forEach(function(img){
+        var svg=document.importNode(base,true);
+        var cls=img.getAttribute('class')||'';
+        var w=img.getAttribute('width');
+        var h=img.getAttribute('height');
+        var alt=img.getAttribute('alt')||'';
+
+        svg.setAttribute('class',cls);
+        if(w) svg.setAttribute('width',w);
+        if(h) svg.setAttribute('height',h);
+        svg.removeAttribute('aria-labelledby');
+        svg.querySelectorAll('title,desc').forEach(function(n){n.remove();});
+
+        if(alt){
+          svg.setAttribute('role','img');
+          svg.setAttribute('aria-label',alt);
+        }else{
+          svg.setAttribute('aria-hidden','true');
+          svg.setAttribute('focusable','false');
+        }
+
+        svg.style.setProperty('filter','none','important');
+        svg.style.setProperty('mix-blend-mode','normal','important');
+        svg.style.setProperty('forced-color-adjust','none','important');
+        svg.style.setProperty('color-scheme','only light','important');
+
+        var paths=svg.querySelectorAll('path');
+        if(paths[0]) paths[0].style.setProperty('fill','#FAF7EF','important');
+        if(paths[1]) paths[1].style.setProperty('fill','#6B4710','important');
+
+        img.replaceWith(svg);
+      });
+    })
+    .catch(function(){ /* Leave the original SVG image as a safe fallback. */ });
 })();
