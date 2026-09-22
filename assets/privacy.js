@@ -30,8 +30,10 @@
       if (banner) banner.hidden = true;
       if (accepted) loadAnalytics();
       else if (analyticsLoaded && window.gtag) {
+        window['ga-disable-G-N9RETSEPQ9'] = true;
         window.gtag('consent', 'update', { analytics_storage: 'denied' });
-        // A previously loaded script cannot be unloaded; apply the choice on the next page too.
+        // Remove the already loaded tag and its listeners by reloading with rejection saved.
+        window.location.reload();
       }
     });
   });

@@ -1045,11 +1045,11 @@ def render(page, nav_html, url_to_page, subnav_map, term_to_url=None):
     if subnav:
         out.append(subnav)
     out.append(footer(page.get("dedication")))
+    out.append(SEARCH)
     out.append('''<aside class="cookie-choice" id="cookie-choice" aria-label="Analytics preference" hidden>
   <p>Help us understand how this archive is used? Analytics is optional. <a href="/privacy-policy/">Privacy details</a></p>
   <div class="cookie-actions"><button type="button" data-analytics="reject">No thanks</button><button type="button" data-analytics="accept">Allow analytics</button></div>
 </aside>''')
-    out.append(SEARCH)
     for sc in page.get("extra_scripts", []):
         out.append("<script>\n" + sc + "\n</script>")
     out.append('<script defer src="/assets/site.js"></script>')
