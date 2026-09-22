@@ -14,18 +14,18 @@ import html as _html
 import json
 import os
 import re
+import struct
 from typing import Any, Dict, List, Optional
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONTENT = os.path.join(ROOT, "content")
 NAV_FILE = os.path.join(CONTENT, "navigation.json")
 
-GA = "G-N9RETSEPQ9"
 KEYWORDS = ("Dakhni, Dakkani, Dakhini, Deccan, Deccani, Hyderabad, Hyderabadi, Bidar, "
             "Gulbarga, Bijapur, Aurangabad, Bahmani, Qutb Shahi, Adil Shahi, Asaf Jahi, "
             "Nizam, Dakhni Urdu, Deccani Urdu, Deccan Sultanates, qawwali, dargah, Sufi "
             "shrines, biryani, haleem, Charminar, Golconda, Bidriware, Deccan heritage")
-FALLBACK_COVER = "/assets/dakhni-pattern.png"
+FALLBACK_COVER = "/assets/dakhni-pattern.webp"
 
 # Disqus shortname — register a free site at https://disqus.com/admin/create/
 # and replace this placeholder before comments will load. Until it's replaced,
@@ -898,6 +898,7 @@ def footer(dedication):
     <li><a href="/ai-policy/">AI Policy</a></li>
     <li><a href="/privacy-policy/">Privacy Policy</a></li>
     <li><a href="/terms-and-conditions/">Terms and Conditions</a></li>
+    <li><button type="button" class="privacy-settings" data-privacy-settings>Privacy settings</button></li>
   </ul>
   <p class="ft-copy">© <span id="year">2025</span> Dakhni.org · {esc(ded)} · Built with love for the Deccan</p>
 </footer>'''
@@ -916,8 +917,8 @@ def comments(page):
   </div>
 </section>'''
     url = page["url"]
-    page_url = json.dumps("https://dakhni.org" + url)
-    page_id = json.dumps(url)
+    page_url = "https://dakhni.org" + url
+    page_id = url
     return f'''<section class="comments-wrap" id="comments">
   <div class="comments-ornament">✦</div>
   <header class="comments-hdr">
@@ -925,22 +926,10 @@ def comments(page):
     <h2 class="comments-title">Comments</h2>
   </header>
   <div class="comments-panel">
+    <p>Comments are provided by Disqus. Loading them shares your visit with Disqus.</p>
+    <button type="button" class="comments-load" data-disqus-url="{esc(page_url)}" data-disqus-id="{esc(page_id)}" data-disqus-shortname="{esc(DISQUS_SHORTNAME)}">Load comments</button>
     <div id="disqus_thread"></div>
-    <script>
-      var disqus_config = function () {{
-        this.page.url = {page_url};
-        this.page.identifier = {page_id};
-      }};
-      (function() {{
-        var d = document, s = d.createElement('script');
-        s.src = 'https://{DISQUS_SHORTNAME}.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-      }})();
-    </script>
-    <noscript class="comments-noscript">Please enable JavaScript to view <a href="https://disqus.com/?ref_noscript">comments</a>.</noscript>
   </div>
-  <script id="comments-count-script" src="//{DISQUS_SHORTNAME}.disqus.com/count.js" async></script>
 </section>'''
 
 
@@ -951,7 +940,7 @@ def head(page, url_to_page: Dict[str, Any]):
     full_title = "Dakhni.org — Heritage of the Deccan" if url == "/" else f'{title} — Dakhni.org'
     desc = page.get("description", "")
     cover = page.get("cover") or ""
-    og_img = ("https://dakhni.org" + cover) if cover.startswith("/") else (cover or "https://dakhni.org/assets/dakhni-org-logo.svg")
+    og_img = ("https://dakhni.org" + cover) if cover.startswith("/") else (cover or "https://dakhni.org/assets/social-preview.png")
     page_tags = page.get("tags", [])
     all_keywords = KEYWORDS + (", " + ", ".join(page_tags) if page_tags else "")
     jsonld = [] if url == "/" else [breadcrumb_jsonld(page, url_to_page)]
@@ -975,14 +964,6 @@ def head(page, url_to_page: Dict[str, Any]):
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={GA}"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){{dataLayer.push(arguments);}}
-  gtag('js', new Date());
-  gtag('config', '{GA}');
-</script>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>{esc(full_title)}</title>
@@ -1008,6 +989,7 @@ def head(page, url_to_page: Dict[str, Any]):
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&family=Lateef:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/assets/site.base.css"/>
   <link rel="stylesheet" href="/assets/site.css"/>
   {jsonld_html}
 </head>'''
@@ -1064,11 +1046,56 @@ def render(page, nav_html, url_to_page, subnav_map, term_to_url=None):
         out.append(subnav)
     out.append(footer(page.get("dedication")))
     out.append(SEARCH)
+    out.append('''<aside class="cookie-choice" id="cookie-choice" aria-label="Analytics preference" hidden>
+  <p>Help us understand how this archive is used? Analytics is optional. <a href="/privacy-policy/">Privacy details</a></p>
+  <div class="cookie-actions"><button type="button" data-analytics="reject">No thanks</button><button type="button" data-analytics="accept">Allow analytics</button></div>
+</aside>''')
     for sc in page.get("extra_scripts", []):
         out.append("<script>\n" + sc + "\n</script>")
     out.append('<script defer src="/assets/site.js"></script>')
+    out.append('<script defer src="/assets/privacy.js"></script>')
     out.append("</body>\n</html>")
-    return "\n".join(out) + "\n"
+    return add_image_dimensions("\n".join(out) + "\n")
+
+
+def add_image_dimensions(markup):
+    """Reserve space for local photos, including images in legacy HTML blocks."""
+    def dimensions(path):
+        local = os.path.join(ROOT, path.lstrip("/"))
+        if not os.path.isfile(local):
+            return None
+        with open(local, "rb") as image:
+            header = image.read(24)
+            if header.startswith(b"\x89PNG\r\n\x1a\n"):
+                return struct.unpack(">II", header[16:24])
+            if not header.startswith(b"\xff\xd8"):
+                return None
+            image.seek(2)
+            while True:
+                marker = image.read(2)
+                if len(marker) != 2 or marker[0] != 0xff:
+                    return None
+                if marker[1] in (0xd8, 0xd9) or marker[1] == 0xff:
+                    continue
+                size = image.read(2)
+                if len(size) != 2:
+                    return None
+                length = struct.unpack(">H", size)[0]
+                if marker[1] in (0xc0, 0xc1, 0xc2, 0xc3, 0xc5, 0xc6, 0xc7, 0xc9, 0xca, 0xcb, 0xcd, 0xce, 0xcf):
+                    data = image.read(5)
+                    height, width = struct.unpack(">HH", data[1:5])
+                    return width, height
+                image.seek(length - 2, 1)
+
+    def improve(match):
+        tag = match.group(0)
+        if re.search(r'\bwidth\s*=', tag) or re.search(r'\bheight\s*=', tag):
+            return tag
+        src = re.search(r'\bsrc=["\'](/[^"\']+)["\']', tag)
+        size = dimensions(src.group(1).split("?", 1)[0]) if src else None
+        return tag.rstrip(' />') + f' width="{size[0]}" height="{size[1]}"/>' if size else tag
+
+    return re.sub(r'<img\b[^>]*>', improve, markup)
 
 
 def write_sitemap(pages: List[Dict[str, Any]], page_files: Dict[str, str]) -> None:

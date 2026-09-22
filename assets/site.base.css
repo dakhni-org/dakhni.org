@@ -7,7 +7,7 @@
   --ivory:#FAF7EF;
   --ink:#1A1814;
   --ink-soft:#4A453C;
-  --ink-faint:#8B8472;
+  --ink-faint:#6B6253;
   --rule:rgba(26,24,20,0.10);
   --rule-soft:rgba(26,24,20,0.05);
   color-scheme:light dark;
@@ -60,7 +60,7 @@ nav {
     }
 .hero::after {
       content:''; position:absolute; inset:0;
-      background:url('/assets/dakhni-pattern.png') repeat;
+      background:url('/assets/dakhni-pattern.webp') repeat;
       background-size:120px;
       opacity:0.06; pointer-events:none; z-index:0;
     }
@@ -183,7 +183,7 @@ footer { background:#1A1814; padding:3.5rem 3rem 2.5rem; text-align:center; }
 .ft-name { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:500; letter-spacing:.22em; color:#FAF7EF; margin-bottom:.5rem; }
 .ft-tagline { font-style:italic; font-size:.92rem; color:rgba(250,247,239,0.55); margin-bottom:2rem; }
 .ft-links { display:flex; gap:1.8rem; justify-content:center; list-style:none; flex-wrap:wrap; margin-bottom:2rem; }
-.ft-links a { font-family:'Inter',sans-serif; font-size:.62rem; font-weight:400; letter-spacing:.22em; text-transform:uppercase; color:rgba(250,247,239,0.5); text-decoration:none; transition:color .2s; }
+.ft-links a { font-family:'Inter',sans-serif; font-size:.875rem; font-weight:400; letter-spacing:.12em; text-transform:uppercase; color:rgba(250,247,239,0.82); text-decoration:none; transition:color .2s; }
 .ft-links a:hover { color:var(--gold-soft); }
 .ft-divider { width:48px; height:1px; background:rgba(201,169,104,0.3); margin:0 auto 1.6rem; }
 .ft-copy { font-family:'Inter',sans-serif; font-size:.6rem; font-weight:300; letter-spacing:.1em; color:rgba(250,247,239,0.3); }
@@ -661,7 +661,7 @@ body.ds-search-open{overflow:hidden;}
       position:relative;min-height:520px;display:flex;align-items:flex-end;justify-content:center;
       color:#FAF7EF;text-align:center;padding:6rem 2rem 3.4rem;border-bottom:1px solid var(--rule);
     }
-.city-hero::after{content:'';position:absolute;inset:0;background:url('/assets/dakhni-pattern.png') repeat;background-size:120px;opacity:0.10;pointer-events:none;z-index:0;}
+.city-hero::after{content:'';position:absolute;inset:0;background:url('/assets/dakhni-pattern.webp') repeat;background-size:120px;opacity:0.10;pointer-events:none;z-index:0;}
 .city-hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1;}
 .city-hero-eyebrow{font-family:'Inter',sans-serif;font-size:.66rem;font-weight:500;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-soft);display:block;margin-bottom:1rem;}
 .city-hero-urdu{font-family:'Lateef',serif;font-size:clamp(1.6rem,3.4vw,2.2rem);color:var(--gold-soft);line-height:1.4;margin-bottom:.4rem;}
@@ -766,7 +766,7 @@ body.ds-search-open{overflow:hidden;}
 }
 .page-hero::after {
       content:''; position:absolute; inset:0;
-      background:url('/assets/dakhni-pattern.png') repeat;
+      background:url('/assets/dakhni-pattern.webp') repeat;
       background-size:120px;
       opacity:0.05; pointer-events:none; z-index:0;
     }
@@ -889,7 +889,7 @@ a.card:hover { background:var(--cream); }
 .note-card-body em { color:var(--gold-deep); font-style:italic; }
 
 /* ── normalized cover hero (generator) ── */
-.city-hero{background:#1A1814 center/cover no-repeat;background-image:linear-gradient(180deg,rgba(26,24,20,0.42) 0%,rgba(26,24,20,0.60) 55%,rgba(26,24,20,0.88) 100%),var(--cover,url('/assets/dakhni-pattern.png'));}
+.city-hero{background:#1A1814 center/cover no-repeat;background-image:linear-gradient(180deg,rgba(26,24,20,0.42) 0%,rgba(26,24,20,0.60) 55%,rgba(26,24,20,0.88) 100%),var(--cover,url('/assets/dakhni-pattern.webp'));}
 /* Pages with no real cover photo (--cover falls back to the same pattern tile
    used below) used to layer that pattern in twice: once here as a fake
    "photo" at full strength, and again via .city-hero::after's subtle 0.10

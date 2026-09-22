@@ -1,5 +1,3 @@
-@import url('/assets/site.base.css');
-
 /* Prevent Chromium/Samsung Internet from applying browser-generated darkening.
    Dakhni.org supplies its own dark palette with prefers-color-scheme in the
    imported stylesheet; `only light` affects UA auto-dark processing, not
@@ -14,3 +12,15 @@ html, body { color-scheme: only light !important; }
   forced-color-adjust: none !important;
   color-scheme: only light !important;
 }
+
+/* Consent controls use the site's existing ink and gold palette. */
+.cookie-choice[hidden] { display:none; }
+.cookie-choice { position:fixed; z-index:500; bottom:1rem; left:1rem; right:1rem; max-width:680px; margin:auto; padding:1rem 1.2rem; background:var(--ivory); color:var(--ink); border:1px solid var(--gold); box-shadow:0 8px 28px rgba(0,0,0,.23); font-family:Inter,sans-serif; font-size:.9rem; line-height:1.5; }
+.cookie-choice a { color:var(--gold-deep); text-decoration:underline; }
+.cookie-actions { display:flex; flex-wrap:wrap; gap:.65rem; margin-top:.8rem; }
+.cookie-actions button, .comments-load { background:var(--ink); color:var(--ivory); border:1px solid var(--ink); padding:.65rem 1rem; font:inherit; cursor:pointer; }
+.cookie-actions button:first-child { background:transparent; color:var(--ink); }
+.privacy-settings { background:none; border:0; color:rgba(250,247,239,.85); text-decoration:underline; cursor:pointer; font:400 .85rem Inter,sans-serif; }
+.privacy-settings:hover { color:#fff; }
+.comments-panel p { margin-bottom:.8rem; }
+.cookie-choice button:focus-visible, .comments-load:focus-visible, .privacy-settings:focus-visible { outline:3px solid var(--gold); outline-offset:3px; }

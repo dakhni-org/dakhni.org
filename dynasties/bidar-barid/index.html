@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-N9RETSEPQ9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-N9RETSEPQ9');
-</script>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bidar Barid Shahi (1489–1619) — Dakhni.org</title>
@@ -26,14 +18,15 @@
   <meta property="og:title" content="Bidar Barid Shahi (1489–1619) — Dakhni.org"/>
   <meta property="og:description" content="The Barid Shahi Sultanate of Bidar (1489–1619): successors to the Bahmanis, patrons of Bidriware and Sufi scholarship, famed for their lobed tombs."/>
   <meta property="og:url" content="https://dakhni.org/dynasties/bidar-barid/"/>
-  <meta property="og:image" content="https://dakhni.org/assets/dakhni-org-logo.svg"/>
+  <meta property="og:image" content="https://dakhni.org/assets/social-preview.png"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Bidar Barid Shahi (1489–1619) — Dakhni.org"/>
   <meta name="twitter:description" content="The Barid Shahi Sultanate of Bidar (1489–1619): successors to the Bahmanis, patrons of Bidriware and Sufi scholarship, famed for their lobed tombs."/>
-  <meta name="twitter:image" content="https://dakhni.org/assets/dakhni-org-logo.svg"/>
+  <meta name="twitter:image" content="https://dakhni.org/assets/social-preview.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&family=Lateef:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/assets/site.base.css"/>
   <link rel="stylesheet" href="/assets/site.css"/>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dakhni.org/"}, {"@type": "ListItem", "position": 2, "name": "Dynasties of the Deccan", "item": "https://dakhni.org/dynasties/"}, {"@type": "ListItem", "position": 3, "name": "Bidar Barid Shahi (1489–1619)"}]}</script>
 </head>
@@ -112,7 +105,7 @@
     <li><a href="/#quiz">Deccan Trivia</a></li>
   </ul>
 </nav>
-<header class="city-hero page-hero--cover page-hero--pattern" style="--cover:url('/assets/dakhni-pattern.png')">
+<header class="city-hero page-hero--cover page-hero--pattern" style="--cover:url('/assets/dakhni-pattern.webp')">
   <div class="city-hero-inner">
     <span class="city-hero-eyebrow">Dynasties of the Deccan</span>
     <h1 class="city-hero-title">Bidar Barid Shahi</h1>
@@ -156,22 +149,10 @@
     <h2 class="comments-title">Comments</h2>
   </header>
   <div class="comments-panel">
+    <p>Comments are provided by Disqus. Loading them shares your visit with Disqus.</p>
+    <button type="button" class="comments-load" data-disqus-url="https://dakhni.org/dynasties/bidar-barid/" data-disqus-id="/dynasties/bidar-barid/" data-disqus-shortname="dakhni">Load comments</button>
     <div id="disqus_thread"></div>
-    <script>
-      var disqus_config = function () {
-        this.page.url = "https://dakhni.org/dynasties/bidar-barid/";
-        this.page.identifier = "/dynasties/bidar-barid/";
-      };
-      (function() {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://dakhni.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-      })();
-    </script>
-    <noscript class="comments-noscript">Please enable JavaScript to view <a href="https://disqus.com/?ref_noscript">comments</a>.</noscript>
   </div>
-  <script id="comments-count-script" src="//dakhni.disqus.com/count.js" async></script>
 </section>
 <nav class="subnav" aria-label="Page navigator">
 <a class="prev" href="/dynasties/qutb-shahi/"><span class="subnav-eyebrow">‹ Prev</span><span class="subnav-title">Qutb Shahi Dynasty (1518–1687)</span></a>
@@ -194,6 +175,7 @@
     <li><a href="/ai-policy/">AI Policy</a></li>
     <li><a href="/privacy-policy/">Privacy Policy</a></li>
     <li><a href="/terms-and-conditions/">Terms and Conditions</a></li>
+    <li><button type="button" class="privacy-settings" data-privacy-settings>Privacy settings</button></li>
   </ul>
   <p class="ft-copy">© <span id="year">2025</span> Dakhni.org · In memory of the Asaf Jahi dynasty · Built with love for the Deccan</p>
 </footer>
@@ -209,6 +191,11 @@
     <p class="ds-search-hint" id="ds-search-hint">Search heritage, dynasties, cities, language, Sufism and more.</p>
   </div>
 </div>
+<aside class="cookie-choice" id="cookie-choice" aria-label="Analytics preference" hidden>
+  <p>Help us understand how this archive is used? Analytics is optional. <a href="/privacy-policy/">Privacy details</a></p>
+  <div class="cookie-actions"><button type="button" data-analytics="reject">No thanks</button><button type="button" data-analytics="accept">Allow analytics</button></div>
+</aside>
 <script defer src="/assets/site.js"></script>
+<script defer src="/assets/privacy.js"></script>
 </body>
 </html>
