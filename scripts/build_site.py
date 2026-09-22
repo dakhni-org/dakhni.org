@@ -727,7 +727,7 @@ def render_glossary_block(block: Dict[str, Any]) -> str:
     letters = sorted({entry["term"][0].upper() for entry in entries})
     out = ['<div class="glossary-wrap">',
            f'<p class="glossary-lede">{len(entries)} terms from Dakhni language, history and culture. Browse by letter or follow the related terms and articles within each entry.</p>',
-           '<nav class="glossary-az" aria-label="Glossary letters">']
+           '<nav class="glossary-az" id="glossary-letters" aria-label="Glossary letters">']
     out.extend(f'<a href="#letter-{esc(letter.lower())}">{esc(letter)}</a>' for letter in letters)
     out.append('</nav>')
     current = None
@@ -737,7 +737,7 @@ def render_glossary_block(block: Dict[str, Any]) -> str:
             if current is not None:
                 out.append('</dl></section>')
             current = letter
-            out.append(f'<section class="glossary-group" aria-labelledby="letter-{esc(letter.lower())}"><h2 id="letter-{esc(letter.lower())}">{esc(letter)}</h2><dl class="glossary-list">')
+            out.append(f'<section class="glossary-group" aria-labelledby="letter-{esc(letter.lower())}"><div class="glossary-group-heading"><h2 id="letter-{esc(letter.lower())}">{esc(letter)}</h2><a href="#glossary-letters">Back to A–Z ↑</a></div><dl class="glossary-list">')
         out.append(f'<div class="glossary-entry" id="{esc(entry["id"])}"><dt>{esc(entry["term"])}</dt><dd>')
         out.append(f'<span class="glossary-meta">{esc(entry["category"])} · {esc(entry["origin"])}</span>')
         out.append(f'<p>{esc(entry["definition"])}</p>')
@@ -1023,6 +1023,7 @@ def head(page, url_to_page: Dict[str, Any]):
         }
         jsonld.append(f'<script type="application/ld+json">{json.dumps(site_ld, ensure_ascii=False)}</script>')
     jsonld_html = "\n  ".join(j for j in jsonld if j)
+    glossary_css = '\n  <link rel="stylesheet" href="/assets/glossary.css"/>' if url == "/glossary/" else ""
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1052,7 +1053,7 @@ def head(page, url_to_page: Dict[str, Any]):
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&family=Lateef:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="/assets/site.base.css"/>
-  <link rel="stylesheet" href="/assets/site.css"/>
+  <link rel="stylesheet" href="/assets/site.css"/>{glossary_css}
   {jsonld_html}
 </head>'''
 
