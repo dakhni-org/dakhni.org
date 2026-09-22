@@ -224,6 +224,30 @@ def validate_page(page: Dict[str, Any], source: str) -> List[str]:
                             errors.append(f"{source}: blocks[{i}].items[{j}].text must be string")
             elif btype == "narrative":
                 errors.extend(_validate_narrative_block(block, f"{source}: blocks[{i}]"))
+            elif btype == "glossary":
+                entries = block.get("items")
+                if not isinstance(entries, list) or not entries:
+                    errors.append(f"{source}: blocks[{i}].items must be a non-empty array")
+                    continue
+                ids = {e.get("id") for e in entries if isinstance(e, dict) and isinstance(e.get("id"), str)}
+                if len(ids) != len(entries):
+                    errors.append(f"{source}: glossary entries need unique string ids")
+                for j, entry in enumerate(entries):
+                    prefix = f"{source}: blocks[{i}].items[{j}]"
+                    if not isinstance(entry, dict):
+                        errors.append(f"{prefix} must be object")
+                        continue
+                    for field in ("id", "term", "origin", "definition", "category"):
+                        if not isinstance(entry.get(field), str) or not entry[field].strip():
+                            errors.append(f"{prefix}.{field} must be a non-empty string")
+                    if "etymology" in entry and not isinstance(entry["etymology"], str):
+                        errors.append(f"{prefix}.etymology must be string")
+                    related = entry.get("related_terms", [])
+                    if not isinstance(related, list) or any(not isinstance(x, str) or x not in ids or x == entry.get("id") for x in related):
+                        errors.append(f"{prefix}.related_terms must reference other glossary ids")
+                    pages = entry.get("related_pages", [])
+                    if not isinstance(pages, list) or any(not isinstance(x, dict) or not isinstance(x.get("label"), str) or not isinstance(x.get("url"), str) or not re.fullmatch(r"/[a-z0-9/-]+/", x["url"]) for x in pages):
+                        errors.append(f"{prefix}.related_pages must contain internal label/url objects")
     for key in ("crumb_html", "subnav_html", "urdu", "cover", "hero_html", "level"):
         if key in page and not isinstance(page[key], str):
             errors.append(f"{source}: field '{key}' must be string when provided")
@@ -697,6 +721,42 @@ def _narrative_texts(block: Dict[str, Any]) -> List[str]:
     return texts
 
 
+def render_glossary_block(block: Dict[str, Any]) -> str:
+    entries = sorted(block["items"], key=lambda item: item["term"].casefold())
+    names = {entry["id"]: entry["term"] for entry in entries}
+    letters = sorted({entry["term"][0].upper() for entry in entries})
+    out = ['<div class="glossary-wrap">',
+           f'<p class="glossary-lede">{len(entries)} terms from Dakhni language, history and culture. Browse by letter or follow the related terms and articles within each entry.</p>',
+           '<nav class="glossary-az" aria-label="Glossary letters">']
+    out.extend(f'<a href="#letter-{esc(letter.lower())}">{esc(letter)}</a>' for letter in letters)
+    out.append('</nav>')
+    current = None
+    for entry in entries:
+        letter = entry["term"][0].upper()
+        if letter != current:
+            if current is not None:
+                out.append('</dl></section>')
+            current = letter
+            out.append(f'<section class="glossary-group" aria-labelledby="letter-{esc(letter.lower())}"><h2 id="letter-{esc(letter.lower())}">{esc(letter)}</h2><dl class="glossary-list">')
+        out.append(f'<div class="glossary-entry" id="{esc(entry["id"])}"><dt>{esc(entry["term"])}</dt><dd>')
+        out.append(f'<span class="glossary-meta">{esc(entry["category"])} · {esc(entry["origin"])}</span>')
+        out.append(f'<p>{esc(entry["definition"])}</p>')
+        if entry.get("etymology"):
+            out.append(f'<p class="glossary-etymology"><strong>Word origin</strong> {esc(entry["etymology"])}</p>')
+        related = entry.get("related_terms", [])
+        if related:
+            links = ', '.join(f'<a href="#{esc(ref)}">{esc(names[ref])}</a>' for ref in related)
+            out.append(f'<p class="glossary-related"><strong>Related terms</strong> {links}</p>')
+        pages = entry.get("related_pages", [])
+        if pages:
+            links = ', '.join(f'<a href="{esc(page["url"])}">{esc(page["label"])}</a>' for page in pages)
+            out.append(f'<p class="glossary-related"><strong>Explore</strong> {links}</p>')
+        out.append('</dd></div>')
+    out.append('</dl></section>')
+    out.append('<p class="glossary-note">Spellings and meanings vary across places and periods. Word origins describe the form or root where it is clear; a shared word does not necessarily imply a single route of transmission. Consult the <a href="https://dsal.uchicago.edu/dictionaries/platts/">Platts Urdu dictionary</a> and <a href="https://www.rekhtadictionary.com/">Rekhta Dictionary</a> for further forms and usage.</p></div>')
+    return '\n'.join(out)
+
+
 def render_blocks(page: Dict[str, Any]) -> str:
     blocks = page.get("blocks")
     if not isinstance(blocks, list):
@@ -727,6 +787,8 @@ def render_blocks(page: Dict[str, Any]) -> str:
             out.append('</section>')
         elif btype == "narrative":
             out.append(render_narrative_block(block))
+        elif btype == "glossary":
+            out.append(render_glossary_block(block))
         elif btype == "timeline":
             eyebrow = esc(block.get("eyebrow", ""))
             title = esc(block.get("title", ""))

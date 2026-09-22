@@ -1005,3 +1005,25 @@ a.card:hover { background:var(--cream); }
      same "ghost" effect against a dark background. */
   .dynasties-seal-bg { filter:invert(1); mix-blend-mode:screen; }
 }
+
+/* Glossary: generated from structured entries in content/glossary.json. */
+.glossary-wrap { max-width:1000px; margin:0 auto; padding:3rem 2rem 5rem; }
+.glossary-lede { max-width:720px; margin:0 0 2rem; color:var(--ink-soft); font-size:1.1rem; line-height:1.75; }
+.glossary-az { position:static; z-index:auto; top:auto; height:auto; min-height:0; display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:flex-start; gap:.45rem; padding:0 0 1.8rem; border-bottom:1px solid var(--rule); }
+.glossary-az a { display:inline-flex; justify-content:center; align-items:center; width:2.3rem; height:2.3rem; border:1px solid var(--rule); color:var(--ink); font-family:'Inter',sans-serif; font-size:.8rem; text-decoration:none; }
+.glossary-az a:hover, .glossary-az a:focus-visible { border-color:var(--gold-deep); color:var(--gold-deep); }
+.glossary-group { display:grid; grid-template-columns:90px minmax(0,1fr); gap:1.5rem; padding-top:2.8rem; }
+.glossary-group > h2 { margin:0; color:var(--gold-deep); font-family:'Cormorant Garamond',serif; font-size:4rem; font-weight:400; line-height:1; }
+.glossary-list { margin:0; min-width:0; }
+.glossary-entry { padding:0 0 1.7rem; margin-bottom:1.7rem; border-bottom:1px solid var(--rule); scroll-margin-top:5rem; }
+.glossary-entry dt { font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:600; line-height:1.15; color:var(--ink); }
+.glossary-entry dd { margin:0; }
+.glossary-meta { display:block; margin:.3rem 0 .75rem; font-family:'Inter',sans-serif; font-size:.69rem; letter-spacing:.11em; text-transform:uppercase; color:var(--gold-deep); }
+.glossary-entry p { margin:.55rem 0; line-height:1.7; color:var(--ink-soft); }
+.glossary-entry .glossary-etymology { padding:.75rem 1rem; background:var(--cream); }
+.glossary-entry strong { color:var(--ink); font-family:'Inter',sans-serif; font-size:.75rem; letter-spacing:.04em; margin-right:.35rem; }
+.glossary-related { font-size:.9rem; }
+.glossary-related a, .glossary-note a { color:var(--gold-deep); text-underline-offset:3px; }
+.glossary-related a:hover, .glossary-note a:hover { text-decoration-thickness:2px; }
+.glossary-note { border-top:1px solid var(--rule); padding-top:1.5rem; color:var(--ink-soft); font-size:.9rem; line-height:1.7; }
+@media(max-width:600px) { .glossary-wrap { padding:2rem 1.2rem 3rem; } .glossary-az { padding:0 0 1.8rem; min-height:0; align-items:flex-start; } .glossary-group { grid-template-columns:1fr; gap:.75rem; padding-top:2rem; } .glossary-group > h2 { font-size:3rem; } .glossary-entry dt { font-size:1.8rem; } }
