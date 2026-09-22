@@ -17,20 +17,7 @@
   }
   schemeMeta.setAttribute('content','only light');
 
-  root.classList.add('js');               // content is visible by default; .js enables the reveal animation
   try { var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear(); } catch (e) {}
-  var els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-  try {
-    var obs = new IntersectionObserver(function(entries){
-      entries.forEach(function(e, i){
-        if (e.isIntersecting) { setTimeout(function(){ e.target.classList.add('visible'); }, i * 80); obs.unobserve(e.target); }
-      });
-    }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
-    els.forEach(function(el){ obs.observe(el); });
-  } catch (e) {
-    // IntersectionObserver unavailable — just show everything
-    els.forEach(function(el){ el.classList.add('visible'); });
-  }
   var tog = document.querySelector('.nav-toggle');
   var links = document.querySelector('.nav-links');
   if (tog && links) {
