@@ -3,7 +3,7 @@
   "url": "/glossary/",
   "section": "Reference",
   "title": "Glossary",
-  "description": "A glossary of Dakhni, Urdu and Persian terms used across the site — from aap to zari, from dhikr to tehzeeb.",
+  "description": "Explore 32 Dakhni, Urdu and Persian words with meanings, etymologies, related terms and links to Deccan history, cuisine and Sufi traditions.",
   "dedication": "In memory of the Asaf Jahi dynasty",
   "eyebrow": "Reference",
   "title_html": "Glossary of <em>Dakhni</em> Terms",
@@ -625,5 +625,6 @@
         }
       ]
     }
-  ]
+  ],
+  "seo_title": "Dakhni Glossary: 32 Urdu, Persian & Deccani Terms | Dakhni.org"
 }

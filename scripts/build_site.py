@@ -654,9 +654,10 @@ def render_narrative_block(block: Dict[str, Any]) -> str:
             )
         elif s.get("figure"):
             fg = s["figure"]
+            loading = fg.get("loading", "eager" if i == 0 else "lazy")
             media_html = (
                 f'<figure class="h-figure {fg.get("reveal") or media_reveal}">'
-                f'<img loading="{esc(fg.get("loading", "lazy"))}" alt="{esc(fg.get("alt"))}" src="{esc(fg["src"])}"/>'
+                f'<img loading="{esc(loading)}" alt="{esc(fg.get("alt"))}" src="{esc(fg["src"])}"/>'
                 f'<figcaption>{fg["caption"]}</figcaption></figure>'
             )
 
@@ -999,13 +1000,25 @@ def head(page, url_to_page: Dict[str, Any]):
     url = page["url"]
     canonical = "https://dakhni.org" + url
     title = page["title"]
-    full_title = "Dakhni.org — Heritage of the Deccan" if url == "/" else f'{title} — Dakhni.org'
+    full_title = page.get("seo_title") or ("Dakhni.org — Heritage of the Deccan" if url == "/" else f'{title} — Dakhni.org')
     desc = page.get("description", "")
     cover = page.get("cover") or ""
     og_img = ("https://dakhni.org" + cover) if cover.startswith("/") else (cover or "https://dakhni.org/assets/social-preview.png")
     page_tags = page.get("tags", [])
     all_keywords = KEYWORDS + (", " + ", ".join(page_tags) if page_tags else "")
     jsonld = [] if url == "/" else [breadcrumb_jsonld(page, url_to_page)]
+    if url == "/glossary/":
+        entries = next((block.get("items", []) for block in page.get("blocks", []) if block.get("type") == "glossary"), [])
+        terms_ld = {
+            "@context": "https://schema.org", "@type": "DefinedTermSet",
+            "name": "Dakhni glossary", "url": canonical,
+            "hasDefinedTerm": [
+                {"@type": "DefinedTerm", "name": item["term"], "description": item["definition"],
+                 "url": canonical + "#" + item["id"], "inDefinedTermSet": canonical}
+                for item in entries
+            ],
+        }
+        jsonld.append(f'<script type="application/ld+json">{json.dumps(terms_ld, ensure_ascii=False)}</script>')
     if url == "/":
         site_ld = {
             "@context": "https://schema.org",
@@ -1030,7 +1043,9 @@ def head(page, url_to_page: Dict[str, Any]):
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>{esc(full_title)}</title>
-  <link rel="icon" type="image/svg+xml" href="/assets/dakhni-org-logo.svg"/>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=2"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=2"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v=2"/>
   <link rel="manifest" href="/assets/site.webmanifest"/>
   <meta name="description" content="{esc(desc)}"/>
   <meta name="keywords" content="{esc(all_keywords)}"/>
@@ -1102,6 +1117,8 @@ def render(page, nav_html, url_to_page, subnav_map, term_to_url=None):
         out.append(body)
         if refs_html:
             out.append(refs_html)
+        if page.get("page_type") in LEAF_PAGE_TYPES:
+            out.append('<p class="editorial-credit">Compiled by <a href="/about/">Syed Azhar Farhan</a> for Dakhni.org. See the references above where provided and <a href="/ai-policy/">how this archive is made</a>.</p>')
         out.append('</main>')
     if page.get("page_type") in LEAF_PAGE_TYPES:
         out.append(comments(page))
@@ -1131,6 +1148,20 @@ def add_image_dimensions(markup):
             header = image.read(24)
             if header.startswith(b"\x89PNG\r\n\x1a\n"):
                 return struct.unpack(">II", header[16:24])
+            if header.startswith(b"RIFF") and header[8:12] == b"WEBP":
+                kind = header[12:16]
+                image.seek(20)
+                data = image.read(16)
+                if kind == b"VP8X":
+                    return (int.from_bytes(data[4:7], "little") + 1,
+                            int.from_bytes(data[7:10], "little") + 1)
+                if kind == b"VP8L":
+                    bits = int.from_bytes(data[1:5], "little")
+                    return (bits & 0x3fff) + 1, ((bits >> 14) & 0x3fff) + 1
+                if kind == b"VP8 " and data[3:6] == b"\x9d\x01\x2a":
+                    return (int.from_bytes(data[6:8], "little") & 0x3fff,
+                            int.from_bytes(data[8:10], "little") & 0x3fff)
+                return None
             if not header.startswith(b"\xff\xd8"):
                 return None
             image.seek(2)
@@ -1178,6 +1209,14 @@ def write_sitemap(pages: List[Dict[str, Any]], page_files: Dict[str, str]) -> No
 
     def git_lastmod(jf: str) -> str:
         try:
+            # When rendering before the source edit has been committed, use
+            # today's date. A subsequent clean CI build sees the commit date.
+            dirty = subprocess.run(
+                ["git", "status", "--porcelain", "--", jf], cwd=ROOT,
+                capture_output=True, text=True, timeout=5,
+            )
+            if dirty.stdout.strip():
+                return today
             out = subprocess.run(
                 ["git", "log", "-1", "--format=%ad", "--date=short", "--", jf],
                 cwd=ROOT, capture_output=True, text=True, timeout=5,
@@ -1187,16 +1226,6 @@ def write_sitemap(pages: List[Dict[str, Any]], page_files: Dict[str, str]) -> No
         except Exception:
             return today
 
-    def priority_freq(page):
-        pt = page.get("page_type")
-        if pt == "home":
-            return "1.0", "monthly"
-        if pt == "general_leaf":
-            return "0.5", "yearly"
-        if pt == "section_hub":
-            return "0.9", "monthly"
-        return "0.7", "monthly"
-
     entries = []
     for page in sorted(pages, key=lambda p: p.get("url", "")):
         url = page.get("url")
@@ -1204,10 +1233,9 @@ def write_sitemap(pages: List[Dict[str, Any]], page_files: Dict[str, str]) -> No
             continue
         jf = page_files.get(url)
         lastmod = git_lastmod(jf) if jf else today
-        priority, freq = priority_freq(page)
         entries.append(
             f'  <url><loc>https://dakhni.org{esc(url)}</loc><lastmod>{lastmod}</lastmod>'
-            f'<changefreq>{freq}</changefreq><priority>{priority}</priority></url>'
+            '</url>'
         )
     xml = (
         '<?xml version="1.0" encoding="UTF-8"?>\n'

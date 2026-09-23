@@ -19,7 +19,7 @@
   "link_terms": [
     "Bijapur"
   ],
-  "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Gol%20Gumbaz%2C%20Bijapur%20%2C%20Karnataka%2C%20India.JPG?width=1600",
+  "cover": "/cities/bijapur/assets/gol-gumbaz-bijapur-karnataka-india.webp",
   "extra_scripts": [],
   "blocks": [
     {
@@ -133,7 +133,7 @@
           "media_first": true,
           "reveal": "reveal-right",
           "figure": {
-            "src": "/cities/bijapur/assets/gagan-mahal-bijapur.jpg",
+            "src": "/cities/bijapur/assets/gagan-mahal-bijapur.webp",
             "alt": "Gagan Mahal — the Adil Shahi audience hall",
             "caption": "Gagan Mahal · 1561 · audience hall of Ali I",
             "reveal": "reveal-left"
@@ -158,7 +158,7 @@
           ],
           "reveal": "reveal-left",
           "figure": {
-            "src": "/cities/bijapur/assets/jama-masjid-bijapur.jpg",
+            "src": "/cities/bijapur/assets/jama-masjid-bijapur.webp",
             "alt": "Jami Masjid Bijapur — congregational mosque begun 1576",
             "caption": "Jami Masjid · 36 bays, 10,800 m²",
             "reveal": "reveal-right"
@@ -184,7 +184,7 @@
           "media_first": true,
           "reveal": "reveal-right",
           "figure": {
-            "src": "/cities/bijapur/assets/ibrahim-roja-bijapur.jpg",
+            "src": "/cities/bijapur/assets/ibrahim-roja-bijapur.webp",
             "alt": "Ibrahim Rauza — twin tomb-and-mosque of Ibrahim II, completed c. 1626",
             "caption": "Ibrahim Rauza · c. 1626 · the \"Taj of the Deccan\"",
             "reveal": "reveal-left"
@@ -298,7 +298,7 @@
           "media_first": true,
           "reveal": "reveal-right",
           "figure": {
-            "src": "/cities/bijapur/assets/malik-e-maidan-bijapur.jpg",
+            "src": "/cities/bijapur/assets/malik-e-maidan-bijapur.webp",
             "alt": "Malik-e-Maidan — the Lord of the Battlefield, the great Bijapuri cannon",
             "caption": "Malik-e-Maidan · 4.5 m bronze cannon · cast 1549",
             "reveal": "reveal-left"
@@ -323,7 +323,7 @@
           ],
           "reveal": "reveal-left",
           "figure": {
-            "src": "/cities/bijapur/assets/bijapur-bara-kaman.jpg",
+            "src": "/cities/bijapur/assets/bijapur-bara-kaman.webp",
             "alt": "Bara Kaman — unfinished tomb of Ali Adil Shah II",
             "caption": "Bara Kaman · Ali II's unfinished tomb · 12 of 84 arches raised",
             "reveal": "reveal-right"

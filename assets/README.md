@@ -7,7 +7,8 @@ How images, logos and other static files are organised on dakhni.org.
 **1. Shared / global — this folder (`/assets/`)**
 Files used across many pages live here and are referenced by absolute path:
 
-- `dakhni-org-logo.svg` — canonical site logo and favicon (`/assets/dakhni-org-logo.svg`)
+- `dakhni-org-logo.svg` — canonical D monogram. `favicon.svg`, PNG app icons,
+  and `social-preview.png` are derived from it with `scripts/generate_brand_assets.py`.
 - `dakhni-pattern.webp` — hero background pattern
 - `Asafia_flag_of_Hyderabad_State.svg.png` — Asaf Jahi flag
 - `image013.jpg`, `image015.jpg` — shared decorative images
@@ -29,9 +30,9 @@ Keep the empty `.gitkeep` until the folder has real files.
   links work the same from any page depth.
 - **File names:** lowercase, hyphen-separated, descriptive —
   `golconda-fort-hero.jpg`, not `IMG_2931.JPG`.
-- **Formats:** prefer WebP (or optimised JP/PNG) and compress before committing.
-- **In markup:** set `width` and `height` and add `loading="lazy"` on content
-  images to avoid layout shift and speed up first paint.
+- **Formats:** prefer WebP for photographs and compress before committing.
+- **In markup:** set `width` and `height`; lazy-load images below the first
+  visible section. Keep the first visible image eager so it can paint promptly.
 
 ## Localising external images
 

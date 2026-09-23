@@ -18,7 +18,7 @@
   "link_terms": [
     "Nanded"
   ],
-  "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Takhat%20Sachkhand%20Shri%20Hazur%20Sahib%20ji.JPG?width=1600",
+  "cover": "/cities/nanded/assets/takhat-sachkhand-shri-hazur-sahib-ji.webp",
   "extra_scripts": [],
   "blocks": [
     {
@@ -134,7 +134,7 @@
           "media_first": true,
           "reveal": "reveal-right",
           "figure": {
-            "src": "/cities/nanded/assets/indien2012-1241-kandhar-fort.jpg",
+            "src": "/cities/nanded/assets/indien2012-1241-kandhar-fort.webp",
             "alt": "Kandhar Fort, near Nanded — built by the Rashtrakutas, held by the Bahmanis",
             "caption": "Kandhar Fort · the Bahmani garrison that watched the Godavari road",
             "reveal": "reveal-left"
@@ -203,7 +203,7 @@
           ],
           "reveal": "reveal-left",
           "figure": {
-            "src": "/cities/nanded/assets/takhat-sachkhand-shri-hazur-sahib-ji.jpg",
+            "src": "/cities/nanded/assets/takhat-sachkhand-shri-hazur-sahib-ji.webp",
             "alt": "Takht Sachkhand Sri Hazur Abchalnagar Sahib, Nanded — gold dome and marble inner sanctum",
             "caption": "Hazur Sahib · the southernmost of the five Sikh Takhts",
             "reveal": "reveal-right"
