@@ -16,7 +16,7 @@
   "urdu": "گلبرگہ — احسن آباد، دکن کا اوّلین تخت",
   "title_html": "GULBARGA",
   "subtitle": "Where Hasan Gangu raised his standard in 1347, where the muezzin first called the azan over an independent Deccan, and where the saint Banda Nawaz wrote his last verse in the lamplight of the Chishti shrine.",
-  "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/JAmia%20Masjid.jpg?width=1600",
+  "cover": "/cities/gulbarga/assets/jamia-masjid.webp",
   "link_terms": [
     "Gulbarga"
   ],
@@ -183,7 +183,7 @@
           "media_first": true,
           "reveal": "reveal-right",
           "figure": {
-            "src": "/cities/gulbarga/assets/haft-gumbaz-complex.jpg",
+            "src": "/cities/gulbarga/assets/haft-gumbaz-complex.webp",
             "alt": "Haft Gumbaz — the seven Bahmani tombs at Gulbarga",
             "caption": "Haft Gumbaz · the early Bahmani necropolis",
             "reveal": "reveal-left"
@@ -208,7 +208,7 @@
           ],
           "reveal": "reveal-left",
           "figure": {
-            "src": "/cities/gulbarga/assets/gulbarga-dargah.jpg",
+            "src": "/cities/gulbarga/assets/gulbarga-dargah.webp",
             "alt": "Dargah of Khwaja Banda Nawaz, Gulbarga",
             "caption": "Dargah of Banda Nawaz · Gulbarga",
             "reveal": "reveal-right"
@@ -303,7 +303,7 @@
           ],
           "reveal": "reveal-left",
           "figure": {
-            "src": "/cities/gulbarga/assets/gulbarga-dargah.jpg",
+            "src": "/cities/gulbarga/assets/gulbarga-dargah.webp",
             "alt": "Gulbarga — the dargah of Banda Nawaz at evening",
             "caption": "Dargah of Banda Nawaz · the city's continuous heart, 1422–today",
             "reveal": "reveal-right"

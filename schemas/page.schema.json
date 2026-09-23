@@ -10,6 +10,7 @@
       "enum": ["home", "section_hub", "city_leaf", "saint_leaf", "institution_leaf", "heritage_leaf", "dynasty_leaf", "language_leaf", "sacred_site_leaf", "general_leaf"]
     },
     "title": {"type": "string"},
+    "seo_title": {"type": "string"},
     "description": {"type": "string"},
     "url": {"type": "string", "pattern": "^/(.*/)?$"},
     "section": {"type": "string"},

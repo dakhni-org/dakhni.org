@@ -115,7 +115,7 @@
           ],
           "reveal": "reveal-left",
           "figure": {
-            "src": "/language/urdu/assets/calligraphy-by-mir-imad.jpg",
+            "src": "/language/urdu/assets/calligraphy-by-mir-imad.webp",
             "alt": "Calligraphic Persian-Arabic script, the writing system Urdu inherited",
             "caption": "Nastaliq calligraphy · the script Urdu inherited from Persian",
             "reveal": "reveal-right"
@@ -159,7 +159,7 @@
           ],
           "reveal": "reveal-left",
           "figure": {
-            "src": "/language/urdu/assets/gulbarga-dargah.jpg",
+            "src": "/language/urdu/assets/gulbarga-dargah.webp",
             "alt": "The dargah of Khwaja Bandanawaz at Gulbarga, where early Dakhni prose was first written",
             "caption": "Dargah of Khwaja Bandanawaz · Gulbarga · the cradle of literary Dakhni",
             "reveal": "reveal-right"
@@ -237,7 +237,7 @@
           "media_first": true,
           "reveal": "reveal-right",
           "figure": {
-            "src": "/language/urdu/assets/mirza-ghalib.jpg",
+            "src": "/language/urdu/assets/mirza-ghalib.webp",
             "alt": "Mirza Ghalib in the 1860s — the last great voice of classical Urdu",
             "caption": "Mirza Ghalib · 1797–1869 · the last great voice of classical Urdu",
             "reveal": "reveal-left"

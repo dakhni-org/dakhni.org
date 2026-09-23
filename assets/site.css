@@ -24,3 +24,7 @@ html, body { color-scheme: only light !important; }
 .privacy-settings:hover { color:#fff; }
 .comments-panel p { margin-bottom:.8rem; }
 .cookie-choice button:focus-visible, .comments-load:focus-visible, .privacy-settings:focus-visible { outline:3px solid var(--gold); outline-offset:3px; }
+
+/* Make the source and editorial responsibility clear on article pages. */
+.editorial-credit{max-width:840px;margin:2rem auto;padding:1.1rem 1.3rem;border-top:1px solid rgba(127,93,43,.25);font:400 .88rem/1.65 Inter,sans-serif;color:#5a5143}
+.editorial-credit a{color:#76501e;text-decoration:underline;text-underline-offset:.18em}

@@ -19,7 +19,7 @@
   "link_terms": [
     "Bidar"
   ],
-  "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/02%20Bidar%20Mohamad%20Gawan%20Madrasa.JPG?width=1600",
+  "cover": "/cities/bidar/assets/02-bidar-mohamad-gawan-madrasa.webp",
   "extra_scripts": [],
   "blocks": [
     {
@@ -164,7 +164,7 @@
           ],
           "reveal": "reveal-left",
           "figure": {
-            "src": "/cities/bidar/assets/02-bidar-mohamad-gawan-madrasa.jpg",
+            "src": "/cities/bidar/assets/02-bidar-mohamad-gawan-madrasa.webp",
             "alt": "Madrasa of Mahmud Gawan — surviving minaret in turquoise tile",
             "caption": "Madrasa of Mahmud Gawan · 1472",
             "reveal": "reveal-right"
@@ -190,7 +190,7 @@
           "media_first": true,
           "reveal": "reveal-right",
           "figure": {
-            "src": "/cities/bidar/assets/ashtur-tombs-bidar-karnataka.jpg",
+            "src": "/cities/bidar/assets/ashtur-tombs-bidar-karnataka.webp",
             "alt": "Bahmani Tombs at Ashtur — the necropolis of Ahmad Shah Wali and his successors",
             "caption": "The Bahmani necropolis at Ashtur · 12 sultans",
             "reveal": "reveal-left"

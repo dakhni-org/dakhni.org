@@ -19,7 +19,7 @@
   "link_terms": [
     "Golconda"
   ],
-  "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Golconda%20Fort%20007.jpg?width=1600",
+  "cover": "/cities/golconda/assets/golconda-fort-andra-pradesh-entrance-door.webp",
   "extra_scripts": [],
   "blocks": [
     {
@@ -157,7 +157,7 @@
           ],
           "reveal": "reveal-left",
           "figure": {
-            "src": "/cities/golconda/assets/golconda-fort-andra-pradesh-entrance-door.jpg",
+            "src": "/cities/golconda/assets/golconda-fort-andra-pradesh-entrance-door.webp",
             "alt": "Fateh Darwaza — the acoustic gate, where a clap is heard a kilometre away at Bala Hisar",
             "caption": "Fateh Darwaza · the acoustic Gate of Victory",
             "reveal": "reveal-right"
@@ -210,7 +210,7 @@
           ],
           "reveal": "reveal-left",
           "figure": {
-            "src": "/cities/golconda/assets/qutub-shahi-tombs-5.jpg",
+            "src": "/cities/golconda/assets/qutub-shahi-tombs-5.webp",
             "alt": "The Qutb Shahi Tombs — a garden necropolis north of Golconda Fort",
             "caption": "Qutb Shahi Tombs · the seven domes",
             "reveal": "reveal-right"

@@ -18,7 +18,7 @@
   "link_terms": [
     "Aurangabad"
   ],
-  "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Bibi%20ka%20Maqbara.JPG?width=1600",
+  "cover": "/cities/aurangabad/assets/bibi-ka-maqbara.webp",
   "extra_scripts": [],
   "blocks": [
     {
@@ -112,7 +112,7 @@
           ],
           "reveal": "reveal-left",
           "figure": {
-            "src": "/cities/aurangabad/assets/malik-amber-ahmadnager-hi.jpg",
+            "src": "/cities/aurangabad/assets/malik-amber-ahmadnager-hi.webp",
             "alt": "Malik Ambar — Habshi peshwa of the Nizam Shahis, founder of the city",
             "caption": "Malik Ambar · 1548–1626 · founder of Khadki",
             "reveal": "reveal-right"
@@ -163,7 +163,7 @@
           ],
           "reveal": "reveal-left",
           "figure": {
-            "src": "/cities/aurangabad/assets/bibi-ka-maqbara.jpg",
+            "src": "/cities/aurangabad/assets/bibi-ka-maqbara.webp",
             "alt": "Bibi ka Maqbara — the Dakkhani Taj, completed 1661",
             "caption": "Bibi ka Maqbara · 1661 · the Taj of the Deccan",
             "reveal": "reveal-right"
@@ -189,7 +189,7 @@
           "media_first": true,
           "reveal": "reveal-right",
           "figure": {
-            "src": "/cities/aurangabad/assets/aurangabad-panchakki.jpg",
+            "src": "/cities/aurangabad/assets/aurangabad-panchakki.webp",
             "alt": "Panchakki — the seventeenth-century water mill of the Baba Shah Musafir dargah",
             "caption": "Panchakki · 1695 · water mill of the Sufi dargah",
             "reveal": "reveal-left"
@@ -214,7 +214,7 @@
           ],
           "reveal": "reveal-left",
           "figure": {
-            "src": "/cities/aurangabad/assets/daulatabad-fort-a-view.jpg",
+            "src": "/cities/aurangabad/assets/daulatabad-fort-a-view.webp",
             "alt": "Daulatabad Fort — the impregnable basalt citadel west of Aurangabad",
             "caption": "Daulatabad Fort · 600 m basalt scarp · Chand Minar 1435",
             "reveal": "reveal-right"
@@ -240,7 +240,7 @@
           "media_first": true,
           "reveal": "reveal-right",
           "figure": {
-            "src": "/cities/aurangabad/assets/aurangzeb-s-tomb-khuldabad-3.jpg",
+            "src": "/cities/aurangabad/assets/aurangzeb-s-tomb-khuldabad-3.webp",
             "alt": "Tomb of Aurangzeb at Khuldabad — open to the sky, by his own command",
             "caption": "Aurangzeb's tomb · Khuldabad · open to the sky, by his own will",
             "reveal": "reveal-left"
@@ -266,7 +266,7 @@
           ],
           "reveal": "reveal-left",
           "figure": {
-            "src": "/cities/aurangabad/assets/kailasha-temple-at-ellora.jpg",
+            "src": "/cities/aurangabad/assets/kailasha-temple-at-ellora.webp",
             "alt": "Kailasa Temple, Ellora — the largest monolithic temple, c. 760 CE",
             "caption": "Kailasa Temple · Ellora · c. 760 CE · single rock",
             "reveal": "reveal-right"

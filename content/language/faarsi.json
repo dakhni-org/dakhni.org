@@ -137,7 +137,7 @@
           "media_first": true,
           "reveal": "reveal-right",
           "figure": {
-            "src": "/language/faarsi/assets/02-bidar-mohamad-gawan-madrasa.jpg",
+            "src": "/language/faarsi/assets/02-bidar-mohamad-gawan-madrasa.webp",
             "alt": "Madrasa of Mahmud Gawan at Bidar — the great Persian academy of the Deccan",
             "caption": "Madrasa of Mahmud Gawan · Bidar · the great Persian academy of the Bahmani Deccan",
             "reveal": "reveal-left"
@@ -188,7 +188,7 @@
           "media_first": true,
           "reveal": "reveal-right",
           "figure": {
-            "src": "/language/faarsi/assets/charminar-hyderabad.jpg",
+            "src": "/language/faarsi/assets/charminar-hyderabad.webp",
             "alt": "Charminar at Hyderabad — designed under the guidance of Mir Mu'min Astarabadi",
             "caption": "Charminar · 1591 · designed under the guidance of an Iranian Shia scholar",
             "reveal": "reveal-left"
@@ -213,7 +213,7 @@
           ],
           "reveal": "reveal-left",
           "figure": {
-            "src": "/language/faarsi/assets/ibrahim-roja-bijapur.jpg",
+            "src": "/language/faarsi/assets/ibrahim-roja-bijapur.webp",
             "alt": "Ibrahim Rouza at Bijapur, the court at which Firishta wrote his Tarikh",
             "caption": "Ibrahim Rouza · Bijapur · the court of Ibrahim Adil Shah II, Firishta's patron",
             "reveal": "reveal-right"
@@ -239,7 +239,7 @@
           "media_first": true,
           "reveal": "reveal-right",
           "figure": {
-            "src": "/language/faarsi/assets/mecca-masjid-hyderabad.jpg",
+            "src": "/language/faarsi/assets/mecca-masjid-hyderabad.webp",
             "alt": "Mecca Masjid at Hyderabad — bears Persian Qutb Shahi and Asaf Jahi inscriptions",
             "caption": "Mecca Masjid · Hyderabad · its arches carry the Persian inscriptions of three centuries",
             "reveal": "reveal-left"
@@ -264,7 +264,7 @@
           ],
           "reveal": "reveal-left",
           "figure": {
-            "src": "/language/faarsi/assets/faluk-numa-palace-hyderabad-india.jpg",
+            "src": "/language/faarsi/assets/faluk-numa-palace-hyderabad-india.webp",
             "alt": "Falaknuma Palace at Hyderabad — its library held one of the great Persian collections of South Asia",
             "caption": "Falaknuma Palace · Hyderabad · its library held one of the great Persian collections of South Asia",
             "reveal": "reveal-right"

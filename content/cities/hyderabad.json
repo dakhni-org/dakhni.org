@@ -18,7 +18,7 @@
   "urdu": "حیدرآباد — موتیوں کا شہر",
   "title_html": "HYDERABAD",
   "subtitle": "Where Muhammad Quli Qutb Shah laid out a city around the Charminar, where seven Nizams kept their durbar, and where the Dakhni tongue still answers in the same half-courteous lilt that Wali Deccani wrote in three centuries ago.",
-  "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Charminar-Pride%20of%20Hyderabad.jpg?width=1600",
+  "cover": "/cities/hyderabad/assets/charminar-pride-of-hyderabad.webp",
   "link_terms": [
     "Hyderabad"
   ],
@@ -115,7 +115,7 @@
           ],
           "reveal": "reveal-left",
           "figure": {
-            "src": "/cities/hyderabad/assets/charminar-pride-of-hyderabad.jpg",
+            "src": "/cities/hyderabad/assets/charminar-pride-of-hyderabad.webp",
             "alt": "Charminar — the city's founding monument, 1591",
             "caption": "Charminar · founded with the city, 1591",
             "reveal": "reveal-right"
@@ -141,7 +141,7 @@
           "media_first": true,
           "reveal": "reveal-right",
           "figure": {
-            "src": "/cities/hyderabad/assets/charminar-hyderabad.jpg",
+            "src": "/cities/hyderabad/assets/charminar-hyderabad.webp",
             "alt": "Charminar viewed from Laad Bazaar",
             "caption": "The four minarets · 56 m · granite and lime stucco",
             "reveal": "reveal-left"
@@ -166,7 +166,7 @@
           ],
           "reveal": "reveal-left",
           "figure": {
-            "src": "/cities/hyderabad/assets/golconda-fort-24.jpg",
+            "src": "/cities/hyderabad/assets/golconda-fort-24.webp",
             "alt": "Golconda Fort — three concentric walls and the Bala Hisar",
             "caption": "Golconda Fort · seat of seven sultans",
             "reveal": "reveal-right"
@@ -191,7 +191,7 @@
           "media_first": true,
           "reveal": "reveal-right",
           "figure": {
-            "src": "/cities/hyderabad/assets/qutub-shahi-tombs-5.jpg",
+            "src": "/cities/hyderabad/assets/qutub-shahi-tombs-5.webp",
             "alt": "Qutb Shahi Tombs — the dynasty's necropolis",
             "caption": "Necropolis of the Qutb Shahis · seven sultans, twenty-one tombs",
             "reveal": "reveal-left"
@@ -317,7 +317,7 @@
           ],
           "reveal": "reveal-left",
           "figure": {
-            "src": "/cities/hyderabad/assets/faluk-numa-palace-hyderabad-india.jpg",
+            "src": "/cities/hyderabad/assets/faluk-numa-palace-hyderabad-india.webp",
             "alt": "Falaknuma Palace — mirror of the sky",
             "caption": "Falaknuma Palace · 1884–1893",
             "reveal": "reveal-right"
@@ -342,7 +342,7 @@
           "media_first": true,
           "reveal": "reveal-right",
           "figure": {
-            "src": "/cities/hyderabad/assets/mecca-masjid-hyderabad.jpg",
+            "src": "/cities/hyderabad/assets/mecca-masjid-hyderabad.webp",
             "alt": "Mecca Masjid — Hyderabad's congregational mosque",
             "caption": "Mecca Masjid · 1614 (begun) – 1694 (completed)",
             "reveal": "reveal-left"

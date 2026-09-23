@@ -18,7 +18,7 @@
   "link_terms": [
     "Warangal"
   ],
-  "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Kakatiya%20Kala%20Thoranam.jpg?width=1600",
+  "cover": "/cities/warangal/assets/warangal-fort-ruins-guide-map.webp",
   "extra_scripts": [],
   "blocks": [
     {
@@ -158,7 +158,7 @@
           ],
           "reveal": "reveal-left",
           "figure": {
-            "src": "/cities/warangal/assets/khush-mahal-warangal-fort.jpg",
+            "src": "/cities/warangal/assets/khush-mahal-warangal-fort.webp",
             "alt": "The carved gateway pillars of the Warangal Fort temple complex",
             "caption": "Carved pillars at the Swayambhu temple ruins · 13th century",
             "reveal": "reveal-right"
@@ -184,7 +184,7 @@
           "media_first": true,
           "reveal": "reveal-right",
           "figure": {
-            "src": "/cities/warangal/assets/12th-century-thousand-pillar-temple-hanumkonda-telangana-india-100.jpg",
+            "src": "/cities/warangal/assets/12th-century-thousand-pillar-temple-hanumkonda-telangana-india-100.webp",
             "alt": "Thousand Pillar Temple at Hanamkonda — Kakatiya architecture, 1163",
             "caption": "Thousand Pillar Temple, Hanamkonda · consecrated 1163 CE",
             "reveal": "reveal-left"
@@ -209,7 +209,7 @@
           ],
           "reveal": "reveal-left",
           "figure": {
-            "src": "/cities/warangal/assets/a-view-of-ramappa-temple-03.jpg",
+            "src": "/cities/warangal/assets/a-view-of-ramappa-temple-03.webp",
             "alt": "Ramappa Temple at Palampet — UNESCO World Heritage Site",
             "caption": "Ramappa Temple, Palampet · the only temple named for its sculptor",
             "reveal": "reveal-right"
@@ -281,7 +281,7 @@
           ],
           "reveal": "reveal-left",
           "figure": {
-            "src": "/cities/warangal/assets/warangal-fort-ruins-guide-map.jpg",
+            "src": "/cities/warangal/assets/warangal-fort-ruins-guide-map.webp",
             "alt": "The four Kakatiya toranas at the centre of Warangal Fort",
             "caption": "The four toranas · spared in the sack of 1323",
             "reveal": "reveal-right"
@@ -307,7 +307,7 @@
           "media_first": true,
           "reveal": "reveal-right",
           "figure": {
-            "src": "/cities/warangal/assets/khush-mahal-warangal-fort.jpg",
+            "src": "/cities/warangal/assets/khush-mahal-warangal-fort.webp",
             "alt": "Khush Mahal — the sultans' audience pavilion within Warangal Fort",
             "caption": "Khush Mahal · Bahmani audience pavilion within the old Kakatiya enclosure",
             "reveal": "reveal-left"
