@@ -1,0 +1,247 @@
+{
+  "page_type": "dynasty_leaf",
+  "url": "/dynasties/nizam-shahi/",
+  "section": "Dynasties",
+  "title": "Nizam Shahi Sultanate (1490–1636)",
+  "seo_title": "Nizam Shahi Sultanate of Ahmadnagar (1490–1636) | Dakhni.org",
+  "description": "The Nizam Shahi Sultanate of Ahmadnagar (1490–1636): a Bahmani successor state, center of Persianate culture and Deccani painting, defended by Chand Bibi and later led by Malik Ambar against Mughal expansion.",
+  "dedication": "In memory of the Asaf Jahi dynasty",
+  "sort_order": 20,
+  "date_published": "2026-09-27",
+  "date_modified": "2026-09-27",
+  "social_image": "/assets/social/dynasties.jpg",
+  "schema_about": [
+    {
+      "type": "Organization",
+      "name": "Nizam Shahi Sultanate of Ahmadnagar"
+    }
+  ],
+  "tags": [
+    "Nizam Shahi",
+    "Ahmadnagar",
+    "Malik Ambar",
+    "Chand Bibi",
+    "Deccan Sultanates"
+  ],
+  "eyebrow": "Dynasties of the Deccan",
+  "title_html": "Nizam Shahi Sultanate",
+  "subtitle": "1490 – 1636 · Capital: Ahmadnagar",
+  "link_terms": [
+    "Nizam Shahi Sultanate",
+    "Nizam Shahis",
+    "Nizam Shahi",
+    "Ahmadnagar Sultanate"
+  ],
+  "blocks": [
+    {
+      "type": "facts",
+      "items": [
+        {
+          "key": "Founded",
+          "value": "c. 1490 · Malik Ahmad Nizam Shah",
+          "ref": "iranica-ahmadnagar"
+        },
+        {
+          "key": "Capital",
+          "value": "Ahmadnagar · founded c. 1495",
+          "ref": "iranica-ahmadnagar"
+        },
+        {
+          "key": "Period",
+          "value": "1490–1636",
+          "ref": "met-deccan-art"
+        },
+        {
+          "key": "Key regent",
+          "value": "Chand Bibi · defended Ahmadnagar",
+          "ref": "met-chand-bibi"
+        },
+        {
+          "key": "Key statesman",
+          "value": "Malik Ambar · d. 1626",
+          "ref": "met-malik-ambar"
+        },
+        {
+          "key": "Court culture",
+          "value": "Persianate learning · Deccani painting",
+          "ref": "iranica-ahmadnagar"
+        }
+      ]
+    },
+    {
+      "type": "narrative",
+      "tour_label": "The Ahmadnagar Story",
+      "tour": [
+        {
+          "id": "founding",
+          "label": "Founding"
+        },
+        {
+          "id": "court",
+          "label": "Court & Culture"
+        },
+        {
+          "id": "talikota",
+          "label": "Talikota"
+        },
+        {
+          "id": "chand-bibi",
+          "label": "Chand Bibi"
+        },
+        {
+          "id": "malik-ambar",
+          "label": "Malik Ambar"
+        },
+        {
+          "id": "end",
+          "label": "Mughal Conquest"
+        }
+      ],
+      "intro": "<p>The Nizam Shahis were one of the five states that emerged as Bahmani authority fractured at the end of the fifteenth century. From Ahmadnagar they controlled a strategically important western Deccan kingdom and built a court in which Persian connections, Deccani politics, painting and military resistance to Mughal expansion all became unusually visible.<cite data-ref=\"iranica-deccan\"></cite><cite data-ref=\"iranica-ahmadnagar\"></cite></p>",
+      "sections": [
+        {
+          "id": "founding",
+          "eyebrow": "Junnar → Ahmadnagar · c. 1490–1496",
+          "numeral_label": "Founding",
+          "title_html": "A Bahmani governor builds an <em>independent state</em>",
+          "sub": "Malik Ahmad turns provincial power into the Nizam Shahi Sultanate and gives a new capital his name",
+          "body": [
+            "Malik Ahmad Nizam al-Mulk had served as a Bahmani governor before the weakening of the central court gave provincial commanders room to act independently. By the 1490s he had established an autonomous state in the western Deccan. Around 1495 he founded Ahmadnagar on a strategically useful site, and the new city became the dynasty's capital and namesake.<cite data-ref=\"iranica-ahmadnagar\"></cite>",
+            "Ahmadnagar therefore belongs to the same political break-up that produced Bijapur, Berar, Bidar and Golconda. Treating these courts as a connected successor system, rather than isolated dynasties, makes the diplomacy and warfare of the sixteenth-century Deccan much easier to understand.<cite data-ref=\"iranica-deccan\"></cite>"
+          ],
+          "reveal": "reveal-left"
+        },
+        {
+          "id": "court",
+          "eyebrow": "Ahmadnagar · Sixteenth Century",
+          "numeral_label": "The Court",
+          "title_html": "A Persianate capital with a <em>Deccani style</em>",
+          "sub": "Learning, diplomacy, architecture and painting develop around the Nizam Shahi court",
+          "body": [
+            "Under Burhan Nizam Shah I, Ahmadnagar became a significant center of learning and culture. Persian migrants occupied important positions, relations with the Safavid world shaped court life, and the city's artistic production developed its own recognizable school.<cite data-ref=\"iranica-ahmadnagar\"></cite>",
+            "The surviving visual record includes the illustrated <em>Tarif-i Husain Shahi</em> and royal portraiture associated with the Ahmadnagar school. The Metropolitan Museum of Art identifies Ahmadnagar as one of the distinctive Deccani courts whose painting, architecture and material culture flourished after the Bahmani breakup.<cite data-ref=\"met-deccan-art\"></cite>"
+          ],
+          "reveal": "reveal-right"
+        },
+        {
+          "id": "talikota",
+          "eyebrow": "Deccan Confederacy · 1565",
+          "numeral_label": "Talikota",
+          "title_html": "Rival sultanates form a <em>temporary coalition</em>",
+          "sub": "Ahmadnagar, Bijapur and Golconda combine against Vijayanagara",
+          "body": [
+            "The Deccan sultanates were usually rivals, but they could cooperate when strategic interests aligned. In 1565 the rulers of Ahmadnagar, Bijapur and Golconda joined the confederacy that defeated Vijayanagara at the battle commonly known as Talikota, one of the major political turning points of the sixteenth-century plateau.<cite data-ref=\"iranica-deccan\"></cite>",
+            "The alliance did not erase interstate rivalry. Within a decade Ahmadnagar absorbed the neighboring Imad Shahi state of Berar, demonstrating how quickly coalition politics could give way to territorial competition.<cite data-ref=\"iranica-deccan\"></cite>"
+          ],
+          "reveal": "reveal-left"
+        },
+        {
+          "id": "chand-bibi",
+          "eyebrow": "Ahmadnagar · 1590s",
+          "numeral_label": "The Regent",
+          "title_html": "Chand Bibi defends the <em>fortress</em>",
+          "sub": "A Nizam Shahi princess becomes one of the best-known military and political figures of the Deccan",
+          "body": [
+            "Chand Bibi, daughter of Husain Nizam Shah I, had already served as regent in Bijapur before returning to Ahmadnagar during a period of succession crisis and Mughal pressure. The Metropolitan Museum of Art describes her as a major strategic and military figure who acted as regent and became celebrated for defending Ahmadnagar against Mughal attack.<cite data-ref=\"met-chand-bibi\"></cite>",
+            "Her later reputation became inseparable from Deccani visual culture: paintings repeatedly represented her on horseback and hawking, turning a historical regent into a durable artistic symbol of Ahmadnagar's resistance.<cite data-ref=\"met-chand-bibi\"></cite>"
+          ],
+          "reveal": "reveal-right"
+        },
+        {
+          "id": "malik-ambar",
+          "eyebrow": "Ahmadnagar · Early Seventeenth Century",
+          "numeral_label": "Malik Ambar",
+          "title_html": "An African-born commander becomes the <em>state's central power</em>",
+          "sub": "Malik Ambar rebuilds resistance after the Mughals capture Ahmadnagar city",
+          "body": [
+            "Akbar's forces captured Ahmadnagar city in 1600, but that did not immediately end the Nizam Shahi state. Malik Ambar, born in Ethiopia and brought to the Indian Ocean world through the slave trade before rising to nobility, became the decisive political and military figure of the surviving kingdom.<cite data-ref=\"iranica-ahmadnagar\"></cite><cite data-ref=\"met-malik-ambar\"></cite>",
+            "He assembled a powerful military following and effectively governed through Nizam Shahi rulers, frustrating Mughal attempts to turn the capture of the capital into complete annexation. His career is one of the clearest examples of the unusual social mobility and cosmopolitan political networks of the early modern Deccan.<cite data-ref=\"met-malik-ambar\"></cite>"
+          ],
+          "reveal": "reveal-left"
+        },
+        {
+          "id": "end",
+          "eyebrow": "Mughal Expansion · 1636",
+          "numeral_label": "The End",
+          "title_html": "The Nizam Shahi state is <em>absorbed</em>",
+          "sub": "Decades of resistance postpone, but do not prevent, Mughal consolidation in the western Deccan",
+          "body": [
+            "Iranica notes that formal Mughal annexation followed only decades after Ahmadnagar city first fell, while the Met dates the Nizam Shahi polity to 1490–1636. By 1636 the independent sultanate had ended and its territories were drawn into the larger Mughal contest for the Deccan.<cite data-ref=\"iranica-ahmadnagar\"></cite><cite data-ref=\"met-deccan-art\"></cite>",
+            "Its legacy is larger than a lost kingdom: Ahmadnagar contributed a distinct school of Deccani painting, produced important Persianate architecture and literature, and left the political memory of Chand Bibi and Malik Ambar as two of the region's most consequential figures.<cite data-ref=\"iranica-ahmadnagar\"></cite>"
+          ],
+          "reveal": "reveal-right"
+        }
+      ]
+    },
+    {
+      "type": "timeline",
+      "eyebrow": "A Dynastic Chronology",
+      "title": "The Nizam Shahi Sultanate in dates",
+      "items": [
+        {
+          "year": "c. 1490",
+          "text": "Malik Ahmad Nizam al-Mulk establishes an independent western Deccan state as Bahmani authority fragments.<cite data-ref=\"met-deccan-art\"></cite>"
+        },
+        {
+          "year": "c. 1495–1496",
+          "text": "Malik Ahmad founds Ahmadnagar and makes the new city his capital.<cite data-ref=\"iranica-ahmadnagar\"></cite>"
+        },
+        {
+          "year": "1510–1553",
+          "text": "Under Burhan Nizam Shah I, Ahmadnagar develops into a major center of Persianate learning and culture.<cite data-ref=\"iranica-ahmadnagar\"></cite>"
+        },
+        {
+          "year": "1565",
+          "text": "Ahmadnagar joins Bijapur and Golconda in the coalition that defeats Vijayanagara.<cite data-ref=\"iranica-deccan\"></cite>"
+        },
+        {
+          "year": "1574",
+          "text": "Ahmadnagar absorbs the neighboring Imad Shahi state of Berar.<cite data-ref=\"iranica-deccan\"></cite>"
+        },
+        {
+          "year": "1590s",
+          "text": "Chand Bibi serves as regent and becomes famous for defending Ahmadnagar against Mughal pressure.<cite data-ref=\"met-chand-bibi\"></cite>"
+        },
+        {
+          "year": "1600",
+          "text": "Akbar's forces capture Ahmadnagar city, but the Nizam Shahi state survives outside the capital.<cite data-ref=\"iranica-ahmadnagar\"></cite>"
+        },
+        {
+          "year": "Early 1600s",
+          "text": "Malik Ambar becomes the dominant statesman and military leader of Nizam Shahi resistance.<cite data-ref=\"met-malik-ambar\"></cite>"
+        },
+        {
+          "year": "1636",
+          "text": "The independent Nizam Shahi Sultanate ends under Mughal expansion.<cite data-ref=\"met-deccan-art\"></cite>"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "id": "iranica-ahmadnagar",
+      "text": "Ziyaud-Din A. Desai, “Ahmadnagar,” Encyclopaedia Iranica.",
+      "url": "https://www.iranicaonline.org/articles/ahmadnagar/"
+    },
+    {
+      "id": "iranica-deccan",
+      "text": "Carl W. Ernst, “Deccan i. Political and Literary History,” Encyclopaedia Iranica.",
+      "url": "https://www.iranicaonline.org/articles/deccan/deccan-i-political-and-literary-history/"
+    },
+    {
+      "id": "met-deccan-art",
+      "text": "Marika Sardar, “Islamic Art of the Deccan,” Heilbrunn Timeline of Art History, The Metropolitan Museum of Art.",
+      "url": "https://www.metmuseum.org/toah/hd/decc/hd_decc.htm"
+    },
+    {
+      "id": "met-chand-bibi",
+      "text": "Courtney A. Stewart, “Feminine Power of the Deccan: Chand Bibi and Mah Laqa Bai Chanda,” The Metropolitan Museum of Art, 2015.",
+      "url": "https://www.metmuseum.org/perspectives/feminine-power"
+    },
+    {
+      "id": "met-malik-ambar",
+      "text": "Courtney A. Stewart, “Habshi and Sidi: Africans in the Deccan,” The Metropolitan Museum of Art, 2015.",
+      "url": "https://www.metmuseum.org/perspectives/habshi-and-sidi"
+    }
+  ]
+}
