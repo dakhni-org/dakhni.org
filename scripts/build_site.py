@@ -15,6 +15,7 @@ import json
 import os
 import re
 import struct
+from urllib.parse import quote
 from typing import Any, Dict, List, Optional
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -1002,8 +1003,8 @@ def head(page, url_to_page: Dict[str, Any]):
     title = page["title"]
     full_title = page.get("seo_title") or ("Dakhni.org — Heritage of the Deccan" if url == "/" else f'{title} — Dakhni.org')
     desc = page.get("description", "")
-    cover = page.get("cover") or ""
-    og_img = ("https://dakhni.org" + cover) if cover.startswith("/") else (cover or "https://dakhni.org/assets/social-preview.png")
+    social_name = "home" if url == "/" else url.strip("/").replace("/", "-")
+    og_img = f"https://dakhni.org/assets/social/{social_name}.jpg"
     page_tags = page.get("tags", [])
     all_keywords = KEYWORDS + (", " + ", ".join(page_tags) if page_tags else "")
     jsonld = [] if url == "/" else [breadcrumb_jsonld(page, url_to_page)]
@@ -1060,10 +1061,16 @@ def head(page, url_to_page: Dict[str, Any]):
   <meta property="og:description" content="{esc(desc)}"/>
   <meta property="og:url" content="{canonical}"/>
   <meta property="og:image" content="{esc(og_img)}"/>
+  <meta property="og:image:secure_url" content="{esc(og_img)}"/>
+  <meta property="og:image:type" content="image/jpeg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:alt" content="{esc(title)} — Dakhni.org"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="{esc(full_title)}"/>
   <meta name="twitter:description" content="{esc(desc)}"/>
   <meta name="twitter:image" content="{esc(og_img)}"/>
+  <meta name="twitter:image:alt" content="{esc(title)} — Dakhni.org"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&family=Lateef:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
@@ -1101,6 +1108,21 @@ def render(page, nav_html, url_to_page, subnav_map, term_to_url=None):
     body = render_crosslinks(body, page.get("url", ""), term_to_url or {})
     crumb = page.get("crumb_html") or render_auto_crumb(page, url_to_page)
     subnav = page.get("subnav_html") or render_auto_subnav(page, subnav_map, url_to_page)
+    page_url = "https://dakhni.org" + page["url"]
+    share_title = page.get("seo_title") or page["title"] + " — Dakhni.org"
+    encoded_url, encoded_title = quote(page_url, safe=""), quote(share_title, safe="")
+    share_html = f'''<aside class="page-share" aria-label="Share this page">
+  <span class="page-share-label">Share this page</span>
+  <div class="page-share-links">
+    <a href="https://api.whatsapp.com/send?text={encoded_title}%20{encoded_url}" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp">WhatsApp</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={encoded_url}" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">Facebook</a>
+    <a href="https://t.me/share/url?url={encoded_url}&amp;text={encoded_title}" target="_blank" rel="noopener noreferrer" aria-label="Share on Telegram">Telegram</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url={encoded_url}" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn">LinkedIn</a>
+    <button type="button" class="page-share-native" data-share-url="{esc(page_url)}" data-share-title="{esc(share_title)}" hidden>More options</button>
+    <button type="button" class="page-share-copy" data-share-url="{esc(page_url)}">Copy link</button>
+  </div>
+  <span class="page-share-feedback" role="status" aria-live="polite"></span>
+</aside>'''
     out = [head(page, url_to_page), "<body>", AI_NOTICE, nav_html]
     if page.get("level") == "home":
         out.append(page.get("hero_html", ""))
@@ -1108,6 +1130,7 @@ def render(page, nav_html, url_to_page, subnav_map, term_to_url=None):
         out.append(body)
         if refs_html:
             out.append(refs_html)
+        out.append(share_html)
         out.append('</main>')
     else:
         out.append(hero(page))
@@ -1119,6 +1142,7 @@ def render(page, nav_html, url_to_page, subnav_map, term_to_url=None):
             out.append(refs_html)
         if page.get("page_type") in LEAF_PAGE_TYPES:
             out.append('<p class="editorial-credit">Compiled by <a href="/about/">Syed Azhar Farhan</a> for Dakhni.org. See the references above where provided and <a href="/ai-policy/">how this archive is made</a>.</p>')
+        out.append(share_html)
         out.append('</main>')
     if page.get("page_type") in LEAF_PAGE_TYPES:
         out.append(comments(page))

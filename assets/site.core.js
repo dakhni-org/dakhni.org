@@ -273,3 +273,25 @@
     })
     .catch(function(){ /* Leave the original SVG image as a safe fallback. */ });
 })();
+
+/* Share the canonical page URL; mobile visitors can use their native share sheet. */
+(function(){
+  var area = document.querySelector('.page-share');
+  if (!area) return;
+  var feedback = area.querySelector('.page-share-feedback');
+  var more = area.querySelector('.page-share-native');
+  if (navigator.share) {
+    more.hidden = false;
+    more.addEventListener('click', function(){
+      navigator.share({title:more.dataset.shareTitle,url:more.dataset.shareUrl}).catch(function(){});
+    });
+  }
+  area.querySelector('.page-share-copy').addEventListener('click', function(){
+    var url = this.dataset.shareUrl;
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(url).then(function(){feedback.textContent='Link copied';}, function(){feedback.textContent='Copy this link: '+url;});
+    } else {
+      feedback.textContent='Copy this link: '+url;
+    }
+  });
+})();

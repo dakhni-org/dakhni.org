@@ -28,3 +28,13 @@ html, body { color-scheme: only light !important; }
 /* Make the source and editorial responsibility clear on article pages. */
 .editorial-credit{max-width:840px;margin:2rem auto;padding:1.1rem 1.3rem;border-top:1px solid rgba(127,93,43,.25);font:400 .88rem/1.65 Inter,sans-serif;color:#5a5143}
 .editorial-credit a{color:#76501e;text-decoration:underline;text-underline-offset:.18em}
+
+/* Page sharing */
+.page-share{margin:3rem 0 1rem;padding:1.2rem 1.4rem;border:1px solid rgba(174,140,91,.45);border-radius:8px;background:rgba(174,140,91,.07)}
+.page-share-label{display:block;margin-bottom:.85rem;color:#ae874f;font-family:Inter,sans-serif;font-size:.88rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase}
+.page-share-links{display:flex;flex-wrap:wrap;gap:.55rem}
+.page-share-links a,.page-share-links button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:.55rem .9rem;border:1px solid #a08358;border-radius:5px;background:transparent;color:inherit;font:500 .9rem Inter,sans-serif;text-decoration:none;cursor:pointer}
+.page-share-links a:hover,.page-share-links button:hover,.page-share-links a:focus-visible,.page-share-links button:focus-visible{background:#a08358;color:#171510;outline-offset:3px}
+.page-share-links [hidden]{display:none}
+.page-share-feedback{display:block;margin-top:.3rem;font: .85rem Inter,sans-serif}
+.page-share-feedback:empty{display:none}
