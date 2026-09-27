@@ -3,7 +3,7 @@
   "url": "/heritage/cuisine/biryani/",
   "section": "Heritage",
   "title": "Biryani",
-  "description": "Hyderabadi dum biryani is the signature dish of the Deccan: meat marinated raw, layered with parboiled rice, sealed under a dough lid and cooked over slow embers — the kachchi technique that Hyderabad insists is the only true biryani.",
+  "description": "Hyderabadi biryani in historical context: kachchi and pakki methods, dum cooking, and evidence from nineteenth-century Hyderabadi culinary texts.",
   "dedication": "In memory of the Asaf Jahi dynasty",
   "sort_order": 10,
   "tags": [
@@ -24,45 +24,95 @@
       "type": "facts",
       "items": [
         {
-          "key": "Signature of",
-          "value": "Hyderabad",
-          "ref": "britannica-biryani"
+          "key": "City tradition",
+          "value": "Hyderabad and the wider Deccan",
+          "ref": "sahapedia-hyd-cuisine"
         },
         {
-          "key": "Technique",
-          "value": "Kachchi dum — raw-marinated, sealed and slow-cooked",
-          "ref": "britannica-biryani"
+          "key": "Core technique",
+          "value": "Dum — a sealed vessel and controlled heat",
+          "ref": "sahapedia-biryani-history"
         },
         {
-          "key": "Origin",
-          "value": "Persian court technique met Telugu spice under the Asaf Jahi kitchen",
-          "ref": "collingham-2006"
+          "key": "Hyderabadi distinction",
+          "value": "Kachchi and pakki styles are both documented categories",
+          "ref": "sahapedia-biryani-history"
+        },
+        {
+          "key": "Historical evidence",
+          "value": "Late-19th-century Hyderabadi cookbooks preserve many named biryani preparations",
+          "ref": "sahapedia-hyd-cuisine"
         }
       ]
     },
     {
       "type": "narrative",
-      "intro": "<p><em>Biryani</em> is the signature dish of Hyderabadi cuisine, born where the Persian khansamas of the Asaf Jahi court met the Telugu cooks of the Deccan plateau. Hyderabad's own style is <em>kachchi dum</em>: meat marinated raw, layered with rice that has been parboiled separately, sealed under a dough lid, and cooked over slow embers until the steam alone has done the work.<cite data-ref=\"britannica-biryani collingham-2006\"></cite></p>",
+      "tour_label": "Reading Hyderabadi Biryani",
+      "tour": [
+        {
+          "id": "s1",
+          "label": "The Historical Record"
+        },
+        {
+          "id": "s2",
+          "label": "Dum"
+        },
+        {
+          "id": "s3",
+          "label": "Kachchi & Pakki"
+        },
+        {
+          "id": "s4",
+          "label": "A Family of Biryanis"
+        }
+      ],
+      "intro": "<p>Hyderabadi biryani is often reduced to a single origin story, but the historical record is more interesting. Nizam-era culinary texts show a courtly food culture with many biryani preparations rather than one immutable recipe. A late-nineteenth-century cookbook associated with elite Hyderabad contains a long chapter of biryanis alongside dozens of other rice dishes, illustrating how varied the category had already become.<cite data-ref=\"sahapedia-hyd-cuisine\"></cite></p>",
       "sections": [
         {
           "id": "s1",
-          "eyebrow": "Kachchi Dum",
-          "numeral_label": "The Technique",
-          "title_html": "Meat, rice, and <em>patience</em>",
-          "sub": "Nothing about it is hurried",
+          "eyebrow": "Hyderabad · Culinary Texts",
+          "numeral_label": "The Historical Record",
+          "title_html": "A dish preserved in <em>cookbooks</em>, not only legend",
+          "sub": "Nizam-era recipe collections show variety rather than a single fixed formula",
           "body": [
-            "The meat is marinated raw in yoghurt, ginger, fried onions and spice, then layered with parboiled rice and sealed under a dough lid to cook over slow embers. Done well, the meat is melting, the rice is dry-grained, and every spoonful carries saffron at one bite and chilli at the next.<cite data-ref=\"britannica-biryani collingham-2006\"></cite>"
+            "Sahapedia’s study of Hyderabadi culinary texts describes <em>Khwān Neʿmat-e Āṣafiya</em>, a large late-nineteenth-century cookbook compiled in Hyderabad. Its biryani chapter runs for more than two dozen pages and includes many named preparations: chicken, fish, kofta, dum-pukht and other courtly variants. That evidence matters because it replaces the familiar “one royal recipe” story with something closer to a culinary system — a repertoire that cooks adapted to occasion, ingredient and patron.<cite data-ref=\"sahapedia-hyd-cuisine\"></cite>",
+            "The same source places biryani inside a much wider Hyderabadi table that also included numerous kitcharis, kababs, sweets, breakfasts, chutneys and pickles. In other words, biryani became Hyderabad’s emblematic dish within an already diverse food culture; it was not the whole cuisine by itself.<cite data-ref=\"sahapedia-hyd-cuisine\"></cite>"
           ],
           "reveal": "reveal-right"
         },
         {
           "id": "s2",
-          "eyebrow": "A Distinction Hyderabad Insists On",
-          "numeral_label": "Kachchi vs. Pakki",
-          "title_html": "Raw <em>marinade</em>, not pre-cooked meat",
-          "sub": "The difference between a Hyderabadi feast and any other biryani",
+          "eyebrow": "Dum",
+          "numeral_label": "The Cooking Principle",
+          "title_html": "The sealed pot is the <em>method</em>",
+          "sub": "Steam, timing and controlled heat bind the rice and meat together",
           "body": [
-            "A Dakhni feast is judged by the <em>kachchi</em> biryani, in which raw meat is layered with rice and cooked together in one sealed pot. Anything made instead with meat cooked separately before layering is <em>pakki</em> — and Hyderabad will tell you the difference matters."
+            "The defining technique is <em>dum</em>: the cooking vessel is sealed so moisture and aroma remain trapped while the food finishes over controlled heat. Historical discussions of biryani describe partially cooked rice, fat and aromatics being assembled with the main preparation before the vessel is sealed with dough and allowed to finish slowly.<cite data-ref=\"sahapedia-biryani-history\"></cite>",
+            "This is why biryani is not simply “spiced rice with meat.” The rice and the main preparation are brought to different stages before sealing, and the final cooking has to finish them together. The technique rewards control rather than aggressive heat; too much heat can finish the rice before the meat, while too little can leave the lower layer underdone."
+          ],
+          "reveal": "reveal-left"
+        },
+        {
+          "id": "s3",
+          "eyebrow": "Kachchi & Pakki",
+          "numeral_label": "Two Methods",
+          "title_html": "Raw-marinated or <em>pre-cooked</em>",
+          "sub": "The distinction is technical, not a test of cultural authenticity",
+          "body": [
+            "Biryani traditions commonly distinguish <em>kachchi</em> and <em>pakki</em> methods. In the kachchi style, marinated raw meat is assembled with rice before the sealed cooking stage; in pakki styles, the principal meat preparation is cooked first and then combined with rice for the final dum. Sahapedia documents this distinction while discussing regional biryani traditions.<cite data-ref=\"sahapedia-biryani-history\"></cite>",
+            "Hyderabad is especially associated with kachchi dum, but Dakhni.org avoids treating one technique as the only “real” biryani. Historical Hyderabadi cookbooks themselves preserve multiple preparations, so variation is part of the tradition rather than evidence that the tradition has been corrupted.<cite data-ref=\"sahapedia-hyd-cuisine\"></cite>"
+          ],
+          "reveal": "reveal-right"
+        },
+        {
+          "id": "s4",
+          "eyebrow": "The Deccan Table",
+          "numeral_label": "A Family of Biryanis",
+          "title_html": "One name, many <em>preparations</em>",
+          "sub": "The archival record preserves a repertoire, not a single standardized recipe",
+          "body": [
+            "The strongest reason to study Hyderabadi biryani historically is the sheer variety visible in the recipe literature. The nineteenth-century material discussed by Sahapedia includes named biryanis using different meats, cuts and dum-pukht treatments, showing that elite Hyderabad understood biryani as a flexible category with many compositions.<cite data-ref=\"sahapedia-hyd-cuisine\"></cite>",
+            "That makes the modern kachchi dum biryani easier to place: it is a particularly important Hyderabadi expression of a much larger Persianate and South Asian rice-cooking tradition. The Deccan contribution lies not in a simplistic invention story, but in the way Hyderabad absorbed courtly techniques, regional ingredients and local preference into a style that became inseparable from the city’s identity.<cite data-ref=\"collingham-2006 sahapedia-hyd-cuisine\"></cite>"
           ],
           "reveal": "reveal-left"
         }
@@ -71,13 +121,18 @@
   ],
   "references": [
     {
-      "id": "britannica-biryani",
-      "text": "Encyclopaedia Britannica, \"Biryani.\"",
-      "url": "https://www.britannica.com/topic/biryani"
-    },
-    {
       "id": "collingham-2006",
       "text": "Lizzie Collingham, Curry: A Tale of Cooks and Conquerors, Oxford University Press, 2006."
+    },
+    {
+      "id": "sahapedia-hyd-cuisine",
+      "text": "Amanda Marie Lanzillo, “Hyderabadi Cuisine: Tracing its History through Culinary Texts,” Sahapedia.",
+      "url": "https://www.sahapedia.org/hyderabadi-cuisine-tracing-its-history-through-culinary-texts"
+    },
+    {
+      "id": "sahapedia-biryani-history",
+      "text": "Sahapedia, “The History of Biryani,” including discussion of dum, kachchi and pakki preparation traditions.",
+      "url": "https://www.sahapedia.org/the-history-of-biryani"
     }
   ]
 }
