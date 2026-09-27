@@ -177,6 +177,50 @@
         "noindex"
       ],
       "description": "Search indexing policy. noindex pages remain available to visitors but are omitted from the sitemap and automated cross-link target map."
+    },
+    "date_published": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "Original publication date for Article structured data, YYYY-MM-DD. Only set when known."
+    },
+    "date_modified": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "Most recent substantive review/update date for Article structured data, YYYY-MM-DD."
+    },
+    "social_image": {
+      "type": "string",
+      "description": "Optional absolute URL or root-relative path for the page's Open Graph/Twitter/Article image. Defaults to the generated page-specific social card."
+    },
+    "schema_about": {
+      "type": "array",
+      "description": "Optional entities the article is principally about, emitted as schema.org Article.about.",
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "name"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "Thing",
+              "Organization",
+              "Place",
+              "Person",
+              "CreativeWork"
+            ]
+          },
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
     }
   },
   "additionalProperties": false
