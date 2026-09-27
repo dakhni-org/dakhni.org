@@ -13,7 +13,7 @@ The site is organised into seven sections, each with an overview page and detail
 | Section | What's inside |
 | --- | --- |
 | **Heritage** | Language & poetry, cuisine, music, architecture, crafts, the Sufi tradition and festivals |
-| **Dynasties** | The royal houses of the Deccan — Bahmani, Qutb Shahi, Bidar Barid, Adil Shahi and the Asaf Jahi Nizams |
+| **Dynasties** | The Bahmani Sultanate, its five successor sultanates — Nizam Shahi Ahmadnagar, Adil Shahi Bijapur, Imad Shahi Berar, Barid Shahi Bidar, Qutb Shahi Golconda — and the later Asaf Jahi Nizams |
 | **Language** | Dakhni and the tongues of the plateau — Dakhni, Urdu, Faarsi (Persian) and Telugu |
 | **Sufism** | The saints of the Deccan — Burhanuddin Gharib, Bandanawaz Gisudaraz, Baba Sharfuddin and others |
 | **Cities** | The ten cities of the Dakhni heartland |
