@@ -27,6 +27,9 @@ KEYWORDS = ("Dakhni, Dakkani, Dakhini, Deccan, Deccani, Hyderabad, Hyderabadi, B
             "Nizam, Dakhni Urdu, Deccani Urdu, Deccan Sultanates, qawwali, dargah, Sufi "
             "shrines, biryani, haleem, Charminar, Golconda, Bidriware, Deccan heritage")
 FALLBACK_COVER = "/assets/dakhni-pattern.webp"
+AUTHOR_NAME = "Syed Azhar Farhan"
+AUTHOR_URL = "https://dakhni.org/about/#founder"
+EDITORIAL_METHOD_URL = "/editorial-methodology/"
 
 # Disqus shortname — register a free site at https://disqus.com/admin/create/
 # and replace this placeholder before comments will load. Until it's replaced,
@@ -289,6 +292,8 @@ def validate_page(page: Dict[str, Any], source: str) -> List[str]:
         val = page["tags"]
         if not isinstance(val, list) or any(not isinstance(x, str) for x in val):
             errors.append(f"{source}: field 'tags' must be an array of strings")
+    if "indexing" in page and page["indexing"] not in ("index", "noindex"):
+        errors.append(f"{source}: field 'indexing' must be 'index' or 'noindex'")
     url = page.get("url")
     if isinstance(url, str):
         if not url.startswith("/"):
@@ -457,6 +462,8 @@ def collect_link_terms(pages: List[Dict[str, Any]]) -> "tuple[Dict[str, str], Li
     term_to_url: Dict[str, str] = {}
     errors: List[str] = []
     for page in pages:
+        if page.get("indexing") == "noindex":
+            continue  # supporting pages stay available but do not become automated SEO link targets
         terms = page.get("link_terms")
         url = page.get("url")
         if not isinstance(terms, list) or not url:
@@ -812,7 +819,7 @@ def render_blocks(page: Dict[str, Any]) -> str:
 
 AI_NOTICE = '''<div id="ai-notice" class="ai-notice" role="status" hidden>
   <div class="ai-notice-inner">
-    <p class="ai-notice-text">This site's content is compiled with AI assistance from historical sources — we recommend verifying important facts independently.<a href="/ai-policy/">Read more</a></p>
+    <p class="ai-notice-text">AI assists research and drafting; Dakhni.org documents its sources, editorial method and corrections.<a href="/editorial-methodology/">How the archive is made</a></p>
     <button class="ai-notice-close" id="ai-notice-close" type="button" aria-label="Dismiss this notice">&times;</button>
   </div>
 </div>'''
@@ -960,6 +967,8 @@ def footer(dedication):
     <li><a href="/#quiz">Quiz</a></li>
     <li><a href="/about/">About</a></li>
     <li><a href="/ai-policy/">AI Policy</a></li>
+    <li><a href="/editorial-methodology/">Editorial Method</a></li>
+    <li><a href="/corrections/">Corrections</a></li>
     <li><a href="/privacy-policy/">Privacy Policy</a></li>
     <li><a href="/terms-and-conditions/">Terms and Conditions</a></li>
     <li><button type="button" class="privacy-settings" data-privacy-settings>Privacy settings</button></li>
@@ -1008,6 +1017,35 @@ def head(page, url_to_page: Dict[str, Any]):
     page_tags = page.get("tags", [])
     all_keywords = KEYWORDS + (", " + ", ".join(page_tags) if page_tags else "")
     jsonld = [] if url == "/" else [breadcrumb_jsonld(page, url_to_page)]
+    if page.get("page_type") in LEAF_PAGE_TYPES:
+        article_ld = {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": title,
+            "description": desc,
+            "mainEntityOfPage": canonical,
+            "url": canonical,
+            "author": {
+                "@type": "Person",
+                "name": AUTHOR_NAME,
+                "url": AUTHOR_URL,
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Dakhni.org",
+                "url": "https://dakhni.org/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://dakhni.org/assets/dakhni-org-logo.svg",
+                },
+            },
+            "isPartOf": {
+                "@type": "WebSite",
+                "name": "Dakhni.org",
+                "url": "https://dakhni.org/",
+            },
+        }
+        jsonld.append(f'<script type="application/ld+json">{json.dumps(article_ld, ensure_ascii=False)}</script>')
     if url == "/glossary/":
         entries = next((block.get("items", []) for block in page.get("blocks", []) if block.get("type") == "glossary"), [])
         terms_ld = {
@@ -1037,6 +1075,8 @@ def head(page, url_to_page: Dict[str, Any]):
         }
         jsonld.append(f'<script type="application/ld+json">{json.dumps(site_ld, ensure_ascii=False)}</script>')
     jsonld_html = "\n  ".join(j for j in jsonld if j)
+    robots = "noindex, follow" if page.get("indexing") == "noindex" else "index, follow, max-image-preview:large"
+    meta_author = AUTHOR_NAME if page.get("page_type") in LEAF_PAGE_TYPES else "Dakhni.org"
     glossary_css = '\n  <link rel="stylesheet" href="/assets/glossary.css"/>' if url == "/glossary/" else ""
     return f'''<!DOCTYPE html>
 <html lang="en">
@@ -1050,8 +1090,8 @@ def head(page, url_to_page: Dict[str, Any]):
   <link rel="manifest" href="/assets/site.webmanifest"/>
   <meta name="description" content="{esc(desc)}"/>
   <meta name="keywords" content="{esc(all_keywords)}"/>
-  <meta name="author" content="Dakhni.org"/>
-  <meta name="robots" content="index, follow, max-image-preview:large"/>
+  <meta name="author" content="{esc(meta_author)}"/>
+  <meta name="robots" content="{esc(robots)}"/>
   <meta name="theme-color" content="#1A1814"/>
   <link rel="canonical" href="{canonical}"/>
   <meta property="og:type" content="website"/>
@@ -1141,7 +1181,7 @@ def render(page, nav_html, url_to_page, subnav_map, term_to_url=None):
         if refs_html:
             out.append(refs_html)
         if page.get("page_type") in LEAF_PAGE_TYPES:
-            out.append('<p class="editorial-credit">Compiled by <a href="/about/">Syed Azhar Farhan</a> for Dakhni.org. See the references above where provided and <a href="/ai-policy/">how this archive is made</a>.</p>')
+            out.append('<p class="editorial-credit">Compiled and edited by <a href="/about/#founder">Syed Azhar Farhan</a> for Dakhni.org from the sources cited on this page. AI may assist research and drafting; see the <a href="/editorial-methodology/">editorial method</a>, <a href="/corrections/">corrections log</a>, and <a href="/ai-policy/">AI policy</a>.</p>')
         out.append(share_html)
         out.append('</main>')
     if page.get("page_type") in LEAF_PAGE_TYPES:
