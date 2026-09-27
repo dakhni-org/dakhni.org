@@ -1199,7 +1199,13 @@ def render(page, nav_html, url_to_page, subnav_map, term_to_url=None):
         if refs_html:
             out.append(refs_html)
         if page.get("page_type") in LEAF_PAGE_TYPES:
-            out.append('<p class="editorial-credit">Compiled and edited by <a href="/about/#founder">Syed Azhar Farhan</a> for Dakhni.org from the sources cited on this page. AI may assist research and drafting; see the <a href="/editorial-methodology/">editorial method</a>, <a href="/corrections/">corrections log</a>, and <a href="/ai-policy/">AI policy</a>.</p>')
+            editorial_credit = '<p class="editorial-credit">Compiled and edited by <a href="/about/#founder">Syed Azhar Farhan</a> for Dakhni.org from the sources cited on this page. AI may assist research and drafting; see the <a href="/editorial-methodology/">editorial method</a>, <a href="/corrections/">corrections log</a>, and <a href="/ai-policy/">AI policy</a>.'
+            if page.get("date_modified"):
+                editorial_credit += f' <span class="editorial-date">Last reviewed: <time datetime="{esc(page["date_modified"])}">{esc(page["date_modified"])}</time>.</span>'
+            elif page.get("date_published"):
+                editorial_credit += f' <span class="editorial-date">Published: <time datetime="{esc(page["date_published"])}">{esc(page["date_published"])}</time>.</span>'
+            editorial_credit += '</p>'
+            out.append(editorial_credit)
         out.append(share_html)
         out.append('</main>')
     if page.get("page_type") in LEAF_PAGE_TYPES:
