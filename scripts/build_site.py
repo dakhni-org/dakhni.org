@@ -1013,7 +1013,11 @@ def head(page, url_to_page: Dict[str, Any]):
     full_title = page.get("seo_title") or ("Dakhni.org — Heritage of the Deccan" if url == "/" else f'{title} — Dakhni.org')
     desc = page.get("description", "")
     social_name = "home" if url == "/" else url.strip("/").replace("/", "-")
-    og_img = f"https://dakhni.org/assets/social/{social_name}.jpg"
+    social_image = page.get("social_image")
+    if social_image:
+        og_img = social_image if social_image.startswith(("http://", "https://")) else "https://dakhni.org" + social_image
+    else:
+        og_img = f"https://dakhni.org/assets/social/{social_name}.jpg"
     page_tags = page.get("tags", [])
     all_keywords = KEYWORDS + (", " + ", ".join(page_tags) if page_tags else "")
     jsonld = [] if url == "/" else [breadcrumb_jsonld(page, url_to_page)]
@@ -1023,6 +1027,7 @@ def head(page, url_to_page: Dict[str, Any]):
             "@type": "Article",
             "headline": title,
             "description": desc,
+            "image": [og_img],
             "mainEntityOfPage": canonical,
             "url": canonical,
             "author": {
@@ -1045,6 +1050,19 @@ def head(page, url_to_page: Dict[str, Any]):
                 "url": "https://dakhni.org/",
             },
         }
+        if page.get("date_published"):
+            article_ld["datePublished"] = page["date_published"]
+        if page.get("date_modified"):
+            article_ld["dateModified"] = page["date_modified"]
+        if page.get("schema_about"):
+            article_ld["about"] = [
+                {
+                    "@type": item["type"],
+                    "name": item["name"],
+                    **({"url": item["url"]} if item.get("url") else {}),
+                }
+                for item in page["schema_about"]
+            ]
         jsonld.append(f'<script type="application/ld+json">{json.dumps(article_ld, ensure_ascii=False)}</script>')
     if url == "/glossary/":
         entries = next((block.get("items", []) for block in page.get("blocks", []) if block.get("type") == "glossary"), [])
