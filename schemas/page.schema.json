@@ -3,42 +3,126 @@
   "title": "Dakhni.org page",
   "description": "Content file schema for dakhni.org static site pages.",
   "type": "object",
-  "required": ["title", "description", "url", "section", "dedication"],
+  "required": [
+    "title",
+    "description",
+    "url",
+    "section",
+    "dedication"
+  ],
   "properties": {
     "page_type": {
       "type": "string",
-      "enum": ["home", "section_hub", "city_leaf", "saint_leaf", "institution_leaf", "heritage_leaf", "dynasty_leaf", "language_leaf", "sacred_site_leaf", "general_leaf"]
+      "enum": [
+        "home",
+        "section_hub",
+        "city_leaf",
+        "saint_leaf",
+        "institution_leaf",
+        "heritage_leaf",
+        "dynasty_leaf",
+        "language_leaf",
+        "sacred_site_leaf",
+        "general_leaf"
+      ]
     },
-    "title": {"type": "string"},
-    "seo_title": {"type": "string"},
-    "description": {"type": "string"},
-    "url": {"type": "string", "pattern": "^/(.*/)?$"},
-    "section": {"type": "string"},
-    "dedication": {"type": "string"},
-    "sort_order": {"type": "integer"},
-    "eyebrow": {"type": "string"},
-    "title_html": {"type": "string"},
-    "subtitle": {"type": "string"},
-    "urdu": {"type": "string"},
-    "cover": {"type": "string"},
-    "hero_html": {"type": "string"},
-    "level": {"type": "string"},
-    "extra_scripts": {"type": "array", "items": {"type": "string"}},
-    "tags": {"type": "array", "items": {"type": "string"}},
-    "body_html": {"type": "string"},
-    "crumb_html": {"type": "string"},
-    "subnav_html": {"type": "string"},
+    "title": {
+      "type": "string"
+    },
+    "seo_title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string",
+      "pattern": "^/(.*/)?$"
+    },
+    "section": {
+      "type": "string"
+    },
+    "dedication": {
+      "type": "string"
+    },
+    "sort_order": {
+      "type": "integer"
+    },
+    "eyebrow": {
+      "type": "string"
+    },
+    "title_html": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "urdu": {
+      "type": "string"
+    },
+    "cover": {
+      "type": "string"
+    },
+    "hero_html": {
+      "type": "string"
+    },
+    "level": {
+      "type": "string"
+    },
+    "extra_scripts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "body_html": {
+      "type": "string"
+    },
+    "crumb_html": {
+      "type": "string"
+    },
+    "subnav_html": {
+      "type": "string"
+    },
     "blocks": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["type"],
+        "required": [
+          "type"
+        ],
         "properties": {
-          "type": {"type": "string", "enum": ["html", "intro", "section", "cards", "facts", "timeline", "narrative", "glossary"]},
-          "html": {"type": "string"},
-          "title": {"type": "string"},
-          "eyebrow": {"type": "string"},
-          "items": {"type": "array"}
+          "type": {
+            "type": "string",
+            "enum": [
+              "html",
+              "intro",
+              "section",
+              "cards",
+              "facts",
+              "timeline",
+              "narrative",
+              "glossary"
+            ]
+          },
+          "html": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "eyebrow": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array"
+          }
         }
       }
     },
@@ -47,18 +131,29 @@
       "description": "Bibliography for this page. Every id must be cited at least once in the content, either via a <cite data-ref=\"id\"></cite> marker inside an html/section/timeline block, or via a facts item's 'ref' field.",
       "items": {
         "type": "object",
-        "required": ["id", "text"],
+        "required": [
+          "id",
+          "text"
+        ],
         "properties": {
-          "id": {"type": "string"},
-          "text": {"type": "string"},
-          "url": {"type": "string"}
+          "id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
         }
       }
     },
     "link_terms": {
       "type": "array",
       "description": "Exact-phrase names for this page (its title and natural variants). Any of these phrases found as plain text on another page is auto-linked to this page's url, once per page.",
-      "items": {"type": "string"}
+      "items": {
+        "type": "string"
+      }
     },
     "no_subnav": {
       "type": "boolean",
@@ -71,7 +166,17 @@
     "redirect_from": {
       "type": "array",
       "description": "Old URLs this page used to live at, e.g. because its URL was later changed. A small static redirect stub (meta refresh + canonical, noindex) is written at each old URL, pointing at this page's current url -- so a moved page's previously published address doesn't 404 for bookmarks or already-indexed search results.",
-      "items": {"type": "string"}
+      "items": {
+        "type": "string"
+      }
+    },
+    "indexing": {
+      "type": "string",
+      "enum": [
+        "index",
+        "noindex"
+      ],
+      "description": "Search indexing policy. noindex pages remain available to visitors but are omitted from the sitemap and automated cross-link target map."
     }
   },
   "additionalProperties": false
