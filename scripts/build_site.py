@@ -1293,7 +1293,7 @@ def write_sitemap(pages: List[Dict[str, Any]], page_files: Dict[str, str]) -> No
     entries = []
     for page in sorted(pages, key=lambda p: p.get("url", "")):
         url = page.get("url")
-        if not url:
+        if not url or page.get("indexing") == "noindex":
             continue
         jf = page_files.get(url)
         lastmod = git_lastmod(jf) if jf else today
