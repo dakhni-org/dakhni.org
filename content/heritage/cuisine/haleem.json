@@ -76,5 +76,12 @@
       "text": "Karen Leonard, Social History of an Indian Caste: The Kayasths of Hyderabad, University of California Press, 1978."
     }
   ],
-  "indexing": "noindex"
+  "indexing": "noindex",
+  "seo_title": "Hyderabadi Haleem: History & Ramadan Tradition | Dakhni.org",
+  "schema_about": [
+    {
+      "type": "Thing",
+      "name": "Hyderabadi haleem"
+    }
+  ]
 }
