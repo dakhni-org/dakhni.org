@@ -1,0 +1,224 @@
+{
+  "page_type": "dynasty_leaf",
+  "url": "/dynasties/imad-shahi/",
+  "section": "Dynasties",
+  "title": "Imad Shahi Sultanate of Berar (1491–1574)",
+  "seo_title": "Imad Shahi Sultanate of Berar (1491–1574) | Dakhni.org",
+  "description": "The Imad Shahi Sultanate of Berar (1491–1574): a northern Bahmani successor state based at Elichpur, founded by the former Bahmani governor Fathullah Imad al-Mulk and absorbed by Ahmadnagar in 1574.",
+  "dedication": "In memory of the Asaf Jahi dynasty",
+  "sort_order": 40,
+  "date_published": "2026-09-27",
+  "date_modified": "2026-09-27",
+  "social_image": "/assets/social/dynasties.jpg",
+  "schema_about": [
+    {
+      "type": "Organization",
+      "name": "Imad Shahi Sultanate of Berar"
+    }
+  ],
+  "tags": [
+    "Imad Shahi",
+    "Berar",
+    "Elichpur",
+    "Achalpur",
+    "Deccan Sultanates"
+  ],
+  "eyebrow": "Dynasties of the Deccan",
+  "title_html": "Imad Shahi Sultanate",
+  "subtitle": "1491 – 1574 · Capital: Elichpur (Achalpur), Berar",
+  "link_terms": [
+    "Imad Shahi Sultanate",
+    "Imad Shahis",
+    "Imad Shahi",
+    "Berar Sultanate"
+  ],
+  "blocks": [
+    {
+      "type": "facts",
+      "items": [
+        {
+          "key": "Founded",
+          "value": "1491 · Fathullah Imad al-Mulk",
+          "ref": "bosworth-1996"
+        },
+        {
+          "key": "Region",
+          "value": "Berar · northern Deccan",
+          "ref": "iranica-deccan"
+        },
+        {
+          "key": "Capital",
+          "value": "Elichpur · modern Achalpur",
+          "ref": "bosworth-1996"
+        },
+        {
+          "key": "Origin",
+          "value": "Former Bahmani province",
+          "ref": "iranica-bahmanid"
+        },
+        {
+          "key": "Duration",
+          "value": "c. 83 years",
+          "ref": "bosworth-1996"
+        },
+        {
+          "key": "Absorbed",
+          "value": "1574 · by Ahmadnagar",
+          "ref": "iranica-deccan"
+        }
+      ]
+    },
+    {
+      "type": "narrative",
+      "tour_label": "The Berar Story",
+      "tour": [
+        {
+          "id": "province",
+          "label": "Bahmani Berar"
+        },
+        {
+          "id": "independence",
+          "label": "Independence"
+        },
+        {
+          "id": "elichpur",
+          "label": "Elichpur"
+        },
+        {
+          "id": "rivalries",
+          "label": "Rivalries"
+        },
+        {
+          "id": "end",
+          "label": "1574"
+        },
+        {
+          "id": "legacy",
+          "label": "Legacy"
+        }
+      ],
+      "intro": "<p>The Imad Shahis ruled Berar, the northernmost of the five states created by the breakup of Bahmani power. Their kingdom was shorter-lived and is less richly documented than Bijapur, Ahmadnagar or Golconda, but it is essential to the political map of the sixteenth-century Deccan: without Berar, the standard list of the five successor sultanates is incomplete.<cite data-ref=\"iranica-deccan\"></cite><cite data-ref=\"iranica-bahmanid\"></cite></p>",
+      "sections": [
+        {
+          "id": "province",
+          "eyebrow": "Northern Deccan · Fifteenth Century",
+          "numeral_label": "The Province",
+          "title_html": "Berar begins as a <em>Bahmani frontier</em>",
+          "sub": "A large northern province becomes one of the power bases from which the Bahmani kingdom fragments",
+          "body": [
+            "Berar formed the northern part of the Bahmani realm. Iranica describes the Bahmani state at its height as extending northward into Berar, while the administrative system placed major provinces under powerful governors whose offices could become increasingly autonomous as the center weakened.<cite data-ref=\"iranica-bahmanid\"></cite>",
+            "That provincial structure matters because the five successor states did not appear from nowhere. They grew out of regional commands that already possessed soldiers, revenue networks and local political authority.<cite data-ref=\"iranica-deccan\"></cite>"
+          ],
+          "reveal": "reveal-left"
+        },
+        {
+          "id": "independence",
+          "eyebrow": "Berar · 1491",
+          "numeral_label": "Independence",
+          "title_html": "Fathullah Imad al-Mulk establishes a <em>separate principality</em>",
+          "sub": "A former Bahmani governor turns Berar into an independent successor state",
+          "body": [
+            "Dynastic manuals identify Fathullah, also known as Darya Khan and titled Imad al-Mulk, as the Bahmani governor whose family established independent rule in Berar. His line adopted the title Imad Shahi and joined the other provincial houses that were replacing Bahmani authority around the turn of the sixteenth century.<cite data-ref=\"bosworth-1996\"></cite>",
+            "The dynasty's chronology is commonly given as 1491–1574. That short span helps explain why Berar left a smaller monumental and literary footprint than the longer-lived courts of Bijapur and Golconda, even though it was one of the canonical five Deccan successor states.<cite data-ref=\"bosworth-1996\"></cite><cite data-ref=\"iranica-deccan\"></cite>"
+          ],
+          "reveal": "reveal-right"
+        },
+        {
+          "id": "elichpur",
+          "eyebrow": "Berar · Elichpur",
+          "numeral_label": "The Capital",
+          "title_html": "Elichpur anchors the <em>northern sultanate</em>",
+          "sub": "The Imad Shahis rule from the city now known as Achalpur in Maharashtra",
+          "body": [
+            "The Imad Shahi capital was Elichpur, modern Achalpur. From there the dynasty governed a broad northern-Deccan zone that connected the central plateau with routes toward Khandesh and the regions north of the Tapti and Godavari systems.<cite data-ref=\"bosworth-1996\"></cite>",
+            "The kingdom's location also made it vulnerable. Berar lay between ambitious neighbors, and its rulers had to navigate the same shifting alliances and conflicts that defined relations among Ahmadnagar, Bijapur, Bidar and Golconda.<cite data-ref=\"sherwani-joshi-1973\"></cite>"
+          ],
+          "reveal": "reveal-left"
+        },
+        {
+          "id": "rivalries",
+          "eyebrow": "Five Sultanates · Sixteenth Century",
+          "numeral_label": "Rivalries",
+          "title_html": "A smaller court inside a <em>competitive system</em>",
+          "sub": "Berar's history is shaped by pressure from stronger neighboring sultanates",
+          "body": [
+            "The five Deccan sultanates were bound together by diplomacy, marriage, war and temporary coalition. Berar, with fewer resources than some of its neighbors, repeatedly faced pressure from the Adil Shahi and Nizam Shahi states.<cite data-ref=\"bosworth-1996\"></cite>",
+            "This regional competition is why the Deccan Sultanates are best understood as a system. Ahmadnagar, Bijapur and Golconda could unite against Vijayanagara in 1565 while still competing with one another and with Berar for territory and influence.<cite data-ref=\"iranica-deccan\"></cite>"
+          ],
+          "reveal": "reveal-right"
+        },
+        {
+          "id": "end",
+          "eyebrow": "Berar · 1574",
+          "numeral_label": "The End",
+          "title_html": "Ahmadnagar absorbs <em>Berar</em>",
+          "sub": "The Nizam Shahis end the Imad Shahi line and expand northward",
+          "body": [
+            "In 1574 the Nizam Shahi kingdom of Ahmadnagar absorbed Berar. Iranica lists the event alongside the later conquest of Bidar by Bijapur as one of the major consolidations among the successor states.<cite data-ref=\"iranica-deccan\"></cite>",
+            "Bosworth's dynastic chronology likewise ends the Imad Shahi line in 1574 with Nizam Shahi conquest. Berar then became part of the wider struggle between Ahmadnagar and the Mughals as imperial power moved deeper into the Deccan.<cite data-ref=\"bosworth-1996\"></cite>"
+          ],
+          "reveal": "reveal-left"
+        },
+        {
+          "id": "legacy",
+          "eyebrow": "The Deccan Sultanates",
+          "numeral_label": "Legacy",
+          "title_html": "A short dynasty that completes the <em>five-state map</em>",
+          "sub": "Berar is easily omitted from popular summaries, but not from the historical structure of the post-Bahmani Deccan",
+          "body": [
+            "The Imad Shahis matter less because of a single famous monument than because they show how the Bahmani state fragmented: provincial power hardened into multiple courts, each with its own territory and ruling house. Standard scholarly accounts name Berar together with Ahmadnagar, Bijapur, Bidar and Golconda as the five successor sultanates.<cite data-ref=\"iranica-bahmanid\"></cite><cite data-ref=\"iranica-deccan\"></cite>",
+            "Restoring Berar to that sequence also clarifies later consolidation. Its absorption by Ahmadnagar in 1574 reduced five successor sultanates to four before Bidar, Ahmadnagar, Bijapur and Golconda in turn disappeared into larger regional empires.<cite data-ref=\"sherwani-joshi-1973\"></cite>"
+          ],
+          "reveal": "reveal-right"
+        }
+      ]
+    },
+    {
+      "type": "timeline",
+      "eyebrow": "A Dynastic Chronology",
+      "title": "The Imad Shahi Sultanate in dates",
+      "items": [
+        {
+          "year": "15th century",
+          "text": "Berar forms the northern region of the Bahmani Sultanate and is governed through the Bahmani provincial system.<cite data-ref=\"iranica-bahmanid\"></cite>"
+        },
+        {
+          "year": "1491",
+          "text": "Fathullah Imad al-Mulk's house establishes independent Imad Shahi rule in Berar, with Elichpur as capital.<cite data-ref=\"bosworth-1996\"></cite>"
+        },
+        {
+          "year": "Early 1500s",
+          "text": "The Imad Shahis operate as one of the five successor states created by the fragmentation of Bahmani authority.<cite data-ref=\"iranica-deccan\"></cite>"
+        },
+        {
+          "year": "Sixteenth century",
+          "text": "Berar navigates recurring rivalry with the neighboring Adil Shahi and Nizam Shahi states.<cite data-ref=\"sherwani-joshi-1973\"></cite>"
+        },
+        {
+          "year": "1574",
+          "text": "The Nizam Shahis of Ahmadnagar conquer and absorb Berar, ending independent Imad Shahi rule.<cite data-ref=\"iranica-deccan\"></cite>"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "id": "iranica-deccan",
+      "text": "Carl W. Ernst, “Deccan i. Political and Literary History,” Encyclopaedia Iranica.",
+      "url": "https://www.iranicaonline.org/articles/deccan/deccan-i-political-and-literary-history/"
+    },
+    {
+      "id": "iranica-bahmanid",
+      "text": "Noorul Hasan Ansari, “Bahmanid Dynasty,” Encyclopaedia Iranica.",
+      "url": "https://www.iranicaonline.org/articles/bahmanid-dynasty-a-dynasty-founded-in-748-1347-in-the-deccan-sanskrit-daksia-lit/"
+    },
+    {
+      "id": "bosworth-1996",
+      "text": "C. E. Bosworth, The New Islamic Dynasties: A Chronological and Genealogical Manual, Edinburgh University Press, 1996, entry on the Imad Shahis."
+    },
+    {
+      "id": "sherwani-joshi-1973",
+      "text": "H. K. Sherwani & P. M. Joshi (eds.), History of Medieval Deccan (1295–1724), 2 vols., Government of Andhra Pradesh, Hyderabad, 1973–74."
+    }
+  ]
+}

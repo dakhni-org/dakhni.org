@@ -134,5 +134,13 @@
       "text": "Sahapedia, “The History of Biryani,” including discussion of dum, kachchi and pakki preparation traditions.",
       "url": "https://www.sahapedia.org/the-history-of-biryani"
     }
-  ]
+  ],
+  "seo_title": "Hyderabadi Biryani: History & Kachchi Dum | Dakhni.org",
+  "schema_about": [
+    {
+      "type": "Thing",
+      "name": "Hyderabadi biryani"
+    }
+  ],
+  "date_modified": "2026-09-27"
 }
