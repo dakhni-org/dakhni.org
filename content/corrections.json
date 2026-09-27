@@ -1,0 +1,23 @@
+{
+  "page_type": "general_leaf",
+  "url": "/corrections/",
+  "section": "About",
+  "title": "Corrections",
+  "description": "A public record of significant factual corrections and editorial revisions made to Dakhni.org.",
+  "dedication": "In memory of the Asaf Jahi dynasty",
+  "sort_order": 1020,
+  "tags": [
+    "Corrections",
+    "Editorial Record",
+    "Dakhni.org"
+  ],
+  "eyebrow": "About the Project",
+  "title_html": "Corrections &amp; <em>Editorial Record</em>",
+  "subtitle": "Significant factual corrections are documented rather than silently erased",
+  "blocks": [
+    {
+      "type": "html",
+      "html": "<article class=\"article\">\n<p>Dakhni.org treats correction as normal archival maintenance. This page records significant factual corrections or changes in editorial treatment; minor typography, styling and copy-editing changes are not listed.</p>\n\n<h2>25 July 2026 — institutions and Nizamabad</h2>\n<ul>\n<li><strong>Mahbub College:</strong> corrected an inaccurate founder/date account and restored its origin as the Anglo Vernacular School founded in 1862 by Somasundaram Mudaliar.</li>\n<li><strong>Anwar-ul-Uloom College:</strong> corrected an inaccurate 1922 founding claim; the college was founded in 1953 by the Anwarul Uloom Educational Association.</li>\n<li><strong>Nizamia Tibbi College:</strong> replaced an unsupported 1894 founding date with a qualified institutional history distinguishing the older hakim tradition, the 1925 hospital and the college's 1938 reorganization.</li>\n<li><strong>Nizamabad:</strong> removed a craft claim that had conflated Nizamabad, Telangana with an unrelated craft tradition associated with Nizamabad, Uttar Pradesh.</li>\n</ul>\n\n<h2>25–26 July 2026 — citation and factual review</h2>\n<p>A site-wide review added page-level references to many institutional, historical and cultural pages and corrected unsupported or overstated claims found during that process.</p>\n\n<h2>September 2026 — language and editorial audit</h2>\n<p>The Dakhni-language section and several institutional-history claims were re-reviewed for spelling variants, attribution, source quality and wording. The archive also added visible editorial credit and strengthened its public explanation of how AI-assisted research is checked.</p>\n\n<h2>How to report an error</h2>\n<p>Send the page URL, the statement in question and—where possible—the source that contradicts or qualifies it to <a href=\"mailto:syedazharfarhan@gmail.com\">syedazharfarhan@gmail.com</a>. Corrections supported by stronger evidence are preferred over debates based only on unsourced web summaries.</p>\n\n<p>For the full research and publication process, see the <a href=\"/editorial-methodology/\">editorial methodology</a> and <a href=\"/ai-policy/\">AI policy</a>.</p>\n</article>"
+    }
+  ]
+}

@@ -3,7 +3,7 @@
   "url": "/landmarks/institutions/osmania-medical-college/",
   "section": "Landmarks",
   "title": "Osmania Medical College",
-  "description": "Founded in 1846 as the Hyderabad Medical School and renamed Osmania Medical College in 1919, it is among the oldest medical colleges in India.",
+  "description": "Osmania Medical College in historical context: the 1846 Hyderabad Medical School, Urdu-medium medical education, its Bolarum predecessor, early graduates, women students, and later Osmania-era development.",
   "dedication": "In memory of the Asaf Jahi dynasty",
   "sort_order": 100,
   "tags": [
@@ -23,71 +23,118 @@
       "type": "facts",
       "items": [
         {
-          "key": "Founded",
-          "value": "1846",
+          "key": "Predecessor",
+          "value": "Hyderabad Medical School · 1846",
           "ref": "omc-official"
         },
         {
-          "key": "Renamed",
-          "value": "1919"
+          "key": "Early medium",
+          "value": "Urdu",
+          "ref": "omc-official"
         },
         {
-          "key": "City",
-          "value": "Hyderabad"
+          "key": "Early qualification",
+          "value": "Hakeem",
+          "ref": "omc-official"
+        },
+        {
+          "key": "First superintendent",
+          "value": "Dr. William Campbell Maclean",
+          "ref": "omc-official"
+        },
+        {
+          "key": "Later identity",
+          "value": "Osmania Medical College",
+          "ref": "omc-official"
         }
       ]
     },
     {
       "type": "narrative",
-      "tour_label": "The College",
+      "tour_label": "The Medical College",
       "tour": [
         {
           "id": "s1",
-          "label": "The 1846 School"
+          "label": "Before 1846"
         },
         {
           "id": "s2",
-          "label": "The Reform"
+          "label": "Hyderabad Medical School"
         },
         {
           "id": "s3",
-          "label": "Today"
+          "label": "Training & Examinations"
+        },
+        {
+          "id": "s4",
+          "label": "Women & Expansion"
+        },
+        {
+          "id": "s5",
+          "label": "Osmania Era"
         }
       ],
-      "intro": "<p><em>Osmania Medical College</em> is among the oldest medical colleges in India. It was founded in 1846 as the <em>Hyderabad Medical School</em> by the fourth Nizam Mir Farkhonda Ali Khan, renamed Mahbub Medical School under his successor, and renamed again in 1919 as <em>Osmania Medical College</em> in honour of the seventh Nizam, who folded it into the wider Osmania reform alongside the building of the Osmania General Hospital across the Musi. Together the college and the hospital formed a single teaching-hospital complex on the lines of the great European medical schools of the period, and it has continued in that role for more than a century.<cite data-ref=\"omc-official\"></cite></p>",
+      "intro": "<p>The institutional history of <em>Osmania Medical College</em> reaches back to the Hyderabad Medical School established in 1846. The college’s own historical record describes an Urdu-medium school created to teach European medicine to students of the Deccan, while also placing that experiment within Hyderabad’s much older medical culture.<cite data-ref=\"omc-official\"></cite></p>",
       "sections": [
         {
           "id": "s1",
-          "eyebrow": "Medicine in Urdu",
-          "numeral_label": "The 1846 School",
-          "title_html": "The <em>1846 school</em>",
-          "sub": "The original Hyderabad Medical School on the Musi",
+          "eyebrow": "Bolarum · Before 1846",
+          "numeral_label": "The Predecessor",
+          "title_html": "An earlier medical school at <em>Bolarum</em>",
+          "sub": "The 1846 institution did not appear from nowhere",
           "body": [
-            "The original Hyderabad Medical School taught Western medicine in Urdu, with English as a secondary medium, and was attached to a small teaching hospital on the south bank of the Musi. Its first cohorts of graduates went on to serve as civil surgeons in the state and across the Deccan. It was one of the first three modern medical schools of South Asia.<cite data-ref=\"wikipedia-omc\"></cite>"
-          ],
-          "reveal": "reveal-left"
-        },
-        {
-          "id": "s2",
-          "eyebrow": "Osmania · 1919",
-          "numeral_label": "The Reform",
-          "title_html": "<em>Osmania</em> reform",
-          "sub": "Raised to a degree college with its own teaching hospital",
-          "body": [
-            "The seventh Nizam reorganised the school as Osmania Medical College in 1919, raised its syllabus to that of a full degree-granting college, and built around it the new Osmania General Hospital — completed in 1925 — as a teaching hospital on the lines of Edinburgh and Vienna. The college became one of the principal medical schools of British and princely India.<cite data-ref=\"wikipedia-omc\"></cite>"
+            "Osmania Medical College’s official history records an earlier medical school at Bolarum, started in the late 1830s by British medical officers attached to the Hyderabad Contingent. Its purpose was to train local men as medical subordinates for military service. That school closed in May 1846, immediately before the new Hyderabad Medical School was organized with a broader purpose.<cite data-ref=\"omc-official\"></cite>",
+            "This predecessor is important because it separates two institutional histories that are often compressed into a single founding story: an earlier military training school at Bolarum, and the later Hyderabad Medical School that became the direct forerunner of Osmania Medical College."
           ],
           "reveal": "reveal-right"
         },
         {
-          "id": "s3",
-          "eyebrow": "A Leading College",
-          "numeral_label": "Today",
-          "title_html": "A continuing <em>institution</em>",
-          "sub": "Among the leading medical colleges of South India",
+          "id": "s2",
+          "eyebrow": "Hyderabad · 1846",
+          "numeral_label": "The New School",
+          "title_html": "European medicine taught through <em>Urdu</em>",
+          "sub": "A vernacular-medium medical school for students of the Deccan",
           "body": [
-            "Now affiliated to Kaloji Narayana Rao University of Health Sciences, Osmania Medical College remains one of the leading medical colleges of South India. Its original buildings, and the great Indo-Saracenic block of the Osmania General Hospital across the river, are among the most recognisable institutional silhouettes of Hyderabad."
+            "The official college history says the Hyderabad Medical School was established in 1846 after the Nizam approved a plan to teach European medicine to local students through Urdu. Dr. William Campbell Maclean was appointed superintendent and teacher, supported by staff including a translator and clerk.<cite data-ref=\"omc-official\"></cite>",
+            "The choice of Urdu is one of the institution’s most distinctive features. Medical knowledge that circulated through English-language colonial institutions was translated into a language used by the Hyderabad State’s educated public and administration, creating an unusual vernacular route into modern medical education.<cite data-ref=\"omc-official\"></cite>"
           ],
           "reveal": "reveal-left"
+        },
+        {
+          "id": "s3",
+          "eyebrow": "1852–53",
+          "numeral_label": "Training",
+          "title_html": "The first <em>qualified cohort</em>",
+          "sub": "A formal examination linked the school to wider medical standards",
+          "body": [
+            "According to the college’s institutional record, the first trained students were examined in 1852–53 by a committee of medical officers. Ten candidates were declared qualified and received official diplomas. By the end of the nineteenth century, the school had developed a larger staff and a formal examination system connected with the standards used by the Madras medical establishment.<cite data-ref=\"omc-official\"></cite>",
+            "That progression—from a small school with translated instruction to an established professional institution—helps explain why the 1846 date matters. It marks the beginning of a durable state-backed system of medical training rather than a short-lived classroom experiment."
+          ],
+          "reveal": "reveal-right"
+        },
+        {
+          "id": "s4",
+          "eyebrow": "Late 19th Century",
+          "numeral_label": "Expansion",
+          "title_html": "Women enter the <em>medical school</em>",
+          "sub": "A Zenana section expanded access to medical training",
+          "body": [
+            "The official history notes that a women’s, or Zenana, section was opened in the final decade of the nineteenth century under the supervision of a woman doctor. Women students were admitted to study medicine, with particular attention to midwifery.<cite data-ref=\"omc-official\"></cite>",
+            "This development is significant in the history of public health in Hyderabad because it connected medical education with the practical need for women practitioners who could serve female patients in a society where access to male physicians could be restricted by custom."
+          ],
+          "reveal": "reveal-left"
+        },
+        {
+          "id": "s5",
+          "eyebrow": "20th Century",
+          "numeral_label": "Osmania Era",
+          "title_html": "From Hyderabad Medical School to <em>Osmania</em>",
+          "sub": "The nineteenth-century school became part of Hyderabad’s modern university system",
+          "body": [
+            "The institution later became associated with the Osmania educational system established under Mir Osman Ali Khan. The college’s own history identifies the 1846 Hyderabad Medical School as the direct forerunner of Osmania Medical College and traces the continuity of medical education through Hyderabad’s transition from princely state to modern state capital.<cite data-ref=\"omc-official\"></cite>",
+            "For Dakhni.org, the value of the college is therefore larger than a single founding date. It connects Urdu-medium professional education, translation, state administration, women’s medical training and the modernization of Hyderabad across more than a century."
+          ],
+          "reveal": "reveal-right"
         }
       ]
     }
@@ -95,13 +142,8 @@
   "references": [
     {
       "id": "omc-official",
-      "text": "Osmania Medical College, official website — About OMC.",
+      "text": "Osmania Medical College, official institutional history — “About OMC.”",
       "url": "https://omc.ac.in/about-omc.php"
-    },
-    {
-      "id": "wikipedia-omc",
-      "text": "Wikipedia, \"Osmania Medical College.\"",
-      "url": "https://en.wikipedia.org/wiki/Osmania_Medical_College"
     }
   ]
 }

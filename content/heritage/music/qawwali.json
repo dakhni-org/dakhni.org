@@ -3,7 +3,7 @@
   "url": "/heritage/music/qawwali/",
   "section": "Heritage",
   "title": "Qawwali",
-  "description": "Qawwali is Sufi devotional ensemble singing at the dargahs of the Deccan — patronised alongside Hindustani classical music by the Asaf Jahi court, and still sung on Thursday evenings at the shrines of Gulbarga and Hyderabad.",
+  "description": "Qawwali in the Deccan: Sufi devotional music from Chishti samāʿ to Bahmani court patronage, Gulbarga’s shrine culture, repertoire, and the relation between dargah and court.",
   "dedication": "In memory of the Asaf Jahi dynasty",
   "sort_order": 10,
   "tags": [
@@ -23,49 +23,95 @@
       "type": "facts",
       "items": [
         {
-          "key": "Form",
-          "value": "Sufi devotional ensemble singing at shrines"
+          "key": "Religious setting",
+          "value": "Sufi samāʿ and shrine assemblies",
+          "ref": "iranica-bahmanid"
         },
         {
-          "key": "Court patronage",
-          "value": "Asaf Jahi Hyderabad, alongside Hindustani classical music",
-          "ref": "leonard-1978"
+          "key": "Early Deccan centre",
+          "value": "Gulbarga under the Bahmanis",
+          "ref": "iranica-bahmanid"
         },
         {
-          "key": "Centres",
-          "value": "The dargahs of Gulbarga and Yousufain Sharif, Hyderabad",
-          "ref": "ernst-lawrence-2002"
+          "key": "Key shrine",
+          "value": "Gisu Daraz / Bandanawaz at Gulbarga",
+          "ref": "iranica-gisu-daraz"
         },
         {
-          "key": "Repertoire",
-          "value": "Opens with verses by Amir Khusrau, closes with verses by Wali Deccani",
-          "ref": "ernst-lawrence-2002"
+          "key": "Historic repertoire",
+          "value": "Persian ghazals, including poetry associated with Amir Khusrau and Hasan Sijzi",
+          "ref": "iranica-bahmanid"
         }
       ]
     },
     {
       "type": "narrative",
-      "intro": "<p><em>Qawwali</em> is Sufi devotional ensemble singing performed at the dargahs of the Deccan. The Asaf Jahi court patronised it alongside Hindustani classical music, and singers travelled freely between durbar and dargah — but its deepest home has always been the shrine itself.<cite data-ref=\"leonard-1978\"></cite></p>",
+      "tour_label": "Qawwali in the Deccan",
+      "tour": [
+        {
+          "id": "s1",
+          "label": "Samāʿ"
+        },
+        {
+          "id": "s2",
+          "label": "Bahmani Patronage"
+        },
+        {
+          "id": "s3",
+          "label": "Gulbarga"
+        },
+        {
+          "id": "s4",
+          "label": "Court & Shrine"
+        }
+      ],
+      "intro": "<p><em>Qawwali</em> in the Deccan belongs first to the history of Sufi <em>samāʿ</em> — devotional listening assemblies in which poetry and music were used as vehicles of remembrance and spiritual attention. The form travelled south with Sufi networks and became embedded in the religious and courtly culture of the Bahmani Deccan.<cite data-ref=\"iranica-bahmanid\"></cite></p>",
       "sections": [
         {
           "id": "s1",
-          "eyebrow": "The Asaf Jahi Court",
-          "numeral_label": "Court and Shrine",
-          "title_html": "Durbar and <em>dargah</em>, side by side",
-          "sub": "Patronised alongside Hindustani classical music",
+          "eyebrow": "Sufi Samāʿ",
+          "numeral_label": "The Practice",
+          "title_html": "Music as <em>devotional listening</em>",
+          "sub": "Qawwali is better understood through the Sufi assembly than through the modern concert stage",
           "body": [
-            "The Asaf Jahi court patronised both Hindustani classical music and the qawwali sung at Sufi shrines, and singers moved freely between the two worlds — the same artists who performed at durbar also sang at dargah.<cite data-ref=\"leonard-1978\"></cite>"
+            "Historical discussions of the Chishti tradition describe <em>samāʿ</em> as an organized devotional practice centred on sung poetry, attentive listening and spiritual response. Qawwals were specialist singers within that setting; the performance was not simply entertainment added to a shrine visit but part of the devotional culture of the order.<cite data-ref=\"ernst-lawrence-2002\"></cite>",
+            "That context helps explain why qawwali travelled with Sufi lineages. When Chishti teachers and disciples established themselves in the Deccan, they carried not only doctrine and institutional forms but also a culture of sung Persian and vernacular poetry."
           ],
           "reveal": "reveal-right"
         },
         {
           "id": "s2",
-          "eyebrow": "Gulbarga & Yousufain Sharif",
-          "numeral_label": "The Thursday Evening",
-          "title_html": "Khusrau to <em>Wali Deccani</em>",
-          "sub": "An unbroken line of poetry, sung every week",
+          "eyebrow": "Bahmani Deccan",
+          "numeral_label": "Court Patronage",
+          "title_html": "Qawwals at the <em>Bahmani court</em>",
+          "sub": "The documentary record connects Sufi musical assemblies with royal patronage",
           "body": [
-            "On any Thursday at the dargah of Khwaja Bandanawaz in Gulbarga, or at Yousufain Sharif in Hyderabad, qawwals open the evening with verses by Amir Khusrau and close with verses by Wali Deccani — a line of poetry running unbroken from the fourteenth century.<cite data-ref=\"ernst-lawrence-2002\"></cite>"
+            "Encyclopaedia Iranica’s account of the Bahmanids notes that qawwali was a regular feature of Sufi assemblies in the Deccan and that Persian ghazals were commonly sung. It also records that Bahmani ruler Muhammad I invited qawwals and musicians from Delhi, including performers of poetry by Amir Khusrau and Hasan Sijzi.<cite data-ref=\"iranica-bahmanid\"></cite>",
+            "This is stronger evidence than a generic claim that “the court liked music.” It shows a specific circulation of performers and repertoire between north India and the Deccan, and it places qawwali within the same networks that transmitted Persian literary and Sufi culture southward."
+          ],
+          "reveal": "reveal-left"
+        },
+        {
+          "id": "s3",
+          "eyebrow": "Gulbarga",
+          "numeral_label": "The Shrine",
+          "title_html": "Bandanawaz and a lasting <em>pilgrimage centre</em>",
+          "sub": "Gulbarga became one of the principal institutional anchors of Deccan Sufism",
+          "body": [
+            "Gisu Daraz, better known in the Deccan as Bandanawaz, settled in Gulbarga after leaving north India and became one of the most important transmitters of Sufi traditions to the plateau. His tomb and hospice developed into a major pilgrimage centre supported by successive Deccan dynasties.<cite data-ref=\"iranica-gisu-daraz\"></cite>",
+            "That institutional continuity matters for music. Qawwali in the Deccan is not only a courtly inheritance; it is also part of the living ritual ecology of dargahs, where poetry, pilgrimage, remembrance and communal gathering intersect. The shrine is therefore a more durable home for the form than any single dynasty."
+          ],
+          "reveal": "reveal-right"
+        },
+        {
+          "id": "s4",
+          "eyebrow": "Durbar & Dargah",
+          "numeral_label": "Two Worlds",
+          "title_html": "Courtly culture and shrine culture <em>overlap</em>",
+          "sub": "The Deccan’s musical history cannot be divided neatly into sacred and secular boxes",
+          "body": [
+            "The Bahmani record shows royal patronage of qawwals, while Sufi sources place musical assemblies inside the devotional life of the khanqah and dargah. Those worlds overlapped: rulers patronised saints and musicians, Sufi centres attracted urban and courtly audiences, and the same Persianate literary repertoire could circulate across both settings.<cite data-ref=\"iranica-bahmanid iranica-gisu-daraz\"></cite>",
+            "Dakhni.org therefore treats qawwali as a Deccan cultural form with several linked histories — religious, literary, urban and dynastic — rather than as a generic genre detached from the institutions in which it was performed."
           ],
           "reveal": "reveal-left"
         }
@@ -74,8 +120,14 @@
   ],
   "references": [
     {
-      "id": "leonard-1978",
-      "text": "Karen Leonard, Social History of an Indian Caste: The Kayasths of Hyderabad, University of California Press, 1978."
+      "id": "iranica-bahmanid",
+      "text": "Encyclopaedia Iranica, “Bahmanid Dynasty,” including qawwali and Sufi musical assemblies in the Bahmani Deccan.",
+      "url": "https://www.iranicaonline.org/articles/bahmanid-dynasty-a-dynasty-founded-in-748-1347-in-the-deccan-sanskrit-daksia-lit/"
+    },
+    {
+      "id": "iranica-gisu-daraz",
+      "text": "Richard M. Eaton, “Gisu-Daraz,” Encyclopaedia Iranica.",
+      "url": "https://www.iranicaonline.org/articles/gisu-daraz/"
     },
     {
       "id": "ernst-lawrence-2002",

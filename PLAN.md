@@ -87,11 +87,22 @@ Same migration pattern as Phase 3.
 
 ## Phase 7 — Dedicated leaf pages for named crafts, dishes, festivals & music
 
-The `cuisine`, `crafts`, `festivals`, and `music` heritage hub pages each mention several
-specific named things in passing — a craft, a dish, a festival, a musical form — that have
-no page of their own to link to from elsewhere on the site (unlike cities, dynasties, saints
-and monuments, which all already are cross-link targets). This phase gives the highest-value
-ones a dedicated leaf page.
+> **SEO recovery note (27 September 2026):** this phase is historical and its original
+> cross-link-driven rationale is superseded by the public Editorial Methodology. A missing
+> cross-link target, keyword opportunity, or desire to increase URL coverage is **not** a
+> sufficient reason to create a page. New standalone pages must add meaningful source-backed
+> value beyond their parent hub. Thin/supporting pages should remain on the hub or use
+> `"indexing": "noindex"` until they meet that standard. Noindexed pages are intentionally
+> omitted from the sitemap and from the automated cross-link target map.
+>
+> The six pages created in this phase were re-audited during the September 2026 SEO recovery:
+> Biryani, Bidriware, Paithani and Qawwali were substantially rebuilt around stronger
+> historical/official sources; Haleem and Bonalu remain available to readers but are noindexed
+> pending deeper standalone treatment.
+
+This phase originally created dedicated pages for named sub-topics under their parent heritage
+pillars. The implementation and URL-structure notes below remain useful engineering history,
+but the publication decision must now follow the standalone-value test above.
 
 **Do not start Phase 7 until phases 1–6 are all checked.**
 

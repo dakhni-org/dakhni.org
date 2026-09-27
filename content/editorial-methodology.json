@@ -1,0 +1,25 @@
+{
+  "page_type": "general_leaf",
+  "url": "/editorial-methodology/",
+  "section": "About",
+  "title": "Editorial Methodology",
+  "description": "How Dakhni.org selects topics, evaluates sources, uses AI assistance, verifies historical claims, and decides whether a page deserves standalone publication.",
+  "dedication": "In memory of the Asaf Jahi dynasty",
+  "sort_order": 1010,
+  "tags": [
+    "Editorial Methodology",
+    "Sources",
+    "Research",
+    "Corrections",
+    "Dakhni.org"
+  ],
+  "eyebrow": "About the Project",
+  "title_html": "Editorial <em>Methodology</em>",
+  "subtitle": "How topics are selected, sources are weighed, AI assistance is used, and historical claims are reviewed before publication",
+  "blocks": [
+    {
+      "type": "html",
+      "html": "<article class=\"article\">\n<p>Dakhni.org is a curated cultural archive, not an automatically generated encyclopedia. The purpose of this methodology is to make the archive's editorial choices visible: why a page exists, which sources carry the most weight, where AI is used, and how corrections are handled.</p>\n\n<h2>1. A page must <em>earn its own URL</em></h2>\n<p>A subject receives a standalone page only when it can offer meaningful information beyond a short definition or a repetition of its parent topic. A page should have a distinct historical question, source base, narrative, reference value, or documented reader need. Topics that do not yet meet that standard may remain summarized on a broader hub page rather than being published as thin standalone entries.</p>\n\n<h2>2. Source hierarchy</h2>\n<p>Dakhni.org prefers sources in roughly this order: primary or near-primary historical material where accessible; peer-reviewed scholarship and academic monographs; museum, archive, university and government records; established reference works; and reputable secondary sources used for context. Search snippets, unsourced summaries and AI-generated text are not treated as historical authorities.</p>\n<p>Where sources disagree, the archive aims to preserve the disagreement or qualify the wording rather than force a single answer. Claims involving exact dates, founders, firsts, superlatives, lineage, attribution, quotation, continuity or exclusivity require particular care because those are the kinds of claims most easily overstated.</p>\n\n<h2>3. What AI does — and does not do</h2>\n<p>AI tools may assist with locating leads, comparing wording across sources, organizing notes, drafting prose, finding internal relationships between topics, and checking consistency across the site. AI output is not itself evidence. Historical claims should remain traceable to identifiable sources, and AI-generated confidence is never a substitute for documentation.</p>\n\n<h2>4. Human editorial responsibility</h2>\n<p><a href=\"/about/#founder\">Syed Azhar Farhan</a> is the founder and editor responsible for the compilation, organization and publication of Dakhni.org. The site does not present him as an academic historian; the archive's authority is intended to come from transparent sourcing, careful qualification, correction of errors, and the ability for readers to follow claims back to the cited record.</p>\n\n<h2>5. Citations and page-level evidence</h2>\n<p>References are attached to individual pages and, where practical, to the claims they support. Broad bibliographies are not used as decoration: a reference should have been consulted for the page on which it appears. When a claim cannot be supported adequately, the preferred remedy is to qualify it, remove it, or keep the subject on a broader hub until stronger evidence is available.</p>\n\n<h2>6. Original value</h2>\n<p>Dakhni.org aims to add value through Deccan-specific synthesis: connecting language with place, institutions with dynastic history, Sufi networks with cities, and material culture with the historical record. As the archive develops, priority is given to material that cannot be reproduced by a generic summary alone — annotated primary texts, manuscript and catalogue references, historical maps, photographs, variant spellings, transliterations, archival references, and clearly sourced local context.</p>\n\n<h2>7. Corrections</h2>\n<p>Historical publishing is iterative. When a claim is shown to be wrong, weakly supported or overstated, it is corrected rather than defended. Significant corrections are summarized in the <a href=\"/corrections/\">corrections log</a>, while the public Git repository preserves the underlying version history.</p>\n\n<h2>8. Search visibility is not an editorial reason</h2>\n<p>A page is not created solely because a keyword exists, because an internal-linking system would benefit from another target, or because publishing more URLs may increase search coverage. Internal links serve the archive; the archive is not expanded merely to serve internal links.</p>\n\n<h2>Contact</h2>\n<p>Source suggestions, corrections and archival leads can be sent to <a href=\"mailto:syedazharfarhan@gmail.com\">syedazharfarhan@gmail.com</a>.</p>\n\n<p><em>Published 27 September 2026.</em></p>\n</article>"
+    }
+  ]
+}
