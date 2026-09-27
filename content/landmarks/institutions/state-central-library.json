@@ -3,7 +3,7 @@
   "url": "/landmarks/institutions/state-central-library/",
   "section": "Landmarks",
   "title": "State Central Library (Asafia)",
-  "description": "Established in 1891 through the efforts of scholar-administrator Syed Hussain Bilgrami, the former Asafia Library moved to its present Afzal Gunj building in 1936.",
+  "description": "State Central Library (Asafia) in Hyderabad: founded in 1891, moved to Afzal Gunj in 1936, its public-library role, manuscript heritage, and relationship to Telangana’s manuscript institutions.",
   "dedication": "In memory of the Asaf Jahi dynasty",
   "sort_order": 60,
   "tags": [
@@ -26,73 +26,98 @@
         {
           "key": "Established",
           "value": "1891",
-          "ref": "india-cinehub-scl"
+          "ref": "hyderabad-district"
         },
         {
-          "key": "Initial core",
-          "value": "The personal library of Moulvi Syed Hussain Bilgrami",
+          "key": "Historic name",
+          "value": "Asafia Library",
           "ref": "india-cinehub-scl"
         },
         {
           "key": "Present building",
-          "value": "Foundation 1932 · Library moved in 1936",
+          "value": "Afzal Gunj · occupied 1936",
           "ref": "india-cinehub-scl"
         },
         {
-          "key": "City",
-          "value": "Hyderabad"
+          "key": "Public role",
+          "value": "State Central Library of Telangana",
+          "ref": "hyderabad-district"
+        },
+        {
+          "key": "Collection scale",
+          "value": "About 500,000 books and magazines reported by Government of India",
+          "ref": "india-cinehub-scl"
         }
       ]
     },
     {
       "type": "narrative",
-      "tour_label": "The Library",
+      "tour_label": "The Asafia Library",
       "tour": [
         {
           "id": "s1",
-          "label": "Founding"
+          "label": "1891"
         },
         {
           "id": "s2",
-          "label": "The Building"
+          "label": "Afzal Gunj"
         },
         {
           "id": "s3",
-          "label": "The Collections"
+          "label": "Public Library"
+        },
+        {
+          "id": "s4",
+          "label": "Manuscript Legacy"
         }
       ],
-      "intro": "<p>The <em>State Central Library</em> traces its institutional beginning to 1891, when scholar and administrator <em>Moulvi Syed Hussain Bilgrami</em> (Nawab Imad-ul-Mulk Bahadur) helped establish a library whose initial core came from his own collection. Later known as the <em>Asafia Library</em>, it moved in 1936 to the purpose-built Afzal Gunj premises on the Musi. The Government of India's India Cine Hub describes it today as the apex of Telangana's library system, housing about 500,000 books and magazines together with rare palm-leaf manuscripts.<cite data-ref=\"india-cinehub-scl\"></cite></p>",
+      "intro": "<p>The <em>State Central Library</em> is one of Hyderabad’s major surviving public institutions from the Asaf Jahi period. Government sources place its establishment in 1891 and identify its earlier name as the Asafia Library. The institution later moved to the large Afzal Gunj building on the Musi, where it became the apex public library of the state.<cite data-ref=\"hyderabad-district india-cinehub-scl\"></cite></p>",
       "sections": [
         {
           "id": "s1",
-          "eyebrow": "Imad-ul-Mulk · 1891",
-          "numeral_label": "Founding",
-          "title_html": "The <em>beginning</em>",
-          "sub": "From Syed Hussain Bilgrami's collection to the Asafia Library",
+          "eyebrow": "Hyderabad · 1891",
+          "numeral_label": "Foundation",
+          "title_html": "From private collection to <em>public institution</em>",
+          "sub": "The library began during the reign of the sixth Nizam",
           "body": [
-            "The library began in 1891 through the efforts of Moulvi Syed Hussain Bilgrami, whose personal library formed the institution's initial core.<cite data-ref=\"india-cinehub-scl\"></cite> It was subsequently known as the Asafia Library in honour of the Asaf Jahi dynasty. Rekhta's institutional profile likewise identifies Bilgrami's collection as the starting point of the library.<cite data-ref=\"rekhta-scl\"></cite>"
+            "Government accounts date the library to 1891. India Cine Hub attributes its establishment to the efforts of scholar-administrator Moulvi Syed Hussain Bilgrami, also known as Nawab Imad-ul-Mulk Bahadur, and states that his personal books formed an important part of the initial collection.<cite data-ref=\"india-cinehub-scl\"></cite>",
+            "The Hyderabad district government describes the State Central Library as the largest public library in the state and places it among the institutions that shaped the city’s literary development.<cite data-ref=\"hyderabad-district\"></cite>"
           ],
-          "reveal": "reveal-left"
+          "reveal": "reveal-right"
         },
         {
           "id": "s2",
           "eyebrow": "Afzal Gunj · 1932–1936",
           "numeral_label": "The Building",
-          "title_html": "The <em>riverside building</em>",
-          "sub": "Foundation laid under Mir Osman Ali Khan; occupied in 1936",
+          "title_html": "A civic landmark on the <em>Musi</em>",
+          "sub": "The purpose-built library belongs to the later Asaf Jahi modernization of Hyderabad",
           "body": [
-            "The library's present home belongs to a later phase of its history. The foundation stone at Afzal Gunj was laid in January 1932 by Mir Osman Ali Khan, the seventh Nizam, and the Asafia Library shifted into the completed building in 1936 during his silver-jubilee period.<cite data-ref=\"india-cinehub-scl\"></cite> The building's palace-like halls, high ceilings and riverside position made it one of the most prominent civic structures on the Musi."
+            "The present Afzal Gunj building represents a later phase of the institution. India Cine Hub records that its foundation stone was laid in January 1932 under Mir Osman Ali Khan and that the Asafia Library moved into the completed building in 1936.<cite data-ref=\"india-cinehub-scl\"></cite>",
+            "Its scale—large halls, high ceilings and a prominent riverside position—gave the library a civic presence different from a private manuscript collection. The move turned the institution into a visible part of Hyderabad’s twentieth-century public architecture."
+          ],
+          "reveal": "reveal-left"
+        },
+        {
+          "id": "s3",
+          "eyebrow": "Books, Periodicals, Public Access",
+          "numeral_label": "The Library",
+          "title_html": "A collection built for <em>public use</em>",
+          "sub": "The institution’s importance lies in access as well as preservation",
+          "body": [
+            "Government of India material reports roughly half a million books and magazines in the State Central Library and describes it as the apex of the state library system. The collection includes material in several languages associated with Hyderabad’s multilingual intellectual life.<cite data-ref=\"india-cinehub-scl\"></cite>",
+            "That public role distinguishes the State Central Library from specialist archives. It is not merely a heritage building or manuscript repository; its historical importance also comes from the idea that a major princely-state collection could become a public reading institution serving the city and, later, the state."
           ],
           "reveal": "reveal-right"
         },
         {
-          "id": "s3",
-          "eyebrow": "Books & Manuscripts",
-          "numeral_label": "The Collections",
-          "title_html": "The <em>collections</em>",
-          "sub": "A major public collection serving Telangana",
+          "id": "s4",
+          "eyebrow": "Asafia Manuscripts",
+          "numeral_label": "The Manuscript Legacy",
+          "title_html": "A history shared with Telangana’s <em>manuscript institutions</em>",
+          "sub": "The Asafia name links several later preservation histories",
           "body": [
-            "The State Central Library remains a public reference institution and the apex of the state's library system. Government of India material records a collection of about 500,000 books and magazines, including rare palm-leaf manuscripts; Rekhta also notes holdings in Urdu, Persian, Arabic, English, Telugu and Hindi.<cite data-ref=\"india-cinehub-scl rekhta-scl\"></cite>"
+            "The Telangana Government Oriental Manuscripts Library and Research Institute traces its own institutional origins to the 1891 library and records the growth of a large manuscript collection in Urdu, Arabic, Persian and other languages before later administrative reorganizations created a dedicated manuscripts institution.<cite data-ref=\"tgomlri-history\"></cite>",
+            "This means the Asafia legacy should not be described as though every manuscript associated with the old library remains physically in one modern institution. The more accurate picture is a shared institutional history: the public State Central Library and the specialized manuscripts institute both inherit parts of Hyderabad’s longer project of collecting, preserving and making knowledge available.<cite data-ref=\"tgomlri-history\"></cite>"
           ],
           "reveal": "reveal-left"
         }
@@ -101,14 +126,19 @@
   ],
   "references": [
     {
+      "id": "hyderabad-district",
+      "text": "Hyderabad District, Government of Telangana, “History & Culture” — State Central Library.",
+      "url": "https://hyderabad.telangana.gov.in/history/"
+    },
+    {
       "id": "india-cinehub-scl",
-      "text": "India Cine Hub, Government of India, ‘State Central Library, Afzalgunj, Hyderabad.’",
+      "text": "India Cine Hub, Government of India, “State Central Library, Afzalgunj, Hyderabad.”",
       "url": "https://indiacinehub.gov.in/location/state-central-library-afzalgunj-hyderabad"
     },
     {
-      "id": "rekhta-scl",
-      "text": "Rekhta, ‘State Central Library, Hyderabad’ — institutional library profile.",
-      "url": "https://www.rekhta.org/ebooks/library/state-central-library-hyderabad"
+      "id": "tgomlri-history",
+      "text": "Telangana Government Oriental Manuscripts Library and Research Institute, official history.",
+      "url": "https://tgomlri.telangana.gov.in/about"
     }
   ]
 }
