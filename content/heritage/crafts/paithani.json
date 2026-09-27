@@ -3,7 +3,7 @@
   "url": "/heritage/crafts/paithani/",
   "section": "Heritage",
   "title": "Paithani",
-  "description": "Paithani is the tapestry-bordered silk sari woven at Paithan, near Aurangabad, since the Satavahana age around 200 BCE — pure mulberry silk with a border in real zari, still made on the looms of Paithan today.",
+  "description": "Paithani weaving of Paithan: the handwoven silk-and-zari textile, tapestry technique, GI recognition, historic continuity, motifs, and modern preservation efforts.",
   "dedication": "In memory of the Asaf Jahi dynasty",
   "sort_order": 20,
   "tags": [
@@ -26,50 +26,100 @@
       "type": "facts",
       "items": [
         {
-          "key": "Origin",
-          "value": "Paithan, near Aurangabad",
-          "ref": "michell-zebrowski-1999"
-        },
-        {
-          "key": "Tradition established",
-          "value": "c. 200 BCE, in the Satavahana age",
-          "ref": "michell-zebrowski-1999"
+          "key": "Named for",
+          "value": "Paithan, Maharashtra",
+          "ref": "dc-handicrafts-paithani"
         },
         {
           "key": "Material",
-          "value": "Pure mulberry silk with a tapestry-woven zari border",
-          "ref": "michell-zebrowski-1999"
+          "value": "Fine mulberry silk and zari",
+          "ref": "dc-handicrafts-paithani"
         },
         {
-          "key": "Production time",
-          "value": "Up to a year per piece",
-          "ref": "michell-zebrowski-1999"
+          "key": "Technique",
+          "value": "Handwoven tapestry technique on a simple loom",
+          "ref": "dc-handicrafts-paithani"
+        },
+        {
+          "key": "GI registration",
+          "value": "Paithani Sarees and Fabrics · 2010",
+          "ref": "dc-handicrafts-paithani"
+        },
+        {
+          "key": "Modern preservation",
+          "value": "Paithani Training & Production Center at Paithan under MSSIDC since 1973",
+          "ref": "mssidc-paithani"
         }
       ]
     },
     {
       "type": "narrative",
-      "intro": "<p><em>Paithani</em> is the tapestry-bordered silk sari woven at Paithan, south of Aurangabad, a tradition established in the Satavahana age around 200 BCE. It is woven in pure mulberry silk with a border and end-piece in real zari — gold and silver thread — worked into the fabric itself rather than embroidered onto it, with a single sari taking up to a year to complete.<cite data-ref=\"michell-zebrowski-1999\"></cite></p>",
+      "tour_label": "Reading a Paithani",
+      "tour": [
+        {
+          "id": "s1",
+          "label": "Paithan"
+        },
+        {
+          "id": "s2",
+          "label": "The Weave"
+        },
+        {
+          "id": "s3",
+          "label": "Motifs & Colour"
+        },
+        {
+          "id": "s4",
+          "label": "Preservation"
+        }
+      ],
+      "intro": "<p><em>Paithani</em> is the handwoven silk textile named after Paithan on the Godavari. Government craft documentation describes it as a fine mulberry-silk sari with zari, woven by a labour-intensive tapestry technique rather than by a mechanized design system. The name, material and method tie the textile directly to place.<cite data-ref=\"dc-handicrafts-paithani\"></cite></p>",
       "sections": [
         {
           "id": "s1",
-          "eyebrow": "Paithan · Since the Satavahanas",
-          "numeral_label": "The Weave",
-          "title_html": "Woven <em>gold</em> on silk",
-          "sub": "A tapestry-woven border, worked thread by thread into the silk",
+          "eyebrow": "Paithan · Godavari",
+          "numeral_label": "Place",
+          "title_html": "A textile named for <em>Paithan</em>",
+          "sub": "The geography is part of the object’s identity",
           "body": [
-            "Unlike embroidery, which is applied after weaving, the Paithani border is built into the fabric on the loom itself — a tapestry technique in which the weft threads carrying the zari pattern are interlocked directly with the silk warp, producing a border and end-piece as strong as the silk ground it sits on. The scale of the work is why a single sari can take up to a year on the loom.<cite data-ref=\"michell-zebrowski-1999\"></cite>"
+            "Paithani takes its name from Paithan, historically known as Pratishthan, in present-day Chhatrapati Sambhajinagar district. Maharashtra government sources describe the town as an old centre of silk and sari trade and present the weaving tradition as a surviving link to that longer commercial history.<cite data-ref=\"mssidc-paithani sambhajinagar-paithani\"></cite>",
+            "Official district heritage material places the tradition in the Satavahana-era memory of Paithan and describes Paithani as a textile preserved by local weavers across many centuries. Because claims of uninterrupted antiquity are difficult to prove precisely, Dakhni.org treats the two-thousand-year figure as part of the documented institutional tradition rather than as an exact archaeological date for the modern sari form.<cite data-ref=\"mssidc-paithani sambhajinagar-paithani\"></cite>"
           ],
           "reveal": "reveal-right"
         },
         {
           "id": "s2",
-          "eyebrow": "The Looms of Paithan",
-          "numeral_label": "Continuing Tradition",
-          "title_html": "Still on the <em>loom</em>",
-          "sub": "A craft that has outlasted the empires it was woven under",
+          "eyebrow": "Silk & Zari",
+          "numeral_label": "The Weave",
+          "title_html": "Pattern built into the <em>fabric</em>",
+          "sub": "Tapestry weaving distinguishes the border and pallu from surface embroidery",
           "body": [
-            "The looms of Paithan have continued weaving the Paithani sari since the Satavahana age and into the present — one of the longest continuously practised textile traditions of the Deccan plateau.<cite data-ref=\"michell-zebrowski-1999\"></cite>"
+            "The Government of India GI compendium describes Paithani as a handwoven textile made from fine mulberry silk and zari. Its key technical feature is tapestry weaving: coloured and metallic wefts are worked into the fabric to construct the decorative sections rather than being added later as embroidery.<cite data-ref=\"dc-handicrafts-paithani\"></cite>",
+            "That method is slow because the decorative areas are built thread by thread. MSSIDC notes that production time can range from several months to roughly a year depending on intricacy, and that the finest work requires concentrated loom time rather than continuous high-speed weaving.<cite data-ref=\"mssidc-paithani\"></cite>"
+          ],
+          "reveal": "reveal-left"
+        },
+        {
+          "id": "s3",
+          "eyebrow": "Border & Pallu",
+          "numeral_label": "Motifs",
+          "title_html": "Peacocks, geometry and <em>kaleidoscopic colour</em>",
+          "sub": "The visual identity is concentrated in the border and end-piece",
+          "body": [
+            "The Chhatrapati Sambhajinagar district heritage page describes Paithani borders with oblique-square designs and pallus featuring motifs such as peacocks, lotuses and mango forms. It also documents the textile’s well-known two-colour or kaleidoscopic effect, produced by using different colours in the lengthwise and widthwise directions of the weave.<cite data-ref=\"sambhajinagar-paithani\"></cite>",
+            "These features help distinguish Paithani as a woven design tradition rather than merely a silk sari from Maharashtra. The identity comes from the combination of place, handloom method, silk, zari and a recognisable vocabulary of border and pallu construction."
+          ],
+          "reveal": "reveal-right"
+        },
+        {
+          "id": "s4",
+          "eyebrow": "1973–Present",
+          "numeral_label": "Preservation",
+          "title_html": "A living craft maintained through <em>training</em>",
+          "sub": "Institutional support became part of the modern history of Paithani",
+          "body": [
+            "MSSIDC states that the Government of Maharashtra transferred the Paithani Training & Production Center at Paithan to the corporation in 1973 to support preservation of the craft. The centre operates handlooms and has trained large numbers of artisans, making institutional revival part of Paithani’s modern story rather than treating survival as automatic.<cite data-ref=\"mssidc-paithani\"></cite>",
+            "Paithani Sarees and Fabrics also hold Geographical Indication registration, documented in the Government of India handicrafts compendium. The GI does not replace the craft’s historical identity, but it formalizes the relationship between the textile, its producers and the named tradition in contemporary law and commerce.<cite data-ref=\"dc-handicrafts-paithani\"></cite>"
           ],
           "reveal": "reveal-left"
         }
@@ -78,8 +128,19 @@
   ],
   "references": [
     {
-      "id": "michell-zebrowski-1999",
-      "text": "George Michell & Mark Zebrowski, Architecture and Art of the Deccan Sultanates (The New Cambridge History of India I.7), Cambridge University Press, 1999."
+      "id": "dc-handicrafts-paithani",
+      "text": "Office of the Development Commissioner (Handicrafts), Government of India, A Compendium of Indian Handicrafts & Handlooms covered under Geographical Indications — “Paithani Sarees and Fabrics.”",
+      "url": "https://handicrafts.nic.in/cmsUpload/20170506115215GI_BOOK_FINAL_ilovepdf_compressed.PDF"
+    },
+    {
+      "id": "mssidc-paithani",
+      "text": "Maharashtra Small Scale Industries Development Corporation, “Handicraft Development — Paithani Center, Paithan.”",
+      "url": "https://mssidc.maharashtra.gov.in/Site/1712/Handicraft-Development?format=print"
+    },
+    {
+      "id": "sambhajinagar-paithani",
+      "text": "District Chhatrapati Sambhajinagar, Government of Maharashtra, “Handicraft — Paithani Silk Saris.”",
+      "url": "https://chhatrapatisambhajinagar.maharashtra.gov.in/en/handicraft/"
     }
   ]
 }
