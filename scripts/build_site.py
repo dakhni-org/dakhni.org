@@ -22,10 +22,6 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONTENT = os.path.join(ROOT, "content")
 NAV_FILE = os.path.join(CONTENT, "navigation.json")
 
-KEYWORDS = ("Dakhni, Dakkani, Dakhini, Deccan, Deccani, Hyderabad, Hyderabadi, Bidar, "
-            "Gulbarga, Bijapur, Aurangabad, Bahmani, Qutb Shahi, Adil Shahi, Asaf Jahi, "
-            "Nizam, Dakhni Urdu, Deccani Urdu, Deccan Sultanates, qawwali, dargah, Sufi "
-            "shrines, biryani, haleem, Charminar, Golconda, Bidriware, Deccan heritage")
 FALLBACK_COVER = "/assets/dakhni-pattern.webp"
 AUTHOR_NAME = "Syed Azhar Farhan"
 AUTHOR_URL = "https://dakhni.org/about/#founder"
@@ -1010,7 +1006,7 @@ def head(page, url_to_page: Dict[str, Any]):
     url = page["url"]
     canonical = "https://dakhni.org" + url
     title = page["title"]
-    full_title = page.get("seo_title") or ("Dakhni.org — Heritage of the Deccan" if url == "/" else f'{title} — Dakhni.org')
+    full_title = page.get("seo_title") or ("Dakhni.org | History and Heritage of the Deccan" if url == "/" else f'{title} | Dakhni.org')
     desc = page.get("description", "")
     social_name = "home" if url == "/" else url.strip("/").replace("/", "-")
     social_image = page.get("social_image")
@@ -1018,8 +1014,6 @@ def head(page, url_to_page: Dict[str, Any]):
         og_img = social_image if social_image.startswith(("http://", "https://")) else "https://dakhni.org" + social_image
     else:
         og_img = f"https://dakhni.org/assets/social/{social_name}.jpg"
-    page_tags = page.get("tags", [])
-    all_keywords = KEYWORDS + (", " + ", ".join(page_tags) if page_tags else "")
     jsonld = [] if url == "/" else [breadcrumb_jsonld(page, url_to_page)]
     if page.get("page_type") in LEAF_PAGE_TYPES:
         article_ld = {
@@ -1107,12 +1101,11 @@ def head(page, url_to_page: Dict[str, Any]):
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v=2"/>
   <link rel="manifest" href="/assets/site.webmanifest"/>
   <meta name="description" content="{esc(desc)}"/>
-  <meta name="keywords" content="{esc(all_keywords)}"/>
   <meta name="author" content="{esc(meta_author)}"/>
   <meta name="robots" content="{esc(robots)}"/>
   <meta name="theme-color" content="#1A1814"/>
   <link rel="canonical" href="{canonical}"/>
-  <meta property="og:type" content="website"/>
+  <meta property="og:type" content="{'article' if page.get('page_type') in LEAF_PAGE_TYPES else 'website'}"/>
   <meta property="og:site_name" content="Dakhni.org"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:title" content="{esc(full_title)}"/>
@@ -1123,12 +1116,12 @@ def head(page, url_to_page: Dict[str, Any]):
   <meta property="og:image:type" content="image/jpeg"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
-  <meta property="og:image:alt" content="{esc(title)} — Dakhni.org"/>
+  <meta property="og:image:alt" content="{esc(title)} | Dakhni.org"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="{esc(full_title)}"/>
   <meta name="twitter:description" content="{esc(desc)}"/>
   <meta name="twitter:image" content="{esc(og_img)}"/>
-  <meta name="twitter:image:alt" content="{esc(title)} — Dakhni.org"/>
+  <meta name="twitter:image:alt" content="{esc(title)} | Dakhni.org"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&family=Lateef:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
@@ -1167,7 +1160,7 @@ def render(page, nav_html, url_to_page, subnav_map, term_to_url=None):
     crumb = page.get("crumb_html") or render_auto_crumb(page, url_to_page)
     subnav = page.get("subnav_html") or render_auto_subnav(page, subnav_map, url_to_page)
     page_url = "https://dakhni.org" + page["url"]
-    share_title = page.get("seo_title") or page["title"] + " — Dakhni.org"
+    share_title = page.get("seo_title") or page["title"] + " | Dakhni.org"
     encoded_url, encoded_title = quote(page_url, safe=""), quote(share_title, safe="")
     share_html = f'''<aside class="page-share" aria-label="Share this page">
   <span class="page-share-label">Share this page</span>
@@ -1199,9 +1192,9 @@ def render(page, nav_html, url_to_page, subnav_map, term_to_url=None):
         if refs_html:
             out.append(refs_html)
         if page.get("page_type") in LEAF_PAGE_TYPES:
-            editorial_credit = '<p class="editorial-credit">Compiled and edited by <a href="/about/#founder">Syed Azhar Farhan</a> for Dakhni.org from the sources cited on this page. AI may assist research and drafting; see the <a href="/editorial-methodology/">editorial method</a>, <a href="/corrections/">corrections log</a>, and <a href="/ai-policy/">AI policy</a>.'
+            editorial_credit = '<p class="editorial-credit">Researched and edited by <a href="/about/#founder">Syed Azhar Farhan</a> for Dakhni.org. Consult the cited evidence and distinguish historical sources from the archive’s own interpretation. AI may assist research and drafting; see the <a href="/editorial-methodology/">editorial method</a>, <a href="/corrections/">corrections log</a>, and <a href="/ai-policy/">AI policy</a>.'
             if page.get("date_modified"):
-                editorial_credit += f' <span class="editorial-date">Last reviewed: <time datetime="{esc(page["date_modified"])}">{esc(page["date_modified"])}</time>.</span>'
+                editorial_credit += f' <span class="editorial-date">Last updated: <time datetime="{esc(page["date_modified"])}">{esc(page["date_modified"])}</time>.</span>'
             elif page.get("date_published"):
                 editorial_credit += f' <span class="editorial-date">Published: <time datetime="{esc(page["date_published"])}">{esc(page["date_published"])}</time>.</span>'
             editorial_credit += '</p>'
@@ -1223,7 +1216,7 @@ def render(page, nav_html, url_to_page, subnav_map, term_to_url=None):
     out.append('<script defer src="/assets/site.js"></script>')
     out.append('<script defer src="/assets/privacy.js"></script>')
     out.append("</body>\n</html>")
-    return add_image_dimensions("\n".join(out) + "\n")
+    return add_image_dimensions("\n".join(out) + "\n").replace("\u2014", "\u2013").replace("&mdash;", "&ndash;").replace("&#8212;", "&#8211;").replace("&#x2014;", "&#x2013;")
 
 
 def add_image_dimensions(markup):
